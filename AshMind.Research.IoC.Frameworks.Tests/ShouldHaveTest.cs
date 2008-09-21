@@ -32,13 +32,26 @@ namespace AshMind.Research.IoC.Frameworks.Tests {
                 
         [Test]
         public void ResolvesArrayDependency(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent, ITestService>();
-            framework.Register<TestComponentWithArrayDependency>();
+            AssertResolvesArrayDependencyFor<TestComponentWithArrayDependency>(framework);
+        }
 
-            var resolved = framework.Resolve<TestComponentWithArrayDependency>();
+        [Test]
+        public void ResolvesArrayPropertyDependency(IFrameworkAdapter framework) {
+            AssertResolvesArrayDependencyFor<TestComponentWithArrayPropertyDependency>(framework);
+        }
+
+        public void AssertResolvesArrayDependencyFor<TTestComponent>(IFrameworkAdapter framework)
+            where TTestComponent : ITestComponentWithArrayDependency
+        {
+            framework.Register<IndependentTestComponent, ITestService>();
+            framework.Register<TTestComponent>();
+
+            var resolved = framework.Resolve<TTestComponent>();
 
             Assert.IsNotNull(resolved);
-            Assert.IsNotEmpty(resolved.Services);
+            Assert.IsNotNull(resolved.Services, "Dependency is null after resolution.");
+            Assert.AreEqual(1, resolved.Services.Length);
+            Assert.IsInstanceOfType(typeof(IndependentTestComponent), resolved.Services[0]);
         }
 
         [Test]
