@@ -24,7 +24,7 @@ namespace AshMind.Research.IoC.Frameworks.Tests {
         public void CanCreateUnregisteredComponents(IFrameworkAdapter framework) {
             framework.Register<IndependentTestComponent, ITestService>();
 
-            var resolved = framework.Resolve<TestComponentWithSimpleConstructorDependency>();
+            var resolved = framework.Create<TestComponentWithSimpleConstructorDependency>();
 
             Assert.IsNotNull(resolved);
             Assert.IsInstanceOfType(typeof(IndependentTestComponent), resolved.Service);
