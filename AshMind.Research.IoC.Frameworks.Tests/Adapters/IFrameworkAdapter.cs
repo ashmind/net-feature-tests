@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
     public interface IFrameworkAdapter {
@@ -20,7 +19,7 @@ namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
         TComponent Create<TComponent>();
 
         /// <summary>
-        /// This test was run only once because there is no way to recover from OutOfStackException.
+        /// This test was run only once because there is no way to recover from StackOverflowException.
         /// </summary>
         bool CrashesOnRecursion { get; }
     }
