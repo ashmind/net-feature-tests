@@ -16,12 +16,12 @@ namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
         // As far as I understand, this is NOT the correct way to do it,
         // you should create your own derived Module. However, for tests
         // this will work.
-        private readonly AutoWiringModule module;
+        private readonly global::Ninject.Extensions.AutoWiring.AutoWiringModule module;
 
         private readonly IKernel kernel;
 
         public NinjectAdapter() {
-            this.module = new AutoWiringModule();
+            this.module = new global::Ninject.Extensions.AutoWiring.AutoWiringModule();
             this.kernel = new StandardKernel(this.module);
         }
 

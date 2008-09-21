@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProductVersion>9.0.30729</ProductVersion>
+    <ProductVersion>9.0.21022</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}</ProjectGuid>
     <OutputType>Library</OutputType>
@@ -42,6 +42,10 @@
     <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\.Libraries\Castle\Castle.MicroKernel.dll</HintPath>
+    </Reference>
+    <Reference Include="LinFu.IoC, Version=2.0.2.32691, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\.Libraries\LinFu\LinFu.IoC.dll</HintPath>
     </Reference>
     <Reference Include="MbUnit.Framework, Version=1.0.2700.29885, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
       <SpecificVersion>False</SpecificVersion>
@@ -94,6 +98,7 @@
     <Compile Include="Adapters\FrameworkAdapterExtensions.cs" />
     <Compile Include="Adapters\IResolvableUnregisteredService.cs" />
     <Compile Include="Adapters\IFrameworkAdapter.cs" />
+    <Compile Include="Adapters\LinFuAdapter.cs" />
     <Compile Include="Adapters\NinjectAdapter.cs" />
     <Compile Include="Adapters\SpringAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />

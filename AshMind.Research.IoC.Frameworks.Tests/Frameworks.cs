@@ -19,6 +19,12 @@ namespace AshMind.Research.IoC.Frameworks.Tests {
         }
 
         [Factory]
+        public IFrameworkAdapter LinFu
+        {
+            get { return new LinFuAdapter(); }
+        }
+
+        [Factory]
         public IFrameworkAdapter Ninject {
             get { return new NinjectAdapter(); }
         }
