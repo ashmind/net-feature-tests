@@ -45,7 +45,8 @@ namespace AshMind.Research.IoC.Frameworks.Tests.Adapters
 
         public TService Resolve<TService>(IDictionary<string, object> additionalArguments)
         {
-            throw new NotSupportedException();
+            var arguments = additionalArguments.Values.ToArray();
+            return (TService) _container.AutoCreate(typeof(TService), arguments);
         }
 
         public TComponent Create<TComponent>()
@@ -57,7 +58,7 @@ namespace AshMind.Research.IoC.Frameworks.Tests.Adapters
         {
             get
             {
-                return true;
+                return false;
             }
         }
     }
