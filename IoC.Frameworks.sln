@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AshMind.Research.IoC.Frameworks.Tests", "AshMind.Research.IoC.Frameworks.Tests\AshMind.Research.IoC.Frameworks.Tests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Tests", "IoC.Framework.Tests\IoC.Framework.Tests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".Libraries", ".Libraries", "{89016C71-8958-40C7-BE2F-C0F945FE9F62}"
 EndProject

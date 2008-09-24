@@ -8,8 +8,8 @@
     <ProjectGuid>{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AshMind.Research.IoC.Frameworks.Tests</RootNamespace>
-    <AssemblyName>AshMind.Research.IoC.Frameworks.Tests</AssemblyName>
+    <RootNamespace>IoC.Frameworks.Tests</RootNamespace>
+    <AssemblyName>IoC.Frameworks.Tests</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
