@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Classes {
+namespace IoC.Framework.Tests.Classes {
     public class TestComponentWithArrayDependency : ITestComponentWithArrayDependency {
         private readonly ITestService[] services;
 

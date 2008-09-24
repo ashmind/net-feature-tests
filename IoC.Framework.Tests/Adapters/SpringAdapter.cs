@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Spring.Context.Support;
 using Spring.Objects.Factory.Config;
 using Spring.Objects.Factory.Support;
 
 // long names, Java heritage
-namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
+namespace IoC.Framework.Tests.Adapters {
     public class SpringAdapter : IFrameworkAdapter {
         private readonly GenericApplicationContext context = new GenericApplicationContext();
         private readonly IObjectDefinitionFactory factory = new DefaultObjectDefinitionFactory();

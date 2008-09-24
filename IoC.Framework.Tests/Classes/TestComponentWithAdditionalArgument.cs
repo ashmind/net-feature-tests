@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Classes {
+namespace IoC.Framework.Tests.Classes {
     public class TestComponentWithAdditionalArgument : TestComponentWithSimpleConstructorDependency {
-        private object additionalArgument;
+        private readonly object additionalArgument;
         
         public TestComponentWithAdditionalArgument(ITestService service, object additionalArgument) : base(service) {
             this.additionalArgument = additionalArgument;

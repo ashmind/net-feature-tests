@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Ninject.Core;
 using Ninject.Core.Behavior;
 using Ninject.Core.Parameters;
 using Ninject.Extensions.AutoWiring;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
+namespace IoC.Framework.Tests.Adapters {
     public class NinjectAdapter : IFrameworkAdapter {
         // I do not declare field as IModule, because it does not give access 
         // to Bind.
@@ -16,7 +15,7 @@ namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
         // As far as I understand, this is NOT the correct way to do it,
         // you should create your own derived Module. However, for tests
         // this will work.
-        private readonly global::Ninject.Extensions.AutoWiring.AutoWiringModule module;
+        private readonly AutoWiringModule module;
 
         private readonly IKernel kernel;
 

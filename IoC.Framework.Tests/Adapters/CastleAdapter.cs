@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Castle.Core;
 using Castle.MicroKernel;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
+namespace IoC.Framework.Tests.Adapters {
     public class CastleAdapter : IFrameworkAdapter {
         private readonly IKernel kernel = new DefaultKernel();
 

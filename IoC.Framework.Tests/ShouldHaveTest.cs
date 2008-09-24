@@ -2,15 +2,14 @@
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
 
 using MbUnit.Framework;
 
-using AshMind.Research.IoC.Frameworks.Tests.Adapters;
-using AshMind.Research.IoC.Frameworks.Tests.Classes;
+using IoC.Framework.Tests.Adapters;
+using IoC.Framework.Tests.Classes;
 
-namespace AshMind.Research.IoC.Frameworks.Tests {
+namespace IoC.Framework.Tests {
     public class ShouldHaveTest : FrameworkTestBase {
         [Test]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {

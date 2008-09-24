@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Microsoft.Practices.Unity;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
+namespace IoC.Framework.Tests.Adapters {
     public class UnityAdapter : IFrameworkAdapter {
         private readonly IUnityContainer container = new UnityContainer();
 
@@ -26,7 +25,7 @@ namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
         }
 
         public void Register<TService>(TService instance) {
-            container.RegisterInstance<TService>(instance);
+            container.RegisterInstance(instance);
         }
 
         public TService Resolve<TService>() {

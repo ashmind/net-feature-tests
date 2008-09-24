@@ -1,12 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-using AshMind.Research.IoC.Frameworks.Tests.Adapters;
+using IoC.Framework.Tests.Adapters;
+
 using MbUnit.Framework;
 
-namespace AshMind.Research.IoC.Frameworks.Tests {
+namespace IoC.Framework.Tests {
     public class Frameworks {
         [Factory]
         public IFrameworkAdapter Autofac {

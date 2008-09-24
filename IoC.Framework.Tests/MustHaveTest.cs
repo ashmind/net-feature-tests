@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
-using System.Text;
 
 using MbUnit.Framework;
-using AshMind.Research.IoC.Frameworks.Tests.Adapters;
-using AshMind.Research.IoC.Frameworks.Tests.Classes;
 
-namespace AshMind.Research.IoC.Frameworks.Tests {
+using IoC.Framework.Tests.Adapters;
+using IoC.Framework.Tests.Classes;
+
+namespace IoC.Framework.Tests {
     public class MustHaveTest : FrameworkTestBase {
         [Test]
         public void ResolvesJustRegisteredService(IFrameworkAdapter framework) {

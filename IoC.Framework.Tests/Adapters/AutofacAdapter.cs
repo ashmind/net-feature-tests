@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using Autofac;
 using Autofac.Builder;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
+namespace IoC.Framework.Tests.Adapters {
     public class AutofacAdapter : IFrameworkAdapter {
         #region PropertyInjectionModule
 
@@ -18,7 +17,7 @@ namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
 
         #endregion
 
-        private ContainerBuilder builder = new ContainerBuilder();
+        private readonly ContainerBuilder builder = new ContainerBuilder();
         private IContainer container;
 
         public AutofacAdapter() {

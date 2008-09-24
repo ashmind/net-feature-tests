@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
+namespace IoC.Framework.Tests.Adapters {
     public interface IFrameworkAdapter {
         void RegisterSingleton<TComponent, TService>()
             where TComponent : TService;

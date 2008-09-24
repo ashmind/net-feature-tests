@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 using StructureMap;
 using StructureMap.Configuration.DSL;
 using StructureMap.Pipeline;
 
-namespace AshMind.Research.IoC.Frameworks.Tests.Adapters {
+namespace IoC.Framework.Tests.Adapters {
     public class StructureMapAdapter : IFrameworkAdapter {
         private readonly Registry registry;
         private Container container;
