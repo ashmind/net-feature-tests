@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 using LinFu.IoC;
 using LinFu.IoC.Interfaces;
@@ -24,6 +25,7 @@ namespace IoC.Framework.Tests.Adapters
         public void RegisterTransient<TComponent, TService>() 
             where TComponent : TService 
         {
+            // ashmind: I think it is a bit inconsistent with the RegisterSingleton syntax
             _container.AddService(typeof(TService), typeof(TComponent));
         }
 
@@ -33,6 +35,10 @@ namespace IoC.Framework.Tests.Adapters
 
         public void Register(Type componentType, Type serviceType) {
             _container.AddService(serviceType, componentType);
+        }
+
+        public void RegisterAll(Assembly assembly) {
+            _container.LoadFrom(assembly);
         }
 
         public TService Resolve<TService>() {

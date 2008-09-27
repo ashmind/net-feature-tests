@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 using Spring.Context.Support;
 using Spring.Objects.Factory.Config;
@@ -42,6 +43,10 @@ namespace IoC.Framework.Tests.Adapters {
                                                  .SetSingleton(singleton);
 
             context.RegisterObjectDefinition(serviceType.AssemblyQualifiedName, builder.ObjectDefinition);            
+        }
+
+        public void RegisterAll(Assembly assembly) {
+            throw new NotSupportedException();
         }
 
         private void EnsureContextRefreshed() {

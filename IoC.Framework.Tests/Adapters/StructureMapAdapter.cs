@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 using StructureMap;
 using StructureMap.Configuration.DSL;
@@ -41,6 +42,10 @@ namespace IoC.Framework.Tests.Adapters {
                     .TheDefaultIs(
                         Registry.Object(instance)
                     );
+        }
+
+        public void RegisterAll(Assembly assembly) {
+            registry.ScanAssemblies();
         }
 
         private void EnsureContainer() {

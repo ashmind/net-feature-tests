@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 using Microsoft.Practices.Unity;
 
@@ -26,6 +27,10 @@ namespace IoC.Framework.Tests.Adapters {
 
         public void Register<TService>(TService instance) {
             container.RegisterInstance(instance);
+        }
+
+        public void RegisterAll(Assembly assembly) {
+            throw new NotSupportedException();
         }
 
         public TService Resolve<TService>() {

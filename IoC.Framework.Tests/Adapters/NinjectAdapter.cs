@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 using Ninject.Core;
 using Ninject.Core.Behavior;
@@ -17,10 +18,10 @@ namespace IoC.Framework.Tests.Adapters {
         // this will work.
         private readonly AutoWiringModule module;
 
-        private readonly IKernel kernel;
+        private IKernel kernel;
 
         public NinjectAdapter() {
-            this.module = new global::Ninject.Extensions.AutoWiring.AutoWiringModule();
+            this.module = new AutoWiringModule();
             this.kernel = new StandardKernel(this.module);
         }
 
@@ -42,6 +43,11 @@ namespace IoC.Framework.Tests.Adapters {
 
         public void Register<TService>(TService instance) {
             module.Bind(typeof(TService)).ToConstant(instance);
+        }
+
+        public void RegisterAll(Assembly assembly) {
+            var autoModule = new AutoModule(assembly);
+            this.kernel = new StandardKernel(this.module, autoModule);
         }
 
         public TService Resolve<TService>() {

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 using Autofac;
 using Autofac.Builder;
+using Module=Autofac.Builder.Module;
 
 namespace IoC.Framework.Tests.Adapters {
     public class AutofacAdapter : IFrameworkAdapter {
@@ -49,6 +51,10 @@ namespace IoC.Framework.Tests.Adapters {
             else {
                 builder.Register(componentType).As(serviceType);
             }
+        }
+
+        public void RegisterAll(Assembly assembly) {
+            builder.RegisterTypesFromAssembly(assembly);
         }
 
         public TService Resolve<TService>() {
