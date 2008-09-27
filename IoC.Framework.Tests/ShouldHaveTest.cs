@@ -54,6 +54,16 @@ namespace IoC.Framework.Tests {
         }
 
         [Test]
+        public void HandlesRecursionGracefullyForArrayDependency(IFrameworkAdapter framework) {
+            AssertIsNotCrashingOnRecursion(framework);
+
+            framework.Register<TestComponentWithArrayDependency>();
+            framework.Register<TestComponentRecursingArrayDependency, ITestService>();
+
+            AssertGivesCorrectExceptionWhenResolvingRecursive<TestComponentWithArrayDependency>(framework);
+        }
+
+        [Test]
         public void SelectsCorrectConstructor(IFrameworkAdapter framework) {
             framework.Register<IndependentTestComponent, ITestService>();
             framework.Register<TestComponentWithMultipleConstructors>();
@@ -95,18 +105,22 @@ namespace IoC.Framework.Tests {
             framework.Register<RecursiveTestComponent1>();
             framework.Register<RecursiveTestComponent2>();
 
+            AssertGivesCorrectExceptionWhenResolvingRecursive<RecursiveTestComponent1>(framework);
+        }
+
+        private void AssertGivesCorrectExceptionWhenResolvingRecursive<TComponent>(IFrameworkAdapter framework) {
             try {
-                framework.Resolve<RecursiveTestComponent1>();
+                framework.Resolve<TComponent>();
             }
             catch (Exception ex) {
                 Assert.IsNotInstanceOfType(typeof(StackOverflowException), ex);
                 Debug.WriteLine(
-                    framework.GetType().Name + " throws following on recursion: " + ex.ToString()
+                    framework.GetType().Name + " throws following on recursion: " + ex
                 );
                 return;
             }
 
-            Assert.Fail("Recursion was magically solved without an exception.");
+            Assert.Fail("Recursion was magically solved without an exception.");            
         }
 
         private void AssertIsNotCrashingOnRecursion(IFrameworkAdapter framework) {

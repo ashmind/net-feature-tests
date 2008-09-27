@@ -111,6 +111,7 @@
     <Compile Include="Classes\IUnregisteredTestService.cs" />
     <Compile Include="Classes\RecursiveTestComponent1.cs" />
     <Compile Include="Classes\RecursiveTestComponent2.cs" />
+    <Compile Include="Classes\TestComponentRecursingArrayDependency.cs" />
     <Compile Include="Classes\TestComponentWithAdditionalArgument.cs" />
     <Compile Include="Classes\TestComponentWithArrayDependency.cs" />
     <Compile Include="Classes\TestComponentWithArrayPropertyDependency.cs" />
