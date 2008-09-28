@@ -25,8 +25,7 @@ namespace IoC.Framework.Tests.Adapters
         public void RegisterTransient<TComponent, TService>() 
             where TComponent : TService 
         {
-            // ashmind: I think it is a bit inconsistent with the RegisterSingleton syntax
-            _container.AddService(typeof(TService), typeof(TComponent));
+            _container.Inject<TService>().Using<TComponent>().OncePerRequest();
         }
 
         public void Register<TService>(TService instance) {
