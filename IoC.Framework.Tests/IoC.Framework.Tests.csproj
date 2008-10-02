@@ -33,49 +33,49 @@
   <ItemGroup>
     <Reference Include="Autofac, Version=1.2.7.397, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Autofac\Autofac.dll</HintPath>
+      <HintPath>..\[Libraries]\Autofac\Autofac.dll</HintPath>
     </Reference>
     <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Castle\Castle.Core.dll</HintPath>
+      <HintPath>..\[Libraries]\Castle\Castle.Core.dll</HintPath>
     </Reference>
     <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Castle\Castle.MicroKernel.dll</HintPath>
+      <HintPath>..\[Libraries]\Castle\Castle.MicroKernel.dll</HintPath>
     </Reference>
     <Reference Include="LinFu.IoC, Version=2.0.2.32691, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\LinFu\LinFu.IoC.dll</HintPath>
+      <HintPath>..\[Libraries]\LinFu\LinFu.IoC.dll</HintPath>
     </Reference>
     <Reference Include="MbUnit.Framework, Version=1.0.2700.29885, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\MbUnit\MbUnit.Framework.dll</HintPath>
+      <HintPath>..\[Libraries]\MbUnit\MbUnit.Framework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Unity\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
+      <HintPath>..\[Libraries]\Unity\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Unity\Microsoft.Practices.Unity.dll</HintPath>
+      <HintPath>..\[Libraries]\Unity\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Core, Version=1.0.0.82, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Ninject\Ninject.Core.dll</HintPath>
+      <HintPath>..\[Libraries]\Ninject\Ninject.Core.dll</HintPath>
     </Reference>
     <Reference Include="Ninject.Extensions.AutoWiring, Version=1.0.0.82, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Ninject\Ninject.Extensions.AutoWiring.dll</HintPath>
+      <HintPath>..\[Libraries]\Ninject\Ninject.Extensions.AutoWiring.dll</HintPath>
       <Aliases>ninject, global</Aliases>
       <Private>True</Private>
     </Reference>
     <Reference Include="Spring.Core, Version=1.1.2.20125, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\Spring\Spring.Core.dll</HintPath>
+      <HintPath>..\[Libraries]\Spring\Spring.Core.dll</HintPath>
     </Reference>
     <Reference Include="StructureMap, Version=2.4.9.0, Culture=neutral, PublicKeyToken=e60ad81abae3c223, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\.Libraries\StructureMap\StructureMap.dll</HintPath>
+      <HintPath>..\[Libraries]\StructureMap\StructureMap.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core">
