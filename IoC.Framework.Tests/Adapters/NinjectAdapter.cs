@@ -9,7 +9,7 @@ using Ninject.Core.Parameters;
 using Ninject.Extensions.AutoWiring;
 
 namespace IoC.Framework.Tests.Adapters {
-    public class NinjectAdapter : IFrameworkAdapter {
+    public class NinjectAdapter : FrameworkAdapterBase {
         // I do not declare field as IModule, because it does not give access 
         // to Bind.
         //
@@ -25,49 +25,37 @@ namespace IoC.Framework.Tests.Adapters {
             this.kernel = new StandardKernel(this.module);
         }
 
-        public void RegisterSingleton<TComponent, TService>()
-            where TComponent : TService
-        {
+        public override void RegisterSingleton<TComponent, TService>() {
             module.Bind<TService>().To<TComponent>().Using<SingletonBehavior>();
         }
 
-        public void RegisterTransient<TComponent, TService>()
-            where TComponent : TService
-        {
+        public override void RegisterTransient<TComponent, TService>() {
             module.Bind<TService>().To<TComponent>().Using<TransientBehavior>();
         }
 
-        public void Register(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type componentType, Type serviceType) {
             module.Bind(serviceType).To(componentType);
         }
 
-        public void Register<TService>(TService instance) {
+        public override void Register<TService>(TService instance) {
             module.Bind(typeof(TService)).ToConstant(instance);
         }
 
-        public void RegisterAll(Assembly assembly) {
+        public override void RegisterAll(Assembly assembly) {
             var autoModule = new AutoModule(assembly);
             this.kernel = new StandardKernel(this.module, autoModule);
         }
-
-        public TService Resolve<TService>() {
-            return kernel.Get<TService>();
-        }
-
-        public TService Resolve<TService>(IDictionary<string, object> additionalArguments) {
-            // unfortunately there is no overload for IDictionary<string, object>
-            var dictionary = new Dictionary<string, object>(additionalArguments);
-            return kernel.Get<TService>(
-                With.Parameters.ConstructorArguments(dictionary)
-            );
-        }
-
-        public TComponent Create<TComponent>() {
-            return this.Resolve<TComponent>();
-        }
         
-        public bool CrashesOnRecursion {
+        public override bool CrashesOnRecursion {
             get { return true; }
+        }
+
+        protected override object DoGetInstance(Type serviceType, string key) {
+            return kernel.Get(serviceType);
+        }
+
+        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
+            throw new NotImplementedException();
         }
     }
 }

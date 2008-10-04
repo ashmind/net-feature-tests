@@ -8,7 +8,7 @@ using LinFu.IoC.Interfaces;
 
 namespace IoC.Framework.Tests.Adapters
 {
-    public class LinFuAdapter : IFrameworkAdapter {
+    public class LinFuAdapter : FrameworkAdapterBase {
         private readonly IServiceContainer _container;
 
         public LinFuAdapter() {
@@ -16,45 +16,40 @@ namespace IoC.Framework.Tests.Adapters
             _container.LoadFrom(AppDomain.CurrentDomain.BaseDirectory, "LinFu*.dll");
         }
 
-        public void RegisterSingleton<TComponent, TService>() 
-            where TComponent : TService
-        {
+        public override void RegisterSingleton<TComponent, TService>() {
             _container.Inject<TService>().Using<TComponent>().AsSingleton();
         }
 
-        public void RegisterTransient<TComponent, TService>() 
-            where TComponent : TService 
-        {
+        public override void RegisterTransient<TComponent, TService>() {
             _container.Inject<TService>().Using<TComponent>().OncePerRequest();
         }
 
-        public void Register<TService>(TService instance) {
+        public override void Register<TService>(TService instance) {
             _container.AddService(instance);
         }
 
-        public void Register(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type componentType, Type serviceType) {
             _container.AddService(serviceType, componentType);
         }
 
-        public void RegisterAll(Assembly assembly) {
+        public override void RegisterAll(Assembly assembly) {
             _container.LoadFrom(assembly);
         }
 
-        public TService Resolve<TService>() {
-            return (TService) _container.GetService(typeof(TService));
+        protected override object DoGetInstance(Type serviceType, string key) {
+            if (string.IsNullOrEmpty(key))
+                return _container.GetService(serviceType);
+
+            return _container.GetService(key, serviceType);
         }
 
-        public TService Resolve<TService>(IDictionary<string, object> additionalArguments) {
-            var arguments = additionalArguments.Values.ToArray();
-            return (TService) _container.AutoCreate(typeof(TService), arguments);
+        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
+            return _container.GetServices(info => serviceType.IsAssignableFrom(info.ServiceType))
+                             .Select(info => info.Object);
         }
 
-        public TComponent Create<TComponent>() {
+        public override TComponent Create<TComponent>() {
             return (TComponent) _container.AutoCreate(typeof (TComponent));
-        }
-
-        public bool CrashesOnRecursion {
-            get { return false; }
         }
     }
 }

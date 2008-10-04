@@ -7,18 +7,14 @@ using Castle.Core;
 using Castle.MicroKernel;
 
 namespace IoC.Framework.Tests.Adapters {
-    public class CastleAdapter : IFrameworkAdapter {
+    public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
 
-        public void RegisterSingleton<TComponent, TService>()
-            where TComponent : TService
-        {
+        public override void RegisterSingleton<TComponent, TService>() {
             this.Register<TComponent, TService>(LifestyleType.Singleton);
         }
 
-        public void RegisterTransient<TComponent, TService>()
-            where TComponent : TService
-        {
+        public override void RegisterTransient<TComponent, TService>() {
             this.Register<TComponent, TService>(LifestyleType.Transient);
         } 
         
@@ -27,39 +23,36 @@ namespace IoC.Framework.Tests.Adapters {
             kernel.AddComponent<TComponent>(typeof(TService), lifestyle);
         }
         
-        public void Register(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type componentType, Type serviceType) {
             // why the key is mandatory?
             kernel.AddComponent(serviceType.ToString(), serviceType, componentType);
         }
 
-        public void Register<TService>(TService instance) {
+        public override void Register<TService>(TService instance) {
             // Castle uses generic parameter for key generation only, which is very counterintuitive
             // and I can not skip generic parameter -- instance is object, not TService
             kernel.AddComponentInstance<TService>(typeof(TService), instance);
         }
 
-        public void RegisterAll(Assembly assembly) {
+        public override void RegisterAll(Assembly assembly) {
             // I am cheating a bit here, but using a BatchRegistrationFacility would be major pain,
             // since it is heavily configuration-based
             throw new NotSupportedException();
         }
 
-        public TService Resolve<TService>() {
-            return kernel.Resolve<TService>();
+        protected override object DoGetInstance(Type serviceType, string key) {
+            if (string.IsNullOrEmpty(key))
+                return kernel.Resolve(serviceType);
+
+            return kernel.Resolve(key, serviceType);
         }
 
-        public TService Resolve<TService>(IDictionary<string, object> additionalArguments) {
-            // unfortunately there is no overload for IDictionary<string, object>
-            var dictionary = new Dictionary<string, object>(additionalArguments);
-            return kernel.Resolve<TService>(dictionary);
-        }
+        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
+            // Major pain 
+            Func<object> resolve = kernel.ResolveServices<object>;
+            var typed = resolve.Method.GetGenericMethodDefinition().MakeGenericMethod(serviceType);
 
-        public TComponent Create<TComponent>() {
-            return this.Resolve<TComponent>();
-        }
-
-        public bool CrashesOnRecursion {
-            get { return false; }
+            return (object[])typed.Invoke(kernel, null);
         }
     }
 }

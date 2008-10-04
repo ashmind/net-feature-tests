@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
+using Microsoft.Practices.ServiceLocation;
+
 namespace IoC.Framework.Tests.Adapters {
     public interface IFrameworkAdapter {
         void RegisterSingleton<TComponent, TService>()
@@ -17,10 +19,9 @@ namespace IoC.Framework.Tests.Adapters {
         void RegisterAll(Assembly assembly);
 
         /// <summary>For open generics testing.</summary>
-        void Register(Type componentType, Type serviceType);
+        void RegisterTransient(Type componentType, Type serviceType);
 
-        TService Resolve<TService>();
-        TService Resolve<TService>(IDictionary<string, object> additionalArguments);
+        IServiceLocator GetLocator();
         TComponent Create<TComponent>();
 
         /// <summary>

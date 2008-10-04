@@ -8,7 +8,7 @@ using StructureMap.Configuration.DSL;
 using StructureMap.Pipeline;
 
 namespace IoC.Framework.Tests.Adapters {
-    public class StructureMapAdapter : IFrameworkAdapter {
+    public class StructureMapAdapter : FrameworkAdapterBase {
         private readonly Registry registry;
         private Container container;
 
@@ -17,34 +17,30 @@ namespace IoC.Framework.Tests.Adapters {
             registry = new Registry();
         }
 
-        public void RegisterSingleton<TComponent, TService>()
-            where TComponent : TService
-        {
+        public override void RegisterSingleton<TComponent, TService>() {
             registry.ForRequestedType<TService>()
                     .TheDefaultIsConcreteType<TComponent>()
                     .AsSingletons();
         }
 
-        public void RegisterTransient<TComponent, TService>()
-            where TComponent : TService
-        {
+        public override void RegisterTransient<TComponent, TService>() {
             registry.ForRequestedType<TService>()
                     .TheDefaultIsConcreteType<TComponent>();
         }
 
-        public void Register(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type componentType, Type serviceType) {
             registry.ForRequestedType(serviceType)
                     .TheDefaultIsConcreteType(componentType);
         }
 
-        public void Register<TService>(TService instance) {
+        public override void Register<TService>(TService instance) {
             registry.ForRequestedType<TService>()
                     .TheDefaultIs(
                         Registry.Object(instance)
                     );
         }
 
-        public void RegisterAll(Assembly assembly) {
+        public override void RegisterAll(Assembly assembly) {
             registry.ScanAssemblies();
         }
 
@@ -55,27 +51,20 @@ namespace IoC.Framework.Tests.Adapters {
             container = new Container(this.registry);
         }
 
-        public TService Resolve<TService>() {
+        protected override object DoGetInstance(Type serviceType, string key) {
             this.EnsureContainer();
-            return container.GetInstance<TService>();
+            if (string.IsNullOrEmpty(key))
+                return container.GetInstance(serviceType);
+
+            return container.GetInstance(serviceType, key);
         }
 
-        public TService Resolve<TService>(IDictionary<string, object> additionalArguments) {
+        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             this.EnsureContainer();
-            var additionalArgumentsAsDictionary = additionalArguments.ToDictionary(
-                arg => arg.Key, arg => arg.Value
-            ); // a pity StructureMap wants a concrete type
-
-            return container.GetInstance<TService>(
-                new ExplicitArguments(additionalArgumentsAsDictionary)
-            );
+            return container.GetAllInstances(serviceType).Cast<object>();
         }
 
-        public TComponent Create<TComponent>() {
-            return this.Resolve<TComponent>();
-        }
-
-        public bool CrashesOnRecursion {
+        public override bool CrashesOnRecursion {
             get { return true; }
         }
     }

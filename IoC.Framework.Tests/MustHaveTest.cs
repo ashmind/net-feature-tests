@@ -12,7 +12,7 @@ namespace IoC.Framework.Tests {
         [Test]
         public void ResolvesJustRegisteredService(IFrameworkAdapter framework) {
             framework.Register<IndependentTestComponent, ITestService>();
-            var component = framework.Resolve<ITestService>();
+            var component = framework.GetLocator().GetInstance<ITestService>();
 
             Assert.IsNotNull(component);
         }
@@ -20,7 +20,7 @@ namespace IoC.Framework.Tests {
         [Test]
         public void ResolvesServiceJustRegisteredAsItself(IFrameworkAdapter framework) {
             framework.Register<IndependentTestComponent>();
-            var component = framework.Resolve<IndependentTestComponent>();
+            var component = framework.GetLocator().GetInstance<IndependentTestComponent>();
 
             Assert.IsNotNull(component);
         }
@@ -28,8 +28,9 @@ namespace IoC.Framework.Tests {
         [Test]
         public void SupportsSingletons(IFrameworkAdapter framework) {
             framework.RegisterSingleton<IndependentTestComponent, ITestService>();
-            var instance1 = framework.Resolve<ITestService>();
-            var instance2 = framework.Resolve<ITestService>();
+            var locator = framework.GetLocator();
+            var instance1 = locator.GetInstance<ITestService>();
+            var instance2 = locator.GetInstance<ITestService>();
 
             Assert.AreSame(instance1, instance2);
         }
@@ -37,8 +38,9 @@ namespace IoC.Framework.Tests {
         [Test]
         public void SupportsTransients(IFrameworkAdapter framework) {
             framework.RegisterTransient<IndependentTestComponent, ITestService>();
-            var instance1 = framework.Resolve<ITestService>();
-            var instance2 = framework.Resolve<ITestService>();
+            var locator = framework.GetLocator();
+            var instance1 = locator.GetInstance<ITestService>();
+            var instance2 = locator.GetInstance<ITestService>();
 
             Assert.AreNotSame(instance1, instance2);
         }
@@ -47,7 +49,9 @@ namespace IoC.Framework.Tests {
         public void SupportsInstanceResolution(IFrameworkAdapter framework) {
             var instance = new IndependentTestComponent();
             framework.Register<ITestService>(instance);
-            var resolved = framework.Resolve<ITestService>();
+
+            var locator = framework.GetLocator();
+            var resolved = locator.GetInstance<ITestService>();
 
             Assert.AreSame(instance, resolved);
         }
@@ -57,7 +61,8 @@ namespace IoC.Framework.Tests {
             var instance = new IndependentTestComponent();
             framework.Register<ITestService>(instance);
             framework.Register<TestComponentWithSimpleConstructorDependency>();
-            var dependent = framework.Resolve<TestComponentWithSimpleConstructorDependency>();
+
+            var dependent = framework.GetLocator().GetInstance<TestComponentWithSimpleConstructorDependency>();
 
             Assert.AreSame(instance, dependent.Service);
         }
@@ -67,7 +72,7 @@ namespace IoC.Framework.Tests {
             framework.Register<IndependentTestComponent, ITestService>();
             framework.Register<TestComponentWithSimpleConstructorDependency>();
 
-            var component = framework.Resolve<TestComponentWithSimpleConstructorDependency>();
+            var component = framework.GetLocator().GetInstance<TestComponentWithSimpleConstructorDependency>();
 
             Assert.IsNotNull(component.Service);
             Assert.IsInstanceOfType(typeof(IndependentTestComponent), component.Service);
@@ -78,7 +83,7 @@ namespace IoC.Framework.Tests {
             framework.Register<IndependentTestComponent, ITestService>();
             framework.Register<TestComponentWithSimplePropertyDependency>();
 
-            var component = framework.Resolve<TestComponentWithSimplePropertyDependency>();
+            var component = framework.GetLocator().GetInstance<TestComponentWithSimplePropertyDependency>();
 
             Assert.IsNotNull(component.Service);
             Assert.IsInstanceOfType(typeof(IndependentTestComponent), component.Service);

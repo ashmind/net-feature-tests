@@ -8,7 +8,7 @@ using Autofac.Builder;
 using Module=Autofac.Builder.Module;
 
 namespace IoC.Framework.Tests.Adapters {
-    public class AutofacAdapter : IFrameworkAdapter {
+    public class AutofacAdapter : FrameworkAdapterBase {
         #region PropertyInjectionModule
 
         public class PropertyInjectionModule : Module {
@@ -27,23 +27,19 @@ namespace IoC.Framework.Tests.Adapters {
             builder.RegisterTypesAssignableTo<IResolvableUnregisteredService>();
         }
 
-        public void RegisterSingleton<TComponent, TService>() 
-            where TComponent : TService 
-        {
+        public override void RegisterSingleton<TComponent, TService>() {
             builder.Register<TComponent>().As<TService>().SingletonScoped();
         }
 
-        public void RegisterTransient<TComponent, TService>() 
-            where TComponent : TService 
-        {
+        public override void RegisterTransient<TComponent, TService>() {
             builder.Register<TComponent>().As<TService>().FactoryScoped();
         }
 
-        public void Register<TService>(TService instance) {
+        public override void Register<TService>(TService instance) {
             builder.Register(instance).As<TService>();
         }
 
-        public void Register(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type componentType, Type serviceType) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
                 builder.RegisterGeneric(componentType).As(serviceType);
@@ -53,30 +49,21 @@ namespace IoC.Framework.Tests.Adapters {
             }
         }
 
-        public void RegisterAll(Assembly assembly) {
+        public override void RegisterAll(Assembly assembly) {
             builder.RegisterTypesFromAssembly(assembly);
         }
 
-        public TService Resolve<TService>() {
-            return this.Resolve<TService>(new Dictionary<string, object>());
-        }
-
-        public TService Resolve<TService>(IDictionary<string, object> additionalArguments) {
-            var parameters = (
-                from pair in additionalArguments
-                select new Parameter(pair.Key, pair.Value)
-            ).ToArray();
-
+        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             container = container ?? builder.Build();
-            return container.Resolve<TService>(parameters);
+
+            // ashmind: will figure this out later
+            throw new NotImplementedException();
         }
 
-        public TComponent Create<TComponent>() {
-            return this.Resolve<TComponent>();
-        }
+        protected override object DoGetInstance(Type serviceType, string key) {
+            container = container ?? builder.Build();
 
-        public bool CrashesOnRecursion {
-            get { return false; }
+            return string.IsNullOrEmpty(key) ? container.Resolve(serviceType) : container.Resolve(key);
         }
     }
 }

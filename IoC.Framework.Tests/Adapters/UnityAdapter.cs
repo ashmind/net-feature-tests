@@ -6,46 +6,42 @@ using System.Reflection;
 using Microsoft.Practices.Unity;
 
 namespace IoC.Framework.Tests.Adapters {
-    public class UnityAdapter : IFrameworkAdapter {
+    public class UnityAdapter : FrameworkAdapterBase {
         private readonly IUnityContainer container = new UnityContainer();
 
-        public void RegisterSingleton<TComponent, TService>() 
-            where TComponent : TService 
-        {
+        public override void RegisterSingleton<TComponent, TService>() {
             container.RegisterType<TService, TComponent>(new ContainerControlledLifetimeManager());
         }
 
-        public void RegisterTransient<TComponent, TService>() 
-            where TComponent : TService 
-        {
+        public override void RegisterTransient<TComponent, TService>() {
             container.RegisterType<TService, TComponent>(new TransientLifetimeManager());
         }
 
-        public void Register(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type componentType, Type serviceType) {
             container.RegisterType(serviceType, componentType);
         }
 
-        public void Register<TService>(TService instance) {
+        public override void Register<TService>(TService instance) {
             container.RegisterInstance(instance);
         }
 
-        public void RegisterAll(Assembly assembly) {
+        public override void RegisterAll(Assembly assembly) {
             throw new NotSupportedException();
         }
 
-        public TService Resolve<TService>() {
-            return container.Resolve<TService>();
+        protected override object DoGetInstance(Type serviceType, string key) {
+            return container.Resolve(serviceType, key);
         }
 
-        public TService Resolve<TService>(IDictionary<string, object> additionalArguments) {
-            throw new NotSupportedException();
+        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
+            return container.ResolveAll(serviceType);
         }
 
-        public TComponent Create<TComponent>() {
-            return this.Resolve<TComponent>();
+        public override TComponent Create<TComponent>() {
+            return container.Resolve<TComponent>();
         }
 
-        public bool CrashesOnRecursion {
+        public override bool CrashesOnRecursion {
             get { return true; }
         }
     }

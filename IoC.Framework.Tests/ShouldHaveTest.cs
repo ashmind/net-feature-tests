@@ -14,7 +14,7 @@ namespace IoC.Framework.Tests {
         [Test]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Register<TestComponentWithSimplePropertyDependency>();
-            var component = framework.Resolve<TestComponentWithSimplePropertyDependency>();
+            var component = framework.GetLocator().GetInstance<TestComponentWithSimplePropertyDependency>();
 
             Assert.IsNull(component.Service);
         }
@@ -45,7 +45,7 @@ namespace IoC.Framework.Tests {
             framework.Register<IndependentTestComponent, ITestService>();
             framework.Register<TTestComponent>();
 
-            var resolved = framework.Resolve<TTestComponent>();
+            var resolved = framework.GetLocator().GetInstance<TTestComponent>();
 
             Assert.IsNotNull(resolved);
             Assert.IsNotNull(resolved.Services, "Dependency is null after resolution.");
@@ -68,7 +68,7 @@ namespace IoC.Framework.Tests {
             framework.Register<IndependentTestComponent, ITestService>();
             framework.Register<TestComponentWithMultipleConstructors>();
 
-            var resolved = framework.Resolve<TestComponentWithMultipleConstructors>();
+            var resolved = framework.GetLocator().GetInstance<TestComponentWithMultipleConstructors>();
 
             Assert.IsNotNull(resolved);
             Assert.AreEqual(
@@ -78,22 +78,9 @@ namespace IoC.Framework.Tests {
         }
 
         [Test]
-        public void SupportsAdditionalArguments(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent, ITestService>();
-            framework.Register<TestComponentWithAdditionalArgument>();
-
-            var argument = new object();            
-            var resolved = framework.Resolve<TestComponentWithAdditionalArgument>(new Dictionary<string, object> {
-                { "additionalArgument", argument }
-            });
-
-            Assert.AreSame(argument, resolved.AdditionalArgument);
-        }
-
-        [Test]
         public void SupportsOpenGenericTypes(IFrameworkAdapter framework) {
-            framework.Register(typeof(GenericTestComponent<>), typeof(IGenericTestService<>));
-            var resolved = framework.Resolve<IGenericTestService<int>>();
+            framework.RegisterTransient(typeof(GenericTestComponent<>), typeof(IGenericTestService<>));
+            var resolved = framework.GetLocator().GetInstance<IGenericTestService<int>>();
 
             Assert.IsNotNull(resolved);
         }
@@ -110,7 +97,7 @@ namespace IoC.Framework.Tests {
 
         private void AssertGivesCorrectExceptionWhenResolvingRecursive<TComponent>(IFrameworkAdapter framework) {
             try {
-                framework.Resolve<TComponent>();
+                framework.GetLocator().GetInstance<TComponent>();
             }
             catch (Exception ex) {
                 Assert.IsNotInstanceOfType(typeof(StackOverflowException), ex);

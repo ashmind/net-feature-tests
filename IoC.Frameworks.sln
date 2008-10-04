@@ -62,6 +62,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinFu", "LinFu", "{97B6B71D
 		[Libraries]\LinFu\LinFu.IoC.xml = [Libraries]\LinFu\LinFu.IoC.xml
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonServiceLocator", "CommonServiceLocator", "{7565E294-8BAA-4FAB-B2F1-4CAB10149781}"
+	ProjectSection(SolutionItems) = preProject
+		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.dll = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.dll
+		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.pdb = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.pdb
+		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -85,6 +92,7 @@ Global
 		{F4349BBE-80B6-4BAA-A79D-0ECC7E7D8657} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{5D27DCCE-6A27-4B87-A8AF-5B0BAC745049} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{97B6B71D-EEE5-4A7D-9B7F-8855FD7ABF61} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
+		{7565E294-8BAA-4FAB-B2F1-4CAB10149781} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = 

@@ -55,6 +55,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\[Libraries]\Unity\Microsoft.Practices.ObjectBuilder2.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.Practices.ServiceLocation, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\[Libraries]\Unity\Microsoft.Practices.Unity.dll</HintPath>
@@ -95,6 +99,7 @@
   <ItemGroup>
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
+    <Compile Include="Adapters\FrameworkAdapterBase.cs" />
     <Compile Include="Adapters\FrameworkAdapterExtensions.cs" />
     <Compile Include="Adapters\IResolvableUnregisteredService.cs" />
     <Compile Include="Adapters\IFrameworkAdapter.cs" />
@@ -112,7 +117,6 @@
     <Compile Include="Classes\RecursiveTestComponent1.cs" />
     <Compile Include="Classes\RecursiveTestComponent2.cs" />
     <Compile Include="Classes\TestComponentRecursingArrayDependency.cs" />
-    <Compile Include="Classes\TestComponentWithAdditionalArgument.cs" />
     <Compile Include="Classes\TestComponentWithArrayDependency.cs" />
     <Compile Include="Classes\TestComponentWithArrayPropertyDependency.cs" />
     <Compile Include="Classes\TestComponentWithMultipleConstructors.cs" />
