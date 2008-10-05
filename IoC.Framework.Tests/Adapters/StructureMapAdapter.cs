@@ -4,6 +4,7 @@ using System.Linq;
 using System.Reflection;
 
 using StructureMap;
+using StructureMap.Attributes;
 using StructureMap.Configuration.DSL;
 using StructureMap.Pipeline;
 
@@ -17,31 +18,20 @@ namespace IoC.Framework.Tests.Adapters {
             registry = new Registry();
         }
 
-        public override void RegisterSingleton<TComponent, TService>() {
-            registry.ForRequestedType<TService>()
-                    .TheDefaultIsConcreteType<TComponent>()
-                    .AsSingletons();
+        public override void RegisterSingleton(Type serviceType, Type componentType) {
+            registry.ForRequestedType(serviceType)
+                    .TheDefaultIsConcreteType(componentType)
+                    .CacheBy(InstanceScope.Singleton);
         }
 
-        public override void RegisterTransient<TComponent, TService>() {
-            registry.ForRequestedType<TService>()
-                    .TheDefaultIsConcreteType<TComponent>();
-        }
-
-        public override void RegisterTransient(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type serviceType, Type componentType) {
             registry.ForRequestedType(serviceType)
                     .TheDefaultIsConcreteType(componentType);
         }
 
-        public override void Register<TService>(TService instance) {
-            registry.ForRequestedType<TService>()
-                    .TheDefaultIs(
-                        Registry.Object(instance)
-                    );
-        }
-
-        public override void RegisterAll(Assembly assembly) {
-            registry.ScanAssemblies();
+        public override void RegisterInstance(Type serviceType, object instance) {
+            registry.ForRequestedType(serviceType)
+                    .TheDefaultIs(Registry.Object(instance));
         }
 
         private void EnsureContainer() {

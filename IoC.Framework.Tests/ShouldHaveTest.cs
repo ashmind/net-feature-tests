@@ -6,6 +6,7 @@ using System.Text.RegularExpressions;
 
 using MbUnit.Framework;
 
+using IoC.Framework.Abstraction;
 using IoC.Framework.Tests.Adapters;
 using IoC.Framework.Tests.Classes;
 
@@ -21,9 +22,9 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void CanCreateUnregisteredComponents(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent, ITestService>();
+            framework.Register<ITestService, IndependentTestComponent>();
 
-            var resolved = framework.Create<TestComponentWithSimpleConstructorDependency>();
+            var resolved = framework.CreateInstance<TestComponentWithSimpleConstructorDependency>();
 
             Assert.IsNotNull(resolved);
             Assert.IsInstanceOfType(typeof(IndependentTestComponent), resolved.Service);
@@ -42,7 +43,7 @@ namespace IoC.Framework.Tests {
         public void AssertResolvesArrayDependencyFor<TTestComponent>(IFrameworkAdapter framework)
             where TTestComponent : ITestComponentWithArrayDependency
         {
-            framework.Register<IndependentTestComponent, ITestService>();
+            framework.Register<ITestService, IndependentTestComponent>();
             framework.Register<TTestComponent>();
 
             var resolved = framework.GetLocator().GetInstance<TTestComponent>();
@@ -58,14 +59,14 @@ namespace IoC.Framework.Tests {
             AssertIsNotCrashingOnRecursion(framework);
 
             framework.Register<TestComponentWithArrayDependency>();
-            framework.Register<TestComponentRecursingArrayDependency, ITestService>();
+            framework.Register<ITestService, TestComponentRecursingArrayDependency>();
 
             AssertGivesCorrectExceptionWhenResolvingRecursive<TestComponentWithArrayDependency>(framework);
         }
 
         [Test]
         public void SelectsCorrectConstructor(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent, ITestService>();
+            framework.Register<ITestService, IndependentTestComponent>();
             framework.Register<TestComponentWithMultipleConstructors>();
 
             var resolved = framework.GetLocator().GetInstance<TestComponentWithMultipleConstructors>();
@@ -79,7 +80,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsOpenGenericTypes(IFrameworkAdapter framework) {
-            framework.RegisterTransient(typeof(GenericTestComponent<>), typeof(IGenericTestService<>));
+            framework.RegisterTransient(typeof(IGenericTestService<>), typeof(GenericTestComponent<>));
             var resolved = framework.GetLocator().GetInstance<IGenericTestService<int>>();
 
             Assert.IsNotNull(resolved);

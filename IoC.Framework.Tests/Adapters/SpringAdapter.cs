@@ -15,22 +15,16 @@ namespace IoC.Framework.Tests.Adapters {
 
         private bool contextRefreshed = false;
 
-        public override void RegisterSingleton<TComponent, TService>() {
-            this.Register(typeof(TComponent), typeof(TService), true);
+        public override void RegisterSingleton(Type serviceType, Type componentType) {
+            this.Register(componentType, serviceType, true);
         }
 
-        public override void RegisterTransient<TComponent, TService>() {
-            this.Register(typeof(TComponent), typeof(TService), false);
-        }
-
-        public override void RegisterTransient(Type componentType, Type serviceType) {
+        public override void RegisterTransient(Type serviceType, Type componentType) {
             this.Register(componentType, serviceType, false);
         }
 
-        public override void Register<TService>(TService instance) {
-            this.context.ObjectFactory.RegisterSingleton(
-                typeof(TService).AssemblyQualifiedName, instance
-            );
+        public override void RegisterInstance(Type serviceType, object instance) {
+            this.context.ObjectFactory.RegisterSingleton(serviceType.AssemblyQualifiedName, instance);
         }
 
         private void Register(Type componentType, Type serviceType, bool singleton) {
@@ -39,10 +33,6 @@ namespace IoC.Framework.Tests.Adapters {
                                                  .SetSingleton(singleton);
 
             context.RegisterObjectDefinition(serviceType.AssemblyQualifiedName, builder.ObjectDefinition);            
-        }
-
-        public override void RegisterAll(Assembly assembly) {
-            throw new NotSupportedException();
         }
 
         private void EnsureContextRefreshed() {

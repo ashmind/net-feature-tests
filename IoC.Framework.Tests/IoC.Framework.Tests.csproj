@@ -100,7 +100,6 @@
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\FrameworkAdapterBase.cs" />
-    <Compile Include="Adapters\FrameworkAdapterExtensions.cs" />
     <Compile Include="Adapters\IResolvableUnregisteredService.cs" />
     <Compile Include="Adapters\IFrameworkAdapter.cs" />
     <Compile Include="Adapters\LinFuAdapter.cs" />
@@ -127,6 +126,12 @@
     <Compile Include="MustHaveTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShouldHaveTest.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IoC.Framework.Abstraction\IoC.Framework.Abstraction.csproj">
+      <Project>{269A3B41-3BA2-4006-AA75-E252528DDD34}</Project>
+      <Name>IoC.Framework.Abstraction</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

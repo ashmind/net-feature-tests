@@ -17,37 +17,23 @@ namespace IoC.Framework.Tests.Adapters {
         // you should create your own derived Module. However, for tests
         // this will work.
         private readonly AutoWiringModule module;
-
-        private IKernel kernel;
+        private readonly IKernel kernel;
 
         public NinjectAdapter() {
             this.module = new AutoWiringModule();
             this.kernel = new StandardKernel(this.module);
         }
 
-        public override void RegisterSingleton<TComponent, TService>() {
-            module.Bind<TService>().To<TComponent>().Using<SingletonBehavior>();
+        public override void RegisterSingleton(Type serviceType, Type componentType) {
+            module.Bind(serviceType).To(componentType).Using<SingletonBehavior>();
         }
 
-        public override void RegisterTransient<TComponent, TService>() {
-            module.Bind<TService>().To<TComponent>().Using<TransientBehavior>();
+        public override void RegisterTransient(Type serviceType, Type componentType) {
+            module.Bind(serviceType).To(componentType).Using<TransientBehavior>();
         }
 
-        public override void RegisterTransient(Type componentType, Type serviceType) {
-            module.Bind(serviceType).To(componentType);
-        }
-
-        public override void Register<TService>(TService instance) {
-            module.Bind(typeof(TService)).ToConstant(instance);
-        }
-
-        public override void RegisterAll(Assembly assembly) {
-            var autoModule = new AutoModule(assembly);
-            this.kernel = new StandardKernel(this.module, autoModule);
-        }
-        
-        public override bool CrashesOnRecursion {
-            get { return true; }
+        public override void RegisterInstance(Type serviceType, object instance) {
+            module.Bind(serviceType).ToConstant(instance);
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
@@ -56,6 +42,10 @@ namespace IoC.Framework.Tests.Adapters {
 
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             throw new NotImplementedException();
+        }
+
+        public override bool CrashesOnRecursion {
+            get { return true; }
         }
     }
 }

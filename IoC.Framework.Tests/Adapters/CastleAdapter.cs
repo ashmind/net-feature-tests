@@ -10,34 +10,22 @@ namespace IoC.Framework.Tests.Adapters {
     public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
 
-        public override void RegisterSingleton<TComponent, TService>() {
-            this.Register<TComponent, TService>(LifestyleType.Singleton);
+        public override void RegisterSingleton(Type serviceType, Type componentType) {
+            this.Register(serviceType, componentType, LifestyleType.Singleton);
         }
 
-        public override void RegisterTransient<TComponent, TService>() {
-            this.Register<TComponent, TService>(LifestyleType.Transient);
-        } 
-        
-        private void Register<TComponent, TService>(LifestyleType lifestyle) {
-            // a bit awkward, one is generic and one is not
-            kernel.AddComponent<TComponent>(typeof(TService), lifestyle);
+        public override void RegisterTransient(Type serviceType, Type componentType) {
+            this.Register(serviceType, componentType, LifestyleType.Transient);
         }
-        
-        public override void RegisterTransient(Type componentType, Type serviceType) {
+
+        public override void RegisterInstance(Type serviceType, object instance) {
             // why the key is mandatory?
-            kernel.AddComponent(serviceType.ToString(), serviceType, componentType);
+            kernel.AddComponentInstance(serviceType.ToString(), serviceType, instance);
         }
-
-        public override void Register<TService>(TService instance) {
-            // Castle uses generic parameter for key generation only, which is very counterintuitive
-            // and I can not skip generic parameter -- instance is object, not TService
-            kernel.AddComponentInstance<TService>(typeof(TService), instance);
-        }
-
-        public override void RegisterAll(Assembly assembly) {
-            // I am cheating a bit here, but using a BatchRegistrationFacility would be major pain,
-            // since it is heavily configuration-based
-            throw new NotSupportedException();
+        
+        private void Register(Type serviceType, Type componentType, LifestyleType lifestyle) {
+            // why the key is mandatory?
+            kernel.AddComponent(serviceType.ToString(), serviceType, componentType,  lifestyle);
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {

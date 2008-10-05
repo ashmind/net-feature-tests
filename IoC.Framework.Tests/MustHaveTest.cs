@@ -4,6 +4,7 @@ using System.Linq;
 
 using MbUnit.Framework;
 
+using IoC.Framework.Abstraction;
 using IoC.Framework.Tests.Adapters;
 using IoC.Framework.Tests.Classes;
 
@@ -11,7 +12,7 @@ namespace IoC.Framework.Tests {
     public class MustHaveTest : FrameworkTestBase {
         [Test]
         public void ResolvesJustRegisteredService(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent, ITestService>();
+            framework.Register<ITestService, IndependentTestComponent>();
             var component = framework.GetLocator().GetInstance<ITestService>();
 
             Assert.IsNotNull(component);
@@ -27,7 +28,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsSingletons(IFrameworkAdapter framework) {
-            framework.RegisterSingleton<IndependentTestComponent, ITestService>();
+            framework.RegisterSingleton<ITestService, IndependentTestComponent>();
             var locator = framework.GetLocator();
             var instance1 = locator.GetInstance<ITestService>();
             var instance2 = locator.GetInstance<ITestService>();
@@ -37,7 +38,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsTransients(IFrameworkAdapter framework) {
-            framework.RegisterTransient<IndependentTestComponent, ITestService>();
+            framework.RegisterTransient<ITestService, IndependentTestComponent>();
             var locator = framework.GetLocator();
             var instance1 = locator.GetInstance<ITestService>();
             var instance2 = locator.GetInstance<ITestService>();
@@ -69,7 +70,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsConstructorDependency(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent, ITestService>();
+            framework.Register<ITestService, IndependentTestComponent>();
             framework.Register<TestComponentWithSimpleConstructorDependency>();
 
             var component = framework.GetLocator().GetInstance<TestComponentWithSimpleConstructorDependency>();
@@ -80,7 +81,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsPropertyDependency(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent, ITestService>();
+            framework.Register<ITestService, IndependentTestComponent>();
             framework.Register<TestComponentWithSimplePropertyDependency>();
 
             var component = framework.GetLocator().GetInstance<TestComponentWithSimplePropertyDependency>();

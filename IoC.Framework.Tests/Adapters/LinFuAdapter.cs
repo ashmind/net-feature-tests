@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
 using LinFu.IoC;
 using LinFu.IoC.Interfaces;
@@ -16,24 +15,21 @@ namespace IoC.Framework.Tests.Adapters
             _container.LoadFrom(AppDomain.CurrentDomain.BaseDirectory, "LinFu*.dll");
         }
 
-        public override void RegisterSingleton<TComponent, TService>() {
-            _container.Inject<TService>().Using<TComponent>().AsSingleton();
-        }
-
-        public override void RegisterTransient<TComponent, TService>() {
-            _container.Inject<TService>().Using<TComponent>().OncePerRequest();
-        }
-
-        public override void Register<TService>(TService instance) {
-            _container.AddService(instance);
-        }
-
-        public override void RegisterTransient(Type componentType, Type serviceType) {
+        public override void RegisterSingleton(Type serviceType, Type componentType) {
+            // how do I make it Singleton in an untyped way?
             _container.AddService(serviceType, componentType);
         }
 
-        public override void RegisterAll(Assembly assembly) {
-            _container.LoadFrom(assembly);
+        public override void RegisterTransient(Type serviceType, Type componentType) {
+            _container.AddService(serviceType, componentType);
+        }
+
+        public override void RegisterInstance(Type serviceType, object instance) {
+            // ashmind: not sure if there is a better way
+            Action<object> untyped = _container.AddService;
+            var add = untyped.Method.GetGenericMethodDefinition().MakeGenericMethod(serviceType);
+
+            add.Invoke(null, new[] { _container, instance });
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
@@ -48,8 +44,8 @@ namespace IoC.Framework.Tests.Adapters
                              .Select(info => info.Object);
         }
 
-        public override TComponent Create<TComponent>() {
-            return (TComponent) _container.AutoCreate(typeof (TComponent));
+        public override object CreateInstance(Type componentType) {
+            return _container.AutoCreate(componentType);
         }
     }
 }
