@@ -64,6 +64,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinFu", "LinFu", "{97B6B71D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonServiceLocator", "CommonServiceLocator", "{7565E294-8BAA-4FAB-B2F1-4CAB10149781}"
 	ProjectSection(SolutionItems) = preProject
+		[Libraries]\LinFu\LinFu.IoC.xml = [Libraries]\LinFu\LinFu.IoC.xml
 		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.dll = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.dll
 		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.pdb = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.pdb
 		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML

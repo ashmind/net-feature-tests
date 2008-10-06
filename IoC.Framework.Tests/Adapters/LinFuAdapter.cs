@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using LinFu.IoC;
+using LinFu.IoC.Configuration;
 using LinFu.IoC.Interfaces;
 
 namespace IoC.Framework.Tests.Adapters
@@ -16,8 +17,7 @@ namespace IoC.Framework.Tests.Adapters
         }
 
         public override void RegisterSingleton(Type serviceType, Type componentType) {
-            // how do I make it Singleton in an untyped way?
-            _container.AddService(serviceType, componentType);
+            _container.AddService(serviceType, componentType, LifecycleType.Singleton);
         }
 
         public override void RegisterTransient(Type serviceType, Type componentType) {
@@ -25,15 +25,11 @@ namespace IoC.Framework.Tests.Adapters
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
-            // ashmind: not sure if there is a better way
-            Action<object> untyped = _container.AddService;
-            var add = untyped.Method.GetGenericMethodDefinition().MakeGenericMethod(serviceType);
-
-            add.Invoke(null, new[] { _container, instance });
+            _container.AddService(serviceType, instance);
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
-            if (string.IsNullOrEmpty(key))
+            if (key == null)
                 return _container.GetService(serviceType);
 
             return _container.GetService(key, serviceType);
