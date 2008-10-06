@@ -12,7 +12,7 @@ namespace IoC.Framework.Tests {
     public class MustHaveTest : FrameworkTestBase {
         [Test]
         public void ResolvesJustRegisteredService(IFrameworkAdapter framework) {
-            framework.Register<ITestService, IndependentTestComponent>();
+            framework.Add<ITestService, IndependentTestComponent>();
             var component = framework.GetLocator().GetInstance<ITestService>();
 
             Assert.IsNotNull(component);
@@ -20,7 +20,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void ResolvesServiceJustRegisteredAsItself(IFrameworkAdapter framework) {
-            framework.Register<IndependentTestComponent>();
+            framework.Add<IndependentTestComponent>();
             var component = framework.GetLocator().GetInstance<IndependentTestComponent>();
 
             Assert.IsNotNull(component);
@@ -28,7 +28,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsSingletons(IFrameworkAdapter framework) {
-            framework.RegisterSingleton<ITestService, IndependentTestComponent>();
+            framework.AddSingleton<ITestService, IndependentTestComponent>();
             var locator = framework.GetLocator();
             var instance1 = locator.GetInstance<ITestService>();
             var instance2 = locator.GetInstance<ITestService>();
@@ -38,7 +38,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsTransients(IFrameworkAdapter framework) {
-            framework.RegisterTransient<ITestService, IndependentTestComponent>();
+            framework.AddTransient<ITestService, IndependentTestComponent>();
             var locator = framework.GetLocator();
             var instance1 = locator.GetInstance<ITestService>();
             var instance2 = locator.GetInstance<ITestService>();
@@ -49,7 +49,7 @@ namespace IoC.Framework.Tests {
         [Test]
         public void SupportsInstanceResolution(IFrameworkAdapter framework) {
             var instance = new IndependentTestComponent();
-            framework.Register<ITestService>(instance);
+            framework.Add<ITestService>(instance);
 
             var locator = framework.GetLocator();
             var resolved = locator.GetInstance<ITestService>();
@@ -60,8 +60,8 @@ namespace IoC.Framework.Tests {
         [Test]
         public void SupportsInstanceResolutionForDependency(IFrameworkAdapter framework) {
             var instance = new IndependentTestComponent();
-            framework.Register<ITestService>(instance);
-            framework.Register<TestComponentWithSimpleConstructorDependency>();
+            framework.Add<ITestService>(instance);
+            framework.Add<TestComponentWithSimpleConstructorDependency>();
 
             var dependent = framework.GetLocator().GetInstance<TestComponentWithSimpleConstructorDependency>();
 
@@ -70,8 +70,8 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsConstructorDependency(IFrameworkAdapter framework) {
-            framework.Register<ITestService, IndependentTestComponent>();
-            framework.Register<TestComponentWithSimpleConstructorDependency>();
+            framework.Add<ITestService, IndependentTestComponent>();
+            framework.Add<TestComponentWithSimpleConstructorDependency>();
 
             var component = framework.GetLocator().GetInstance<TestComponentWithSimpleConstructorDependency>();
 
@@ -81,8 +81,8 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsPropertyDependency(IFrameworkAdapter framework) {
-            framework.Register<ITestService, IndependentTestComponent>();
-            framework.Register<TestComponentWithSimplePropertyDependency>();
+            framework.Add<ITestService, IndependentTestComponent>();
+            framework.Add<TestComponentWithSimplePropertyDependency>();
 
             var component = framework.GetLocator().GetInstance<TestComponentWithSimplePropertyDependency>();
 

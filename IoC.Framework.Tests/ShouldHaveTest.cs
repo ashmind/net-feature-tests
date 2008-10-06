@@ -14,7 +14,7 @@ namespace IoC.Framework.Tests {
     public class ShouldHaveTest : FrameworkTestBase {
         [Test]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
-            framework.Register<TestComponentWithSimplePropertyDependency>();
+            framework.Add<TestComponentWithSimplePropertyDependency>();
             var component = framework.GetLocator().GetInstance<TestComponentWithSimplePropertyDependency>();
 
             Assert.IsNull(component.Service);
@@ -22,7 +22,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void CanCreateUnregisteredComponents(IFrameworkAdapter framework) {
-            framework.Register<ITestService, IndependentTestComponent>();
+            framework.Add<ITestService, IndependentTestComponent>();
 
             var resolved = framework.CreateInstance<TestComponentWithSimpleConstructorDependency>();
 
@@ -43,8 +43,8 @@ namespace IoC.Framework.Tests {
         public void AssertResolvesArrayDependencyFor<TTestComponent>(IFrameworkAdapter framework)
             where TTestComponent : ITestComponentWithArrayDependency
         {
-            framework.Register<ITestService, IndependentTestComponent>();
-            framework.Register<TTestComponent>();
+            framework.Add<ITestService, IndependentTestComponent>();
+            framework.Add<TTestComponent>();
 
             var resolved = framework.GetLocator().GetInstance<TTestComponent>();
 
@@ -58,16 +58,16 @@ namespace IoC.Framework.Tests {
         public void HandlesRecursionGracefullyForArrayDependency(IFrameworkAdapter framework) {
             AssertIsNotCrashingOnRecursion(framework);
 
-            framework.Register<TestComponentWithArrayDependency>();
-            framework.Register<ITestService, TestComponentRecursingArrayDependency>();
+            framework.Add<TestComponentWithArrayDependency>();
+            framework.Add<ITestService, TestComponentRecursingArrayDependency>();
 
             AssertGivesCorrectExceptionWhenResolvingRecursive<TestComponentWithArrayDependency>(framework);
         }
 
         [Test]
         public void SelectsCorrectConstructor(IFrameworkAdapter framework) {
-            framework.Register<ITestService, IndependentTestComponent>();
-            framework.Register<TestComponentWithMultipleConstructors>();
+            framework.Add<ITestService, IndependentTestComponent>();
+            framework.Add<TestComponentWithMultipleConstructors>();
 
             var resolved = framework.GetLocator().GetInstance<TestComponentWithMultipleConstructors>();
 
@@ -80,7 +80,7 @@ namespace IoC.Framework.Tests {
 
         [Test]
         public void SupportsOpenGenericTypes(IFrameworkAdapter framework) {
-            framework.RegisterTransient(typeof(IGenericTestService<>), typeof(GenericTestComponent<>));
+            framework.AddTransient(typeof(IGenericTestService<>), typeof(GenericTestComponent<>));
             var resolved = framework.GetLocator().GetInstance<IGenericTestService<int>>();
 
             Assert.IsNotNull(resolved);
@@ -90,8 +90,8 @@ namespace IoC.Framework.Tests {
         public void HandlesRecursionGracefully(IFrameworkAdapter framework) {
             AssertIsNotCrashingOnRecursion(framework);
 
-            framework.Register<RecursiveTestComponent1>();
-            framework.Register<RecursiveTestComponent2>();
+            framework.Add<RecursiveTestComponent1>();
+            framework.Add<RecursiveTestComponent2>();
 
             AssertGivesCorrectExceptionWhenResolvingRecursive<RecursiveTestComponent1>(framework);
         }

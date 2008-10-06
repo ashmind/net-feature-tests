@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 
 using Ninject.Core;
 using Ninject.Core.Behavior;
-using Ninject.Core.Parameters;
 using Ninject.Extensions.AutoWiring;
 
 namespace IoC.Framework.Tests.Adapters {
@@ -24,15 +22,15 @@ namespace IoC.Framework.Tests.Adapters {
             this.kernel = new StandardKernel(this.module);
         }
 
-        public override void RegisterSingleton(Type serviceType, Type componentType) {
+        public override void AddSingleton(Type serviceType, Type componentType, string key) {
             module.Bind(serviceType).To(componentType).Using<SingletonBehavior>();
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType) {
+        public override void AddTransient(Type serviceType, Type componentType, string key) {
             module.Bind(serviceType).To(componentType).Using<TransientBehavior>();
         }
 
-        public override void RegisterInstance(Type serviceType, object instance) {
+        public override void AddInstance(Type serviceType, object instance, string key) {
             module.Bind(serviceType).ToConstant(instance);
         }
 

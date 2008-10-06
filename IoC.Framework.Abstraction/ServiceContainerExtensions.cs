@@ -4,38 +4,54 @@ using System.Linq;
 
 namespace IoC.Framework.Abstraction {
     public static class ServiceContainerExtensions {
-        public static void Register<TComponent>(this IServiceContainer container) {
-            container.Register<TComponent, TComponent>();
+        public static void Add<TComponent>(this IServiceContainer container) {
+            container.Add<TComponent, TComponent>();
         }
 
-        public static void Register<TService, TComponent>(this IServiceContainer container) 
+        public static void Add<TService, TComponent>(this IServiceContainer container) 
             where TComponent : TService
         {
-            container.RegisterTransient<TService, TComponent>();
+            container.AddTransient<TService, TComponent>();
         }
 
-        public static void RegisterSingleton<TService, TComponent>(this IServiceContainer container) 
+        public static void AddSingleton(this IServiceContainer container, Type serviceType, Type componentType) {
+            container.AddSingleton(serviceType, componentType, null);
+        }
+
+        public static void AddSingleton<TService, TComponent>(this IServiceContainer container) 
             where TComponent : TService
         {
-            container.RegisterSingleton(typeof(TService), typeof(TComponent));
+            container.AddSingleton(typeof(TService), typeof(TComponent));
         }
 
-        public static void RegisterTransient<TService, TComponent>(this IServiceContainer container) 
+        public static void AddTransient(this IServiceContainer container, Type serviceType, Type componentType) {
+            container.AddTransient(serviceType, componentType, null);
+        }
+
+        public static void AddTransient<TService, TComponent>(this IServiceContainer container) 
             where TComponent : TService
         {
-            container.RegisterTransient(typeof(TService), typeof(TComponent));
+            container.AddTransient(typeof(TService), typeof(TComponent));
         }
 
-        public static void Register<TService>(this IServiceContainer container, TService instance) {
-            container.RegisterInstance(instance);
+        public static void Add<TService>(this IServiceContainer container, TService instance) {
+            container.AddInstance(instance);
         }
 
-        public static void RegisterInstance<TService>(this IServiceContainer container, TService instance) {
-            container.RegisterInstance(typeof(TService), instance);
+        public static void AddInstance(this IServiceContainer container, Type serviceType, object instance) {
+            container.AddInstance(serviceType, instance, null);
         }
 
-        public static void RegisterInstance(this IServiceContainer container, object instance) {
-            container.RegisterInstance(instance.GetType(), instance);
+        public static void AddInstance<TService>(this IServiceContainer container, TService instance, string key) {
+            container.AddInstance(typeof(TService), instance, key);
+        }
+
+        public static void AddInstance<TService>(this IServiceContainer container, TService instance) {
+            container.AddInstance(typeof(TService), instance);
+        }
+
+        public static void AddInstance(this IServiceContainer container, object instance) {
+            container.AddInstance(instance.GetType(), instance);
         }
     }
 }

@@ -18,18 +18,18 @@ namespace IoC.Framework.Tests.Adapters {
             registry = new Registry();
         }
 
-        public override void RegisterSingleton(Type serviceType, Type componentType) {
+        public override void AddSingleton(Type serviceType, Type componentType, string key) {
             registry.ForRequestedType(serviceType)
                     .TheDefaultIsConcreteType(componentType)
                     .CacheBy(InstanceScope.Singleton);
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType) {
+        public override void AddTransient(Type serviceType, Type componentType, string key) {
             registry.ForRequestedType(serviceType)
                     .TheDefaultIsConcreteType(componentType);
         }
 
-        public override void RegisterInstance(Type serviceType, object instance) {
+        public override void AddInstance(Type serviceType, object instance, string key) {
             registry.ForRequestedType(serviceType)
                     .TheDefaultIs(Registry.Object(instance));
         }
@@ -43,7 +43,7 @@ namespace IoC.Framework.Tests.Adapters {
 
         protected override object DoGetInstance(Type serviceType, string key) {
             this.EnsureContainer();
-            if (string.IsNullOrEmpty(key))
+            if (key == null)
                 return container.GetInstance(serviceType);
 
             return container.GetInstance(serviceType, key);

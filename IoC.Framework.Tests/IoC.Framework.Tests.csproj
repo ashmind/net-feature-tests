@@ -107,6 +107,7 @@
     <Compile Include="Adapters\SpringAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
+    <Compile Include="Classes\AnotherIndependentTestComponent.cs" />
     <Compile Include="Classes\IGenericTestService.cs" />
     <Compile Include="Classes\GenericTestComponent.cs" />
     <Compile Include="Classes\IndependentTestComponent.cs" />
@@ -123,6 +124,7 @@
     <Compile Include="Classes\TestComponentWithSimplePropertyDependency.cs" />
     <Compile Include="Frameworks.cs" />
     <Compile Include="FrameworkTestBase.cs" />
+    <Compile Include="MayHaveTest.cs" />
     <Compile Include="MustHaveTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShouldHaveTest.cs" />

@@ -10,26 +10,26 @@ namespace IoC.Framework.Tests.Adapters {
     public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
 
-        public override void RegisterSingleton(Type serviceType, Type componentType) {
-            this.Register(serviceType, componentType, LifestyleType.Singleton);
+        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+            this.Register(key, serviceType, componentType, LifestyleType.Singleton);
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType) {
-            this.Register(serviceType, componentType, LifestyleType.Transient);
+        public override void AddTransient(Type serviceType, Type componentType, string key) {
+            this.Register(key, serviceType, componentType, LifestyleType.Transient);
         }
 
-        public override void RegisterInstance(Type serviceType, object instance) {
-            // why the key is mandatory?
-            kernel.AddComponentInstance(serviceType.ToString(), serviceType, instance);
+        public override void AddInstance(Type serviceType, object instance, string key) {
+            key = key ?? string.Format("{0} ({1})", serviceType, instance);
+            kernel.AddComponentInstance(key, serviceType, instance);
         }
         
-        private void Register(Type serviceType, Type componentType, LifestyleType lifestyle) {
-            // why the key is mandatory?
-            kernel.AddComponent(serviceType.ToString(), serviceType, componentType,  lifestyle);
+        private void Register(string key, Type serviceType, Type componentType, LifestyleType lifestyle) {
+            key = key ?? string.Format("{0} ({1})", serviceType, componentType);
+            kernel.AddComponent(key, serviceType, componentType, lifestyle);
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
-            if (string.IsNullOrEmpty(key))
+            if (key == null)
                 return kernel.Resolve(serviceType);
 
             return kernel.Resolve(key, serviceType);
