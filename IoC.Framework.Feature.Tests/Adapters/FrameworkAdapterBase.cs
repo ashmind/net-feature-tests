@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using IoC.Framework.Abstraction;
 using Microsoft.Practices.ServiceLocation;
 
 namespace IoC.Framework.Feature.Tests.Adapters {
@@ -14,12 +14,20 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             return this.GetInstance(componentType);
         }
 
-        public virtual bool CrashesOnRecursion {
-            get { return false; }
+        public IServiceContainer CreateContainer() {
+            return this;
         }
 
-        public IServiceLocator GetLocator() {
+        public IServiceLocator CreateLocator(IServiceContainer container) {
             return this;
+        }
+
+        public IComponentFactory CreateFactory(IServiceContainer container) {
+            return this;
+        }
+
+        public virtual bool CrashesOnRecursion {
+            get { return false; }
         }
     }
 }

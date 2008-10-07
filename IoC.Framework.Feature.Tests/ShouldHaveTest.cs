@@ -15,7 +15,7 @@ namespace IoC.Framework.Feature.Tests {
         [Test]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Add<TestComponentWithSimplePropertyDependency>();
-            var component = framework.GetLocator().GetInstance<TestComponentWithSimplePropertyDependency>();
+            var component = framework.GetInstance<TestComponentWithSimplePropertyDependency>();
 
             Assert.IsNull(component.Service);
         }
@@ -46,7 +46,7 @@ namespace IoC.Framework.Feature.Tests {
             framework.Add<ITestService, IndependentTestComponent>();
             framework.Add<TTestComponent>();
 
-            var resolved = framework.GetLocator().GetInstance<TTestComponent>();
+            var resolved = framework.GetInstance<TTestComponent>();
 
             Assert.IsNotNull(resolved);
             Assert.IsNotNull(resolved.Services, "Dependency is null after resolution.");
@@ -69,7 +69,7 @@ namespace IoC.Framework.Feature.Tests {
             framework.Add<ITestService, IndependentTestComponent>();
             framework.Add<TestComponentWithMultipleConstructors>();
 
-            var resolved = framework.GetLocator().GetInstance<TestComponentWithMultipleConstructors>();
+            var resolved = framework.GetInstance<TestComponentWithMultipleConstructors>();
 
             Assert.IsNotNull(resolved);
             Assert.AreEqual(
@@ -81,7 +81,7 @@ namespace IoC.Framework.Feature.Tests {
         [Test]
         public void SupportsOpenGenericTypes(IFrameworkAdapter framework) {
             framework.AddTransient(typeof(IGenericTestService<>), typeof(GenericTestComponent<>));
-            var resolved = framework.GetLocator().GetInstance<IGenericTestService<int>>();
+            var resolved = framework.GetInstance<IGenericTestService<int>>();
 
             Assert.IsNotNull(resolved);
         }
@@ -98,7 +98,7 @@ namespace IoC.Framework.Feature.Tests {
 
         private void AssertGivesCorrectExceptionWhenResolvingRecursive<TComponent>(IFrameworkAdapter framework) {
             try {
-                framework.GetLocator().GetInstance<TComponent>();
+                framework.GetInstance<TComponent>();
             }
             catch (Exception ex) {
                 Assert.IsNotInstanceOfType(typeof(StackOverflowException), ex);

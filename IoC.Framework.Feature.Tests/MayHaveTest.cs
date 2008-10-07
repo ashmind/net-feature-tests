@@ -33,7 +33,7 @@ namespace IoC.Framework.Feature.Tests {
             framework.AddInstance<ITestService>(first, "FirstKey");
             framework.AddInstance<ITestService>(second, "SecondKey");
 
-            var resolved = framework.GetLocator().GetInstance<ITestService>("FirstKey");
+            var resolved = framework.GetInstance<ITestService>("FirstKey");
 
             Assert.AreSame(first, resolved);
         }
@@ -42,8 +42,8 @@ namespace IoC.Framework.Feature.Tests {
             add(typeof(ITestService), typeof(IndependentTestComponent), "FirstKey");
             add(typeof(ITestService), typeof(AnotherIndependentTestComponent), "SecondKey");
 
-            var firstComponent = framework.GetLocator().GetInstance<ITestService>("FirstKey");
-            var secondComponent = framework.GetLocator().GetInstance<ITestService>("SecondKey");
+            var firstComponent = framework.GetInstance<ITestService>("FirstKey");
+            var secondComponent = framework.GetInstance<ITestService>("SecondKey");
 
             Assert.IsNotNull(firstComponent);
             Assert.IsNotNull(secondComponent);
