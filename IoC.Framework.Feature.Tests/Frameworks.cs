@@ -4,6 +4,7 @@ using System.Linq;
 
 using MbUnit.Framework;
 
+using IoC.Framework.Castle;
 using IoC.Framework.Feature.Tests.Adapters;
 
 namespace IoC.Framework.Feature.Tests {
@@ -15,7 +16,7 @@ namespace IoC.Framework.Feature.Tests {
 
         [Factory]
         public IFrameworkAdapter Castle {
-            get { return new CastleAdapter(); }
+            get { return new DefaultAdapter(new CastleFramework(), false); }
         }
 
         [Factory]

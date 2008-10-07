@@ -35,14 +35,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\[Libraries]\Autofac\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="Castle.Core, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\[Libraries]\Castle\Castle.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Castle.MicroKernel, Version=1.0.3.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\[Libraries]\Castle\Castle.MicroKernel.dll</HintPath>
-    </Reference>
     <Reference Include="LinFu.IoC, Version=2.0.2.32691, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\[Libraries]\LinFu\LinFu.IoC.dll</HintPath>
@@ -98,7 +90,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\AutofacAdapter.cs" />
-    <Compile Include="Adapters\CastleAdapter.cs" />
+    <Compile Include="Adapters\DefaultAdapter.cs" />
     <Compile Include="Adapters\FrameworkAdapterBase.cs" />
     <Compile Include="Adapters\IResolvableUnregisteredService.cs" />
     <Compile Include="Adapters\IFrameworkAdapter.cs" />
@@ -130,6 +122,10 @@
     <Compile Include="ShouldHaveTest.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Bridges\IoC.Framework.Castle\IoC.Framework.Castle.csproj">
+      <Project>{435D1613-804F-4B1B-B3E0-7DE8608B9BC6}</Project>
+      <Name>IoC.Framework.Castle</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IoC.Framework.Abstraction\IoC.Framework.Abstraction.csproj">
       <Project>{269A3B41-3BA2-4006-AA75-E252528DDD34}</Project>
       <Name>IoC.Framework.Abstraction</Name>

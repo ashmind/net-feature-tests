@@ -2,26 +2,30 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using IoC.Framework.Abstraction;
+
+using Microsoft.Practices.ServiceLocation;
+
 using Castle.Core;
 using Castle.MicroKernel;
 
-namespace IoC.Framework.Feature.Tests.Adapters {
-    public class CastleAdapter : FrameworkAdapterBase {
+namespace IoC.Framework.Castle {
+    internal class CastleContainer : ServiceLocatorImplBase, IServiceContainer {
         private readonly IKernel kernel = new DefaultKernel();
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public void AddSingleton(Type serviceType, Type componentType, string key) {
             this.Register(key, serviceType, componentType, LifestyleType.Singleton);
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public void AddTransient(Type serviceType, Type componentType, string key) {
             this.Register(key, serviceType, componentType, LifestyleType.Transient);
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public void AddInstance(Type serviceType, object instance, string key) {
             key = key ?? string.Format("{0} ({1})", serviceType, instance);
             kernel.AddComponentInstance(key, serviceType, instance);
         }
-        
+
         private void Register(string key, Type serviceType, Type componentType, LifestyleType lifestyle) {
             key = key ?? string.Format("{0} ({1})", serviceType, componentType);
             kernel.AddComponent(key, serviceType, componentType, lifestyle);
