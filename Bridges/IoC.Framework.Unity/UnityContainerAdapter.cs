@@ -2,21 +2,24 @@
 using System.Collections.Generic;
 using System.Linq;
 
+using Microsoft.Practices.ServiceLocation;
 using Microsoft.Practices.Unity;
 
-namespace IoC.Framework.Feature.Tests.Adapters {
-    public class UnityAdapter : FrameworkAdapterBase {
+using IoC.Framework.Abstraction;
+
+namespace IoC.Framework.Unity {
+    internal class UnityContainerAdapter : ServiceLocatorImplBase, IServiceContainer {
         private readonly IUnityContainer container = new UnityContainer();
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public void AddSingleton(Type serviceType, Type componentType, string key) {
             container.RegisterType(serviceType, componentType, key, new ContainerControlledLifetimeManager());
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public void AddTransient(Type serviceType, Type componentType, string key) {
             container.RegisterType(serviceType, componentType, key, new TransientLifetimeManager());
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public void AddInstance(Type serviceType, object instance, string key) {
             container.RegisterInstance(serviceType, key, instance);
         }
 
@@ -26,10 +29,6 @@ namespace IoC.Framework.Feature.Tests.Adapters {
 
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             return container.ResolveAll(serviceType);
-        }
-
-        public override bool CrashesOnRecursion {
-            get { return true; }
         }
     }
 }

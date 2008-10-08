@@ -42,7 +42,7 @@ namespace IoC.Framework.Feature.Tests {
 
         [Factory]
         public IFrameworkAdapter Unity {
-            get { return new UnityAdapter(); }
+            get { return new DefaultAdapter(new CastleFramework(), true); }
         }
     }
 }

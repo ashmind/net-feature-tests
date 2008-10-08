@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
+
+using Microsoft.Practices.ServiceLocation;
 
 using IoC.Framework.Abstraction;
-using Microsoft.Practices.ServiceLocation;
 
 namespace IoC.Framework.Castle {
     public class CastleFramework : IServiceInjectionFramework {
