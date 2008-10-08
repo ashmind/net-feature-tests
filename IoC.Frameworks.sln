@@ -78,6 +78,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Castle", "Bri
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Tests", "IoC.Framework.Tests\IoC.Framework.Tests.csproj", "{F15C2222-A241-43E9-A463-8912EEAD88BB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Test.Classes", "IoC.Framework.Test.Classes\IoC.Framework.Test.Classes.csproj", "{0E280B3F-463A-4534-9338-802FA9E43761}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -100,6 +102,10 @@ Global
 		{F15C2222-A241-43E9-A463-8912EEAD88BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F15C2222-A241-43E9-A463-8912EEAD88BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F15C2222-A241-43E9-A463-8912EEAD88BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E280B3F-463A-4534-9338-802FA9E43761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E280B3F-463A-4534-9338-802FA9E43761}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E280B3F-463A-4534-9338-802FA9E43761}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E280B3F-463A-4534-9338-802FA9E43761}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

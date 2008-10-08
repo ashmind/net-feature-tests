@@ -5,6 +5,7 @@ using System.Linq;
 using Autofac;
 using Autofac.Builder;
 using Autofac.Registrars;
+using IoC.Framework.Test.Classes;
 using Module=Autofac.Builder.Module;
 
 namespace IoC.Framework.Feature.Tests.Adapters {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IoC.Framework.Feature.Tests.Adapters {
+namespace IoC.Framework.Test.Classes {
     public interface IResolvableUnregisteredService {
     }
 }

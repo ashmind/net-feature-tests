@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace IoC.Framework.Feature.Tests.Classes {
-    public class TestComponentWithArrayPropertyDependency : ITestComponentWithArrayDependency {
+namespace IoC.Framework.Test.Classes {
+    public class TestComponentWithSimplePropertyDependency {
         [Microsoft.Practices.Unity.Dependency]
         [StructureMap.Attributes.SetterProperty]
         [LinFu.IoC.Configuration.Inject]
-        public ITestService[] Services { get; set; }
+        public ITestService Service { get; set; }
     }
 }

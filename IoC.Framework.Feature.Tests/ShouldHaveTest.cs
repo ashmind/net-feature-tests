@@ -8,7 +8,7 @@ using MbUnit.Framework;
 
 using IoC.Framework.Abstraction;
 using IoC.Framework.Feature.Tests.Adapters;
-using IoC.Framework.Feature.Tests.Classes;
+using IoC.Framework.Test.Classes;
 
 namespace IoC.Framework.Feature.Tests {
     public class ShouldHaveTest : FrameworkTestBase {

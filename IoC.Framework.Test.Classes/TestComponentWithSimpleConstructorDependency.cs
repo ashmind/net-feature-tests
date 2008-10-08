@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-using IoC.Framework.Feature.Tests.Adapters;
-
-namespace IoC.Framework.Feature.Tests.Classes {
+namespace IoC.Framework.Test.Classes {
     public class TestComponentWithSimpleConstructorDependency : IResolvableUnregisteredService {
         private readonly ITestService service;
 
