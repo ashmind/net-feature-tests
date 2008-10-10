@@ -12,6 +12,32 @@ namespace IoC.Framework.Tests {
     [ProviderFactory(typeof(FrameworkFactory), typeof(IServiceInjectionFramework))]
     public class ServiceLocatorTest {
         [Test]
+        public void TestGetInstanceWorksWithoutKey(IServiceInjectionFramework framework) {
+            var container = framework.CreateContainer();
+            container.Add<ITestService, IndependentTestComponent>();
+
+            var locator = framework.CreateLocator(container);
+            var instance = locator.GetInstance<ITestService>();
+
+            Assert.IsInstanceOfType(typeof(IndependentTestComponent), instance);
+        }
+
+        [Test]
+        public void TestGetAllInstancesWorksCorrectly(IServiceInjectionFramework framework) {
+            var container = framework.CreateContainer();
+            container.Add<ITestService, IndependentTestComponent>();
+            container.Add<ITestService, AnotherIndependentTestComponent>();
+
+            var locator = framework.CreateLocator(container);
+            var instances = locator.GetAllInstances<ITestService>();
+
+            CollectionAssert.AreEquivalent(
+                instances.Select(instance => instance.GetType()).ToArray(),
+                new[] { typeof(IndependentTestComponent), typeof(AnotherIndependentTestComponent) }
+            );
+        }
+
+        [Test]
         public void TestSupportsKeysForTransients(IServiceInjectionFramework framework) {
             AssertSupportsKeysFor(framework, container => container.AddTransient);
         }
