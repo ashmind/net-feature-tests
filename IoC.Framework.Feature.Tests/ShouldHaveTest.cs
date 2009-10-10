@@ -56,7 +56,7 @@ namespace IoC.Framework.Feature.Tests {
 
         [Test]
         public void HandlesRecursionGracefullyForArrayDependency(IFrameworkAdapter framework) {
-            AssertIsNotCrashingOnRecursion(framework);
+            AssertIsNotCrashingOnListRecursion(framework);
 
             framework.Add<TestComponentWithArrayDependency>();
             framework.Add<ITestService, TestComponentRecursingArrayDependency>();
@@ -110,13 +110,30 @@ namespace IoC.Framework.Feature.Tests {
 
             Assert.Fail("Recursion was magically solved without an exception.");            
         }
+        
+        private string GetFrameworkName(IFrameworkAdapter framework) {
+            return Regex.Match(framework.GetType().Name, "(?<name>.+?)Adapter$").Groups["name"].Value;
+        }
+
+        private void AssertIsNotCrashingOnListRecursion(IFrameworkAdapter framework) {
+            AssertIsNotCrashingOnRecursion(framework);
+            if (!framework.CrashesOnListRecursion)
+                return;            
+            
+            Assert.Fail(
+                "{0} fails list recursion for now, and we have no way to retest it in each run (without process crash).",
+                GetFrameworkName(framework)
+            );
+        }
 
         private void AssertIsNotCrashingOnRecursion(IFrameworkAdapter framework) {
             if (!framework.CrashesOnRecursion)
                 return;
 
-            var name = Regex.Match(framework.GetType().Name, "(?<name>.+?)Adapter$").Groups["name"].Value;
-            Assert.Fail("{0} fails recursion for now, and we have no way to retest it in each run (without process crash).", name);
+            Assert.Fail(
+                "{0} fails recursion for now, and we have no way to retest it in each run (without process crash).",
+                GetFrameworkName(framework)
+            );
         }
     }
 }

@@ -29,5 +29,9 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         public virtual bool CrashesOnRecursion {
             get { return false; }
         }
+
+        public virtual bool CrashesOnListRecursion {
+            get { return this.CrashesOnRecursion; }
+        }
     }
 }

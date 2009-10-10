@@ -4,9 +4,11 @@ using System.Linq;
 
 using Autofac;
 using Autofac.Builder;
+using Autofac.Modules;
 using Autofac.Registrars;
-using IoC.Framework.Test.Classes;
 using Module=Autofac.Builder.Module;
+
+using IoC.Framework.Test.Classes;
 
 namespace IoC.Framework.Feature.Tests.Adapters {
     public class AutofacAdapter : FrameworkAdapterBase {
@@ -25,6 +27,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
 
         public AutofacAdapter() {
             builder.RegisterModule(new PropertyInjectionModule());
+            builder.RegisterModule(new ImplicitCollectionSupportModule());
             builder.RegisterTypesAssignableTo<IResolvableUnregisteredService>();
         }
 
@@ -68,6 +71,10 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             container = container ?? builder.Build();
 
             return string.IsNullOrEmpty(key) ? container.Resolve(serviceType) : container.Resolve(key);
+        }
+
+        public override bool CrashesOnListRecursion {
+            get { return true; }
         }
     }
 }

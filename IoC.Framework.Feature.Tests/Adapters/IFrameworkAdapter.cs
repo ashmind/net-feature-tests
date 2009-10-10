@@ -10,7 +10,12 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         /// <summary>
         /// This test was run only once because there is no way to recover from StackOverflowException.
         /// </summary>
-        bool CrashesOnRecursion { get; }
+        bool CrashesOnRecursion     { get; }
+
+        /// <summary>
+        /// This test was run only once because there is no way to recover from StackOverflowException.
+        /// </summary>
+        bool CrashesOnListRecursion { get; }
 
         IComponentFactory CreateFactory(IServiceContainer container);
     }

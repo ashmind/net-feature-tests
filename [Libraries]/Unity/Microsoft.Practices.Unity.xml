@@ -69,6 +69,84 @@
             The name specified in the constructor.
             </summary>
         </member>
+        <member name="T:Microsoft.Practices.Unity.UnityDefaultStrategiesExtension">
+            <summary>
+            This extension installs the default strategies and policies into the container
+            to implement the standard behavior of the Unity container.
+            </summary>
+            <summary>
+            This extension installs the default strategies and policies into the container
+            to implement the standard behavior of the Unity container.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.Unity.UnityContainerExtension">
+            <summary>
+            Base class for all <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> extension objects.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.Unity.IUnityContainerExtensionConfigurator">
+            <summary>
+            Base interface for all extension configuration interfaces.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.IUnityContainerExtensionConfigurator.Container">
+            <summary>
+            Retrieve the container instance that we are currently configuring.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityContainerExtension.InitializeExtension(Microsoft.Practices.Unity.ExtensionContext)">
+            <summary>
+            The container calls this method when the extension is added.
+            </summary>
+            <param name="context">A <see cref="T:Microsoft.Practices.Unity.ExtensionContext"/> instance that gives the
+            extension access to the internals of the container.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityContainerExtension.Initialize">
+            <summary>
+            Initial the container with this extension's functionality.
+            </summary>
+            <remarks>
+            When overridden in a derived class, this method will modify the given
+            <see cref="T:Microsoft.Practices.Unity.ExtensionContext"/> by adding strategies, policies, etc. to
+            install it's functions into the container.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityContainerExtension.Remove">
+            <summary>
+            Removes the extension's functions from the container.
+            </summary>
+            <remarks>
+            <para>
+            This method is called when extensions are being removed from the container. It can be
+            used to do things like disconnect event handlers or clean up member state. You do not
+            need to remove strategies or policies here; the container will do that automatically.
+            </para>
+            <para>
+            The default implementation of this method does nothing.</para>
+            </remarks>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.UnityContainerExtension.Container">
+            <summary>
+            The container this extension has been added to.
+            </summary>
+            <value>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> that this extension has been added to.</value>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.UnityContainerExtension.Context">
+            <summary>
+            The <see cref="T:Microsoft.Practices.Unity.ExtensionContext"/> object used to manipulate
+            the inner state of the container.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityDefaultStrategiesExtension.SetDynamicBuilderMethodCreatorPolicy">
+            <summary>
+            Add the correct <see cref="T:Microsoft.Practices.ObjectBuilder2.IDynamicBuilderMethodCreatorPolicy"/> to the policy
+            set. This version adds the appropriate policy for running on the desktop CLR.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityDefaultStrategiesExtension.Initialize">
+            <summary>
+            Add the default ObjectBuilder strategies &amp; policies to the container.
+            </summary>
+        </member>
         <member name="T:Microsoft.Practices.Unity.ExtensionContext">
             <summary>
             The <see cref="T:Microsoft.Practices.Unity.ExtensionContext"/> class provides the means for extension objects
@@ -127,7 +205,7 @@
         </member>
         <member name="E:Microsoft.Practices.Unity.ExtensionContext.Registering">
             <summary>
-            This event is raised when the <see cref="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager)"/> method,
+            This event is raised when the <see cref="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])"/> method,
             or one of its overloads, is called.
             </summary>
         </member>
@@ -135,16 +213,6 @@
             <summary>
             This event is raised when the <see cref="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance(System.Type,System.String,System.Object,Microsoft.Practices.Unity.LifetimeManager)"/> method,
             or one of its overloads, is called.
-            </summary>
-        </member>
-        <member name="T:Microsoft.Practices.Unity.IUnityContainerExtensionConfigurator">
-            <summary>
-            Base interface for all extension configuration interfaces.
-            </summary>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.IUnityContainerExtensionConfigurator.Container">
-            <summary>
-            Retrieve the container instance that we are currently configuring.
             </summary>
         </member>
         <member name="T:Microsoft.Practices.Unity.NamedEventArgs">
@@ -238,51 +306,140 @@
             this instance.
             </summary>
         </member>
-        <member name="T:Microsoft.Practices.Unity.UnityContainerExtension">
+        <member name="T:Microsoft.Practices.Unity.GenericParameter">
             <summary>
-            Base class for all <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> extension objects.
+            A <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/> that lets you specify that
+            an instance of a generic type parameter should be resolved.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerExtension.InitializeExtension(Microsoft.Practices.Unity.ExtensionContext)">
+        <member name="T:Microsoft.Practices.Unity.InjectionParameterValue">
             <summary>
-            The container calls this method when the extension is added.
+            Base type for objects that are used to configure parameters for
+            constructor or method injection, or for getting the value to
+            be injected into a property.
             </summary>
-            <param name="context">A <see cref="T:Microsoft.Practices.Unity.ExtensionContext"/> instance that gives the
-            extension access to the internals of the container.</param>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerExtension.Initialize">
+        <member name="M:Microsoft.Practices.Unity.InjectionParameterValue.MatchesType(System.Type)">
             <summary>
-            Initial the container with this extension's functionality.
+            Test to see if this parameter value has a matching type for the given type.
             </summary>
-            <remarks>
-            When overridden in a derived class, this method will modify the given
-            <see cref="T:Microsoft.Practices.Unity.ExtensionContext"/> by adding strategies, policies, etc. to
-            install it's functions into the container.</remarks>
+            <param name="t">Type to check.</param>
+            <returns>True if this parameter value is compatible with type <paramref name="t"/>,
+            false if not.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerExtension.Remove">
+        <member name="M:Microsoft.Practices.Unity.InjectionParameterValue.GetResolverPolicy(System.Type)">
             <summary>
-            Removes the extension's functions from the container.
+            Return a <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> instance that will
+            return this types value for the parameter.
             </summary>
-            <remarks>
-            <para>
-            This method is called when extensions are being removed from the container. It can be
-            used to do things like disconnect event handlers or clean up member state. You do not
-            need to remove strategies or policies here; the container will do that automatically.
-            </para>
-            <para>
-            The default implementation of this method does nothing.</para>
-            </remarks>
+            <param name="typeToBuild">Type that contains the member that needs this parameter. Used
+            to resolve open generic parameters.</param>
+            <returns>The <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.</returns>
         </member>
-        <member name="P:Microsoft.Practices.Unity.UnityContainerExtension.Container">
+        <member name="M:Microsoft.Practices.Unity.InjectionParameterValue.ToParameters(System.Object[])">
             <summary>
-            The container this extension has been added to.
+            Convert the given set of arbitrary values to a sequence of InjectionParameterValue
+            objects. The rules are: If it's already an InjectionParameterValue, return it. If
+            it's a Type, return a ResolvedParameter object for that type. Otherwise return
+            an InjectionParameter object for that value.
             </summary>
-            <value>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> that this extension has been added to.</value>
+            <param name="values">The values to build the sequence from.</param>
+            <returns>The resulting converted sequence.</returns>
         </member>
-        <member name="P:Microsoft.Practices.Unity.UnityContainerExtension.Context">
+        <member name="M:Microsoft.Practices.Unity.InjectionParameterValue.ToParameter(System.Object)">
             <summary>
-            The <see cref="T:Microsoft.Practices.Unity.ExtensionContext"/> object used to manipulate
-            the inner state of the container.
+            Convert an arbitrary value to an InjectionParameterValue object. The rules are: 
+            If it's already an InjectionParameterValue, return it. If it's a Type, return a
+            ResolvedParameter object for that type. Otherwise return an InjectionParameter
+            object for that value.
+            </summary>
+            <param name="value">The value to convert.</param>
+            <returns>The resulting <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.InjectionParameterValue.ParameterTypeName">
+            <summary>
+            Name for the type represented by this <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/>.
+            This may be an actual type name or a generic argument name.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.GenericParameter.#ctor(System.String)">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.Unity.GenericParameter"/> instance that specifies
+            that the given named generic parameter should be resolved.
+            </summary>
+            <param name="genericParameterName">The generic parameter name to resolve.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.GenericParameter.#ctor(System.String,System.String)">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.Unity.GenericParameter"/> instance that specifies
+            that the given named generic parameter should be resolved.
+            </summary>
+            <param name="genericParameterName">The generic parameter name to resolve.</param>
+            <param name="resolutionKey">name to use when looking up in the container.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.GenericParameter.MatchesType(System.Type)">
+            <summary>
+            Test to see if this parameter value has a matching type for the given type.
+            </summary>
+            <param name="t">Type to check.</param>
+            <returns>True if this parameter value is compatible with type <paramref name="t"/>,
+            false if not.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.GenericParameter.GetResolverPolicy(System.Type)">
+            <summary>
+            Return a <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> instance that will
+            return this types value for the parameter.
+            </summary>
+            <param name="typeToBuild">Type that contains the member that needs this parameter. Used
+            to resolve open generic parameters.</param>
+            <returns>The <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.GenericParameter.ParameterTypeName">
+            <summary>
+            Name for the type represented by this <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/>.
+            This may be an actual type name or a generic argument name.
+            </summary>
+        </member>
+        <member name="T:Microsoft.Practices.Unity.GenericResolvedArrayParameter">
+            <summary>
+            A <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/> that lets you specify that
+            an array containing the registered instances of a generic type parameter 
+            should be resolved.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.GenericResolvedArrayParameter.#ctor(System.String,System.Object[])">
+            <summary>
+            Create a new <see cref="T:Microsoft.Practices.Unity.GenericResolvedArrayParameter"/> instance that specifies
+            that the given named generic parameter should be resolved.
+            </summary>
+            <param name="genericParameterName">The generic parameter name to resolve.</param>
+            <param name="elementValues">The values for the elements, that will
+            be converted to <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/> objects.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.GenericResolvedArrayParameter.MatchesType(System.Type)">
+            <summary>
+            Test to see if this parameter value has a matching type for the given type.
+            </summary>
+            <param name="t">Type to check.</param>
+            <returns>True if this parameter value is compatible with type <paramref name="t"/>,
+            false if not.</returns>
+            <remarks>A type is considered compatible if it is an array type of rank one
+            and its element type is a generic type parameter with a name matching this generic
+            parameter name configured for the receiver.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.GenericResolvedArrayParameter.GetResolverPolicy(System.Type)">
+            <summary>
+            Return a <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> instance that will
+            return this types value for the parameter.
+            </summary>
+            <param name="typeToBuild">Type that contains the member that needs this parameter. Used
+            to resolve open generic parameters.</param>
+            <returns>The <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.</returns>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.GenericResolvedArrayParameter.ParameterTypeName">
+            <summary>
+            Name for the type represented by this <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/>.
+            This may be an actual type name or a generic argument name.
             </summary>
         </member>
         <member name="T:Microsoft.Practices.Unity.InjectedMembers">
@@ -414,6 +571,15 @@
             <param name="name">Name used to resolve the type object.</param>
             <param name="policies">Policy list to add policies to.</param>
         </member>
+        <member name="M:Microsoft.Practices.Unity.InjectionMethod.MethodNameMatches(System.Reflection.MemberInfo,System.String)">
+            <summary>
+            A small function to handle name matching. You can override this
+            to do things like case insensitive comparisons.
+            </summary>
+            <param name="targetMethod">MethodInfo for the method you're checking.</param>
+            <param name="nameToMatch">Name of the method you're looking for.</param>
+            <returns>True if a match, false if not.</returns>
+        </member>
         <member name="T:Microsoft.Practices.Unity.InjectionParameter">
             <summary>
             A class that holds on to the given value and provides
@@ -421,43 +587,36 @@
             when the container is configured.
             </summary>
         </member>
-        <member name="T:Microsoft.Practices.Unity.InjectionParameterValue">
+        <member name="T:Microsoft.Practices.Unity.TypedInjectionValue">
             <summary>
-            Base type for objects that are used to configure parameters for
-            constructor or method injection, or for getting the value to
-            be injected into a property.
+            A base class for implementing <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/> classes
+            that deal in explicit types.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.InjectionParameterValue.GetResolverPolicy">
+        <member name="M:Microsoft.Practices.Unity.TypedInjectionValue.#ctor(System.Type)">
             <summary>
-            Return a <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> instance that will
-            return this types value for the parameter.
+            Create a new <see cref="T:Microsoft.Practices.Unity.TypedInjectionValue"/> that exposes
+            information about the given <paramref name="parameterType"/>.
             </summary>
-            <returns>The <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.</returns>
+            <param name="parameterType">Type of the parameter.</param>
         </member>
-        <member name="M:Microsoft.Practices.Unity.InjectionParameterValue.ToParameters(System.Object[])">
+        <member name="M:Microsoft.Practices.Unity.TypedInjectionValue.MatchesType(System.Type)">
             <summary>
-            Convert the given set of arbitrary values to a sequence of InjectionParameterValue
-            objects. The rules are: If it's already an InjectionParameterValue, return it. If
-            it's a Type, return a ResolvedParameter object for that type. Otherwise return
-            an InjectionParameter object for that value.
+            Test to see if this parameter value has a matching type for the given type.
             </summary>
-            <param name="values">The values to build the sequence from.</param>
-            <returns>The resulting converted sequence.</returns>
+            <param name="t">Type to check.</param>
+            <returns>True if this parameter value is compatible with type <paramref name="t"/>,
+            false if not.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.InjectionParameterValue.ToParameter(System.Object)">
-            <summary>
-            Convert an arbitrary value to an InjectionParameterValue object. The rules are: 
-            If it's already an InjectionParameterValue, return it. If it's a Type, return a
-            ResolvedParameter object for that type. Otherwise return an InjectionParameter
-            object for that value.
-            </summary>
-            <param name="value">The value to convert.</param>
-            <returns>The resulting <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/>.</returns>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.InjectionParameterValue.ParameterType">
+        <member name="P:Microsoft.Practices.Unity.TypedInjectionValue.ParameterType">
             <summary>
             The type of parameter this object represents.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.TypedInjectionValue.ParameterTypeName">
+            <summary>
+            Name for the type represented by this <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/>.
+            This may be an actual type name or a generic argument name.
             </summary>
         </member>
         <member name="M:Microsoft.Practices.Unity.InjectionParameter.#ctor(System.Object)">
@@ -476,17 +635,14 @@
             <param name="parameterType">Type of the parameter.</param>
             <param name="parameterValue">Value of the parameter</param>
         </member>
-        <member name="M:Microsoft.Practices.Unity.InjectionParameter.GetResolverPolicy">
+        <member name="M:Microsoft.Practices.Unity.InjectionParameter.GetResolverPolicy(System.Type)">
             <summary>
             Return a <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> instance that will
             return this types value for the parameter.
             </summary>
+            <param name="typeToBuild">Type that contains the member that needs this parameter. Used
+            to resolve open generic parameters.</param>
             <returns>The <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.</returns>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.InjectionParameter.ParameterType">
-            <summary>
-            The type of parameter this object represents.
-            </summary>
         </member>
         <member name="T:Microsoft.Practices.Unity.InjectionParameter`1">
             <summary>
@@ -534,14 +690,72 @@
             <param name="name">Name used to resolve the type object.</param>
             <param name="policies">Policy list to add policies to.</param>
         </member>
+        <member name="T:Microsoft.Practices.Unity.ResolvedArrayParameter">
+            <summary>
+            A class that stores a type, and generates a 
+            resolver object that resolves all the named instances or the
+            type registered in a container.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ResolvedArrayParameter.#ctor(System.Type,System.Object[])">
+            <summary>
+            Construct a new <see cref="T:Microsoft.Practices.Unity.ResolvedArrayParameter"/> that
+            resolves to the given element type and collection of element values.
+            </summary>
+            <param name="elementType">The type of elements to resolve.</param>
+            <param name="elementValues">The values for the elements, that will
+            be converted to <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/> objects.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ResolvedArrayParameter.#ctor(System.Type,System.Type,System.Object[])">
+            <summary>
+            Construct a new <see cref="T:Microsoft.Practices.Unity.ResolvedArrayParameter"/> that
+            resolves to the given array and element types and collection of element values.
+            </summary>
+            <param name="arrayParameterType">The type for the array of elements to resolve.</param>
+            <param name="elementType">The type of elements to resolve.</param>
+            <param name="elementValues">The values for the elements, that will
+            be converted to <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/> objects.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ResolvedArrayParameter.GetResolverPolicy(System.Type)">
+            <summary>
+            Return a <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> instance that will
+            return this types value for the parameter.
+            </summary>
+            <param name="typeToBuild">Type that contains the member that needs this parameter. Used
+            to resolve open generic parameters.</param>
+            <returns>The <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.</returns>
+        </member>
+        <member name="T:Microsoft.Practices.Unity.ResolvedArrayParameter`1">
+            <summary>
+            A generic version of <see cref="T:Microsoft.Practices.Unity.ResolvedArrayParameter"/> for convenience
+            when creating them by hand.
+            </summary>
+            <typeparam name="TElement">Type of the elements for the array of the parameter.</typeparam>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ResolvedArrayParameter`1.#ctor(System.Object[])">
+            <summary>
+            Construct a new <see cref="T:Microsoft.Practices.Unity.ResolvedArrayParameter`1"/> that
+            resolves to the given element generic type with the given element values.
+            </summary>
+            <param name="elementValues">The values for the elements, that will
+            be converted to <see cref="T:Microsoft.Practices.Unity.InjectionParameterValue"/> objects.</param>
+        </member>
         <member name="T:Microsoft.Practices.Unity.IUnityContainer">
             <summary>
             Interface defining the behavior of the Unity dependency injection container.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``1(Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container.
+            Register a type with specific members to be injected.
+            </summary>
+            <typeparam name="T">Type this registration is for.</typeparam>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2(Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a type mapping with the container.
             </summary>
             <remarks>
             <para>
@@ -555,22 +769,24 @@
             </remarks>
             <typeparam name="TFrom"><see cref="T:System.Type"/> that will be requested.</typeparam>
             <typeparam name="TTo"><see cref="T:System.Type"/> that will actually be returned.</typeparam>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2(Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2(Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container, where the created instances will use
+            Register a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
             </summary>
             <typeparam name="TFrom"><see cref="T:System.Type"/> that will be requested.</typeparam>
             <typeparam name="TTo"><see cref="T:System.Type"/> that will actually be returned.</typeparam>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2(System.String)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2(System.String,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container.
+            Register a type mapping with the container.
             </summary>
             <remarks>
             This method is used to tell the container that when asked for type <typeparamref name="TFrom"/>,
@@ -580,11 +796,12 @@
             <typeparam name="TFrom"><see cref="T:System.Type"/> that will be requested.</typeparam>
             <typeparam name="TTo"><see cref="T:System.Type"/> that will actually be returned.</typeparam>
             <param name="name">Name of this mapping.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2(System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``2(System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container, where the created instances will use
+            Register a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
             </summary>
             <typeparam name="TFrom"><see cref="T:System.Type"/> that will be requested.</typeparam>
@@ -592,32 +809,53 @@
             <param name="name">Name to use for registration, null if a default registration.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``1(Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``1(Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type with the container.
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type with the container.
             No type mapping is performed for this type.
             </summary>
             <typeparam name="T">The type to apply the <paramref name="lifetimeManager"/> to.</typeparam>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``1(System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``1(System.String,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type with the container.
+            No type mapping is performed for this type.
+            </summary>
+            <typeparam name="T">The type to configure injection on.</typeparam>
+            <param name="name">Name that will be used to request the type.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType``1(System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
             No type mapping is performed for this type.
             </summary>
             <typeparam name="T">The type to apply the <paramref name="lifetimeManager"/> to.</typeparam>
             <param name="name">Name that will be used to request the type.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container.
+            Register a type with specific members to be injected.
+            </summary>
+            <param name="t">Type this registration is for.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a type mapping with the container.
             </summary>
             <remarks>
             <para>
@@ -631,11 +869,12 @@
             </remarks>
             <param name="from"><see cref="T:System.Type"/> that will be requested.</param>
             <param name="to"><see cref="T:System.Type"/> that will actually be returned.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,System.String)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container.
+            Register a type mapping with the container.
             </summary>
             <remarks>
             This method is used to tell the container that when asked for type <paramref name="from"/>,
@@ -645,43 +884,57 @@
             <param name="from"><see cref="T:System.Type"/> that will be requested.</param>
             <param name="to"><see cref="T:System.Type"/> that will actually be returned.</param>
             <param name="name">Name to use for registration, null if a default registration.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container, where the created instances will use
+            Register a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
             </summary>
             <param name="from"><see cref="T:System.Type"/> that will be requested.</param>
             <param name="to"><see cref="T:System.Type"/> that will actually be returned.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
             No type mapping is performed for this type.
             </summary>
             <param name="t">The <see cref="T:System.Type"/> to apply the <paramref name="lifetimeManager"/> to.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.String,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
+            No type mapping is performed for this type.
+            </summary>
+            <param name="t">The <see cref="T:System.Type"/> to configure in the container.</param>
+            <param name="name">Name to use for registration, null if a default registration.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
             No type mapping is performed for this type.
             </summary>
             <param name="t">The <see cref="T:System.Type"/> to apply the <paramref name="lifetimeManager"/> to.</param>
             <param name="name">Name to use for registration, null if a default registration.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
-            RegisterType a type mapping with the container, where the created instances will use
+            Register a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
             </summary>
             <param name="from"><see cref="T:System.Type"/> that will be requested.</param>
@@ -689,11 +942,12 @@
             <param name="name">Name to use for registration, null if a default registration.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance``1(``0)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -710,7 +964,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance``1(``0,Microsoft.Practices.Unity.LifetimeManager)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -730,7 +984,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance``1(System.String,``0)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -748,7 +1002,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance``1(System.String,``0,Microsoft.Practices.Unity.LifetimeManager)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -766,7 +1020,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance(System.Type,System.Object)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -783,7 +1037,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance(System.Type,System.Object,Microsoft.Practices.Unity.LifetimeManager)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -803,7 +1057,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance(System.Type,System.String,System.Object)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -821,7 +1075,7 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.IUnityContainer.RegisterInstance(System.Type,System.String,System.Object,Microsoft.Practices.Unity.LifetimeManager)">
             <summary>
-            RegisterType an instance with the container.
+            Register an instance with the container.
             </summary>
             <remarks>
             <para>
@@ -1056,6 +1310,24 @@
             the instance is disposed with it.
             </summary>
         </member>
+        <member name="T:Microsoft.Practices.Unity.SynchronizedLifetimeManager">
+            <summary>
+            Base class for Lifetime managers which need to synchronize calls to
+            <see cref="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.GetValue"/>.
+            </summary>
+            <remarks>
+            <para>
+            The purpose of this class is to provide a basic implementation of the lifetime manager synchronization pattern.
+            </para>
+            <para>
+            Calls to the <see cref="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.GetValue"/> method of a <see cref="T:Microsoft.Practices.Unity.SynchronizedLifetimeManager"/> 
+            instance acquire a lock, and if the instance has not been initialized with a value yet the lock will only be released 
+            when such an initialization takes place by calling the <see cref="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.SetValue(System.Object)"/> method or if 
+            the build request which resulted in the call to the GetValue method fails.
+            </para>
+            </remarks>
+            <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>
+        </member>
         <member name="T:Microsoft.Practices.Unity.LifetimeManager">
             <summary>
             Base class for Lifetime managers - classes that control how
@@ -1079,13 +1351,62 @@
             Remove the given object from backing store.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.ContainerControlledLifetimeManager.GetValue">
+        <member name="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.GetValue">
+            <summary>
+            Retrieve a value from the backing store associated with this Lifetime policy.
+            </summary>
+            <returns>the object desired, or null if no such object is currently stored.</returns>
+            <remarks>Calls to this method acquire a lock which is released only if a non-null value
+            has been set for the lifetime manager.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.SynchronizedGetValue">
+            <summary>
+            Performs the actual retrieval of a value from the backing store associated 
+            with this Lifetime policy.
+            </summary>
+            <returns>the object desired, or null if no such object is currently stored.</returns>
+            <remarks>This method is invoked by <see cref="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.GetValue"/>
+            after it has acquired its lock.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.SetValue(System.Object)">
+            <summary>
+            Stores the given value into backing store for retrieval later.
+            </summary>
+            <param name="newValue">The object being stored.</param>
+            <remarks>Setting a value will attempt to release the lock acquired by 
+            <see cref="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.GetValue"/>.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.SynchronizedSetValue(System.Object)">
+            <summary>
+            Performs the actual storage of the given value into backing store for retrieval later.
+            </summary>
+            <param name="newValue">The object being stored.</param>
+            <remarks>This method is invoked by <see cref="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.SetValue(System.Object)"/>
+            before releasing its lock.</remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.RemoveValue">
+            <summary>
+            Remove the given object from backing store.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.SynchronizedLifetimeManager.Recover">
+            <summary>
+            A method that does whatever is needed to clean up
+            as part of cleaning up after an exception.
+            </summary>
+            <remarks>
+            Don't do anything that could throw in this method,
+            it will cause later recover operations to get skipped
+            and play real havok with the stack trace.
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ContainerControlledLifetimeManager.SynchronizedGetValue">
             <summary>
             Retrieve a value from the backing store associated with this Lifetime policy.
             </summary>
             <returns>the object desired, or null if no such object is currently stored.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.ContainerControlledLifetimeManager.SetValue(System.Object)">
+        <member name="M:Microsoft.Practices.Unity.ContainerControlledLifetimeManager.SynchronizedSetValue(System.Object)">
             <summary>
             Stores the given value into backing store for retrieval later.
             </summary>
@@ -1107,17 +1428,6 @@
             Standard Dispose pattern implementation. Not needed, but it keeps FxCop happy.
             </summary>
             <param name="disposing">Always true, since we don't have a finalizer.</param>
-        </member>
-        <member name="M:Microsoft.Practices.Unity.ContainerControlledLifetimeManager.Recover">
-            <summary>
-            A method that does whatever is needed to clean up
-            as part of cleaning up after an exception.
-            </summary>
-            <remarks>
-            Don't do anything that could throw in this method,
-            it will cause later recover operations to get skipped
-            and play real havok with the stack trace.
-            </remarks>
         </member>
         <member name="T:Microsoft.Practices.Unity.ExternallyControlledLifetimeManager">
             <summary>
@@ -1164,6 +1474,43 @@
             </summary>
             <returns>The new instance.</returns>
         </member>
+        <member name="T:Microsoft.Practices.Unity.PerThreadLifetimeManager">
+            <summary>
+            A <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that holds the instances given to it, 
+            keeping one instance per thread.
+            </summary>
+            <remarks>
+            <para>
+            This LifetimeManager does not dispose the instances it holds.
+            </para>
+            </remarks>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.PerThreadLifetimeManager.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:Microsoft.Practices.Unity.PerThreadLifetimeManager"/> class.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.PerThreadLifetimeManager.GetValue">
+            <summary>
+            Retrieve a value from the backing store associated with this Lifetime policy for the 
+            current thread.
+            </summary>
+            <returns>the object desired, or <see langword="null"/> if no such object is currently 
+            stored for the current thread.</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.PerThreadLifetimeManager.SetValue(System.Object)">
+            <summary>
+            Stores the given value into backing store for retrieval later when requested
+            in the current thread.
+            </summary>
+            <param name="newValue">The object being stored.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.PerThreadLifetimeManager.RemoveValue">
+            <summary>
+            Remove the given object from backing store.
+            </summary>
+            <remarks>Not implemented for this lifetime manager.</remarks>
+        </member>
         <member name="T:Microsoft.Practices.Unity.TransientLifetimeManager">
             <summary>
             An <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> implementation that does nothing,
@@ -1186,6 +1533,18 @@
             <summary>
             Remove the given object from backing store.
             </summary>
+        </member>
+        <member name="T:Microsoft.Practices.Unity.ArrayResolutionStrategy">
+            <summary>
+            This strategy implements the logic that will call container.ResolveAll
+            when an array parameter is detected.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ArrayResolutionStrategy.PreBuildUp(Microsoft.Practices.ObjectBuilder2.IBuilderContext)">
+            <summary>
+            Do the PreBuildUp stage of construction. This is where the actual work is performed.
+            </summary>
+            <param name="context">Current build context.</param>
         </member>
         <member name="T:Microsoft.Practices.Unity.ObjectBuilder.DefaultUnityConstructorSelectorPolicy">
             <summary>
@@ -1285,6 +1644,29 @@
             The name that this resolver resolves.
             </summary>
         </member>
+        <member name="T:Microsoft.Practices.Unity.ResolvedArrayWithElementsResolverPolicy">
+            <summary>
+            An implementation of <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> that resolves to
+            to an array populated with the values that result from resolving other instances
+            of <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ResolvedArrayWithElementsResolverPolicy.#ctor(System.Type,Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy[])">
+            <summary>
+            Create an instance of <see cref="T:Microsoft.Practices.Unity.ResolvedArrayWithElementsResolverPolicy"/>
+            with the given type and a collection of <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>
+            instances to use when populating the result.
+            </summary>
+            <param name="elementType">The type.</param>
+            <param name="elementPolicies">The resolver policies to use when populating an array.</param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.ResolvedArrayWithElementsResolverPolicy.Resolve(Microsoft.Practices.ObjectBuilder2.IBuilderContext)">
+            <summary>
+            Resolve the value for a dependency.
+            </summary>
+            <param name="context">Current build context.</param>
+            <returns>An array pupulated with the results of resolving the resolver policies.</returns>
+        </member>
         <member name="T:Microsoft.Practices.Unity.ObjectBuilder.SpecifiedConstructorSelectorPolicy">
             <summary>
             An implementation of <see cref="T:Microsoft.Practices.ObjectBuilder2.IConstructorSelectorPolicy"/> that selects
@@ -1315,10 +1697,11 @@
             set up dependency resolver policies.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.ObjectBuilder.SpecifiedMemberSelectorHelper.AddParameterResolvers(Microsoft.Practices.ObjectBuilder2.IPolicyList,System.Collections.Generic.IEnumerable{Microsoft.Practices.Unity.InjectionParameterValue},Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters)">
+        <member name="M:Microsoft.Practices.Unity.ObjectBuilder.SpecifiedMemberSelectorHelper.AddParameterResolvers(System.Type,Microsoft.Practices.ObjectBuilder2.IPolicyList,System.Collections.Generic.IEnumerable{Microsoft.Practices.Unity.InjectionParameterValue},Microsoft.Practices.ObjectBuilder2.SelectedMemberWithParameters)">
             <summary>
-            Add dependency resolvers to the policy set.
+            Add dependency resolvers to the parameter set.
             </summary>
+            <param name="typeToBuild">Type that's currently being built (used to resolve open generics).</param>
             <param name="policies">PolicyList to add the resolvers to.</param>
             <param name="parameterValues">Objects supplying the dependency resolvers.</param>
             <param name="result">Result object to store the keys in.</param>
@@ -1431,17 +1814,14 @@
             <param name="parameterType">Type of this parameter.</param>
             <param name="name">Name to use when resolving parameter.</param>
         </member>
-        <member name="M:Microsoft.Practices.Unity.ResolvedParameter.GetResolverPolicy">
+        <member name="M:Microsoft.Practices.Unity.ResolvedParameter.GetResolverPolicy(System.Type)">
             <summary>
             Return a <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/> instance that will
             return this types value for the parameter.
             </summary>
+            <param name="typeToBuild">Type that contains the member that needs this parameter. Used
+            to resolve open generic parameters.</param>
             <returns>The <see cref="T:Microsoft.Practices.ObjectBuilder2.IDependencyResolverPolicy"/>.</returns>
-        </member>
-        <member name="P:Microsoft.Practices.Unity.ResolvedParameter.ParameterType">
-            <summary>
-            The type of parameter this object represents.
-            </summary>
         </member>
         <member name="T:Microsoft.Practices.Unity.ResolvedParameter`1">
             <summary>
@@ -1452,14 +1832,14 @@
         </member>
         <member name="M:Microsoft.Practices.Unity.ResolvedParameter`1.#ctor">
             <summary>
-            Create a new <see cref="T:Microsoft.Practices.Unity.ResolvedParameter"/> for the given
+            Create a new <see cref="T:Microsoft.Practices.Unity.ResolvedParameter`1"/> for the given
             generic type and the default name.
             </summary>
         </member>
         <member name="M:Microsoft.Practices.Unity.ResolvedParameter`1.#ctor(System.String)">
             <summary>
-            Create a new <see cref="T:Microsoft.Practices.Unity.ResolvedParameter"/> for the given
-            type and name.
+            Create a new <see cref="T:Microsoft.Practices.Unity.ResolvedParameter`1"/> for the given
+            generic type and name.
             </summary>
             <param name="name">Name to use to resolve this parameter.</param>
         </member>
@@ -1471,7 +1851,15 @@
             the most parameters.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``1(Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a type with specific members to be injected.
+            </summary>
+            <typeparam name="T">Type this registration is for.</typeparam>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2(Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container.
             </summary>
@@ -1487,9 +1875,10 @@
             </remarks>
             <typeparam name="TFrom"><see cref="T:System.Type"/> that will be requested.</typeparam>
             <typeparam name="TTo"><see cref="T:System.Type"/> that will actually be returned.</typeparam>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2(System.String)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2(System.String,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container.
             </summary>
@@ -1501,9 +1890,10 @@
             <typeparam name="TFrom"><see cref="T:System.Type"/> that will be requested.</typeparam>
             <typeparam name="TTo"><see cref="T:System.Type"/> that will actually be returned.</typeparam>
             <param name="name"></param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2(Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2(Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
@@ -1512,9 +1902,10 @@
             <typeparam name="TTo"><see cref="T:System.Type"/> that will actually be returned.</typeparam>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2(System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``2(System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
@@ -1524,9 +1915,10 @@
             <param name="name">Name to use for registration, null if a default registration.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``1(Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``1(Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type with the container.
             No type mapping is performed for this type.
@@ -1534,9 +1926,20 @@
             <typeparam name="T">The type to apply the <paramref name="lifetimeManager"/> to.</typeparam>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``1(System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``1(System.String,Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type with the container.
+            No type mapping is performed for this type.
+            </summary>
+            <typeparam name="T">The type to configure injection on.</typeparam>
+            <param name="name">Name that will be used to request the type.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType``1(System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
             No type mapping is performed for this type.
@@ -1545,9 +1948,18 @@
             <param name="name">Name that will be used to request the type.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a type with specific members to be injected.
+            </summary>
+            <param name="t">Type this registration is for.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container.
             </summary>
@@ -1563,9 +1975,10 @@
             </remarks>
             <param name="from"><see cref="T:System.Type"/> that will be requested.</param>
             <param name="to"><see cref="T:System.Type"/> that will actually be returned.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
@@ -1574,9 +1987,10 @@
             <param name="to"><see cref="T:System.Type"/> that will actually be returned.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
             No type mapping is performed for this type.
@@ -1584,9 +1998,20 @@
             <param name="t">The <see cref="T:System.Type"/> to apply the <paramref name="lifetimeManager"/> to.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.String,Microsoft.Practices.Unity.InjectionMember[])">
+            <summary>
+            Register a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
+            No type mapping is performed for this type.
+            </summary>
+            <param name="t">The <see cref="T:System.Type"/> to configure in the container.</param>
+            <param name="name">Name to use for registration, null if a default registration.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
+            <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> for the given type and name with the container.
             No type mapping is performed for this type.
@@ -1595,9 +2020,10 @@
             <param name="name">Name to use for registration, null if a default registration.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type,System.String)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container.
             </summary>
@@ -1609,9 +2035,10 @@
             <param name="from"><see cref="T:System.Type"/> that will be requested.</param>
             <param name="to"><see cref="T:System.Type"/> that will actually be returned.</param>
             <param name="name">Name to use for registration, null if a default registration.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
@@ -1621,6 +2048,7 @@
             <param name="name">Name to use for registration, null if a default registration.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
         <member name="M:Microsoft.Practices.Unity.UnityContainerBase.RegisterInstance``1(``0)">
@@ -2120,6 +2548,11 @@
               Looks up a localized string similar to The lifetime manager is already registered. Lifetime managers cannot be reused, please create a new one..
             </summary>
         </member>
+        <member name="P:Microsoft.Practices.Unity.Properties.Resources.NoMatchingGenericArgument">
+            <summary>
+              Looks up a localized string similar to The type {0} does not have a generic argument named &quot;{1}&quot;.
+            </summary>
+        </member>
         <member name="P:Microsoft.Practices.Unity.Properties.Resources.NoSuchConstructor">
             <summary>
               Looks up a localized string similar to The type {0} does not have a constructor that takes the parameters ({1})..
@@ -2135,6 +2568,16 @@
               Looks up a localized string similar to The type {0} does not contain a property named {1}..
             </summary>
         </member>
+        <member name="P:Microsoft.Practices.Unity.Properties.Resources.NotAGenericType">
+            <summary>
+              Looks up a localized string similar to The type {0} is not a generic type, and you are attempting to inject a generic parameter named &quot;{1}&quot;..
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.Properties.Resources.NotAnArrayTypeWithRankOne">
+            <summary>
+              Looks up a localized string similar to The type {0} is not an array type with rank 1, and you are attempting to use a [DependencyArray] attribute on a parameter or property with this type..
+            </summary>
+        </member>
         <member name="P:Microsoft.Practices.Unity.Properties.Resources.PropertyNotSettable">
             <summary>
               Looks up a localized string similar to The property {0} on type {1} is not settable..
@@ -2142,7 +2585,7 @@
         </member>
         <member name="P:Microsoft.Practices.Unity.Properties.Resources.PropertyTypeMismatch">
             <summary>
-              Looks up a localized string similar to The property {0} on type {1} of type {2}, and cannot be injected with a value of type {3}..
+              Looks up a localized string similar to The property {0} on type {1} is of type {2}, and cannot be injected with a value of type {3}..
             </summary>
         </member>
         <member name="P:Microsoft.Practices.Unity.Properties.Resources.ResolutionFailed">
@@ -2172,7 +2615,7 @@
             <param name="parent">The parent <see cref="T:Microsoft.Practices.Unity.UnityContainer"/>. The current object
             will apply its own settings first, and then check the parent for additional ones.</param>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityContainer.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager)">
+        <member name="M:Microsoft.Practices.Unity.UnityContainer.RegisterType(System.Type,System.Type,System.String,Microsoft.Practices.Unity.LifetimeManager,Microsoft.Practices.Unity.InjectionMember[])">
             <summary>
             RegisterType a type mapping with the container, where the created instances will use
             the given <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/>.
@@ -2182,6 +2625,7 @@
             <param name="name">Name to use for registration, null if a default registration.</param>
             <param name="lifetimeManager">The <see cref="T:Microsoft.Practices.Unity.LifetimeManager"/> that controls the lifetime
             of the returned instance.</param>
+            <param name="injectionMembers">Injection configuration objects.</param>
             <returns>The <see cref="T:Microsoft.Practices.Unity.UnityContainer"/> object that this method was called on (this in C#, Me in Visual Basic).</returns>
         </member>
         <member name="M:Microsoft.Practices.Unity.UnityContainer.RegisterInstance(System.Type,System.String,System.Object,Microsoft.Practices.Unity.LifetimeManager)">
@@ -2355,16 +2799,39 @@
             Remove the default behavior from the container.
             </summary>
         </member>
-        <member name="T:Microsoft.Practices.Unity.UnityDefaultStrategiesExtension">
+        <member name="T:Microsoft.Practices.Unity.Utility.MethodReflectionHelper">
             <summary>
-            This extension installs the default strategies and policies into the container
-            to implement the standard behavior of the Unity container.
+            Helper class to wrap common reflection stuff dealing with
+            methods.
             </summary>
         </member>
-        <member name="M:Microsoft.Practices.Unity.UnityDefaultStrategiesExtension.Initialize">
+        <member name="M:Microsoft.Practices.Unity.Utility.MethodReflectionHelper.#ctor(System.Reflection.MethodBase)">
             <summary>
-            Add the default ObjectBuilder strategies &amp; policies to the container.
+            Create a new <see cref="T:Microsoft.Practices.Unity.Utility.MethodReflectionHelper"/> instance that
+            lets us do more reflection stuff on that method.
             </summary>
+            <param name="method"></param>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.Utility.MethodReflectionHelper.GetClosedParameterTypes(System.Type[])">
+            <summary>
+            Given our set of generic type arguments, 
+            </summary>
+            <param name="genericTypeArguments"></param>
+            <returns></returns>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.Utility.MethodReflectionHelper.MethodHasOpenGenericParameters">
+            <summary>
+            Returns true if any of the parameters of this method
+            are open generics.
+            </summary>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.Utility.MethodReflectionHelper.ParameterTypes">
+            <summary>
+            Return the <see cref="T:System.Type"/> of each parameter for this
+            method.
+            </summary>
+            <returns>Sequence of <see cref="T:System.Type"/> objects, one for
+            each parameter in order.</returns>
         </member>
         <member name="T:Microsoft.Practices.Unity.Utility.Pair`2">
             <summary>
@@ -2405,124 +2872,106 @@
             <param name="second">Second value.</param>
             <returns>A new <see cref="T:Microsoft.Practices.Unity.Utility.Pair`2"/> instance.</returns>
         </member>
-        <member name="T:Microsoft.Practices.Unity.Utility.Sequence">
+        <member name="T:Microsoft.Practices.Unity.Utility.ParameterMatcher">
             <summary>
-            A series of helper methods to deal with sequences -
-            objects that implement <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            A utility class that handles the logic of matching parameter
+            lists, so we can find the right constructor and method overloads.
             </summary>
-            <remarks>LINQ in C# 3.0 does pretty much the same stuff,
-            but we're keeping C# 2.0 compatibility here.</remarks>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.ToList``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Microsoft.Practices.Unity.Utility.ParameterMatcher.#ctor(System.Collections.Generic.IEnumerable{Microsoft.Practices.Unity.InjectionParameterValue})">
             <summary>
-            Given an <see cref="T:System.Collections.Generic.IEnumerable`1"/>, return a
-            new <see cref="T:System.Collections.Generic.List`1"/> containing the same contents.
+            Create a new <see cref="T:Microsoft.Practices.Unity.Utility.ParameterMatcher"/> that will attempt to
+            match the given parameter types.
             </summary>
-            <typeparam name="T">Type of item store in the sequence.</typeparam>
-            <param name="seq">Sequence to create list from.</param>
-            <returns>The new <see cref="T:System.Collections.Generic.List`1"/></returns>
+            <param name="parametersToMatch">Target parameters to match against.</param>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.OfType``1(System.Collections.IEnumerable)">
+        <member name="M:Microsoft.Practices.Unity.Utility.ParameterMatcher.Matches(System.Collections.Generic.IEnumerable{System.Type})">
             <summary>
-            Given an <see cref="T:System.Collections.IEnumerable"/> return a new
-            <see cref="T:System.Collections.Generic.IEnumerable`1"/> that contains
-            all the objects in <paramref name="source"/> that
-            are castable to <typeparamref name="TResult"/>.
+            Tests to see if the given set of types matches the ones
+            we're looking for.
             </summary>
-            <typeparam name="TResult">Desired type for objects.</typeparam>
-            <param name="source">Input sequence.</param>
-            <returns>New output sequence.</returns>
+            <param name="candidate">parameter list to look for.</param>
+            <returns>true if they match, false if they don't.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.Collect``1(``0[])">
+        <member name="M:Microsoft.Practices.Unity.Utility.ParameterMatcher.Matches(System.Collections.Generic.IEnumerable{System.Reflection.ParameterInfo})">
             <summary>
-            A function that turns an arbitrary parameter list into an
-            <see cref="T:System.Collections.Generic.IEnumerable`1"/>.
+            Tests to see if the given set of types matches the ones we're looking for.
             </summary>
-            <typeparam name="T">Type of arguments.</typeparam>
-            <param name="arguments">The items to put into the collection.</param>
-            <returns>An array that contains the values of the <paramref name="arguments"/>.</returns>
+            <param name="candidate">Candidate method signature to look for.</param>
+            <returns>True if they match, false if they don't.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.ToArray``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="T:Microsoft.Practices.Unity.Utility.ParameterReflectionHelper">
             <summary>
-            Create an array containing the elements of the given sequence.
+            Another reflection helper class that has extra methods
+            for dealing with ParameterInfos.
             </summary>
-            <typeparam name="T">Type of sequence and array.</typeparam>
-            <param name="sequence">Input sequence.</param>
-            <returns>The resulting array.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.Map``2(System.Collections.Generic.IEnumerable{``0},System.Converter{``0,``1})">
+        <member name="T:Microsoft.Practices.Unity.Utility.ReflectionHelper">
             <summary>
-            Given a sequence of <typeparamref name="TIn"/>, returns a sequence of
-            <typeparamref name="TOut"/> created by running the items in <paramref name="input"/>
-            through <paramref name="converter"/>.
+            A small helper class to encapsulate details of the
+            reflection API, particularly around generics.
             </summary>
-            <typeparam name="TIn">Type of items in input.</typeparam>
-            <typeparam name="TOut">Type of items in output.</typeparam>
-            <param name="input">Input sequence.</param>
-            <param name="converter">Mapping function.</param>
-            <returns>The converted output sequence.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.Reduce``2(System.Collections.Generic.IEnumerable{``0},``1,Microsoft.Practices.Unity.Utility.Sequence.Reducer{``0,``1})">
+        <member name="M:Microsoft.Practices.Unity.Utility.ReflectionHelper.#ctor(System.Type)">
             <summary>
-            Run a functional Reduce operation. See other methods for examples.
+            Create a new <see cref="T:Microsoft.Practices.Unity.Utility.ReflectionHelper"/> instance that
+            lets you look at information about the given type.
             </summary>
-            <typeparam name="TSource">Type of inputs.</typeparam>
-            <typeparam name="TDest">Type of final output.</typeparam>
-            <param name="sequence">Sequence of input items.</param>
-            <param name="initialValue">Initial value for accumulator.</param>
-            <param name="reducer">Reduce function.</param>
-            <returns></returns>
+            <param name="typeToReflect">Type to do reflection on.</param>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.ToString``1(System.Collections.Generic.IEnumerable{``0},System.String,System.Converter{``0,System.String})">
+        <member name="M:Microsoft.Practices.Unity.Utility.ReflectionHelper.MethodHasOpenGenericParameters(System.Reflection.MethodBase)">
             <summary>
-            Convert the given sequence to a single string. The items in the string are
-            separated by the given separator, and each object is converted to a string
-            using the <paramref name="converter"/> method given.
+            Test the given <see cref="T:System.Reflection.MethodBase"/> object, looking at
+            the parameters. Determine if any of the parameters are
+            open generic types that need type attributes filled in.
             </summary>
-            <typeparam name="T">Type of input sequence.</typeparam>
-            <param name="sequence">Input sequence.</param>
-            <param name="separator">Separator string.</param>
-            <param name="converter">Function to convert <typeparamref name="T"/> instances to
-            strings.</param>
-            <returns>The collected string.</returns>
+            <param name="method">The method to check.</param>
+            <returns>True if any of the parameters are open generics. False if not.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.ToString``1(System.Collections.Generic.IEnumerable{``0},System.String)">
+        <member name="M:Microsoft.Practices.Unity.Utility.ReflectionHelper.GetClosedParameterType(System.Type[])">
             <summary>
-            Convert the given sequence to a single string. The items in the string are separated
-            by the given separator, and each object is converted to a string by calling its
-            <see cref="M:System.Object.ToString"/>  method.
+            If this type is an open generic, use the
+            given <paramref name="genericArguments"/> array to
+            determine what the required closed type is and return that.
             </summary>
-            <typeparam name="T">Type of input sequence.</typeparam>
-            <param name="sequence">Input sequence.</param>
-            <param name="separator">Separator string.</param>
-            <returns>The collected string.</returns>
+            <remarks>If the parameter is not an open type, just
+            return this parameter's type.</remarks>
+            <param name="genericArguments">Type arguments to substitute in for
+            the open type parameters.</param>
+            <returns>Corresponding closed type of this parameter.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.First``1(System.Collections.Generic.IEnumerable{``0})">
+        <member name="M:Microsoft.Practices.Unity.Utility.ReflectionHelper.GetNamedGenericParameter(System.String)">
             <summary>
-            Return the first item in the given sequence.
+            Given a generic argument name, return the corresponding type for this
+            closed type. For example, if the current type is Foo&lt;User&gt;, and the
+            corresponding definition was Foo&lt;TSomething&gt;, calling this method
+            and passing "TSomething" will return typeof(User).
             </summary>
-            <exception cref="T:System.InvalidOperationException">Thrown if the sequence is empty.</exception>
-            <typeparam name="T">Type of items in the sequence.</typeparam>
-            <param name="sequence">The sequence.</param>
-            <returns>First item in the sequence.</returns>
+            <param name="parameterName">Name of the generic parameter.</param>
+            <returns>Type of the corresponding generic parameter, or null if there
+            is no matching name.</returns>
         </member>
-        <member name="M:Microsoft.Practices.Unity.Utility.Sequence.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+        <member name="P:Microsoft.Practices.Unity.Utility.ReflectionHelper.Type">
             <summary>
-            Execute the given action delegate for each item in the sequence.
+            The <see cref="P:Microsoft.Practices.Unity.Utility.ReflectionHelper.Type"/> object we're reflecting over.
             </summary>
-            <typeparam name="TItem">Type of item in the sequence.</typeparam>
-            <param name="sequence">The sequence of items.</param>
-            <param name="action">Action to perform on each item.</param>
         </member>
-        <member name="T:Microsoft.Practices.Unity.Utility.Sequence.Reducer`2">
+        <member name="P:Microsoft.Practices.Unity.Utility.ReflectionHelper.IsGenericType">
             <summary>
-            A delegate that defines the function passed to the <see cref="M:Microsoft.Practices.Unity.Utility.Sequence.Reduce``2(System.Collections.Generic.IEnumerable{``0},``1,Microsoft.Practices.Unity.Utility.Sequence.Reducer{``0,``1})"/> methods.
+            Is this type generic?
             </summary>
-            <typeparam name="TSource">Type of item being reduced.</typeparam>
-            <typeparam name="TDest">Type of the accumulator object.</typeparam>
-            <param name="currentItem">Current item to process.</param>
-            <param name="accumulator">Current value of the accumulator.</param>
-            <returns></returns>
+        </member>
+        <member name="P:Microsoft.Practices.Unity.Utility.ReflectionHelper.IsOpenGeneric">
+            <summary>
+            Is this type an open generic (no type parameter specified)
+            </summary>
+        </member>
+        <member name="M:Microsoft.Practices.Unity.Utility.ParameterReflectionHelper.#ctor(System.Reflection.ParameterInfo)">
+            <summary>
+            Create a new instance of <see cref="T:Microsoft.Practices.Unity.Utility.ParameterReflectionHelper"/> that
+            lets you query information about the given ParameterInfo object.
+            </summary>
+            <param name="parameter">Parameter to query.</param>
         </member>
     </members>
 </doc>
