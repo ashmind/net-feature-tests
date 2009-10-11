@@ -35,9 +35,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\[Libraries]\Autofac\Autofac.dll</HintPath>
     </Reference>
-    <Reference Include="LinFu.IoC, Version=2.0.2.32691, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="LinFu.Core, Version=2.2.0.19938, Culture=neutral, PublicKeyToken=a4c63a184389506f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\[Libraries]\LinFu\LinFu.IoC.dll</HintPath>
+      <HintPath>..\[Libraries]\LinFu\LinFu.Core.dll</HintPath>
     </Reference>
     <Reference Include="MbUnit.Framework, Version=1.0.2700.29885, Culture=neutral, PublicKeyToken=5e72ecd30bc408d5">
       <SpecificVersion>False</SpecificVersion>
