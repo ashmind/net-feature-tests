@@ -29,6 +29,16 @@ namespace IoC.Framework.Feature.Tests {
             Assert.IsNotNull(resolved);
             Assert.IsInstanceOfType(typeof(IndependentTestComponent), resolved.Service);
         }
+
+        [Test]
+        public void HandlesRecursionGracefully(IFrameworkAdapter framework) {
+            AssertIsNotCrashingOnRecursion(framework);
+
+            framework.Add<RecursiveTestComponent1>();
+            framework.Add<RecursiveTestComponent2>();
+
+            AssertGivesCorrectExceptionWhenResolvingRecursive<RecursiveTestComponent1>(framework);
+        }
                 
         [Test]
         public void ResolvesArrayDependency(IFrameworkAdapter framework) {
@@ -86,16 +96,6 @@ namespace IoC.Framework.Feature.Tests {
             Assert.IsNotNull(resolved);
         }
         
-        [Test]
-        public void HandlesRecursionGracefully(IFrameworkAdapter framework) {
-            AssertIsNotCrashingOnRecursion(framework);
-
-            framework.Add<RecursiveTestComponent1>();
-            framework.Add<RecursiveTestComponent2>();
-
-            AssertGivesCorrectExceptionWhenResolvingRecursive<RecursiveTestComponent1>(framework);
-        }
-
         private void AssertGivesCorrectExceptionWhenResolvingRecursive<TComponent>(IFrameworkAdapter framework) {
             try {
                 framework.GetInstance<TComponent>();

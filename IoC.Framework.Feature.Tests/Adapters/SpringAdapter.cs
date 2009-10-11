@@ -44,10 +44,6 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             contextRefreshed = true;
         }
 
-        public override bool CrashesOnRecursion {
-            get { return true; }
-        }
-        
         protected override object DoGetInstance(Type serviceType, string key) {
             this.EnsureContextRefreshed();
             if (string.IsNullOrEmpty(key))
