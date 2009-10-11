@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
+using Castle.MicroKernel.Registration;
 using IoC.Framework.Abstraction;
 
 using Microsoft.Practices.ServiceLocation;
@@ -22,13 +22,22 @@ namespace IoC.Framework.Castle {
         }
 
         public void AddInstance(Type serviceType, object instance, string key) {
-            key = key ?? string.Format("{0} ({1})", serviceType, instance);
-            kernel.AddComponentInstance(key, serviceType, instance);
+            var registration = Component.For(serviceType).Instance(instance);
+            if (key == null)
+                registration = registration.Named(key);
+
+            kernel.Register(registration);
         }
 
         private void Register(string key, Type serviceType, Type componentType, LifestyleType lifestyle) {
-            key = key ?? string.Format("{0} ({1})", serviceType, componentType);
-            kernel.AddComponent(key, serviceType, componentType, lifestyle);
+            var registration = Component.For(serviceType)
+                                        .ImplementedBy(componentType)
+                                        .LifeStyle.Is(lifestyle);
+
+            if (key == null)
+                registration = registration.Named(key);
+
+            kernel.Register(registration);
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
@@ -39,11 +48,7 @@ namespace IoC.Framework.Castle {
         }
 
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
-            // Major pain 
-            Func<object> resolve = kernel.ResolveServices<object>;
-            var typed = resolve.Method.GetGenericMethodDefinition().MakeGenericMethod(serviceType);
-
-            return (object[])typed.Invoke(kernel, null);
+            return (object[])kernel.ResolveAll(serviceType);
         }
     }
 }
