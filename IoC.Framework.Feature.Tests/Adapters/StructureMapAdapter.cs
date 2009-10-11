@@ -20,7 +20,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
 
         public override void AddSingleton(Type serviceType, Type componentType, string key) {
             registry.ForRequestedType(serviceType)
-                    .TheDefaultIsConcreteType(componentType)
+                    .AddConcreteType(componentType)
                     .CacheBy(InstanceScope.Singleton);
         }
 
@@ -30,8 +30,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         }
 
         public override void AddInstance(Type serviceType, object instance, string key) {
-            registry.ForRequestedType(serviceType)
-                    .TheDefaultIs(Registry.Object(instance));
+            throw new NotSupportedException("Does not seem possible without using generics.");
         }
 
         private void EnsureContainer() {
