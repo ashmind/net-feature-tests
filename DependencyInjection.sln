@@ -3,14 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Libraries]", "[Libraries]", "{89016C71-8958-40C7-BE2F-C0F945FE9F62}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{8A991702-1372-4ECB-87FD-8A09551FE9E0}"
-	ProjectSection(SolutionItems) = preProject
-		[Libraries]\Ninject\Ninject.Core.dll = [Libraries]\Ninject\Ninject.Core.dll
-		[Libraries]\Ninject\Ninject.Core.xml = [Libraries]\Ninject\Ninject.Core.xml
-		[Libraries]\Ninject\Ninject.Extensions.AutoWiring.dll = [Libraries]\Ninject\Ninject.Extensions.AutoWiring.dll
-		[Libraries]\Ninject\Ninject.Extensions.AutoWiring.xml = [Libraries]\Ninject\Ninject.Extensions.AutoWiring.xml
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Spring", "Spring", "{38EC80EA-98E6-427B-B7C2-382792E8D138}"
 	ProjectSection(SolutionItems) = preProject
 		[Libraries]\Spring\Common.Logging.dll = [Libraries]\Spring\Common.Logging.dll
@@ -55,7 +47,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{8A991702-1372-4ECB-87FD-8A09551FE9E0} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{38EC80EA-98E6-427B-B7C2-382792E8D138} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{F4349BBE-80B6-4BAA-A79D-0ECC7E7D8657} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{5D27DCCE-6A27-4B87-A8AF-5B0BAC745049} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
