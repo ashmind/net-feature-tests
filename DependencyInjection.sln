@@ -1,23 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Libraries]", "[Libraries]", "{89016C71-8958-40C7-BE2F-C0F945FE9F62}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Unity", "Unity", "{5D27DCCE-6A27-4B87-A8AF-5B0BAC745049}"
-	ProjectSection(SolutionItems) = preProject
-		[Libraries]\Unity\Microsoft.Practices.ObjectBuilder2.dll = [Libraries]\Unity\Microsoft.Practices.ObjectBuilder2.dll
-		[Libraries]\Unity\Microsoft.Practices.ObjectBuilder2.xml = [Libraries]\Unity\Microsoft.Practices.ObjectBuilder2.xml
-		[Libraries]\Unity\Microsoft.Practices.Unity.dll = [Libraries]\Unity\Microsoft.Practices.Unity.dll
-		[Libraries]\Unity\Microsoft.Practices.Unity.xml = [Libraries]\Unity\Microsoft.Practices.Unity.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonServiceLocator", "CommonServiceLocator", "{7565E294-8BAA-4FAB-B2F1-4CAB10149781}"
-	ProjectSection(SolutionItems) = preProject
-		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.dll = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.dll
-		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.pdb = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.pdb
-		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML
-	EndProjectSection
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTests", "FeatureTests\FeatureTests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
 EndProject
 Global
@@ -34,11 +17,8 @@ Global
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5D27DCCE-6A27-4B87-A8AF-5B0BAC745049} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
-		{7565E294-8BAA-4FAB-B2F1-4CAB10149781} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
-	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = #packages\Unity.2.1.505.2\lib\NET35
 		VisualSVNWorkingCopyRoot = 
 	EndGlobalSection
 EndGlobal
