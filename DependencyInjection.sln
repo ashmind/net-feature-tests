@@ -58,7 +58,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonServiceLocator", "Com
 		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection.FeatureTests", "DependencyInjection.FeatureTests\DependencyInjection.FeatureTests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTests", "FeatureTests\FeatureTests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
