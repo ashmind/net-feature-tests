@@ -10,7 +10,7 @@ using Xunit;
 using Xunit.Sdk;
 
 namespace DependencyInjection.FeatureTests {
-    public class ShouldHaveTest {
+    public class ShouldHave {
         [ForEachFramework]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Add<ServiceWithSimplePropertyDependency>();
@@ -96,8 +96,15 @@ namespace DependencyInjection.FeatureTests {
         }
         
         private void AssertGivesCorrectExceptionWhenResolvingRecursive<TComponent>(IFrameworkAdapter framework) {
-            var exception = Assert.Throws<Exception>(() => framework.GetInstance<TComponent>());
-            Debug.WriteLine(framework.GetType().Name + " throws following on recursion: " + exception);
+            try {
+                framework.GetInstance<TComponent>();
+            }
+            catch (Exception ex) {
+                Debug.WriteLine(framework.GetType().Name + " throws following on recursion: " + ex);
+                return;
+            }
+
+            throw new AssertException("Recursion was magically solved without an exception.");      
         }
         
         private string GetFrameworkName(IFrameworkAdapter framework) {

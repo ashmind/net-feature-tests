@@ -7,7 +7,7 @@ using DependencyInjection.FeatureTests.XunitSupport;
 using Xunit;
 
 namespace DependencyInjection.FeatureTests {
-    public class MustHaveTest {
+    public class MustHave {
         [ForEachFramework]
         public void ResolvesJustRegisteredService(IFrameworkAdapter framework) {
             framework.Add<IEmptyService, IndependentService>();
