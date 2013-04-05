@@ -104,6 +104,7 @@
     <Compile Include="Adapters\SpringAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
+    <Compile Include="Frameworks.cs" />
     <Compile Include="XunitSupport\ForEachFrameworkAttribute.cs" />
     <Compile Include="MustHave.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
