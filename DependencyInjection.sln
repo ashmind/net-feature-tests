@@ -3,20 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Libraries]", "[Libraries]", "{89016C71-8958-40C7-BE2F-C0F945FE9F62}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{B4E63D24-F114-41F2-AA4C-611BC20AAEC5}"
-	ProjectSection(SolutionItems) = preProject
-		[Libraries]\Autofac\Autofac.dll = [Libraries]\Autofac\Autofac.dll
-		[Libraries]\Autofac\Autofac.xml = [Libraries]\Autofac\Autofac.xml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Castle", "Castle", "{CA2F21EC-023F-4602-A2BE-4B353274CAFC}"
-	ProjectSection(SolutionItems) = preProject
-		[Libraries]\Castle\Castle.Core.dll = [Libraries]\Castle\Castle.Core.dll
-		[Libraries]\Castle\Castle.Core.xml = [Libraries]\Castle\Castle.Core.xml
-		[Libraries]\Castle\Castle.MicroKernel.dll = [Libraries]\Castle\Castle.MicroKernel.dll
-		[Libraries]\Castle\Castle.MicroKernel.xml = [Libraries]\Castle\Castle.MicroKernel.xml
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Ninject", "Ninject", "{8A991702-1372-4ECB-87FD-8A09551FE9E0}"
 	ProjectSection(SolutionItems) = preProject
 		[Libraries]\Ninject\Ninject.Core.dll = [Libraries]\Ninject\Ninject.Core.dll
@@ -75,8 +61,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{B4E63D24-F114-41F2-AA4C-611BC20AAEC5} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
-		{CA2F21EC-023F-4602-A2BE-4B353274CAFC} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{8A991702-1372-4ECB-87FD-8A09551FE9E0} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{38EC80EA-98E6-427B-B7C2-382792E8D138} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{F4349BBE-80B6-4BAA-A79D-0ECC7E7D8657} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
