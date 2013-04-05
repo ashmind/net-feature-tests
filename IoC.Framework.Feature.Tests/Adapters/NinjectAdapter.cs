@@ -22,15 +22,15 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             this.kernel = new StandardKernel(this.module);
         }
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
             module.Bind(serviceType).To(componentType).Using<SingletonBehavior>();
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
             module.Bind(serviceType).To(componentType).Using<TransientBehavior>();
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance, string key) {
             module.Bind(serviceType).ToConstant(instance);
         }
 

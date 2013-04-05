@@ -15,7 +15,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         }
 
         public static void AddSingleton(this IFrameworkAdapter container, Type serviceType, Type componentType) {
-            container.AddSingleton(serviceType, componentType, null);
+            container.RegisterSingleton(serviceType, componentType, null);
         }
 
         public static void AddSingleton<TService, TComponent>(this IFrameworkAdapter container) 
@@ -25,7 +25,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         }
 
         public static void AddTransient(this IFrameworkAdapter container, Type serviceType, Type componentType) {
-            container.AddTransient(serviceType, componentType, null);
+            container.RegisterTransient(serviceType, componentType, null);
         }
 
         public static void AddTransient<TService, TComponent>(this IFrameworkAdapter container) 
@@ -39,11 +39,11 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         }
 
         public static void AddInstance(this IFrameworkAdapter container, Type serviceType, object instance) {
-            container.AddInstance(serviceType, instance, null);
+            container.RegisterInstance(serviceType, instance, null);
         }
 
         public static void AddInstance<TService>(this IFrameworkAdapter container, TService instance, string key) {
-            container.AddInstance(typeof(TService), instance, key);
+            container.RegisterInstance(typeof(TService), instance, key);
         }
 
         public static void AddInstance<TService>(this IFrameworkAdapter container, TService instance) {

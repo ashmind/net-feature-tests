@@ -14,15 +14,15 @@ namespace IoC.Framework.Feature.Tests.Adapters {
 
         private bool contextRefreshed = false;
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
             this.Register(key, componentType, serviceType, true);
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
             this.Register(key, componentType, serviceType, false);
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance, string key) {
             key = key ?? string.Format("{0} ({1})", serviceType, instance);
             this.context.ObjectFactory.RegisterSingleton(key, instance);
         }

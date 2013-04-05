@@ -16,11 +16,11 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             _container.LoadFrom(AppDomain.CurrentDomain.BaseDirectory, "LinFu*.dll");
         }
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
             this.AddService(serviceType, componentType, key, LifecycleType.Singleton);
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
             // ashmind: Specifying OncePerRequest explicitly breaks MustHave.PropertyDependency test,
             // which is either a bug or my misunderstanding on how things work.
             // On the other hand, if I do not specify the lifestyle explicitly, 
@@ -38,7 +38,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             _container.AddService(key, serviceType, componentType, lifecycle);
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance, string key) {
             if (key == null) {
                 _container.AddService(serviceType, instance);
                 return;
@@ -57,10 +57,6 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             return _container.GetServices(info => serviceType.IsAssignableFrom(info.ServiceType))
                              .Select(info => info.Object);
-        }
-
-        public override object CreateInstance(Type componentType) {
-            return _container.AutoCreate(componentType);
         }
     }
 }

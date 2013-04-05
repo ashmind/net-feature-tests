@@ -9,15 +9,15 @@ namespace IoC.Framework.Feature.Tests.Adapters {
     public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
             this.Register(key, serviceType, componentType, LifestyleType.Singleton);
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
             this.Register(key, serviceType, componentType, LifestyleType.Transient);
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance, string key) {
             var registration = Component.For(serviceType).Instance(instance);
             if (key == null)
                 registration = registration.Named(key);

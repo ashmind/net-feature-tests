@@ -31,7 +31,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             builder.RegisterTypesAssignableTo<IResolvableUnregisteredService>();
         }
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
                 builder.RegisterGeneric(componentType).As(serviceType).SingletonScoped();
@@ -41,7 +41,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             }
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
                 builder.RegisterGeneric(componentType).As(serviceType).FactoryScoped();
@@ -51,7 +51,7 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             }
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance, string key) {
             // ashmind: not sure if there is a better way
             Func<object, IConcreteRegistrar> method = builder.Register;
             var typed = method.Method.GetGenericMethodDefinition().MakeGenericMethod(serviceType);

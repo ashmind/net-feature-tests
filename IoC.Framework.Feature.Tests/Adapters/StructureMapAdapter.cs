@@ -18,18 +18,18 @@ namespace IoC.Framework.Feature.Tests.Adapters {
             registry = new Registry();
         }
 
-        public override void AddSingleton(Type serviceType, Type componentType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
             registry.ForRequestedType(serviceType)
                     .AddConcreteType(componentType)
                     .CacheBy(InstanceScope.Singleton);
         }
 
-        public override void AddTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
             registry.ForRequestedType(serviceType)
                     .TheDefaultIsConcreteType(componentType);
         }
 
-        public override void AddInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance, string key) {
             throw new NotSupportedException("Does not seem possible without using generics.");
         }
 
