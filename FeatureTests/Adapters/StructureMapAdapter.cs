@@ -16,18 +16,15 @@ namespace DependencyInjection.FeatureTests.Adapters {
         }
 
         public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
-            this.registry.ForRequestedType(serviceType)
-                    .AddConcreteType(componentType)
-                    .CacheBy(InstanceScope.Singleton);
+            this.registry.For(serviceType).Singleton().Use(componentType);
         }
 
         public override void RegisterTransient(Type serviceType, Type componentType, string key) {
-            this.registry.ForRequestedType(serviceType)
-                    .TheDefaultIsConcreteType(componentType);
+            this.registry.For(serviceType).LifecycleIs(InstanceScope.Transient).Use(componentType);
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {
-            throw new NotSupportedException("Does not seem possible without using generics.");
+            this.registry.For(serviceType).Use(instance);
         }
 
         private void EnsureContainer() {
@@ -48,10 +45,6 @@ namespace DependencyInjection.FeatureTests.Adapters {
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             this.EnsureContainer();
             return this.container.GetAllInstances(serviceType).Cast<object>();
-        }
-
-        public override bool CrashesOnRecursion {
-            get { return true; }
         }
     }
 }
