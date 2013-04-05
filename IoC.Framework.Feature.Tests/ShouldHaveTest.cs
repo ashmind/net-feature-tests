@@ -5,8 +5,6 @@ using System.Linq;
 using System.Text.RegularExpressions;
 
 using MbUnit.Framework;
-
-using IoC.Framework.Abstraction;
 using IoC.Framework.Feature.Tests.Adapters;
 using IoC.Framework.Test.Classes;
 
@@ -24,7 +22,7 @@ namespace IoC.Framework.Feature.Tests {
         public void CanCreateUnregisteredComponents(IFrameworkAdapter framework) {
             framework.Add<ITestService, IndependentTestComponent>();
 
-            var resolved = framework.CreateInstance<TestComponentWithSimpleConstructorDependency>();
+            var resolved = framework.GetInstance<TestComponentWithSimpleConstructorDependency>();
 
             Assert.IsNotNull(resolved);
             Assert.IsInstanceOfType(typeof(IndependentTestComponent), resolved.Service);

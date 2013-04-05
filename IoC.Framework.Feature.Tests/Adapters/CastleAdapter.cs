@@ -1,27 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Castle.MicroKernel.Registration;
-using IoC.Framework.Abstraction;
-
-using Microsoft.Practices.ServiceLocation;
-
 using Castle.Core;
 using Castle.MicroKernel;
+using Castle.MicroKernel.Registration;
 
-namespace IoC.Framework.Castle {
-    internal class CastleContainer : ServiceLocatorImplBase, IServiceContainer {
+namespace IoC.Framework.Feature.Tests.Adapters {
+    public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
 
-        public void AddSingleton(Type serviceType, Type componentType, string key) {
+        public override void AddSingleton(Type serviceType, Type componentType, string key) {
             this.Register(key, serviceType, componentType, LifestyleType.Singleton);
         }
 
-        public void AddTransient(Type serviceType, Type componentType, string key) {
+        public override void AddTransient(Type serviceType, Type componentType, string key) {
             this.Register(key, serviceType, componentType, LifestyleType.Transient);
         }
 
-        public void AddInstance(Type serviceType, object instance, string key) {
+        public override void AddInstance(Type serviceType, object instance, string key) {
             var registration = Component.For(serviceType).Instance(instance);
             if (key == null)
                 registration = registration.Named(key);

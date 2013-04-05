@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-
-using IoC.Framework.Abstraction;
 using Microsoft.Practices.ServiceLocation;
 
 namespace IoC.Framework.Feature.Tests.Adapters {
-    public interface IFrameworkAdapter : IServiceInjectionFramework, IServiceContainer, IServiceLocator, IComponentFactory {
+    public interface IFrameworkAdapter : IServiceLocator {
+        void AddSingleton(Type serviceType, Type componentType, string key);
+        void AddTransient(Type serviceType, Type componentType, string key);
+        void AddInstance(Type serviceType, object instance, string key);
+
         /// <summary>
         /// This test was run only once because there is no way to recover from StackOverflowException.
         /// </summary>
@@ -16,7 +18,5 @@ namespace IoC.Framework.Feature.Tests.Adapters {
         /// This test was run only once because there is no way to recover from StackOverflowException.
         /// </summary>
         bool CrashesOnListRecursion { get; }
-
-        IComponentFactory CreateFactory(IServiceContainer container);
     }
 }

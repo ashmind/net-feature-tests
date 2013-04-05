@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 using MbUnit.Framework;
-
-using IoC.Framework.Castle;
 using IoC.Framework.Feature.Tests.Adapters;
 
 namespace IoC.Framework.Feature.Tests {
@@ -16,7 +14,7 @@ namespace IoC.Framework.Feature.Tests {
 
         [Factory]
         public IFrameworkAdapter Castle {
-            get { return new DefaultAdapter(new CastleFramework(), false); }
+            get { return new CastleAdapter(); }
         }
 
         [Factory]
@@ -42,7 +40,7 @@ namespace IoC.Framework.Feature.Tests {
 
         [Factory]
         public IFrameworkAdapter Unity {
-            get { return new DefaultAdapter(new CastleFramework(), true); }
+            get { return new UnityAdapter(); }
         }
     }
 }

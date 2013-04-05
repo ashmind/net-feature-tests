@@ -66,19 +66,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonServiceLocator", "Com
 		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bridges", "Bridges", "{C24BFDF4-B804-4FE4-B61E-9C0BAE96C92B}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Feature.Tests", "IoC.Framework.Feature.Tests\IoC.Framework.Feature.Tests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Abstraction", "IoC.Framework.Abstraction\IoC.Framework.Abstraction.csproj", "{269A3B41-3BA2-4006-AA75-E252528DDD34}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Castle", "Bridges\IoC.Framework.Castle\IoC.Framework.Castle.csproj", "{435D1613-804F-4B1B-B3E0-7DE8608B9BC6}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Tests", "IoC.Framework.Tests\IoC.Framework.Tests.csproj", "{F15C2222-A241-43E9-A463-8912EEAD88BB}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Test.Classes", "IoC.Framework.Test.Classes\IoC.Framework.Test.Classes.csproj", "{0E280B3F-463A-4534-9338-802FA9E43761}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Unity", "Bridges\IoC.Framework.Unity\IoC.Framework.Unity.csproj", "{3DEF36B1-9756-4FFC-BBFA-B39150B818BB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -90,26 +80,10 @@ Global
 		{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}.Release|Any CPU.Build.0 = Release|Any CPU
-		{269A3B41-3BA2-4006-AA75-E252528DDD34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{269A3B41-3BA2-4006-AA75-E252528DDD34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{269A3B41-3BA2-4006-AA75-E252528DDD34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{269A3B41-3BA2-4006-AA75-E252528DDD34}.Release|Any CPU.Build.0 = Release|Any CPU
-		{435D1613-804F-4B1B-B3E0-7DE8608B9BC6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{435D1613-804F-4B1B-B3E0-7DE8608B9BC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{435D1613-804F-4B1B-B3E0-7DE8608B9BC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{435D1613-804F-4B1B-B3E0-7DE8608B9BC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F15C2222-A241-43E9-A463-8912EEAD88BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F15C2222-A241-43E9-A463-8912EEAD88BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F15C2222-A241-43E9-A463-8912EEAD88BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F15C2222-A241-43E9-A463-8912EEAD88BB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0E280B3F-463A-4534-9338-802FA9E43761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0E280B3F-463A-4534-9338-802FA9E43761}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E280B3F-463A-4534-9338-802FA9E43761}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E280B3F-463A-4534-9338-802FA9E43761}.Release|Any CPU.Build.0 = Release|Any CPU
-		{3DEF36B1-9756-4FFC-BBFA-B39150B818BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{3DEF36B1-9756-4FFC-BBFA-B39150B818BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{3DEF36B1-9756-4FFC-BBFA-B39150B818BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{3DEF36B1-9756-4FFC-BBFA-B39150B818BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -124,8 +98,6 @@ Global
 		{5D27DCCE-6A27-4B87-A8AF-5B0BAC745049} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{97B6B71D-EEE5-4A7D-9B7F-8855FD7ABF61} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
 		{7565E294-8BAA-4FAB-B2F1-4CAB10149781} = {89016C71-8958-40C7-BE2F-C0F945FE9F62}
-		{435D1613-804F-4B1B-B3E0-7DE8608B9BC6} = {C24BFDF4-B804-4FE4-B61E-9C0BAE96C92B}
-		{3DEF36B1-9756-4FFC-BBFA-B39150B818BB} = {C24BFDF4-B804-4FE4-B61E-9C0BAE96C92B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		VisualSVNWorkingCopyRoot = 

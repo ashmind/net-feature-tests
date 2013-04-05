@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 
 using MbUnit.Framework;
-
-using IoC.Framework.Abstraction;
 using IoC.Framework.Feature.Tests.Adapters;
 using IoC.Framework.Test.Classes;
 

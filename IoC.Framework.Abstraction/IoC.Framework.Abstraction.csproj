@@ -58,7 +58,6 @@
     <Compile Include="IComponentFactory.cs" />
     <Compile Include="IServiceInjectionFramework.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceContainerExtensions.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
