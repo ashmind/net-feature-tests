@@ -2,61 +2,48 @@
 using System.Collections.Generic;
 using System.Linq;
 using Autofac;
-using Autofac.Builder;
-using Autofac.Modules;
-using Autofac.Registrars;
-using DependencyInjection.FeatureTests.TestTypes;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class AutofacAdapter : FrameworkAdapterBase {
-        #region PropertyInjectionModule
-
-        public class PropertyInjectionModule : Module {
-            protected override void AttachToComponentRegistration(IContainer container, IComponentRegistration registration) {
-                registration.Activating += ActivatingHandler.InjectProperties;
-            }
-        }
-
-        #endregion
-
         private readonly ContainerBuilder builder = new ContainerBuilder();
         private IContainer container;
-
-        public AutofacAdapter() {
-            this.builder.RegisterModule(new PropertyInjectionModule());
-            this.builder.RegisterModule(new ImplicitCollectionSupportModule());
-            this.builder.RegisterTypesAssignableTo<IResolvableUnregisteredService>();
-        }
-
+        
         public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
-                this.builder.RegisterGeneric(componentType).As(serviceType).SingletonScoped();
+                this.builder.RegisterGeneric(componentType)
+                            .As(serviceType)
+                            .PropertiesAutowired()
+                            .InstancePerLifetimeScope();
             }
             else {
-                this.builder.Register(componentType).As(serviceType).SingletonScoped();
+                this.builder.RegisterType(componentType)
+                            .As(serviceType)
+                            .PropertiesAutowired()
+                            .InstancePerLifetimeScope();
             }
         }
 
         public override void RegisterTransient(Type serviceType, Type componentType, string key) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
-                this.builder.RegisterGeneric(componentType).As(serviceType).FactoryScoped();
+                this.builder.RegisterGeneric(componentType)
+                            .As(serviceType)
+                            .PropertiesAutowired()
+                            .InstancePerDependency();
             }
             else {
-                this.builder.Register(componentType).As(serviceType).FactoryScoped();
+                this.builder.RegisterType(componentType)
+                            .As(serviceType)
+                            .PropertiesAutowired()
+                            .InstancePerDependency();
             }
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {
-            // ashmind: not sure if there is a better way
-            Func<object, IConcreteRegistrar> method = this.builder.Register;
-            var typed = method.Method.GetGenericMethodDefinition().MakeGenericMethod(serviceType);
-
-            var register = ((IConcreteRegistrar)typed.Invoke(this.builder, new[] { instance }));
-            register.As(serviceType);
+            this.builder.RegisterInstance(instance).As(serviceType);
         }
-
+        
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             this.container = this.container ?? this.builder.Build();
 
@@ -67,7 +54,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
         protected override object DoGetInstance(Type serviceType, string key) {
             this.container = this.container ?? this.builder.Build();
 
-            return string.IsNullOrEmpty(key) ? this.container.Resolve(serviceType) : this.container.Resolve(key);
+            return string.IsNullOrEmpty(key) ? this.container.Resolve(serviceType) : this.container.ResolveNamed(key, serviceType);
         }
 
         public override bool CrashesOnListRecursion {

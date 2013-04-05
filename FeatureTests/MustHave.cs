@@ -10,7 +10,7 @@ namespace DependencyInjection.FeatureTests {
     public class MustHave {
         [ForEachFramework]
         public void ResolvesJustRegisteredService(IFrameworkAdapter framework) {
-            framework.Add<IEmptyService, IndependentService>();
+            framework.Register<IEmptyService, IndependentService>();
             var component = framework.GetInstance<IEmptyService>();
 
             Assert.NotNull(component);
@@ -18,7 +18,7 @@ namespace DependencyInjection.FeatureTests {
 
         [ForEachFramework]
         public void ResolvesServiceJustRegisteredAsItself(IFrameworkAdapter framework) {
-            framework.Add<IndependentService>();
+            framework.Register<IndependentService>();
             var component = framework.GetInstance<IndependentService>();
 
             Assert.NotNull(component);
@@ -26,7 +26,7 @@ namespace DependencyInjection.FeatureTests {
 
         [ForEachFramework]
         public void SupportsSingletons(IFrameworkAdapter framework) {
-            framework.AddSingleton<IEmptyService, IndependentService>();
+            framework.RegisterSingleton<IEmptyService, IndependentService>();
             var instance1 = framework.GetInstance<IEmptyService>();
             var instance2 = framework.GetInstance<IEmptyService>();
 
@@ -35,7 +35,7 @@ namespace DependencyInjection.FeatureTests {
 
         [ForEachFramework]
         public void SupportsTransients(IFrameworkAdapter framework) {
-            framework.AddTransient<IEmptyService, IndependentService>();
+            framework.RegisterTransient<IEmptyService, IndependentService>();
             var instance1 = framework.GetInstance<IEmptyService>();
             var instance2 = framework.GetInstance<IEmptyService>();
 
@@ -45,7 +45,7 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void SupportsInstanceResolution(IFrameworkAdapter framework) {
             var instance = new IndependentService();
-            framework.Add<IEmptyService>(instance);
+            framework.Register<IEmptyService>(instance);
 
             var resolved = framework.GetInstance<IEmptyService>();
 
@@ -55,8 +55,8 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void SupportsInstanceResolutionForDependency(IFrameworkAdapter framework) {
             var instance = new IndependentService();
-            framework.Add<IEmptyService>(instance);
-            framework.Add<ServiceWithSimpleConstructorDependency>();
+            framework.Register<IEmptyService>(instance);
+            framework.Register<ServiceWithSimpleConstructorDependency>();
 
             var dependent = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
 
@@ -65,8 +65,8 @@ namespace DependencyInjection.FeatureTests {
 
         [ForEachFramework]
         public void SupportsConstructorDependency(IFrameworkAdapter framework) {
-            framework.Add<IEmptyService, IndependentService>();
-            framework.Add<ServiceWithSimpleConstructorDependency>();
+            framework.Register<IEmptyService, IndependentService>();
+            framework.Register<ServiceWithSimpleConstructorDependency>();
 
             var component = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
 
@@ -76,8 +76,8 @@ namespace DependencyInjection.FeatureTests {
 
         [ForEachFramework]
         public void SupportsPropertyDependency(IFrameworkAdapter framework) {
-            framework.Add<IEmptyService, IndependentService>();
-            framework.Add<ServiceWithSimplePropertyDependency>();
+            framework.Register<IEmptyService, IndependentService>();
+            framework.Register<ServiceWithSimplePropertyDependency>();
 
             var component = framework.GetInstance<ServiceWithSimplePropertyDependency>();
 
