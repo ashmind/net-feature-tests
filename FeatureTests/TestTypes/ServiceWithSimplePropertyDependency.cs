@@ -7,6 +7,7 @@ namespace DependencyInjection.FeatureTests.TestTypes {
         [Microsoft.Practices.Unity.Dependency]
         [StructureMap.Attributes.SetterProperty]
         [LinFu.IoC.Configuration.Inject]
+        [Ninject.Inject]
         public IEmptyService Service { get; set; }
     }
 }

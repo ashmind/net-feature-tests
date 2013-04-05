@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Ninject.Core;
-using Ninject.Core.Behavior;
-using Ninject.Extensions.AutoWiring;
+using Ninject;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class NinjectAdapter : FrameworkAdapterBase {
@@ -13,24 +11,24 @@ namespace DependencyInjection.FeatureTests.Adapters {
         // As far as I understand, this is NOT the correct way to do it,
         // you should create your own derived Module. However, for tests
         // this will work.
-        private readonly AutoWiringModule module;
+        //private readonly  module;
         private readonly IKernel kernel;
 
         public NinjectAdapter() {
-            this.module = new AutoWiringModule();
-            this.kernel = new StandardKernel(this.module);
+            //this.module = new AutoWiringModule();
+            this.kernel = new StandardKernel(/*this.module*/);
         }
 
         public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
-            this.module.Bind(serviceType).To(componentType).Using<SingletonBehavior>();
+            this.kernel.Bind(serviceType).To(componentType).InSingletonScope();
         }
 
         public override void RegisterTransient(Type serviceType, Type componentType, string key) {
-            this.module.Bind(serviceType).To(componentType).Using<TransientBehavior>();
+            this.kernel.Bind(serviceType).To(componentType).InTransientScope();
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {
-            this.module.Bind(serviceType).ToConstant(instance);
+            this.kernel.Bind(serviceType).ToConstant(instance);
         }
 
         protected override object DoGetInstance(Type serviceType, string key) {
@@ -39,10 +37,6 @@ namespace DependencyInjection.FeatureTests.Adapters {
 
         protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
             throw new NotImplementedException();
-        }
-
-        public override bool CrashesOnRecursion {
-            get { return true; }
         }
     }
 }

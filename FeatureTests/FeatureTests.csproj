@@ -65,15 +65,8 @@
     <Reference Include="Microsoft.Practices.Unity">
       <HintPath>..\[Libraries]\Unity\Microsoft.Practices.Unity.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject.Core, Version=1.0.0.82, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\[Libraries]\Ninject\Ninject.Core.dll</HintPath>
-    </Reference>
-    <Reference Include="Ninject.Extensions.AutoWiring, Version=1.0.0.82, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\[Libraries]\Ninject\Ninject.Extensions.AutoWiring.dll</HintPath>
-      <Aliases>ninject, global</Aliases>
-      <Private>True</Private>
+    <Reference Include="Ninject">
+      <HintPath>..\#packages\Ninject.3.0.1.10\lib\net40\Ninject.dll</HintPath>
     </Reference>
     <Reference Include="Spring.Core, Version=1.1.2.20125, Culture=neutral, PublicKeyToken=65e474d141e25e07, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
