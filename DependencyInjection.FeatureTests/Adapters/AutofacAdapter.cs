@@ -53,7 +53,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
             Func<object, IConcreteRegistrar> method = this.builder.Register;
             var typed = method.Method.GetGenericMethodDefinition().MakeGenericMethod(serviceType);
 
-            var register = ((IConcreteRegistrar)typed.Invoke(null, new[] { this.builder, instance }));
+            var register = ((IConcreteRegistrar)typed.Invoke(this.builder, new[] { instance }));
             register.As(serviceType);
         }
 

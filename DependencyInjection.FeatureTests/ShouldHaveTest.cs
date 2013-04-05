@@ -5,29 +5,31 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using DependencyInjection.FeatureTests.Adapters;
 using DependencyInjection.FeatureTests.TestTypes;
-using MbUnit.Framework;
+using DependencyInjection.FeatureTests.XunitSupport;
+using Xunit;
+using Xunit.Sdk;
 
 namespace DependencyInjection.FeatureTests {
-    public class ShouldHaveTest : FrameworkTestBase {
-        [Test]
+    public class ShouldHaveTest {
+        [ForEachFramework]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Add<ServiceWithSimplePropertyDependency>();
             var component = framework.GetInstance<ServiceWithSimplePropertyDependency>();
 
-            Assert.IsNull(component.Service);
+            Assert.Null(component.Service);
         }
 
-        [Test]
+        [ForEachFramework]
         public void CanCreateUnregisteredComponents(IFrameworkAdapter framework) {
             framework.Add<IEmptyService, IndependentService>();
 
             var resolved = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
 
-            Assert.IsNotNull(resolved);
-            Assert.IsInstanceOfType(typeof(IndependentService), resolved.Service);
+            Assert.NotNull(resolved);
+            Assert.IsAssignableFrom<IndependentService>(resolved.Service);
         }
 
-        [Test]
+        [ForEachFramework]
         public void HandlesRecursionGracefully(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnRecursion(framework);
 
@@ -36,13 +38,13 @@ namespace DependencyInjection.FeatureTests {
 
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithRecursiveDependency1>(framework);
         }
-                
-        [Test]
+
+        [ForEachFramework]
         public void ResolvesArrayDependency(IFrameworkAdapter framework) {
             this.AssertResolvesArrayDependencyFor<ServiceWithArrayConstructorDependency>(framework);
         }
 
-        [Test]
+        [ForEachFramework]
         public void ResolvesArrayPropertyDependency(IFrameworkAdapter framework) {
             this.AssertResolvesArrayDependencyFor<ServiceWithArrayPropertyDependency>(framework);
         }
@@ -55,13 +57,13 @@ namespace DependencyInjection.FeatureTests {
 
             var resolved = framework.GetInstance<TTestComponent>();
 
-            Assert.IsNotNull(resolved);
-            Assert.IsNotNull(resolved.Services, "Dependency is null after resolution.");
-            Assert.AreEqual(1, resolved.Services.Length);
-            Assert.IsInstanceOfType(typeof(IndependentService), resolved.Services[0]);
+            Assert.NotNull(resolved);
+            Assert.NotNull(resolved.Services);
+            Assert.Equal(1, resolved.Services.Length);
+            Assert.IsAssignableFrom<IndependentService>(resolved.Services[0]);
         }
 
-        [Test]
+        [ForEachFramework]
         public void HandlesRecursionGracefullyForArrayDependency(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnListRecursion(framework);
 
@@ -71,41 +73,31 @@ namespace DependencyInjection.FeatureTests {
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithArrayConstructorDependency>(framework);
         }
 
-        [Test]
+        [ForEachFramework]
         public void SelectsCorrectConstructor(IFrameworkAdapter framework) {
             framework.Add<IEmptyService, IndependentService>();
             framework.Add<ServiceWithMultipleConstructors>();
 
             var resolved = framework.GetInstance<ServiceWithMultipleConstructors>();
 
-            Assert.IsNotNull(resolved);
-            Assert.AreEqual(
+            Assert.NotNull(resolved);
+            Assert.Equal(
                 ServiceWithMultipleConstructors.ConstructorNames.MostResolvable,
                 resolved.UsedConstructorName
             );
         }
 
-        [Test]
+        [ForEachFramework]
         public void SupportsOpenGenericTypes(IFrameworkAdapter framework) {
             framework.AddTransient(typeof(IGenericService<>), typeof(GenericService<>));
             var resolved = framework.GetInstance<IGenericService<int>>();
 
-            Assert.IsNotNull(resolved);
+            Assert.NotNull(resolved);
         }
         
         private void AssertGivesCorrectExceptionWhenResolvingRecursive<TComponent>(IFrameworkAdapter framework) {
-            try {
-                framework.GetInstance<TComponent>();
-            }
-            catch (Exception ex) {
-                Assert.IsNotInstanceOfType(typeof(StackOverflowException), ex);
-                Debug.WriteLine(
-                    framework.GetType().Name + " throws following on recursion: " + ex
-                );
-                return;
-            }
-
-            Assert.Fail("Recursion was magically solved without an exception.");            
+            var exception = Assert.Throws<Exception>(() => framework.GetInstance<TComponent>());
+            Debug.WriteLine(framework.GetType().Name + " throws following on recursion: " + exception);
         }
         
         private string GetFrameworkName(IFrameworkAdapter framework) {
@@ -117,20 +109,20 @@ namespace DependencyInjection.FeatureTests {
             if (!framework.CrashesOnListRecursion)
                 return;            
             
-            Assert.Fail(
+            throw new AssertException(string.Format(
                 "{0} fails list recursion for now, and we have no way to retest it in each run (without process crash).",
                 this.GetFrameworkName(framework)
-            );
+            ));
         }
 
         private void AssertIsNotCrashingOnRecursion(IFrameworkAdapter framework) {
             if (!framework.CrashesOnRecursion)
                 return;
 
-            Assert.Fail(
+            throw new AssertException(string.Format(
                 "{0} fails recursion for now, and we have no way to retest it in each run (without process crash).",
                 this.GetFrameworkName(framework)
-            );
+            ));
         }
     }
 }

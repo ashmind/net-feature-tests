@@ -3,55 +3,56 @@ using System.Collections.Generic;
 using System.Linq;
 using DependencyInjection.FeatureTests.Adapters;
 using DependencyInjection.FeatureTests.TestTypes;
-using MbUnit.Framework;
+using DependencyInjection.FeatureTests.XunitSupport;
+using Xunit;
 
 namespace DependencyInjection.FeatureTests {
-    public class MustHaveTest : FrameworkTestBase {
-        [Test]
+    public class MustHaveTest {
+        [ForEachFramework]
         public void ResolvesJustRegisteredService(IFrameworkAdapter framework) {
             framework.Add<IEmptyService, IndependentService>();
             var component = framework.GetInstance<IEmptyService>();
 
-            Assert.IsNotNull(component);
+            Assert.NotNull(component);
         }
 
-        [Test]
+        [ForEachFramework]
         public void ResolvesServiceJustRegisteredAsItself(IFrameworkAdapter framework) {
             framework.Add<IndependentService>();
             var component = framework.GetInstance<IndependentService>();
 
-            Assert.IsNotNull(component);
+            Assert.NotNull(component);
         }
 
-        [Test]
+        [ForEachFramework]
         public void SupportsSingletons(IFrameworkAdapter framework) {
             framework.AddSingleton<IEmptyService, IndependentService>();
             var instance1 = framework.GetInstance<IEmptyService>();
             var instance2 = framework.GetInstance<IEmptyService>();
 
-            Assert.AreSame(instance1, instance2);
+            Assert.Same(instance1, instance2);
         }
 
-        [Test]
+        [ForEachFramework]
         public void SupportsTransients(IFrameworkAdapter framework) {
             framework.AddTransient<IEmptyService, IndependentService>();
             var instance1 = framework.GetInstance<IEmptyService>();
             var instance2 = framework.GetInstance<IEmptyService>();
 
-            Assert.AreNotSame(instance1, instance2);
+            Assert.NotSame(instance1, instance2);
         }
 
-        [Test]
+        [ForEachFramework]
         public void SupportsInstanceResolution(IFrameworkAdapter framework) {
             var instance = new IndependentService();
             framework.Add<IEmptyService>(instance);
 
             var resolved = framework.GetInstance<IEmptyService>();
 
-            Assert.AreSame(instance, resolved);
+            Assert.Same(instance, resolved);
         }
 
-        [Test]
+        [ForEachFramework]
         public void SupportsInstanceResolutionForDependency(IFrameworkAdapter framework) {
             var instance = new IndependentService();
             framework.Add<IEmptyService>(instance);
@@ -59,29 +60,29 @@ namespace DependencyInjection.FeatureTests {
 
             var dependent = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
 
-            Assert.AreSame(instance, dependent.Service);
+            Assert.Same(instance, dependent.Service);
         }
 
-        [Test]
+        [ForEachFramework]
         public void SupportsConstructorDependency(IFrameworkAdapter framework) {
             framework.Add<IEmptyService, IndependentService>();
             framework.Add<ServiceWithSimpleConstructorDependency>();
 
             var component = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
 
-            Assert.IsNotNull(component.Service);
-            Assert.IsInstanceOfType(typeof(IndependentService), component.Service);
+            Assert.NotNull(component.Service);
+            Assert.IsAssignableFrom<IndependentService>(component.Service);
         }
 
-        [Test]
+        [ForEachFramework]
         public void SupportsPropertyDependency(IFrameworkAdapter framework) {
             framework.Add<IEmptyService, IndependentService>();
             framework.Add<ServiceWithSimplePropertyDependency>();
 
             var component = framework.GetInstance<ServiceWithSimplePropertyDependency>();
 
-            Assert.IsNotNull(component.Service);
-            Assert.IsInstanceOfType(typeof(IndependentService), component.Service);
+            Assert.NotNull(component.Service);
+            Assert.IsAssignableFrom<IndependentService>(component.Service);
         }
     }
 }
