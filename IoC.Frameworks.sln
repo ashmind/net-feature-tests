@@ -1,8 +1,6 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Feature.Tests", "IoC.Framework.Feature.Tests\IoC.Framework.Feature.Tests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "[Libraries]", "[Libraries]", "{89016C71-8958-40C7-BE2F-C0F945FE9F62}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Autofac", "Autofac", "{B4E63D24-F114-41F2-AA4C-611BC20AAEC5}"
@@ -68,9 +66,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CommonServiceLocator", "Com
 		[Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML = [Libraries]\CommonServiceLocator\Microsoft.Practices.ServiceLocation.XML
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Abstraction", "IoC.Framework.Abstraction\IoC.Framework.Abstraction.csproj", "{269A3B41-3BA2-4006-AA75-E252528DDD34}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Bridges", "Bridges", "{C24BFDF4-B804-4FE4-B61E-9C0BAE96C92B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Feature.Tests", "IoC.Framework.Feature.Tests\IoC.Framework.Feature.Tests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Abstraction", "IoC.Framework.Abstraction\IoC.Framework.Abstraction.csproj", "{269A3B41-3BA2-4006-AA75-E252528DDD34}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoC.Framework.Castle", "Bridges\IoC.Framework.Castle\IoC.Framework.Castle.csproj", "{435D1613-804F-4B1B-B3E0-7DE8608B9BC6}"
 EndProject
