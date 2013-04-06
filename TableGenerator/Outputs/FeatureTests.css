@@ -1,5 +1,13 @@
-﻿body {
+﻿html, body {
     font-family: "Segoe UI";
+    margin: 0;
+    padding: 0;
+}
+
+.note {
+    background-color: #eeeeee;
+    padding: 0.3rem;
+    font-size: 110%;
 }
 
 section {
