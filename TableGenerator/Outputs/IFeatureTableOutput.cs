@@ -6,6 +6,6 @@ using DependencyInjection.TableGenerator.Data;
 
 namespace DependencyInjection.TableGenerator.Outputs {
     public interface IFeatureTableOutput {
-        void Write(IEnumerable<FeatureTable> tables);
+        void Write(DirectoryInfo directory, IEnumerable<FeatureTable> tables);
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
+using System.IO;
 using System.Linq;
 using DependencyInjection.TableGenerator.Outputs;
 using DependencyInjection.TableGenerator.Sources;
@@ -11,12 +13,16 @@ namespace DependencyInjection.TableGenerator {
 
         public static void Main(string[] args) {
             try {
+                var directory = new DirectoryInfo(args.FirstOrDefault() ?? ConfigurationManager.AppSettings["OutputPath"]);
+                if (!directory.Exists)
+                    directory.Create();
+
                 Console.WriteLine("Collecting data...");
                 var tables = Sources.SelectMany(s => s.GetTables()).ToArray();
 
                 Console.WriteLine("Creating outputs...");
                 foreach (var output in Outputs) {
-                    output.Write(tables);
+                    output.Write(directory, tables);
                 }
             }
             catch (Exception ex) {

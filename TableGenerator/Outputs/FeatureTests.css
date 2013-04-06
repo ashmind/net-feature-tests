@@ -1,0 +1,50 @@
+﻿body {
+    font-family: "Segoe UI";
+}
+
+section {
+    float: left;
+    clear: both;
+}
+
+h2 {
+    font-size: 110%;
+    font-weight: normal;
+    background-color: #b4cce4;
+    border: 1px solid white;
+    
+    margin-left: 1px;
+    margin-right: 1px;
+    margin-bottom: 0;
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+}
+
+table {
+    margin: 0;
+    border: 0;
+}
+
+td, th {
+    padding: 0.2rem;
+    text-align: center;
+}
+
+th {
+    font-weight: normal;
+    background-color: #b4cce4;
+}
+
+td {
+    background-color: #dbe5f1;
+}
+
+td.success {
+    background-color: #c6efce;
+    color: #006100;
+}
+
+td.failure {
+    background-color: #ffc7ce;
+    color: #9c0006;
+}
