@@ -15,7 +15,7 @@ namespace DependencyInjection.FeatureTests.TestTypes {
             this.UsedConstructorName = ConstructorNames.Default;
         }
 
-        public ServiceWithMultipleConstructors(IEmptyService service) {
+        public ServiceWithMultipleConstructors(IService service) {
             this.UsedConstructorName = ConstructorNames.MostResolvable;
         }
 
@@ -23,7 +23,7 @@ namespace DependencyInjection.FeatureTests.TestTypes {
             this.UsedConstructorName = ConstructorNames.Unresolvable;
         }
 
-        public ServiceWithMultipleConstructors(IEmptyService service1, IUnregisteredService service2) {
+        public ServiceWithMultipleConstructors(IService service1, IUnregisteredService service2) {
             this.UsedConstructorName = ConstructorNames.MostDefined;
         }
 

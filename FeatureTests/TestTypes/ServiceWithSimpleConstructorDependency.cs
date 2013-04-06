@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace DependencyInjection.FeatureTests.TestTypes {
     public class ServiceWithSimpleConstructorDependency : IResolvableUnregisteredService {
-        private readonly IEmptyService service;
+        private readonly IService service;
 
-        public ServiceWithSimpleConstructorDependency(IEmptyService service) {
+        public ServiceWithSimpleConstructorDependency(IService service) {
             this.service = service;
         }
 
-        public IEmptyService Service {
+        public IService Service {
             get { return this.service; } 
         }
     }

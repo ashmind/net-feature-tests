@@ -8,6 +8,6 @@ namespace DependencyInjection.FeatureTests.TestTypes {
         [StructureMap.Attributes.SetterProperty]
         [LinFu.IoC.Configuration.Inject]
         [Ninject.Inject]
-        public IEmptyService Service { get; set; }
+        public IService Service { get; set; }
     }
 }

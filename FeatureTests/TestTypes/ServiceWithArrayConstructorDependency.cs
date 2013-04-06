@@ -4,13 +4,13 @@ using System.Linq;
 
 namespace DependencyInjection.FeatureTests.TestTypes {
     public class ServiceWithArrayConstructorDependency : IServiceWithArrayDependency {
-        private readonly IEmptyService[] services;
+        private readonly IService[] services;
 
-        public ServiceWithArrayConstructorDependency(IEmptyService[] services) {
+        public ServiceWithArrayConstructorDependency(IService[] services) {
             this.services = services;
         }
 
-        public IEmptyService[] Services {
+        public IService[] Services {
             get { return this.services; }
         }
     }
