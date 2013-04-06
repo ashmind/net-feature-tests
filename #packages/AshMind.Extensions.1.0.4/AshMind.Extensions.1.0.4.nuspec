@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>AshMind.Extensions</id>
+    <version>1.0.4</version>
+    <title>AshMind.Extensions</title>
+    <authors>Andrey Shchekin</authors>
+    <owners>Andrey Shchekin</owners>
+    <projectUrl>http://code.google.com/p/ashmind</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Extension methods that could have been written by BCL authors. No magic, just things missing from BCL.</description>
+    <summary>Extension methods that could have been written by BCL authors.</summary>
+    <releaseNotes />
+    <copyright />
+    <language />
+    <tags>Extensions</tags>
+    <references>
+      <reference file="AshMind.Extensions.dll" />
+    </references>
+  </metadata>
+</package>
