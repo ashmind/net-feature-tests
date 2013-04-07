@@ -5,38 +5,26 @@ using Ninject;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class NinjectAdapter : FrameworkAdapterBase {
-        // I do not declare field as IModule, because it does not give access 
-        // to Bind.
-        //
-        // As far as I understand, this is NOT the correct way to do it,
-        // you should create your own derived Module. However, for tests
-        // this will work.
-        //private readonly  module;
         private readonly IKernel kernel;
 
         public NinjectAdapter() {
-            //this.module = new AutoWiringModule();
-            this.kernel = new StandardKernel(/*this.module*/);
+            this.kernel = new StandardKernel();
         }
 
-        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type implementationType) {
             this.kernel.Bind(serviceType).To(implementationType).InSingletonScope();
         }
 
-        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
+        public override void RegisterTransient(Type serviceType, Type implementationType) {
             this.kernel.Bind(serviceType).To(implementationType).InTransientScope();
         }
 
-        public override void RegisterInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance) {
             this.kernel.Bind(serviceType).ToConstant(instance);
         }
 
-        protected override object DoGetInstance(Type serviceType, string key) {
+        public override object Resolve(Type serviceType) {
             return this.kernel.Get(serviceType);
-        }
-
-        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
-            throw new NotImplementedException();
         }
     }
 }

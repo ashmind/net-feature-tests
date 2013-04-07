@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Practices.ServiceLocation;
 
 namespace DependencyInjection.FeatureTests.Adapters {
-    public interface IFrameworkAdapter : IServiceLocator {
+    public interface IFrameworkAdapter {
         string FrameworkName { get; }
 
-        void RegisterSingleton(Type serviceType, Type implementationType, string key);
-        void RegisterTransient(Type serviceType, Type implementationType, string key);
-        void RegisterInstance(Type serviceType, object instance, string key);
+        void RegisterSingleton(Type serviceType, Type implementationType);
+        void RegisterTransient(Type serviceType, Type implementationType);
+        void RegisterInstance(Type serviceType, object instance);
+
+        object Resolve(Type serviceType);
         
         /// <summary>
         /// This test was run only once because there is no way to recover from StackOverflowException.

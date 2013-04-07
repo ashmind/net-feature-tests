@@ -26,7 +26,7 @@ namespace DependencyInjection.FeatureTests {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithSimpleConstructorDependency>();
 
-            var func = framework.GetInstance<Func<ServiceWithSimpleConstructorDependency>>();
+            var func = framework.Resolve<Func<ServiceWithSimpleConstructorDependency>>();
 
             Assert.NotNull(func);
             var result = func();
@@ -48,7 +48,7 @@ namespace DependencyInjection.FeatureTests {
             framework.Register<ServiceWithTwoConstructorDependencies>();
             var service2 = new IndependentService2();
 
-            var func = framework.GetInstance<Func<IService2, ServiceWithTwoConstructorDependencies>>();
+            var func = framework.Resolve<Func<IService2, ServiceWithTwoConstructorDependencies>>();
            
             Assert.NotNull(func);
             var result = func(service2);
@@ -66,7 +66,7 @@ namespace DependencyInjection.FeatureTests {
             framework.RegisterTransient<IService, IndependentService>();
             framework.RegisterSingleton<ServiceWithFuncConstructorDependency>();
 
-            var service = framework.GetInstance<ServiceWithFuncConstructorDependency>();
+            var service = framework.Resolve<ServiceWithFuncConstructorDependency>();
             var first = service.Factory();
             var second = service.Factory();
 

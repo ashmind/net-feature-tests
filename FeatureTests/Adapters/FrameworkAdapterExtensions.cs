@@ -14,10 +14,10 @@ namespace DependencyInjection.FeatureTests.Adapters {
             container.RegisterTransient<TService, TImplementation>();
         }
 
-        public static void RegisterSingleton(this IFrameworkAdapter container, Type serviceType, Type implementationType) {
-            container.RegisterSingleton(serviceType, implementationType, null);
+        public static void Register<TService>(this IFrameworkAdapter container, TService instance) {
+            container.RegisterInstance(instance);
         }
-
+        
         public static void RegisterSingleton<TService>(this IFrameworkAdapter container) {
             container.RegisterSingleton<TService, TService>();
         }
@@ -27,11 +27,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
         {
             container.RegisterSingleton(typeof(TService), typeof(TImplementation));
         }
-
-        public static void RegisterTransient(this IFrameworkAdapter container, Type serviceType, Type implementationType) {
-            container.RegisterTransient(serviceType, implementationType, null);
-        }
-
+        
         public static void RegisterTransient<TService>(this IFrameworkAdapter container) {
             container.RegisterSingleton<TService, TService>();
         }
@@ -41,25 +37,17 @@ namespace DependencyInjection.FeatureTests.Adapters {
         {
             container.RegisterTransient(typeof(TService), typeof(TImplementation));
         }
-
-        public static void Register<TService>(this IFrameworkAdapter container, TService instance) {
-            container.RegisterInstance(instance);
-        }
-
-        public static void RegisterInstance(this IFrameworkAdapter container, Type serviceType, object instance) {
-            container.RegisterInstance(serviceType, instance, null);
-        }
-
-        public static void RegisterInstance<TService>(this IFrameworkAdapter container, TService instance, string key) {
-            container.RegisterInstance(typeof(TService), instance, key);
-        }
-
+        
         public static void RegisterInstance<TService>(this IFrameworkAdapter container, TService instance) {
             container.RegisterInstance(typeof(TService), instance);
         }
-
+        
         public static void RegisterInstance(this IFrameworkAdapter container, object instance) {
             container.RegisterInstance(instance.GetType(), instance);
+        }
+
+        public static TService Resolve<TService>(this IFrameworkAdapter container) {
+            return (TService)container.Resolve(typeof(TService));
         }
     }
 }

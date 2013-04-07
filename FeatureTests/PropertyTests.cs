@@ -18,7 +18,7 @@ namespace DependencyInjection.FeatureTests {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithSimplePropertyDependency>();
 
-            var component = framework.GetInstance<ServiceWithSimplePropertyDependency>();
+            var component = framework.Resolve<ServiceWithSimplePropertyDependency>();
 
             Assert.NotNull(component.Service);
             Assert.IsAssignableFrom<IndependentService>(component.Service);
@@ -28,7 +28,7 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Register<ServiceWithSimplePropertyDependency>();
-            var component = framework.GetInstance<ServiceWithSimplePropertyDependency>();
+            var component = framework.Resolve<ServiceWithSimplePropertyDependency>();
 
             Assert.Null(component.Service);
         }

@@ -13,25 +13,25 @@ namespace DependencyInjection.FeatureTests.Adapters {
 
         private bool contextRefreshed = false;
 
-        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
-            this.Register(key, implementationType, serviceType, true);
+        public override void RegisterSingleton(Type serviceType, Type implementationType) {
+            this.Register(implementationType, serviceType, true);
         }
 
-        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
-            this.Register(key, implementationType, serviceType, false);
+        public override void RegisterTransient(Type serviceType, Type implementationType) {
+            this.Register(implementationType, serviceType, false);
         }
 
-        public override void RegisterInstance(Type serviceType, object instance, string key) {
-            key = key ?? string.Format("{0} ({1})", serviceType, instance);
+        public override void RegisterInstance(Type serviceType, object instance) {
+            var key = string.Format("{0} ({1})", serviceType, instance);
             this.context.ObjectFactory.RegisterSingleton(key, instance);
         }
 
-        private void Register(string key, Type implementationType, Type serviceType, bool singleton) {
+        private void Register(Type implementationType, Type serviceType, bool singleton) {
             var builder = ObjectDefinitionBuilder.RootObjectDefinition(this.factory, implementationType)
                                                  .SetAutowireMode(AutoWiringMode.AutoDetect)
                                                  .SetSingleton(singleton);
 
-            key = key ?? string.Format("{0} ({1})", serviceType, implementationType);
+            var key = string.Format("{0} ({1})", serviceType, implementationType);
             this.context.RegisterObjectDefinition(key, builder.ObjectDefinition);            
         }
 
@@ -43,17 +43,9 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this.contextRefreshed = true;
         }
 
-        protected override object DoGetInstance(Type serviceType, string key) {
+        public override object Resolve(Type serviceType) {
             this.EnsureContextRefreshed();
-            if (string.IsNullOrEmpty(key))
-                return this.GetAllInstances(serviceType).First();
-            
-            return this.context.GetObject(key, serviceType);
-        }
-
-        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
-            this.EnsureContextRefreshed();
-            return this.context.GetObjectsOfType(serviceType).Values.Cast<object>();
+            return this.context.GetObjectsOfType(serviceType).Values.Cast<object>().Single();
         }
     }
 }

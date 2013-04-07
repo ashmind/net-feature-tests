@@ -10,7 +10,6 @@ using DependencyInjection.FeatureTests.Adapters;
 using DependencyInjection.FeatureTests.Documentation;
 using DependencyInjection.FeatureTests.XunitSupport;
 using DependencyInjection.TableGenerator.Data;
-using Microsoft.Practices.ServiceLocation;
 
 namespace DependencyInjection.TableGenerator.Sources {
     public class FeatureTestTableSource : IFeatureTableSource {
@@ -81,11 +80,7 @@ namespace DependencyInjection.TableGenerator.Sources {
             var invocationException = exception as TargetInvocationException;
             if (invocationException != null)
                 return GetUsefulMessage(invocationException.InnerException);
-
-            var activationException = exception as ActivationException;
-            if (activationException != null)
-                return GetUsefulMessage(activationException.InnerException);
-
+            
             return exception.Message;
         }
 

@@ -15,47 +15,24 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this._container.LoadFrom(AppDomain.CurrentDomain.BaseDirectory, "LinFu*.dll");
         }
 
-        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
-            this.AddService(serviceType, implementationType, key, LifecycleType.Singleton);
+        public override void RegisterSingleton(Type serviceType, Type implementationType) {
+            this.AddService(serviceType, implementationType, LifecycleType.Singleton);
         }
 
-        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
-            // ashmind: Specifying OncePerRequest explicitly breaks MustHave.PropertyDependency test,
-            // which is either a bug or my misunderstanding on how things work.
-            // On the other hand, if I do not specify the lifestyle explicitly, 
-            // _container.AddService(key, serviceType, implementationType) matches instance registration
-            // overload with implementationType as an serviceInstance.
-            this.AddService(serviceType, implementationType, key, LifecycleType.OncePerRequest);
+        public override void RegisterTransient(Type serviceType, Type implementationType) {
+            this.AddService(serviceType, implementationType, LifecycleType.OncePerRequest);
         }
 
-        private void AddService(Type serviceType, Type implementationType, string key, LifecycleType lifecycle) {
-            if (key == null) {
-                this._container.AddService(serviceType, implementationType, lifecycle);
-                return;
-            }
-
-            this._container.AddService(key, serviceType, implementationType, lifecycle);
+        private void AddService(Type serviceType, Type implementationType, LifecycleType lifecycle) {
+            this._container.AddService(serviceType, implementationType, lifecycle);
         }
 
-        public override void RegisterInstance(Type serviceType, object instance, string key) {
-            if (key == null) {
-                this._container.AddService(serviceType, instance);
-                return;
-            }
-
-            this._container.AddService(key, serviceType, instance);
+        public override void RegisterInstance(Type serviceType, object instance) {
+            this._container.AddService(serviceType, instance);
         }
 
-        protected override object DoGetInstance(Type serviceType, string key) {
-            if (key == null)
-                return this._container.GetService(serviceType);
-
-            return this._container.GetService(key, serviceType);
-        }
-
-        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
-            return this._container.GetServices(info => serviceType.IsAssignableFrom(info.ServiceType))
-                             .Select(info => info.Object);
+        public override object Resolve(Type serviceType) {
+            return this._container.GetService(serviceType);
         }
     }
 }

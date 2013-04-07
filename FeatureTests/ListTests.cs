@@ -38,7 +38,7 @@ namespace DependencyInjection.FeatureTests {
             framework.Register<IService, IndependentService>();
             framework.Register<TTestComponent>();
 
-            var resolved = framework.GetInstance<TTestComponent>();
+            var resolved = framework.Resolve<TTestComponent>();
 
             Assert.NotNull(resolved);
             Assert.NotNull(resolved.Services);

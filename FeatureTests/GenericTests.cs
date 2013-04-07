@@ -22,7 +22,7 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void OpenGenericTypes(IFrameworkAdapter framework) {
             framework.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));
-            var resolved = framework.GetInstance<IGenericService<int>>();
+            var resolved = framework.Resolve<IGenericService<int>>();
 
             Assert.NotNull(resolved);
         }

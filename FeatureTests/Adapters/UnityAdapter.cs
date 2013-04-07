@@ -7,24 +7,20 @@ namespace DependencyInjection.FeatureTests.Adapters {
     public class UnityAdapter : FrameworkAdapterBase {
         private readonly IUnityContainer container = new UnityContainer();
 
-        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
-            this.container.RegisterType(serviceType, implementationType, key, new ContainerControlledLifetimeManager());
+        public override void RegisterSingleton(Type serviceType, Type implementationType) {
+            this.container.RegisterType(serviceType, implementationType, new ContainerControlledLifetimeManager());
         }
 
-        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
-            this.container.RegisterType(serviceType, implementationType, key, new TransientLifetimeManager());
+        public override void RegisterTransient(Type serviceType, Type implementationType) {
+            this.container.RegisterType(serviceType, implementationType, new TransientLifetimeManager());
         }
 
-        public override void RegisterInstance(Type serviceType, object instance, string key) {
-            this.container.RegisterInstance(serviceType, key, instance);
+        public override void RegisterInstance(Type serviceType, object instance) {
+            this.container.RegisterInstance(serviceType, instance);
         }
 
-        protected override object DoGetInstance(Type serviceType, string key) {
-            return this.container.Resolve(serviceType, key);
-        }
-
-        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
-            return this.container.ResolveAll(serviceType);
+        public override object Resolve(Type serviceType) {
+            return this.container.Resolve(serviceType);
         }
 
         public override bool CrashesOnRecursion {

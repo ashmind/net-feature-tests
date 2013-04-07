@@ -8,7 +8,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
         private readonly ContainerBuilder builder = new ContainerBuilder();
         private IContainer container;
         
-        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type implementationType) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
                 this.builder.RegisterGeneric(implementationType)
@@ -24,7 +24,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
             }
         }
 
-        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
+        public override void RegisterTransient(Type serviceType, Type implementationType) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
                 this.builder.RegisterGeneric(implementationType)
@@ -40,21 +40,13 @@ namespace DependencyInjection.FeatureTests.Adapters {
             }
         }
 
-        public override void RegisterInstance(Type serviceType, object instance, string key) {
+        public override void RegisterInstance(Type serviceType, object instance) {
             this.builder.RegisterInstance(instance).As(serviceType);
         }
-        
-        protected override IEnumerable<object> DoGetAllInstances(Type serviceType) {
+
+        public override object Resolve(Type serviceType) {
             this.container = this.container ?? this.builder.Build();
-
-            // ashmind: will figure this out later
-            throw new NotImplementedException();
-        }
-
-        protected override object DoGetInstance(Type serviceType, string key) {
-            this.container = this.container ?? this.builder.Build();
-
-            return string.IsNullOrEmpty(key) ? this.container.Resolve(serviceType) : this.container.ResolveNamed(key, serviceType);
+            return this.container.Resolve(serviceType);
         }
 
         public override bool CrashesOnListRecursion {

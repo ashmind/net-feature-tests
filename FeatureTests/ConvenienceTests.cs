@@ -26,7 +26,7 @@ namespace DependencyInjection.FeatureTests {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithMultipleConstructors>();
 
-            var resolved = framework.GetInstance<ServiceWithMultipleConstructors>();
+            var resolved = framework.Resolve<ServiceWithMultipleConstructors>();
 
             Assert.NotNull(resolved);
             Assert.Equal(
@@ -67,7 +67,7 @@ namespace DependencyInjection.FeatureTests {
 
         private void AssertGivesCorrectExceptionWhenResolvingRecursive<TService>(IFrameworkAdapter framework) {
             try {
-                framework.GetInstance<TService>();
+                framework.Resolve<TService>();
             }
             catch (Exception ex) {
                 Debug.WriteLine(framework.GetType().Name + " throws following on recursion: " + ex);

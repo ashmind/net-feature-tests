@@ -16,7 +16,7 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void IndependentService(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
-            var component = framework.GetInstance<IService>();
+            var component = framework.Resolve<IService>();
 
             Assert.NotNull(component);
         }
@@ -25,7 +25,7 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void IndependentServiceRegisteredAsSelf(IFrameworkAdapter framework) {
             framework.Register<IndependentService>();
-            var component = framework.GetInstance<IndependentService>();
+            var component = framework.Resolve<IndependentService>();
 
             Assert.NotNull(component);
         }
@@ -34,8 +34,8 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void SingletonLifetime(IFrameworkAdapter framework) {
             framework.RegisterSingleton<IService, IndependentService>();
-            var instance1 = framework.GetInstance<IService>();
-            var instance2 = framework.GetInstance<IService>();
+            var instance1 = framework.Resolve<IService>();
+            var instance2 = framework.Resolve<IService>();
 
             Assert.Same(instance1, instance2);
         }
@@ -44,8 +44,8 @@ namespace DependencyInjection.FeatureTests {
         [ForEachFramework]
         public void TransientLifetime(IFrameworkAdapter framework) {
             framework.RegisterTransient<IService, IndependentService>();
-            var instance1 = framework.GetInstance<IService>();
-            var instance2 = framework.GetInstance<IService>();
+            var instance1 = framework.Resolve<IService>();
+            var instance2 = framework.Resolve<IService>();
 
             Assert.NotSame(instance1, instance2);
         }
@@ -56,7 +56,7 @@ namespace DependencyInjection.FeatureTests {
             var instance = new IndependentService();
             framework.Register<IService>(instance);
 
-            var resolved = framework.GetInstance<IService>();
+            var resolved = framework.Resolve<IService>();
 
             Assert.Same(instance, resolved);
         }
@@ -67,7 +67,7 @@ namespace DependencyInjection.FeatureTests {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithSimpleConstructorDependency>();
 
-            var component = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
+            var component = framework.Resolve<ServiceWithSimpleConstructorDependency>();
 
             Assert.NotNull(component.Service);
             Assert.IsAssignableFrom<IndependentService>(component.Service);
@@ -80,7 +80,7 @@ namespace DependencyInjection.FeatureTests {
             framework.Register<IService>(instance);
             framework.Register<ServiceWithSimpleConstructorDependency>();
 
-            var dependent = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
+            var dependent = framework.Resolve<ServiceWithSimpleConstructorDependency>();
 
             Assert.Same(instance, dependent.Service);
         }
