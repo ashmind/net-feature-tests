@@ -6,6 +6,7 @@ using System.Reflection;
 using AshMind.Extensions;
 using DependencyInjection.FeatureTests;
 using DependencyInjection.FeatureTests.Adapters;
+using DependencyInjection.FeatureTests.Documentation;
 using DependencyInjection.FeatureTests.XunitSupport;
 using DependencyInjection.TableGenerator.Data;
 using Microsoft.Practices.ServiceLocation;
@@ -22,14 +23,28 @@ namespace DependencyInjection.TableGenerator.Sources {
                                                         .ToArray();
 
             foreach (var group in testGroups) {
+                var groupSpecialCases = GetSpecialCases(group.Key);
                 var features = group.ToDictionary(m => m, this.ConvertToFeature);
                 var table = new FeatureTable(GetDisplayName(group.Key), Frameworks.List(), features.Values) {
                     Description = this.GetDescription(@group.Key)
                 };
 
                 foreach (var test in group) {
+                    var specialCases = this.GetSpecialCases(test);
+                    specialCases = specialCases.Concat(groupSpecialCases.Where(p => !specialCases.ContainsKey(p.Key)))
+                                               .ToDictionary(p => p.Key, p => p.Value);
+                    
                     foreach (var framework in Frameworks.List()) {
-                        RunTestAndCollectResult(test, framework, table[framework, features[test]]);
+                        var cell = table[framework, features[test]];
+                        var specialCaseText = specialCases.GetValueOrDefault(framework.GetType());
+                        if (specialCaseText != null) {
+                            cell.Text = "see comment";
+                            cell.Comment = specialCaseText;
+                            cell.State = FeatureState.Neutral;
+                            continue;
+                        }
+
+                        RunTestAndCollectResult(test, framework, cell);
                     }
                 }
 
@@ -83,6 +98,10 @@ namespace DependencyInjection.TableGenerator.Sources {
                 return member.Name;
 
             return displayNameAttribute.DisplayName;
+        }
+
+        private IDictionary<Type, string> GetSpecialCases(MemberInfo member) {
+            return member.GetCustomAttributes<SpecialCaseAttribute>().ToDictionary(a => a.FrameworkType, a => a.Comment);
         }
     }
 }

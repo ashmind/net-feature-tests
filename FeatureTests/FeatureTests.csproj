@@ -104,6 +104,7 @@
     <Compile Include="Adapters\SpringAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
+    <Compile Include="Documentation\SpecialCaseAttribute.cs" />
     <Compile Include="Frameworks.cs" />
     <Compile Include="FuncTests.cs" />
     <Compile Include="ListTests.cs" />
@@ -137,6 +138,7 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

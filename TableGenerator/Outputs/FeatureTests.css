@@ -84,7 +84,7 @@ td, th {
     position: relative;
 }
 
-th[title]:after, td[title]:after {
+th[title]::after, td[title]::after {
     content: '';
     width: 0;
     height: 0;
@@ -96,7 +96,7 @@ th[title]:after, td[title]:after {
     border-color: transparent yellow transparent transparent;
 }
 
-th[title]:after {
+th[title]::after {
     border-right-color: #376092;
 }
 
@@ -105,7 +105,7 @@ td.success {
     color: #006100;
 }
 
-td.success:after {
+td.success::after {
     border-right-color: #006100;
 }
 
@@ -114,6 +114,15 @@ td.failure {
     color: #9c0006;
 }
 
-td.failure:after {
+td.failure::after {
     border-right-color: #9c0006;
+}
+
+td.neutral {
+    background-color: #ffeba5;
+    color: #9c6500;
+}
+
+td.neutral::after {
+    border-right-color: #9c6500;
 }
