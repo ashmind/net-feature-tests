@@ -121,6 +121,7 @@ td.neutral.with-details::after {
     
     z-index: 1000;
     left: 0;
+    top: 100%;
     min-width: 30em;
     
     padding: 0.2rem;

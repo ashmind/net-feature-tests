@@ -55,7 +55,6 @@ namespace DependencyInjection.FeatureTests {
         }
 
         [DisplayName("Graceful recursion handling (list dependency)")]
-        [Description(@"Same as ""Graceful recursion handling"" feature, but for list dependency.")]
         [ForEachFramework]
         public void GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnListRecursion(framework);
