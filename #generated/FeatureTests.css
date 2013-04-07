@@ -10,82 +10,23 @@
     font-size: 110%;
 }
 
+.note-firefox {
+    display: none;
+}
+
 table {
     float: left;
     clear: both;
-}
-
-/*header * {
-    margin-left: 1px;
-    margin-right: 1px;
     
-    padding: 0.2rem;
-    padding-left: 0.5rem;
-    
-    border: 1px solid white;
-}
-
-header h2 {
-    font-size: 110%;
-    font-weight: normal;
-    background-color: #b4cce4;
-
-    margin-bottom: 0;
-    border-bottom: 0;
-}
-
-header .description {
-    display: inline;
-    background-color: #b4cce4;
-}*/
-
-table {
     margin: 0;
     margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    
     border: 0;
 }
 
-table caption {
-    background-color: #b4cce4;
-    text-align: left;
-}
-
-table caption * {
-    padding: 0.2rem;
-    padding-left: 0.5rem;
-    
-    border: 2px solid white;
-    border-bottom: 0;
-}
-
-table caption .title {
-    background-color: #95b3d7;
-}
-
-table caption .description {
-    white-space: pre-wrap;
-}
-
-td, th {
-    padding: 0.2rem;
-    text-align: center;
-}
-
-th {
-    font-weight: normal;
-    max-width: 10em;
-    background-color: #b4cce4;
-}
-
-td {
-    background-color: #dbe5f1;
-}
-
-td, th {
-    position: relative;
-}
-
-th[title]::after, td[title]::after {
+/* The amazing CSS triangle: */
+.with-details::after {
     content: '';
     width: 0;
     height: 0;
@@ -97,33 +38,109 @@ th[title]::after, td[title]::after {
     border-color: transparent yellow transparent transparent;
 }
 
-th[title]::after {
+table caption {
+    text-align: left;
+    
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+    
+    border: 2px solid white;
+    border-bottom: 0;
+
+    position: relative;
+}
+
+table caption, table caption .details {
+    background-color: #95b3d7;
+}
+
+table caption.with-details::after {
     border-right-color: #376092;
 }
 
-td.success {
+td, th {
+    padding: 0.2rem;
+    text-align: center;
+}
+
+th {
+    font-weight: normal;
+    max-width: 10em;
+}
+
+th, th .details {
+    background-color: #b4cce4;
+}
+
+td, td .details {
+    background-color: #dbe5f1;
+}
+
+td, th {
+    position: relative;
+}
+
+th.with-details::after {
+    border-right-color: #376092;
+}
+
+td.success, td.success .details {
     background-color: #c6efce;
     color: #006100;
 }
 
-td.success::after {
+td.success.with-details::after {
     border-right-color: #006100;
 }
 
-td.failure {
+td.failure, td.failure .details {
     background-color: #ffc7ce;
     color: #9c0006;
 }
 
-td.failure::after {
+td.failure.with-details::after {
     border-right-color: #9c0006;
 }
 
-td.neutral {
+td.neutral, td.neutral .details {
     background-color: #ffeba5;
     color: #9c6500;
 }
 
-td.neutral::after {
+td.neutral.with-details::after {
     border-right-color: #9c6500;
+}
+
+.details {
+    text-align: left;
+    border-top: 2px solid white;
+    
+    display: none;
+    
+    white-space: pre-wrap;
+    
+    z-index: 1000;
+    left: 0;
+    min-width: 30em;
+    
+    padding: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+}
+
+.with-details:hover .details {
+    display: block;
+    position: absolute;
+}
+
+@-moz-document url-prefix() {
+    .note-firefox {
+        position: fixed;
+        right: 0;
+        display: block;
+        padding: 0.3rem;
+        font-size: 110%;
+        background-color: #ffeba5;
+        z-index: 1000;
+    }
 }

@@ -10,7 +10,7 @@ using Xunit;
 
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(2)]
-    [DisplayName("List/array dependency support")]
+    [DisplayName("List/array dependencies")]
     [Description(@"
         When several registrations of IService exist in a container, many
         frameworks automatically provide TService[] (or List<TService> etc).
