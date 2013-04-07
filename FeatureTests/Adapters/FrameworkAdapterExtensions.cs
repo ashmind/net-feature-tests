@@ -4,34 +4,42 @@ using System.Linq;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public static class FrameworkAdapterExtensions {
-        public static void Register<TComponent>(this IFrameworkAdapter container) {
-            container.Register<TComponent, TComponent>();
+        public static void Register<TService>(this IFrameworkAdapter container) {
+            container.Register<TService, TService>();
         }
 
-        public static void Register<TService, TComponent>(this IFrameworkAdapter container) 
-            where TComponent : TService
+        public static void Register<TService, TImplementation>(this IFrameworkAdapter container)
+            where TImplementation : TService
         {
-            container.RegisterTransient<TService, TComponent>();
+            container.RegisterTransient<TService, TImplementation>();
         }
 
-        public static void RegisterSingleton(this IFrameworkAdapter container, Type serviceType, Type componentType) {
-            container.RegisterSingleton(serviceType, componentType, null);
+        public static void RegisterSingleton(this IFrameworkAdapter container, Type serviceType, Type implementationType) {
+            container.RegisterSingleton(serviceType, implementationType, null);
         }
 
-        public static void RegisterSingleton<TService, TComponent>(this IFrameworkAdapter container) 
-            where TComponent : TService
+        public static void RegisterSingleton<TService>(this IFrameworkAdapter container) {
+            container.RegisterSingleton<TService, TService>();
+        }
+
+        public static void RegisterSingleton<TService, TImplementation>(this IFrameworkAdapter container)
+            where TImplementation : TService
         {
-            container.RegisterSingleton(typeof(TService), typeof(TComponent));
+            container.RegisterSingleton(typeof(TService), typeof(TImplementation));
         }
 
-        public static void RegisterTransient(this IFrameworkAdapter container, Type serviceType, Type componentType) {
-            container.RegisterTransient(serviceType, componentType, null);
+        public static void RegisterTransient(this IFrameworkAdapter container, Type serviceType, Type implementationType) {
+            container.RegisterTransient(serviceType, implementationType, null);
         }
 
-        public static void RegisterTransient<TService, TComponent>(this IFrameworkAdapter container) 
-            where TComponent : TService
+        public static void RegisterTransient<TService>(this IFrameworkAdapter container) {
+            container.RegisterSingleton<TService, TService>();
+        }
+
+        public static void RegisterTransient<TService, TImplementation>(this IFrameworkAdapter container)
+            where TImplementation : TService
         {
-            container.RegisterTransient(typeof(TService), typeof(TComponent));
+            container.RegisterTransient(typeof(TService), typeof(TImplementation));
         }
 
         public static void Register<TService>(this IFrameworkAdapter container, TService instance) {

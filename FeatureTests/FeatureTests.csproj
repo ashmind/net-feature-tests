@@ -105,9 +105,13 @@
     <Compile Include="Adapters\StructureMapAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
     <Compile Include="Frameworks.cs" />
+    <Compile Include="FuncTests.cs" />
     <Compile Include="ListTests.cs" />
     <Compile Include="PropertyTests.cs" />
     <Compile Include="ConvenienceTests.cs" />
+    <Compile Include="TestTypes\ServiceWithFuncConstructorDependency.cs" />
+    <Compile Include="TestTypes\IService2.cs" />
+    <Compile Include="TestTypes\ServiceWithTwoConstructorDependencies.cs" />
     <Compile Include="XunitSupport\ForEachFrameworkAttribute.cs" />
     <Compile Include="BasicTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

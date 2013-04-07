@@ -15,12 +15,12 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this.registry = new Registry();
         }
 
-        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
-            this.registry.For(serviceType).Singleton().Use(componentType);
+        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
+            this.registry.For(serviceType).Singleton().Use(implementationType);
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
-            this.registry.For(serviceType).LifecycleIs(InstanceScope.Transient).Use(componentType);
+        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
+            this.registry.For(serviceType).LifecycleIs(InstanceScope.Transient).Use(implementationType);
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {

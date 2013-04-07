@@ -8,32 +8,32 @@ namespace DependencyInjection.FeatureTests.Adapters {
         private readonly ContainerBuilder builder = new ContainerBuilder();
         private IContainer container;
         
-        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
+        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
-                this.builder.RegisterGeneric(componentType)
+                this.builder.RegisterGeneric(implementationType)
                             .As(serviceType)
                             .PropertiesAutowired()
                             .InstancePerLifetimeScope();
             }
             else {
-                this.builder.RegisterType(componentType)
+                this.builder.RegisterType(implementationType)
                             .As(serviceType)
                             .PropertiesAutowired()
                             .InstancePerLifetimeScope();
             }
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
-                this.builder.RegisterGeneric(componentType)
+                this.builder.RegisterGeneric(implementationType)
                             .As(serviceType)
                             .PropertiesAutowired()
                             .InstancePerDependency();
             }
             else {
-                this.builder.RegisterType(componentType)
+                this.builder.RegisterType(implementationType)
                             .As(serviceType)
                             .PropertiesAutowired()
                             .InstancePerDependency();

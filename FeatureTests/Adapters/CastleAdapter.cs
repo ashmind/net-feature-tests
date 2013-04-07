@@ -9,12 +9,12 @@ namespace DependencyInjection.FeatureTests.Adapters {
     public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
 
-        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
-            this.Register(key, serviceType, componentType, LifestyleType.Singleton);
+        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
+            this.Register(key, serviceType, implementationType, LifestyleType.Singleton);
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
-            this.Register(key, serviceType, componentType, LifestyleType.Transient);
+        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
+            this.Register(key, serviceType, implementationType, LifestyleType.Transient);
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {
@@ -25,9 +25,9 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this.kernel.Register(registration);
         }
 
-        private void Register(string key, Type serviceType, Type componentType, LifestyleType lifestyle) {
+        private void Register(string key, Type serviceType, Type implementationType, LifestyleType lifestyle) {
             var registration = Component.For(serviceType)
-                                        .ImplementedBy(componentType)
+                                        .ImplementedBy(implementationType)
                                         .LifeStyle.Is(lifestyle);
 
             if (key == null)

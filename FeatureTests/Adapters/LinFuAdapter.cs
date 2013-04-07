@@ -15,26 +15,26 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this._container.LoadFrom(AppDomain.CurrentDomain.BaseDirectory, "LinFu*.dll");
         }
 
-        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
-            this.AddService(serviceType, componentType, key, LifecycleType.Singleton);
+        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
+            this.AddService(serviceType, implementationType, key, LifecycleType.Singleton);
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
+        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
             // ashmind: Specifying OncePerRequest explicitly breaks MustHave.PropertyDependency test,
             // which is either a bug or my misunderstanding on how things work.
             // On the other hand, if I do not specify the lifestyle explicitly, 
-            // _container.AddService(key, serviceType, componentType) matches instance registration
-            // overload with componentType as an serviceInstance.
-            this.AddService(serviceType, componentType, key, LifecycleType.OncePerRequest);
+            // _container.AddService(key, serviceType, implementationType) matches instance registration
+            // overload with implementationType as an serviceInstance.
+            this.AddService(serviceType, implementationType, key, LifecycleType.OncePerRequest);
         }
 
-        private void AddService(Type serviceType, Type componentType, string key, LifecycleType lifecycle) {
+        private void AddService(Type serviceType, Type implementationType, string key, LifecycleType lifecycle) {
             if (key == null) {
-                this._container.AddService(serviceType, componentType, lifecycle);
+                this._container.AddService(serviceType, implementationType, lifecycle);
                 return;
             }
 
-            this._container.AddService(key, serviceType, componentType, lifecycle);
+            this._container.AddService(key, serviceType, implementationType, lifecycle);
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {

@@ -19,12 +19,12 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this.kernel = new StandardKernel(/*this.module*/);
         }
 
-        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
-            this.kernel.Bind(serviceType).To(componentType).InSingletonScope();
+        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
+            this.kernel.Bind(serviceType).To(implementationType).InSingletonScope();
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
-            this.kernel.Bind(serviceType).To(componentType).InTransientScope();
+        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
+            this.kernel.Bind(serviceType).To(implementationType).InTransientScope();
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {

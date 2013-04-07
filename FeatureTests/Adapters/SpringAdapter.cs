@@ -13,12 +13,12 @@ namespace DependencyInjection.FeatureTests.Adapters {
 
         private bool contextRefreshed = false;
 
-        public override void RegisterSingleton(Type serviceType, Type componentType, string key) {
-            this.Register(key, componentType, serviceType, true);
+        public override void RegisterSingleton(Type serviceType, Type implementationType, string key) {
+            this.Register(key, implementationType, serviceType, true);
         }
 
-        public override void RegisterTransient(Type serviceType, Type componentType, string key) {
-            this.Register(key, componentType, serviceType, false);
+        public override void RegisterTransient(Type serviceType, Type implementationType, string key) {
+            this.Register(key, implementationType, serviceType, false);
         }
 
         public override void RegisterInstance(Type serviceType, object instance, string key) {
@@ -26,12 +26,12 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this.context.ObjectFactory.RegisterSingleton(key, instance);
         }
 
-        private void Register(string key, Type componentType, Type serviceType, bool singleton) {
-            var builder = ObjectDefinitionBuilder.RootObjectDefinition(this.factory, componentType)
+        private void Register(string key, Type implementationType, Type serviceType, bool singleton) {
+            var builder = ObjectDefinitionBuilder.RootObjectDefinition(this.factory, implementationType)
                                                  .SetAutowireMode(AutoWiringMode.AutoDetect)
                                                  .SetSingleton(singleton);
 
-            key = key ?? string.Format("{0} ({1})", serviceType, componentType);
+            key = key ?? string.Format("{0} ({1})", serviceType, implementationType);
             this.context.RegisterObjectDefinition(key, builder.ObjectDefinition);            
         }
 
