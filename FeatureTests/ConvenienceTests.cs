@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using DependencyInjection.FeatureTests.Adapters;
@@ -9,17 +10,17 @@ using Xunit;
 using Xunit.Sdk;
 
 namespace DependencyInjection.FeatureTests {
+    [DisplayName("Convenience")]
+    [Description("Features that simplify development and reduce surprises.")]
     public class ConvenienceTests {
-        [ForEachFramework]
-        public void UnregisteredService(IFrameworkAdapter framework) {
-            framework.Register<IService, IndependentService>();
-
-            var resolved = framework.GetInstance<ServiceWithSimpleConstructorDependency>();
-
-            Assert.NotNull(resolved);
-            Assert.IsAssignableFrom<IndependentService>(resolved.Service);
-        }
-
+        [DisplayName("Best constructor selection")]
+        [Description(@"
+            If multiple constructors are present, DI framework should select the 
+            one that developer would have selected, having the same services.
+            
+            In this situation, it seems reasonable to select constructor with
+            most resolvable dependencies.
+        ")]
         [ForEachFramework]
         public void ReasonableConstructorSelection(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
@@ -34,6 +35,15 @@ namespace DependencyInjection.FeatureTests {
             );
         }
 
+        [DisplayName("Graceful recursion handling")]
+        [Description(@"
+            Recursive dependencies are non-resolvable, however the difference between
+            getting a StackOverflowException and any other one is significant.
+
+            StackOverflowException will crash the whole process, which is really undesirable,
+            even if it is only an integration test environment. Debugging such issue can
+            be a huge annoyance.
+        ")]
         [ForEachFramework]
         public void GracefulRecursionHandling(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnRecursion(framework);
@@ -44,6 +54,8 @@ namespace DependencyInjection.FeatureTests {
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithRecursiveDependency1>(framework);
         }
 
+        [DisplayName("Graceful recursion handling (list dependency)")]
+        [Description(@"Same as ""Graceful recursion handling"" feature, but for list dependency.")]
         [ForEachFramework]
         public void GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnListRecursion(framework);
@@ -54,9 +66,9 @@ namespace DependencyInjection.FeatureTests {
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithArrayConstructorDependency>(framework);
         }
 
-        private void AssertGivesCorrectExceptionWhenResolvingRecursive<TComponent>(IFrameworkAdapter framework) {
+        private void AssertGivesCorrectExceptionWhenResolvingRecursive<TService>(IFrameworkAdapter framework) {
             try {
-                framework.GetInstance<TComponent>();
+                framework.GetInstance<TService>();
             }
             catch (Exception ex) {
                 Debug.WriteLine(framework.GetType().Name + " throws following on recursion: " + ex);

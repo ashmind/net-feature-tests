@@ -19,7 +19,7 @@ namespace DependencyInjection.TableGenerator.Sources {
                                                         .SelectMany(t => t.GetMethods())
                                                         .Where(m => m.IsDefined<ForEachFrameworkAttribute>(false))
                                                         .GroupBy(m => m.DeclaringType)
-                                                        .OrderBy(g => g.Key.Name)
+                                                        .OrderBy(g => GetDisplayOrder(g.Key))
                                                         .ToArray();
 
             foreach (var group in testGroups) {
@@ -29,8 +29,8 @@ namespace DependencyInjection.TableGenerator.Sources {
                     Description = this.GetDescription(@group.Key)
                 };
 
-                foreach (var test in group) {
-                    var specialCases = this.GetSpecialCases(test);
+                foreach (var test in group.OrderBy(GetDisplayOrder)) {
+                    var specialCases = GetSpecialCases(test);
                     specialCases = specialCases.Concat(groupSpecialCases.Where(p => !specialCases.ContainsKey(p.Key)))
                                                .ToDictionary(p => p.Key, p => p.Value);
                     
@@ -98,6 +98,14 @@ namespace DependencyInjection.TableGenerator.Sources {
                 return member.Name;
 
             return displayNameAttribute.DisplayName;
+        }
+
+        private int GetDisplayOrder(MemberInfo member) {
+            var displayOrderAttribute = member.GetCustomAttributes<DisplayOrderAttribute>().SingleOrDefault();
+            if (displayOrderAttribute == null)
+                return int.MaxValue;
+
+            return displayOrderAttribute.Order;
         }
 
         private IDictionary<Type, string> GetSpecialCases(MemberInfo member) {

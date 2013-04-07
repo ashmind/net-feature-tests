@@ -27,7 +27,7 @@ namespace DependencyInjection.TableGenerator.Outputs {
 
             File.WriteAllText(Path.Combine(directory.FullName, "FeatureTests.html"), builder.ToString());
 
-            // obviously the right way would be to embed it as resource, but IMHO it is good enough for
+            // obviously the right way would be to embed it as a resource, but IMHO it is good enough for
             // this type of project
             File.Copy(@"Outputs\FeatureTests.css", Path.Combine(directory.FullName, "FeatureTests.css"), true);
         }
@@ -36,9 +36,12 @@ namespace DependencyInjection.TableGenerator.Outputs {
             foreach (var table in tables) {
                 builder.AppendLine("    <table>")
                        .AppendLine("      <caption>")
-                       .AppendFormat("        <div class='title'>{0}</div>", WebUtility.HtmlEncode(table.Name)).AppendLine()
-                       .AppendFormat("        <div class='description'>{0}</div>", FormatTableDescription(table.Description)).AppendLine()
-                       .AppendLine("      </caption>")
+                       .AppendFormat("        <div class='title'>{0}</div>", WebUtility.HtmlEncode(table.Name)).AppendLine();
+
+                if (table.Description.IsNotNullOrEmpty())
+                    builder.AppendFormat("        <div class='description'>{0}</div>", FormatTableDescription(table.Description)).AppendLine();
+
+                builder.AppendLine("      </caption>")
                        .AppendLine("      <tr>")
                        .AppendLine("        <th>Framework</th>");
                 foreach (var feature in table.Features) {
