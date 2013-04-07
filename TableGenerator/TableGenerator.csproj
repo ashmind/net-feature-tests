@@ -54,6 +54,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\Feature.cs" />
     <Compile Include="Data\FeatureTable.cs" />
     <Compile Include="Data\FeatureCell.cs" />
     <Compile Include="Data\FeatureState.cs" />

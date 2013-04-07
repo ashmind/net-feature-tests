@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Text.RegularExpressions;
+using AshMind.Extensions;
 using DependencyInjection.TableGenerator.Data;
 
 namespace DependencyInjection.TableGenerator.Outputs {
@@ -32,38 +34,61 @@ namespace DependencyInjection.TableGenerator.Outputs {
 
         private void AppendTables(StringBuilder builder, IEnumerable<FeatureTable> tables) {
             foreach (var table in tables) {
-                builder.AppendLine("    <section>")
-                       .AppendFormat("      <h2>{0}</h2>", table.Name).AppendLine()
-                       .AppendLine("      <table>")
-                       .AppendLine("        <tr>")
-                       .AppendLine("          <th>Framework</th>");
-                foreach (var header in table.FeatureNames) {
-                    builder.AppendFormat("          <th>{0}</th>", header).AppendLine();
+                builder.AppendLine("    <table>")
+                       .AppendLine("      <caption>")
+                       .AppendFormat("        <div class='title'>{0}</div>", WebUtility.HtmlEncode(table.Name)).AppendLine()
+                       .AppendFormat("        <div class='description'>{0}</div>", FormatTableDescription(table.Description)).AppendLine()
+                       .AppendLine("      </caption>")
+                       .AppendLine("      <tr>")
+                       .AppendLine("        <th>Framework</th>");
+                foreach (var feature in table.Features) {
+                    builder.AppendFormat("        <th{0}>{1}</th>", CreateTitleAttribute(NormalizeUserProvidedDescription(feature.Description)), feature.Name).AppendLine();
                 }
-                builder.AppendLine("        </tr>");
+                builder.AppendLine("      </tr>");
 
                 foreach (var row in table.GetRows()) {
-                    builder.AppendLine("        <tr>")
-                           .AppendFormat("          <td>{0}</td>", row.Item1.FrameworkName).AppendLine();
+                    builder.AppendLine("      <tr>")
+                           .AppendFormat("        <td>{0}</td>", row.Item1.FrameworkName).AppendLine();
                     foreach (var cell in row.Item2) {
                         AppendCell(builder, cell);
                     }
-                    builder.AppendLine("        </tr>");
+                    builder.AppendLine("      </tr>");
                 }
-                builder.AppendLine("      </table>")
-                       .AppendLine("    </section>");
+                builder.AppendLine("    </table>");
             }
         }
 
         private static void AppendCell(StringBuilder builder, FeatureCell cell) {
-            var title = WebUtility.HtmlEncode(cell.Comment ?? "")
-                                  .Replace("\n", "&#10;")
-                                  .Replace("\r", "&#13;");
-
+            var titleAttribute = CreateTitleAttribute(cell.Comment);
             var @class = cell.State.ToString().ToLowerInvariant();
 
-            builder.AppendFormat("          <td title='{0}' class='{1}'>{2}</td>", title, @class, WebUtility.HtmlEncode(cell.Text))
+            builder.AppendFormat("        <td{0} class='{1}'>{2}</td>", titleAttribute, @class, WebUtility.HtmlEncode(cell.Text))
                    .AppendLine();
+        }
+
+        private static string CreateTitleAttribute(string title) {
+            if (title.IsNullOrEmpty())
+                return "";
+
+            return " title='" + WebUtility.HtmlEncode(title ?? "").Replace("\n", "&#10;").Replace("\r", "&#13;") + "'";
+        }
+
+        private string FormatTableDescription(string description) {
+            var normalized = NormalizeUserProvidedDescription(description);
+            return WebUtility.HtmlEncode(normalized);
+        }
+
+        private static string NormalizeUserProvidedDescription(string description) {
+            var normalized = description ?? "";
+            // replace all single new lines with spaces
+            normalized = Regex.Replace(normalized, @"([^\r\n]|^)(?:\r\n|\r|\n)([^\r\n]|$)", "$1 $2");
+
+            // collapse all spaces
+            normalized = Regex.Replace(normalized, @" +", @" ");
+
+            // remove all spaces at start/end of the line
+            normalized = Regex.Replace(normalized, @"^ +| +$", "", RegexOptions.Multiline);
+            return normalized;
         }
     }
 }

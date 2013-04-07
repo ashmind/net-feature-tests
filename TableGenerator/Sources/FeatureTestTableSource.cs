@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using AshMind.Extensions;
@@ -12,7 +13,7 @@ using Microsoft.Practices.ServiceLocation;
 namespace DependencyInjection.TableGenerator.Sources {
     public class FeatureTestTableSource : IFeatureTableSource {
         public IEnumerable<FeatureTable> GetTables() {
-            // potentially I could have used Xunit runners, but they are a bit annoying to use through Nuget
+            // potentially I could have used Xunit runners, but they are a bit annoying to get through NuGet
             var testGroups = typeof(BasicTests).Assembly.GetTypes()
                                                         .SelectMany(t => t.GetMethods())
                                                         .Where(m => m.IsDefined<ForEachFrameworkAttribute>(false))
@@ -21,15 +22,23 @@ namespace DependencyInjection.TableGenerator.Sources {
                                                         .ToArray();
 
             foreach (var group in testGroups) {
-                var table = new FeatureTable(group.Key.Name, Frameworks.List(), group.Select(m => m.Name));
+                var features = group.ToDictionary(m => m, this.ConvertToFeature);
+                var table = new FeatureTable(GetDisplayName(group.Key), Frameworks.List(), features.Values) {
+                    Description = this.GetDescription(@group.Key)
+                };
+
                 foreach (var test in group) {
                     foreach (var framework in Frameworks.List()) {
-                        RunTestAndCollectResult(test, framework, table[framework, test.Name]);
+                        RunTestAndCollectResult(test, framework, table[framework, features[test]]);
                     }
                 }
 
                 yield return table;
             }
+        }
+
+        private Feature ConvertToFeature(MethodInfo test) {
+            return new Feature(test, this.GetDisplayName(test)) { Description = this.GetDescription(test) };
         }
 
         private void RunTestAndCollectResult(MethodInfo test, IFrameworkAdapter framework, FeatureCell cell) {
@@ -62,6 +71,18 @@ namespace DependencyInjection.TableGenerator.Sources {
                 return GetUsefulMessage(activationException.InnerException);
 
             return exception.Message;
+        }
+
+        private string GetDescription(MemberInfo member) {
+            return member.GetCustomAttributes<DescriptionAttribute>().Select(a => a.Description).SingleOrDefault();
+        }
+
+        private string GetDisplayName(MemberInfo member) {
+            var displayNameAttribute = member.GetCustomAttributes<DisplayNameAttribute>().SingleOrDefault();
+            if (displayNameAttribute == null)
+                return member.Name;
+
+            return displayNameAttribute.DisplayName;
         }
     }
 }
