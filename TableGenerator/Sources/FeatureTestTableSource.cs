@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Text.RegularExpressions;
 using AshMind.Extensions;
 using DependencyInjection.FeatureTests;
 using DependencyInjection.FeatureTests.Adapters;
@@ -89,7 +90,19 @@ namespace DependencyInjection.TableGenerator.Sources {
         }
 
         private string GetDescription(MemberInfo member) {
-            return member.GetCustomAttributes<DescriptionAttribute>().Select(a => a.Description).SingleOrDefault();
+            var description = member.GetCustomAttributes<DescriptionAttribute>().Select(a => a.Description).SingleOrDefault();
+            if (description.IsNullOrEmpty())
+                return description;
+
+            // replace all single new lines with spaces
+            description = Regex.Replace(description, @"([^\r\n]|^)(?:\r\n|\r|\n)([^\r\n]|$)", "$1 $2");
+
+            // collapse all spaces
+            description = Regex.Replace(description, @" +", @" ");
+
+            // remove all spaces at start/end of the line
+            description = Regex.Replace(description, @"^ +| +$", "", RegexOptions.Multiline);
+            return description;
         }
 
         private string GetDisplayName(MemberInfo member) {

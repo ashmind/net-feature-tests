@@ -4,7 +4,6 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Text;
-using System.Text.RegularExpressions;
 using AshMind.Extensions;
 using DependencyInjection.TableGenerator.Data;
 
@@ -75,21 +74,8 @@ namespace DependencyInjection.TableGenerator.Outputs {
             if (text.IsNullOrEmpty())
                 return "";
 
-            var content = WebUtility.HtmlEncode(NormalizeDetailsContent(text));
+            var content = WebUtility.HtmlEncode(text);
             return "<div class='details'>" + content + "</div>";
-        }
-
-        private static string NormalizeDetailsContent(string description) {
-            var normalized = description ?? "";
-            // replace all single new lines with spaces
-            normalized = Regex.Replace(normalized, @"([^\r\n]|^)(?:\r\n|\r|\n)([^\r\n]|$)", "$1 $2");
-
-            // collapse all spaces
-            normalized = Regex.Replace(normalized, @" +", @" ");
-
-            // remove all spaces at start/end of the line
-            normalized = Regex.Replace(normalized, @"^ +| +$", "", RegexOptions.Multiline);
-            return normalized;
         }
     }
 }

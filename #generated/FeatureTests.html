@@ -108,7 +108,9 @@ This is extremely important for open/closed principle. For example, UserValidato
         <td>Castle</td>
         <td class='failure with-details'>failed<div class='details'>Can&#39;t create component &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithArrayConstructorDependency&#39; as it has dependencies to be satisfied.
 
-&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithArrayConstructorDependency&#39; is waiting for the following dependencies: - Service &#39;DependencyInjection.FeatureTests.TestTypes.IService[]&#39; which was not registered.</div></td>
+&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithArrayConstructorDependency&#39; is waiting for the following dependencies:
+- Service &#39;DependencyInjection.FeatureTests.TestTypes.IService[]&#39; which was not registered.
+</div></td>
         <td class='failure with-details'>failed<div class='details'>Assert.NotNull() Failure</div></td>
       </tr>
       <tr>
@@ -133,8 +135,12 @@ This is extremely important for open/closed principle. For example, UserValidato
       </tr>
       <tr>
         <td>Unity</td>
-        <td class='failure with-details'>failed<div class='details'>Assert.Equal() Failure Expected: 1 Actual: 0</div></td>
-        <td class='failure with-details'>failed<div class='details'>Assert.Equal() Failure Expected: 1 Actual: 0</div></td>
+        <td class='failure with-details'>failed<div class='details'>Assert.Equal() Failure
+Expected: 1
+Actual:   0</div></td>
+        <td class='failure with-details'>failed<div class='details'>Assert.Equal() Failure
+Expected: 1
+Actual:   0</div></td>
       </tr>
     </table>
     <table>
@@ -198,7 +204,9 @@ For example, registration Service(IService1, IService2) can provide Func&lt;ISer
         <td class='failure with-details'>failed<div class='details'>No component for supporting the service System.Func`2[[DependencyInjection.FeatureTests.TestTypes.IService2, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] was found</div></td>
         <td class='failure with-details'>failed<div class='details'>Can&#39;t create component &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency&#39; as it has dependencies to be satisfied.
 
-&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency&#39; is waiting for the following dependencies: - Service &#39;System.Func`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&#39; which was not registered.</div></td>
+&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency&#39; is waiting for the following dependencies:
+- Service &#39;System.Func`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&#39; which was not registered.
+</div></td>
       </tr>
       <tr>
         <td>LinFu</td>
@@ -215,7 +223,8 @@ For example, registration Service(IService1, IService2) can provide Func&lt;ISer
       <tr>
         <td>StructureMap</td>
         <td class='success'>supported</td>
-        <td class='failure with-details'>failed<div class='details'>StructureMap Exception Code: 202 No Default Instance defined for PluginFamily System.Func`2[[DependencyInjection.FeatureTests.TestTypes.IService2, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</div></td>
+        <td class='failure with-details'>failed<div class='details'>StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily System.Func`2[[DependencyInjection.FeatureTests.TestTypes.IService2, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</div></td>
         <td class='success'>supported</td>
       </tr>
       <tr>
@@ -227,9 +236,14 @@ For example, registration Service(IService1, IService2) can provide Func&lt;ISer
       <tr>
         <td>Unity</td>
         <td class='success'>supported</td>
-        <td class='failure with-details'>failed<div class='details'>Resolution of the dependency failed, type = &quot;System.Func`2[DependencyInjection.FeatureTests.TestTypes.IService2,DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies]&quot;, name = &quot;(none)&quot;. Exception occurred while: while resolving. Exception is: VerificationException - Operation could destabilize the runtime. ----------------------------------------------- At the time of the exception, the container was:
+        <td class='failure with-details'>failed<div class='details'>Resolution of the dependency failed, type = &quot;System.Func`2[DependencyInjection.FeatureTests.TestTypes.IService2,DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies]&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: VerificationException - Operation could destabilize the runtime.
+-----------------------------------------------
+At the time of the exception, the container was:
 
-Resolving System.Func`2[DependencyInjection.FeatureTests.TestTypes.IService2,DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies],(none)</div></td>
+  Resolving System.Func`2[DependencyInjection.FeatureTests.TestTypes.IService2,DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies],(none)
+</div></td>
         <td class='success'>supported</td>
       </tr>
     </table>
@@ -258,14 +272,25 @@ Resolving System.Func`2[DependencyInjection.FeatureTests.TestTypes.IService2,Dep
       <tr>
         <td>Ninject</td>
         <td class='success'>supported</td>
-        <td class='failure with-details'>failed<div class='details'>Error activating IService No matching bindings are available, and the type is not self-bindable. Activation path: 2) Injection of dependency IService into property Service of type ServiceWithSimplePropertyDependency 1) Request for ServiceWithSimplePropertyDependency
+        <td class='failure with-details'>failed<div class='details'>Error activating IService
+No matching bindings are available, and the type is not self-bindable.
+Activation path:
+  2) Injection of dependency IService into property Service of type ServiceWithSimplePropertyDependency
+  1) Request for ServiceWithSimplePropertyDependency
 
-Suggestions: 1) Ensure that you have defined a binding for IService. 2) If the binding was defined in a module, ensure that the module has been loaded into the kernel. 3) Ensure you have not accidentally created more than one kernel. 4) If you are using constructor arguments, ensure that the parameter name matches the constructors parameter name. 5) If you are using automatic module loading, ensure the search path and filters are correct.</div></td>
+Suggestions:
+  1) Ensure that you have defined a binding for IService.
+  2) If the binding was defined in a module, ensure that the module has been loaded into the kernel.
+  3) Ensure you have not accidentally created more than one kernel.
+  4) If you are using constructor arguments, ensure that the parameter name matches the constructors parameter name.
+  5) If you are using automatic module loading, ensure the search path and filters are correct.
+</div></td>
       </tr>
       <tr>
         <td>StructureMap</td>
         <td class='success'>supported</td>
-        <td class='failure with-details'>failed<div class='details'>StructureMap Exception Code: 202 No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
+        <td class='failure with-details'>failed<div class='details'>StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
       </tr>
       <tr>
         <td>Spring</td>
@@ -275,9 +300,16 @@ Suggestions: 1) Ensure that you have defined a binding for IService. 2) If the b
       <tr>
         <td>Unity</td>
         <td class='success'>supported</td>
-        <td class='failure with-details'>failed<div class='details'>Resolution of the dependency failed, type = &quot;DependencyInjection.FeatureTests.TestTypes.ServiceWithSimplePropertyDependency&quot;, name = &quot;(none)&quot;. Exception occurred while: while resolving. Exception is: InvalidOperationException - The current type, DependencyInjection.FeatureTests.TestTypes.IService, is an interface and cannot be constructed. Are you missing a type mapping? ----------------------------------------------- At the time of the exception, the container was:
+        <td class='failure with-details'>failed<div class='details'>Resolution of the dependency failed, type = &quot;DependencyInjection.FeatureTests.TestTypes.ServiceWithSimplePropertyDependency&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The current type, DependencyInjection.FeatureTests.TestTypes.IService, is an interface and cannot be constructed. Are you missing a type mapping?
+-----------------------------------------------
+At the time of the exception, the container was:
 
-Resolving DependencyInjection.FeatureTests.TestTypes.ServiceWithSimplePropertyDependency,(none) Resolving value for property ServiceWithSimplePropertyDependency.Service Resolving DependencyInjection.FeatureTests.TestTypes.IService,(none)</div></td>
+  Resolving DependencyInjection.FeatureTests.TestTypes.ServiceWithSimplePropertyDependency,(none)
+  Resolving value for property ServiceWithSimplePropertyDependency.Service
+    Resolving DependencyInjection.FeatureTests.TestTypes.IService,(none)
+</div></td>
       </tr>
     </table>
     <table>
@@ -316,21 +348,32 @@ StackOverflowException will crash the whole process, which is really undesirable
       </tr>
       <tr>
         <td>StructureMap</td>
-        <td class='failure with-details'>failed<div class='details'>StructureMap Exception Code: 202 No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IUnregisteredService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
+        <td class='failure with-details'>failed<div class='details'>StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IUnregisteredService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
         <td class='success'>supported</td>
         <td class='success'>supported</td>
       </tr>
       <tr>
         <td>Spring</td>
-        <td class='failure with-details'>failed<div class='details'>Assert.Equal() Failure Position: First difference is at position 0 Expected: Most resolvable Actual: Default</div></td>
+        <td class='failure with-details'>failed<div class='details'>Assert.Equal() Failure
+Position: First difference is at position 0
+Expected: Most resolvable
+Actual:   Default</div></td>
         <td class='success'>supported</td>
         <td class='success'>supported</td>
       </tr>
       <tr>
         <td>Unity</td>
-        <td class='failure with-details'>failed<div class='details'>Resolution of the dependency failed, type = &quot;DependencyInjection.FeatureTests.TestTypes.ServiceWithMultipleConstructors&quot;, name = &quot;(none)&quot;. Exception occurred while: while resolving. Exception is: InvalidOperationException - The current type, DependencyInjection.FeatureTests.TestTypes.IUnregisteredService, is an interface and cannot be constructed. Are you missing a type mapping? ----------------------------------------------- At the time of the exception, the container was:
+        <td class='failure with-details'>failed<div class='details'>Resolution of the dependency failed, type = &quot;DependencyInjection.FeatureTests.TestTypes.ServiceWithMultipleConstructors&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The current type, DependencyInjection.FeatureTests.TestTypes.IUnregisteredService, is an interface and cannot be constructed. Are you missing a type mapping?
+-----------------------------------------------
+At the time of the exception, the container was:
 
-Resolving DependencyInjection.FeatureTests.TestTypes.ServiceWithMultipleConstructors,(none) Resolving parameter &quot;service2&quot; of constructor DependencyInjection.FeatureTests.TestTypes.ServiceWithMultipleConstructors(DependencyInjection.FeatureTests.TestTypes.IService service1, DependencyInjection.FeatureTests.TestTypes.IUnregisteredService service2) Resolving DependencyInjection.FeatureTests.TestTypes.IUnregisteredService,(none)</div></td>
+  Resolving DependencyInjection.FeatureTests.TestTypes.ServiceWithMultipleConstructors,(none)
+  Resolving parameter &quot;service2&quot; of constructor DependencyInjection.FeatureTests.TestTypes.ServiceWithMultipleConstructors(DependencyInjection.FeatureTests.TestTypes.IService service1, DependencyInjection.FeatureTests.TestTypes.IUnregisteredService service2)
+    Resolving DependencyInjection.FeatureTests.TestTypes.IUnregisteredService,(none)
+</div></td>
         <td class='failure with-details'>failed<div class='details'>Unity fails recursion for now, and we have no way to retest it in each run (without process crash).</div></td>
         <td class='failure with-details'>failed<div class='details'>Unity fails recursion for now, and we have no way to retest it in each run (without process crash).</div></td>
       </tr>
