@@ -38,9 +38,18 @@
     <Reference Include="AshMind.Extensions">
       <HintPath>..\#packages\AshMind.Extensions.1.0.4\lib\3.5\AshMind.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="RazorTemplates.Core">
+      <HintPath>..\#packages\RazorTemplates.1.1.1\lib\RazorTemplates.Core.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\#packages\RazorTemplates.1.1.1\lib\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,7 +64,8 @@
     <Compile Include="Data\FeatureTable.cs" />
     <Compile Include="Data\FeatureCell.cs" />
     <Compile Include="Data\FeatureState.cs" />
-    <Compile Include="Outputs\HtmlTableOutput.cs" />
+    <Compile Include="Outputs\HtmlOutput.cs" />
+    <Compile Include="Outputs\Html\HtmlTemplateBase.cs" />
     <Compile Include="Outputs\IFeatureTableOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,10 +80,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <Content Include="Outputs\Html\FeatureTests.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <None Include="packages.config" />
+    <None Include="web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Outputs\FeatureTests.css">
+    <Content Include="Outputs\Html\FeatureTests.css">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
