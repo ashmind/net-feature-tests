@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using LinFu.IoC;
 using LinFu.IoC.Configuration;
 using LinFu.IoC.Interfaces;
@@ -13,6 +14,10 @@ namespace DependencyInjection.FeatureTests.Adapters {
         public LinFuAdapter() {
             this._container = new ServiceContainer();
             this._container.LoadFrom(AppDomain.CurrentDomain.BaseDirectory, "LinFu*.dll");
+        }
+
+        public override Assembly FrameworkAssembly {
+            get { return typeof(IServiceContainer).Assembly; }
         }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {

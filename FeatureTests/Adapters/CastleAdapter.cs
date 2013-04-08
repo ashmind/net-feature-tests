@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Castle.Core;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
@@ -8,6 +9,10 @@ using Castle.MicroKernel.Registration;
 namespace DependencyInjection.FeatureTests.Adapters {
     public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
+
+        public override Assembly FrameworkAssembly {
+            get { return typeof(IKernel).Assembly; }
+        }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
             this.Register(serviceType, implementationType, LifestyleType.Singleton);

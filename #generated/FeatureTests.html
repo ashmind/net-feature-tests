@@ -13,6 +13,47 @@
       <h1>Dependency Injection Feature Tests (.NET)</h1>
 
       <section>
+        <h2>General information</h2>
+        <div class="description"></div>
+        
+
+
+        <table>
+          <tr>
+            <th>Framework</th>
+              <th>Version</th>
+          </tr>
+          <tr>
+            <td>Autofac</td>
+                <td class="neutral">3.0.0.0</td>
+          </tr>
+          <tr>
+            <td>Castle</td>
+                <td class="neutral">3.2.0.0</td>
+          </tr>
+          <tr>
+            <td>LinFu</td>
+                <td class="neutral">2.3.0.41559</td>
+          </tr>
+          <tr>
+            <td>Ninject</td>
+                <td class="neutral">3.0.0.0</td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
+                <td class="neutral">2.6.4.0</td>
+          </tr>
+          <tr>
+            <td>Spring.NET</td>
+                <td class="neutral">1.3.2.40943</td>
+          </tr>
+          <tr>
+            <td>Unity</td>
+                <td class="neutral">2.1.505.0</td>
+          </tr>
+        </table>
+      </section>
+      <section>
         <h2>Essential functionality</h2>
         <div class="description"></div>
         
@@ -80,7 +121,7 @@
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>Spring</td>
+            <td>Spring.NET</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
@@ -145,7 +186,7 @@ This is extremely important for open/closed principle. For example, UserValidato
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>Spring</td>
+            <td>Spring.NET</td>
                 <td class="success">supported</td>
                 <td class="failure with-comment">failed<div class="comment">Assert.NotNull() Failure</div></td>
           </tr>
@@ -194,7 +235,7 @@ For example Service&lt;&gt; can be registered as IService&lt;&gt;. Then any requ
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>Spring</td>
+            <td>Spring.NET</td>
                 <td class="failure with-comment">failed<div class="comment">Sequence contains no elements</div></td>
           </tr>
           <tr>
@@ -252,9 +293,9 @@ For example, registration Service(IService1, IService2) can provide Func&lt;ISer
           </tr>
           <tr>
             <td>Ninject</td>
-                <td class="neutral with-comment">see comment<div class="comment">Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.</div></td>
-                <td class="neutral with-comment">see comment<div class="comment">Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.</div></td>
-                <td class="neutral with-comment">see comment<div class="comment">Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.</div></td>
+                <td class="concern with-comment">see comment<div class="comment">Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.</div></td>
+                <td class="concern with-comment">see comment<div class="comment">Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.</div></td>
+                <td class="concern with-comment">see comment<div class="comment">Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.</div></td>
           </tr>
           <tr>
             <td>StructureMap</td>
@@ -264,7 +305,7 @@ No Default Instance defined for PluginFamily System.Func`2[[DependencyInjection.
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>Spring</td>
+            <td>Spring.NET</td>
                 <td class="failure with-comment">failed<div class="comment">Sequence contains no elements</div></td>
                 <td class="failure with-comment">failed<div class="comment">Sequence contains no elements</div></td>
                 <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency (DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency)&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Func`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Func`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Func`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [factory] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency (DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency)]</div></td>
@@ -335,7 +376,7 @@ Suggestions:
 No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
           </tr>
           <tr>
-            <td>Spring</td>
+            <td>Spring.NET</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
           </tr>
@@ -408,7 +449,7 @@ No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.Te
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>Spring</td>
+            <td>Spring.NET</td>
                 <td class="failure with-comment">failed<div class="comment">Assert.Equal() Failure
 Position: First difference is at position 0
 Expected: Most resolvable

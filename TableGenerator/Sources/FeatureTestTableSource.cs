@@ -40,7 +40,7 @@ namespace DependencyInjection.TableGenerator.Sources {
                         if (specialCase != null && specialCase.Skip) {
                             cell.Text = "see comment";
                             cell.Comment = specialCase.Comment;
-                            cell.State = FeatureState.Neutral;
+                            cell.State = FeatureState.Concern;
                             continue;
                         }
 

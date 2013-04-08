@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Microsoft.Practices.Unity;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class UnityAdapter : FrameworkAdapterBase {
         private readonly IUnityContainer container = new UnityContainer();
+
+        public override Assembly FrameworkAssembly {
+            get { return typeof(IUnityContainer).Assembly; }
+        }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
             this.Register(serviceType, implementationType, () => new ContainerControlledLifetimeManager());

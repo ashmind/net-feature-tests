@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using StructureMap;
 using StructureMap.Configuration.DSL;
 
@@ -11,6 +12,10 @@ namespace DependencyInjection.FeatureTests.Adapters {
 
         public StructureMapAdapter() {
             this.registry = new Registry();
+        }
+
+        public override Assembly FrameworkAssembly {
+            get { return typeof(Container).Assembly; }
         }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {

@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public interface IFrameworkAdapter {
+        Assembly FrameworkAssembly { get; }
         string FrameworkName { get; }
 
         void RegisterSingleton(Type serviceType, Type implementationType);

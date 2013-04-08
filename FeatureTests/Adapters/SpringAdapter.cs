@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Spring.Context.Support;
 using Spring.Objects.Factory.Config;
 using Spring.Objects.Factory.Support;
@@ -12,6 +13,14 @@ namespace DependencyInjection.FeatureTests.Adapters {
         private readonly IObjectDefinitionFactory factory = new DefaultObjectDefinitionFactory();
 
         private bool contextRefreshed = false;
+
+        public override Assembly FrameworkAssembly {
+            get { return typeof(IObjectDefinitionFactory).Assembly; }
+        }
+
+        public override string FrameworkName {
+            get { return "Spring.NET"; }
+        }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
             this.Register(implementationType, serviceType, true);

@@ -4,8 +4,9 @@ using System.Linq;
 
 namespace DependencyInjection.TableGenerator.Data {
     public enum FeatureState {
-        Failure,
         Neutral,
-        Success
+        Success,
+        Concern,
+        Failure
     }
 }

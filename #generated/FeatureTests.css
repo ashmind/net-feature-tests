@@ -104,7 +104,7 @@ td.with-comment::after {
     border-color: transparent transparent yellow transparent;
 }
 
-td, td .details {
+td, td .comment {
     background-color: #dbe5f1;
 }
 
@@ -126,12 +126,12 @@ td.failure.with-comment::after {
     border-bottom-color: #9c0006;
 }
 
-td.neutral, td.neutral .comment {
+td.concern, td.neutral .comment {
     background-color: #ffeba5;
     color: #9c6500;
 }
 
-td.neutral.with-comment::after {
+td.concern.with-comment::after {
     border-bottom-color: #9c6500;
 }
 

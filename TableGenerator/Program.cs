@@ -8,7 +8,10 @@ using DependencyInjection.TableGenerator.Sources;
 
 namespace DependencyInjection.TableGenerator {
     public class Program {
-        private static readonly IFeatureTableSource[] Sources = { new FeatureTestTableSource() };
+        private static readonly IFeatureTableSource[] Sources = {
+            new AssemblyMetadataTableSource(), 
+            new FeatureTestTableSource()
+        };
         private static readonly IFeatureTableOutput[] Outputs = { new HtmlOutput() };
 
         public static void Main(string[] args) {

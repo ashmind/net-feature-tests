@@ -1,10 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text.RegularExpressions;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public abstract class FrameworkAdapterBase : IFrameworkAdapter {
+        public abstract Assembly FrameworkAssembly { get; }
         public virtual string FrameworkName {
             get { return Regex.Match(this.GetType().Name, "^(.+?)(?:Adapter)?$").Groups[1].Value; }
         }

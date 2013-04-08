@@ -1,13 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Autofac;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class AutofacAdapter : FrameworkAdapterBase {
         private readonly ContainerBuilder builder = new ContainerBuilder();
         private IContainer container;
-        
+
+        public override Assembly FrameworkAssembly {
+            get { return typeof(IContainer).Assembly; }
+        }
+
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {

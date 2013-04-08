@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using Ninject;
 
 namespace DependencyInjection.FeatureTests.Adapters {
@@ -9,6 +10,10 @@ namespace DependencyInjection.FeatureTests.Adapters {
 
         public NinjectAdapter() {
             this.kernel = new StandardKernel();
+        }
+
+        public override Assembly FrameworkAssembly {
+            get { return typeof(IKernel).Assembly; }
         }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
