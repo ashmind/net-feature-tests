@@ -36,15 +36,17 @@ namespace DependencyInjection.TableGenerator.Sources {
                     
                     foreach (var framework in Frameworks.List()) {
                         var cell = table[framework, features[test]];
-                        var specialCaseText = specialCases.GetValueOrDefault(framework.GetType());
-                        if (specialCaseText != null) {
+                        var specialCase = specialCases.GetValueOrDefault(framework.GetType());
+                        if (specialCase != null && specialCase.Skip) {
                             cell.Text = "see comment";
-                            cell.Comment = specialCaseText;
+                            cell.Comment = specialCase.Comment;
                             cell.State = FeatureState.Neutral;
                             continue;
                         }
 
                         RunTestAndCollectResult(test, framework, cell);
+                        if (specialCase != null)
+                            cell.Comment = specialCase.Comment;
                     }
                 }
 
@@ -116,8 +118,8 @@ namespace DependencyInjection.TableGenerator.Sources {
             return displayOrderAttribute.Order;
         }
 
-        private IDictionary<Type, string> GetSpecialCases(MemberInfo member) {
-            return member.GetCustomAttributes<SpecialCaseAttribute>().ToDictionary(a => a.FrameworkType, a => a.Comment);
+        private IDictionary<Type, SpecialCaseAttribute> GetSpecialCases(MemberInfo member) {
+            return member.GetCustomAttributes<SpecialCaseAttribute>().ToDictionary(a => a.FrameworkType);
         }
     }
 }

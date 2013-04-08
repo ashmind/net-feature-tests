@@ -17,7 +17,7 @@ namespace DependencyInjection.FeatureTests {
         This is very useful for mixing lifetimes: for example, singleton (Service) may have a Func dependency on transient (DataContext),
         which allows it to get/dispose a new instance of transient when it is needed.
     ")]
-    [SpecialCase(typeof(NinjectAdapter), "Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.")]
+    [SpecialCase(typeof(NinjectAdapter), "Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.", Skip = true)]
     public class FuncTests {
         [DisplayName("No parameters")]
         [Description("Registration of TService automatically provides Func<TService>.")]
