@@ -59,10 +59,10 @@ namespace DependencyInjection.FeatureTests {
         public void GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnListRecursion(framework);
 
-            framework.Register<ServiceWithArrayConstructorDependency>();
+            framework.Register<ServiceWithListConstructorDependency<IService[]>>();
             framework.Register<IService, ServiceThatCreatesRecursiveArrayDependency>();
 
-            this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithArrayConstructorDependency>(framework);
+            this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithListConstructorDependency<IService[]>>(framework);
         }
 
         private void AssertGivesCorrectExceptionWhenResolvingRecursive<TService>(IFrameworkAdapter framework) {

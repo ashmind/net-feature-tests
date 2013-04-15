@@ -144,7 +144,7 @@
       </section>
       <section>
         <h2>List/array dependencies</h2>
-        <div class="description">When several registrations of IService exist in a container, many frameworks automatically provide TService[] (or List&lt;TService&gt; etc).
+        <div class="description">When several registrations of IService exist in a container, many frameworks automatically provide IService[] (or List&lt;IService&gt; etc).
 
 This is extremely important for open/closed principle. For example, UserValidator can have dependency on IUserValidationRule[]. Then new rules can be transparently added to the system without any changes to UserValidator.</div>
         
@@ -153,30 +153,54 @@ This is extremely important for open/closed principle. For example, UserValidato
         <table>
           <tr>
             <th>Framework</th>
-              <th>Constructor dependency</th>
-              <th>Property dependency</th>
+              <th>IService[]</th>
+              <th>IList&lt;IService&gt;</th>
+              <th>ICollection&lt;IService&gt;</th>
+              <th>IEnumerable&lt;IService&gt;</th>
           </tr>
           <tr>
             <td>Autofac</td>
                 <td class="success">supported</td>
+                <td class="failure with-comment">failed<div class="comment">None of the constructors found with &#39;Autofac.Core.Activators.Reflection.DefaultConstructorFinder&#39; on type &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]]&#39; can be invoked with the available services and parameters:
+Cannot resolve parameter &#39;System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService] services&#39; of constructor &#39;Void .ctor(System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService])&#39;.</div></td>
+                <td class="failure with-comment">failed<div class="comment">None of the constructors found with &#39;Autofac.Core.Activators.Reflection.DefaultConstructorFinder&#39; on type &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]]&#39; can be invoked with the available services and parameters:
+Cannot resolve parameter &#39;System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService] services&#39; of constructor &#39;Void .ctor(System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService])&#39;.</div></td>
                 <td class="success">supported</td>
           </tr>
           <tr>
             <td>Castle</td>
-                <td class="failure with-comment">failed<div class="comment">Can&#39;t create component &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithArrayConstructorDependency&#39; as it has dependencies to be satisfied.
+                <td class="failure with-comment">failed<div class="comment">Can&#39;t create component &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[DependencyInjection.FeatureTests.TestTypes.IService[], DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&#39; as it has dependencies to be satisfied.
 
-&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithArrayConstructorDependency&#39; is waiting for the following dependencies:
+&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[DependencyInjection.FeatureTests.TestTypes.IService[], DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&#39; is waiting for the following dependencies:
 - Service &#39;DependencyInjection.FeatureTests.TestTypes.IService[]&#39; which was not registered.
 </div></td>
-                <td class="failure with-comment">failed<div class="comment">Assert.NotNull() Failure</div></td>
+                <td class="failure with-comment">failed<div class="comment">Can&#39;t create component &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; as it has dependencies to be satisfied.
+
+&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; is waiting for the following dependencies:
+- Service &#39;System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&#39; which was not registered.
+</div></td>
+                <td class="failure with-comment">failed<div class="comment">Can&#39;t create component &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; as it has dependencies to be satisfied.
+
+&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; is waiting for the following dependencies:
+- Service &#39;System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&#39; which was not registered.
+</div></td>
+                <td class="failure with-comment">failed<div class="comment">Can&#39;t create component &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; as it has dependencies to be satisfied.
+
+&#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; is waiting for the following dependencies:
+- Service &#39;System.Collections.Generic.IEnumerable`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]&#39; which was not registered.
+</div></td>
           </tr>
           <tr>
             <td>LinFu</td>
                 <td class="success">supported</td>
+                <td class="failure with-comment">failed<div class="comment">Constructor on type &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; not found.</div></td>
+                <td class="failure with-comment">failed<div class="comment">Constructor on type &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; not found.</div></td>
                 <td class="success">supported</td>
           </tr>
           <tr>
             <td>Ninject</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
           </tr>
@@ -184,16 +208,23 @@ This is extremely important for open/closed principle. For example, UserValidato
             <td>StructureMap</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
+                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</div></td>
+                <td class="success">supported</td>
           </tr>
           <tr>
             <td>Spring.NET</td>
                 <td class="success">supported</td>
-                <td class="failure with-comment">failed<div class="comment">Assert.NotNull() Failure</div></td>
+                <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]])]</div></td>
+                <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]])]</div></td>
+                <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Collections.Generic.IEnumerable`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]])]</div></td>
           </tr>
           <tr>
             <td>Unity</td>
                 <td class="success with-comment">supported<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
-                <td class="success with-comment">supported<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
+                <td class="failure with-comment">failed<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
+                <td class="failure with-comment">failed<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
+                <td class="failure with-comment">failed<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
           </tr>
         </table>
       </section>

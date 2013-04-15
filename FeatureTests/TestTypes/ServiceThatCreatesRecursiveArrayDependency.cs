@@ -4,6 +4,6 @@ using System.Linq;
 
 namespace DependencyInjection.FeatureTests.TestTypes {
     public class ServiceThatCreatesRecursiveArrayDependency : IService {
-        public ServiceThatCreatesRecursiveArrayDependency(ServiceWithArrayConstructorDependency dependency) {}
+        public ServiceThatCreatesRecursiveArrayDependency(ServiceWithListConstructorDependency<IService[]> dependency) {}
     }
 }

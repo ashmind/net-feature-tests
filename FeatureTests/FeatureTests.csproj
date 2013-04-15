@@ -126,14 +126,13 @@
     <Compile Include="TestTypes\GenericService.cs" />
     <Compile Include="TestTypes\IGenericService.cs" />
     <Compile Include="TestTypes\IndependentService.cs" />
-    <Compile Include="TestTypes\IServiceWithArrayDependency.cs" />
+    <Compile Include="TestTypes\IServiceWithListDependency.cs" />
     <Compile Include="TestTypes\IService.cs" />
     <Compile Include="TestTypes\IUnregisteredService.cs" />
     <Compile Include="TestTypes\ServiceWithRecursiveDependency1.cs" />
     <Compile Include="TestTypes\ServiceWithRecursiveDependency2.cs" />
     <Compile Include="TestTypes\ServiceThatCreatesRecursiveArrayDependency.cs" />
-    <Compile Include="TestTypes\ServiceWithArrayConstructorDependency.cs" />
-    <Compile Include="TestTypes\ServiceWithArrayPropertyDependency.cs" />
+    <Compile Include="TestTypes\ServiceWithListConstructorDependency.cs" />
     <Compile Include="TestTypes\ServiceWithMultipleConstructors.cs" />
     <Compile Include="TestTypes\ServiceWithSimpleConstructorDependency.cs" />
     <Compile Include="TestTypes\ServiceWithSimplePropertyDependency.cs" />

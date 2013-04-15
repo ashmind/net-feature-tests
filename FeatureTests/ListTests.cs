@@ -13,7 +13,7 @@ namespace DependencyInjection.FeatureTests {
     [DisplayName("List/array dependencies")]
     [Description(@"
         When several registrations of IService exist in a container, many
-        frameworks automatically provide TService[] (or List<TService> etc).
+        frameworks automatically provide IService[] (or List<IService> etc).
 
         This is extremely important for open/closed principle. For example,
         UserValidator can have dependency on IUserValidationRule[]. Then new
@@ -22,20 +22,32 @@ namespace DependencyInjection.FeatureTests {
     ")]
     [SpecialCase(typeof(UnityAdapter), "Note: Unity requires named registrations for list resolution to work.")]
     public class ListTests {
-        [DisplayName("Constructor dependency")]
+        [DisplayName("IService[]")]
         [ForEachFramework]
-        public void ListConstructorDependency(IFrameworkAdapter framework) {
-            this.AssertResolvesListDependencyFor<ServiceWithArrayConstructorDependency>(framework);
+        public void Array(IFrameworkAdapter framework) {
+            this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IService[]>>(framework);
         }
 
-        [DisplayName("Property dependency")]
+        [DisplayName("IList<IService>")]
         [ForEachFramework]
-        public void ListPropertyDependency(IFrameworkAdapter framework) {
-            this.AssertResolvesListDependencyFor<ServiceWithArrayPropertyDependency>(framework);
+        public void List(IFrameworkAdapter framework) {
+            this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IList<IService>>>(framework);
         }
 
+        [DisplayName("ICollection<IService>")]
+        [ForEachFramework]
+        public void Collection(IFrameworkAdapter framework) {
+            this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<ICollection<IService>>>(framework);
+        }
+
+        [DisplayName("IEnumerable<IService>")]
+        [ForEachFramework]
+        public void Enumerable(IFrameworkAdapter framework) {
+            this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(framework);
+        }
+        
         public void AssertResolvesListDependencyFor<TTestComponent>(IFrameworkAdapter framework)
-            where TTestComponent : IServiceWithArrayDependency 
+            where TTestComponent : IServiceWithListDependency<IEnumerable<IService>>
         {
             framework.Register<IService, IndependentService>();
             framework.Register<TTestComponent>();
@@ -44,8 +56,8 @@ namespace DependencyInjection.FeatureTests {
 
             Assert.NotNull(resolved);
             Assert.NotNull(resolved.Services);
-            Assert.Equal(1, resolved.Services.Length);
-            Assert.IsAssignableFrom<IndependentService>(resolved.Services[0]);
+            Assert.Equal(1, resolved.Services.Count());
+            Assert.IsAssignableFrom<IndependentService>(resolved.Services.First());
         }
     }
 }
