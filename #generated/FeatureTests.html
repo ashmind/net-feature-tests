@@ -40,12 +40,16 @@
                 <td class="neutral">3.0.0.0</td>
           </tr>
           <tr>
-            <td>StructureMap</td>
-                <td class="neutral">2.6.4.0</td>
+            <td>Simple Injector</td>
+                <td class="neutral">2.2.3.0</td>
           </tr>
           <tr>
             <td>Spring.NET</td>
                 <td class="neutral">1.3.2.40943</td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
+                <td class="neutral">2.6.4.0</td>
           </tr>
           <tr>
             <td>Unity</td>
@@ -111,7 +115,7 @@
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>StructureMap</td>
+            <td>Simple Injector</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
@@ -122,6 +126,16 @@
           </tr>
           <tr>
             <td>Spring.NET</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
@@ -205,12 +219,11 @@ Cannot resolve parameter &#39;System.Collections.Generic.ICollection`1[Dependenc
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>StructureMap</td>
-                <td class="success">supported</td>
-                <td class="success">supported</td>
-                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
-No Default Instance defined for PluginFamily System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</div></td>
-                <td class="success">supported</td>
+            <td>Simple Injector</td>
+                <td class="failure with-comment">failed<div class="comment">The registered delegate for type ServiceWithListConstructorDependency&lt;IService[]&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;IService[]&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IService[]&gt; contains the parameter of type IService[] with name &#39;services&#39; that is not registered. Please ensure IService[] is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IService[]&gt;.</div></td>
+                <td class="failure with-comment">failed<div class="comment">The registered delegate for type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; contains the parameter of type IList&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IList&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt;.</div></td>
+                <td class="failure with-comment">failed<div class="comment">The registered delegate for type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; contains the parameter of type ICollection&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure ICollection&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt;.</div></td>
+                <td class="concern with-comment">see comment<div class="comment">Simple Injector does support resolving IEnumerable&lt;T&gt;, but requires a single registration using one of the RegisterAll methods to register all types at once.</div></td>
           </tr>
           <tr>
             <td>Spring.NET</td>
@@ -218,6 +231,14 @@ No Default Instance defined for PluginFamily System.Collections.Generic.ICollect
                 <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]])]</div></td>
                 <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]])]</div></td>
                 <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Collections.Generic.IEnumerable`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]] (DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]])]</div></td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</div></td>
+                <td class="success">supported</td>
           </tr>
           <tr>
             <td>Unity</td>
@@ -262,12 +283,16 @@ For example Service&lt;&gt; can be registered as IService&lt;&gt;. Then any requ
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>StructureMap</td>
+            <td>Simple Injector</td>
                 <td class="success">supported</td>
           </tr>
           <tr>
             <td>Spring.NET</td>
                 <td class="failure with-comment">failed<div class="comment">Sequence contains no elements</div></td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
+                <td class="success">supported</td>
           </tr>
           <tr>
             <td>Unity</td>
@@ -329,17 +354,23 @@ For example, registration Service(IService1, IService2) can provide Func&lt;ISer
                 <td class="concern with-comment">see comment<div class="comment">Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.</div></td>
           </tr>
           <tr>
-            <td>StructureMap</td>
-                <td class="success">supported</td>
-                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
-No Default Instance defined for PluginFamily System.Func`2[[DependencyInjection.FeatureTests.TestTypes.IService2, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</div></td>
-                <td class="success">supported</td>
+            <td>Simple Injector</td>
+                <td class="failure with-comment">failed<div class="comment">No registration for type Func&lt;ServiceWithSimpleConstructorDependency&gt; could be found and an implicit registration could not be made. The constructor of type Func&lt;ServiceWithSimpleConstructorDependency&gt; contains parameter &#39;method&#39; of type IntPtr which can not be used for constructor injection because it is a value type.</div></td>
+                <td class="failure with-comment">failed<div class="comment">No registration for type Func&lt;IService2, ServiceWithTwoConstructorDependencies&gt; could be found and an implicit registration could not be made. The constructor of type Func&lt;IService2, ServiceWithTwoConstructorDependencies&gt; contains parameter &#39;method&#39; of type IntPtr which can not be used for constructor injection because it is a value type.</div></td>
+                <td class="failure with-comment">failed<div class="comment">The registered delegate for type ServiceWithFuncConstructorDependency threw an exception. No registration for type ServiceWithFuncConstructorDependency could be found and an implicit registration could not be made. The constructor of the type ServiceWithFuncConstructorDependency contains the parameter of type Func&lt;IService&gt; with name &#39;factory&#39; that is not registered. Please ensure Func&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithFuncConstructorDependency.</div></td>
           </tr>
           <tr>
             <td>Spring.NET</td>
                 <td class="failure with-comment">failed<div class="comment">Sequence contains no elements</div></td>
                 <td class="failure with-comment">failed<div class="comment">Sequence contains no elements</div></td>
                 <td class="failure with-comment">failed<div class="comment">Error creating object with name &#39;DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency (DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency)&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Func`1[DependencyInjection.FeatureTests.TestTypes.IService]] : No unique object of type [System.Func`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Func`1[DependencyInjection.FeatureTests.TestTypes.IService]]: expected at least 1 matching object to wire the [factory] parameter on the constructor of object [DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency (DependencyInjection.FeatureTests.TestTypes.ServiceWithFuncConstructorDependency)]</div></td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
+                <td class="success">supported</td>
+                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily System.Func`2[[DependencyInjection.FeatureTests.TestTypes.IService2, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[DependencyInjection.FeatureTests.TestTypes.ServiceWithTwoConstructorDependencies, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</div></td>
+                <td class="success">supported</td>
           </tr>
           <tr>
             <td>Unity</td>
@@ -401,15 +432,20 @@ Suggestions:
 </div></td>
           </tr>
           <tr>
-            <td>StructureMap</td>
-                <td class="success">supported</td>
-                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
-No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
+            <td>Simple Injector</td>
+                <td class="concern with-comment">see comment<div class="comment">Simple Injector does not inject properties out of the box, but this behavior can be changed by replacing the Container.Options.PropertySelectionBehavior.</div></td>
+                <td class="concern with-comment">see comment<div class="comment">Simple Injector does not inject properties out of the box, but this behavior can be changed by replacing the Container.Options.PropertySelectionBehavior.</div></td>
           </tr>
           <tr>
             <td>Spring.NET</td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
+                <td class="success">supported</td>
+                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
           </tr>
           <tr>
             <td>Unity</td>
@@ -473,9 +509,8 @@ StackOverflowException will crash the whole process, which is really undesirable
                 <td class="success">supported</td>
           </tr>
           <tr>
-            <td>StructureMap</td>
-                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
-No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IUnregisteredService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
+            <td>Simple Injector</td>
+                <td class="concern with-comment">see comment<div class="comment">Simple Injector does allow resolving types with multiple constructors out of the box, but this behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.</div></td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
           </tr>
@@ -485,6 +520,13 @@ No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.Te
 Position: First difference is at position 0
 Expected: Most resolvable
 Actual:   Default</div></td>
+                <td class="success">supported</td>
+                <td class="success">supported</td>
+          </tr>
+          <tr>
+            <td>StructureMap</td>
+                <td class="failure with-comment">failed<div class="comment">StructureMap Exception Code:  202
+No Default Instance defined for PluginFamily DependencyInjection.FeatureTests.TestTypes.IUnregisteredService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</div></td>
                 <td class="success">supported</td>
                 <td class="success">supported</td>
           </tr>

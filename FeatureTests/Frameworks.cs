@@ -9,8 +9,9 @@ namespace DependencyInjection.FeatureTests {
             yield return new CastleAdapter();
             yield return new LinFuAdapter();
             yield return new NinjectAdapter();
-            yield return new StructureMapAdapter();
+            yield return new SimpleInjectorAdapter();
             yield return new SpringAdapter();
+            yield return new StructureMapAdapter();
             yield return new UnityAdapter();
         }
     }

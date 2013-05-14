@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using DependencyInjection.FeatureTests.Adapters;
+using DependencyInjection.FeatureTests.Documentation;
 using DependencyInjection.FeatureTests.TestTypes;
 using DependencyInjection.FeatureTests.XunitSupport;
 using Xunit;
@@ -21,6 +22,10 @@ namespace DependencyInjection.FeatureTests {
             In this situation, it seems reasonable to select constructor with
             most resolvable dependencies.
         ")]
+        [SpecialCase(typeof(SimpleInjectorAdapter),
+            "Simple Injector does allow resolving types with multiple constructors out of the box, but this " +
+            "behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.", 
+            Skip = true)]
         [ForEachFramework]
         public void ReasonableConstructorSelection(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
