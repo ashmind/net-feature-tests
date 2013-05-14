@@ -11,7 +11,11 @@ using Xunit;
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(5)]
     [DisplayName("Property dependencies")]
-    public class PropertyTests {
+    [SpecialCase(typeof(SimpleInjectorAdapter),
+        "Simple Injector does not inject properties out of the box, but this behavior " +
+        "can be changed by replacing the Container.Options.PropertySelectionBehavior.", Skip = true)]
+    public class PropertyTests
+    {
         [DisplayName("Simple dependency")]
         [ForEachFramework]
         public void PropertyDependency(IFrameworkAdapter framework) {
