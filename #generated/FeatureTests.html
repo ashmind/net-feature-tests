@@ -243,9 +243,36 @@ No Default Instance defined for PluginFamily System.Collections.Generic.ICollect
           <tr>
             <td>Unity</td>
                 <td class="success with-comment">supported<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
-                <td class="failure with-comment">failed<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
-                <td class="failure with-comment">failed<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
-                <td class="failure with-comment">failed<div class="comment">Note: Unity requires named registrations for list resolution to work.</div></td>
+                <td class="failure with-comment">failed<div class="comment">Resolution of the dependency failed, type = &quot;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]]&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The current type, System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService], is an interface and cannot be constructed. Are you missing a type mapping?
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService]],(none)
+  Resolving parameter &quot;services&quot; of constructor DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](System.Collections.Generic.IList`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] services)
+    Resolving System.Collections.Generic.IList`1[DependencyInjection.FeatureTests.TestTypes.IService],(none)
+</div></td>
+                <td class="failure with-comment">failed<div class="comment">Resolution of the dependency failed, type = &quot;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]]&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The current type, System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService], is an interface and cannot be constructed. Are you missing a type mapping?
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService]],(none)
+  Resolving parameter &quot;services&quot; of constructor DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](System.Collections.Generic.ICollection`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] services)
+    Resolving System.Collections.Generic.ICollection`1[DependencyInjection.FeatureTests.TestTypes.IService],(none)
+</div></td>
+                <td class="failure with-comment">failed<div class="comment">Resolution of the dependency failed, type = &quot;DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]]&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The current type, System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService], is an interface and cannot be constructed. Are you missing a type mapping?
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService]],(none)
+  Resolving parameter &quot;services&quot; of constructor DependencyInjection.FeatureTests.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](System.Collections.Generic.IEnumerable`1[[DependencyInjection.FeatureTests.TestTypes.IService, DependencyInjection.FeatureTests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] services)
+    Resolving System.Collections.Generic.IEnumerable`1[DependencyInjection.FeatureTests.TestTypes.IService],(none)
+</div></td>
           </tr>
         </table>
       </section>

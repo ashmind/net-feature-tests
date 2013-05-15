@@ -20,9 +20,9 @@ namespace DependencyInjection.FeatureTests {
         rules can be transparently added to the system without any changes to
         UserValidator.
     ")]
-    [SpecialCase(typeof(UnityAdapter), "Note: Unity requires named registrations for list resolution to work.")]
     public class ListTests {
         [DisplayName("IService[]")]
+        [SpecialCase(typeof(UnityAdapter), "Note: Unity requires named registrations for list resolution to work.")]
         [ForEachFramework]
         public void Array(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IService[]>>(framework);
