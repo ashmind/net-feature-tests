@@ -75,15 +75,15 @@ namespace DependencyInjection.TableGenerator.Sources {
         private static void CollectFailure(FeatureCell cell, Exception exception) {
             cell.Text = "failed";
             cell.State = FeatureState.Failure;
-            cell.Comment = GetUsefulMessage(exception);
+            cell.Exception = ToUsefulException(exception);
         }
 
-        private static string GetUsefulMessage(Exception exception) {
+        private static Exception ToUsefulException(Exception exception) {
             var invocationException = exception as TargetInvocationException;
             if (invocationException != null)
-                return GetUsefulMessage(invocationException.InnerException);
+                return ToUsefulException(invocationException.InnerException);
             
-            return exception.Message;
+            return exception;
         }
 
         private string GetDescription(MemberInfo member) {

@@ -1,4 +1,6 @@
 ﻿@using System.Linq
+@using System.Text
+@using System.Text.RegularExpressions
 @inherits DependencyInjection.TableGenerator.Outputs.Html.HtmlTemplateBase<System.Collections.Generic.IEnumerable<DependencyInjection.TableGenerator.Data.FeatureTable>>
 
 <!DOCTYPE html>
@@ -10,8 +12,6 @@
     <link rel='stylesheet' href='FeatureTests.css' />
   </head>
   <body>
-    <div class='note-firefox'>Note: CSS used in this file is not supported by Firefox due to <a href='https://bugzilla.mozilla.org/show_bug.cgi?id=35168'>Bug 35168</a> (13 years, really?).</div>
-    
     <div class="content">
       <h1>Dependency Injection Feature Tests (.NET)</h1>
 
@@ -37,21 +37,41 @@
               <th>@feature.Name</th>
             }
           </tr>
+          @{ var linkPrefix = Regex.Replace(table.Name, @"\W+", "-").ToLowerInvariant(); }
+          @{ var comments = table.GetRows().SelectMany(r => r.Item2)
+                                           .Where(c => c.HasComment)
+                                           .Select(c => c.Comment)
+                                           .GroupBy(c => c)
+                                           .Select((g, index) => new { comment = g.Key, index = index + 1 })
+                                           .ToList(); } 
+
           @foreach (var row in table.GetRows()) {
           <tr>
             <td>@row.Item1.FrameworkName</td>
             @foreach (var cell in row.Item2) {
-              var stateClass = cell.State.ToString().ToLowerInvariant();
-              if (string.IsNullOrEmpty(cell.Comment)) {
-                <td class="@stateClass">@cell.Text</td>
+              <td class="@(cell.State.ToString().ToLowerInvariant())">
+              @if (cell.HasComment) {
+                  var index = @comments.Single(x => x.comment == @cell.Comment).index;
+                  <a href="#@linkPrefix-@index">@cell.Text<sup>@index</sup></a>
+              }
+              else if (cell.Exception != null) {
+                  var exceptionStringBytes = Encoding.UTF8.GetBytes(cell.Exception.ToString());
+                  <a href="data:text/plain;base64,@Convert.ToBase64String(exceptionStringBytes)">@cell.Text</a>
               }
               else {
-                <td class="@stateClass with-comment">@cell.Text<div class="comment">@cell.Comment</div></td>
+                  @cell.Text
               }
+              </td>
             }
           </tr>
           }
         </table>
+        
+        <ol>
+        @foreach (var x in comments) {
+          <li id="@linkPrefix-@x.index">@x.comment</li>
+        }
+        </ol>
       </section>
       }
     </div>

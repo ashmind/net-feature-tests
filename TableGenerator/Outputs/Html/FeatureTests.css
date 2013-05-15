@@ -88,84 +88,50 @@ th, td {
 }
 
 td {
-    position: relative;
-}
-
-/* The amazing CSS triangle: */
-td.with-comment::after {
-    content: '';
-    width: 0;
-    height: 0;
-    position: absolute;
-    right: 2px;
-    bottom: 2px;
-    border-style: solid;
-    border-width: 0 0 0.6rem 0.6rem;
-    border-color: transparent transparent yellow transparent;
-}
-
-td, td .comment {
     background-color: #dbe5f1;
 }
 
-td.success, td.success .comment {
+td.success {
     background-color: #c6efce;
     color: #006100;
 }
 
-td.success.with-comment::after {
-    border-bottom-color: #006100;
-}
-
-td.failure, td.failure .comment {
+td.failure {
     background-color: #ffc7ce;
     color: #9c0006;
 }
 
-td.failure.with-comment::after {
-    border-bottom-color: #9c0006;
-}
-
-td.concern, td.neutral .comment {
+td.concern {
     background-color: #ffeba5;
     color: #9c6500;
 }
 
-td.concern.with-comment::after {
-    border-bottom-color: #9c6500;
-}
-
-.comment {
-    text-align: left;
-    border: 2px solid white;
-    
-    display: none;
-    
-    white-space: pre-wrap;
-    
-    z-index: 1000;
-    left: 100%;
-    top: 100%;
-    min-width: 30em;
-        
-    padding: 0.2rem;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-.with-comment:hover .comment {
+td > a:only-child {
     display: block;
-    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
-@-moz-document url-prefix() {
-    .note-firefox {
-        position: fixed;
-        right: 0;
-        display: block;
-        padding: 0.3rem;
-        font-size: 110%;
-        background-color: #ffeba5;
-        z-index: 1000;
-    }
+a[href^='#'],
+a[href^='data:'] {
+    text-decoration: none;
+    color: inherit;
+}
+
+@keyframes flash {
+  0%  {  background: none; }
+  50% {  background: #ffeba5; }
+  100% { background: none; }
+}
+
+
+@-webkit-keyframes flash {
+  0%  {  background: none; }
+  50% {  background: #ffeba5; }
+  100% { background: none; }
+}
+
+:target {
+  -webkit-animation: flash 2s;
+  animation: flash 2s;
 }
