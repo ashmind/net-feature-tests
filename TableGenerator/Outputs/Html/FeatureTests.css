@@ -112,7 +112,7 @@ td > a:only-child {
     height: 100%;
 }
 
-a[href^='#'],
+a.local,
 a[href^='data:'] {
     text-decoration: none;
     color: inherit;

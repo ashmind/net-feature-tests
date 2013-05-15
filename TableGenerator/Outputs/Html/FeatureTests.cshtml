@@ -52,7 +52,7 @@
               <td class="@(cell.State.ToString().ToLowerInvariant())">
               @if (cell.HasComment) {
                   var index = @comments.Single(x => x.comment == @cell.Comment).index;
-                  <a href="#@linkPrefix-@index">@cell.Text<sup>@index</sup></a>
+                  <a class="local" href="#@linkPrefix-@index">@cell.Text<sup>@index</sup></a>
               }
               else if (cell.Exception != null) {
                   var exceptionStringBytes = Encoding.UTF8.GetBytes(cell.Exception.ToString());
