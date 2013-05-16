@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTests", "FeatureTest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTables.Generator", "FeatureTables.Generator\FeatureTables.Generator.csproj", "{DCE7A0B6-084D-437E-9DEB-A64AD0BB2C95}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTables.Web", "FeatureTables.Web\FeatureTables.Web.csproj", "{6D69D53C-1B6A-485A-B75B-00063BF820C7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,16 @@ Global
 		{DCE7A0B6-084D-437E-9DEB-A64AD0BB2C95}.Release|Mixed Platforms.Build.0 = Release|x86
 		{DCE7A0B6-084D-437E-9DEB-A64AD0BB2C95}.Release|x86.ActiveCfg = Release|x86
 		{DCE7A0B6-084D-437E-9DEB-A64AD0BB2C95}.Release|x86.Build.0 = Release|x86
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{6D69D53C-1B6A-485A-B75B-00063BF820C7}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
