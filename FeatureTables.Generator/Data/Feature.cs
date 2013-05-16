@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
-namespace DependencyInjection.TableGenerator.Data {
+namespace DependencyInjection.FeatureTables.Generator.Data {
     public class Feature {
         public Feature(object key, string name) {
             this.Key = key;

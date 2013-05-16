@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using DependencyInjection.TableGenerator.Data;
+using DependencyInjection.FeatureTables.Generator.Data;
 
-namespace DependencyInjection.TableGenerator.Sources {
+namespace DependencyInjection.FeatureTables.Generator.Sources {
     public interface IFeatureTableSource {
         IEnumerable<FeatureTable> GetTables();
     }

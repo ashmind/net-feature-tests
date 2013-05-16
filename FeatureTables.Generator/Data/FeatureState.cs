@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DependencyInjection.TableGenerator.Data {
+namespace DependencyInjection.FeatureTables.Generator.Data {
     public enum FeatureState {
         Neutral,
         Success,

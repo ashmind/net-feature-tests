@@ -5,7 +5,7 @@ using System.Linq;
 using AshMind.Extensions;
 using DependencyInjection.FeatureTests.Adapters;
 
-namespace DependencyInjection.TableGenerator.Data {
+namespace DependencyInjection.FeatureTables.Generator.Data {
     public class FeatureTable {
         private readonly IDictionary<Tuple<string, object>, FeatureCell> cells;
 

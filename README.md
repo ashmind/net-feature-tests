@@ -13,5 +13,5 @@ You can see latest version here: [Feature Tests](http://htmlpreview.github.com/?
 ### Projects
 
   1. FeatureTests: xUnit feature tests.
-  2. TableGenerator: helper project that is used to generate documentation.  
-     Build and run TableGenerator after any changes to the tests.
+  2. FeatureTables.Generator: helper project that is used to generate documentation.  
+     Build and run this project after any changes to the tests.

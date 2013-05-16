@@ -5,7 +5,7 @@ using System.Net;
 using RazorTemplates.Core;
 using RazorTemplates.Core.Infrastructure;
 
-namespace DependencyInjection.TableGenerator.Outputs.Html {
+namespace DependencyInjection.FeatureTables.Generator.Outputs.Html {
     public abstract class HtmlTemplateBase<TModel> : TemplateBase<TModel> {
         public new TModel Model {
             get { return (TModel)base.Model; }

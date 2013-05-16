@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
 using System.Linq;
-using DependencyInjection.TableGenerator.Outputs;
-using DependencyInjection.TableGenerator.Sources;
+using DependencyInjection.FeatureTables.Generator.Outputs;
+using DependencyInjection.FeatureTables.Generator.Sources;
 
-namespace DependencyInjection.TableGenerator {
+namespace DependencyInjection.FeatureTables.Generator {
     public class Program {
         private static readonly IFeatureTableSource[] Sources = {
             new AssemblyMetadataTableSource(), 

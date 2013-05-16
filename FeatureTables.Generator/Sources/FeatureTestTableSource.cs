@@ -5,13 +5,13 @@ using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using AshMind.Extensions;
+using DependencyInjection.FeatureTables.Generator.Data;
 using DependencyInjection.FeatureTests;
 using DependencyInjection.FeatureTests.Adapters;
 using DependencyInjection.FeatureTests.Documentation;
 using DependencyInjection.FeatureTests.XunitSupport;
-using DependencyInjection.TableGenerator.Data;
 
-namespace DependencyInjection.TableGenerator.Sources {
+namespace DependencyInjection.FeatureTables.Generator.Sources {
     public class FeatureTestTableSource : IFeatureTableSource {
         public IEnumerable<FeatureTable> GetTables() {
             // potentially I could have used Xunit runners, but they are a bit annoying to get through NuGet
@@ -19,18 +19,18 @@ namespace DependencyInjection.TableGenerator.Sources {
                                                         .SelectMany(t => t.GetMethods())
                                                         .Where(m => m.IsDefined<ForEachFrameworkAttribute>(false))
                                                         .GroupBy(m => m.DeclaringType)
-                                                        .OrderBy(g => GetDisplayOrder(g.Key))
+                                                        .OrderBy(g => this.GetDisplayOrder(g.Key))
                                                         .ToArray();
 
             foreach (var group in testGroups) {
-                var groupSpecialCases = GetSpecialCases(group.Key);
+                var groupSpecialCases = this.GetSpecialCases(group.Key);
                 var features = group.ToDictionary(m => m, this.ConvertToFeature);
-                var table = new FeatureTable(GetDisplayName(group.Key), Frameworks.List(), features.Values) {
+                var table = new FeatureTable(this.GetDisplayName(group.Key), Frameworks.List(), features.Values) {
                     Description = this.GetDescription(@group.Key)
                 };
 
-                foreach (var test in group.OrderBy(GetDisplayOrder)) {
-                    var specialCases = GetSpecialCases(test);
+                foreach (var test in group.OrderBy(this.GetDisplayOrder)) {
+                    var specialCases = this.GetSpecialCases(test);
                     specialCases = specialCases.Concat(groupSpecialCases.Where(p => !specialCases.ContainsKey(p.Key)))
                                                .ToDictionary(p => p.Key, p => p.Value);
                     
@@ -44,7 +44,7 @@ namespace DependencyInjection.TableGenerator.Sources {
                             continue;
                         }
 
-                        RunTestAndCollectResult(test, framework, cell);
+                        this.RunTestAndCollectResult(test, framework, cell);
                         if (specialCase != null)
                             cell.Comment = specialCase.Comment;
                     }

@@ -1,6 +1,6 @@
 using System;
 
-namespace DependencyInjection.TableGenerator.Data {
+namespace DependencyInjection.FeatureTables.Generator.Data {
     public class FeatureCell {
         public string Text { get; set; }
         public string Comment { get; set; }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTests", "FeatureTests\FeatureTests.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TableGenerator", "TableGenerator\TableGenerator.csproj", "{DCE7A0B6-084D-437E-9DEB-A64AD0BB2C95}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTables.Generator", "FeatureTables.Generator\FeatureTables.Generator.csproj", "{DCE7A0B6-084D-437E-9DEB-A64AD0BB2C95}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -40,7 +40,7 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = 
 		EnterpriseLibraryConfigurationToolBinariesPath = #packages\Unity.2.1.505.2\lib\NET35
+		VisualSVNWorkingCopyRoot = 
 	EndGlobalSection
 EndGlobal

@@ -8,8 +8,8 @@
     <ProjectGuid>{DCE7A0B6-084D-437E-9DEB-A64AD0BB2C95}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DependencyInjection.TableGenerator</RootNamespace>
-    <AssemblyName>DependencyInjection.TableGenerator</AssemblyName>
+    <RootNamespace>DependencyInjection.FeatureTables.Generator</RootNamespace>
+    <AssemblyName>FeatureTablesGenerator</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>
     </TargetFrameworkProfile>

@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using DependencyInjection.TableGenerator.Data;
+using DependencyInjection.FeatureTables.Generator.Data;
 
-namespace DependencyInjection.TableGenerator.Outputs {
+namespace DependencyInjection.FeatureTables.Generator.Outputs {
     public interface IFeatureTableOutput {
         void Write(DirectoryInfo directory, IEnumerable<FeatureTable> tables);
     }
