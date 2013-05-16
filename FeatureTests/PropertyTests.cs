@@ -11,13 +11,14 @@ using Xunit;
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(5)]
     [DisplayName("Property dependencies")]
-    [SpecialCase(typeof(SimpleInjectorAdapter),
-        "Simple Injector does not inject properties out of the box, but this behavior " +
-        "can be changed by replacing the Container.Options.PropertySelectionBehavior.", Skip = true)]
+    [SpecialCase(typeof(SimpleInjectorAdapter), @"
+        Simple Injector does not inject properties out of the box, but this behavior 
+        can be changed by replacing the Container.Options.PropertySelectionBehavior.
+    ", Skip = true)]
     public class PropertyTests
     {
+        [Feature]
         [DisplayName("Simple dependency")]
-        [ForEachFramework]
         public void PropertyDependency(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithSimplePropertyDependency>();
@@ -28,8 +29,8 @@ namespace DependencyInjection.FeatureTests {
             Assert.IsAssignableFrom<IndependentService>(component.Service);
         }
 
+        [Feature]
         [DisplayName("Optional by default")]
-        [ForEachFramework]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Register<ServiceWithSimplePropertyDependency>();
             var component = framework.Resolve<ServiceWithSimplePropertyDependency>();

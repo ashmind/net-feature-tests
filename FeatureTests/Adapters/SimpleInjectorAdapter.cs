@@ -1,16 +1,13 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using SimpleInjector;
 using SimpleInjector.Extensions;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class SimpleInjectorAdapter : FrameworkAdapterBase {
-        private readonly Container container;
-
-        public SimpleInjectorAdapter() {
-            container = new Container();
-        }
-
+        private readonly Container container = new Container();
+        
         public override string FrameworkName {
             get { return "Simple Injector"; }
         }
@@ -35,8 +32,8 @@ namespace DependencyInjection.FeatureTests.Adapters {
             return this.container.GetInstance(serviceType);
         }
 
-        public override bool CrashesOnListRecursion {
-            get { return false; }
+        public override IEnumerable<object> ResolveAll(Type serviceType) {
+            return this.container.GetAllInstances(serviceType);
         }
         
         private void Register(Type serviceType, Type implementationType, Lifestyle lifestyle) {

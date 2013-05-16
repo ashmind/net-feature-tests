@@ -13,6 +13,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
         void RegisterInstance(Type serviceType, object instance);
 
         object Resolve(Type serviceType);
+        IEnumerable<object> ResolveAll(Type serviceType);
         
         /// <summary>
         /// This test was run only once because there is no way to recover from StackOverflowException.

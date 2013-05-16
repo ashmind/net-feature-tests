@@ -31,5 +31,9 @@ namespace DependencyInjection.FeatureTests.Adapters {
         public override object Resolve(Type serviceType) {
             return this.kernel.Get(serviceType);
         }
+
+        public override IEnumerable<object> ResolveAll(Type serviceType) {
+            return this.kernel.GetAll(serviceType);
+        }
     }
 }

@@ -5,12 +5,13 @@ using System.IO;
 using System.Linq;
 using DependencyInjection.FeatureTables.Generator.Outputs;
 using DependencyInjection.FeatureTables.Generator.Sources;
+using DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport;
 
 namespace DependencyInjection.FeatureTables.Generator {
     public class Program {
         private static readonly IFeatureTableSource[] Sources = {
             new AssemblyMetadataTableSource(), 
-            new FeatureTestTableSource()
+            new FeatureTestTableSource(new FeatureTestRunner())
         };
         private static readonly IFeatureTableOutput[] Outputs = { new HtmlOutput() };
 
@@ -33,6 +34,7 @@ namespace DependencyInjection.FeatureTables.Generator {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ex);
                 Console.ForegroundColor = color;
+                Console.ReadKey();
             }
         }
     }

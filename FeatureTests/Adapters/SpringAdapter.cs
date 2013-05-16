@@ -56,5 +56,10 @@ namespace DependencyInjection.FeatureTests.Adapters {
             this.EnsureContextRefreshed();
             return this.context.GetObjectsOfType(serviceType).Values.Cast<object>().Single();
         }
+
+        public override IEnumerable<object> ResolveAll(Type serviceType) {
+            this.EnsureContextRefreshed();
+            return this.context.GetObjectsOfType(serviceType).Values.Cast<object>();
+        }
     }
 }

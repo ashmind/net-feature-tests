@@ -19,9 +19,9 @@ namespace DependencyInjection.FeatureTests {
     ")]
     [SpecialCase(typeof(NinjectAdapter), "Ninject supports this through Ninject.Extensions.Factory, but attempts to install it from NuGet clash with Castle version.", Skip = true)]
     public class FuncTests {
+        [Feature]
         [DisplayName("No parameters")]
         [Description("Registration of TService automatically provides Func<TService>.")]
-        [ForEachFramework]
         public void FactoryWithNoParameters(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithSimpleConstructorDependency>();
@@ -33,6 +33,7 @@ namespace DependencyInjection.FeatureTests {
             Assert.NotNull(result);
         }
 
+        [Feature]
         [DisplayName("Parameter for dependency")]
         [Description(@"
             Registration of TService automatically provides Func<..., TService>, where any
@@ -42,7 +43,6 @@ namespace DependencyInjection.FeatureTests {
             or Func<IService1, Service> or Func<IService1, Service2, Service>. Remaining parameters are
             provided by the container.
         ")]
-        [ForEachFramework]
         public void FactoryWithParameter(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithTwoConstructorDependencies>();
@@ -56,12 +56,12 @@ namespace DependencyInjection.FeatureTests {
             Assert.Same(service2, result.Service2);
         }
 
+        [Feature]
         [DisplayName("Singleton using transient")]
         [Description(@"
             When TService is transient and Func<TService> was obtained by singleton, Func should return new
             instance on each call.
         ")]
-        [ForEachFramework]
         public void TransientFactoryUsedBySingletonStillCreatesTransient(IFrameworkAdapter framework) {
             framework.RegisterTransient<IService, IndependentService>();
             framework.RegisterSingleton<ServiceWithFuncConstructorDependency>();

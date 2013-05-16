@@ -70,6 +70,10 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\AssemblyMetadataTableSource.cs" />
+    <Compile Include="Sources\FeatureTestSupport\DisplayNameHelper.cs" />
+    <Compile Include="Sources\FeatureTestSupport\FeatureTestResult.cs" />
+    <Compile Include="Sources\FeatureTestSupport\FeatureTestRun.cs" />
+    <Compile Include="Sources\FeatureTestSupport\FeatureTestRunner.cs" />
     <Compile Include="Sources\IFeatureTableSource.cs" />
     <Compile Include="Sources\FeatureTestTableSource.cs" />
   </ItemGroup>

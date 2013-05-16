@@ -21,30 +21,31 @@ namespace DependencyInjection.FeatureTests {
         UserValidator.
     ")]
     public class ListTests {
+        [Feature]
         [DisplayName("IService[]")]
         [SpecialCase(typeof(UnityAdapter), "Note: Unity requires named registrations for list resolution to work.")]
-        [ForEachFramework]
         public void Array(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IService[]>>(framework);
         }
 
+        [Feature]
         [DisplayName("IList<IService>")]
-        [ForEachFramework]
         public void List(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IList<IService>>>(framework);
         }
 
+        [Feature]
         [DisplayName("ICollection<IService>")]
-        [ForEachFramework]
         public void Collection(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<ICollection<IService>>>(framework);
         }
 
+        [Feature]
         [DisplayName("IEnumerable<IService>")]
-        [SpecialCase(typeof(SimpleInjectorAdapter), 
-            "Simple Injector does support resolving IEnumerable<T>, but requires a single registration " +
-            "using one of the RegisterAll methods to register all types at once.", Skip = true)]
-        [ForEachFramework]
+        [SpecialCase(typeof(SimpleInjectorAdapter), @"
+            Simple Injector does support resolving IEnumerable<T>, but requires a single registration 
+            using one of the RegisterAll methods to register all types at once.
+        ", Skip = true)]
         public void Enumerable(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(framework);
         }

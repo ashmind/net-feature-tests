@@ -36,6 +36,10 @@ namespace DependencyInjection.FeatureTests.Adapters {
             return this.container.Resolve(serviceType);
         }
 
+        public override IEnumerable<object> ResolveAll(Type serviceType) {
+            return this.container.ResolveAll(serviceType);
+        }
+
         public override bool CrashesOnRecursion {
             get { return true; }
         }

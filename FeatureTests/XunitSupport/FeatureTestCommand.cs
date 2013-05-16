@@ -4,10 +4,10 @@ using DependencyInjection.FeatureTests.Adapters;
 using Xunit.Sdk;
 
 namespace DependencyInjection.FeatureTests.XunitSupport {
-    public class FrameworkTestCommand : TestCommand {
+    public class FeatureTestCommand : TestCommand {
         private readonly IFrameworkAdapter adapter;
 
-        public FrameworkTestCommand(IMethodInfo method, IFrameworkAdapter adapter)
+        public FeatureTestCommand(IMethodInfo method, IFrameworkAdapter adapter)
             : base(method, adapter.FrameworkName, MethodUtility.GetTimeoutParameter(method))
         {
             this.adapter = adapter;

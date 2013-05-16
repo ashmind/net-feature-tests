@@ -111,6 +111,7 @@
     <Compile Include="Adapters\SpringAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
+    <Compile Include="Documentation\DependsOnFeatureAttribute.cs" />
     <Compile Include="Documentation\DisplayOrderAttribute.cs" />
     <Compile Include="Documentation\SpecialCaseAttribute.cs" />
     <Compile Include="Frameworks.cs" />
@@ -118,10 +119,11 @@
     <Compile Include="ListTests.cs" />
     <Compile Include="PropertyTests.cs" />
     <Compile Include="ConvenienceTests.cs" />
+    <Compile Include="TestTypes\GenericServiceWithIService2Constraint.cs" />
     <Compile Include="TestTypes\ServiceWithFuncConstructorDependency.cs" />
     <Compile Include="TestTypes\IService2.cs" />
     <Compile Include="TestTypes\ServiceWithTwoConstructorDependencies.cs" />
-    <Compile Include="XunitSupport\ForEachFrameworkAttribute.cs" />
+    <Compile Include="XunitSupport\FeatureAttribute.cs" />
     <Compile Include="BasicTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="GenericTests.cs" />
@@ -140,7 +142,7 @@
     <Compile Include="TestTypes\ServiceWithMultipleConstructors.cs" />
     <Compile Include="TestTypes\ServiceWithSimpleConstructorDependency.cs" />
     <Compile Include="TestTypes\ServiceWithSimplePropertyDependency.cs" />
-    <Compile Include="XunitSupport\FrameworkTestCommand.cs" />
+    <Compile Include="XunitSupport\FeatureTestCommand.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

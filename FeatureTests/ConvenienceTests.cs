@@ -14,6 +14,7 @@ namespace DependencyInjection.FeatureTests {
     [DisplayName("Convenience")]
     [Description("Features that simplify development and reduce surprises.")]
     public class ConvenienceTests {
+        [Feature]
         [DisplayName("Best constructor selection")]
         [Description(@"
             If multiple constructors are present, DI framework should select the 
@@ -22,11 +23,10 @@ namespace DependencyInjection.FeatureTests {
             In this situation, it seems reasonable to select constructor with
             most resolvable dependencies.
         ")]
-        [SpecialCase(typeof(SimpleInjectorAdapter),
-            "Simple Injector does allow resolving types with multiple constructors out of the box, but this " +
-            "behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.", 
-            Skip = true)]
-        [ForEachFramework]
+        [SpecialCase(typeof(SimpleInjectorAdapter), @"
+            Simple Injector does allow resolving types with multiple constructors out of the box, but this 
+            behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.
+        ", Skip = true)]
         public void ReasonableConstructorSelection(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithMultipleConstructors>();
@@ -40,6 +40,7 @@ namespace DependencyInjection.FeatureTests {
             );
         }
 
+        [Feature]
         [DisplayName("Graceful recursion handling")]
         [Description(@"
             Recursive dependencies are non-resolvable, however the difference between
@@ -49,7 +50,6 @@ namespace DependencyInjection.FeatureTests {
             even if it is only an integration test environment. Debugging such issue can
             be a huge annoyance.
         ")]
-        [ForEachFramework]
         public void GracefulRecursionHandling(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnRecursion(framework);
 
@@ -59,8 +59,8 @@ namespace DependencyInjection.FeatureTests {
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithRecursiveDependency1>(framework);
         }
 
+        [Feature]
         [DisplayName("Graceful recursion handling (list dependency)")]
-        [ForEachFramework]
         public void GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnListRecursion(framework);
 

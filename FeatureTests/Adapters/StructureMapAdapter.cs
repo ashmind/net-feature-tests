@@ -7,12 +7,8 @@ using StructureMap.Configuration.DSL;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class StructureMapAdapter : FrameworkAdapterBase {
-        private readonly Registry registry;
+        private Registry registry = new Registry();
         private Container container;
-
-        public StructureMapAdapter() {
-            this.registry = new Registry();
-        }
 
         public override Assembly FrameworkAssembly {
             get { return typeof(Container).Assembly; }
@@ -29,17 +25,23 @@ namespace DependencyInjection.FeatureTests.Adapters {
         public override void RegisterInstance(Type serviceType, object instance) {
             this.registry.For(serviceType).Use(instance);
         }
+        
+        public override object Resolve(Type serviceType) {
+            FreezeContainer();
+            return this.container.GetInstance(serviceType);
+        }
 
-        private void EnsureContainer() {
+        public override IEnumerable<object> ResolveAll(Type serviceType) {
+            FreezeContainer();
+            return this.container.GetAllInstances(serviceType).Cast<object>();
+        }
+
+        private void FreezeContainer() {
             if (this.container != null)
                 return;
 
             this.container = new Container(this.registry);
-        }
-        
-        public override object Resolve(Type serviceType) {
-            this.EnsureContainer();
-            return this.container.GetInstance(serviceType);
+            this.registry = null; // simple way to prevent accidental reuse of adapter
         }
     }
 }
