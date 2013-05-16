@@ -6,7 +6,7 @@ It is a follow-up to my old posts on the matter.
 ### Approach
 
 All documentation/comparison tables are currently generated automatically (based on source code annotations).  
-You can see latest version here: [Feature Tables](http://http://diframeworks.apphb.com/).
+You can see latest version here: [Feature Tables](http://diframeworks.apphb.com/).
 
 ### Projects
 
