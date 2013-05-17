@@ -65,6 +65,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                                       .ToList();
 
             var table = new FeatureTable("Supported .NET versions", frameworks, allVersions.Select(v => new Feature(v, GetNetVersionName(v))));
+            table.Description = "This information is based on versions included in NuGet package.";
 
             foreach (var framework in frameworks) {
                 var supported = packages[framework].GetSupportedFrameworks().ToArray();

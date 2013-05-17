@@ -1,10 +1,22 @@
-﻿html {
+﻿@media only screen and (max-width: 1024px) {
+    body {
+        background-color: white;
+    }
+    
+    .content {
+        padding: 0;
+        min-width: 0;
+    }
+}
+
+html {
     margin: 0;
     padding: 0;
 }
 
 body {
     font-family: "Segoe UI";
+    font-size: 110%;
     margin: 0;
     padding: 0;
     background-color: #eeeeee;
@@ -13,7 +25,9 @@ body {
 .content {
     background-color: white;
     margin: 0 auto;
-    width: 960px;
+    width: 95%;
+    min-width: 760px;
+    max-width: 1200px;
     padding: 4rem;
     padding-top: 1.5rem;
 }
