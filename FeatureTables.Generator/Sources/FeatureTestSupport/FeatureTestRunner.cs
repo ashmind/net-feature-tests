@@ -18,7 +18,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport
                               .ToArray();
 
             var runs = new List<FeatureTestRun>();
-            var frameworkTypes = Frameworks.List().Select(f => f.GetType());
+            var frameworkTypes = Frameworks.List().Select(f => f.GetType()).ToArray();
 
             foreach (var test in all) {
                 foreach (var frameworkType in frameworkTypes) {

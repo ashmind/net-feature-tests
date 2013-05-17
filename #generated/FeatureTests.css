@@ -120,10 +120,6 @@ a:hover {
     text-decoration: underline;
 }
 
-a:hover sup {
-    text-decoration: none;
-}
-
 td.success a, td.failure a, td.concern a {
     color: inherit;
 }
