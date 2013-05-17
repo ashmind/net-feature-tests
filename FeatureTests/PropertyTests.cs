@@ -11,6 +11,11 @@ using Xunit;
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(5)]
     [DisplayName("Property dependencies")]
+    [Description(@"
+        While property dependencies are a nice feature, it is rarely a good practice to actually use them.
+   
+        I have not yet decided whether this table is worth keeping, so do not assign much weight to these tests.     
+    ")]
     [SpecialCase(typeof(SimpleInjectorAdapter), @"
         Simple Injector does not inject properties out of the box, but this behavior 
         can be changed by replacing the Container.Options.PropertySelectionBehavior.
@@ -36,6 +41,21 @@ namespace DependencyInjection.FeatureTests {
             var component = framework.Resolve<ServiceWithSimplePropertyDependency>();
 
             Assert.Null(component.Service);
+        }
+
+        [Feature]
+        [DependsOnFeature("PropertyDependency")]
+        [DisplayName("Dependency without attributes")]
+        [Description(@"
+            Normally, it is undesirable to reference DI framework from the most parts of the code.  
+            Requirement to use explicit attributes contributes to this problem.
+        ")]
+        public void PropertyDependencyDoesNotNeedCustomAttribute(IFrameworkAdapter framework) {
+            var property = typeof(ServiceWithSimplePropertyDependency).GetProperty("Service");
+            var attributes = property.GetCustomAttributes(false);
+            var attributesFromThisFramework = attributes.Where(a => a.GetType().Assembly == framework.FrameworkAssembly);
+
+            Assert.Empty(attributesFromThisFramework);
         }
     }
 }
