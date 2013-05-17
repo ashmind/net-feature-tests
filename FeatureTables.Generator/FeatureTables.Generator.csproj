@@ -38,6 +38,10 @@
     <Reference Include="AshMind.Extensions">
       <HintPath>..\#packages\AshMind.Extensions.1.0.4\lib\3.5\AshMind.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="NuGet.Core, Version=2.5.40416.9020, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\#packages\NuGet.Core.2.5.0\lib\net40-Client\NuGet.Core.dll</HintPath>
+    </Reference>
     <Reference Include="RazorTemplates.Core">
       <HintPath>..\#packages\RazorTemplates.1.1.1\lib\RazorTemplates.Core.dll</HintPath>
     </Reference>
@@ -69,7 +73,7 @@
     <Compile Include="Outputs\IFeatureTableOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sources\AssemblyMetadataTableSource.cs" />
+    <Compile Include="Sources\MetadataTableSource.cs" />
     <Compile Include="Sources\FeatureTestSupport\DisplayNameHelper.cs" />
     <Compile Include="Sources\FeatureTestSupport\FeatureTestResult.cs" />
     <Compile Include="Sources\FeatureTestSupport\FeatureTestRun.cs" />

@@ -8,6 +8,11 @@ using System.Text.RegularExpressions;
 namespace DependencyInjection.FeatureTests.Adapters {
     public abstract class FrameworkAdapterBase : IFrameworkAdapter {
         public abstract Assembly FrameworkAssembly { get; }
+
+        public virtual string FrameworkPackageId {
+            get { return FrameworkAssembly.GetName().Name; }
+        }
+
         public virtual string FrameworkName {
             get { return Regex.Match(this.GetType().Name, "^(.+?)(?:Adapter)?$").Groups[1].Value; }
         }

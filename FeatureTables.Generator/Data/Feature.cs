@@ -4,6 +4,9 @@ using System.Linq;
 
 namespace DependencyInjection.FeatureTables.Generator.Data {
     public class Feature {
+        public Feature(string name) : this(new object(), name) {
+        }
+
         public Feature(object key, string name) {
             this.Key = key;
             this.Name = name;

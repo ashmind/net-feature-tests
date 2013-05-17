@@ -1,5 +1,4 @@
 ﻿@using System.Linq
-@using System.Text
 @using System.Text.RegularExpressions
 @inherits DependencyInjection.FeatureTables.Generator.Outputs.Html.HtmlTemplateBase<System.Collections.Generic.IEnumerable<DependencyInjection.FeatureTables.Generator.Data.FeatureTable>>
 
@@ -54,9 +53,8 @@
                   var index = @comments.Single(x => x.comment == @cell.Comment).index;
                   <a class="local" href="#@linkPrefix-@index">@cell.Text<sup>@index</sup></a>
               }
-              else if (cell.Exception != null) {
-                  var exceptionStringBytes = Encoding.UTF8.GetBytes(cell.Exception.ToString());
-                  <a href="data:text/plain;base64,@Convert.ToBase64String(exceptionStringBytes)">@cell.Text</a>
+              else if (cell.Uri != null) {
+                  <a href="@cell.Uri">@cell.Text</a>
               }
               else {
                   @cell.Text

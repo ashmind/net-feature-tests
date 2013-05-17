@@ -12,6 +12,10 @@ namespace DependencyInjection.FeatureTests.Adapters {
             get { return typeof(IUnityContainer).Assembly; }
         }
 
+        public override string FrameworkPackageId {
+            get { return "Unity"; }
+        }
+
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
             this.Register(serviceType, implementationType, () => new ContainerControlledLifetimeManager());
         }

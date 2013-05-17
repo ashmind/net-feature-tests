@@ -26,7 +26,11 @@ namespace DependencyInjection.FeatureTables.Generator.Data {
         public ReadOnlyCollection<Feature> Features { get; private set; }
 
         public FeatureCell this[IFrameworkAdapter framework, Feature feature] {
-            get { return this.cells[Tuple.Create(framework.FrameworkName, feature.Key)]; }
+            get { return this[framework, feature.Key]; }
+        }
+
+        public FeatureCell this[IFrameworkAdapter framework, object featureKey] {
+            get { return this.cells[Tuple.Create(framework.FrameworkName, featureKey)]; }
         }
 
         public IEnumerable<Tuple<IFrameworkAdapter, IEnumerable<FeatureCell>>> GetRows() {

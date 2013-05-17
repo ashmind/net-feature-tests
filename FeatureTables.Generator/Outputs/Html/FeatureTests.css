@@ -112,9 +112,15 @@ td > a:only-child {
     height: 100%;
 }
 
-a.local,
-a[href^='data:'] {
+a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+td.success a, td.failure a, td.concern a {
     color: inherit;
 }
 

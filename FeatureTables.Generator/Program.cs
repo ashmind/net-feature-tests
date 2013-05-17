@@ -10,7 +10,7 @@ using DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport;
 namespace DependencyInjection.FeatureTables.Generator {
     public class Program {
         private static readonly IFeatureTableSource[] Sources = {
-            new AssemblyMetadataTableSource(), 
+            new MetadataTableSource(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"])), 
             new FeatureTestTableSource(new FeatureTestRunner())
         };
         private static readonly IFeatureTableOutput[] Outputs = { new HtmlOutput() };

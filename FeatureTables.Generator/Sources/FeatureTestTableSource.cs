@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
+using System.Text;
 using System.Text.RegularExpressions;
 using AshMind.Extensions;
 using DependencyInjection.FeatureTables.Generator.Data;
@@ -35,7 +36,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
 
                 foreach (var test in group.OrderBy(this.GetDisplayOrder)) {
                     foreach (var framework in Frameworks.List()) {
-                        var cell = table[framework, features[test]];
+                        var cell = table[framework, test];
                         var run = testRuns[new { Test = test, FrameworkType = framework.GetType() }];
 
                         ApplyRunResultToCell(cell, run);
@@ -46,7 +47,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             }
         }
 
-        private static void ApplyRunResultToCell(FeatureCell cell, FeatureTestRun run) {
+        private void ApplyRunResultToCell(FeatureCell cell, FeatureTestRun run) {
             if (run.Result == FeatureTestResult.Success) {
                 cell.Text = "supported";
                 cell.State = FeatureState.Success;
@@ -54,7 +55,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             else if (run.Result == FeatureTestResult.Failure) {
                 cell.Text = "failed";
                 cell.State = FeatureState.Failure;
-                cell.Exception = run.Exception;
+                cell.Uri = ConvertToDataUri(run.Exception);
             }
             else {
                 cell.Text = "see comment";
@@ -89,6 +90,11 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                 return int.MaxValue;
 
             return displayOrderAttribute.Order;
+        }
+
+        private Uri ConvertToDataUri(Exception exception) {
+            var base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(exception.ToString()));
+            return new Uri("data:text/plain;base64," + base64);
         }
     }
 }
