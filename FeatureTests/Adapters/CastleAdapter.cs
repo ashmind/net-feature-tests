@@ -5,10 +5,15 @@ using System.Reflection;
 using Castle.Core;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
+using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class CastleAdapter : FrameworkAdapterBase {
         private readonly IKernel kernel = new DefaultKernel();
+
+        public CastleAdapter() {
+            kernel.Resolver.AddSubResolver(new CollectionResolver(kernel));
+        }
 
         public override Assembly FrameworkAssembly {
             get { return typeof(IKernel).Assembly; }
