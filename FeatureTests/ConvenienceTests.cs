@@ -24,7 +24,7 @@ namespace DependencyInjection.FeatureTests {
             most resolvable dependencies.
         ")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
-            Simple Injector does allow resolving types with multiple constructors out of the box, but this 
+            Simple Injector does not allow resolving types with multiple constructors out of the box, but this 
             behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.
         ", Skip = true)]
         public void ReasonableConstructorSelection(IFrameworkAdapter framework) {
