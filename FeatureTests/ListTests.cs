@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using DependencyInjection.FeatureTests.Adapters;
@@ -8,7 +7,8 @@ using DependencyInjection.FeatureTests.TestTypes;
 using DependencyInjection.FeatureTests.XunitSupport;
 using Xunit;
 
-namespace DependencyInjection.FeatureTests {
+namespace DependencyInjection.FeatureTests
+{
     [DisplayOrder(2)]
     [DisplayName("List/array dependencies")]
     [Description(@"
@@ -20,36 +20,42 @@ namespace DependencyInjection.FeatureTests {
         rules can be transparently added to the system without any changes to
         UserValidator.
     ")]
-    public class ListTests {
+    public class ListTests
+    {
         [Feature]
         [DisplayName("IService[]")]
         [SpecialCase(typeof(UnityAdapter), "Note: Unity requires named registrations for list resolution to work.")]
-        public void Array(IFrameworkAdapter framework) {
+        public void Array(IFrameworkAdapter framework)
+        {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IService[]>>(framework);
         }
 
         [Feature]
         [DisplayName("IList<IService>")]
-        public void List(IFrameworkAdapter framework) {
+        public void List(IFrameworkAdapter framework)
+        {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IList<IService>>>(framework);
         }
 
         [Feature]
         [DisplayName("ICollection<IService>")]
-        public void Collection(IFrameworkAdapter framework) {
+        public void Collection(IFrameworkAdapter framework)
+        {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<ICollection<IService>>>(framework);
         }
 
         [Feature]
         [DisplayName("IEnumerable<IService>")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
-            Simple Injector does support resolving IEnumerable<T>, but requires a single registration 
-            using one of the RegisterAll methods to register all types at once.
-        ", Skip = true)]
-        public void Enumerable(IFrameworkAdapter framework) {
+                    Simple Injector does support resolving IEnumerable<T>, but requires a single registration 
+                    using one of the RegisterAll methods to register all types at once, which is a different
+                    strategy than the other frameworks use.
+                ", Skip = false)]
+        public void Enumerable(IFrameworkAdapter framework)
+        {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(framework);
         }
-        
+
         public void AssertResolvesListDependencyFor<TTestComponent>(IFrameworkAdapter framework)
             where TTestComponent : IServiceWithListDependency<IEnumerable<IService>>
         {
