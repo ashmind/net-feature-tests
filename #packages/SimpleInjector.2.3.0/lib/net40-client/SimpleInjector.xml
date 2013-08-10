@@ -122,6 +122,23 @@
             <exception cref="T:System.ArgumentNullException">Thrown when either <paramref name="container"/> or
             <paramref name="key"/> is a null reference (Nothing in VB).</exception>
         </member>
+        <member name="M:SimpleInjector.Advanced.AdvancedExtensions.AppendToCollection(SimpleInjector.Container,System.Type,SimpleInjector.Registration)">
+            <summary>
+            Allows appending new registrations to existing registrations made using one of the
+            <b>RegisterAll</b> overloads.
+            </summary>
+            <param name="container">The container.</param>
+            <param name="serviceType">The service type of the collection.</param>
+            <param name="registration">The registration to append.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when one of the supplied arguments is a null
+            reference (Nothing in VB).</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the <paramref name="serviceType"/> is not a
+            reference type, is open generic, or ambiguous.</exception>
+            <exception cref="T:System.InvalidOperationException">Thrown when the container is locked.</exception>
+            <exception cref="T:System.NotSupportedException">Thrown when the method is called for a registration
+            that is made with one of the <b>RegisterAll</b> overloads that accepts a dynamic collection
+            (an <b>IEnumerable</b> or <b>IEnumerable&lt;TService&gt;</b>).</exception>
+        </member>
         <member name="T:SimpleInjector.Advanced.IConstructorInjectionBehavior">
             <summary>
             Defines the container's behavior for building an expression tree based on the supplied constructor of
@@ -372,13 +389,6 @@
             the Diagnostics Debug View to analyse those new relationships as well.
             </summary>
             <value>The collection of <see cref="T:SimpleInjector.Advanced.KnownRelationship"/> instances.</value>
-        </member>
-        <member name="T:SimpleInjector.Extensions.Decorators.IDecoratableEnumerable">
-            <summary>
-            An IDecoratableEnumerable is a special enumerable that can be used more efficiently by the container
-            to apply decorators to, with the biggest noticable difference that the registered predicate, will be
-            checked for each service in the collection.
-            </summary>
         </member>
         <member name="T:SimpleInjector.Extensions.DecoratorExtensions">
             <summary>
@@ -881,6 +891,145 @@
             Hooks into the building process and adds a decorator if needed.
             </summary>
         </member>
+        <member name="T:SimpleInjector.Advanced.IContainerControlledCollection">
+            <summary>
+            An IDecoratableEnumerable is a special enumerable that can be used more efficiently by the container
+            to apply decorators to, with the biggest noticable difference that the registered predicate, will be
+            checked for each service in the collection.
+            </summary>
+        </member>
+        <member name="T:SimpleInjector.Registration">
+            <summary>
+            A <b>Registration</b> implements lifestyle based caching for a single service.
+            </summary>
+            <remarks>
+            <see cref="P:SimpleInjector.Registration.Lifestyle"/> implementations create a new <b>Registration</b> instance for each registered
+            service type. <see cref="T:System.Linq.Expressions.Expression"/>s returned from the 
+            <see cref="M:SimpleInjector.Registration.BuildExpression">BuildExpression</see> method can be intercepted by any event
+            registered with <see cref="E:SimpleInjector.Container.ExpressionBuilding"/>, have 
+            <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> applied, and the caching 
+            particular to its lifestyle have been applied. Interception using the 
+            <see cref="E:SimpleInjector.Container.ExpressionBuilt">Container.ExpressionBuilt</see> will <b>not</b> 
+            be applied.</remarks>
+            <example>
+            See the <see cref="P:SimpleInjector.Registration.Lifestyle"/> documentation for an example.
+            </example>
+        </member>
+        <member name="M:SimpleInjector.Registration.#ctor(SimpleInjector.Lifestyle,SimpleInjector.Container)">
+            <summary>
+            Initializes a new instance of the <see cref="T:SimpleInjector.Registration"/> class.
+            </summary>
+            <param name="lifestyle">The <see cref="P:SimpleInjector.Registration.Lifestyle"/> this that created this registration.</param>
+            <param name="container">The <see cref="P:SimpleInjector.Registration.Container"/> instance for this registration.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when one of the supplied arguments is a null
+            reference (Nothing in VB).</exception>
+        </member>
+        <member name="M:SimpleInjector.Registration.BuildExpression">
+            <summary>
+            Builds a new <see cref="T:System.Linq.Expressions.Expression"/> with the correct caching (according to the specifications of
+            its <see cref="P:SimpleInjector.Registration.Lifestyle"/>) applied.
+            </summary>
+            <returns>An <see cref="T:System.Linq.Expressions.Expression"/>.</returns>
+        </member>
+        <member name="M:SimpleInjector.Registration.GetRelationships">
+            <summary>
+            Gets the list of <see cref="T:SimpleInjector.Advanced.KnownRelationship"/> instances. Note that the list is only available
+            after calling <see cref="M:SimpleInjector.Registration.BuildExpression"/>.
+            </summary>
+            <returns>A new array containing the <see cref="T:SimpleInjector.Advanced.KnownRelationship"/> instances.</returns>
+        </member>
+        <member name="M:SimpleInjector.Registration.InitializeInstance(System.Object)">
+            <summary>
+            Initializes an already created instance and applies properties and initializers to that instance.
+            </summary>
+            <remarks>
+            This method is especially useful in integration scenarios where the given platform is in control
+            of creating certain types. By passing the instance created by the platform to this method, the
+            container is still able to apply any properties (as defined using a custom
+            <see cref="T:SimpleInjector.Advanced.IPropertySelectionBehavior"/>) and by applying any initializers.
+            </remarks>
+            <param name="instance">The instance to initialize.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="instance"/> is a null reference
+            (Nothing in VB).</exception>
+            <exception cref="T:System.ArgumentException">Thrown when the supplied <paramref name="instance"/> is not
+            of type <see cref="P:SimpleInjector.Registration.ImplementationType"/>.</exception>
+        </member>
+        <member name="M:SimpleInjector.Registration.BuildTransientDelegate``1(System.Func{``0})">
+            <summary>
+            Builds a <see cref="T:System.Func`1"/> delegate for the creation of the <typeparamref name="TService"/>
+            using the supplied <paramref name="instanceCreator"/>. The returned <see cref="T:System.Func`1"/> might
+            be intercepted by a 
+            <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see> event, 
+            and the <paramref name="instanceCreator"/> will have been wrapped with a delegate that executes the
+            registered <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> that are 
+            appliable to the given <typeparamref name="TService"/> (if any).
+            </summary>
+            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
+            <param name="instanceCreator">
+            The delegate supplied by the user that allows building or creating new instances.</param>
+            <returns>A <see cref="T:System.Func`1"/> delegate.</returns>
+        </member>
+        <member name="M:SimpleInjector.Registration.BuildTransientDelegate``2">
+            <summary>
+            Builds a <see cref="T:System.Func`1"/> delegate for the creation of <typeparamref name="TImplementation"/>.
+            The returned <see cref="T:System.Func`1"/> might be intercepted by a 
+            <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see> event, 
+            and the creation of the <typeparamref name="TImplementation"/> will have been wrapped with a 
+            delegate that executes the registered 
+            <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> 
+            that are appliable to the given <typeparamref name="TService"/> (if any).
+            </summary>
+            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
+            <typeparam name="TImplementation">The concrete type that will be registered.</typeparam>
+            <returns>A <see cref="T:System.Func`1"/> delegate.</returns>
+        </member>
+        <member name="M:SimpleInjector.Registration.BuildTransientExpression``1(System.Func{``0})">
+            <summary>
+            Builds an <see cref="T:System.Linq.Expressions.Expression"/> that describes the creation of the <typeparamref name="TService"/>
+            using the supplied <paramref name="instanceCreator"/>. The returned <see cref="T:System.Linq.Expressions.Expression"/> might
+            be intercepted by a 
+            <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see> event, 
+            and the <paramref name="instanceCreator"/> will have been wrapped with a delegate that executes the
+            registered <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> that are 
+            appliable to the given <typeparamref name="TService"/> (if any).
+            </summary>
+            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
+            <param name="instanceCreator">
+            The delegate supplied by the user that allows building or creating new instances.</param>
+            <returns>An <see cref="T:System.Linq.Expressions.Expression"/>.</returns>
+        </member>
+        <member name="M:SimpleInjector.Registration.BuildTransientExpression``2">
+            <summary>
+            Builds an <see cref="T:System.Linq.Expressions.Expression"/> that describes the creation of 
+            <typeparamref name="TImplementation"/>. The returned <see cref="T:System.Linq.Expressions.Expression"/> might be intercepted
+            by a <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see>
+            event, and the creation of the <typeparamref name="TImplementation"/> will have been wrapped with
+            a delegate that executes the registered 
+            <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> 
+            that are appliable to the given <typeparamref name="TService"/> (if any).
+            </summary>
+            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
+            <typeparam name="TImplementation">The concrete type that will be registered.</typeparam>
+            <returns>An <see cref="T:System.Linq.Expressions.Expression"/>.</returns>
+        </member>
+        <member name="P:SimpleInjector.Registration.ImplementationType">
+            <summary>
+            Gets the type that this instance will create.
+            </summary>
+            <value>The type that this instance will create.</value>
+        </member>
+        <member name="P:SimpleInjector.Registration.Lifestyle">
+            <summary>
+            Gets the <see cref="P:SimpleInjector.Registration.Lifestyle"/> this that created this registration.
+            </summary>
+            <value>The <see cref="P:SimpleInjector.Registration.Lifestyle"/> this that created this registration.</value>
+        </member>
+        <member name="P:SimpleInjector.Registration.Container">
+            <summary>
+            Gets the <see cref="P:SimpleInjector.Registration.Container"/> instance for this registration.
+            </summary>
+            <value>The <see cref="P:SimpleInjector.Registration.Container"/> instance for this registration.</value>
+        </member>
         <member name="T:SimpleInjector.Extensions.GenericArgumentFinder">
             <summary>
             Allows retrieving the concrete types of the generic type arguments of that must be used to create a
@@ -1359,6 +1508,9 @@
             definition of the given <paramref name="openGenericServiceType"/>, by supplying a 
             <see cref="T:SimpleInjector.Extensions.BatchRegistrationCallback"/> delegate, that will be called for each found closed generic 
             implementation.
+            If the list contains open generic types, matching closed generic versions of each open generic
+            type will be added to the list of implementations that is passed on to the 
+            <paramref name="callback"/> delegate.
             </summary>
             <param name="container">The container to make the registrations in.</param>
             <param name="openGenericServiceType">The definition of the open generic type.</param>
@@ -1755,10 +1907,17 @@
         </member>
         <member name="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterOpenGeneric(SimpleInjector.Container,System.Type,System.Type,SimpleInjector.Lifestyle)">
             <summary>
-            Registers that an instance of <paramref name="openGenericImplementation"/> will be returned 
-            when a <paramref name="openGenericServiceType"/> is requested. The instance will be cached 
+            Registers that a closed generic instance of the supplied 
+            <paramref name="openGenericImplementation"/> will be returned when a closed generic version of
+            the <paramref name="openGenericServiceType"/> is requested. The instance will be cached 
             according to the specified <paramref name="lifestyle"/>.
             </summary>
+            <remarks>
+            Types registered using the <b>RegisterOpenGeneric</b> are resolved using unregistered type
+            resolution. This means that an explicit registration made for a closed generic version of the
+            <paramref name="openGenericServiceType"/> always gets resolved first and the given
+            <paramref name="openGenericImplementation"/> only gets resolved when there is no such registration.
+            </remarks>
             <example>
             The following example shows the definition of a generic <b>IValidator&lt;T&gt;</b> interface
             and, a <b>NullValidator&lt;T&gt;</b> implementation and a specific validator for Orders.
@@ -1817,6 +1976,134 @@
             <param name="openGenericImplementation">The definition of the open generic implementation type
             that will be returned when a <paramref name="openGenericServiceType"/> is requested.</param>
             <param name="lifestyle">The lifestyle that defines how returned instances are cached.</param>
+        </member>
+        <member name="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterAllOpenGeneric(SimpleInjector.Container,System.Type,System.Type[])">
+            <summary>
+            Registers that instances of <paramref name="openGenericImplementations"/> will be returned 
+            when a collection of <paramref name="openGenericServiceType"/> is requested. New instances of 
+            the registered <paramref name="openGenericImplementations"/> will be returned whenever the
+            resolved collection is itereated.
+            </summary>
+            <example>
+            Please see the 
+            <see cref="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterAllOpenGeneric(SimpleInjector.Container,System.Type,SimpleInjector.Lifestyle,System.Collections.Generic.IEnumerable{System.Type})">RegisterAllOpenGeneric(Container,Type,Lifestyle,IEnumerable&lt;Type&gt;)</see>
+            overload for an example.
+            </example>
+            <param name="container">The container to make the registrations in.</param>
+            <param name="openGenericServiceType">The definition of the open generic service type that can be 
+            used to retrieve instances.</param>
+            <param name="openGenericImplementations">The list of open generic implementation types
+            that will be returned when a collection of <paramref name="openGenericServiceType"/> is requested.
+            </param>
+        </member>
+        <member name="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterAllOpenGeneric(SimpleInjector.Container,System.Type,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Registers that instances of <paramref name="openGenericImplementations"/> will be returned 
+            when a collection of <paramref name="openGenericServiceType"/> is requested. New instances of 
+            the registered <paramref name="openGenericImplementations"/> will be returned whenever the
+            resolved collection is itereated.
+            </summary>
+            <example>
+            Please see the 
+            <see cref="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterAllOpenGeneric(SimpleInjector.Container,System.Type,SimpleInjector.Lifestyle,System.Collections.Generic.IEnumerable{System.Type})">RegisterAllOpenGeneric(Container,Type,Lifestyle,IEnumerable&lt;Type&gt;)</see>
+            overload for an example.
+            </example>
+            <param name="container">The container to make the registrations in.</param>
+            <param name="openGenericServiceType">The definition of the open generic service type that can be 
+            used to retrieve instances.</param>
+            <param name="openGenericImplementations">The list of open generic implementation types
+            that will be returned when a collection of <paramref name="openGenericServiceType"/> is requested.
+            </param>
+        </member>
+        <member name="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterAllOpenGeneric(SimpleInjector.Container,System.Type,SimpleInjector.Lifestyle,System.Type[])">
+            <summary>
+            Registers that instances of <paramref name="openGenericImplementations"/> will be returned 
+            when a collection of <paramref name="openGenericServiceType"/> is requested. The instances will be 
+            cached according to the specified <paramref name="lifestyle"/>.
+            </summary>
+            <example>
+            Please see the 
+            <see cref="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterAllOpenGeneric(SimpleInjector.Container,System.Type,SimpleInjector.Lifestyle,System.Collections.Generic.IEnumerable{System.Type})">RegisterAllOpenGeneric(Container,Type,Lifestyle,IEnumerable&lt;Type&gt;)</see>
+            overload for an example.
+            </example>
+            <param name="container">The container to make the registrations in.</param>
+            <param name="openGenericServiceType">The definition of the open generic service type that can be 
+            used to retrieve instances.</param>
+            <param name="lifestyle">The lifestyle that defines how returned instances are cached.</param>
+            <param name="openGenericImplementations">The list of open generic implementation types
+            that will be returned when a collection of <paramref name="openGenericServiceType"/> is requested.
+            </param>
+        </member>
+        <member name="M:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.RegisterAllOpenGeneric(SimpleInjector.Container,System.Type,SimpleInjector.Lifestyle,System.Collections.Generic.IEnumerable{System.Type})">
+            <summary>
+            Registers that instances of <paramref name="openGenericImplementations"/> will be returned 
+            when a collection of <paramref name="openGenericServiceType"/> is requested. The instances will be 
+            cached according to the specified <paramref name="lifestyle"/>.
+            </summary>
+            <remarks>
+            <para>
+            Collections registered using the <b>RegisterAllOpenGeneric</b> are resolved using unregistered type
+            resolution. This means that an explicit registration made for a collection of the closed generic 
+            version of the <paramref name="openGenericServiceType"/> always gets resolved first and a 
+            collection of <paramref name="openGenericImplementations"/> only gets resolved when there is no 
+            such registration.
+            </para>
+            </remarks>
+            <example>
+            The following example shows the definition of a generic <b>IValidator&lt;T&gt;</b> interface
+            and, a <b>NullValidator&lt;T&gt;</b> implementation and a specific validator for Orders.
+            The registration ensures a <b>OrderValidator</b> is returned when a 
+            <b>IValidator&lt;Order&gt;</b> is requested. For all requests for a 
+            <b>IValidator&lt;T&gt;</b> other than a <b>IValidator&lt;Order&gt;</b>, an 
+            implementation of <b>NullValidator&lt;T&gt;</b> will be returned.
+            <code lang="cs"><![CDATA[
+            public interface IValidator<T>
+            { 
+                void Validate(T instance);
+            }
+            
+            public class DefaultValidator<T> : IValidator<T>
+            {
+                public void Validate(T instance)
+                {
+                    // some default validation
+                }
+            }
+            
+            [TestMethod]
+            public static void TestRegisterAllOpenGeneric()
+            {
+                // Arrange
+                var container = new Container();
+                
+                Type[] types = new[] { typeof(OrderValidator), typeof(DefaultValidator<>) };
+                
+                container.RegisterManyForOpenGeneric(typeof(IValidator<>),
+                    (serviceType, implementationTypes) => container.RegisterAll(serviceType, implementationTypes), 
+                    types);
+                
+                container.RegisterAllOpenGeneric(typeof(IValidator<>), typeof(DefaultValidator<>));
+                
+                // Act
+                var orderValidators = container.GetAllInstances<IValidator<Order>>();
+                var customerValidators = container.GetAllInstances<IValidator<Customer>>();
+            
+                // Assert
+                Assert.IsTrue(orderValidators.SequenceEqual(
+                    new[] { typeof(OrderValidator), typeof(DefaultValidator<Order>) }));
+                
+                // Without the call to RegisterAllOpenGeneric this customerValidators would be empty.
+                Assert.IsTrue(customerValidators.SequenceEqual(new[] { typeof(DefaultValidator<Customer>) }));
+            }
+            ]]></code>
+            </example>
+            <param name="container">The container to make the registrations in.</param>
+            <param name="openGenericServiceType">The definition of the open generic service type that can be 
+            used to retrieve instances.</param>
+            <param name="lifestyle">The lifestyle that defines how returned instances are cached.</param>
+            <param name="openGenericImplementations">The list of open generic implementation types
+            that will be returned when a collection of <paramref name="openGenericServiceType"/> is requested.
+            </param>
         </member>
         <member name="T:SimpleInjector.Extensions.OpenGenericRegistrationExtensions.UnregisteredOpenGenericResolver">
             <summary>Resolves a given open generic type.</summary>
@@ -2120,138 +2407,6 @@
             misconfigurations.
             </summary>
             <value>The <see cref="T:System.Int32"/> representing the length of this lifestyle.</value>
-        </member>
-        <member name="T:SimpleInjector.Registration">
-            <summary>
-            A <b>Registration</b> implements lifestyle based caching for a single service.
-            </summary>
-            <remarks>
-            <see cref="P:SimpleInjector.Registration.Lifestyle"/> implementations create a new <b>Registration</b> instance for each registered
-            service type. <see cref="T:System.Linq.Expressions.Expression"/>s returned from the 
-            <see cref="M:SimpleInjector.Registration.BuildExpression">BuildExpression</see> method can be intercepted by any event
-            registered with <see cref="E:SimpleInjector.Container.ExpressionBuilding"/>, have 
-            <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> applied, and the caching 
-            particular to its lifestyle have been applied. Interception using the 
-            <see cref="E:SimpleInjector.Container.ExpressionBuilt">Container.ExpressionBuilt</see> will <b>not</b> 
-            be applied.</remarks>
-            <example>
-            See the <see cref="P:SimpleInjector.Registration.Lifestyle"/> documentation for an example.
-            </example>
-        </member>
-        <member name="M:SimpleInjector.Registration.#ctor(SimpleInjector.Lifestyle,SimpleInjector.Container)">
-            <summary>
-            Initializes a new instance of the <see cref="T:SimpleInjector.Registration"/> class.
-            </summary>
-            <param name="lifestyle">The <see cref="P:SimpleInjector.Registration.Lifestyle"/> this that created this registration.</param>
-            <param name="container">The <see cref="P:SimpleInjector.Registration.Container"/> instance for this registration.</param>
-            <exception cref="T:System.ArgumentNullException">Thrown when one of the supplied arguments is a null
-            reference (Nothing in VB).</exception>
-        </member>
-        <member name="M:SimpleInjector.Registration.BuildExpression">
-            <summary>
-            Builds a new <see cref="T:System.Linq.Expressions.Expression"/> with the correct caching (according to the specifications of
-            its <see cref="P:SimpleInjector.Registration.Lifestyle"/>) applied.
-            </summary>
-            <returns>An <see cref="T:System.Linq.Expressions.Expression"/>.</returns>
-        </member>
-        <member name="M:SimpleInjector.Registration.GetRelationships">
-            <summary>
-            Gets the list of <see cref="T:SimpleInjector.Advanced.KnownRelationship"/> instances. Note that the list is only available
-            after calling <see cref="M:SimpleInjector.Registration.BuildExpression"/>.
-            </summary>
-            <returns>A new array containing the <see cref="T:SimpleInjector.Advanced.KnownRelationship"/> instances.</returns>
-        </member>
-        <member name="M:SimpleInjector.Registration.InitializeInstance(System.Object)">
-            <summary>
-            Initializes an already created instance and applies properties and initializers to that instance.
-            </summary>
-            <remarks>
-            This method is especially useful in integration scenarios where the given platform is in control
-            of creating certain types. By passing the instance created by the platform to this method, the
-            container is still able to apply any properties (as defined using a custom
-            <see cref="T:SimpleInjector.Advanced.IPropertySelectionBehavior"/>) and by applying any initializers.
-            </remarks>
-            <param name="instance">The instance to initialize.</param>
-            <exception cref="T:System.ArgumentNullException">Thrown when <paramref name="instance"/> is a null reference
-            (Nothing in VB).</exception>
-            <exception cref="T:System.ArgumentException">Thrown when the supplied <paramref name="instance"/> is not
-            of type <see cref="P:SimpleInjector.Registration.ImplementationType"/>.</exception>
-        </member>
-        <member name="M:SimpleInjector.Registration.BuildTransientDelegate``1(System.Func{``0})">
-            <summary>
-            Builds a <see cref="T:System.Func`1"/> delegate for the creation of the <typeparamref name="TService"/>
-            using the supplied <paramref name="instanceCreator"/>. The returned <see cref="T:System.Func`1"/> might
-            be intercepted by a 
-            <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see> event, 
-            and the <paramref name="instanceCreator"/> will have been wrapped with a delegate that executes the
-            registered <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> that are 
-            appliable to the given <typeparamref name="TService"/> (if any).
-            </summary>
-            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
-            <param name="instanceCreator">
-            The delegate supplied by the user that allows building or creating new instances.</param>
-            <returns>A <see cref="T:System.Func`1"/> delegate.</returns>
-        </member>
-        <member name="M:SimpleInjector.Registration.BuildTransientDelegate``2">
-            <summary>
-            Builds a <see cref="T:System.Func`1"/> delegate for the creation of <typeparamref name="TImplementation"/>.
-            The returned <see cref="T:System.Func`1"/> might be intercepted by a 
-            <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see> event, 
-            and the creation of the <typeparamref name="TImplementation"/> will have been wrapped with a 
-            delegate that executes the registered 
-            <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> 
-            that are appliable to the given <typeparamref name="TService"/> (if any).
-            </summary>
-            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
-            <typeparam name="TImplementation">The concrete type that will be registered.</typeparam>
-            <returns>A <see cref="T:System.Func`1"/> delegate.</returns>
-        </member>
-        <member name="M:SimpleInjector.Registration.BuildTransientExpression``1(System.Func{``0})">
-            <summary>
-            Builds an <see cref="T:System.Linq.Expressions.Expression"/> that describes the creation of the <typeparamref name="TService"/>
-            using the supplied <paramref name="instanceCreator"/>. The returned <see cref="T:System.Linq.Expressions.Expression"/> might
-            be intercepted by a 
-            <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see> event, 
-            and the <paramref name="instanceCreator"/> will have been wrapped with a delegate that executes the
-            registered <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> that are 
-            appliable to the given <typeparamref name="TService"/> (if any).
-            </summary>
-            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
-            <param name="instanceCreator">
-            The delegate supplied by the user that allows building or creating new instances.</param>
-            <returns>An <see cref="T:System.Linq.Expressions.Expression"/>.</returns>
-        </member>
-        <member name="M:SimpleInjector.Registration.BuildTransientExpression``2">
-            <summary>
-            Builds an <see cref="T:System.Linq.Expressions.Expression"/> that describes the creation of 
-            <typeparamref name="TImplementation"/>. The returned <see cref="T:System.Linq.Expressions.Expression"/> might be intercepted
-            by a <see cref="E:SimpleInjector.Container.ExpressionBuilding">Container.ExpressionBuilding</see>
-            event, and the creation of the <typeparamref name="TImplementation"/> will have been wrapped with
-            a delegate that executes the registered 
-            <see cref="M:SimpleInjector.Container.RegisterInitializer``1(System.Action{``0})">initializers</see> 
-            that are appliable to the given <typeparamref name="TService"/> (if any).
-            </summary>
-            <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
-            <typeparam name="TImplementation">The concrete type that will be registered.</typeparam>
-            <returns>An <see cref="T:System.Linq.Expressions.Expression"/>.</returns>
-        </member>
-        <member name="P:SimpleInjector.Registration.ImplementationType">
-            <summary>
-            Gets the type that this instance will create.
-            </summary>
-            <value>The type that this instance will create.</value>
-        </member>
-        <member name="P:SimpleInjector.Registration.Lifestyle">
-            <summary>
-            Gets the <see cref="P:SimpleInjector.Registration.Lifestyle"/> this that created this registration.
-            </summary>
-            <value>The <see cref="P:SimpleInjector.Registration.Lifestyle"/> this that created this registration.</value>
-        </member>
-        <member name="P:SimpleInjector.Registration.Container">
-            <summary>
-            Gets the <see cref="P:SimpleInjector.Registration.Container"/> instance for this registration.
-            </summary>
-            <value>The <see cref="P:SimpleInjector.Registration.Container"/> instance for this registration.</value>
         </member>
         <member name="T:SimpleInjector.Advanced.KnownRelationship">
             <summary>
@@ -2735,10 +2890,11 @@
         </member>
         <member name="M:SimpleInjector.Container.RegisterAll``1(System.Collections.Generic.IEnumerable{``0})">
             <summary>
-            Registers a dynamic collection of elements of type <typeparamref name="TService"/>. A call to
-            <see cref="M:SimpleInjector.Container.GetAllInstances``1"/> will return the <paramref name="collection"/> itself, and updates 
-            to the collection will be reflected in the result. If updates are allowed, make sure the 
-            collection can be iterated safely if you're running a multi-threaded application.
+            Registers a dynamic (container uncontrolled) collection of elements of type 
+            <typeparamref name="TService"/>. A call to <see cref="M:SimpleInjector.Container.GetAllInstances``1"/> will return the 
+            <paramref name="collection"/> itself, and updates to the collection will be reflected in the 
+            result. If updates are allowed, make sure the collection can be iterated safely if you're running 
+            a multi-threaded application.
             </summary>
             <typeparam name="TService">The interface or base type that can be used to retrieve instances.</typeparam>
             <param name="collection">The collection to register.</param>
@@ -2814,9 +2970,31 @@
             not assignable from one of the given <paramref name="serviceTypes"/> elements.
             </exception>
         </member>
+        <member name="M:SimpleInjector.Container.RegisterAll(System.Type,System.Collections.Generic.IEnumerable{SimpleInjector.Registration})">
+            <summary>
+            Registers an collection of <paramref name="registrations"/>, which instances will be resolved when
+            enumerating the set returned when a collection of <paramref name="serviceType"/> objects is 
+            requested. On enumeration the container is called for each type in the list.
+            </summary>
+            <param name="serviceType">The base type or interface for elements in the collection.</param>
+            <param name="registrations">The collection of <see cref="T:SimpleInjector.Registration"/> objects whose instances
+            will be requested from the container.</param>
+            <exception cref="T:System.ArgumentNullException">Thrown when one of the supplied arguments is a null 
+            reference (Nothing in VB).
+            </exception>
+            <exception cref="T:System.ArgumentException">Thrown when <paramref name="registrations"/> contains a null
+            (Nothing in VB) element, the <paramref name="serviceType"/> is a generic type definition, or when 
+            <paramref name="serviceType"/> is
+            not assignable from one of the given <paramref name="registrations"/> elements.
+            </exception>
+        </member>
         <member name="M:SimpleInjector.Container.RegisterAll(System.Type,System.Collections.IEnumerable)">
             <summary>
-            Registers a <paramref name="collection"/> of elements of type <paramref name="serviceType"/>.
+            Registers a dynamic (container uncontrolled) collection of elements of type 
+            <paramref name="serviceType"/>. A call to <see cref="M:SimpleInjector.Container.GetAllInstances``1"/> will return the 
+            <paramref name="collection"/> itself, and updates to the collection will be reflected in the 
+            result. If updates are allowed, make sure the collection can be iterated safely if you're running 
+            a multi-threaded application.
             </summary>
             <param name="serviceType">The base type or interface for elements in the collection.</param>
             <param name="collection">The collection of items to register.</param>
