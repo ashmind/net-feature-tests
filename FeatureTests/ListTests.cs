@@ -19,6 +19,12 @@ namespace DependencyInjection.FeatureTests
         UserValidator can have dependency on IUserValidationRule[]. Then new
         rules can be transparently added to the system without any changes to
         UserValidator.
+
+        .NET 4.5 introduced two new collection interfaces IReadOnlyCollection<T>
+        and IReadOnlyList<T> that define 'finite iterator' behavior and DI
+        frameworks should natively support these interface to prevent
+        defensive copying of arrays (as Mark Seemann explains here 
+        http://bit.ly/11ZFHVp).
     ")]
     public class ListTests
     {
@@ -54,6 +60,20 @@ namespace DependencyInjection.FeatureTests
         public void Enumerable(IFrameworkAdapter framework)
         {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(framework);
+        }
+
+        [Feature]
+        [DisplayName("IReadOnlyCollection<T>")]
+        public void IReadOnlyCollection(IFrameworkAdapter framework)
+        {
+            this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IReadOnlyCollection<IService>>>(framework);
+        }
+
+        [Feature]
+        [DisplayName("IReadOnlyList<T>")]
+        public void IReadOnlyList(IFrameworkAdapter framework)
+        {
+            this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IReadOnlyList<IService>>>(framework);
         }
 
         public void AssertResolvesListDependencyFor<TTestComponent>(IFrameworkAdapter framework)
