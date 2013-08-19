@@ -33,7 +33,7 @@
           <tr>
             <th>Framework</th>
             @foreach (var feature in table.Features) {
-              <th>@feature.Name</th>
+              <th title="@feature.Name">@feature.Name</th>
             }
           </tr>
           @{ var linkPrefix = Regex.Replace(table.Name, @"\W+", "-").ToLowerInvariant(); }
