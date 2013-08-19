@@ -20,11 +20,12 @@ namespace DependencyInjection.FeatureTests
         rules can be transparently added to the system without any changes to
         UserValidator.
 
+        @dotnetjunkie:
         .NET 4.5 introduced two new collection interfaces IReadOnlyCollection<T>
         and IReadOnlyList<T> that define 'finite iterator' behavior and DI
         frameworks should natively support these interface to prevent
         defensive copying of arrays (as Mark Seemann explains here 
-        http://bit.ly/11ZFHVp).
+        http://blog.ploeh.dk/2013/07/20/linq-versus-the-lsp/).
     ")]
     public class ListTests {
         [Feature]
@@ -49,25 +50,23 @@ namespace DependencyInjection.FeatureTests
         [Feature]
         [DisplayName("IEnumerable<IService>")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
-                    Simple Injector does support resolving IEnumerable<T>, but requires a single registration 
-                    using one of the RegisterAll methods to register all types at once, which is a different
-                    strategy than the other frameworks use.
-                ", Skip = false)]
+            Simple Injector does support resolving IEnumerable<T>, but requires a single registration 
+            using one of the RegisterAll methods to register all types at once, which is a different
+            strategy than the other frameworks use.
+        ", Skip = false)]
         public void Enumerable(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(framework);
         }
 
         [Feature]
-        [DisplayName("IReadOnlyCollection<T>")]
-        public void IReadOnlyCollection(IFrameworkAdapter framework)
-        {
+        [DisplayName("IReadOnlyCollection<IService>")]
+        public void IReadOnlyCollection(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IReadOnlyCollection<IService>>>(framework);
         }
 
         [Feature]
-        [DisplayName("IReadOnlyList<T>")]
-        public void IReadOnlyList(IFrameworkAdapter framework)
-        {
+        [DisplayName("IReadOnlyList<IService>")]
+        public void IReadOnlyList(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IReadOnlyList<IService>>>(framework);
         }
 
