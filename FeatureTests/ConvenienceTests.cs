@@ -8,12 +8,10 @@ using DependencyInjection.FeatureTests.XunitSupport;
 using Xunit;
 using Xunit.Sdk;
 
-namespace DependencyInjection.FeatureTests
-{
+namespace DependencyInjection.FeatureTests {
     [DisplayName("Convenience")]
     [Description("Features that simplify development and reduce surprises.")]
-    public class ConvenienceTests
-    {
+    public class ConvenienceTests {
         [Feature]
         [DisplayName("Best constructor selection")]
         [Description(@"
@@ -28,8 +26,7 @@ namespace DependencyInjection.FeatureTests
             behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.
             For more info see: https://bit.ly/13WKdRT.
         ", Skip = true)]
-        public void ReasonableConstructorSelection(IFrameworkAdapter framework)
-        {
+        public void ReasonableConstructorSelection(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithMultipleConstructors>();
 
@@ -52,8 +49,7 @@ namespace DependencyInjection.FeatureTests
             even if it is only an integration test environment. Debugging such issue can
             be a huge annoyance.
         ")]
-        public void GracefulRecursionHandling(IFrameworkAdapter framework)
-        {
+        public void GracefulRecursionHandling(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnRecursion(framework);
 
             framework.Register<ServiceWithRecursiveDependency1>();
@@ -64,8 +60,7 @@ namespace DependencyInjection.FeatureTests
 
         [Feature]
         [DisplayName("Graceful recursion handling (list dependency)")]
-        public void GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework)
-        {
+        public void GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnListRecursion(framework);
 
             framework.Register<ServiceWithListConstructorDependency<IService[]>>();
@@ -74,14 +69,11 @@ namespace DependencyInjection.FeatureTests
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithListConstructorDependency<IService[]>>(framework);
         }
 
-        private void AssertGivesCorrectExceptionWhenResolvingRecursive<TService>(IFrameworkAdapter framework)
-        {
-            try
-            {
+        private void AssertGivesCorrectExceptionWhenResolvingRecursive<TService>(IFrameworkAdapter framework) {
+            try {
                 framework.Resolve<TService>();
             }
-            catch (Exception ex)
-            {
+            catch (Exception ex) {
                 Debug.WriteLine(framework.GetType().Name + " throws following on recursion: " + ex);
                 return;
             }
@@ -89,8 +81,7 @@ namespace DependencyInjection.FeatureTests
             throw new AssertException("Recursion was magically solved without an exception.");
         }
 
-        private void AssertIsNotCrashingOnListRecursion(IFrameworkAdapter adapter)
-        {
+        private void AssertIsNotCrashingOnListRecursion(IFrameworkAdapter adapter) {
             this.AssertIsNotCrashingOnRecursion(adapter);
             if (!adapter.CrashesOnListRecursion)
                 return;
@@ -101,8 +92,7 @@ namespace DependencyInjection.FeatureTests
             ));
         }
 
-        private void AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter)
-        {
+        private void AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter) {
             if (!adapter.CrashesOnRecursion)
                 return;
 

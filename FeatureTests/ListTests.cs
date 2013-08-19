@@ -26,27 +26,23 @@ namespace DependencyInjection.FeatureTests
         defensive copying of arrays (as Mark Seemann explains here 
         http://bit.ly/11ZFHVp).
     ")]
-    public class ListTests
-    {
+    public class ListTests {
         [Feature]
         [DisplayName("IService[]")]
         [SpecialCase(typeof(UnityAdapter), "Note: Unity requires named registrations for list resolution to work.")]
-        public void Array(IFrameworkAdapter framework)
-        {
+        public void Array(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IService[]>>(framework);
         }
 
         [Feature]
         [DisplayName("IList<IService>")]
-        public void List(IFrameworkAdapter framework)
-        {
+        public void List(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IList<IService>>>(framework);
         }
 
         [Feature]
         [DisplayName("ICollection<IService>")]
-        public void Collection(IFrameworkAdapter framework)
-        {
+        public void Collection(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<ICollection<IService>>>(framework);
         }
 
@@ -57,8 +53,7 @@ namespace DependencyInjection.FeatureTests
                     using one of the RegisterAll methods to register all types at once, which is a different
                     strategy than the other frameworks use.
                 ", Skip = false)]
-        public void Enumerable(IFrameworkAdapter framework)
-        {
+        public void Enumerable(IFrameworkAdapter framework) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(framework);
         }
 

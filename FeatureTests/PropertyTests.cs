@@ -20,12 +20,10 @@ namespace DependencyInjection.FeatureTests
         can be changed by replacing the Container.Options.PropertySelectionBehavior.
         For more info see: https://bit.ly/1cmMxuS.
     ", Skip = true)]
-    public class PropertyTests
-    {
+    public class PropertyTests {
         [Feature]
         [DisplayName("Simple dependency")]
-        public void PropertyDependency(IFrameworkAdapter framework)
-        {
+        public void PropertyDependency(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithSimplePropertyDependency>();
 
@@ -37,8 +35,7 @@ namespace DependencyInjection.FeatureTests
 
         [Feature]
         [DisplayName("Optional by default")]
-        public void PropertyDependencyIsOptional(IFrameworkAdapter framework)
-        {
+        public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Register<ServiceWithSimplePropertyDependency>();
             var component = framework.Resolve<ServiceWithSimplePropertyDependency>();
 
@@ -52,8 +49,7 @@ namespace DependencyInjection.FeatureTests
             Normally, it is undesirable to reference DI framework from the most parts of the code.  
             Requirement to use explicit attributes contributes to this problem.
         ")]
-        public void PropertyDependencyDoesNotNeedCustomAttribute(IFrameworkAdapter framework)
-        {
+        public void PropertyDependencyDoesNotNeedCustomAttribute(IFrameworkAdapter framework) {
             var property = typeof(ServiceWithSimplePropertyDependency).GetProperty("Service");
             var attributes = property.GetCustomAttributes(false);
             var attributesFromThisFramework = attributes.Where(a => a.GetType().Assembly == framework.FrameworkAssembly);

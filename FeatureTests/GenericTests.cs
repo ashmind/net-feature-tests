@@ -6,12 +6,10 @@ using DependencyInjection.FeatureTests.TestTypes;
 using DependencyInjection.FeatureTests.XunitSupport;
 using Xunit;
 
-namespace DependencyInjection.FeatureTests
-{
+namespace DependencyInjection.FeatureTests {
     [DisplayOrder(3)]
     [DisplayName("Generics support")]
-    public class GenericTests
-    {
+    public class GenericTests {
         [Feature]
         [DisplayName("Open generic registration")]
         [Description(@"
@@ -20,8 +18,7 @@ namespace DependencyInjection.FeatureTests
             For example Service<> can be registered as IService<>.
             Then any request for IService<T> should be resolved with Service<T>.
         ")]
-        public void OpenGenericTypes(IFrameworkAdapter framework)
-        {
+        public void OpenGenericTypes(IFrameworkAdapter framework) {
             framework.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));
             var resolved = framework.Resolve<IGenericService<int>>();
 
@@ -39,11 +36,10 @@ namespace DependencyInjection.FeatureTests
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
             Simple Injector does support filtering based on generic type constraints, but in case of 
             registering a collection of open generic types, it only allows all elements to be registered at 
-            once. Open generic collections can be registerd using RegisterAllOpenGeneric.
-            see: http://bit.ly/14DQx7c.
+            once. Open generic collections can be registered using RegisterAllOpenGeneric.
+            See: http://bit.ly/14DQx7c.
         ", Skip = true)]
-        public void ConstrainsForOpenGenerics(IFrameworkAdapter framework)
-        {
+        public void ConstrainsForOpenGenerics(IFrameworkAdapter framework) {
             framework.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));
             framework.RegisterTransient(typeof(IGenericService<>), typeof(GenericServiceWithIService2Constraint<>));
             var resolved = framework.ResolveAll<IGenericService<IndependentService>>().ToArray();
