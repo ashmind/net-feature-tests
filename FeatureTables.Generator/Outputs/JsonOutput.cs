@@ -37,10 +37,10 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs {
                                  .ToArray();
         }
 
-        private IDictionary<string, object> GetAllFeatureData(IFrameworkAdapter framework, FeatureTable[] tableList) {
-            return tableList.Where(t => t.Key != MetadataKeys.GeneralTable && t.Key != MetadataKeys.NetFxVersionTable)
-                            .SelectMany(t => t.Features.Select(f => GetSingleFeatureData(f, t[framework, f])))
-                            .ToDictionary(p => p.Key, p => p.Value);
+        private IDictionary<string, object> GetAllFeatureData(IFrameworkAdapter framework, IEnumerable<FeatureTable> tables) {
+            return tables.Where(t => t.Key != MetadataKeys.GeneralTable && t.Key != MetadataKeys.NetFxVersionTable)
+                         .SelectMany(t => t.Features.Select(f => GetSingleFeatureData(f, t[framework, f])))
+                         .ToDictionary(p => p.Key, p => p.Value);
         }
 
         private KeyValuePair<string, object> GetSingleFeatureData(Feature feature, FeatureCell cell) {

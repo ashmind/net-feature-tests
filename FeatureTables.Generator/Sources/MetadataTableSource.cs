@@ -62,8 +62,10 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                                       .OrderBy(NetFxVersionHelper.GetDisplayOrder)
                                       .ToList();
 
-            var table = new FeatureTable(MetadataKeys.NetFxVersionTable, "Supported .NET versions", diFrameworks, allVersions.Select(v => new Feature(v, NetFxVersionHelper.GetDisplayName(v))));
-            table.Description = "This information is based on versions included in NuGet package.";
+            var versionFeatures = allVersions.Select(v => new Feature(v, NetFxVersionHelper.GetDisplayName(v)));
+            var table = new FeatureTable(MetadataKeys.NetFxVersionTable, "Supported .NET versions", diFrameworks, versionFeatures) {
+                Description = "This information is based on versions included in NuGet package."
+            };
 
             foreach (var diFramework in diFrameworks) {
                 var supported = packages[diFramework].GetSupportedFrameworks().ToArray();

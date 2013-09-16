@@ -3,8 +3,6 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using AshMind.Extensions;
 
 namespace DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport {
     // in real application it should not be static or helper

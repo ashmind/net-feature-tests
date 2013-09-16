@@ -15,13 +15,9 @@ using DependencyInjection.FeatureTests.Documentation;
 namespace DependencyInjection.FeatureTables.Generator.Sources {
     public class FeatureTestTableSource : IFeatureTableSource {
         private readonly FeatureTestRunner runner;
-        private readonly IEnumerable<string> localPaths;
 
         public FeatureTestTableSource(FeatureTestRunner runner) {
             this.runner = runner;
-            this.localPaths = AppDomain.CurrentDomain.GetAssemblies()
-                                                     .Select(a => Path.GetDirectoryName(a.Location))
-                                                     .Distinct();
         }
 
         public IEnumerable<FeatureTable> GetTables() {
