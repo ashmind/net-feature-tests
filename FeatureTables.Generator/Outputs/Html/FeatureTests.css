@@ -22,6 +22,7 @@ body {
 }
 
 .content {
+    position: relative;
     background-color: white;
     margin: 0 auto;
     width: 95%;
@@ -156,4 +157,55 @@ td.success a, td.failure a, td.concern a {
 :target {
   -webkit-animation: flash 2s;
   animation: flash 2s;
+}
+
+/* http://codepo8.github.io/css-fork-on-github-ribbon/ by http://christianheilmann.com/ */
+#fork-on-github {
+    position: absolute;
+    display: block;
+    top: 0;
+    right: 0;
+    width: 200px;
+    overflow: hidden;
+    height: 200px;
+}
+
+#fork-on-github a {
+    position: absolute;
+    top: 60px;
+    right: -60px;
+    width: 200px;
+
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+
+    color: #000;
+    text-decoration: none;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 40px;
+    font-size: 1rem;
+    line-height: 2rem;
+    transition: 0.5s;
+}
+
+#fork-on-github a:hover {
+    background: #b4cce4;
+}
+
+#fork-on-github a::before, #fork-on-github a::after {
+    content: "";
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    height: 1px;
+    background: #000;
+}
+
+#fork-on-github a::after {
+    bottom: 1px;
+    top: auto;
 }
