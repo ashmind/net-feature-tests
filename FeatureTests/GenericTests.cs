@@ -13,10 +13,9 @@ namespace DependencyInjection.FeatureTests {
         [Feature]
         [DisplayName("Open generic registration")]
         [Description(@"
-            Allows registration of open generic types.
-
-            For example Service<> can be registered as IService<>.
-            Then any request for IService<T> should be resolved with Service<T>.
+            Allows registration of open generic types.  
+            For example, Service<> can be registered as IService<>, and then any 
+            request for IService<X> should be resolved with Service<X>.
         ")]
         public void OpenGenericTypes(IFrameworkAdapter framework) {
             framework.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));

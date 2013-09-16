@@ -19,14 +19,14 @@
       @foreach (var table in Model) {
       <section>
         <h2>@table.Name</h2>
-        <div class="table-description">@table.Description</div>
+        <div class="table-description">@FormatDescription(table.Description)</div>
         
         @{ var featuresWithDescription = table.Features.Where(f => !string.IsNullOrEmpty(f.Description)).ToArray(); }
         @if (featuresWithDescription.Any()) {
           <dl class="feature-descriptions">
             @foreach (var feature in featuresWithDescription) {
               <dt>@feature.Name</dt>
-              <dd>@feature.Description</dd>
+              <dd>@FormatDescription(feature.Description)</dd>
             }
           </dl>
         }
@@ -69,7 +69,7 @@
         
         <ol class="comments">
         @foreach (var x in comments) {
-          <li id="@linkPrefix-@x.index">@x.comment</li>
+          <li id="@linkPrefix-@x.index">@FormatDescription(x.comment)</li>
         }
         </ol>
       </section>

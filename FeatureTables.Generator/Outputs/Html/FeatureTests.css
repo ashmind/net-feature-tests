@@ -56,7 +56,6 @@ section:first-of-type h2 {
 }
 
 .table-description {
-    white-space: pre-wrap;
     margin-bottom: 0.3rem;
 }
 
@@ -76,6 +75,10 @@ dt {
 dd {
     margin-left: 0.5rem;
     margin-top: 0.2rem;
+}
+
+dd p {
+    margin-top: 0;
 }
 
 dd + dt {

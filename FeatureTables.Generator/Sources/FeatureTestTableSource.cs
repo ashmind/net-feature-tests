@@ -73,15 +73,8 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             if (description.IsNullOrEmpty())
                 return description;
 
-            // replace all single new lines with spaces
-            description = Regex.Replace(description, @"([^\r\n]|^)(?:\r\n|\r|\n)([^\r\n]|$)", "$1 $2");
-
-            // collapse all spaces
-            description = Regex.Replace(description, @" +", @" ");
-
-            // remove all spaces at start/end of the line
-            description = Regex.Replace(description, @"^ +| +$", "", RegexOptions.Multiline);
-            return description;
+            // remove all spaces at the start of the line
+            return Regex.Replace(description, @"^ +", "", RegexOptions.Multiline);
         }
 
         private int GetDisplayOrder(MemberInfo member) {
