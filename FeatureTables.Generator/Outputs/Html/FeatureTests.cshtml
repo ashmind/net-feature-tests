@@ -19,11 +19,11 @@
       @foreach (var table in Model) {
       <section>
         <h2>@table.Name</h2>
-        <div class="description">@table.Description</div>
+        <div class="table-description">@table.Description</div>
         
         @{ var featuresWithDescription = table.Features.Where(f => !string.IsNullOrEmpty(f.Description)).ToArray(); }
         @if (featuresWithDescription.Any()) {
-          <dl>
+          <dl class="feature-descriptions">
             @foreach (var feature in featuresWithDescription) {
               <dt>@feature.Name</dt>
               <dd>@feature.Description</dd>
@@ -48,7 +48,7 @@
 
           @foreach (var row in table.GetRows()) {
           <tr>
-            <td>@row.Item1.FrameworkName</td>
+            <td class="framework-name">@row.Item1.FrameworkName</td>
             @foreach (var cell in row.Item2) {
               <td class="@(cell.State.ToString().ToLowerInvariant())">
               @if (cell.HasComment) {
@@ -67,7 +67,7 @@
           }
         </table>
         
-        <ol>
+        <ol class="comments">
         @foreach (var x in comments) {
           <li id="@linkPrefix-@x.index">@x.comment</li>
         }

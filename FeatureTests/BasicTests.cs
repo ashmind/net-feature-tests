@@ -11,6 +11,7 @@ using Xunit;
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(1)]
     [DisplayName("Essential functionality")]
+    [Description("These are the basic features that should be supported by all frameworks.")]
     public class BasicTests {
         [Feature]
         [DisplayName("Register/resolve independent service")]

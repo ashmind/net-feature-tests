@@ -28,12 +28,8 @@ body {
     width: 95%;
     min-width: 760px;
     max-width: 1200px;
-    padding: 4rem;
-    padding-top: 1.5rem;
-}
-
-.note-firefox {
-    display: none;
+    padding: 50px;
+    padding-top: 10px;
 }
 
 h1, h2 {
@@ -44,6 +40,7 @@ h1, h2 {
 h1 {
     font-size: 160%;
     text-align: center;
+    padding-bottom: 1rem;
 }
 
 h2 {
@@ -58,11 +55,13 @@ section:first-of-type h2 {
     margin-top: 0;
 }
 
-section .description {
+.table-description {
     white-space: pre-wrap;
-    max-width: 60rem;
-    
     margin-bottom: 0.3rem;
+}
+
+.table-description, .feature-descriptions, .comments {
+    max-width: 60rem;
 }
 
 dt, dd {
@@ -75,7 +74,8 @@ dt {
 }
 
 dd {
-    margin-left: 0.3rem;
+    margin-left: 0.5rem;
+    margin-top: 0.2rem;
 }
 
 dd + dt {
@@ -87,7 +87,6 @@ table {
     border: 0;
 
     margin-top: 1rem;
-    margin-left: 1rem;
 }
 
 th {
@@ -106,6 +105,12 @@ th, td {
 
 td {
     background-color: #dbe5f1;
+}
+
+td.framework-name, th:first-child {
+    text-align: left;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
 }
 
 td.success {
@@ -187,11 +192,11 @@ td.success a, td.failure a, td.concern a {
     padding: 5px 40px;
     font-size: 1rem;
     line-height: 2rem;
-    transition: 0.5s;
+    transition: background-color 0.5s;
 }
 
 #fork-on-github a:hover {
-    background: #b4cce4;
+    background-color: #b4cce4;
 }
 
 #fork-on-github a::before, #fork-on-github a::after {
