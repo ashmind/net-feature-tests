@@ -2,17 +2,17 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
   <metadata>
     <id>Nuget.Core</id>
-    <version>2.5.0</version>
-    <title>Nuget.Core</title>
+    <version>2.7.0</version>
     <authors>Outercurve Foundation</authors>
     <owners>Outercurve Foundation</owners>
-    <licenseUrl>http://nuget.codeplex.com/license</licenseUrl>
+    <licenseUrl>http://www.microsoft.com/web/webpi/eula/nuget_release_eula.htm</licenseUrl>
     <projectUrl>http://nuget.codeplex.com/</projectUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
     <description>NuGet.Core is the core framework assembly for NuGet that the rest of NuGet builds upon.</description>
-    <releaseNotes />
-    <copyright>Copyright 2013 Microsoft. NuGet is made possible by the Outercurve Foundation’s open source project.</copyright>
-    <language />
+    <copyright>Copyright 2013 Microsoft. NuGet is made possible by the Outercurve Foundation's open source project.</copyright>
     <tags>nuget</tags>
+    <dependencies>
+      <dependency id="Microsoft.Web.Xdt" version="1.0.0" />
+    </dependencies>
   </metadata>
 </package>
