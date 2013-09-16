@@ -3,16 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using Castle.Core;
+using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
+using Castle.Windsor;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class CastleAdapter : FrameworkAdapterBase {
-        private readonly IKernel kernel = new DefaultKernel();
+        private readonly IWindsorContainer container = new WindsorContainer();
 
         public CastleAdapter() {
-            kernel.Resolver.AddSubResolver(new CollectionResolver(kernel));
+            container.Kernel.Resolver.AddSubResolver(new CollectionResolver(container.Kernel));
+            container.AddFacility<TypedFactoryFacility>();
         }
 
         public override Assembly FrameworkAssembly {
@@ -29,7 +32,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
 
         public override void RegisterInstance(Type serviceType, object instance) {
             var registration = Component.For(serviceType).Instance(instance);
-            this.kernel.Register(registration);
+            this.container.Register(registration);
         }
 
         private void Register(Type serviceType, Type implementationType, LifestyleType lifestyle) {
@@ -37,15 +40,15 @@ namespace DependencyInjection.FeatureTests.Adapters {
                                         .ImplementedBy(implementationType)
                                         .LifeStyle.Is(lifestyle);
 
-            this.kernel.Register(registration);
+            this.container.Register(registration);
         }
 
         public override object Resolve(Type serviceType) {
-            return this.kernel.Resolve(serviceType);
+            return this.container.Resolve(serviceType);
         }
 
         public override IEnumerable<object> ResolveAll(Type serviceType) {
-            return this.kernel.ResolveAll(serviceType).Cast<object>();
+            return this.container.ResolveAll(serviceType).Cast<object>();
         }
     }
 }
