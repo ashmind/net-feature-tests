@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Text;
@@ -14,9 +15,13 @@ using DependencyInjection.FeatureTests.Documentation;
 namespace DependencyInjection.FeatureTables.Generator.Sources {
     public class FeatureTestTableSource : IFeatureTableSource {
         private readonly FeatureTestRunner runner;
+        private readonly IEnumerable<string> localPaths;
 
         public FeatureTestTableSource(FeatureTestRunner runner) {
             this.runner = runner;
+            this.localPaths = AppDomain.CurrentDomain.GetAssemblies()
+                                                     .Select(a => Path.GetDirectoryName(a.Location))
+                                                     .Distinct();
         }
 
         public IEnumerable<FeatureTable> GetTables() {
@@ -49,16 +54,18 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
 
         private void ApplyRunResultToCell(FeatureCell cell, FeatureTestRun run) {
             if (run.Result == FeatureTestResult.Success) {
-                cell.Text = "supported";
+                cell.DisplayText = "supported";
                 cell.State = FeatureState.Success;
             }
             else if (run.Result == FeatureTestResult.Failure) {
-                cell.Text = "failed";
+                cell.DisplayText = "failed";
                 cell.State = FeatureState.Failure;
-                cell.Uri = ConvertToDataUri(run.Exception);
+                var exceptionString = RemoveLocalPaths(run.Exception.ToString());
+                cell.RawError = exceptionString;
+                cell.DisplayUri = ConvertToDataUri(exceptionString);
             }
             else {
-                cell.Text = "see comment";
+                cell.DisplayText = "see comment";
                 cell.State = FeatureState.Concern;
             }
             cell.Comment = run.Message;
@@ -84,9 +91,25 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
 
             return displayOrderAttribute.Order;
         }
+        
+        /// <summary>
+        /// Removes all paths that are potentially local.
+        /// </summary>
+        private string RemoveLocalPaths(string exceptionString) {
+            return Regex.Replace(exceptionString, @"(?<=\W|^)((?:\w\:|\\\\)[^:\r\n]+)", match => {
+                var path = match.Groups[1].Value;
+                if (File.Exists(path))
+                    return Path.Combine("[removed]", Path.GetFileName(path));
 
-        private Uri ConvertToDataUri(Exception exception) {
-            var base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(exception.ToString()));
+                if (Directory.Exists(path))
+                    return "[removed]";
+
+                return match.Value;
+            });
+        }
+
+        private Uri ConvertToDataUri(string value) {
+            var base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(value));
             return new Uri("data:text/plain;base64," + base64);
         }
     }

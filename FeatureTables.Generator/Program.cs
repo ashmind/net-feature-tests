@@ -13,7 +13,7 @@ namespace DependencyInjection.FeatureTables.Generator {
             new MetadataTableSource(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"])), 
             new FeatureTestTableSource(new FeatureTestRunner())
         };
-        private static readonly IFeatureTableOutput[] Outputs = { new HtmlOutput() };
+        private static readonly IFeatureTableOutput[] Outputs = { new HtmlOutput(), new JsonOutput() };
 
         public static void Main(string[] args) {
             try {

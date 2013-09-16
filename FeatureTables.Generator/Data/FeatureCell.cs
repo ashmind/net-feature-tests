@@ -2,7 +2,8 @@ using System;
 
 namespace DependencyInjection.FeatureTables.Generator.Data {
     public class FeatureCell {
-        public string Text { get; set; }
+        public string DisplayText { get; set; }
+        public Uri DisplayUri { get; set; }
         public string Comment { get; set; }
         public FeatureState State { get; set; }
 
@@ -10,6 +11,6 @@ namespace DependencyInjection.FeatureTables.Generator.Data {
             get { return !string.IsNullOrEmpty(this.Comment); }
         }
 
-        public Uri Uri { get; set; }
+        public string RawError { get; set; }
     }
 }

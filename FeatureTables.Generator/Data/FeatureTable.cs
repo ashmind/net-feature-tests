@@ -9,8 +9,14 @@ namespace DependencyInjection.FeatureTables.Generator.Data {
     public class FeatureTable {
         private readonly IDictionary<Tuple<string, object>, FeatureCell> cells;
 
-        public FeatureTable(string name, IEnumerable<IFrameworkAdapter> frameworks, IEnumerable<Feature> features) {
-            this.Name = name;
+        public FeatureTable(string displayName, IEnumerable<IFrameworkAdapter> frameworks, IEnumerable<Feature> features) 
+            : this(new object(), displayName, frameworks, features)
+        {
+        }
+
+        public FeatureTable(object key, string displayName, IEnumerable<IFrameworkAdapter> frameworks, IEnumerable<Feature> features) {
+            this.Key = key;
+            this.DisplayName = displayName;
             this.Frameworks = (frameworks as IList<IFrameworkAdapter> ?? frameworks.ToList()).AsReadOnly();
             this.Features = (features as IList<Feature> ?? features.ToList()).AsReadOnly();
             this.cells = (
@@ -20,7 +26,8 @@ namespace DependencyInjection.FeatureTables.Generator.Data {
             ).ToDictionary(t => t, t => new FeatureCell());
         }
 
-        public string Name { get; private set; }
+        public object Key { get; private set; }
+        public string DisplayName { get; private set; }
         public string Description { get; set; }
         public ReadOnlyCollection<IFrameworkAdapter> Frameworks { get; private set; }
         public ReadOnlyCollection<Feature> Features { get; private set; }

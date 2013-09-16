@@ -46,6 +46,9 @@
     <Reference Include="Microsoft.Web.XmlTransform">
       <HintPath>..\#packages\Microsoft.Web.Xdt.1.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\#packages\Newtonsoft.Json.5.0.6\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="NuGet.Core, Version=2.7.40808.167, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\NuGet.Core.2.7.0\lib\net40-Client\NuGet.Core.dll</HintPath>
@@ -80,8 +83,10 @@
     <Compile Include="Outputs\HtmlOutput.cs" />
     <Compile Include="Outputs\Html\HtmlTemplateBase.cs" />
     <Compile Include="Outputs\IFeatureTableOutput.cs" />
+    <Compile Include="Outputs\JsonOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sources\MetadataKeys.cs" />
     <Compile Include="Sources\MetadataSupport\NetFxVersionHelper.cs" />
     <Compile Include="Sources\MetadataTableSource.cs" />
     <Compile Include="Sources\FeatureTestSupport\DisplayNameHelper.cs" />

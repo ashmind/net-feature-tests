@@ -31,12 +31,12 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
         }
 
         private static FeatureTable GetGeneralInformation(IFrameworkAdapter[] diFrameworks, IDictionary<IFrameworkAdapter, IPackage> packages) {
-            var version = new Feature("Version");
-            var url = new Feature("Web Site");
+            var version = new Feature(MetadataKeys.VersionFeature, "Version");
+            var url = new Feature(MetadataKeys.UrlFeature, "Web Site");
 
-            var table = new FeatureTable("General information", diFrameworks, new[] { version, url });
+            var table = new FeatureTable(MetadataKeys.GeneralTable, "General information", diFrameworks, new[] { version, url });
             foreach (var diFramework in diFrameworks) {
-                table[diFramework, version].Text = diFramework.FrameworkAssembly.GetName().Version.ToString();
+                table[diFramework, version].DisplayText = diFramework.FrameworkAssembly.GetName().Version.ToString();
                 FillUrl(table[diFramework, url], packages[diFramework]);
             }
 
@@ -45,12 +45,12 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
 
         private static void FillUrl(FeatureCell cell, IPackage package) {
             if (package.ProjectUrl != null) {
-                cell.Text = "link";
-                cell.Uri = package.ProjectUrl;
+                cell.DisplayText = "link";
+                cell.DisplayUri = package.ProjectUrl;
             }
             else {
                 cell.State = FeatureState.Concern;
-                cell.Text = "unknown";
+                cell.DisplayText = "unknown";
             }
         }
 
@@ -62,7 +62,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                                       .OrderBy(NetFxVersionHelper.GetDisplayOrder)
                                       .ToList();
 
-            var table = new FeatureTable("Supported .NET versions", diFrameworks, allVersions.Select(v => new Feature(v, NetFxVersionHelper.GetDisplayName(v))));
+            var table = new FeatureTable(MetadataKeys.NetFxVersionTable, "Supported .NET versions", diFrameworks, allVersions.Select(v => new Feature(v, NetFxVersionHelper.GetDisplayName(v))));
             table.Description = "This information is based on versions included in NuGet package.";
 
             foreach (var diFramework in diFrameworks) {
@@ -72,11 +72,11 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                     var cell = table[diFramework, version];
                     if (VersionUtility.IsCompatible(version, supported)) {
                         cell.State = FeatureState.Success;
-                        cell.Text = "yes";
+                        cell.DisplayText = "yes";
                     }
                     else {
                         cell.State = FeatureState.Concern;
-                        cell.Text = "no";
+                        cell.DisplayText = "no";
                     }
                 }
             }

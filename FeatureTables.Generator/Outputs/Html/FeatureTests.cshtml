@@ -18,7 +18,7 @@
 
       @foreach (var table in Model) {
       <section>
-        <h2>@table.Name</h2>
+        <h2>@table.DisplayName</h2>
         <div class="table-description">@FormatDescription(table.Description)</div>
         
         @{ var featuresWithDescription = table.Features.Where(f => !string.IsNullOrEmpty(f.Description)).ToArray(); }
@@ -38,7 +38,7 @@
               <th title="@feature.Name">@feature.Name</th>
             }
           </tr>
-          @{ var linkPrefix = Regex.Replace(table.Name, @"\W+", "-").ToLowerInvariant(); }
+          @{ var linkPrefix = Regex.Replace(table.DisplayName, @"\W+", "-").ToLowerInvariant(); }
           @{ var comments = table.GetRows().SelectMany(r => r.Item2)
                                            .Where(c => c.HasComment)
                                            .Select(c => c.Comment)
@@ -53,13 +53,13 @@
               <td class="@(cell.State.ToString().ToLowerInvariant())">
               @if (cell.HasComment) {
                   var index = @comments.Single(x => x.comment == @cell.Comment).index;
-                  <a class="local" href="#@linkPrefix-@index">@cell.Text<sup>@index</sup></a>
+                  <a class="local" href="#@linkPrefix-@index">@cell.DisplayText<sup>@index</sup></a>
               }
-              else if (cell.Uri != null) {
-                  <a href="@cell.Uri">@cell.Text</a>
+              else if (cell.DisplayUri != null) {
+                  <a href="@cell.DisplayUri">@cell.DisplayText</a>
               }
               else {
-                  @cell.Text
+                  @cell.DisplayText
               }
               </td>
             }
