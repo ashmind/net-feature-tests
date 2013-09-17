@@ -68,6 +68,9 @@
     <Reference Include="Dynamo.Ioc.Extensions">
       <HintPath>..\#packages\Dynamo.Ioc.Extensions.3.0.1.1\lib\net45\Dynamo.Ioc.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="HaveBox">
+      <HintPath>..\#packages\HaveBox.1.4.0\lib\net45\HaveBox.dll</HintPath>
+    </Reference>
     <Reference Include="LinFu.Core, Version=2.3.0.41559, Culture=neutral, PublicKeyToken=a4c63a184389506f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\LinFu.Core.2.3.0.41559\lib\net35\LinFu.Core.dll</HintPath>
@@ -114,6 +117,7 @@
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\CatelAdapter.cs" />
+    <Compile Include="Adapters\HaveBoxAdapter.cs" />
     <Compile Include="Adapters\DynamoIocAdapter.cs" />
     <Compile Include="Adapters\FrameworkAdapterBase.cs" />
     <Compile Include="Adapters\IFrameworkAdapter.cs" />

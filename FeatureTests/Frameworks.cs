@@ -1,20 +1,20 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using AshMind.Extensions;
 using DependencyInjection.FeatureTests.Adapters;
 
 namespace DependencyInjection.FeatureTests {
     public static class Frameworks {
+        private static readonly Type[] AdapterTypes =
+            typeof(Frameworks).Assembly.GetTypes()
+                                       .Where(t => t.HasInterface<IFrameworkAdapter>() && !t.IsAbstract)
+                                       .OrderBy(t => t.Name)
+                                       .ToArray();
+
         public static IEnumerable<IFrameworkAdapter> List() {
-            yield return new AutofacAdapter();
-            yield return new CastleAdapter();
-            yield return new CatelAdapter();
-            yield return new DynamoIocAdapter();
-            yield return new LinFuAdapter();
-            yield return new NinjectAdapter();
-            yield return new SimpleInjectorAdapter();
-            yield return new SpringAdapter();
-            yield return new StructureMapAdapter();
-            yield return new UnityAdapter();
+            return from type in AdapterTypes
+                   select (IFrameworkAdapter)Activator.CreateInstance(type);
         }
     }
 }
