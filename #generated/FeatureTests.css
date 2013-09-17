@@ -126,6 +126,11 @@ td.failure {
     color: #9c0006;
 }
 
+td.skipped {
+    background-color: #eee;
+    color: #c0c0c0;
+}
+
 td.concern {
     background-color: #ffeba5;
     color: #9c6500;
@@ -145,7 +150,7 @@ a:hover {
     text-decoration: underline;
 }
 
-td.success a, td.failure a, td.concern a {
+td.success a, td.failure a, td.concern a, td.skipped a {
     color: inherit;
 }
 

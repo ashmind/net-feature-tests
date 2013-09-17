@@ -60,6 +60,10 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                 cell.RawError = exceptionString;
                 cell.DisplayUri = ConvertToDataUri(exceptionString);
             }
+            else if (run.Result == FeatureTestResult.SkippedDueToDependency) {
+                cell.DisplayText = "skipped";
+                cell.State = FeatureState.Skipped;
+            }
             else {
                 cell.DisplayText = "see comment";
                 cell.State = FeatureState.Concern;

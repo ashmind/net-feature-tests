@@ -51,7 +51,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport
                     var testName = DisplayNameHelper.GetDisplayName(requiredTest);
 
                     var comment = string.Format("Skipped as {0} ({1}) is not supported by this framework.", testName, className);
-                    run = new FeatureTestRun(test, framework.GetType(), FeatureTestResult.Skipped, comment);
+                    run = new FeatureTestRun(test, framework.GetType(), FeatureTestResult.SkippedDueToDependency, comment);
                     runs.Add(run);
                     return run;
                 }
@@ -68,7 +68,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport
             var specialCase = GetSpecialCase(test, frameworkType)
                            ?? GetSpecialCase(test.DeclaringType, frameworkType);
             if (specialCase != null && specialCase.Skip)
-                return new FeatureTestRun(test, frameworkType, FeatureTestResult.Skipped, specialCase.Comment);
+                return new FeatureTestRun(test, frameworkType, FeatureTestResult.SkippedDueToSpecialCase, specialCase.Comment);
 
             var instance = Activator.CreateInstance(test.DeclaringType);
             try {

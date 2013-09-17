@@ -6,6 +6,7 @@ namespace DependencyInjection.FeatureTables.Generator.Data {
     public enum FeatureState {
         Neutral,
         Success,
+        Skipped,
         Concern,
         Failure
     }
