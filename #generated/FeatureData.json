@@ -8,6 +8,8 @@
       "net40-Client",
       "net45",
       "win",
+      "win80",
+      "wp80",
       "sl50"
     ],
     "features": {
@@ -86,7 +88,7 @@
       },
       "GracefulRecursionHandlingForListDependency": {
         "result": "failure",
-        "error": "Xunit.Sdk.AssertException: Autofac fails list recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnListRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 89\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 64"
+        "error": "Xunit.Sdk.AssertException: Autofac fails list recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnListRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 90\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 65"
       }
     }
   },
@@ -176,6 +178,111 @@
       },
       "GracefulRecursionHandlingForListDependency": {
         "result": "success"
+      }
+    }
+  },
+  {
+    "name": "Catel",
+    "url": "http://www.catelproject.com/",
+    "version": "3.6.0.0",
+    "supports": [
+      "net40",
+      "net40-Client",
+      "net45",
+      "win",
+      "win80",
+      "wp71",
+      "wp71",
+      "wp80",
+      "sl40",
+      "sl50"
+    ],
+    "features": {
+      "IndependentService": {
+        "result": "success"
+      },
+      "IndependentServiceRegisteredAsSelf": {
+        "result": "success"
+      },
+      "SingletonLifetime": {
+        "result": "success"
+      },
+      "TransientLifetime": {
+        "result": "success"
+      },
+      "PrebuiltInstance": {
+        "result": "success"
+      },
+      "ConstructorDependency": {
+        "result": "success"
+      },
+      "ConstructorDependencyUsingInstance": {
+        "result": "success"
+      },
+      "Array": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 81\r\n   at DependencyInjection.FeatureTests.ListTests.Array(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 35"
+      },
+      "List": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 81\r\n   at DependencyInjection.FeatureTests.ListTests.List(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 41"
+      },
+      "Collection": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 81\r\n   at DependencyInjection.FeatureTests.ListTests.Collection(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 47"
+      },
+      "Enumerable": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 81\r\n   at DependencyInjection.FeatureTests.ListTests.Enumerable(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 58"
+      },
+      "IReadOnlyCollection": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 81\r\n   at DependencyInjection.FeatureTests.ListTests.IReadOnlyCollection(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 64"
+      },
+      "IReadOnlyList": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 81\r\n   at DependencyInjection.FeatureTests.ListTests.IReadOnlyList(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 70"
+      },
+      "OpenGenericTypes": {
+        "result": "failure",
+        "error": "System.NotSupportedException: The type 'DependencyInjection.FeatureTests.TestTypes.IGenericService`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered, not even in an external container\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n   at DependencyInjection.FeatureTests.Adapters.CatelAdapter.Resolve(Type serviceType) in [removed]\\CatelAdapter.cs:line 28\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.GenericTests.OpenGenericTypes(IFrameworkAdapter framework) in [removed]\\GenericTests.cs:line 22"
+      },
+      "ConstrainsForOpenGenerics": {
+        "result": "concern",
+        "comment": "Skipped as Open generic registration (Generics support) is not supported by this framework."
+      },
+      "FactoryWithNoParameters": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.FuncTests.FactoryWithNoParameters(IFrameworkAdapter framework) in [removed]\\FuncTests.cs:line 31"
+      },
+      "FactoryWithParameter": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.FuncTests.FactoryWithParameter(IFrameworkAdapter framework) in [removed]\\FuncTests.cs:line 53"
+      },
+      "TransientFactoryUsedBySingletonStillCreatesTransient": {
+        "result": "failure",
+        "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at DependencyInjection.FeatureTests.FuncTests.TransientFactoryUsedBySingletonStillCreatesTransient(IFrameworkAdapter framework) in [removed]\\FuncTests.cs:line 70"
+      },
+      "PropertyDependency": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.PropertyTests.PropertyDependency(IFrameworkAdapter framework) in [removed]\\PropertyTests.cs:line 32"
+      },
+      "PropertyDependencyIsOptional": {
+        "result": "success"
+      },
+      "PropertyDependencyDoesNotNeedCustomAttribute": {
+        "result": "concern",
+        "comment": "Skipped as Simple dependency (Property dependencies) is not supported by this framework."
+      },
+      "ReasonableConstructorSelection": {
+        "result": "success"
+      },
+      "GracefulRecursionHandling": {
+        "result": "success"
+      },
+      "GracefulRecursionHandlingForListDependency": {
+        "result": "concern",
+        "comment": "Skipped as IService[] (List/array dependencies) is not supported by this framework."
       }
     }
   },
@@ -284,6 +391,8 @@
       "net45",
       "wp",
       "wp71",
+      "wp71",
+      "wp80",
       "sl20",
       "sl30",
       "sl40",
@@ -468,7 +577,8 @@
         "result": "success"
       },
       "GracefulRecursionHandlingForListDependency": {
-        "result": "success"
+        "result": "concern",
+        "comment": "Skipped as IService[] (List/array dependencies) is not supported by this framework."
       }
     }
   },
@@ -668,7 +778,8 @@
     "version": "3.0.0.0",
     "supports": [
       "net45",
-      "win"
+      "win",
+      "win80"
     ],
     "features": {
       "IndependentService": {
@@ -750,11 +861,11 @@
       },
       "GracefulRecursionHandling": {
         "result": "failure",
-        "error": "Xunit.Sdk.AssertException: Unity fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 99\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandling(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 53"
+        "error": "Xunit.Sdk.AssertException: Unity fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 100\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandling(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 53"
       },
       "GracefulRecursionHandlingForListDependency": {
         "result": "failure",
-        "error": "Xunit.Sdk.AssertException: Unity fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 99\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnListRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 85\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 64"
+        "error": "Xunit.Sdk.AssertException: Unity fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 100\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnListRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 86\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 65"
       }
     }
   }

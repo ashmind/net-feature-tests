@@ -60,6 +60,7 @@ namespace DependencyInjection.FeatureTests {
 
         [Feature]
         [DisplayName("Graceful recursion handling (list dependency)")]
+        [DependsOnFeature(typeof(ListTests), "Array")]
         public void GracefulRecursionHandlingForListDependency(IFrameworkAdapter framework) {
             this.AssertIsNotCrashingOnListRecursion(framework);
 
@@ -78,7 +79,7 @@ namespace DependencyInjection.FeatureTests {
                 return;
             }
 
-            throw new AssertException("Recursion was magically solved without an exception.");
+            throw new AssertException("No exception for recursion, either this use case is not supported or there is some other issue.");
         }
 
         private void AssertIsNotCrashingOnListRecursion(IFrameworkAdapter adapter) {
