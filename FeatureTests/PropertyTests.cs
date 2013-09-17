@@ -34,6 +34,7 @@ namespace DependencyInjection.FeatureTests
         }
 
         [Feature]
+        [DependsOnFeature("PropertyDependency")]
         [DisplayName("Optional by default")]
         public void PropertyDependencyIsOptional(IFrameworkAdapter framework) {
             framework.Register<ServiceWithSimplePropertyDependency>();
