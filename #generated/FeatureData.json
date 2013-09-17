@@ -287,6 +287,106 @@
     }
   },
   {
+    "name": "Dynamo.Ioc",
+    "url": "http://martinf.github.io/Dynamo-IoC",
+    "version": "3.0.2.0",
+    "supports": [
+      "net40",
+      "net40-Client",
+      "net45"
+    ],
+    "features": {
+      "IndependentService": {
+        "result": "success"
+      },
+      "IndependentServiceRegisteredAsSelf": {
+        "result": "success"
+      },
+      "SingletonLifetime": {
+        "result": "success"
+      },
+      "TransientLifetime": {
+        "result": "success"
+      },
+      "PrebuiltInstance": {
+        "result": "success"
+      },
+      "ConstructorDependency": {
+        "result": "success"
+      },
+      "ConstructorDependencyUsingInstance": {
+        "result": "success"
+      },
+      "Array": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 79\r\n   at DependencyInjection.FeatureTests.ListTests.Array(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 35"
+      },
+      "List": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 79\r\n   at DependencyInjection.FeatureTests.ListTests.List(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 41"
+      },
+      "Collection": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 79\r\n   at DependencyInjection.FeatureTests.ListTests.Collection(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 47"
+      },
+      "Enumerable": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 79\r\n   at DependencyInjection.FeatureTests.ListTests.Enumerable(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 58"
+      },
+      "IReadOnlyCollection": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 79\r\n   at DependencyInjection.FeatureTests.ListTests.IReadOnlyCollection(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 64"
+      },
+      "IReadOnlyList": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 79\r\n   at DependencyInjection.FeatureTests.ListTests.IReadOnlyList(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 70"
+      },
+      "OpenGenericTypes": {
+        "result": "failure",
+        "error": "System.ArgumentException: Type: IGenericService`1 is not assignable from implementation type: GenericService`1\r\n   at Dynamo.Ioc.IocContainer.Register(Type type, Type implType, Object key, ILifetime lifetime, Nullable`1 compileMode, Boolean includeInternalCtor, Func`2 selector)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.RegisterTransient(Type serviceType, Type implementationType) in [removed]\\DynamoIocAdapter.cs:line 24\r\n   at DependencyInjection.FeatureTests.GenericTests.OpenGenericTypes(IFrameworkAdapter framework) in [removed]\\GenericTests.cs:line 21"
+      },
+      "ConstrainsForOpenGenerics": {
+        "result": "concern",
+        "comment": "Skipped as Open generic registration (Generics support) is not supported by this framework."
+      },
+      "FactoryWithNoParameters": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.FuncTests.FactoryWithNoParameters(IFrameworkAdapter framework) in [removed]\\FuncTests.cs:line 29"
+      },
+      "FactoryWithParameter": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.FuncTests.FactoryWithParameter(IFrameworkAdapter framework) in [removed]\\FuncTests.cs:line 51"
+      },
+      "TransientFactoryUsedBySingletonStillCreatesTransient": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.ContainerLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.FuncTests.TransientFactoryUsedBySingletonStillCreatesTransient(IFrameworkAdapter framework) in [removed]\\FuncTests.cs:line 69"
+      },
+      "PropertyDependency": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.PropertyTests.PropertyDependency(IFrameworkAdapter framework) in [removed]\\PropertyTests.cs:line 32"
+      },
+      "PropertyDependencyIsOptional": {
+        "result": "success"
+      },
+      "PropertyDependencyDoesNotNeedCustomAttribute": {
+        "result": "concern",
+        "comment": "Skipped as Simple dependency (Property dependencies) is not supported by this framework."
+      },
+      "ReasonableConstructorSelection": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.\r\n   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)\r\n   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at lambda_method(Closure , IResolver )\r\n   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()\r\n   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)\r\n   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()\r\n   at Dynamo.Ioc.IocContainer.Resolve(Type type)\r\n   at DependencyInjection.FeatureTests.Adapters.DynamoIocAdapter.Resolve(Type serviceType) in [removed]\\DynamoIocAdapter.cs:line 32\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.ReasonableConstructorSelection(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 33"
+      },
+      "GracefulRecursionHandling": {
+        "result": "failure",
+        "error": "Xunit.Sdk.AssertException: Dynamo.Ioc fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 100\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandling(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 53"
+      },
+      "GracefulRecursionHandlingForListDependency": {
+        "result": "concern",
+        "comment": "Skipped as IService[] (List/array dependencies) is not supported by this framework."
+      }
+    }
+  },
+  {
     "name": "LinFu",
     "url": "https://github.com/philiplaureano/LinFu",
     "version": "2.3.0.41559",

@@ -8,6 +8,7 @@ namespace DependencyInjection.FeatureTests {
             yield return new AutofacAdapter();
             yield return new CastleAdapter();
             yield return new CatelAdapter();
+            yield return new DynamoIocAdapter();
             yield return new LinFuAdapter();
             yield return new NinjectAdapter();
             yield return new SimpleInjectorAdapter();
