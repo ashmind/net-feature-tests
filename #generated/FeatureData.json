@@ -596,6 +596,102 @@
     }
   },
   {
+    "name": "LightCore",
+    "url": "http://lightcore.ch/en/default.aspx",
+    "version": "1.5.1.0",
+    "supports": [
+      "net35",
+      "net35-cf",
+      "net40",
+      "net40-Client",
+      "net45",
+      "sl30",
+      "sl40",
+      "sl50"
+    ],
+    "features": {
+      "IndependentService": {
+        "result": "success"
+      },
+      "IndependentServiceRegisteredAsSelf": {
+        "result": "success"
+      },
+      "SingletonLifetime": {
+        "result": "success"
+      },
+      "TransientLifetime": {
+        "result": "success"
+      },
+      "PrebuiltInstance": {
+        "result": "success"
+      },
+      "ConstructorDependency": {
+        "result": "success"
+      },
+      "ConstructorDependencyUsingInstance": {
+        "result": "success"
+      },
+      "Array": {
+        "result": "failure",
+        "error": "System.ArgumentException: Object of type 'System.Object[]' cannot be converted to type 'DependencyInjection.FeatureTests.TestTypes.IService[]'.\r\n   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)\r\n   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)\r\n   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)\r\n   at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)\r\n   at System.Reflection.ConstructorInfo.Invoke(Object[] parameters)\r\n   at LightCore.Activation.Activators.ReflectionActivator.ActivateInstance(ResolutionContext resolutionContext)\r\n   at LightCore.Registration.RegistrationItem.<>c__DisplayClass1.<ActivateInstance>b__0()\r\n   at LightCore.Lifecycle.TransientLifecycle.ReceiveInstanceInLifecycle(Func`1 newInstanceResolver)\r\n   at LightCore.Registration.RegistrationItem.ActivateInstance(ResolutionContext resolutionContext)\r\n   at LightCore.Container.Resolve(RegistrationItem registrationItem)\r\n   at LightCore.Container.ResolveInternal(Type contractType, IEnumerable`1 arguments, IDictionary`2 namedArguments)\r\n   at LightCore.Container.Resolve(Type contractType)\r\n   at DependencyInjection.FeatureTests.Adapters.LightCoreAdapter.Resolve(Type serviceType) in [removed]\\LightCoreAdapter.cs:line 39\r\n   at DependencyInjection.FeatureTests.Adapters.FrameworkAdapterExtensions.Resolve[TService](IFrameworkAdapter container) in [removed]\\FrameworkAdapterExtensions.cs:line 50\r\n   at DependencyInjection.FeatureTests.ListTests.AssertResolvesListDependencyFor[TTestComponent](IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 80\r\n   at DependencyInjection.FeatureTests.ListTests.Array(IFrameworkAdapter framework) in [removed]\\ListTests.cs:line 36"
+      },
+      "List": {
+        "result": "success"
+      },
+      "Collection": {
+        "result": "success"
+      },
+      "Enumerable": {
+        "result": "success"
+      },
+      "IReadOnlyCollection": {
+        "result": "success"
+      },
+      "IReadOnlyList": {
+        "result": "success"
+      },
+      "OpenGenericTypes": {
+        "result": "success"
+      },
+      "ConstrainsForOpenGenerics": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 1\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at DependencyInjection.FeatureTests.GenericTests.ConstrainsForOpenGenerics(IFrameworkAdapter framework) in [removed]\\GenericTests.cs:line 46"
+      },
+      "FactoryWithNoParameters": {
+        "result": "success"
+      },
+      "FactoryWithParameter": {
+        "result": "success"
+      },
+      "TransientFactoryUsedBySingletonStillCreatesTransient": {
+        "result": "success"
+      },
+      "PropertyDependency": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at DependencyInjection.FeatureTests.PropertyTests.PropertyDependency(IFrameworkAdapter framework) in [removed]\\PropertyTests.cs:line 32"
+      },
+      "PropertyDependencyIsOptional": {
+        "result": "skipped",
+        "comment": "Skipped as Simple dependency (Property dependencies) is not supported by this framework."
+      },
+      "PropertyDependencyDoesNotNeedCustomAttribute": {
+        "result": "skipped",
+        "comment": "Skipped as Simple dependency (Property dependencies) is not supported by this framework."
+      },
+      "ReasonableConstructorSelection": {
+        "result": "success"
+      },
+      "GracefulRecursionHandling": {
+        "result": "failure",
+        "error": "Xunit.Sdk.AssertException: LightCore fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.AssertIsNotCrashingOnRecursion(IFrameworkAdapter adapter) in [removed]\\ConvenienceTests.cs:line 100\r\n   at DependencyInjection.FeatureTests.ConvenienceTests.GracefulRecursionHandling(IFrameworkAdapter framework) in [removed]\\ConvenienceTests.cs:line 53"
+      },
+      "GracefulRecursionHandlingForListDependency": {
+        "result": "skipped",
+        "comment": "Skipped as IService[] (List/array dependencies) is not supported by this framework."
+      }
+    }
+  },
+  {
     "name": "LinFu",
     "url": "https://github.com/philiplaureano/LinFu",
     "version": "2.3.0.41559",

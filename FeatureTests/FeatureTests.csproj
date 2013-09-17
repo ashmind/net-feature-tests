@@ -74,11 +74,23 @@
     <Reference Include="IfInjector">
       <HintPath>..\#packages\IfInjector.0.6.2\lib\portable-win+net45+sl40+wp71\IfInjector.dll</HintPath>
     </Reference>
+    <Reference Include="LightCore">
+      <HintPath>..\#packages\LightCore.1.5.1\lib\net40\LightCore.dll</HintPath>
+    </Reference>
+    <Reference Include="LightCore.CommonServiceLocator">
+      <HintPath>..\#packages\LightCore.1.5.1\lib\net40\LightCore.CommonServiceLocator.dll</HintPath>
+    </Reference>
+    <Reference Include="LightCore.Configuration">
+      <HintPath>..\#packages\LightCore.1.5.1\lib\net40\LightCore.Configuration.dll</HintPath>
+    </Reference>
     <Reference Include="LinFu.Core, Version=2.3.0.41559, Culture=neutral, PublicKeyToken=a4c63a184389506f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\LinFu.Core.2.3.0.41559\lib\net35\LinFu.Core.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Practices.ServiceLocation">
+      <HintPath>..\#packages\LightCore.1.5.1\lib\net40\Microsoft.Practices.ServiceLocation.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.Unity, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.dll</HintPath>
@@ -120,6 +132,7 @@
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\CatelAdapter.cs" />
+    <Compile Include="Adapters\LightCoreAdapter.cs" />
     <Compile Include="Adapters\IfInjectorAdapter.cs" />
     <Compile Include="Adapters\HaveBoxAdapter.cs" />
     <Compile Include="Adapters\DynamoIocAdapter.cs" />
@@ -168,6 +181,9 @@
     <Compile Include="XunitSupport\FeatureTestCommand.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="LightCore.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

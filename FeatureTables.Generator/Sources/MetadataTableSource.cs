@@ -35,7 +35,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             var url = new Feature(MetadataKeys.UrlFeature, "Web Site");
             var total = new Feature(MetadataKeys.TotalFeature, "Total Score") {
                 Description = "Total is based on total amount of feature tests passed." + Environment.NewLine + Environment.NewLine +
-                              "Most tables give one point per success, but some (such as List support) give one point per table. " +
+                              "Most tables give one point per success, but some (such as List support) give one point per table.  " + Environment.NewLine +
                               "The score is only for quick comparison, please read individual tables for the details."
             };
 
