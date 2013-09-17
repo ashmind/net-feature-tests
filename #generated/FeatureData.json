@@ -7,7 +7,6 @@
       "net40",
       "net40-Client",
       "net45",
-      "win",
       "win80",
       "wp80",
       "sl50"
@@ -189,10 +188,7 @@
       "net40",
       "net40-Client",
       "net45",
-      "win",
       "win80",
-      "wp71",
-      "wp71",
       "wp71",
       "wp80",
       "sl40",
@@ -399,8 +395,6 @@
       "net40-Client",
       "net45",
       "wp71",
-      "wp71",
-      "wp71",
       "wp80",
       "sl40",
       "sl50"
@@ -504,10 +498,7 @@
     "version": "0.6.2.33114",
     "supports": [
       "net45",
-      "win",
       "win80",
-      "wp71",
-      "wp71",
       "wp71",
       "wp80",
       "sl40",
@@ -708,8 +699,6 @@
       "net40-Client",
       "net45",
       "wp",
-      "wp71",
-      "wp71",
       "wp71",
       "wp80",
       "sl20",
@@ -1097,7 +1086,6 @@
     "version": "3.0.0.0",
     "supports": [
       "net45",
-      "win",
       "win80"
     ],
     "features": {

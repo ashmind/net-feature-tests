@@ -56,13 +56,13 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
 
 
         private FeatureTable GetNetVersionSupport(IFrameworkAdapter[] diFrameworks, Dictionary<IFrameworkAdapter, IPackage> packages) {
-            var allVersions = packages.SelectMany(p => p.Value.GetSupportedFrameworks())
-                                      .Distinct()
-                                      .Where(NetFxVersionHelper.ShouldDisplay)
-                                      .OrderBy(NetFxVersionHelper.GetDisplayOrder)
-                                      .ToList();
+            var allVersionsGrouped = packages.SelectMany(p => p.Value.GetSupportedFrameworks())
+                                             .Where(NetFxVersionHelper.ShouldDisplay)
+                                             .GroupBy(NetFxVersionHelper.GetDisplayName)
+                                             .OrderBy(g => NetFxVersionHelper.GetDisplayOrder(g.First()))
+                                             .ToList();
 
-            var versionFeatures = allVersions.Select(v => new Feature(v, NetFxVersionHelper.GetDisplayName(v)));
+            var versionFeatures = allVersionsGrouped.Select(g => new Feature(g, g.Key));
             var table = new FeatureTable(MetadataKeys.NetFxVersionTable, "Supported .NET versions", diFrameworks, versionFeatures) {
                 Description = "This information is based on versions included in NuGet package."
             };
@@ -70,9 +70,9 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             foreach (var diFramework in diFrameworks) {
                 var supported = packages[diFramework].GetSupportedFrameworks().ToArray();
 
-                foreach (var version in allVersions) {
-                    var cell = table[diFramework, version];
-                    if (VersionUtility.IsCompatible(version, supported)) {
+                foreach (var versionGroup in allVersionsGrouped) {
+                    var cell = table[diFramework, versionGroup];
+                    if (versionGroup.Any(v => VersionUtility.IsCompatible(v, supported))) {
                         cell.State = FeatureState.Success;
                         cell.DisplayText = "yes";
                     }

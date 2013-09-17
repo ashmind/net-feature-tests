@@ -50,7 +50,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources.MetadataSupport {
             result = Regex.Replace(result, @"^sl(?=\d)",        "Silverlight ");
             result = Regex.Replace(result, @"^wp(?=\d)",        "Windows Phone ");
             result = Regex.Replace(result, @"^wp$",             "Windows Phone");
-            result = Regex.Replace(result, @"^win(?:dows)?8?$", "Windows 8");
+            result = Regex.Replace(result, @"^win(dows)?(8(0)?)?$", "Windows 8", RegexOptions.ExplicitCapture);
             result = Regex.Replace(result, @"(\d)(\d)",         "$1.$2");
             result = Regex.Replace(result, @"-Client",          " (Client Profile)");
 

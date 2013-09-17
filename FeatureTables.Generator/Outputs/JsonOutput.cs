@@ -33,7 +33,8 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs {
 
         private string[] GetNetFxVersions(IFrameworkAdapter framework, FeatureTable table) {
             return table.Features.Where(f => table[framework, f].State == FeatureState.Success)
-                                 .Select(f => VersionUtility.GetShortFrameworkName((FrameworkName)f.Key))
+                                 .Select(f => (IGrouping<string, FrameworkName>)f.Key)
+                                 .Select(g => VersionUtility.GetShortFrameworkName(g.First()))
                                  .ToArray();
         }
 
