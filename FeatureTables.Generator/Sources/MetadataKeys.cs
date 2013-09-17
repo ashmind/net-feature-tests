@@ -8,5 +8,6 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
         public static readonly object VersionFeature = "Metadata.Version";
         public static readonly object UrlFeature = "Metadata.Url";
         public static readonly object NetFxVersionTable = "Metadata.NetFxVersions";
+        public static readonly object TotalFeature = "Metadata.Total";
     }
 }

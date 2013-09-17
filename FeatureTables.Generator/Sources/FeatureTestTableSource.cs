@@ -31,8 +31,9 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
 
             foreach (var group in testGroups) {
                 var features = group.ToDictionary(m => m, this.ConvertToFeature);
-                var table = new FeatureTable(DisplayNameHelper.GetDisplayName(group.Key), Frameworks.List(), features.Values) {
-                    Description = this.GetDescription(@group.Key)
+                var table = new FeatureTable(AttributeHelper.GetDisplayName(group.Key), Frameworks.List(), features.Values) {
+                    Description = this.GetDescription(@group.Key),
+                    Scoring = AttributeHelper.GetScoring(@group.Key)
                 };
 
                 foreach (var test in group.OrderBy(this.GetDisplayOrder)) {
@@ -72,7 +73,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
         }
 
         private Feature ConvertToFeature(MethodInfo test) {
-            return new Feature(test, DisplayNameHelper.GetDisplayName(test)) { Description = this.GetDescription(test) };
+            return new Feature(test, AttributeHelper.GetDisplayName(test)) { Description = this.GetDescription(test) };
         }
 
         private string GetDescription(MemberInfo member) {

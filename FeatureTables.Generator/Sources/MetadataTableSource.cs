@@ -33,8 +33,15 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
         private static FeatureTable GetGeneralInformation(IFrameworkAdapter[] diFrameworks, IDictionary<IFrameworkAdapter, IPackage> packages) {
             var version = new Feature(MetadataKeys.VersionFeature, "Version");
             var url = new Feature(MetadataKeys.UrlFeature, "Web Site");
+            var total = new Feature(MetadataKeys.TotalFeature, "Total Score") {
+                Description = "Total is based on total amount of feature tests passed." + Environment.NewLine + Environment.NewLine +
+                              "Most tables give one point per success, but some (such as List support) give one point per table. " +
+                              "The score is only for quick comparison, please read individual tables for the details."
+            };
 
-            var table = new FeatureTable(MetadataKeys.GeneralTable, "General information", diFrameworks, new[] { version, url });
+            var table = new FeatureTable(MetadataKeys.GeneralTable, "General information", diFrameworks, new[] { version, url, total }) {
+                Scoring = FeatureScoring.NotScored
+            };
             foreach (var diFramework in diFrameworks) {
                 table[diFramework, version].DisplayText = diFramework.FrameworkAssembly.GetName().Version.ToString();
                 FillUrl(table[diFramework, url], packages[diFramework]);
@@ -64,7 +71,8 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
 
             var versionFeatures = allVersionsGrouped.Select(g => new Feature(g, g.Key));
             var table = new FeatureTable(MetadataKeys.NetFxVersionTable, "Supported .NET versions", diFrameworks, versionFeatures) {
-                Description = "This information is based on versions included in NuGet package."
+                Description = "This information is based on versions included in NuGet package.",
+                Scoring = FeatureScoring.NotScored
             };
 
             foreach (var diFramework in diFrameworks) {

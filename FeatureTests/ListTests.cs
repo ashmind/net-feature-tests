@@ -27,6 +27,7 @@ namespace DependencyInjection.FeatureTests
         defensive copying of arrays (as Mark Seemann explains here 
         http://blog.ploeh.dk/2013/07/20/linq-versus-the-lsp/).
     ")]
+    [FeatureScoring(FeatureScoring.PointPerClass)]
     public class ListTests {
         [Feature]
         [DisplayName("IService[]")]

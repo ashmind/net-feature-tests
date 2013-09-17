@@ -47,8 +47,8 @@ namespace DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport
 
                 var requiredRun = this.RunTestWithDependencyHandling(runs, requiredTest, newFramework, allTests);
                 if (requiredRun.Result != FeatureTestResult.Success) {
-                    var className = DisplayNameHelper.GetDisplayName(requiredTest.DeclaringType);
-                    var testName = DisplayNameHelper.GetDisplayName(requiredTest);
+                    var className = AttributeHelper.GetDisplayName(requiredTest.DeclaringType);
+                    var testName = AttributeHelper.GetDisplayName(requiredTest);
 
                     var comment = string.Format("Skipped as {0} ({1}) is not supported by this framework.", testName, className);
                     run = new FeatureTestRun(test, framework.GetType(), FeatureTestResult.SkippedDueToDependency, comment);

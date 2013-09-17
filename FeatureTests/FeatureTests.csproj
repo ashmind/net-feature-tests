@@ -134,6 +134,8 @@
     <Compile Include="Adapters\UnityAdapter.cs" />
     <Compile Include="Documentation\DependsOnFeatureAttribute.cs" />
     <Compile Include="Documentation\DisplayOrderAttribute.cs" />
+    <Compile Include="Documentation\FeatureScoring.cs" />
+    <Compile Include="Documentation\FeatureScoringAttribute.cs" />
     <Compile Include="Documentation\SpecialCaseAttribute.cs" />
     <Compile Include="Frameworks.cs" />
     <Compile Include="FuncTests.cs" />

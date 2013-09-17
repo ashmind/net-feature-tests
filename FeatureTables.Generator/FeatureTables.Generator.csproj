@@ -79,6 +79,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\Feature.cs" />
+    <Compile Include="Data\FeatureScoring.cs" />
     <Compile Include="Data\FeatureTable.cs" />
     <Compile Include="Data\FeatureCell.cs" />
     <Compile Include="Data\FeatureState.cs" />
@@ -91,7 +92,7 @@
     <Compile Include="Sources\MetadataKeys.cs" />
     <Compile Include="Sources\MetadataSupport\NetFxVersionHelper.cs" />
     <Compile Include="Sources\MetadataTableSource.cs" />
-    <Compile Include="Sources\FeatureTestSupport\DisplayNameHelper.cs" />
+    <Compile Include="Sources\FeatureTestSupport\AttributeHelper.cs" />
     <Compile Include="Sources\FeatureTestSupport\FeatureTestResult.cs" />
     <Compile Include="Sources\FeatureTestSupport\FeatureTestRun.cs" />
     <Compile Include="Sources\FeatureTestSupport\FeatureTestRunner.cs" />
