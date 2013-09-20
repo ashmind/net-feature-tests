@@ -15,6 +15,7 @@ namespace DependencyInjection.FeatureTests
    
         I have not yet decided whether this table is worth keeping, so do not assign much weight to these tests.     
     ")]
+    [FeatureScoring(FeatureScoring.NotScored)]
     [SpecialCase(typeof(SimpleInjectorAdapter), @"
         Simple Injector does not inject properties out of the box, but this behavior 
         can be changed by replacing the Container.Options.PropertySelectionBehavior.
