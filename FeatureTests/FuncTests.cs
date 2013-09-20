@@ -43,6 +43,7 @@ namespace DependencyInjection.FeatureTests {
             or Func<IService1, Service> or Func<IService1, Service2, Service>. Remaining parameters are
             provided by the container.
         ")]
+        [DependsOnFeature("FactoryWithNoParameters")]
         public void FactoryWithParameter(IFrameworkAdapter framework) {
             framework.Register<IService, IndependentService>();
             framework.Register<ServiceWithTwoConstructorDependencies>();
@@ -62,6 +63,7 @@ namespace DependencyInjection.FeatureTests {
             When TService is transient and Func<TService> was obtained by singleton, Func should return new
             instance on each call.
         ")]
+        [DependsOnFeature("FactoryWithNoParameters")]
         public void TransientFactoryUsedBySingletonStillCreatesTransient(IFrameworkAdapter framework) {
             framework.RegisterTransient<IService, IndependentService>();
             framework.RegisterSingleton<ServiceWithFuncConstructorDependency>();
