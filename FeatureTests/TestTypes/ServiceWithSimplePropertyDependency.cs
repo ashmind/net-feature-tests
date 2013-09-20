@@ -8,6 +8,8 @@ namespace DependencyInjection.FeatureTests.TestTypes {
         [StructureMap.Attributes.SetterProperty]
         [LinFu.IoC.Configuration.Inject]
         [Ninject.Inject]
+        [MugenInjection.Attributes.Inject]
+        [IfInjector.Inject]
         public IService Service { get; set; }
     }
 }

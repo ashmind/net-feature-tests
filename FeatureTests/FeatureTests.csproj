@@ -102,6 +102,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Unity.3.0.1304.0\lib\Net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="MugenInjection.Core">
+      <HintPath>..\#packages\MugenInjection.3.5.1\lib\net45-full\MugenInjection.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Ninject">
       <HintPath>..\#packages\Ninject.3.0.1.10\lib\net45-full\Ninject.dll</HintPath>
     </Reference>
@@ -135,6 +138,7 @@
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\CatelAdapter.cs" />
+    <Compile Include="Adapters\MugenAdapter.cs" />
     <Compile Include="Adapters\MicroSliverAdapter.cs" />
     <Compile Include="Adapters\LightCoreAdapter.cs" />
     <Compile Include="Adapters\IfInjectorAdapter.cs" />
