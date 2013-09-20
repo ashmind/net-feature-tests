@@ -1,43 +1,62 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
 using DependencyInjection.FeatureTests.Adapters.Support;
 using DependencyInjection.FeatureTests.Adapters.Support.GenericPlaceholders;
-using IfInjector;
+using MicroSliver;
 
 namespace DependencyInjection.FeatureTests.Adapters {
-    public class IfInjectorAdapter : FrameworkAdapterBase {
-        private readonly Injector injector = new Injector();
+    public class MicroSliverAdapter : FrameworkAdapterBase {
+        private readonly IoC ioc = new IoC();
+
+        #region DelegateCreator
+
+        private class DelegateCreator : ICreator {
+            private readonly Func<object> create;
+
+            public DelegateCreator(Func<object> create) {
+                this.create = create;
+            }
+
+            public object Create() {
+                return this.create();
+            }
+        }
+
+        #endregion
         
         public override Assembly FrameworkAssembly {
-            get { return typeof(Injector).Assembly; }
+            get { return typeof(IoC).Assembly; }
         }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
             GenericHelper.RewriteAndInvoke(
-                () => this.injector.Bind<P<X1>, C<X2, X1>>().AsSingleton(true),
+                () => this.ioc.Map<P<X1>, C<X2, X1>>().ToSingletonScope(),
                 serviceType, implementationType
             );
         }
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             GenericHelper.RewriteAndInvoke(
-                () => this.injector.Bind<P<X1>, C<X2, X1>>(),
+                () => this.ioc.Map<P<X1>, C<X2, X1>>().ToInstanceScope(),
                 serviceType, implementationType
             );
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
             GenericHelper.RewriteAndInvoke(
-                () => this.injector.Bind<X1>().SetFactoryLambda((Expression<Func<X1>>)(() => (X1)instance)).AsSingleton(true),
+                () => this.ioc.Map<X1>(new DelegateCreator(() => instance)),
                 serviceType
             );
         }
 
         public override object Resolve(Type serviceType) {
-            return this.injector.Resolve(serviceType);
+            return this.ioc.GetByType(serviceType);
+        }
+
+        public override bool CrashesOnRecursion {
+            get { return true; }
         }
     }
 }

@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
+using DependencyInjection.FeatureTests.Adapters.Support;
+using DependencyInjection.FeatureTests.Adapters.Support.GenericPlaceholders;
 using LightCore;
-using LightCore.Fluent;
 using LightCore.Lifecycle;
 
 namespace DependencyInjection.FeatureTests.Adapters {
-    // thanks a lot to Philip Laureano for this adapter
     public class LightCoreAdapter : FrameworkAdapterBase {
         private IContainerBuilder builder = new ContainerBuilder();
         private IContainer container;
@@ -26,12 +25,7 @@ namespace DependencyInjection.FeatureTests.Adapters {
         }
         
         public override void RegisterInstance(Type serviceType, object instance) {
-            // no non-generic API?
-            Expression<Func<IFluentRegistration>> expression = () => this.builder.Register((object)null);
-            var methodWithObject = ((MethodCallExpression)expression.Body).Method;
-            var methodWithServiceType = methodWithObject.GetGenericMethodDefinition().MakeGenericMethod(serviceType);
-
-            methodWithServiceType.Invoke(this.builder, new[] { instance });
+            GenericHelper.RewriteAndInvoke(() => this.builder.Register((X1)instance), serviceType);
         }
 
         public override object Resolve(Type serviceType) {
