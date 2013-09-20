@@ -7,7 +7,7 @@ using StructureMap.Configuration.DSL;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class StructureMapAdapter : FrameworkAdapterBase {
-        private Registry registry = new Registry();
+        private Registry initialRegistry = new Registry();
         private Container container;
 
         public override Assembly FrameworkAssembly {
@@ -15,33 +15,47 @@ namespace DependencyInjection.FeatureTests.Adapters {
         }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
-            this.registry.For(serviceType).Singleton().Use(implementationType);
+            RegisterInitialOrConfigure(
+                r => r.For(serviceType).Singleton().Use(implementationType)
+            );
         }
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
-            this.registry.For(serviceType).LifecycleIs(InstanceScope.Transient).Use(implementationType);
+            RegisterInitialOrConfigure(
+                r => r.For(serviceType).LifecycleIs(InstanceScope.Transient).Use(implementationType)
+            );
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
-            this.registry.For(serviceType).Use(instance);
+            RegisterInitialOrConfigure(
+                r => r.For(serviceType).LifecycleIs(InstanceScope.Transient).Use(instance)
+            );
+        }
+
+        private void RegisterInitialOrConfigure(Action<Registry> register) {
+            var registry = this.initialRegistry ?? new Registry();
+            register(registry);
+
+            if (this.container != null)
+                this.container.Configure(c => c.AddRegistry(registry));
         }
         
         public override object Resolve(Type serviceType) {
-            FreezeContainer();
+            EnsureContainer();
             return this.container.GetInstance(serviceType);
         }
 
         public override IEnumerable<object> ResolveAll(Type serviceType) {
-            FreezeContainer();
+            EnsureContainer();
             return this.container.GetAllInstances(serviceType).Cast<object>();
         }
 
-        private void FreezeContainer() {
+        private void EnsureContainer() {
             if (this.container != null)
                 return;
 
-            this.container = new Container(this.registry);
-            this.registry = null; // simple way to prevent accidental reuse of adapter
+            this.container = new Container(this.initialRegistry);
+            this.initialRegistry = null;
         }
     }
 }

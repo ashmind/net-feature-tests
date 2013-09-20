@@ -7,7 +7,7 @@ using Autofac;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public class AutofacAdapter : FrameworkAdapterBase {
-        private ContainerBuilder builder = new ContainerBuilder();
+        private ContainerBuilder initialBuilder = new ContainerBuilder();
         private IContainer container;
         
         public override Assembly FrameworkAssembly {
@@ -15,54 +15,64 @@ namespace DependencyInjection.FeatureTests.Adapters {
         }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
+            var builder = this.initialBuilder ?? new ContainerBuilder();
+
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
-                this.builder.RegisterGeneric(implementationType)
-                            .As(serviceType)
-                            .PropertiesAutowired()
-                            .InstancePerLifetimeScope();
+                builder.RegisterGeneric(implementationType)
+                       .As(serviceType)
+                       .PropertiesAutowired()
+                       .InstancePerLifetimeScope();
             }
             else {
-                this.builder.RegisterType(implementationType)
-                            .As(serviceType)
-                            .PropertiesAutowired()
-                            .InstancePerLifetimeScope();
+                builder.RegisterType(implementationType)
+                       .As(serviceType)
+                       .PropertiesAutowired()
+                       .InstancePerLifetimeScope();
             }
+
+            if (this.container != null)
+                builder.Update(this.container);
         }
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
+            var builder = this.initialBuilder ?? new ContainerBuilder();
+
             var isOpenGeneric = serviceType.IsGenericTypeDefinition;
             if (isOpenGeneric) {
-                this.builder.RegisterGeneric(implementationType)
-                            .As(serviceType)
-                            .PropertiesAutowired()
-                            .InstancePerDependency();
+                builder.RegisterGeneric(implementationType)
+                       .As(serviceType)
+                       .PropertiesAutowired()
+                       .InstancePerDependency();
             }
             else {
-                this.builder.RegisterType(implementationType)
-                            .As(serviceType)
-                            .PropertiesAutowired()
-                            .InstancePerDependency();
+                builder.RegisterType(implementationType)
+                       .As(serviceType)
+                       .PropertiesAutowired()
+                       .InstancePerDependency();
             }
+
+            if (this.container != null)
+                builder.Update(this.container);
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
-            this.builder.RegisterInstance(instance).As(serviceType);
+            var builder = this.initialBuilder ?? new ContainerBuilder();
+            builder.RegisterInstance(instance).As(serviceType);
+
+            if (this.container != null)
+                builder.Update(this.container);
         }
 
         public override object Resolve(Type serviceType) {
-            this.FreezeContainer();
+            if (this.container == null) {
+                this.container = this.initialBuilder.Build();
+                this.initialBuilder = null;
+            }
+
             return this.container.Resolve(serviceType);
         }
-
-        private void FreezeContainer() {
-            if (this.container != null)
-                return;
-
-            this.container = this.builder.Build();
-            this.builder = null; // simple way to prevent accidental reuse of adapter
-        }
-
+        
         public override bool CrashesOnListRecursion {
             get { return true; }
         }

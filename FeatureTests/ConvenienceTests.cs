@@ -40,6 +40,22 @@ namespace DependencyInjection.FeatureTests {
         }
 
         [Feature]
+        [DisplayName("Registration at any stage")]
+        [Description(@"
+            Some containers follow strict Register -> Build -> Resolve flow, new registrations can only be 
+            added before Build.  
+            This can be inconvenient for dynamic situations such as adding plugins.
+        ")]
+        public void RegistrationAtAnyStage(IFrameworkAdapter framework) {
+            framework.Register<IService, IndependentService>();
+            framework.Resolve<IService>();
+            framework.Register<IService2, IndependentService2>();
+
+            var resolved = framework.Resolve<IService2>();
+            Assert.NotNull(resolved);
+        }
+
+        [Feature]
         [DisplayName("Graceful recursion handling")]
         [Description(@"
             Recursive dependencies are non-resolvable, however the difference between
