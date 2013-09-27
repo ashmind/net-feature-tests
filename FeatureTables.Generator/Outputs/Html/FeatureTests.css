@@ -1,4 +1,6 @@
-﻿@media only screen and (max-width: 1024px) {
+﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+@media only screen and (max-width: 760px) {
     body {
         background-color: white;
     }
@@ -15,7 +17,7 @@ html {
 }
 
 body {
-    font-family: "Segoe UI";
+    font-family: "Segoe UI", "Open Sans", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #eeeeee;
@@ -33,8 +35,7 @@ body {
 }
 
 h1, h2 {
-    font-family: "Segoe UI Semibold";
-    font-weight: normal;
+    font-weight: bold;
 }
 
 h1 {
@@ -48,7 +49,7 @@ h2 {
 
     margin: 0;
     margin-bottom: 0.3rem;
-    margin-top: 1.5rem;
+    margin-top: 2.5rem;
 }
 
 section:first-of-type h2 {
@@ -88,14 +89,16 @@ dd + dt {
 table {
     margin: 0;
     border: 0;
-
+    
     margin-top: 1rem;
+
+    font-size: 90%;
 }
 
 th {
     font-weight: normal;
     max-width: 10em;
-    background-color: #b4cce4;
+    background-color: #ccc;
 
     overflow: hidden;
     text-overflow: ellipsis;
@@ -107,7 +110,7 @@ th, td {
 }
 
 td {
-    background-color: #dbe5f1;
+    background-color: #eee;
 }
 
 td.framework-name, th:first-child {
@@ -152,24 +155,6 @@ a:hover {
 
 td.success a, td.failure a, td.concern a, td.skipped a {
     color: inherit;
-}
-
-@keyframes flash {
-  0%  {  background: none; }
-  50% {  background: #ffeba5; }
-  100% { background: none; }
-}
-
-
-@-webkit-keyframes flash {
-  0%  {  background: none; }
-  50% {  background: #ffeba5; }
-  100% { background: none; }
-}
-
-:target {
-  -webkit-animation: flash 2s;
-  animation: flash 2s;
 }
 
 /* http://codepo8.github.io/css-fork-on-github-ribbon/ by http://christianheilmann.com/ */
