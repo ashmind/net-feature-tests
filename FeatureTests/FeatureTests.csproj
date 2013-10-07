@@ -69,7 +69,7 @@
       <HintPath>..\#packages\Dynamo.Ioc.Extensions.3.0.1.1\lib\net45\Dynamo.Ioc.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="HaveBox">
-      <HintPath>..\#packages\HaveBox.1.4.0\lib\net45\HaveBox.dll</HintPath>
+      <HintPath>..\#packages\HaveBox.1.5.0\lib\net45\HaveBox.dll</HintPath>
     </Reference>
     <Reference Include="IfInjector">
       <HintPath>..\#packages\IfInjector.0.6.2\lib\portable-win+net45+sl40+wp71\IfInjector.dll</HintPath>
