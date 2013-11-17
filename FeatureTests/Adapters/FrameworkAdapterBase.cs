@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
+using NuGet;
 
 namespace DependencyInjection.FeatureTests.Adapters {
     public abstract class FrameworkAdapterBase : IFrameworkAdapter {
