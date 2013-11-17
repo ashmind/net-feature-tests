@@ -68,6 +68,10 @@
     <Reference Include="Dynamo.Ioc.Extensions">
       <HintPath>..\#packages\Dynamo.Ioc.Extensions.3.0.1.1\lib\net45\Dynamo.Ioc.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="Grace, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\#packages\Grace.1.0.0\lib\portable-windows8+net45\Grace.dll</HintPath>
+    </Reference>
     <Reference Include="HaveBox">
       <HintPath>..\#packages\HaveBox.1.5.0\lib\net45\HaveBox.dll</HintPath>
     </Reference>
@@ -144,6 +148,7 @@
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\CatelAdapter.cs" />
+    <Compile Include="Adapters\GraceAdapter.cs" />
     <Compile Include="Adapters\SpeediocAdapter.Disabled.cs" />
     <Compile Include="Adapters\MunqAdapter.cs" />
     <Compile Include="Adapters\MugenAdapter.cs" />
