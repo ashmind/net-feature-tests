@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Versioning;
+using AshMind.Extensions;
 using DependencyInjection.FeatureTables.Generator.Data;
 using DependencyInjection.FeatureTables.Generator.Sources.MetadataSupport;
 using DependencyInjection.FeatureTests;
@@ -19,9 +21,13 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             var diFrameworks = Frameworks.List().ToArray();
             var packages = new Dictionary<IFrameworkAdapter, IPackage>();
             foreach (var diFramework in diFrameworks) {
-                var package = this.packageRepository.FindPackagesById(diFramework.FrameworkPackageId).SingleOrDefault();
+                // special case, needed for MEF at least because it is a part of .NET framework:
+                if (diFramework.FrameworkPackageId == null)
+                    continue;
+
+                var package = packageRepository.FindPackagesById(diFramework.FrameworkPackageId).SingleOrDefault();
                 if (package == null)
-                    throw new InvalidOperationException("Package '" + diFramework.FrameworkPackageId + "' was not found in '" + this.packageRepository.Source + "'.");
+                    throw new InvalidOperationException("Package for '" + diFramework.FrameworkName + "' was not found in '" + this.packageRepository.Source + "'.");
 
                 packages.Add(diFramework, package);
             }
@@ -44,21 +50,28 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             };
             foreach (var diFramework in diFrameworks) {
                 table[diFramework, version].DisplayText = diFramework.FrameworkAssembly.GetName().Version.ToString();
-                FillUrl(table[diFramework, url], packages[diFramework]);
+                FillUrl(table[diFramework, url], packages.GetValueOrDefault(diFramework));
             }
 
             return table;
         }
 
         private static void FillUrl(FeatureCell cell, IPackage package) {
-            if (package.ProjectUrl != null) {
-                cell.DisplayText = "link";
-                cell.DisplayUri = package.ProjectUrl;
+            if (package == null) { // this is always intentional
+                cell.State = FeatureState.Skipped;
+                cell.DisplayText = "n/a";
+                return;
             }
-            else {
+
+            if (package.ProjectUrl == null) {
                 cell.State = FeatureState.Concern;
                 cell.DisplayText = "unknown";
+                return;
             }
+
+            cell.State = FeatureState.Neutral;
+            cell.DisplayText = "link";
+            cell.DisplayUri = package.ProjectUrl;
         }
 
 
@@ -76,22 +89,38 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
             };
 
             foreach (var diFramework in diFrameworks) {
-                var supported = packages[diFramework].GetSupportedFrameworks().ToArray();
-
-                foreach (var versionGroup in allVersionsGrouped) {
-                    var cell = table[diFramework, versionGroup];
-                    if (versionGroup.Any(v => VersionUtility.IsCompatible(v, supported))) {
-                        cell.State = FeatureState.Success;
-                        cell.DisplayText = "yes";
-                    }
-                    else {
-                        cell.State = FeatureState.Concern;
-                        cell.DisplayText = "no";
-                    }
-                }
+                var package = packages.GetValueOrDefault(diFramework);
+                FillNetVersionSupport(table, diFramework, package, allVersionsGrouped);
             }
 
             return table;
+        }
+
+        private static void FillNetVersionSupport(FeatureTable table, IFrameworkAdapter diFramework, IPackage package, IEnumerable<IGrouping<string, FrameworkName>> allVersionsGrouped) {
+            if (package == null) {
+                // this is always intentional
+                foreach (var versionGroup in allVersionsGrouped) {
+                    var cell = table[diFramework, versionGroup];
+                    cell.State = FeatureState.Skipped;
+                    cell.DisplayText = "n/a";
+                }
+
+                return;
+            }
+
+            var supported = package.GetSupportedFrameworks().ToArray();
+
+            foreach (var versionGroup in allVersionsGrouped) {
+                var cell = table[diFramework, versionGroup];
+                if (versionGroup.Any(v => VersionUtility.IsCompatible(v, supported))) {
+                    cell.State = FeatureState.Success;
+                    cell.DisplayText = "yes";
+                }
+                else {
+                    cell.State = FeatureState.Concern;
+                    cell.DisplayText = "no";
+                }
+            }
         }
     }
 }

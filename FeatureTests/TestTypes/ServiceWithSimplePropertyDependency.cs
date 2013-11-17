@@ -10,6 +10,7 @@ namespace DependencyInjection.FeatureTests.TestTypes {
         [Ninject.Inject]
         [MugenInjection.Attributes.Inject]
         [IfInjector.Inject]
+        [System.ComponentModel.Composition.Import]
         public IService Service { get; set; }
     }
 }

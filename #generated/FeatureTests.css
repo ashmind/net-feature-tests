@@ -20,17 +20,13 @@ body {
     font-family: "Segoe UI", "Open Sans", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #eeeeee;
 }
 
 .content {
-    position: relative;
     background-color: white;
     margin: 0 auto;
     width: 95%;
-    min-width: 760px;
     max-width: 1200px;
-    padding: 50px;
     padding-top: 10px;
 }
 

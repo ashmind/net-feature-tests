@@ -7,9 +7,18 @@ using DependencyInjection.FeatureTests.Adapters.Support.GenericPlaceholders;
 namespace DependencyInjection.FeatureTests.Adapters.Support {
     public static class GenericHelper {
         public static void RewriteAndInvoke(Expression<Action> call, params Type[] genericArguments) {
-            var rewritten = new GenericRewritingVisitor(a => RewriteTypeIfPossible(a, genericArguments))
-                                    .VisitAndConvert(call, "RewriteAndInvoke");
-            rewritten.Compile()();
+            var rewritten = Rewrite(call, genericArguments);
+            ((Action)rewritten.Compile())();
+        }
+
+        public static object RewriteAndInvoke<TResult>(Expression<Func<TResult>> call, params Type[] genericArguments) {
+            var rewritten = Rewrite(call, genericArguments);
+            return ((Func<object>)rewritten.Compile())();
+        }
+
+        private static LambdaExpression Rewrite<TDelegate>(Expression<TDelegate> call, Type[] genericArguments) {
+            var visitor = new GenericRewritingVisitor(a => RewriteTypeIfPossible(a, genericArguments));
+            return (LambdaExpression)visitor.Visit(call);
         }
 
         private static Type RewriteTypeIfPossible(Type type, Type[] rewriteTo) {
