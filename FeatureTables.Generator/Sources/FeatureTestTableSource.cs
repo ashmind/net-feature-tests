@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using AshMind.Extensions;
 using DependencyInjection.FeatureTables.Generator.Data;
 using DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport;
@@ -29,39 +30,43 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                                      .OrderBy(g => this.GetDisplayOrder(g.Key))
                                      .ToArray();
 
+            var frameworks = Frameworks.List().ToArray();
             foreach (var group in testGroups) {
                 var features = group.ToDictionary(m => m, this.ConvertToFeature);
-                var table = new FeatureTable(AttributeHelper.GetDisplayName(group.Key), Frameworks.List(), features.Values) {
+                var table = new FeatureTable(AttributeHelper.GetDisplayName(group.Key), frameworks, features.Values) {
                     Description = this.GetDescription(@group.Key),
                     Scoring = AttributeHelper.GetScoring(@group.Key)
                 };
 
+                var resultApplyTasks = new List<Task>();
                 foreach (var test in group.OrderBy(this.GetDisplayOrder)) {
-                    foreach (var framework in Frameworks.List()) {
+                    foreach (var framework in frameworks) {
                         var cell = table[framework, test];
                         var run = testRuns[new { Test = test, FrameworkType = framework.GetType() }];
 
-                        ApplyRunResultToCell(cell, run);
+                        resultApplyTasks.Add(ApplyRunResultToCell(cell, run.Task));
                     }
                 }
 
+                Task.WaitAll(resultApplyTasks.ToArray());
                 yield return table;
             }
         }
 
-        private void ApplyRunResultToCell(FeatureCell cell, FeatureTestRun run) {
-            if (run.Result == FeatureTestResult.Success) {
+        private async Task ApplyRunResultToCell(FeatureCell cell, Task<FeatureTestResult> resultTask) {
+            var result = await resultTask;
+            if (result.Kind == FeatureTestResultKind.Success) {
                 cell.DisplayText = "supported";
                 cell.State = FeatureState.Success;
             }
-            else if (run.Result == FeatureTestResult.Failure) {
+            else if (result.Kind == FeatureTestResultKind.Failure) {
                 cell.DisplayText = "failed";
                 cell.State = FeatureState.Failure;
-                var exceptionString = RemoveLocalPaths(run.Exception.ToString());
+                var exceptionString = RemoveLocalPaths(result.Exception.ToString());
                 cell.RawError = exceptionString;
                 cell.DisplayUri = ConvertToDataUri(exceptionString);
             }
-            else if (run.Result == FeatureTestResult.SkippedDueToDependency) {
+            else if (result.Kind == FeatureTestResultKind.SkippedDueToDependency) {
                 cell.DisplayText = "skipped";
                 cell.State = FeatureState.Skipped;
             }
@@ -69,7 +74,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                 cell.DisplayText = "see comment";
                 cell.State = FeatureState.Concern;
             }
-            cell.Comment = run.Message;
+            cell.Comment = result.Message;
         }
 
         private Feature ConvertToFeature(MethodInfo test) {

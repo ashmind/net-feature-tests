@@ -8,7 +8,7 @@ using Xunit;
 
 namespace DependencyInjection.FeatureTests
 {
-    [DisplayOrder(5)]
+    [DisplayOrder(6)]
     [DisplayName("Property dependencies")]
     [Description(@"
         While property dependencies are a nice feature, it is rarely a good practice to actually use them.

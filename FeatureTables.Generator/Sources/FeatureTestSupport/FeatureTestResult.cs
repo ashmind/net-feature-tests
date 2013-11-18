@@ -1,8 +1,16 @@
+﻿using System;
+using System.Reflection;
+
 namespace DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport {
-    public enum FeatureTestResult {
-        Success,
-        SkippedDueToDependency,
-        SkippedDueToSpecialCase,
-        Failure
+    public class FeatureTestResult {
+        public FeatureTestResultKind Kind { get; private set; }
+        public string Message                   { get; private set; }
+        public Exception Exception              { get; private set; }
+
+        public FeatureTestResult(FeatureTestResultKind kind, string message = null, Exception exception = null) {
+            this.Kind = kind;
+            this.Message = message;
+            this.Exception = exception;
+        }
     }
 }

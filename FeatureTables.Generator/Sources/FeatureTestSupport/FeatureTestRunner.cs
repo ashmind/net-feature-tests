@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using AshMind.Extensions;
 using DependencyInjection.FeatureTests;
 using DependencyInjection.FeatureTests.Adapters;
@@ -11,77 +12,75 @@ using DependencyInjection.FeatureTests.XunitSupport;
 namespace DependencyInjection.FeatureTables.Generator.Sources.FeatureTestSupport {
     public class FeatureTestRunner {
         // potentially I could have used Xunit runners, but they are a bit annoying to get through NuGet
-        public IEnumerable<FeatureTestRun> RunAllTests(Assembly assembly) {
+        public IReadOnlyCollection<FeatureTestRun> RunAllTests(Assembly assembly) {
             var all = assembly.GetTypes()
                               .SelectMany(t => t.GetMethods())
                               .Where(m => m.IsDefined<FeatureAttribute>(false))
                               .ToArray();
 
             var runs = new List<FeatureTestRun>();
-            var frameworkTypes = Frameworks.List().Select(f => f.GetType()).ToArray();
 
             foreach (var test in all) {
-                foreach (var frameworkType in frameworkTypes) {
-                    // a bit stupid, but framework instances are not reusable between tests, and dependency aware 
-                    // run may need framework for each encountered dependency
-                    Func<IFrameworkAdapter> newFramework = () => Frameworks.List().First(f => f.GetType() == frameworkType);
-                    RunTestWithDependencyHandling(runs, test, newFramework, all);
+                foreach (var frameworkType in Frameworks.TypeList()) {
+                    RunTestWithDependencyHandling(runs, test, frameworkType, all);
                 }
             }
 
             return runs;
         }
 
-        private FeatureTestRun RunTestWithDependencyHandling(ICollection<FeatureTestRun> runs, MethodInfo test, Func<IFrameworkAdapter> newFramework, MethodInfo[] allTests) {
-            var framework = newFramework();
-            var run = runs.SingleOrDefault(r => r.Method == test && r.FrameworkType == framework.GetType());
+        private FeatureTestRun RunTestWithDependencyHandling(ICollection<FeatureTestRun> runs, MethodInfo test, Type frameworkType, MethodInfo[] allTests) {
+            var run = runs.SingleOrDefault(r => r.Method == test && r.FrameworkType == frameworkType);
             if (run != null) // already run as a dependency?
                 return run;
-
+            
             var dependencies = test.GetCustomAttributes<DependsOnFeatureAttribute>();
+            var requiredRuns = new List<FeatureTestRun>();
             foreach (var dependency in dependencies) {
                 var dependencyDeclaringType = dependency.DeclaringType ?? test.DeclaringType;
                 var requiredTest = allTests.SingleOrDefault(t => t.Name == dependency.MethodName && t.DeclaringType == dependencyDeclaringType);
                 if (requiredTest == null)
                     throw new InvalidOperationException(string.Format("Could not find test '{0}' in type '{1}' (referenced by [FeatureDependsOn]).", dependency.MethodName, dependencyDeclaringType.Name));
 
-                var requiredRun = this.RunTestWithDependencyHandling(runs, requiredTest, newFramework, allTests);
-                if (requiredRun.Result != FeatureTestResult.Success) {
-                    var className = AttributeHelper.GetDisplayName(requiredTest.DeclaringType);
-                    var testName = AttributeHelper.GetDisplayName(requiredTest);
-
-                    var comment = string.Format("Skipped as {0} ({1}) is not supported by this framework.", testName, className);
-                    run = new FeatureTestRun(test, framework.GetType(), FeatureTestResult.SkippedDueToDependency, comment);
-                    runs.Add(run);
-                    return run;
-                }
+                var requiredRun = this.RunTestWithDependencyHandling(runs, requiredTest, frameworkType, allTests);
+                requiredRuns.Add(requiredRun);
             }
 
-            run = RunTest(test, framework);
+            run = new FeatureTestRun(test, frameworkType, RunTestAsync(test, frameworkType, requiredRuns));
             runs.Add(run);
 
             return run;
         }
 
-        private FeatureTestRun RunTest(MethodInfo test, IFrameworkAdapter framework) {
-            var frameworkType = framework.GetType();
+        private async Task<FeatureTestResult> RunTestAsync(MethodInfo test, Type frameworkType, IEnumerable<FeatureTestRun> dependencies) {
             var specialCase = GetSpecialCase(test, frameworkType)
                            ?? GetSpecialCase(test.DeclaringType, frameworkType);
+
             if (specialCase != null && specialCase.Skip)
-                return new FeatureTestRun(test, frameworkType, FeatureTestResult.SkippedDueToSpecialCase, specialCase.Comment);
+                return new FeatureTestResult(FeatureTestResultKind.SkippedDueToSpecialCase, specialCase.Comment);
+            
+            foreach (var dependency in dependencies) {
+                var result = await dependency.Task;
+                if (result.Kind != FeatureTestResultKind.Success) {
+                    var className = AttributeHelper.GetDisplayName(dependency.Method.DeclaringType);
+                    var testName = AttributeHelper.GetDisplayName(dependency.Method);
+
+                    var skippedComment = string.Format("Skipped as {0} ({1}) is not supported by this framework.", testName, className);
+                    return new FeatureTestResult(FeatureTestResultKind.SkippedDueToDependency, skippedComment);
+                }
+            }
 
             var instance = Activator.CreateInstance(test.DeclaringType);
             try {
-                test.Invoke(instance, new object[] {framework});
+                await Task.Run(() => test.Invoke(instance, new object[] { Frameworks.Get(frameworkType) }));
             }
             catch (Exception ex) {
-                return new FeatureTestRun(test, frameworkType, FeatureTestResult.Failure, exception: ToUsefulException(ex));
+                return new FeatureTestResult(FeatureTestResultKind.Failure, exception: ToUsefulException(ex));
             }
 
             var comment = specialCase != null ? specialCase.Comment : null;
-            return new FeatureTestRun(test, frameworkType, FeatureTestResult.Success, comment);
+            return new FeatureTestResult(FeatureTestResultKind.Success, comment);
         }
-
 
         private SpecialCaseAttribute GetSpecialCase(ICustomAttributeProvider member, Type frameworkType) {
             // it is definitely slow to call reflection each time, however it does not matter
