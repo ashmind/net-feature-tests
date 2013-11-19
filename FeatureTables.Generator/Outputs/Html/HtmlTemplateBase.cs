@@ -38,9 +38,11 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs.Html {
         protected string GetCssClassesForCell(FeatureCell cell) {
             var classes = cell.State.ToString().ToLowerInvariant();
 
-            if (cell.DisplayValue is int) {
+            if (cell.DisplayValue is int)
                 classes += " number";
-            }
+
+            if (cell.DisplayValue is DateTimeOffset)
+                classes += " date";
             
             return classes;
         }
@@ -52,13 +54,11 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs.Html {
             if (value is string)
                 return (string)value;
 
-            if (value is int) {
+            if (value is int)
                 return ((int)value).ToString("N0", NumberFormat);
-            }
 
-            if (value is DateTimeOffset) {
-                return ((DateTimeOffset)value).ToString("dd.MM.yyyy");
-            }
+            if (value is DateTimeOffset)
+                return ((DateTimeOffset)value).ToString("MMM yyyy", CultureInfo.InvariantCulture).ToLowerInvariant();
 
             throw new NotSupportedException(string.Format("Value '{0}' ({1}) is not supported.", value, value.GetType()));
         }
