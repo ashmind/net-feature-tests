@@ -25,6 +25,9 @@ namespace DependencyInjection.FeatureTests.Adapters.Support {
             if (rewrittenType != method.DeclaringType) {
                 var newMethod = rewrittenType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
                                              .Single(m => m.MetadataToken == method.MetadataToken);
+                if (newMethod.IsGenericMethodDefinition)
+                    newMethod = newMethod.MakeGenericMethod(method.GetGenericArguments().Select(this.rewriteType).ToArray());
+
                 return this.RewriteMethodIfRequired(newMethod);
             }
 

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Linq.Expressions;
 using System.Reflection;
 using DependencyInjection.FeatureTests.Adapters.Support;
 using DependencyInjection.FeatureTests.Adapters.Support.GenericPlaceholders;
@@ -17,21 +16,21 @@ namespace DependencyInjection.FeatureTests.Adapters {
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
             GenericHelper.RewriteAndInvoke(
-                () => this.injector.Bind<P<X1>, C<X2, X1>>().AsSingleton(true),
+                () => this.injector.Register(Binding.For<P<X1>>().To<C<X2, X1>>().AsSingleton(true)),
                 serviceType, implementationType
             );
         }
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             GenericHelper.RewriteAndInvoke(
-                () => this.injector.Bind<P<X1>, C<X2, X1>>(),
+                () => this.injector.Register(Binding.For<P<X1>>().To<C<X2, X1>>()),
                 serviceType, implementationType
             );
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
             GenericHelper.RewriteAndInvoke(
-                () => this.injector.Bind<X1>().SetFactoryLambda((Expression<Func<X1>>)(() => (X1)instance)).AsSingleton(true),
+                () => this.injector.Register(Binding.For<X1>().SetFactory(() => (X1)instance).AsSingleton(true)),
                 serviceType
             );
         }
