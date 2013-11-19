@@ -123,6 +123,12 @@ td.framework-name, th:first-child {
     padding-right: 0.6rem;
 }
 
+td.number {
+    text-align: right;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+}
+
 td.success {
     background-color: #c6efce;
     color: #006100;

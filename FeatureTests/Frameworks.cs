@@ -12,7 +12,7 @@ namespace DependencyInjection.FeatureTests {
                                        .OrderBy(t => t.Name)
                                        .ToArray();
 
-        public static IEnumerable<Type> TypeList() {
+        public static IReadOnlyList<Type> TypeList() {
             return adapterTypes;
         }
 
@@ -20,7 +20,7 @@ namespace DependencyInjection.FeatureTests {
             return (IFrameworkAdapter)Activator.CreateInstance(type);
         }
 
-        public static IEnumerable<IFrameworkAdapter> List() {
+        public static IEnumerable<IFrameworkAdapter> Enumerate() {
             return from type in TypeList()
                    select (IFrameworkAdapter)Activator.CreateInstance(type);
         }

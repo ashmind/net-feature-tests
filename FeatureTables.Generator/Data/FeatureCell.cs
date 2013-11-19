@@ -2,7 +2,7 @@ using System;
 
 namespace DependencyInjection.FeatureTables.Generator.Data {
     public class FeatureCell {
-        public string DisplayText { get; set; }
+        public object DisplayValue { get; set; }
         public Uri DisplayUri { get; set; }
         public string Comment { get; set; }
         public FeatureState State { get; set; }

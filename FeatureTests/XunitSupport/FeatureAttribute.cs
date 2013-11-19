@@ -8,7 +8,7 @@ namespace DependencyInjection.FeatureTests.XunitSupport {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class FeatureAttribute : FactAttribute {
         protected override IEnumerable<ITestCommand> EnumerateTestCommands(IMethodInfo method) {
-            return Frameworks.List().Select(adapter => new FeatureTestCommand(method, adapter));
+            return Frameworks.Enumerate().Select(adapter => new FeatureTestCommand(method, adapter));
         }
     }
 }

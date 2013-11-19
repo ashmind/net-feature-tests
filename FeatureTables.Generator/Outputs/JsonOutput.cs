@@ -15,12 +15,12 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs {
         public void Write(DirectoryInfo directory, IEnumerable<FeatureTable> tables) {
             var tableList = tables.ToArray();
 
-            var general = tableList.First(t => t.Key == MetadataKeys.GeneralTable);
-            var netFxVersions = tableList.First(t => t.Key == MetadataKeys.NetFxVersionTable);
+            var general = tableList.First(t => t.Key == MetadataKeys.GeneralInfoTable);
+            var netFxVersions = tableList.First(t => t.Key == MetadataKeys.NetFxSupportTable);
             var data = tableList[0].Frameworks.Select(f => new {
                 name = f.FrameworkName,
                 url = general[f, MetadataKeys.UrlFeature].DisplayUri,
-                version = general[f, MetadataKeys.VersionFeature].DisplayText,
+                version = general[f, MetadataKeys.VersionFeature].DisplayValue,
                 supports = GetNetFxVersions(f, netFxVersions),
                 features = GetAllFeatureData(f, tableList)
             });
@@ -39,7 +39,7 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs {
         }
 
         private IDictionary<string, object> GetAllFeatureData(IFrameworkAdapter framework, IEnumerable<FeatureTable> tables) {
-            return tables.Where(t => t.Key != MetadataKeys.GeneralTable && t.Key != MetadataKeys.NetFxVersionTable)
+            return tables.Where(t => t.Key != MetadataKeys.GeneralInfoTable && t.Key != MetadataKeys.NetFxSupportTable)
                          .SelectMany(t => t.Features.Select(f => GetSingleFeatureData(f, t[framework, f])))
                          .ToDictionary(p => p.Key, p => p.Value);
         }

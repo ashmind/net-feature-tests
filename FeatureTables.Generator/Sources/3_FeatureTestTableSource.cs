@@ -30,7 +30,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                                      .OrderBy(g => this.GetDisplayOrder(g.Key))
                                      .ToArray();
 
-            var frameworks = Frameworks.List().ToArray();
+            var frameworks = Frameworks.Enumerate().ToArray();
             foreach (var group in testGroups) {
                 var features = group.ToDictionary(m => m, this.ConvertToFeature);
                 var table = new FeatureTable(AttributeHelper.GetDisplayName(group.Key), frameworks, features.Values) {
@@ -56,22 +56,22 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
         private async Task ApplyRunResultToCell(FeatureCell cell, Task<FeatureTestResult> resultTask) {
             var result = await resultTask;
             if (result.Kind == FeatureTestResultKind.Success) {
-                cell.DisplayText = "supported";
+                cell.DisplayValue = "supported";
                 cell.State = FeatureState.Success;
             }
             else if (result.Kind == FeatureTestResultKind.Failure) {
-                cell.DisplayText = "failed";
+                cell.DisplayValue = "failed";
                 cell.State = FeatureState.Failure;
                 var exceptionString = RemoveLocalPaths(result.Exception.ToString());
                 cell.RawError = exceptionString;
                 cell.DisplayUri = ConvertToDataUri(exceptionString);
             }
             else if (result.Kind == FeatureTestResultKind.SkippedDueToDependency) {
-                cell.DisplayText = "skipped";
+                cell.DisplayValue = "skipped";
                 cell.State = FeatureState.Skipped;
             }
             else {
-                cell.DisplayText = "see comment";
+                cell.DisplayValue = "see comment";
                 cell.State = FeatureState.Concern;
             }
             cell.Comment = result.Message;

@@ -77,16 +77,16 @@
             <tr>
               <td class="framework-name">@row.Item1.FrameworkName</td>
               @foreach (var cell in row.Item2) {
-                <td class="@(cell.State.ToString().ToLowerInvariant())">
+                <td class="@GetCssClassesForCell(cell)">
                 @if (cell.HasComment) {
                     var index = @comments.Single(x => x.comment == @cell.Comment).index;
-                    <a class="local" href="#@tableLinkName-note-@index">@cell.DisplayText<sup>@index</sup></a>
+                    <a class="local" href="#@tableLinkName-note-@index">@FormatDisplayValue(cell.DisplayValue)<sup>@index</sup></a>
                 }
                 else if (cell.DisplayUri != null) {
-                    <a href="@cell.DisplayUri">@cell.DisplayText</a>
+                    <a href="@cell.DisplayUri">@FormatDisplayValue(cell.DisplayValue)</a>
                 }
                 else {
-                    @cell.DisplayText
+                    @FormatDisplayValue(cell.DisplayValue)
                 }
                 </td>
               }
