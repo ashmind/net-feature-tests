@@ -10,7 +10,7 @@ using Xunit;
 
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(5)]
-    [DisplayName("Support for Lazy<TService>")]
+    [DisplayName("Lazy<TService>")]
     [FeatureScoring(FeatureScoring.PointPerClass)]
     [Description(@"
         When `TService` is registered in a container, some frameworks automatically provide `Lazy<TService>`.

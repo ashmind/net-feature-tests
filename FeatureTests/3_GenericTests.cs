@@ -8,7 +8,7 @@ using Xunit;
 
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(3)]
-    [DisplayName("Generics support")]
+    [DisplayName("Open generics")]
     public class GenericTests {
         [Feature]
         [DisplayName("Open generic registration")]

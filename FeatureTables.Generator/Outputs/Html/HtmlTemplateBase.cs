@@ -20,6 +20,15 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs.Html {
             get { return (TModel)base.Model; }
         }
 
+        protected string GenerateAnchor(string displayName) {
+            var result = displayName;
+            result = Regex.Replace(result, @"\([^)]+\)|\<[^>]+\>", "");
+            result = Regex.Replace(result, @"(?<=\W|$)\w", m => m.Value.ToUpperInvariant());
+            result = Regex.Replace(result, @"\W+", "");
+
+            return result;
+        }
+
         protected IHtmlString FormatDescription(string text) {
             var formatted = this.markdown.Transform(text);
             // also link twitter usernames

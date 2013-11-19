@@ -45,7 +45,7 @@ namespace DependencyInjection.FeatureTables.Generator.Sources {
                               "The score is only for quick comparison, please read individual tables for the details."
             };
 
-            var table = new FeatureTable(MetadataKeys.GeneralTable, "General information", diFrameworks, new[] { version, url, total }) {
+            var table = new FeatureTable(MetadataKeys.GeneralTable, "Framework list", diFrameworks, new[] { version, url, total }) {
                 Scoring = FeatureScoring.NotScored
             };
             foreach (var diFramework in diFrameworks) {

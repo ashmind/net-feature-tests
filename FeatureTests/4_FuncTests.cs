@@ -10,7 +10,7 @@ using Xunit;
 
 namespace DependencyInjection.FeatureTests {
     [DisplayOrder(4)]
-    [DisplayName("Automatic factories (Func<TService>)")]
+    [DisplayName("Func<TService>")]
     [Description(@"
         When TService is registered in a container, many frameworks automatically provide Func<..., TService>.
 

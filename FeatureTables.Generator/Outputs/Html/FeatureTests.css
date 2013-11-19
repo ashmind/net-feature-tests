@@ -5,7 +5,7 @@
         background-color: white;
     }
     
-    .content {
+    .container {
         padding: 0;
         min-width: 0;
     }
@@ -22,21 +22,25 @@ body {
     padding: 0;
 }
 
-.content {
-    background-color: white;
-    margin: 0 auto;
-    width: 95%;
+h1 {
+    text-align: center;
+}
+
+.container {
     max-width: 1200px;
-    padding-top: 10px;
+    margin: 0 auto;
+}
+
+.content {
+    margin-left: 220px;
 }
 
 h1, h2 {
-    font-weight: bold;
+    font-weight: normal;
 }
 
 h1 {
     font-size: 160%;
-    text-align: center;
     padding-bottom: 1rem;
 }
 
@@ -44,19 +48,22 @@ h2 {
     font-size: 125%;
 
     margin: 0;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.1rem;
     margin-top: 2.5rem;
+    
+    padding-bottom: 0.2rem;
+    border-bottom: 1px solid #eee;
 }
 
 section:first-of-type h2 {
     margin-top: 0;
 }
 
-.table-description {
+.section-description {
     margin-bottom: 0.3rem;
 }
 
-.table-description, .feature-descriptions, .comments {
+.section-description, .feature-descriptions, .comments {
     max-width: 60rem;
 }
 
@@ -66,11 +73,11 @@ dt, dd {
 }
 
 dt {
-    font-weight: bold;
+    font-size: 105%;
 }
 
 dd {
-    margin-left: 0.5rem;
+    margin-left: 0.8rem;
     margin-top: 0.2rem;
 }
 
@@ -85,6 +92,7 @@ dd + dt {
 table {
     margin: 0;
     border: 0;
+    border-collapse: collapse;
     
     margin-top: 1rem;
 
@@ -153,53 +161,37 @@ td.success a, td.failure a, td.concern a, td.skipped a {
     color: inherit;
 }
 
-/* http://codepo8.github.io/css-fork-on-github-ribbon/ by http://christianheilmann.com/ */
-#fork-on-github {
+.toc-wrapper {
     position: absolute;
-    display: block;
-    top: 0;
-    right: 0;
-    width: 200px;
-    overflow: hidden;
-    height: 200px;
 }
 
-#fork-on-github a {
+.toc {
     position: absolute;
-    top: 60px;
-    right: -60px;
     width: 200px;
+    border: 1px solid #ccc;
+}
 
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
+.toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
 
+.toc a {
     color: #000;
     text-decoration: none;
-    font-family: Arial, sans-serif;
-    text-align: center;
-    font-weight: bold;
-    padding: 5px 40px;
-    font-size: 1rem;
-    line-height: 2rem;
-    transition: background-color 0.5s;
-}
-
-#fork-on-github a:hover {
-    background-color: #b4cce4;
-}
-
-#fork-on-github a::before, #fork-on-github a::after {
-    content: "";
-    width: 100%;
     display: block;
-    position: absolute;
-    top: 1px;
-    left: 0;
-    height: 1px;
-    background: #000;
+    padding: 5px 10px;
 }
 
-#fork-on-github a::after {
-    bottom: 1px;
-    top: auto;
+.toc .toc-h2 a {
+    padding-left: 10px;
+}
+
+.toc .toc-h3 a {
+    padding-left: 20px;
+}
+
+.toc .toc-active {
+    background-color: #eee;
 }

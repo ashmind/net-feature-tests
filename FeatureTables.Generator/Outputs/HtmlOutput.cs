@@ -19,6 +19,13 @@ namespace DependencyInjection.FeatureTables.Generator.Outputs {
 
             File.WriteAllText(Path.Combine(directory.FullName, "FeatureTests.html"), templateResult);
             File.Copy(@"Outputs\Html\FeatureTests.css", Path.Combine(directory.FullName, "FeatureTests.css"), true);
+
+            var targetJsDirectory = new DirectoryInfo(Path.Combine(directory.FullName, "js"));
+            if (!targetJsDirectory.Exists)
+                targetJsDirectory.Create();
+            foreach (var file in new DirectoryInfo(@"Outputs\Html\js").GetFiles()) {
+                file.CopyTo(Path.Combine(targetJsDirectory.FullName, file.Name), true);    
+            }
         }
     }
 }
