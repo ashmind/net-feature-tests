@@ -9,3 +9,4 @@ _ReSharper.*
 *.snk
 *.ncrunchsolution
 \#packages/
+FeatureTests.Results.Web/App_Data/*
