@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DependencyInjection.FeatureTests.TestTypes {
+namespace FeatureTests.On.DependencyInjection.TestTypes {
     public class GenericServiceWithIService2Constraint<T> : IGenericService<T> 
         where T : IService2
     {

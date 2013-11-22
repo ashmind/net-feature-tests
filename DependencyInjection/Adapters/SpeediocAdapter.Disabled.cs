@@ -6,7 +6,7 @@ using Speedioc;
 using Speedioc.Registration;
 using Speedioc.Registration.Builders;
 
-namespace DependencyInjection.FeatureTests.Adapters {
+namespace FeatureTests.On.DependencyInjection.Adapters {
     //public class SpeediocAdapter : FrameworkAdapterBase {
     //    private IContainerBuilder builder = DefaultContainerBuilderFactory.GetInstance();
     //    private IContainer container;

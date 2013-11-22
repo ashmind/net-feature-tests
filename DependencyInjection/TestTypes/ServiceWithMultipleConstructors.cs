@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DependencyInjection.FeatureTests.TestTypes {
+namespace FeatureTests.On.DependencyInjection.TestTypes {
     public class ServiceWithMultipleConstructors {
         public static class ConstructorNames {
             public const string Default = "Default";

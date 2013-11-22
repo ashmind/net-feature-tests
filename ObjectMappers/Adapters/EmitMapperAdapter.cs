@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
 using EmitMapper;
 using FeatureTests.Shared.GenericApiSupport;
 using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 
-namespace ObjectMappers.FeatureTests.Adapters {
+namespace FeatureTests.On.ObjectMappers.Adapters {
     public class EmitMapperAdapter : ObjectMapperAdapterBase {
         private readonly ObjectMapperManager manager;
 

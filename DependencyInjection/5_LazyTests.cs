@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
-using DependencyInjection.FeatureTests.TestTypes;
 using Xunit;
 using FeatureTests.Shared;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using FeatureTests.On.DependencyInjection.TestTypes;
 
 namespace FeatureTests.On.DependencyInjection {
     [DisplayOrder(5)]

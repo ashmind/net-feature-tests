@@ -1,9 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Linq;
-using FeatureTests.On.DependencyInjection.Adapters.Interface;
 using Xunit;
-using DependencyInjection.FeatureTests.TestTypes;
 using FeatureTests.On.DependencyInjection.Adapters;
+using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using FeatureTests.On.DependencyInjection.TestTypes;
 using FeatureTests.Shared;
 
 namespace FeatureTests.On.DependencyInjection

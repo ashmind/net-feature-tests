@@ -8,8 +8,8 @@
     <ProjectGuid>{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ObjectMappers.FeatureTests</RootNamespace>
-    <AssemblyName>ObjectMappers.FeatureTests</AssemblyName>
+    <RootNamespace>FeatureTests.On.ObjectMappers</RootNamespace>
+    <AssemblyName>FeatureTests.On.ObjectMappers</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <FileUpgradeFlags>

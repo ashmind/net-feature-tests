@@ -1,11 +1,10 @@
 ﻿using System.ComponentModel;
 using System.Linq;
-using DependencyInjection.FeatureTests;
-using DependencyInjection.FeatureTests.TestTypes;
-using FeatureTests.On.DependencyInjection.Adapters;
 using Xunit;
 using FeatureTests.Shared;
+using FeatureTests.On.DependencyInjection.Adapters;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using FeatureTests.On.DependencyInjection.TestTypes;
 
 namespace FeatureTests.On.DependencyInjection {
     [DisplayOrder(3)]

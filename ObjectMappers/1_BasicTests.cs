@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using FeatureTests.On.ObjectMappers.Adapters;
 using FeatureTests.Shared;
-using ObjectMappers.FeatureTests.Adapters;
 
-namespace ObjectMappers.FeatureTests {
+namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(1)]
     [DisplayName("Essential functionality")]
     [Description("These are the basic features that should be supported by all mappers.")]

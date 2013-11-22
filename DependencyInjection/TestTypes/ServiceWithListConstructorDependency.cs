@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DependencyInjection.FeatureTests.TestTypes {
+namespace FeatureTests.On.DependencyInjection.TestTypes {
     public class ServiceWithListConstructorDependency<TServiceList> : IServiceWithListDependency<TServiceList> 
         where TServiceList : IEnumerable<IService>
     {

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DependencyInjection.FeatureTests.TestTypes {
+namespace FeatureTests.On.DependencyInjection.TestTypes {
     public class ServiceWithTwoConstructorDependencies {
         private readonly IService service1;
         private readonly IService2 service2;

@@ -2,10 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-
 using AutoMapper;
 
-namespace ObjectMappers.FeatureTests.Adapters {
+namespace FeatureTests.On.ObjectMappers.Adapters {
     public class AutoMapperAdapter : ObjectMapperAdapterBase {
         private readonly ConfigurationStore configuration;
         private readonly MappingEngine engine;

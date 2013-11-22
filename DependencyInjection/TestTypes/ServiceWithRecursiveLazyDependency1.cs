@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace DependencyInjection.FeatureTests.TestTypes {
+namespace FeatureTests.On.DependencyInjection.TestTypes {
     public class ServiceWithRecursiveLazyDependency1 {
         private readonly Lazy<ServiceWithRecursiveLazyDependency2> dependency;
 
