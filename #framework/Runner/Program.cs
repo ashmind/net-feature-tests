@@ -4,6 +4,7 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Threading.Tasks;
 using AshMind.Extensions;
 using FeatureTests.Runner.Outputs;
 using FeatureTests.Runner.Sources;
@@ -32,26 +33,30 @@ namespace FeatureTests.Runner {
                 directory.Create();
 
             var assemblyPaths = GetAssemblyPaths(args);
-            foreach (var assemblyPath in assemblyPaths) {
-                ConsoleEx.WriteLine(ConsoleColor.White, Path.GetFileName(assemblyPath));
-                var assembly = Assembly.LoadFrom(assemblyPath);
-                    
-                Console.WriteLine("  calculating");
+            var results = assemblyPaths.Select(path => {
+                ConsoleEx.WriteLine(ConsoleColor.White, "running " + Path.GetFileName(path));
+                var assembly = Assembly.LoadFrom(path);
+
                 var tables = sources.SelectMany(s => s.GetTables(assembly)).ToArray();
                 CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
 
-                Console.WriteLine("  creating outputs");
                 var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
-                foreach (var output in outputs) {
-                    output.Write(new ResultOutputArguments(assembly, tables, directory, outputNamePrefix, args.WatchTemplates));
-                }
+                return new ResultOutputArguments(assembly, tables, directory, outputNamePrefix, args.WatchTemplates);
+            }).ToArray();
 
-                Console.WriteLine();
+            Console.WriteLine();
+            ConsoleEx.WriteLine(ConsoleColor.White, "creating outputs");
+            foreach (var result in results) {
+                foreach (var output in outputs) {
+                    output.Write(result, results);
+                }
             }
 
             if (args.WatchTemplates) {
-                Console.WriteLine("Auto-updating outputs if templates change.");
-                Console.WriteLine("Press [Enter] to stop...");
+                Console.WriteLine();
+                ConsoleEx.WriteLine(ConsoleColor.White, "auto-updating outputs if templates change.");
+                ConsoleEx.WriteLine(ConsoleColor.White, "press [Enter] to stop...");
+                Console.WriteLine();
                 Console.ReadLine();
             }
 

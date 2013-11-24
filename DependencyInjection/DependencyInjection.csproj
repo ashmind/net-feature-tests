@@ -214,6 +214,7 @@
     <Compile Include="TestTypes\ServiceWithSimplePropertyDependency.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="Html\Labels.json" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>

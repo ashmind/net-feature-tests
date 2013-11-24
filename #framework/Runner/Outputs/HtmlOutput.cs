@@ -4,6 +4,8 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using AshMind.Extensions;
+using Newtonsoft.Json;
 using RazorTemplates.Core;
 using FeatureTests.Runner.Outputs.Html;
 
@@ -26,15 +28,15 @@ namespace FeatureTests.Runner.Outputs {
             this.templatePath = Path.Combine(templatesDirectory.FullName, TemplateFileName);
         }
 
-        public void Write(ResultOutputArguments arguments) {
-            this.RenderTemplate(arguments);
+        public void Write(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
+            this.RenderTemplate(arguments, allArgumentsForThisRun);
             this.CopyFiles(templatesDirectory, arguments.OutputDirectory, f => FileExtensionsToCopy.Contains(f.Extension));
 
             if (arguments.KeepUpdatingIfTemplatesChange)
-                this.KeepUpdatingFrom(arguments);
+                this.KeepUpdatingFrom(arguments, allArgumentsForThisRun);
         }
 
-        private void KeepUpdatingFrom(ResultOutputArguments arguments) {
+        private void KeepUpdatingFrom(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
             if (this.watcher == null)
                 this.watcher = new FileSystemWatcher(this.templatesDirectory.FullName, TemplateFileName);
 
@@ -43,7 +45,7 @@ namespace FeatureTests.Runner.Outputs {
                     return;
 
                 try {
-                    this.RenderTemplate(arguments);
+                    this.RenderTemplate(arguments, allArgumentsForThisRun);
                 }
                 catch (Exception ex) {
                     Console.WriteLine(ex);
@@ -52,14 +54,15 @@ namespace FeatureTests.Runner.Outputs {
             this.watcher.EnableRaisingEvents = true;
         }
 
-        private void RenderTemplate(ResultOutputArguments arguments) {
+        private void RenderTemplate(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
             var targetPath = Path.Combine(arguments.OutputDirectory.FullName, arguments.OutputNamePrefix + ".html");
             try {
                 var templateSource = File.ReadAllText(this.templatePath);
                 var template = Template.WithBaseType<HtmlTemplateBase<HtmlResultModel>>()
                                        .Compile<HtmlResultModel>(templateSource);
 
-                var model = new HtmlResultModel(arguments.Tables, GetResource(arguments.Assembly, "AfterAll"));
+
+                var model = this.GetModel(arguments, allArgumentsForThisRun);
                 var templateResult = template.Render(model);
                 
                 File.WriteAllText(targetPath, templateResult);
@@ -71,8 +74,30 @@ namespace FeatureTests.Runner.Outputs {
             }
         }
 
+        private HtmlResultModel GetModel(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
+            var labels = this.GetLabels(arguments);
+            var links = allArgumentsForThisRun.Select(a => {
+                var url = a.OutputNamePrefix + ".html";
+                var name = (string)GetLabels(a).LinkTitle;
+
+                return new HtmlNavigationLink(url, name) {
+                    IsCurrent = (a == arguments)
+                };
+            }).ToArray();
+
+            return new HtmlResultModel(arguments.Tables, links) {
+                HtmlAfterAll = this.GetResource(arguments.Assembly, "AfterAll.html"),
+                Labels = labels
+            };
+        }
+
+        private dynamic GetLabels(ResultOutputArguments arguments) {
+            var labelsString = this.GetResource(arguments.Assembly, "Labels.json");
+            return JsonConvert.DeserializeObject(labelsString.NullIfEmpty() ?? "{}");
+        }
+
         private string GetResource(Assembly assembly, string name) {
-            var resourceName = assembly.GetManifestResourceNames().FirstOrDefault(n => n.EndsWith(".Html." + name + ".html"));
+            var resourceName = assembly.GetManifestResourceNames().FirstOrDefault(n => n.EndsWith(".Html." + name));
             if (resourceName == null)
                 return "";
 

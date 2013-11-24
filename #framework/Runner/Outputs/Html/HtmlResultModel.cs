@@ -1,17 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using FeatureTests.Shared.ResultData;
 
 namespace FeatureTests.Runner.Outputs.Html {
     public class HtmlResultModel {
-        public HtmlResultModel(IReadOnlyList<FeatureTable> tables, string afterAll) {
+        public HtmlResultModel(IReadOnlyList<FeatureTable> tables, IReadOnlyList<HtmlNavigationLink> navigationLinks) {
             this.Tables = tables;
-            this.AfterAll = afterAll;
+            this.NavigationLinks = navigationLinks;
         }
 
-        public IReadOnlyList<FeatureTable> Tables { get; private set; }
-        public string AfterAll                     { get; private set; }
+        public IReadOnlyList<FeatureTable> Tables { get; set; }
+        public IReadOnlyList<HtmlNavigationLink> NavigationLinks { get; set; }
+        
+        public dynamic Labels                     { get; set; }
+        public string HtmlAfterAll                { get; set; }
     }
 }

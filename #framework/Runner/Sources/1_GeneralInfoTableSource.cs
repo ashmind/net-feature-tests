@@ -38,7 +38,7 @@ namespace FeatureTests.Runner.Sources {
             };
 
             var libraries = LibraryProvider.GetAdapters(featureTestAssembly).ToArray();
-            var table = new FeatureTable(MetadataKeys.GeneralInfoTable, "Framework list", libraries, new[] { version, released, url, downloads, total }) {
+            var table = new FeatureTable(MetadataKeys.GeneralInfoTable, @"{This table should be named by Outputs}", libraries, new[] { version, released, url, downloads, total }) {
                 Scoring = FeatureScoring.NotScored
             };
             

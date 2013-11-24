@@ -103,6 +103,7 @@
     <Compile Include="CommandLineArguments.cs" />
     <Compile Include="ConsoleEx.cs" />
     <Compile Include="Outputs\HtmlOutput.cs" />
+    <Compile Include="Outputs\Html\HtmlNavigationLink.cs" />
     <Compile Include="Outputs\Html\HtmlResultModel.cs" />
     <Compile Include="Outputs\Html\HtmlTemplateBase.cs" />
     <Compile Include="Outputs\IResultOutput.cs" />
