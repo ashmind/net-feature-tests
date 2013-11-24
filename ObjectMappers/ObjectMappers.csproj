@@ -109,7 +109,7 @@
   <ItemGroup>
     <ProjectReference Include="..\#framework\Shared\Shared.csproj">
       <Project>{7DB72F25-0A59-4BC9-B5AB-1F504F647580}</Project>
-      <Name>FeatureTests.Shared</Name>
+      <Name>Shared</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

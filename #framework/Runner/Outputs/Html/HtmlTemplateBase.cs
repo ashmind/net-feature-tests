@@ -23,7 +23,7 @@ namespace FeatureTests.Runner.Outputs.Html {
         }
 
         public new TModel Model {
-            get { return (TModel)base.Model; }
+            get { return base.Model; }
         }
 
         protected string GenerateAnchor(string displayName) {
@@ -69,6 +69,10 @@ namespace FeatureTests.Runner.Outputs.Html {
             formatted = Regex.Replace(formatted, @"(?<=[^\w\d])@([\w\d]+)", "<a href='http://www.twitter.com/$1'>@$1</a>");
 
             return new HtmlString(formatted);
+        }
+
+        protected IHtmlString RawHtml(string html) {
+            return new HtmlString(html);
         }
 
         protected new void Write(object value) {

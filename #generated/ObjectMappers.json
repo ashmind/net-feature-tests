@@ -1,0 +1,38 @@
+[
+  {
+    "name": "AutoMapper",
+    "url": "http://automapper.org/",
+    "version": "3.1.0.0",
+    "supports": [
+      "MonoAndroid",
+      "MonoTouch",
+      "net40",
+      "win80",
+      "wp80",
+      "sl50"
+    ],
+    "features": {
+      "IAmTest": {
+        "result": "success"
+      }
+    }
+  },
+  {
+    "name": "EmitMapper",
+    "url": "http://emitmapper.codeplex.com/",
+    "version": "1.0.0.0",
+    "supports": [
+      "MonoAndroid",
+      "MonoTouch",
+      "net40",
+      "win80",
+      "wp80",
+      "sl50"
+    ],
+    "features": {
+      "IAmTest": {
+        "result": "success"
+      }
+    }
+  }
+]

@@ -12,8 +12,8 @@ using FeatureTests.Shared;
 
 namespace FeatureTests.Runner.Outputs {
     public class JsonOutput : IResultOutput {
-        public void Write(IReadOnlyList<FeatureTable> tables, DirectoryInfo outputDirectory, string outputNamePrefix, bool keepUpdatingIfTemplatesChange = false) {
-            var tableList = tables.ToArray();
+        public void Write(ResultOutputArguments resultOutputArguments) {
+            var tableList = resultOutputArguments.Tables.ToArray();
 
             var general = tableList.First(t => t.Key == MetadataKeys.GeneralInfoTable);
             var netFxVersions = tableList.First(t => t.Key == MetadataKeys.NetFxSupportTable);
@@ -28,7 +28,7 @@ namespace FeatureTests.Runner.Outputs {
             var json = JsonConvert.SerializeObject(data, Formatting.Indented, new JsonSerializerSettings {
                 NullValueHandling = NullValueHandling.Ignore
             });
-            File.WriteAllText(Path.Combine(outputDirectory.FullName, outputNamePrefix + ".FeatureData.json"), json);
+            File.WriteAllText(Path.Combine(resultOutputArguments.OutputDirectory.FullName, resultOutputArguments.OutputNamePrefix + ".json"), json);
         }
 
         private string[] GetNetFxVersions(ILibrary library, FeatureTable table) {

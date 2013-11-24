@@ -101,10 +101,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommandLineArguments.cs" />
+    <Compile Include="ConsoleEx.cs" />
     <Compile Include="Outputs\HtmlOutput.cs" />
+    <Compile Include="Outputs\Html\HtmlResultModel.cs" />
     <Compile Include="Outputs\Html\HtmlTemplateBase.cs" />
     <Compile Include="Outputs\IResultOutput.cs" />
     <Compile Include="Outputs\JsonOutput.cs" />
+    <Compile Include="Outputs\ResultOutputArguments.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\NuGetGallery\Reference.cs">

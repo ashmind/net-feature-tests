@@ -13,57 +13,70 @@ using FeatureTests.Shared.ResultData;
 
 namespace FeatureTests.Runner {
     public static class Program {
-        public static void Main(CommandLineArguments args) {
-            try {
-                var cache = new MetadataPackageCache(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"]));
-                var sources = new IFeatureTableSource[] {
-                    new GeneralInfoTableSource(cache),
-                    new NetFxSupportTableSource(cache),
-                    new FeatureTestTableSource(new FeatureTestRunner())
-                };
-                var outputs = new IResultOutput[] {
-                    new HtmlOutput(new DirectoryInfo(ConfigurationManager.AppSettings["HtmlTemplatesPath"])),
-                    new JsonOutput()
-                };
-                
-                var directory = new DirectoryInfo(args.OutputPath ?? ConfigurationManager.AppSettings["OutputPath"]);
-                if (!directory.Exists)
-                    directory.Create();
+        public static string AssemblyNamePrefix = "FeatureTests.On.";
 
-                Console.WriteLine("Collecting data...");
-                var assembly = Assembly.LoadFrom(args.AssemblyName);
+        private static void Main(CommandLineArguments args) {
+            var cache = new MetadataPackageCache(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"]));
+            var sources = new IFeatureTableSource[] {
+                new GeneralInfoTableSource(cache),
+                new NetFxSupportTableSource(cache),
+                new FeatureTestTableSource(new FeatureTestRunner())
+            };
+            var outputs = new IResultOutput[] {
+                new HtmlOutput(new DirectoryInfo(ConfigurationManager.AppSettings["HtmlTemplatesPath"])),
+                new JsonOutput()
+            };
+                
+            var directory = new DirectoryInfo(args.OutputPath ?? ConfigurationManager.AppSettings["OutputPath"]);
+            if (!directory.Exists)
+                directory.Create();
+
+            var assemblyPaths = GetAssemblyPaths(args);
+            foreach (var assemblyPath in assemblyPaths) {
+                ConsoleEx.WriteLine(ConsoleColor.White, Path.GetFileName(assemblyPath));
+                var assembly = Assembly.LoadFrom(assemblyPath);
+                    
+                Console.WriteLine("  calculating");
                 var tables = sources.SelectMany(s => s.GetTables(assembly)).ToArray();
                 CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
 
-                Console.WriteLine("Creating outputs...");
-                var outputNamePrefix = assembly.GetName().Name.SubstringAfter("FeatureTests.On.");
+                Console.WriteLine("  creating outputs");
+                var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
                 foreach (var output in outputs) {
-                    output.Write(tables, directory, outputNamePrefix, args.WatchTemplates);
+                    output.Write(new ResultOutputArguments(assembly, tables, directory, outputNamePrefix, args.WatchTemplates));
                 }
 
-                if (args.WatchTemplates) {
-                    Console.WriteLine("Auto-updating outputs if templates change.");
-                    Console.WriteLine("Press [Enter] to stop...");
-                    Console.ReadLine();
-                }
+                Console.WriteLine();
+            }
 
-                foreach (var output in outputs) {
-                    output.Dispose();
-                }
+            if (args.WatchTemplates) {
+                Console.WriteLine("Auto-updating outputs if templates change.");
+                Console.WriteLine("Press [Enter] to stop...");
+                Console.ReadLine();
+            }
+
+            foreach (var output in outputs) {
+                output.Dispose();
+            }
+        }
+        
+        public static void Main(string[] args) {
+            var parsedArgs = new CommandLineArguments();
+            CommandLine.Parser.Default.ParseArgumentsStrict(args, parsedArgs);
+            try {
+                Main(parsedArgs);
             }
             catch (Exception ex) {
-                var color = Console.ForegroundColor;
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine(ex);
-                Console.ForegroundColor = color;
+                ConsoleEx.WriteLine(ConsoleColor.Red, ex);
                 Console.ReadKey();
             }
         }
 
-        public static void Main(string[] args) {
-            var parsedArgs = new CommandLineArguments();
-            CommandLine.Parser.Default.ParseArgumentsStrict(args, parsedArgs);
-            Main(parsedArgs);
+        private static IReadOnlyCollection<string> GetAssemblyPaths(CommandLineArguments args) {
+            if (!args.AssemblyName.IsNullOrWhiteSpace())
+                return new[] { args.AssemblyName };
+
+            return Directory.GetFiles(".", AssemblyNamePrefix + "*.dll");
         }
 
         private static void CalculateTotal(FeatureTable general, IReadOnlyCollection<FeatureTable> all) {

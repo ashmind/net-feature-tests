@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Runtime.InteropServices;
-using FeatureTests.Runner.Outputs.Html;
 using RazorTemplates.Core;
-using FeatureTests.Shared.ResultData;
+using FeatureTests.Runner.Outputs.Html;
 
 namespace FeatureTests.Runner.Outputs {
     public class HtmlOutput : IResultOutput {
@@ -26,15 +26,15 @@ namespace FeatureTests.Runner.Outputs {
             this.templatePath = Path.Combine(templatesDirectory.FullName, TemplateFileName);
         }
 
-        public void Write(IReadOnlyList<FeatureTable> tables, DirectoryInfo outputDirectory, string outputNamePrefix, bool keepUpdatingIfTemplatesChange = false) {
-            this.RenderTemplate(tables, outputDirectory, outputNamePrefix);
-            this.CopyFiles(templatesDirectory, outputDirectory, f => FileExtensionsToCopy.Contains(f.Extension));
+        public void Write(ResultOutputArguments arguments) {
+            this.RenderTemplate(arguments);
+            this.CopyFiles(templatesDirectory, arguments.OutputDirectory, f => FileExtensionsToCopy.Contains(f.Extension));
 
-            if (keepUpdatingIfTemplatesChange)
-                this.KeepUpdatingFrom(tables, outputDirectory, outputNamePrefix);
+            if (arguments.KeepUpdatingIfTemplatesChange)
+                this.KeepUpdatingFrom(arguments);
         }
 
-        private void KeepUpdatingFrom(IReadOnlyList<FeatureTable> tables, DirectoryInfo outputDirectory, string outputNamePrefix) {
+        private void KeepUpdatingFrom(ResultOutputArguments arguments) {
             if (this.watcher == null)
                 this.watcher = new FileSystemWatcher(this.templatesDirectory.FullName, TemplateFileName);
 
@@ -43,7 +43,7 @@ namespace FeatureTests.Runner.Outputs {
                     return;
 
                 try {
-                    this.RenderTemplate(tables, outputDirectory, outputNamePrefix);
+                    this.RenderTemplate(arguments);
                 }
                 catch (Exception ex) {
                     Console.WriteLine(ex);
@@ -52,21 +52,34 @@ namespace FeatureTests.Runner.Outputs {
             this.watcher.EnableRaisingEvents = true;
         }
 
-        private void RenderTemplate(IReadOnlyList<FeatureTable> tables, DirectoryInfo outputDirectory, string outputNamePrefix) {
-            var targetPath = Path.Combine(outputDirectory.FullName, outputNamePrefix + ".FeatureTests.html");
+        private void RenderTemplate(ResultOutputArguments arguments) {
+            var targetPath = Path.Combine(arguments.OutputDirectory.FullName, arguments.OutputNamePrefix + ".html");
             try {
                 var templateSource = File.ReadAllText(this.templatePath);
-                var template = Template.WithBaseType<HtmlTemplateBase<IEnumerable<FeatureTable>>>()
-                                       .Compile<IEnumerable<FeatureTable>>(templateSource);
+                var template = Template.WithBaseType<HtmlTemplateBase<HtmlResultModel>>()
+                                       .Compile<HtmlResultModel>(templateSource);
 
-                var templateResult = template.Render(tables);
+                var model = new HtmlResultModel(arguments.Tables, GetResource(arguments.Assembly, "AfterAll"));
+                var templateResult = template.Render(model);
                 
                 File.WriteAllText(targetPath, templateResult);
-                Console.WriteLine("  Rendered " + targetPath);
+                ConsoleEx.WriteLine(ConsoleColor.DarkGray, "    rendered " + targetPath);
             }
             catch (Exception ex) {
                 File.WriteAllText(targetPath, ex.ToString());
                 throw;
+            }
+        }
+
+        private string GetResource(Assembly assembly, string name) {
+            var resourceName = assembly.GetManifestResourceNames().FirstOrDefault(n => n.EndsWith(".Html." + name + ".html"));
+            if (resourceName == null)
+                return "";
+
+            ConsoleEx.WriteLine(ConsoleColor.DarkGray, "    found " + resourceName);
+
+            using (var stream = assembly.GetManifestResourceStream(resourceName)) {
+                return new StreamReader(stream).ReadToEnd();
             }
         }
 
@@ -85,7 +98,7 @@ namespace FeatureTests.Runner.Outputs {
                 if (!CreateHardLink(targetPath, file.FullName, IntPtr.Zero))
                     throw new Exception("Failed to hardlink " + targetPath + ": " + Marshal.GetLastWin32Error() + ".");
 
-                Console.WriteLine("  Hardlinked " + targetPath);
+                ConsoleEx.WriteLine(ConsoleColor.DarkGray, "    hardlinked " + targetPath);
             }
 
             foreach (var sourceSubdirectory in source.EnumerateDirectories()) {

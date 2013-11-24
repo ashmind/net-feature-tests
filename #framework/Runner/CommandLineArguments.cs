@@ -6,7 +6,7 @@ using CommandLine.Text;
 
 namespace FeatureTests.Runner {
     public class CommandLineArguments {
-        [Option('i', "test-assembly", Required = true, HelpText = "Feature test assembly")]
+        [Option('i', "test-assembly", HelpText = "Feature test assembly")]
         public string AssemblyName { get; set; }
 
         [Option('o', "output-path", HelpText = "Output directory (taken from config if not specified).")]
