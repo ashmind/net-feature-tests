@@ -18,16 +18,17 @@
     <div class="container">
       <nav class="main-nav">
         <ul>
-        @foreach (var link in Model.NavigationLinks) {
-          <li class="@(link.IsCurrent ? "current" : null)"><a href="@link.Url">@link.Name</a></li>
-        }
+        @foreach (var link in Model.NavigationLinks) {<!--
+          --><li class="@(link.IsCurrent ? "current" : null)"><a href="@link.Url">@link.Name</a></li><!--
+        -->}
         </ul>
       </nav>
       
       <h1>@Model.Labels.Title</h1>
 
-      <nav class="toc"></nav>
-      
+      <nav class="toc">
+        <div>ABCD</div>
+      </nav>
 
       <div class="content">
         <!-- TODO: move this to a separate (navigable) file -->

@@ -25,7 +25,6 @@ body {
 
 .main-nav {
     height: 50px;
-    border: 1px solid #ccc;
     border-top: 0;
 }
 
@@ -52,6 +51,8 @@ body {
     
     padding-right: 10px;
     padding-left: 10px;
+
+    opacity: 0.4;
 }
 
 .main-nav a:hover {
@@ -59,8 +60,15 @@ body {
 }
 
 .main-nav .current a {
-    
-    background-color: #eee;
+    opacity: 1;
+}
+
+.main-nav li:first-child a {
+    border-bottom: 5px solid #4684EE;
+}
+
+.main-nav li:nth-child(2) a {
+    border-bottom: 5px solid #FF9900;
 }
 
 .content {
@@ -74,6 +82,7 @@ h1, h2 {
 h1 {
     font-size: 160%;
     padding-bottom: 5px;
+    margin-top: 30px;
 }
 
 h2 {
