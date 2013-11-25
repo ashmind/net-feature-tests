@@ -5,13 +5,14 @@ using System.Reflection;
 using EmitMapper;
 using FeatureTests.Shared.GenericApiSupport;
 using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
+using Omu.ValueInjecter;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
-    public class EmitMapperAdapter : ObjectMapperAdapterBase {
-        private readonly ObjectMapperManager manager;
+    public class ValueInjecterAdapter : ObjectMapperAdapterBase {
+        private readonly ValueInjecter injecter;
 
-        public EmitMapperAdapter() {
-            this.manager = new EmitMapper.ObjectMapperManager();
+        public ValueInjecterAdapter() {
+            this.injecter = new ValueInjecter();
         }
 
         public override Assembly Assembly {
@@ -23,17 +24,13 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
         }
 
         public override TTarget Map<TTarget>(object source) {
-            return (TTarget)GenericHelper.RewriteAndInvoke(
-                () => this.manager.GetMapper<X1, TTarget>().Map((X1)source),
-                source.GetType()
-            );
+            var target = Activator.CreateInstance<TTarget>();
+            this.injecter.Inject(target, source);
+            return target;
         }
 
         public override void Map(object source, object target) {
-            GenericHelper.RewriteAndInvoke(
-                () => this.manager.GetMapper<X1, X2>().Map((X1)source, (X2)target),
-                source.GetType(), target.GetType()
-            );
+            this.injecter.Inject(target, source);
         }
     }
 }

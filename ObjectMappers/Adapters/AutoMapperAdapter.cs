@@ -18,6 +18,10 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             get { return typeof(MappingEngine).Assembly; }
         }
 
+        public override void CreateMap<TSource, TTarget>() {
+            this.configuration.CreateMap<TSource, TTarget>();
+        }
+
         public override TTarget Map<TTarget>(object source) {
             return this.engine.Map<TTarget>(source);
         }

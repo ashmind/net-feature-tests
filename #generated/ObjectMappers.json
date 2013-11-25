@@ -12,8 +12,99 @@
       "sl50"
     ],
     "features": {
-      "IAmTest": {
+      "StringToString": {
+        "result": "failure",
+        "error": "AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.\r\n\r\nMapping types:\r\nSourceWithSingleProperty`1 -> TargetWithSingleProperty`1\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> FeatureTests.On.ObjectMappers.TestTypes.TargetWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n\r\nDestination path:\r\nTargetWithSingleProperty`1\r\n\r\nSource value:\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[System.String]\r\n   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)\r\n   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source)\r\n   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\\AutoMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 55\r\n   at FeatureTests.On.ObjectMappers.BasicTests.StringToString(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 18"
+      },
+      "Int32ToObject": {
+        "result": "failure",
+        "error": "AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.\r\n\r\nMapping types:\r\nSourceWithSingleProperty`1 -> TargetWithSingleProperty`1\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> FeatureTests.On.ObjectMappers.TestTypes.TargetWithSingleProperty`1[[System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n\r\nDestination path:\r\nTargetWithSingleProperty`1\r\n\r\nSource value:\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[System.Int32]\r\n   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)\r\n   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source)\r\n   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\\AutoMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 55\r\n   at FeatureTests.On.ObjectMappers.BasicTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
+      },
+      "Int32ToString": {
+        "result": "failure",
+        "error": "AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.\r\n\r\nMapping types:\r\nSourceWithSingleProperty`1 -> TargetWithSingleProperty`1\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> FeatureTests.On.ObjectMappers.TestTypes.TargetWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n\r\nDestination path:\r\nTargetWithSingleProperty`1\r\n\r\nSource value:\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[System.Int32]\r\n   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)\r\n   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source)\r\n   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\\AutoMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 55\r\n   at FeatureTests.On.ObjectMappers.BasicTests.Int32ToString(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 30"
+      },
+      "Int32ToInt64": {
+        "result": "failure",
+        "error": "AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.\r\n\r\nMapping types:\r\nSourceWithSingleProperty`1 -> TargetWithSingleProperty`1\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> FeatureTests.On.ObjectMappers.TestTypes.TargetWithSingleProperty`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n\r\nDestination path:\r\nTargetWithSingleProperty`1\r\n\r\nSource value:\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[System.Int32]\r\n   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)\r\n   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source)\r\n   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\\AutoMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 55\r\n   at FeatureTests.On.ObjectMappers.BasicTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 36"
+      },
+      "StringToInt32": {
+        "result": "failure",
+        "error": "AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.\r\n\r\nMapping types:\r\nSourceWithSingleProperty`1 -> TargetWithSingleProperty`1\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> FeatureTests.On.ObjectMappers.TestTypes.TargetWithSingleProperty`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n\r\nDestination path:\r\nTargetWithSingleProperty`1\r\n\r\nSource value:\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[System.String]\r\n   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)\r\n   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source)\r\n   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\\AutoMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 55\r\n   at FeatureTests.On.ObjectMappers.BasicTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 42"
+      },
+      "ObjectToInt32": {
+        "result": "failure",
+        "error": "AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.\r\n\r\nMapping types:\r\nSourceWithSingleProperty`1 -> TargetWithSingleProperty`1\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[[System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] -> FeatureTests.On.ObjectMappers.TestTypes.TargetWithSingleProperty`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n\r\nDestination path:\r\nTargetWithSingleProperty`1\r\n\r\nSource value:\r\nFeatureTests.On.ObjectMappers.TestTypes.SourceWithSingleProperty`1[System.Object]\r\n   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)\r\n   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)\r\n   at AutoMapper.MappingEngine.Map[TDestination](Object source)\r\n   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\\AutoMapperAdapter.cs:line 25\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 55\r\n   at FeatureTests.On.ObjectMappers.BasicTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 48"
+      }
+    }
+  },
+  {
+    "name": "OoMapper",
+    "url": "http://github.com/hazzik/OoMapper",
+    "version": "0.2.0.27",
+    "supports": [
+      "net40",
+      "sl40",
+      "sl50"
+    ],
+    "features": {
+      "StringToString": {
         "result": "success"
+      },
+      "Int32ToObject": {
+        "result": "success"
+      },
+      "Int32ToString": {
+        "result": "success"
+      },
+      "Int32ToInt64": {
+        "result": "success"
+      },
+      "StringToInt32": {
+        "result": "failure",
+        "error": "System.Collections.Generic.KeyNotFoundException: (System.String, System.Int32)\r\n   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\MappingConfiguration.cs:line 43\r\n   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\ConvertSourceMemberResolver.cs:line 10\r\n   at OoMapper.CompositeSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\CompositeSourceMemberResolver.cs:line 23\r\n   at OoMapper.PropertyMap.BuildBind(Expression source, IMappingConfiguration configuration) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\PropertyMap.cs:line 28\r\n   at OoMapper.NewObjectMapperBuilder.<>c__DisplayClass1.<Build>b__0(PropertyMap m) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\NewObjectMapperBuilder.cs:line 13\r\n   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()\r\n   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)\r\n   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)\r\n   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\NewObjectMapperBuilder.cs:line 12\r\n   at OoMapper.CachedObjectMapperBuilder.<>c__DisplayClass1.<Build>b__0(Tuple`2 k) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\CachedObjectMapperBuilder.cs:line 21\r\n   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\Cache.cs:line 22\r\n   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\CachedObjectMapperBuilder.cs:line 21\r\n   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\UserConfigurationMapper.cs:line 35\r\n   at OoMapper.MappingConfiguration.<>c__DisplayClass3.<BuildSource>b__0(ISourceMemberResolver r) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\MappingConfiguration.cs:line 37\r\n   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()\r\n   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()\r\n   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\MappingConfiguration.cs:line 40\r\n   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\ConvertSourceMemberResolver.cs:line 10\r\n   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\MappingConfiguration.cs:line 49\r\n   at OoMapper.MappingConfiguration.<>c__DisplayClass9.<GetCompiledNew>b__8(Tuple`2 key) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\MappingConfiguration.cs:line 71\r\n   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\Cache.cs:line 22\r\n   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\MappingConfiguration.cs:line 70\r\n   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\\BuildAgent-03\\work\\aa8cf99bf5ccb096\\src\\OoMapper\\Mapper.cs:line 35\r\n   at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\\OoMapperAdapter.cs:line 18\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 55\r\n   at FeatureTests.On.ObjectMappers.BasicTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 42"
+      },
+      "ObjectToInt32": {
+        "result": "success"
+      }
+    }
+  },
+  {
+    "name": "ValueInjecter",
+    "url": "http://emitmapper.codeplex.com/",
+    "version": "1.0.0.0",
+    "supports": [
+      "MonoAndroid",
+      "MonoTouch",
+      "net40",
+      "win80",
+      "wp80",
+      "sl40",
+      "sl50"
+    ],
+    "features": {
+      "StringToString": {
+        "result": "success"
+      },
+      "Int32ToObject": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.BasicTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
+      },
+      "Int32ToString": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.BasicTests.Int32ToString(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 30"
+      },
+      "Int32ToInt64": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.BasicTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 36"
+      },
+      "StringToInt32": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.BasicTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 42"
+      },
+      "ObjectToInt32": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.BasicTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 48"
       }
     }
   },
@@ -27,11 +118,29 @@
       "net40",
       "win80",
       "wp80",
+      "sl40",
       "sl50"
     ],
     "features": {
-      "IAmTest": {
+      "StringToString": {
         "result": "success"
+      },
+      "Int32ToObject": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   System.Object\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.BasicTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
+      },
+      "Int32ToString": {
+        "result": "success"
+      },
+      "Int32ToInt64": {
+        "result": "success"
+      },
+      "StringToInt32": {
+        "result": "success"
+      },
+      "ObjectToInt32": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.BasicTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.BasicTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 48"
       }
     }
   }

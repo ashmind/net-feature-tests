@@ -78,9 +78,6 @@ namespace FeatureTests.Runner {
         }
 
         private static IReadOnlyCollection<string> GetAssemblyPaths(CommandLineArguments args) {
-            if (!args.AssemblyName.IsNullOrWhiteSpace())
-                return new[] { args.AssemblyName };
-
             return Directory.GetFiles(".", AssemblyNamePrefix + "*.dll");
         }
 

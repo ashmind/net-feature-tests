@@ -9,7 +9,7 @@ namespace FeatureTests.Shared {
     [AttributeUsage(AttributeTargets.Method, AllowMultiple = false)]
     public class FeatureAttribute : FactAttribute {
         protected override IEnumerable<ITestCommand> EnumerateTestCommands(IMethodInfo method) {
-            return LibraryProvider.GetAdapters(method.GetType().Assembly)
+            return LibraryProvider.GetAdapters(method.Class.Type.Assembly)
                                   .Select(adapter => new FeatureTestCommand(method, adapter));
         }
     }
