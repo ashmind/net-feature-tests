@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace FeatureTests.On.ObjectMappers.TestTypes {
-    public class TargetWithSingleProperty<T> {
+    public class ObjectWithSingleProperty<T> {
         public T Value { get; set; }
     }
 }

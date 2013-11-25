@@ -9,9 +9,9 @@ using Xunit;
 
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(1)]
-    [DisplayName("Direct match")]
+    [DisplayName("Primitive conversion")]
     [Description("The simplest test: mapping between primitive values.")]
-    public class BasicTests {
+    public class PrimitiveConversionTests {
         [Feature]
         [DisplayName("string ⇒ string")]
         public void StringToString(IObjectMapperAdapter mapper) {
@@ -49,10 +49,10 @@ namespace FeatureTests.On.ObjectMappers {
         }
 
         private static void AssertPrimitiveMappingWorksFor<TSource, TTarget>(IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) {
-            mapper.CreateMap<SourceWithSingleProperty<TSource>, TargetWithSingleProperty<TTarget>>();
+            mapper.CreateMap<ObjectWithSingleProperty<TSource>, ObjectWithSingleProperty<TTarget>>();
 
-            var source = new SourceWithSingleProperty<TSource> { Value = sourceValue };
-            var result = mapper.Map<TargetWithSingleProperty<TTarget>>(source);
+            var source = new ObjectWithSingleProperty<TSource> { Value = sourceValue };
+            var result = mapper.Map<ObjectWithSingleProperty<TTarget>>(source);
             Assert.Equal(expectedValue, result.Value);
         }
     }

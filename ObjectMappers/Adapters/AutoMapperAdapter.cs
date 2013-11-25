@@ -7,7 +7,7 @@ using AutoMapper;
 namespace FeatureTests.On.ObjectMappers.Adapters {
     public class AutoMapperAdapter : ObjectMapperAdapterBase {
         private readonly ConfigurationStore configuration;
-        private readonly MappingEngine engine;
+        private MappingEngine engine;
 
         public AutoMapperAdapter() {
             this.configuration = new ConfigurationStore(new TypeMapFactory(), Enumerable.Empty<IObjectMapper>());

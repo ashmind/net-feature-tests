@@ -97,15 +97,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\AutoMapperAdapter.cs" />
+    <Compile Include="Adapters\EasyMapperAdapter.cs" />
     <Compile Include="Adapters\OoMapperAdapter.cs" />
     <Compile Include="Adapters\ValueInjecterAdapter.cs" />
     <Compile Include="Adapters\EmitMapperAdapter.cs" />
     <Compile Include="Adapters\ObjectMapperAdapterBase.cs" />
     <Compile Include="Adapters\IObjectMapperAdapter.cs" />
     <Compile Include="1_DirectTests.cs" />
+    <Compile Include="2_CollectionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestTypes\TargetWithSingleProperty.cs" />
-    <Compile Include="TestTypes\SourceWithSingleProperty.cs" />
+    <Compile Include="TestTypes\ObjectWithSingleProperty.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Html\Labels.json" />
