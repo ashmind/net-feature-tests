@@ -62,8 +62,7 @@ namespace FeatureTests.Runner.Sources {
 
             var package = this.packageCache.GetPackage(library.PackageId);
             if (package.ProjectUrl == null) {
-                cell.State = FeatureState.Concern;
-                cell.DisplayValue = "unknown";
+                FillWithNA(cell);
                 return;
             }
 

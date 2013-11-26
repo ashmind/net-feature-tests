@@ -23,13 +23,7 @@ namespace FeatureTests.On.ObjectMappers {
         public void CollectionToICollection(IObjectMapperAdapter mapper) {
             AssertListMappingWorksFor(mapper, new Collection<int> { 5 }, ((ICollection<int>)new[] { 5 }));
         }
-
-        [Feature]
-        [DisplayName("Collection ⇒ Collection")]
-        public void CollectionToCollection(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new Collection<int> { 5 }, new Collection<int> { 5 });
-        }
-
+        
         [Feature]
         [DisplayName("List ⇒ IEnumerable")]
         public void ListToEnumerable(IObjectMapperAdapter mapper) {
@@ -49,12 +43,6 @@ namespace FeatureTests.On.ObjectMappers {
         }
 
         [Feature]
-        [DisplayName("List ⇒ List")]
-        public void ListToList(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new List<int> { 5 }, new List<int> { 5 });
-        }
-
-        [Feature]
         [DisplayName("HashSet ⇒ IEnumerable")]
         public void HashSetToEnumerable(IObjectMapperAdapter mapper) {
             AssertListMappingWorksFor(mapper, new HashSet<int> { 5 }, Enumerable.Repeat(5, 1));
@@ -64,12 +52,6 @@ namespace FeatureTests.On.ObjectMappers {
         [DisplayName("HashSet ⇒ ISet")]
         public void HashSetToISet(IObjectMapperAdapter mapper) {
             AssertListMappingWorksFor(mapper, new HashSet<int> { 5 }, ((ISet<int>)new HashSet<int> { 5 }));
-        }
-
-        [Feature]
-        [DisplayName("HashSet ⇒ HashSet")]
-        public void HashSetToHashSet(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new HashSet<int> { 5 }, new HashSet<int> { 5 });
         }
 
         private static void AssertListMappingWorksFor<TSourceCollection, TTargetCollection>(IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) 

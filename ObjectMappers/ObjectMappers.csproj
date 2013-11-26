@@ -73,9 +73,6 @@
     <Reference Include="Pelusoft.EasyMapper">
       <HintPath>..\#packages\EasyMapper.1.0.2\lib\net45\Pelusoft.EasyMapper.dll</HintPath>
     </Reference>
-    <Reference Include="Slapper">
-      <HintPath>..\#packages\Slapper.AutoMapper.1.0.0.5\lib\Slapper.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.ComponentModel.Composition.Registration" />
@@ -97,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Adapters\AutoMapperAdapter.cs" />
+    <Compile Include="Adapters\fFastMapperAdapter.cs" />
     <Compile Include="Adapters\EasyMapperAdapter.cs" />
     <Compile Include="Adapters\OoMapperAdapter.cs" />
     <Compile Include="Adapters\ValueInjecterAdapter.cs" />
