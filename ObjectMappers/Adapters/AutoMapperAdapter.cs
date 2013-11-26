@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using AutoMapper;
+using AutoMapper.Mappers;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
     public class AutoMapperAdapter : ObjectMapperAdapterBase {
@@ -10,7 +11,7 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
         private MappingEngine engine;
 
         public AutoMapperAdapter() {
-            this.configuration = new ConfigurationStore(new TypeMapFactory(), Enumerable.Empty<IObjectMapper>());
+            this.configuration = new ConfigurationStore(new TypeMapFactory(), MapperRegistry.Mappers);
             this.engine = new MappingEngine(this.configuration);
         }
 

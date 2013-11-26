@@ -26,9 +26,7 @@
       
       <h1>@Model.Labels.Title</h1>
 
-      <nav class="toc">
-        <div>ABCD</div>
-      </nav>
+      <nav class="toc"></nav>
 
       <div class="content">
         <!-- TODO: move this to a separate (navigable) file -->
@@ -53,12 +51,11 @@
         <!-- End of TODO -->
 
         @foreach (var table in Model.Tables) {
-          var tableLinkName = GenerateAnchor(table.DisplayName);
+          var tableDisplayName = ((table.Key == MetadataKeys.GeneralInfoTable) ? ((string)Model.Labels.GeneralInfo) : null) ?? @table.DisplayName;
+          var tableLinkName = GenerateAnchor(tableDisplayName);
           
         <section>
-          <h2 id="@tableLinkName">
-            @(((table.Key == MetadataKeys.GeneralInfoTable) ? Model.Labels.GeneralInfo : null) ?? @table.DisplayName)
-          </h2>
+          <h2 id="@tableLinkName">@tableDisplayName</h2>
           <div class="section-description">@FormatDescription(table.Description)</div>
         
           @{ var featuresWithDescription = table.Features.Where(f => !string.IsNullOrEmpty(f.Description)).ToArray(); }
@@ -73,7 +70,7 @@
 
           <table>
             <tr>
-              <th>&nbsp;</th>
+              <th>Name</th>
               @foreach (var feature in table.Features) {
                 <th title="@feature.Name">@feature.Name</th>
               }
