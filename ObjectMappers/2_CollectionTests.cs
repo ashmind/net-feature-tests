@@ -10,7 +10,7 @@ using Xunit;
 
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(2)]
-    [DisplayName("Collections")]
+    [DisplayName("Collections (writeable property)")]
     public class CollectionTests {
         [Feature]
         [DisplayName("Collection ⇒ IEnumerable")]
@@ -54,9 +54,9 @@ namespace FeatureTests.On.ObjectMappers {
             AssertListMappingWorksFor(mapper, new HashSet<int> { 5 }, ((ISet<int>)new HashSet<int> { 5 }));
         }
 
-        private static void AssertListMappingWorksFor<TSourceCollection, TTargetCollection>(IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) 
+        private static void AssertListMappingWorksFor<TSourceCollection, TTargetCollection>(IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue)
             where TSourceCollection : IEnumerable<int>
-            where TTargetCollection : IEnumerable<int>
+            where TTargetCollection : IEnumerable<int> 
         {
             mapper.CreateMap<ObjectWithSingleProperty<TSourceCollection>, ObjectWithSingleProperty<TTargetCollection>>();
 
