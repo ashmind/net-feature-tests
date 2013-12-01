@@ -1,12 +1,5 @@
 ﻿@import url(http://fonts.googleapis.com/css?family=Open+Sans);
 
-@media only screen and (max-width: 760px) {
-    .container {
-        padding: 0;
-        min-width: 0;
-    }
-}
-
 html {
     margin: 0;
     padding: 0;
@@ -18,14 +11,12 @@ body {
     padding: 0;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
 .main-nav {
-    height: 50px;
-    border-top: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    border-right: 1px solid #ccc;
 }
 
 .main-nav ul, .main-nav li {
@@ -39,40 +30,39 @@ body {
     height: 100%;
 }
 
-.main-nav a {
-    color: black;
+.toc {
+    position: absolute;
+}
+
+.toc ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.toc a {
+    color: #000;
     text-decoration: none;
+    display: block;
+    padding: 5px 10px;
+}
 
-    font-size: 110%;
-
-    display: inline-block;
-    height: 100%;
-    line-height: 50px;
-    
-    padding-right: 10px;
+.toc .toc-h2 a {
     padding-left: 10px;
-
-    opacity: 0.4;
 }
 
-.main-nav a:hover {
-    text-decoration: none;
+.toc .toc-h3 a {
+    padding-left: 20px;
 }
 
-.main-nav .current a {
-    opacity: 1;
-}
-
-.main-nav li:first-child a {
-    border-bottom: 5px solid #4684EE;
-}
-
-.main-nav li:nth-child(2) a {
-    border-bottom: 5px solid #FF9900;
+.toc .toc-active {
+    background-color: #eee;
 }
 
 .content {
-    margin-left: 220px;
+    position: absolute;
+    left: 220px;
+    right: 20px;
 }
 
 h1, h2 {
@@ -133,16 +123,17 @@ dd + dt {
 table {
     margin: 0;
     border: 0;
+    table-layout: fixed;
     border-collapse: collapse;
     
     margin-top: 1rem;
 
     font-size: 90%;
+    width: 100%;
 }
 
 th {
     font-weight: normal;
-    max-width: 10em;
     background-color: #ccc;
 
     overflow: hidden;
@@ -150,7 +141,7 @@ th {
 }
 
 th, td {
-    padding: 0.2rem;
+    padding: 3px;
     text-align: center;
 }
 
@@ -158,17 +149,20 @@ td {
     background-color: #eee;
 }
 
-td.framework-name, th:first-child {
+td.row-name, th:first-child {
     text-align: left;
-    padding-left: 0.6rem;
-    padding-right: 0.6rem;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    width: 140px;
+    max-width: 140px;
 }
 
-td.number, td.date {
+/*td.number, td.date {
     text-align: right;
     padding-left: 0.6rem;
     padding-right: 0.6rem;
-}
+}*/
 
 td.success {
     background-color: #c6efce;
@@ -206,39 +200,4 @@ a:hover {
 
 td.success a, td.failure a, td.concern a, td.skipped a {
     color: inherit;
-}
-
-.toc-wrapper {
-    position: absolute;
-}
-
-.toc {
-    position: absolute;
-    width: 200px;
-    border: 1px solid #ccc;
-}
-
-.toc ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.toc a {
-    color: #000;
-    text-decoration: none;
-    display: block;
-    padding: 5px 10px;
-}
-
-.toc .toc-h2 a {
-    padding-left: 10px;
-}
-
-.toc .toc-h3 a {
-    padding-left: 20px;
-}
-
-.toc .toc-active {
-    background-color: #eee;
 }

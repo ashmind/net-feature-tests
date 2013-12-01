@@ -41,9 +41,9 @@ namespace FeatureTests.Shared.ResultData {
             get { return this.cells[Tuple.Create(library.Name, featureKey)]; }
         }
 
-        public IEnumerable<Tuple<ILibrary, IEnumerable<FeatureCell>>> GetRows() {
-            return from library in this.Libraries
-                   select Tuple.Create(library, from feature in this.Features select this[library, feature]);
+        public IEnumerable<Tuple<Feature, IEnumerable<FeatureCell>>> GetFeatureRows() {
+            return from feature in this.Features
+                   select Tuple.Create(feature, from library in this.Libraries select this[library, feature]);
         }
 
         public int GetScore(ILibrary library) {

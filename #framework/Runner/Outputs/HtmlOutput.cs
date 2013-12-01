@@ -62,7 +62,7 @@ namespace FeatureTests.Runner.Outputs {
                                        .Compile<HtmlResultModel>(templateSource);
 
 
-                var model = this.GetModel(arguments, allArgumentsForThisRun);
+                var model = this.BuildModel(arguments, allArgumentsForThisRun);
                 var templateResult = template.Render(model);
                 
                 File.WriteAllText(targetPath, templateResult);
@@ -74,21 +74,31 @@ namespace FeatureTests.Runner.Outputs {
             }
         }
 
-        private HtmlResultModel GetModel(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
+        private HtmlResultModel BuildModel(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
             var labels = this.GetLabels(arguments);
-            var links = allArgumentsForThisRun.Select(a => {
-                var url = a.OutputNamePrefix + ".html";
-                var name = (string)GetLabels(a).LinkTitle;
-
-                return new HtmlNavigationLink(url, name) {
-                    IsCurrent = (a == arguments)
-                };
-            }).ToArray();
+            var links = this.BuildNavigationLinks(arguments, allArgumentsForThisRun);
 
             return new HtmlResultModel(arguments.Tables, links) {
                 HtmlAfterAll = this.GetResource(arguments.Assembly, "AfterAll.html"),
                 Labels = labels
             };
+        }
+
+        private IReadOnlyList<NavigationLinkModel> BuildNavigationLinks(ResultOutputArguments currentArguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
+            var links = new List<NavigationLinkModel>();
+            foreach (var arguments in allArgumentsForThisRun) {
+                var url = arguments.OutputNamePrefix + ".html";
+                var name = (string)this.GetLabels(arguments).LinkTitle;
+                var link = new NavigationLinkModel(url, name) {
+                    IsTopLevelLinkToCurrentPage = (arguments == currentArguments)
+                };
+
+                //foreach (var table in arguments.Tables) {
+                    
+                //}
+                links.Add(link);
+            }
+            return links;
         }
 
         private dynamic GetLabels(ResultOutputArguments arguments) {

@@ -158,7 +158,7 @@
       },
       "Int32ToObject": {
         "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 51\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
       },
       "Int32ToString": {
         "result": "failure",
@@ -303,7 +303,7 @@
       },
       "Int32ToObject": {
         "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 23"
       },
       "Int32ToString": {
         "result": "failure",

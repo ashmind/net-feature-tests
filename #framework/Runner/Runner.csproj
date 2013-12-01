@@ -103,9 +103,9 @@
     <Compile Include="CommandLineArguments.cs" />
     <Compile Include="ConsoleEx.cs" />
     <Compile Include="Outputs\HtmlOutput.cs" />
-    <Compile Include="Outputs\Html\HtmlNavigationLink.cs" />
+    <Compile Include="Outputs\Html\NavigationLinkModel.cs" />
     <Compile Include="Outputs\Html\HtmlResultModel.cs" />
-    <Compile Include="Outputs\Html\HtmlTemplateBase.cs" />
+    <Compile Include="Outputs\Html\Templates\HtmlTemplateBase.cs" />
     <Compile Include="Outputs\IResultOutput.cs" />
     <Compile Include="Outputs\JsonOutput.cs" />
     <Compile Include="Outputs\ResultOutputArguments.cs" />
@@ -129,7 +129,7 @@
     <Compile Include="Sources\3_FeatureTestTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Outputs\Html\FeatureTests.cshtml" />
+    <None Include="Outputs\Html\Templates\FeatureTests.cshtml" />
     <None Include="Service References\NuGetGallery\Reference.datasvcmap">
       <Generator>DataServicesCoreClientGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -162,10 +162,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Outputs\Html\css\main.css" />
-    <None Include="Outputs\Html\js\jquery.sticky.js" />
-    <None Include="Outputs\Html\js\jquery.toc.js" />
+    <None Include="Outputs\Html\Templates\js\jquery.sticky.js" />
+    <None Include="Outputs\Html\Templates\js\jquery.toc.js" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Outputs\Html\Templates\css\main.css" />
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

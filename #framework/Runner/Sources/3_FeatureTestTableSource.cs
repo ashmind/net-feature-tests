@@ -56,22 +56,22 @@ namespace FeatureTests.Runner.Sources {
         private async Task ApplyRunResultToCell(FeatureCell cell, Task<FeatureTestResult> resultTask) {
             var result = await resultTask;
             if (result.Kind == FeatureTestResultKind.Success) {
-                cell.DisplayValue = "supported";
+                cell.DisplayValue = "pass";
                 cell.State = FeatureState.Success;
             }
             else if (result.Kind == FeatureTestResultKind.Failure) {
-                cell.DisplayValue = "failed";
+                cell.DisplayValue = "fail";
                 cell.State = FeatureState.Failure;
                 var exceptionString = this.RemoveLocalPaths(result.Exception.ToString());
                 cell.RawError = exceptionString;
                 cell.DisplayUri = this.ConvertToDataUri(exceptionString);
             }
             else if (result.Kind == FeatureTestResultKind.SkippedDueToDependency) {
-                cell.DisplayValue = "skipped";
+                cell.DisplayValue = "n/a";
                 cell.State = FeatureState.Skipped;
             }
             else {
-                cell.DisplayValue = "see comment";
+                cell.DisplayValue = "note";
                 cell.State = FeatureState.Concern;
             }
             cell.Comment = result.Message;
