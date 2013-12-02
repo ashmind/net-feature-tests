@@ -35,10 +35,10 @@ namespace FeatureTests.On.ObjectMappers {
             where TExposedTargetCollection : IEnumerable<int>
             where TActualTargetCollection : TExposedTargetCollection, new() 
         {
-            mapper.CreateMap<ObjectWithSingleProperty<TSourceCollection>, ObjectWithSingleReadOnlyProperty<TExposedTargetCollection, TActualTargetCollection>>();
+            mapper.CreateMap<Wrapper<TSourceCollection>, WrapperWithReadOnly<TExposedTargetCollection, TActualTargetCollection>>();
 
-            var source = new ObjectWithSingleProperty<TSourceCollection> { Value = sourceValue };
-            var result = mapper.Map<ObjectWithSingleReadOnlyProperty<TExposedTargetCollection, TActualTargetCollection>>(source);
+            var source = new Wrapper<TSourceCollection> { Value = sourceValue };
+            var result = mapper.Map<WrapperWithReadOnly<TExposedTargetCollection, TActualTargetCollection>>(source);
 
             Assert.NotNull(result.Value);
             Assert.Equal(sourceValue.ToArray(), result.Value.ToArray());

@@ -248,7 +248,7 @@ td.concern .with-tooltip {
 	line-height: normal;
 	padding: 8px;
 	overflow: hidden;
-    max-width: 300px;
+    max-width: 600px;
 }
 
 .tooltipster-custom .tooltipster-content p {

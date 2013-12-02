@@ -39,6 +39,7 @@
             <li><a href="ObjectMappers.html#PrimitiveConversion" data-same-page>Primitive conversion</a></li>
             <li><a href="ObjectMappers.html#Collections" data-same-page>Collections (writeable property)</a></li>
             <li><a href="ObjectMappers.html#Collections" data-same-page>Collections (read-only property)</a></li>
+            <li><a href="ObjectMappers.html#ConstructorParameters" data-same-page>Constructor parameters</a></li>
           </ul>
         </li>
       </ul>
@@ -140,17 +141,17 @@ n/a              </td>
             <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
               <td class="neutral number">
-593 699              </td>
+593 814              </td>
               <td class="neutral number">
 42              </td>
               <td class="neutral number">
-7 959              </td>
+7 960              </td>
               <td class="neutral number">
 195              </td>
               <td class="neutral number">
 1 298              </td>
               <td class="neutral number">
-7 959              </td>
+7 960              </td>
           </tr>
           <tr>
             <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -159,16 +160,16 @@ n/a              </td>
 
 <p>The score is only for quick comparison, please read individual tables for the details.</p>
 ">Total Score</span></td>
-              <td class="concern">
-69%              </td>
-              <td class="failure">
-6%              </td>
-              <td class="failure">
-25%              </td>
-              <td class="failure">
-6%              </td>
               <td class="success">
-75%              </td>
+72%              </td>
+              <td class="failure">
+6%              </td>
+              <td class="failure">
+22%              </td>
+              <td class="failure">
+6%              </td>
+              <td class="concern">
+67%              </td>
               <td class="failure">
 6%              </td>
           </tr>
@@ -443,7 +444,7 @@ Int32 -&gt; Int64
 System.Int32 -&gt; System.Int64
 
 Destination path:
-ObjectWithSingleProperty`1.Value.Value
+Wrapper`1.Value.Value
 
 Source value:
 123
@@ -512,7 +513,7 @@ String -&gt; Int32
 System.String -&gt; System.Int32
 
 Destination path:
-ObjectWithSingleProperty`1.Value.Value
+Wrapper`1.Value.Value
 
 Source value:
 123
@@ -953,7 +954,7 @@ Actual:   Int32[] {  }
               </td>
               <td class="failure">
                   <span title="System.Security.VerificationException: Operation could destabilize the runtime.
-   at lambda_method(Closure , ObjectWithSingleProperty`1 , ObjectWithSingleReadOnlyProperty`2 )
+   at lambda_method(Closure , Wrapper`1 , WrapperWithReadOnly`2 )
    at Grax.fFastMapper.fFastMapperFluent`2.Map(TLeft source, TRight destination)
    at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
    at lambda_method(Closure )
@@ -1110,6 +1111,157 @@ Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\3_CollectionAsReadOnlyPropertyTests.cs:line 44
    at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\3_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
+              </td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h2 id="ConstructorParameters">Constructor parameters</h2>
+        <div class="section-description"></div>
+        
+        <table>
+          <tr>
+            <th>Name</th>
+              <th><span>AutoMapper</span></th>
+              <th><span>EasyMapper</span></th>
+              <th><span>EmitMapper</span></th>
+              <th><span>fFastMapper</span></th>
+              <th><span>OoMapper</span></th>
+              <th><span>ValueInjecter</span></th>
+          </tr>
+
+          <tr>
+            <td class="row-name"><span >Simple</span></td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="System.ArgumentException: GenericArguments[0], &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]&#39;, on &#39;TDestination Map[TDestination](System.Object)&#39; violates the constraint of type &#39;TDestination&#39;. ---&gt; System.Security.VerificationException: Method Pelusoft.EasyMapper.EasyMapper.Map: type argument &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]&#39; violates the constraint of type parameter &#39;TDestination&#39;.
+   at System.RuntimeMethodHandle.GetStubIfNeeded(RuntimeMethodHandleInternal method, RuntimeType declaringType, RuntimeType[] methodInstantiation)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   --- End of inner exception stack trace ---
+   at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.RewriteMethodIfRequired(MethodInfo method) in [removed]\GenericRewritingVisitor.cs:line 39
+   at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.VisitMethodCall(MethodCallExpression node) in [removed]\GenericRewritingVisitor.cs:line 16
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.VisitLambda[T](Expression`1 node) in [removed]\GenericRewritingVisitor.cs:line 59
+   at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 22
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 16
+   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\EasyMapperAdapter.cs:line 24
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 21">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.NullReferenceException: Object reference not set to an instance of an object.
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 23">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean&amp; canBeCached, RuntimeMethodHandleInternal&amp; ctor, Boolean&amp; bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.Activator.CreateInstance[T]()
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 20
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 21">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.ArgumentException: Type &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]&#39; does not have a default constructor
+   at System.Linq.Expressions.Expression.New(Type type)
+   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 15
+   at OoMapper.CachedObjectMapperBuilder.&lt;&gt;c__DisplayClass1.&lt;Build&gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 35
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass3.&lt;BuildSource&gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass9.&lt;GetCompiledNew&gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 18
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 21">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean&amp; canBeCached, RuntimeMethodHandleInternal&amp; ctor, Boolean&amp; bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.Activator.CreateInstance[T]()
+   at FeatureTests.On.ObjectMappers.Adapters.ValueInjecterAdapter.Map[TTarget](Object source) in [removed]\ValueInjecterAdapter.cs:line 27
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 21">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >Nested</span></td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="System.ArgumentException: GenericArguments[0], &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]]&#39;, on &#39;TDestination Map[TDestination](System.Object)&#39; violates the constraint of type &#39;TDestination&#39;. ---&gt; System.Security.VerificationException: Method Pelusoft.EasyMapper.EasyMapper.Map: type argument &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]]&#39; violates the constraint of type parameter &#39;TDestination&#39;.
+   at System.RuntimeMethodHandle.GetStubIfNeeded(RuntimeMethodHandleInternal method, RuntimeType declaringType, RuntimeType[] methodInstantiation)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   --- End of inner exception stack trace ---
+   at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.RewriteMethodIfRequired(MethodInfo method) in [removed]\GenericRewritingVisitor.cs:line 39
+   at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.VisitMethodCall(MethodCallExpression node) in [removed]\GenericRewritingVisitor.cs:line 16
+   at System.Linq.Expressions.MethodCallExpression.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.VisitLambda[T](Expression`1 node) in [removed]\GenericRewritingVisitor.cs:line 59
+   at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
+   at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 22
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 16
+   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\EasyMapperAdapter.cs:line 24
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 33">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.NullReferenceException: Object reference not set to an instance of an object.
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 35">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean&amp; canBeCached, RuntimeMethodHandleInternal&amp; ctor, Boolean&amp; bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.Activator.CreateInstance[T]()
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 20
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 33">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.ArgumentException: Type &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]]&#39; does not have a default constructor
+   at System.Linq.Expressions.Expression.New(Type type)
+   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 15
+   at OoMapper.CachedObjectMapperBuilder.&lt;&gt;c__DisplayClass1.&lt;Build&gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 35
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass3.&lt;BuildSource&gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass9.&lt;GetCompiledNew&gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 18
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 33">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.MissingMethodException: No parameterless constructor defined for this object.
+   at System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean&amp; canBeCached, RuntimeMethodHandleInternal&amp; ctor, Boolean&amp; bNeedSecurityCheck)
+   at System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
+   at System.Activator.CreateInstance[T]()
+   at FeatureTests.On.ObjectMappers.Adapters.ValueInjecterAdapter.Map[TTarget](Object source) in [removed]\ValueInjecterAdapter.cs:line 27
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\4_ConstructorTests.cs:line 33">fail</span>
               </td>
           </tr>
         </table>

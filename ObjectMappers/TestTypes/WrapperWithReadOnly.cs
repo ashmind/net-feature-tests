@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace FeatureTests.On.ObjectMappers.TestTypes {
-    public class ObjectWithSingleReadOnlyProperty<TExposed, TActual>
+    public class WrapperWithReadOnly<TExposed, TActual>
         where TActual : TExposed, new() 
     {
         private readonly TActual value;
 
-        public ObjectWithSingleReadOnlyProperty() {
+        public WrapperWithReadOnly() {
             this.value = new TActual();
         }
 

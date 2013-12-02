@@ -58,10 +58,10 @@ namespace FeatureTests.On.ObjectMappers {
             where TSourceCollection : IEnumerable<int>
             where TTargetCollection : IEnumerable<int> 
         {
-            mapper.CreateMap<ObjectWithSingleProperty<TSourceCollection>, ObjectWithSingleProperty<TTargetCollection>>();
+            mapper.CreateMap<Wrapper<TSourceCollection>, Wrapper<TTargetCollection>>();
 
-            var source = new ObjectWithSingleProperty<TSourceCollection> { Value = sourceValue };
-            var result = mapper.Map<ObjectWithSingleProperty<TTargetCollection>>(source);
+            var source = new Wrapper<TSourceCollection> { Value = sourceValue };
+            var result = mapper.Map<Wrapper<TTargetCollection>>(source);
             Assert.NotNull(result.Value);
             Assert.Equal(expectedValue.ToArray(), result.Value.ToArray());
         }

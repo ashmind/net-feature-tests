@@ -49,10 +49,10 @@ namespace FeatureTests.On.ObjectMappers {
         }
 
         private static void AssertPrimitiveMappingWorksFor<TSource, TTarget>(IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) {
-            mapper.CreateMap<ObjectWithSingleProperty<TSource>, ObjectWithSingleProperty<TTarget>>();
+            mapper.CreateMap<Wrapper<TSource>, Wrapper<TTarget>>();
 
-            var source = new ObjectWithSingleProperty<TSource> { Value = sourceValue };
-            var result = mapper.Map<ObjectWithSingleProperty<TTarget>>(source);
+            var source = new Wrapper<TSource> { Value = sourceValue };
+            var result = mapper.Map<Wrapper<TTarget>>(source);
             Assert.Equal(expectedValue, result.Value);
         }
     }
