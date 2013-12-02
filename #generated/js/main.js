@@ -1,7 +1,52 @@
 ﻿$(function() {
+    var $body = $('body');
+
     // setup tooltips
-    $('[title]').tooltipster({ theme: 'tooltipster-custom', trigger: 'hover' })
-                .addClass('with-tooltip');
+    (function() {
+        var $currentTrigger = $();
+        $('[title]').tooltipster({ theme: 'tooltipster-custom', trigger: 'custom' })
+                    .addClass('with-tooltip')
+                    .click(function() {
+                        var $this = $(this);
+                        $this.data('clicked', true);
+
+                        if ($this === $currentTrigger)
+                            return;
+
+                        $this.tooltipster('show');
+                        $currentTrigger = $this;
+                    })
+                    .hover(
+                        function() {
+                            var $this = $(this);
+                            
+                            $currentTrigger.data('clicked', false)
+                                           .tooltipster('hide');
+                            $this.tooltipster('show');
+                            $currentTrigger = $this;
+                        },
+                        function() {
+                            var $this = $(this);
+                            if ($this.data('clicked'))
+                                return;
+
+                            $this.tooltipster('hide');
+                            $currentTrigger = $();
+                        }
+                    );
+
+
+        $('body').click(function(e) {
+            var $target = $(e.target);
+            if ($target.is('.with-tooltip') || $target.parents('.tooltipster-base').length > 0)
+                return;
+            
+            $currentTrigger.data('clicked', false)
+                           .tooltipster('hide');
+            
+            $currentTrigger = $();
+        });
+    })();
 
     // setup width
     $('.content').wrapInner('<div class="content-wrapper"></div>')
@@ -51,7 +96,6 @@
 
     // setup narrow detection (not currently used)
     (function() {
-        var $body = $('body');
         var $widthTestTd = $('td:not(.row-name)').eq(0);
         var reactToWidth = function() {
             $body.toggleClass('narrow-table-headers', $widthTestTd.width() < 74);

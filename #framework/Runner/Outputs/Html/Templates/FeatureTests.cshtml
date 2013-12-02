@@ -80,8 +80,8 @@
             <td class="row-name"><span @RawHtml(!feature.Description.IsNullOrWhiteSpace() ? "title=\"" + FormatDescription(feature.Description) + "\"" : null)>@feature.Name</span></td>
             @foreach (var cell in row.Item2) {
               <td class="@GetCssClassesForCell(cell)">
-              @if (cell.HasComment) {
-                  <span title="@cell.Comment">@FormatDisplayValue(cell.DisplayValue)</span>
+              @if (cell.HasDetails) {
+                  <span title="@cell.Details">@FormatDisplayValue(cell.DisplayValue)</span>
               }
               else if (cell.DisplayUri != null) {
                   <a href="@cell.DisplayUri">@FormatDisplayValue(cell.DisplayValue)</a>

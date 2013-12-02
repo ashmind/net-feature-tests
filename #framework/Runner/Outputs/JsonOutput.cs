@@ -48,7 +48,7 @@ namespace FeatureTests.Runner.Outputs {
             var key = this.GetFeatureName(feature);
             var value = new {
                 result = cell.State.ToString().ToLowerInvariant(),
-                comment = cell.Comment,
+                comment = cell.Details,
                 error = cell.RawError
             };
             

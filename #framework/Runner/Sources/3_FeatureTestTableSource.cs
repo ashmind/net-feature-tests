@@ -57,23 +57,26 @@ namespace FeatureTests.Runner.Sources {
             if (result.Kind == FeatureTestResultKind.Success) {
                 cell.DisplayValue = "pass";
                 cell.State = FeatureState.Success;
+                cell.Details = result.Message;
             }
             else if (result.Kind == FeatureTestResultKind.Failure) {
+                var exceptionString = this.RemoveLocalPaths(result.Exception.ToString());
+
                 cell.DisplayValue = "fail";
                 cell.State = FeatureState.Failure;
-                var exceptionString = this.RemoveLocalPaths(result.Exception.ToString());
+                cell.Details = exceptionString;
                 cell.RawError = exceptionString;
-                cell.DisplayUri = this.ConvertToDataUri(exceptionString);
             }
             else if (result.Kind == FeatureTestResultKind.SkippedDueToDependency) {
                 cell.DisplayValue = "n/a";
                 cell.State = FeatureState.Skipped;
+                cell.Details = result.Message;
             }
             else {
                 cell.DisplayValue = "note";
                 cell.State = FeatureState.Concern;
+                cell.Details = result.Message;
             }
-            cell.Comment = result.Message;
         }
 
         private Feature ConvertToFeature(MethodInfo test) {
@@ -103,11 +106,6 @@ namespace FeatureTests.Runner.Sources {
 
                 return match.Value;
             });
-        }
-
-        private Uri ConvertToDataUri(string value) {
-            var base64 = Convert.ToBase64String(Encoding.UTF8.GetBytes(value));
-            return new Uri("data:text/plain;base64," + base64);
         }
     }
 }
