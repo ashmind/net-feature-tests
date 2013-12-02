@@ -7,6 +7,7 @@ html {
 
 body {
     font-family: "Segoe UI", "Open Sans", sans-serif;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
@@ -15,7 +16,7 @@ body {
     position: fixed;
     top: 0;
     bottom: 0;
-    width: 200px;
+    width: 250px;
     border-right: 1px solid #ccc;
 }
 
@@ -25,43 +26,28 @@ body {
     padding: 0;
 }
 
-.main-nav li {
-    display: inline-block;
-    height: 100%;
+.main-nav li > ul {
+    padding-left: 20px;
 }
 
-.toc {
-    position: absolute;
-}
-
-.toc ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-.toc a {
+.main-nav a {
     color: #000;
     text-decoration: none;
     display: block;
     padding: 5px 10px;
 }
 
-.toc .toc-h2 a {
-    padding-left: 10px;
+.main-nav a:hover {
+    text-decoration: none;
 }
 
-.toc .toc-h3 a {
-    padding-left: 20px;
-}
-
-.toc .toc-active {
+.main-nav .selected {
     background-color: #eee;
 }
 
 .content {
     position: absolute;
-    left: 220px;
+    left: 270px;
     right: 20px;
 }
 
@@ -135,18 +121,35 @@ table {
 th {
     font-weight: normal;
     background-color: #ccc;
+}
+
+/*th span {
+    -webkit-transition: all 1s;
+    transition: all 1s;
+}
+
+.narrow-table-headers th {
+    height: 90px;
+}
+
+.narrow-table-headers th span {
+    display: block;
+    text-align: left;
+    -webkit-transform: translateY(-50%) rotate(90deg) translateX(10px);
+    transform: translateY(-50%) rotate(90deg) translateX(10px);
+}*/
+
+th, td {
+    padding: 3px;
+    text-align: center;
 
     overflow: hidden;
     text-overflow: ellipsis;
 }
 
-th, td {
-    padding: 3px;
-    text-align: center;
-}
-
 td {
     background-color: #eee;
+    white-space: nowrap;
 }
 
 td.row-name, th:first-child {
@@ -154,8 +157,12 @@ td.row-name, th:first-child {
     padding-left: 10px;
     padding-right: 10px;
 
-    width: 140px;
-    max-width: 140px;
+    width: 160px;
+    max-width: 160px;
+}
+
+td.row-name {
+    white-space: normal;
 }
 
 /*td.number, td.date {
@@ -200,4 +207,54 @@ a:hover {
 
 td.success a, td.failure a, td.concern a, td.skipped a {
     color: inherit;
+}
+
+.with-tooltip {
+    border-bottom: 1px dashed #aaa;
+    cursor: help;
+}
+
+td.success .with-tooltip {
+    border-bottom-color: #006100;
+}
+
+td.failure .with-tooltip {
+    border-bottom-color: #9c0006;
+}
+
+td.skipped .with-tooltip {
+    border-bottom-color: #c0c0c0;
+}
+
+td.concern .with-tooltip {
+    border-bottom-color: #9c6500;
+}
+
+/*.with-tooltip:after {
+    content: ' ?';
+    color: #aaa;
+}*/
+
+.tooltipster-custom {
+    background-color: #888;
+    border: 1px solid #888;
+    color: white;
+}
+
+/* Use this next selector to style things like font-size and line-height: */
+.tooltipster-custom .tooltipster-content {
+	font-size: 16px;
+	line-height: normal;
+	padding: 8px;
+	overflow: hidden;
+    max-width: 300px;
+}
+
+.tooltipster-custom .tooltipster-content p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.tooltipster-custom .tooltipster-content p+p {
+    margin-top: 1em;
 }

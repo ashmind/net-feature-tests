@@ -33,12 +33,12 @@ namespace FeatureTests.Runner.Sources {
 
             var total = new Feature(MetadataKeys.TotalFeature, "Total Score") {
                 Description = "Total Score is based on total amount of feature tests passed." + Environment.NewLine + Environment.NewLine +
-                              "Most tables give one point per success, but some (such as List support) give one point per table.  " + Environment.NewLine +
+                              "Most tables give one point per success, but some (such as List support) give one point per table.  " + Environment.NewLine + Environment.NewLine +
                               "The score is only for quick comparison, please read individual tables for the details."
             };
 
             var libraries = LibraryProvider.GetAdapters(featureTestAssembly).ToArray();
-            var table = new FeatureTable(MetadataKeys.GeneralInfoTable, @"{This table should be named by Outputs}", libraries, new[] { version, released, url, downloads, total }) {
+            var table = new FeatureTable(MetadataKeys.GeneralInfoTable, @"General information", libraries, new[] { version, released, url, downloads, total }) {
                 Scoring = FeatureScoring.NotScored
             };
             

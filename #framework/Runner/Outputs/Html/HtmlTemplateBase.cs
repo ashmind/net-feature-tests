@@ -26,15 +26,6 @@ namespace FeatureTests.Runner.Outputs.Html {
             get { return base.Model; }
         }
 
-        protected string GenerateAnchor(string displayName) {
-            var result = displayName;
-            result = Regex.Replace(result, @"\([^)]+\)|\<[^>]+\>", "");
-            result = Regex.Replace(result, @"(?<=\W|$)\w", m => m.Value.ToUpperInvariant());
-            result = Regex.Replace(result, @"\W+", "");
-
-            return result;
-        }
-
         protected string GetCssClassesForCell(FeatureCell cell) {
             var classes = cell.State.ToString().ToLowerInvariant();
 
@@ -86,13 +77,26 @@ namespace FeatureTests.Runner.Outputs.Html {
         }
 
         protected new void WriteAttribute(string attribute, PositionTagged<string> prefix, PositionTagged<string> suffix, params AttributeValue[] values) {
-            base.Write(prefix.Value);
-            if (values != null) {
-                foreach (var attributeValue in values) {
-                    base.Write(attributeValue.Prefix.Value);
-                    var obj = attributeValue.Value.Value;
-                    this.Write(obj);
+            // skip null attributes
+            if (values == null || values.All(v => v.Value.Value == null))
+                return;
+
+            // special processing for booleans
+            if (values.Length == 1) {
+                var value = values[0].Value.Value;
+                if (value.Equals(false))
+                    return;
+
+                if (value.Equals(true)) {
+                    base.Write(attribute);
+                    return;
                 }
+            }
+
+            base.Write(prefix.Value);
+            foreach (var attributeValue in values) {
+                base.Write(attributeValue.Prefix.Value);
+                this.Write(attributeValue.Value.Value);
             }
             base.Write(suffix.Value);
         }

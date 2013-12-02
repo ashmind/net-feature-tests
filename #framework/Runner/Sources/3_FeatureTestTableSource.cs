@@ -9,7 +9,6 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AshMind.Extensions;
 using FeatureTests.Runner.Sources.FeatureTestSupport;
-using FeatureTests.Shared;
 using FeatureTests.Shared.InfrastructureSupport;
 using FeatureTests.Shared.ResultData;
 

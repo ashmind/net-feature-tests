@@ -4,7 +4,9 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.InteropServices;
+using System.Text.RegularExpressions;
 using AshMind.Extensions;
+using FeatureTests.Shared.ResultData;
 using Newtonsoft.Json;
 using RazorTemplates.Core;
 using FeatureTests.Runner.Outputs.Html;
@@ -76,29 +78,43 @@ namespace FeatureTests.Runner.Outputs {
 
         private HtmlResultModel BuildModel(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
             var labels = this.GetLabels(arguments);
-            var links = this.BuildNavigationLinks(arguments, allArgumentsForThisRun);
 
-            return new HtmlResultModel(arguments.Tables, links) {
+            var model = new HtmlResultModel(arguments.Tables) {
                 HtmlAfterAll = this.GetResource(arguments.Assembly, "AfterAll.html"),
                 Labels = labels
             };
+            BuildNavigationLinks(model.Navigation, arguments, allArgumentsForThisRun);
+            foreach (var table in arguments.Tables) {
+                model.TableIdMap.Add(table, this.GenerateTableId(table));
+            }
+
+            return model;
         }
 
-        private IReadOnlyList<NavigationLinkModel> BuildNavigationLinks(ResultOutputArguments currentArguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
-            var links = new List<NavigationLinkModel>();
+        private void BuildNavigationLinks(IList<NavigationLinkModel> navigation, ResultOutputArguments currentArguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
             foreach (var arguments in allArgumentsForThisRun) {
                 var url = arguments.OutputNamePrefix + ".html";
                 var name = (string)this.GetLabels(arguments).LinkTitle;
-                var link = new NavigationLinkModel(url, name) {
-                    IsTopLevelLinkToCurrentPage = (arguments == currentArguments)
-                };
+                var onCurrentPage = arguments == currentArguments;
 
-                //foreach (var table in arguments.Tables) {
-                    
-                //}
-                links.Add(link);
+                var link = new NavigationLinkModel(
+                    name, url, onCurrentPage,
+                    arguments.Tables.Select(t => new NavigationLinkModel(
+                        t.DisplayName, url + "#" + this.GenerateTableId(t), onCurrentPage
+                    )
+                 ));
+
+                navigation.Add(link);
             }
-            return links;
+        }
+
+        private string GenerateTableId(FeatureTable table) {
+            var result = table.DisplayName;
+            result = Regex.Replace(result, @"\([^)]+\)|\<[^>]+\>", "");
+            result = Regex.Replace(result, @"(?<=\W|$)\w", m => m.Value.ToUpperInvariant());
+            result = Regex.Replace(result, @"\W+", "");
+
+            return result;
         }
 
         private dynamic GetLabels(ResultOutputArguments arguments) {

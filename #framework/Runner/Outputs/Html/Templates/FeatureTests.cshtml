@@ -1,5 +1,6 @@
 ﻿@using System.Linq
 @using FeatureTests.Runner.Sources
+@using AshMind.Extensions
 @inherits FeatureTests.Runner.Outputs.Html.HtmlTemplateBase<FeatureTests.Runner.Outputs.Html.HtmlResultModel>
 
 <!DOCTYPE html>
@@ -8,16 +9,28 @@
 <html>
   <head>
     <title>@Model.Labels.Title</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no" />
+
+    <link rel='stylesheet' href='css/tooltipster.css' />
     <link rel='stylesheet' href='css/main.css' />
     
     <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery.toc.js"></script>
+    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
     <nav class="main-nav">
       <ul>
-      @foreach (var link in Model.NavigationLinks) {
-        <li class="@(link.IsTopLevelLinkToCurrentPage ? "current" : null)"><a href="@link.Url">@link.Name</a></li>
+      @foreach (var link in Model.Navigation) {
+        <li>
+          <a href="@link.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@link.Name</a>
+          <ul>
+          @foreach (var childLink in link.ChildLinks) {
+            <li><a href="@childLink.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@childLink.Name</a></li>
+          }
+          </ul>
+        </li>
       }
       </ul>
       
@@ -27,7 +40,7 @@
     <main class="content">
       <h1>@Model.Labels.Title</h1>
 
-      <!-- TODO: move this to a separate (navigable) file -->
+      <!-- TODO: move this to a separate (navigable) file
       <section>
         <h2 id="GeneralInformation">General information</h2>
         <div class="section-description">
@@ -46,49 +59,29 @@
           <p>Thanks for reading!</p>
         </div>
       </section>
-      <!-- End of TODO -->
+      End of TODO -->
 
       @foreach (var table in Model.Tables) {
-        var tableDisplayName = ((table.Key == MetadataKeys.GeneralInfoTable) ? ((string)Model.Labels.GeneralInfo) : null) ?? @table.DisplayName;
-        var tableLinkName = GenerateAnchor(tableDisplayName);
-          
       <section>
-        <h2 id="@tableLinkName">@tableDisplayName</h2>
+        <h2 id="@Model.TableIdMap[table]">@table.DisplayName</h2>
         <div class="section-description">@FormatDescription(table.Description)</div>
         
-        @{ var featuresWithDescription = table.Features.Where(f => !string.IsNullOrEmpty(f.Description)).ToArray(); }
-        @if (featuresWithDescription.Any()) {
-          <dl class="feature-descriptions">
-            @foreach (var feature in featuresWithDescription) {
-              <dt>@feature.Name</dt>
-              <dd>@FormatDescription(feature.Description)</dd>
-            }
-          </dl>
-        }
-
         <table>
           <tr>
             <th>Name</th>
             @foreach (var library in table.Libraries) {
-              <th title="@library.Name">@library.Name</th>
+              <th><span>@library.Name</span></th>
             }
           </tr>
-            
-          @{ var comments = table.GetFeatureRows().SelectMany(r => r.Item2)
-                                                  .Where(c => c.HasComment)
-                                                  .Select(c => c.Comment)
-                                                  .GroupBy(c => c)
-                                                  .Select((g, index) => new { comment = g.Key, index = index + 1 })
-                                                  .ToList(); } 
 
           @foreach (var row in table.GetFeatureRows()) {
+            var feature = row.Item1;
           <tr>
-            <td class="row-name">@row.Item1.Name</td>
+            <td class="row-name"><span @RawHtml(!feature.Description.IsNullOrWhiteSpace() ? "title=\"" + FormatDescription(feature.Description) + "\"" : null)>@feature.Name</span></td>
             @foreach (var cell in row.Item2) {
               <td class="@GetCssClassesForCell(cell)">
               @if (cell.HasComment) {
-                  var index = @comments.Single(x => x.comment == @cell.Comment).index;
-                  <a class="local" href="#@tableLinkName-note-@index">@FormatDisplayValue(cell.DisplayValue)<sup>@index</sup></a>
+                  <span title="@cell.Comment">@FormatDisplayValue(cell.DisplayValue)</span>
               }
               else if (cell.DisplayUri != null) {
                   <a href="@cell.DisplayUri">@FormatDisplayValue(cell.DisplayValue)</a>
@@ -101,16 +94,16 @@
           </tr>
           }
         </table>
-        
-        <ol class="comments">
-        @foreach (var x in comments) {
-          <li id="@tableLinkName-note-@x.index">@FormatDescription(x.comment)</li>
-        }
-        </ol>
       </section>
       }
       
       @RawHtml(Model.HtmlAfterAll)
     </main>
+    
+    <script type="text/javascript">
+      var model = {
+          libraryCount: @Model.Tables.First().Libraries.Count
+      };
+    </script>
   </body>
 </html>

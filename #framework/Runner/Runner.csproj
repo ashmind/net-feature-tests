@@ -105,7 +105,7 @@
     <Compile Include="Outputs\HtmlOutput.cs" />
     <Compile Include="Outputs\Html\NavigationLinkModel.cs" />
     <Compile Include="Outputs\Html\HtmlResultModel.cs" />
-    <Compile Include="Outputs\Html\Templates\HtmlTemplateBase.cs" />
+    <Compile Include="Outputs\Html\HtmlTemplateBase.cs" />
     <Compile Include="Outputs\IResultOutput.cs" />
     <Compile Include="Outputs\JsonOutput.cs" />
     <Compile Include="Outputs\ResultOutputArguments.cs" />
@@ -162,11 +162,11 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Outputs\Html\Templates\js\jquery.sticky.js" />
-    <None Include="Outputs\Html\Templates\js\jquery.toc.js" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Outputs\Html\Templates\css\main.css" />
+    <Content Include="Outputs\Html\Templates\css\tooltipster.css" />
+    <Content Include="Outputs\Html\Templates\js\jquery.tooltipster.min.js" />
+    <Content Include="Outputs\Html\Templates\js\main.js" />
+    <Content Include="Outputs\Html\Templates\js\waypoints.min.js" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

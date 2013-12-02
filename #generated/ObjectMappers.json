@@ -69,6 +69,156 @@
     }
   },
   {
+    "name": "EasyMapper",
+    "url": "http://pelusoftcodereference.wordpress.com/easy-mapper/",
+    "version": "1.0.0.0",
+    "supports": [
+      "net45"
+    ],
+    "features": {
+      "StringToString": {
+        "result": "success"
+      },
+      "Int32ToObject": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
+      },
+      "Int32ToString": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToString(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 30"
+      },
+      "Int32ToInt64": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 36"
+      },
+      "StringToInt32": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 42"
+      },
+      "ObjectToInt32": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 48"
+      },
+      "CollectionToEnumerable": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 18"
+      },
+      "CollectionToICollection": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 24"
+      },
+      "ListToEnumerable": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 30"
+      },
+      "ListToCollection": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 36"
+      },
+      "ListToIList": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 42"
+      },
+      "HashSetToEnumerable": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 48"
+      },
+      "HashSetToISet": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 54"
+      },
+      "IListToIList": {
+        "result": "failure",
+        "error": "System.ArgumentException: Property set method not found.\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)\r\n   at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\\EasyMapperAdapter.cs:line 24\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 41\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 18"
+      },
+      "ICollectionToICollection": {
+        "result": "failure",
+        "error": "System.ArgumentException: Property set method not found.\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)\r\n   at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\\EasyMapperAdapter.cs:line 24\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 41\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 24"
+      },
+      "ISetToISet": {
+        "result": "failure",
+        "error": "System.ArgumentException: Property set method not found.\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)\r\n   at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\\EasyMapperAdapter.cs:line 24\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 41\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 30"
+      }
+    }
+  },
+  {
+    "name": "EmitMapper",
+    "url": "http://emitmapper.codeplex.com/",
+    "version": "1.0.0.0",
+    "supports": [
+      "MonoAndroid",
+      "MonoTouch",
+      "net40",
+      "net45",
+      "win80",
+      "wp80",
+      "sl40",
+      "sl50"
+    ],
+    "features": {
+      "StringToString": {
+        "result": "success"
+      },
+      "Int32ToObject": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   System.Object\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
+      },
+      "Int32ToString": {
+        "result": "success"
+      },
+      "Int32ToInt64": {
+        "result": "success"
+      },
+      "StringToInt32": {
+        "result": "success"
+      },
+      "ObjectToInt32": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 48"
+      },
+      "CollectionToEnumerable": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 18"
+      },
+      "CollectionToICollection": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 24"
+      },
+      "ListToEnumerable": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 30"
+      },
+      "ListToCollection": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 36"
+      },
+      "ListToIList": {
+        "result": "failure",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 42"
+      },
+      "HashSetToEnumerable": {
+        "result": "failure",
+        "error": "System.Exception: Constructor for types [] not found in System.Collections.Generic.IEnumerable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n   at EmitMapper.AST.Nodes.AstNewObject.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstWriteLocal.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()\r\n   at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EmitMapperAdapter.Map[TTarget](Object source) in [removed]\\EmitMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 64\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 48"
+      },
+      "HashSetToISet": {
+        "result": "failure",
+        "error": "System.Exception: Constructor for types [] not found in System.Collections.Generic.ISet`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n   at EmitMapper.AST.Nodes.AstNewObject.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstWriteLocal.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()\r\n   at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EmitMapperAdapter.Map[TTarget](Object source) in [removed]\\EmitMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 64\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 54"
+      },
+      "IListToIList": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Int32[] { 5 }\r\nActual:   Int32[] {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 44\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 18"
+      },
+      "ICollectionToICollection": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Int32[] { 5 }\r\nActual:   Int32[] {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 44\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 24"
+      },
+      "ISetToISet": {
+        "result": "failure",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Int32[] { 5 }\r\nActual:   Int32[] {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 44\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 30"
+      }
+    }
+  },
+  {
     "name": "fFastMapper",
     "version": "0.5.1.0",
     "supports": [
@@ -142,79 +292,6 @@
       "ISetToISet": {
         "result": "failure",
         "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Int32[] { 5 }\r\nActual:   Int32[] {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 44\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 30"
-      }
-    }
-  },
-  {
-    "name": "EasyMapper",
-    "url": "http://pelusoftcodereference.wordpress.com/easy-mapper/",
-    "version": "1.0.0.0",
-    "supports": [
-      "net45"
-    ],
-    "features": {
-      "StringToString": {
-        "result": "success"
-      },
-      "Int32ToObject": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 51\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
-      },
-      "Int32ToString": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToString(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 30"
-      },
-      "Int32ToInt64": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 36"
-      },
-      "StringToInt32": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 42"
-      },
-      "ObjectToInt32": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 48"
-      },
-      "CollectionToEnumerable": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 18"
-      },
-      "CollectionToICollection": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 24"
-      },
-      "ListToEnumerable": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 30"
-      },
-      "ListToCollection": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 36"
-      },
-      "ListToIList": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 42"
-      },
-      "HashSetToEnumerable": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 48"
-      },
-      "HashSetToISet": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 54"
-      },
-      "IListToIList": {
-        "result": "failure",
-        "error": "System.ArgumentException: Property set method not found.\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)\r\n   at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\\EasyMapperAdapter.cs:line 24\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 41\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 18"
-      },
-      "ICollectionToICollection": {
-        "result": "failure",
-        "error": "System.ArgumentException: Property set method not found.\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)\r\n   at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\\EasyMapperAdapter.cs:line 24\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 41\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 24"
-      },
-      "ISetToISet": {
-        "result": "failure",
-        "error": "System.ArgumentException: Property set method not found.\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)\r\n   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)\r\n   at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\\EasyMapperAdapter.cs:line 24\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 41\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 30"
       }
     }
   },
@@ -303,7 +380,7 @@
       },
       "Int32ToObject": {
         "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 23"
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
       },
       "Int32ToString": {
         "result": "failure",
@@ -348,83 +425,6 @@
       "HashSetToISet": {
         "result": "failure",
         "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 54"
-      },
-      "IListToIList": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Int32[] { 5 }\r\nActual:   Int32[] {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 44\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 18"
-      },
-      "ICollectionToICollection": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Int32[] { 5 }\r\nActual:   Int32[] {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 44\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 24"
-      },
-      "ISetToISet": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Int32[] { 5 }\r\nActual:   Int32[] {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 44\r\n   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\\3_CollectionAsReadOnlyPropertyTests.cs:line 30"
-      }
-    }
-  },
-  {
-    "name": "EmitMapper",
-    "url": "http://emitmapper.codeplex.com/",
-    "version": "1.0.0.0",
-    "supports": [
-      "MonoAndroid",
-      "MonoTouch",
-      "net40",
-      "net45",
-      "win80",
-      "wp80",
-      "sl40",
-      "sl50"
-    ],
-    "features": {
-      "StringToString": {
-        "result": "success"
-      },
-      "Int32ToObject": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   System.Object\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 24"
-      },
-      "Int32ToString": {
-        "result": "success"
-      },
-      "Int32ToInt64": {
-        "result": "success"
-      },
-      "StringToInt32": {
-        "result": "success"
-      },
-      "ObjectToInt32": {
-        "result": "failure",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 123\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\\1_DirectTests.cs:line 56\r\n   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\\1_DirectTests.cs:line 48"
-      },
-      "CollectionToEnumerable": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 18"
-      },
-      "CollectionToICollection": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 24"
-      },
-      "ListToEnumerable": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 30"
-      },
-      "ListToCollection": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 36"
-      },
-      "ListToIList": {
-        "result": "failure",
-        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n   at Xunit.Assert.NotNull(Object object)\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 65\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 42"
-      },
-      "HashSetToEnumerable": {
-        "result": "failure",
-        "error": "System.Exception: Constructor for types [] not found in System.Collections.Generic.IEnumerable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n   at EmitMapper.AST.Nodes.AstNewObject.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstWriteLocal.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()\r\n   at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EmitMapperAdapter.Map[TTarget](Object source) in [removed]\\EmitMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 64\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 48"
-      },
-      "HashSetToISet": {
-        "result": "failure",
-        "error": "System.Exception: Constructor for types [] not found in System.Collections.Generic.ISet`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]\r\n   at EmitMapper.AST.Nodes.AstNewObject.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstWriteLocal.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstIf.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.AST.Nodes.AstComplexNode.Compile(CompilationContext context)\r\n   at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()\r\n   at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)\r\n   at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()\r\n   at lambda_method(Closure )\r\n   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\\GenericHelper.cs:line 17\r\n   at FeatureTests.On.ObjectMappers.Adapters.EmitMapperAdapter.Map[TTarget](Object source) in [removed]\\EmitMapperAdapter.cs:line 26\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\\2_CollectionTests.cs:line 64\r\n   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\\2_CollectionTests.cs:line 54"
       },
       "IListToIList": {
         "result": "failure",

@@ -10,7 +10,12 @@ namespace FeatureTests.Shared.InfrastructureSupport {
         private static readonly ConcurrentDictionary<Assembly, Type[]> cache = new ConcurrentDictionary<Assembly, Type[]>();
 
         public static IReadOnlyCollection<Type> GetAdapterTypes(Assembly assembly) {
-            return cache.GetOrAdd(assembly, a => assembly.GetTypes().Where(t => t.HasInterface<ILibrary>() && !t.IsAbstract).ToArray());
+            return cache.GetOrAdd(assembly,
+                a => assembly.GetTypes()
+                             .Where(t => t.HasInterface<ILibrary>() && !t.IsAbstract)
+                             .OrderBy(t => t.Name)
+                             .ToArray()
+            );
         }
 
         public static IEnumerable<ILibrary> GetAdapters(Assembly assembly) {

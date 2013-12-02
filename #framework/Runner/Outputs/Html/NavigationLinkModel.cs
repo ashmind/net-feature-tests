@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using AshMind.Extensions;
 
 namespace FeatureTests.Runner.Outputs.Html {
     public class NavigationLinkModel {
-        public NavigationLinkModel(string url, string name) {
-            this.Url = url;
+        public NavigationLinkModel(string name, string url, bool onCurrentPage, IEnumerable<NavigationLinkModel> childLinks = null) {
             this.Name = name;
-            this.Children = new List<NavigationLinkModel>();
+            this.Url = url;
+            this.OnCurrentPage = onCurrentPage;
+            this.ChildLinks = childLinks.EmptyIfNull().ToList();
         }
 
-        public string Url        { get; set; }
-        public string Name       { get; set; }
-        public bool IsTopLevelLinkToCurrentPage { get; set; }
-        public IReadOnlyList<NavigationLinkModel> Children { get; private set; } 
+        public string Url         { get; set; }
+        public string Name        { get; set; }
+        public bool OnCurrentPage { get; set; }
+        public IList<NavigationLinkModel> ChildLinks { get; private set; } 
     }
 }
