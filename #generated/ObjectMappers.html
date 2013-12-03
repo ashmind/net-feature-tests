@@ -38,8 +38,9 @@
             <li><a href="ObjectMappers.html#SupportedNETVersions" data-same-page>Supported .NET versions</a></li>
             <li><a href="ObjectMappers.html#PrimitiveConversion" data-same-page>Primitive conversion</a></li>
             <li><a href="ObjectMappers.html#NullableTypes" data-same-page>Nullable types</a></li>
-            <li><a href="ObjectMappers.html#Collections" data-same-page>Collections (writeable property)</a></li>
-            <li><a href="ObjectMappers.html#Collections" data-same-page>Collections (read-only property)</a></li>
+            <li><a href="ObjectMappers.html#Enums" data-same-page>Enums</a></li>
+            <li><a href="ObjectMappers.html#CollectionsWriteableProperty" data-same-page>Collections (writeable property)</a></li>
+            <li><a href="ObjectMappers.html#CollectionsReadOnlyProperty" data-same-page>Collections (read-only property)</a></li>
             <li><a href="ObjectMappers.html#ConstructorParameters" data-same-page>Constructor parameters</a></li>
           </ul>
         </li>
@@ -142,17 +143,17 @@ n/a              </td>
             <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
               <td class="neutral number">
-596 594              </td>
+596 668              </td>
               <td class="neutral number">
 42              </td>
               <td class="neutral number">
-8 001              </td>
+8 004              </td>
               <td class="neutral number">
 195              </td>
               <td class="neutral number">
 1 298              </td>
               <td class="neutral number">
-8 001              </td>
+8 004              </td>
           </tr>
           <tr>
             <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -161,18 +162,18 @@ n/a              </td>
 
 <p>The score is only for quick comparison, please read individual tables for the details.</p>
 ">Total Score</span></td>
-              <td class="success">
-72%              </td>
-              <td class="failure">
-10%              </td>
               <td class="concern">
-41%              </td>
+69%              </td>
               <td class="failure">
-10%              </td>
-              <td class="success">
-76%              </td>
+19%              </td>
               <td class="failure">
-10%              </td>
+36%              </td>
+              <td class="failure">
+8%              </td>
+              <td class="concern">
+67%              </td>
+              <td class="failure">
+19%              </td>
           </tr>
         </table>
       </section>
@@ -874,7 +875,7 @@ pass              </td>
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 1:10:34 +13:00
+Expected: 04.12.2013 1:36:39 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -883,7 +884,7 @@ Actual:   01.01.0001 0:00:00 +00:00
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 1:10:34 +13:00
+Expected: 04.12.2013 1:36:39 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -914,7 +915,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 1:10:34 +13:00
+Expected: 04.12.2013 1:36:39 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -940,7 +941,7 @@ Actual:   01.01.0001 0:00:00 +00:00
           </tr>
 
           <tr>
-            <td class="row-name"><span >int =&gt; int?</span></td>
+            <td class="row-name"><span >int ⇒ int?</span></td>
               <td class="success">
 pass              </td>
               <td class="failure">
@@ -949,7 +950,7 @@ Expected: 5
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
    at FeatureTests.On.ObjectMappers.NullableTests.Int32ToNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 18">fail</span>
               </td>
               <td class="success">
@@ -971,7 +972,7 @@ pass              </td>
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 52
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
    at FeatureTests.On.ObjectMappers.NullableTests.Int32ToNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 18">fail</span>
               </td>
               <td class="success">
@@ -982,12 +983,12 @@ Expected: 5
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
    at FeatureTests.On.ObjectMappers.NullableTests.Int32ToNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 18">fail</span>
               </td>
           </tr>
           <tr>
-            <td class="row-name"><span >int =&gt; long?</span></td>
+            <td class="row-name"><span >int ⇒ long?</span></td>
               <td class="failure">
                   <span title="AutoMapper.AutoMapperMappingException: 
 
@@ -1020,7 +1021,7 @@ Source value:
    at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
    at AutoMapper.MappingEngine.Map[TDestination](Object source)
    at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 52
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
    at FeatureTests.On.ObjectMappers.NullableTests.Int32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
@@ -1029,7 +1030,7 @@ Expected: 5
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
    at FeatureTests.On.ObjectMappers.NullableTests.Int32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 24">fail</span>
               </td>
               <td class="success">
@@ -1051,7 +1052,7 @@ pass              </td>
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 52
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
    at FeatureTests.On.ObjectMappers.NullableTests.Int32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 24">fail</span>
               </td>
               <td class="success">
@@ -1062,106 +1063,70 @@ Expected: 5
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
    at FeatureTests.On.ObjectMappers.NullableTests.Int32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 24">fail</span>
               </td>
           </tr>
           <tr>
-            <td class="row-name"><span >(int?)null =&gt; (object)null</span></td>
-              <td class="success">
-pass              </td>
+            <td class="row-name"><span >int? ⇒ long?</span></td>
               <td class="failure">
-                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   not set
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
-              </td>
-              <td class="success">
-pass              </td>
-              <td class="failure">
-                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   not set
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
-              </td>
-              <td class="success">
-pass              </td>
-              <td class="failure">
-                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   not set
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
-              </td>
-          </tr>
-          <tr>
-            <td class="row-name"><span >(object)null =&gt; (int?)null</span></td>
-              <td class="success">
-pass              </td>
-              <td class="failure">
-                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   1
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 36">fail</span>
-              </td>
-              <td class="success">
-pass              </td>
-              <td class="failure">
-                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   1
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 36">fail</span>
-              </td>
-              <td class="success">
-pass              </td>
-              <td class="failure">
-                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   1
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 36">fail</span>
-              </td>
-          </tr>
-          <tr>
-            <td class="row-name"><span >DateTime =&gt; DateTimeOffset?</span></td>
-              <td class="success">
-pass              </td>
-              <td class="failure">
-                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 1:10:34 +13:00
-Actual:   01.01.0001 0:00:00 +00:00
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 43">fail</span>
+                  <span title="AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+Int32 -&gt; Nullable`1
+System.Int32 -&gt; System.Nullable`1[[System.Int64, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Wrapper`1.Value.Value
+
+Source value:
+5 ---&gt; System.ArgumentException: Object of type &#39;System.Int32&#39; cannot be converted to type &#39;System.Nullable`1[System.Int64]&#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&lt;&gt;c__DisplayClass4.&lt;CreateSet&gt;b__3(Object target, Object value)
+   at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source)
+   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableInt32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 1:10:34 +13:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 5
+Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 43">fail</span>
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableInt32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.DateTimeOffset&#39; cannot be used for assignment to type &#39;System.DateTime&#39;
+                  <span title="System.InvalidCastException: Specified cast is not valid.
+   at ObjectsMapper30_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]187da88c4cd7d4a93aed0170647d4142f.MapImpl(Object , Object , Object )
+   at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from, Object to, Object state)
+   at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from)
+   at EmitMapper.ObjectsMapper`2.Map(TFrom from)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.EmitMapperAdapter.Map[TTarget](Object source) in [removed]\EmitMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableInt32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Nullable`1[System.Int64]&#39; cannot be used for assignment to type &#39;System.Nullable`1[System.Int32]&#39;
    at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
    at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
@@ -1177,25 +1142,550 @@ Actual:   01.01.0001 0:00:00 +00:00
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 52
-   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 43">fail</span>
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableInt32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 1:10:34 +13:00
+Expected: 5
+Actual:   (null)
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableInt32ToNullableInt64(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >(int?)null ⇒ (object)null</span></td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   not set
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 36">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   not set
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 36">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   not set
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 36">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >(object)null ⇒ (int?)null</span></td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 42">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 42">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 42">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >DateTime ⇒ DateTimeOffset?</span></td>
+              <td class="failure">
+                  <span title="AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+DateTime -&gt; Nullable`1
+System.DateTime -&gt; System.Nullable`1[[System.DateTimeOffset, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Wrapper`1.Value.Value
+
+Source value:
+04.12.2013 1:36:39 ---&gt; System.ArgumentException: Object of type &#39;System.DateTime&#39; cannot be converted to type &#39;System.Nullable`1[System.DateTimeOffset]&#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&lt;&gt;c__DisplayClass4.&lt;CreateSet&gt;b__3(Object target, Object value)
+   at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source)
+   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 49">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 04.12.2013 1:36:39 +13:00
+Actual:   (null)
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 49">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 04.12.2013 1:36:39 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
-   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 43">fail</span>
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 49">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Nullable`1[System.DateTimeOffset]&#39; cannot be used for assignment to type &#39;System.DateTime&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 49">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 04.12.2013 1:36:39 +13:00
+Actual:   (null)
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 49">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >DateTime? ⇒ DateTimeOffset?</span></td>
+              <td class="failure">
+                  <span title="AutoMapper.AutoMapperMappingException: 
+
+Mapping types:
+DateTime -&gt; Nullable`1
+System.DateTime -&gt; System.Nullable`1[[System.DateTimeOffset, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
+
+Destination path:
+Wrapper`1.Value.Value
+
+Source value:
+04.12.2013 1:36:39 ---&gt; System.ArgumentException: Object of type &#39;System.DateTime&#39; cannot be converted to type &#39;System.Nullable`1[System.DateTimeOffset]&#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&lt;&gt;c__DisplayClass4.&lt;CreateSet&gt;b__3(Object target, Object value)
+   at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   --- End of inner exception stack trace ---
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source)
+   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableDateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 56">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 04.12.2013 1:36:39 +13:00
+Actual:   (null)
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableDateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 56">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 04.12.2013 1:36:39 +13:00
+Actual:   01.01.0001 0:00:00 +00:00
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableDateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 56">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Nullable`1[System.DateTimeOffset]&#39; cannot be used for assignment to type &#39;System.Nullable`1[System.DateTime]&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableDateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 56">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 04.12.2013 1:36:39 +13:00
+Actual:   (null)
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
+   at FeatureTests.On.ObjectMappers.NullableTests.NullableDateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 56">fail</span>
               </td>
           </tr>
         </table>
       </section>
       <section>
-        <h2 id="Collections">Collections (writeable property)</h2>
+        <h2 id="Enums">Enums</h2>
+        <div class="section-description"></div>
+        
+        <table>
+          <tr>
+            <th>Name</th>
+              <th><span>AutoMapper</span></th>
+              <th><span>EasyMapper</span></th>
+              <th><span>EmitMapper</span></th>
+              <th><span>fFastMapper</span></th>
+              <th><span>OoMapper</span></th>
+              <th><span>ValueInjecter</span></th>
+          </tr>
+
+          <tr>
+            <td class="row-name"><span >Enum₁ ⇒ Enum₂ (same name)</span></td>
+              <td class="success">
+pass              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: Default
+Actual:   -10
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumSameItemName(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 17">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;FeatureTests.On.ObjectMappers.TestTypes.Enum2&#39; cannot be used for assignment to type &#39;FeatureTests.On.ObjectMappers.TestTypes.Enum1&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 48
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumSameItemName(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 17">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: Default
+Actual:   -10
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumSameItemName(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 17">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >Enum₁ ⇒ Enum₂ (flags)</span></td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: First, Second
+Actual:   0
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumFlags(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 23">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: First, Second
+Actual:   3
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumFlags(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 23">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;FeatureTests.On.ObjectMappers.TestTypes.FlagsEnum2&#39; cannot be used for assignment to type &#39;FeatureTests.On.ObjectMappers.TestTypes.FlagsEnum1&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 48
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumFlags(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 23">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: First, Second
+Actual:   3
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumFlags(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 23">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: First, Second
+Actual:   0
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToEnumFlags(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 23">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >Enum₁:long ⇒ Enum₂:int</span></td>
+              <td class="success">
+pass              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: Default
+Actual:   10
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumInt64ToEnumInt32(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 29">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;FeatureTests.On.ObjectMappers.TestTypes.Enum2&#39; cannot be used for assignment to type &#39;FeatureTests.On.ObjectMappers.TestTypes.EnumBasedOnLong&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 48
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumInt64ToEnumInt32(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 29">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: Default
+Actual:   10
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumInt64ToEnumInt32(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 29">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >Enum₁? ⇒ Enum₂</span></td>
+              <td class="success">
+pass              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: Default
+Actual:   -10
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToNullableEnum(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 35">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;FeatureTests.On.ObjectMappers.TestTypes.Enum2&#39; cannot be used for assignment to type &#39;System.Nullable`1[FeatureTests.On.ObjectMappers.TestTypes.Enum1]&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 48
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToNullableEnum(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 35">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: Default
+Actual:   -10
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
+   at FeatureTests.On.ObjectMappers.EnumTests.EnumToNullableEnum(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 35">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >string ⇒ Enum</span></td>
+              <td class="success">
+pass              </td>
+              <td class="success">
+pass              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;FeatureTests.On.ObjectMappers.TestTypes.Enum2&#39; cannot be used for assignment to type &#39;System.String&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 48
+   at FeatureTests.On.ObjectMappers.EnumTests.StringToEnum(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 41">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.Collections.Generic.KeyNotFoundException: (System.String, FeatureTests.On.ObjectMappers.TestTypes.Enum2)
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 43
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.CompositeSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CompositeSourceMemberResolver.cs:line 23
+   at OoMapper.PropertyMap.BuildBind(Expression source, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\PropertyMap.cs:line 28
+   at OoMapper.NewObjectMapperBuilder.&lt;&gt;c__DisplayClass1.&lt;Build&gt;b__0(PropertyMap m) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 13
+   at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 12
+   at OoMapper.CachedObjectMapperBuilder.&lt;&gt;c__DisplayClass1.&lt;Build&gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 35
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass3.&lt;BuildSource&gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass9.&lt;GetCompiledNew&gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 18
+   at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 48
+   at FeatureTests.On.ObjectMappers.EnumTests.StringToEnum(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 41">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+          </tr>
+        </table>
+      </section>
+      <section>
+        <h2 id="CollectionsWriteableProperty">Collections (writeable property)</h2>
         <div class="section-description"></div>
         
         <table>
@@ -1216,28 +1706,28 @@ pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 18">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 18">fail</span>
               </td>
           </tr>
           <tr>
@@ -1247,28 +1737,28 @@ pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 24">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 24">fail</span>
               </td>
           </tr>
           <tr>
@@ -1278,28 +1768,28 @@ pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 30">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 30">fail</span>
               </td>
           </tr>
           <tr>
@@ -1309,28 +1799,28 @@ pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 36">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 36">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 36">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 36">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 36">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 36">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 36">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 36">fail</span>
               </td>
           </tr>
           <tr>
@@ -1340,28 +1830,28 @@ pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 42">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 42">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 42">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 42">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 42">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 42">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 42">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 42">fail</span>
               </td>
           </tr>
           <tr>
@@ -1371,8 +1861,8 @@ pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 48">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 48">fail</span>
               </td>
               <td class="failure">
                   <span title="System.Exception: Constructor for types [] not found in System.Collections.Generic.IEnumerable`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
@@ -1392,22 +1882,22 @@ pass              </td>
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.EmitMapperAdapter.Map[TTarget](Object source) in [removed]\EmitMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 48">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 64
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 48">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 48">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 48">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 48">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 48">fail</span>
               </td>
           </tr>
           <tr>
@@ -1417,8 +1907,8 @@ pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 54">fail</span>
               </td>
               <td class="failure">
                   <span title="System.Exception: Constructor for types [] not found in System.Collections.Generic.ISet`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]
@@ -1438,28 +1928,28 @@ pass              </td>
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.EmitMapperAdapter.Map[TTarget](Object source) in [removed]\EmitMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 64
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 54">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 54">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
-   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\4_CollectionTests.cs:line 65
+   at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionTests.cs:line 54">fail</span>
               </td>
           </tr>
         </table>
       </section>
       <section>
-        <h2 id="Collections">Collections (read-only property)</h2>
+        <h2 id="CollectionsReadOnlyProperty">Collections (read-only property)</h2>
         <div class="section-description"></div>
         
         <table>
@@ -1482,8 +1972,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
                   <span title="System.ArgumentException: Property set method not found.
@@ -1493,8 +1983,8 @@ Actual:   Int32[] {  }
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\EasyMapperAdapter.cs:line 24
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 41
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 41
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1503,8 +1993,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
                   <span title="System.Security.VerificationException: Operation could destabilize the runtime.
@@ -1515,8 +2005,8 @@ Actual:   Int32[] {  }
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 41
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 41
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1525,8 +2015,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1535,8 +2025,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
               </td>
           </tr>
           <tr>
@@ -1548,8 +2038,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
                   <span title="System.ArgumentException: Property set method not found.
@@ -1559,8 +2049,8 @@ Actual:   Int32[] {  }
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\EasyMapperAdapter.cs:line 24
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 41
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 41
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1569,8 +2059,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1579,8 +2069,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1589,8 +2079,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1599,8 +2089,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
           </tr>
           <tr>
@@ -1612,8 +2102,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="System.ArgumentException: Property set method not found.
@@ -1623,8 +2113,8 @@ Actual:   Int32[] {  }
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\EasyMapperAdapter.cs:line 24
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 41
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 41
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1633,8 +2123,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1643,8 +2133,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1653,8 +2143,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -1663,8 +2153,8 @@ Expected: Int32[] { 5 }
 Actual:   Int32[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 44
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\5_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
           </tr>
         </table>
@@ -1705,11 +2195,11 @@ pass              </td>
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 22
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\EasyMapperAdapter.cs:line 24
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 20">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 20">fail</span>
               </td>
               <td class="failure">
                   <span title="System.NullReferenceException: Object reference not set to an instance of an object.
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 22">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 22">fail</span>
               </td>
               <td class="failure">
                   <span title="System.MissingMethodException: No parameterless constructor defined for this object.
@@ -1718,7 +2208,7 @@ pass              </td>
    at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
    at System.Activator.CreateInstance[T]()
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 20
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 20">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 20">fail</span>
               </td>
               <td class="failure">
                   <span title="System.ArgumentException: Type &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]&#39; does not have a default constructor
@@ -1739,7 +2229,7 @@ pass              </td>
    at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
    at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
    at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 18
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 20">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 20">fail</span>
               </td>
               <td class="failure">
                   <span title="System.MissingMethodException: No parameterless constructor defined for this object.
@@ -1748,7 +2238,7 @@ pass              </td>
    at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
    at System.Activator.CreateInstance[T]()
    at FeatureTests.On.ObjectMappers.Adapters.ValueInjecterAdapter.Map[TTarget](Object source) in [removed]\ValueInjecterAdapter.cs:line 27
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 20">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 20">fail</span>
               </td>
           </tr>
           <tr>
@@ -1772,11 +2262,11 @@ pass              </td>
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 22
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.EasyMapperAdapter.Map[TTarget](Object source) in [removed]\EasyMapperAdapter.cs:line 24
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 32">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 32">fail</span>
               </td>
               <td class="failure">
                   <span title="System.NullReferenceException: Object reference not set to an instance of an object.
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 34">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 34">fail</span>
               </td>
               <td class="failure">
                   <span title="System.MissingMethodException: No parameterless constructor defined for this object.
@@ -1785,7 +2275,7 @@ pass              </td>
    at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
    at System.Activator.CreateInstance[T]()
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 20
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 32">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 32">fail</span>
               </td>
               <td class="failure">
                   <span title="System.ArgumentException: Type &#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]]&#39; does not have a default constructor
@@ -1806,7 +2296,7 @@ pass              </td>
    at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
    at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
    at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 18
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 32">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 32">fail</span>
               </td>
               <td class="failure">
                   <span title="System.MissingMethodException: No parameterless constructor defined for this object.
@@ -1815,7 +2305,7 @@ pass              </td>
    at System.RuntimeType.CreateInstanceDefaultCtor(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark&amp; stackMark)
    at System.Activator.CreateInstance[T]()
    at FeatureTests.On.ObjectMappers.Adapters.ValueInjecterAdapter.Map[TTarget](Object source) in [removed]\ValueInjecterAdapter.cs:line 27
-   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\5_ConstructorTests.cs:line 32">fail</span>
+   at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\6_ConstructorTests.cs:line 32">fail</span>
               </td>
           </tr>
         </table>

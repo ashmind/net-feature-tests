@@ -110,7 +110,7 @@ namespace FeatureTests.Runner.Outputs {
 
         private string GenerateTableId(FeatureTable table) {
             var result = table.DisplayName;
-            result = Regex.Replace(result, @"\([^)]+\)|\<[^>]+\>", "");
+            result = Regex.Replace(result, @"\<[^>]+\>", "");
             result = Regex.Replace(result, @"(?<=\W|$)\w", m => m.Value.ToUpperInvariant());
             result = Regex.Replace(result, @"\W+", "");
 

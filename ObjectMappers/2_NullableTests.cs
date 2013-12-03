@@ -13,34 +13,47 @@ namespace FeatureTests.On.ObjectMappers {
     [DisplayName("Nullable types")]
     public class NullableTests {
         [Feature]
-        [DisplayName("int => int?")]
+        [DisplayName("int ⇒ int?")]
         public void Int32ToNullableInt32(IObjectMapperAdapter mapper) {
             AssertNullableMappingWorksFor(mapper, 5, (int?)5);
         }
 
         [Feature]
-        [DisplayName("int => long?")]
+        [DisplayName("int ⇒ long?")]
         public void Int32ToNullableInt64(IObjectMapperAdapter mapper) {
             AssertNullableMappingWorksFor(mapper, 5, (long?)5);
         }
 
         [Feature]
-        [DisplayName("(int?)null => (object)null")]
+        [DisplayName("int? ⇒ long?")]
+        public void NullableInt32ToNullableInt64(IObjectMapperAdapter mapper) {
+            AssertNullableMappingWorksFor(mapper, (int?)5, (long?)5);
+        }
+        
+        [Feature]
+        [DisplayName("(int?)null ⇒ (object)null")]
         public void NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) {
             AssertNullableMappingWorksFor(mapper, (int?)null, (object)null, "not set");
         }
 
         [Feature]
-        [DisplayName("(object)null => (int?)null")]
+        [DisplayName("(object)null ⇒ (int?)null")]
         public void NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) {
             AssertNullableMappingWorksFor(mapper, (object)null, (int?)null, 1);
         }
 
         [Feature]
-        [DisplayName("DateTime => DateTimeOffset?")]
+        [DisplayName("DateTime ⇒ DateTimeOffset?")]
         public void DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) {
             var now = DateTime.Now;
-            AssertNullableMappingWorksFor(mapper, now, (DateTimeOffset)now);
+            AssertNullableMappingWorksFor(mapper, now, (DateTimeOffset?)now);
+        }
+
+        [Feature]
+        [DisplayName("DateTime? ⇒ DateTimeOffset?")]
+        public void NullableDateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) {
+            var now = DateTime.Now;
+            AssertNullableMappingWorksFor(mapper, (DateTime?)now, (DateTimeOffset?)now);
         }
 
         private static void AssertNullableMappingWorksFor<TSource, TTarget>(IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue = default(TTarget)) {

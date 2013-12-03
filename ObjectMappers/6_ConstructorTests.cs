@@ -8,7 +8,7 @@ using FeatureTests.Shared;
 using Xunit;
 
 namespace FeatureTests.On.ObjectMappers {
-    [DisplayOrder(5)]
+    [DisplayOrder(6)]
     [DisplayName("Constructor parameters")]
     public class ConstructorParameterTests {
         [Feature]
