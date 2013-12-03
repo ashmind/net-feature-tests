@@ -142,17 +142,17 @@ n/a              </td>
             <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
               <td class="neutral number">
-596 569              </td>
+596 594              </td>
               <td class="neutral number">
 42              </td>
               <td class="neutral number">
-8 000              </td>
+8 001              </td>
               <td class="neutral number">
 195              </td>
               <td class="neutral number">
 1 298              </td>
               <td class="neutral number">
-8 000              </td>
+8 001              </td>
           </tr>
           <tr>
             <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -162,17 +162,17 @@ n/a              </td>
 <p>The score is only for quick comparison, please read individual tables for the details.</p>
 ">Total Score</span></td>
               <td class="success">
-78%              </td>
+72%              </td>
               <td class="failure">
-11%              </td>
+10%              </td>
               <td class="concern">
 41%              </td>
               <td class="failure">
-0%              </td>
+10%              </td>
               <td class="success">
-78%              </td>
+76%              </td>
               <td class="failure">
-11%              </td>
+10%              </td>
           </tr>
         </table>
       </section>
@@ -338,30 +338,8 @@ pass              </td>
 pass              </td>
               <td class="success">
 pass              </td>
-              <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToString(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 18">fail</span>
-              </td>
+              <td class="success">
+pass              </td>
               <td class="success">
 pass              </td>
               <td class="success">
@@ -375,30 +353,8 @@ pass              </td>
 pass              </td>
               <td class="success">
 pass              </td>
-              <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 24">fail</span>
-              </td>
+              <td class="success">
+pass              </td>
               <td class="success">
 pass              </td>
               <td class="success">
@@ -414,7 +370,7 @@ Expected: 123
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
@@ -423,31 +379,16 @@ Expected: 123
 Actual:   System.Object
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   (null)
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 30">fail</span>
               </td>
               <td class="success">
@@ -458,7 +399,7 @@ Expected: 123
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 30">fail</span>
               </td>
           </tr>
@@ -472,23 +413,19 @@ Expected: 123
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToString(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 36">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.String&#39; cannot be used for assignment to type &#39;System.Int32&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -498,7 +435,7 @@ Parameter name: expression
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToString(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 36">fail</span>
               </td>
               <td class="success">
@@ -509,7 +446,7 @@ Expected: 123
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToString(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 36">fail</span>
               </td>
           </tr>
@@ -536,7 +473,7 @@ Source value:
    at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
    at AutoMapper.MappingEngine.Map[TDestination](Object source)
    at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 42">fail</span>
               </td>
               <td class="failure">
@@ -545,23 +482,19 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 42">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Int64&#39; cannot be used for assignment to type &#39;System.Int32&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -571,7 +504,7 @@ Parameter name: expression
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 42">fail</span>
               </td>
               <td class="success">
@@ -582,7 +515,7 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToInt64(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 42">fail</span>
               </td>
           </tr>
@@ -596,23 +529,19 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToDecimal(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 48">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Decimal&#39; cannot be used for assignment to type &#39;System.Int32&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -622,7 +551,7 @@ Parameter name: expression
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToDecimal(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 48">fail</span>
               </td>
               <td class="success">
@@ -633,8 +562,160 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToDecimal(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 48">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >byte ⇒ int</span></td>
+              <td class="failure">
+                  <span title="AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Byte -&gt; Int32
+System.Byte -&gt; System.Int32
+
+Destination path:
+Wrapper`1.Value.Value
+
+Source value:
+1
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source)
+   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ByteToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   0
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ByteToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ByteToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Int32&#39; cannot be used for assignment to type &#39;System.Byte&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ByteToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ByteToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   0
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ByteToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+              </td>
+          </tr>
+          <tr>
+            <td class="row-name"><span >short ⇒ int</span></td>
+              <td class="failure">
+                  <span title="AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+Int16 -&gt; Int32
+System.Int16 -&gt; System.Int32
+
+Destination path:
+Wrapper`1.Value.Value
+
+Source value:
+123
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
+   at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.Mappers.TypeMapMapper.Map(ResolutionContext context, IMappingEngineRunner mapper)
+   at AutoMapper.MappingEngine.AutoMapper.IMappingEngineRunner.Map(ResolutionContext context)
+   at AutoMapper.MappingEngine.Map(Object source, Type sourceType, Type destinationType, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
+   at AutoMapper.MappingEngine.Map[TDestination](Object source)
+   at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int16ToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
+              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   0
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int16ToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Int32&#39; cannot be used for assignment to type &#39;System.Int16&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   --- End of inner exception stack trace ---
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int16ToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
+              </td>
+              <td class="success">
+pass              </td>
+              <td class="failure">
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   0
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int16ToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
               </td>
           </tr>
           <tr>
@@ -660,8 +741,8 @@ Source value:
    at AutoMapper.MappingEngine.Map[TDestination](Object source, Action`1 opts)
    at AutoMapper.MappingEngine.Map[TDestination](Object source)
    at FeatureTests.On.ObjectMappers.Adapters.AutoMapperAdapter.Map[TTarget](Object source) in [removed]\AutoMapperAdapter.cs:line 27
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 66">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -669,23 +750,15 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 66">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.String&#39; cannot be used for assignment to type &#39;System.Int32&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -695,8 +768,8 @@ Parameter name: expression
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 66">fail</span>
               </td>
               <td class="failure">
                   <span title="System.Collections.Generic.KeyNotFoundException: (System.String, System.Int32)
@@ -724,8 +797,8 @@ Parameter name: expression
    at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
    at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
    at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 18
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 66">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -733,8 +806,8 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 54">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 66">fail</span>
               </td>
           </tr>
           <tr>
@@ -747,8 +820,8 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 72">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -756,32 +829,17 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 72">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: 123
+Actual:   0
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 72">fail</span>
               </td>
               <td class="success">
 pass              </td>
@@ -791,8 +849,8 @@ Expected: 123
 Actual:   0
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 60">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.ObjectToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 72">fail</span>
               </td>
           </tr>
           <tr>
@@ -803,30 +861,8 @@ pass              </td>
 pass              </td>
               <td class="success">
 pass              </td>
-              <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTime(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 67">fail</span>
-              </td>
+              <td class="success">
+pass              </td>
               <td class="success">
 pass              </td>
               <td class="success">
@@ -838,34 +874,30 @@ pass              </td>
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 0:58:51 +13:00
+Expected: 04.12.2013 1:10:34 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 74">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 86">fail</span>
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 0:58:51 +13:00
+Expected: 04.12.2013 1:10:34 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 74">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 86">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.DateTimeOffset&#39; cannot be used for assignment to type &#39;System.DateTime&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -875,19 +907,19 @@ Parameter name: expression
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
    at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 81
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 74">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 86">fail</span>
               </td>
               <td class="success">
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 0:58:51 +13:00
+Expected: 04.12.2013 1:10:34 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 82
-   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 74">fail</span>
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 86">fail</span>
               </td>
           </tr>
         </table>
@@ -923,17 +955,13 @@ Actual:   (null)
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Nullable`1[System.Int32]&#39; cannot be used for assignment to type &#39;System.Int32&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -1007,17 +1035,13 @@ Actual:   (null)
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.Nullable`1[System.Int64]&#39; cannot be used for assignment to type &#39;System.Int32&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -1058,27 +1082,12 @@ Actual:   not set
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 52
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   not set
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
    at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 30">fail</span>
               </td>
               <td class="success">
@@ -1109,27 +1118,12 @@ Actual:   1
               <td class="success">
 pass              </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 52
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 53
    at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 36">fail</span>
               </td>
               <td class="success">
@@ -1150,7 +1144,7 @@ Actual:   1
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 0:58:51 +13:00
+Expected: 04.12.2013 1:10:34 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1159,7 +1153,7 @@ Actual:   01.01.0001 0:00:00 +00:00
               </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 0:58:51 +13:00
+Expected: 04.12.2013 1:10:34 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1167,17 +1161,13 @@ Actual:   01.01.0001 0:00:00 +00:00
    at FeatureTests.On.ObjectMappers.NullableTests.DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 43">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
+                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.ArgumentException: Expression of type &#39;System.DateTimeOffset&#39; cannot be used for assignment to type &#39;System.DateTime&#39;
+   at System.Linq.Expressions.Expression.Assign(Expression left, Expression right)
+   at Grax.fFastMapper.fFastMapperInternal`2.CompileMapper()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
+   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
+   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
@@ -1194,7 +1184,7 @@ Parameter name: expression
 pass              </td>
               <td class="failure">
                   <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 04.12.2013 0:58:51 +13:00
+Expected: 04.12.2013 1:10:34 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1236,27 +1226,9 @@ pass              </td>
    at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
+                  <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
+   at Xunit.Assert.NotNull(Object object)
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
    at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 18">fail</span>
               </td>
               <td class="success">
@@ -1285,27 +1257,9 @@ pass              </td>
    at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
+                  <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
+   at Xunit.Assert.NotNull(Object object)
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
    at FeatureTests.On.ObjectMappers.CollectionTests.CollectionToICollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 24">fail</span>
               </td>
               <td class="success">
@@ -1334,27 +1288,9 @@ pass              </td>
    at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
+                  <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
+   at Xunit.Assert.NotNull(Object object)
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
    at FeatureTests.On.ObjectMappers.CollectionTests.ListToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 30">fail</span>
               </td>
               <td class="success">
@@ -1383,27 +1319,9 @@ pass              </td>
    at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 36">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
+                  <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
+   at Xunit.Assert.NotNull(Object object)
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
    at FeatureTests.On.ObjectMappers.CollectionTests.ListToCollection(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 36">fail</span>
               </td>
               <td class="success">
@@ -1432,27 +1350,9 @@ pass              </td>
    at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 42">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
+                  <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
+   at Xunit.Assert.NotNull(Object object)
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
    at FeatureTests.On.ObjectMappers.CollectionTests.ListToIList(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 42">fail</span>
               </td>
               <td class="success">
@@ -1496,27 +1396,9 @@ pass              </td>
    at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 48">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
+                  <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
+   at Xunit.Assert.NotNull(Object object)
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
    at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToEnumerable(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 48">fail</span>
               </td>
               <td class="success">
@@ -1560,27 +1442,9 @@ pass              </td>
    at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 54">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 64
+                  <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
+   at Xunit.Assert.NotNull(Object object)
+   at FeatureTests.On.ObjectMappers.CollectionTests.AssertListMappingWorksFor[TSourceCollection,TTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue) in [removed]\3_CollectionTests.cs:line 65
    at FeatureTests.On.ObjectMappers.CollectionTests.HashSetToISet(IObjectMapperAdapter mapper) in [removed]\3_CollectionTests.cs:line 54">fail</span>
               </td>
               <td class="success">
@@ -1643,21 +1507,9 @@ Actual:   Int32[] {  }
    at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.IListToIList(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 18">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+                  <span title="System.Security.VerificationException: Operation could destabilize the runtime.
+   at lambda_method(Closure , Wrapper`1 , WrapperWithReadOnly`2 )
+   at Grax.fFastMapper.fFastMapperFluent`2.Map(TLeft source, TRight destination)
    at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
@@ -1721,27 +1573,13 @@ Actual:   Int32[] {  }
    at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 41
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Position: First difference is at position 0
+Expected: Int32[] { 5 }
+Actual:   Int32[] {  }
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
    at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ICollectionToICollection(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 24">fail</span>
               </td>
               <td class="failure">
@@ -1799,27 +1637,13 @@ Actual:   Int32[] {  }
    at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
               <td class="failure">
-                  <span title="System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.fFastMapperInternal`2&#39; threw an exception. ---&gt; System.TypeInitializationException: The type initializer for &#39;Grax.fFastMapper.PropertyList`1&#39; threw an exception. ---&gt; System.ArgumentException: Static property requires null instance, non-static property requires non-null instance.
-Parameter name: expression
-   at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.ToMemberExpression(Expression parentExpression, PropertyInfo property)
-   at Grax.fFastMapper.PropertyList`1.&lt;FindAllProperties&gt;d__2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
-   at Grax.fFastMapper.PropertyList`1.InitializeProperties()
-   at Grax.fFastMapper.PropertyList`1..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.PropertyList`1.get_Properties()
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
-   --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
-   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
-   at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 26
-   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 21
-   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 41
+                  <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Position: First difference is at position 0
+Expected: Int32[] { 5 }
+Actual:   Int32[] {  }
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.AssertListMappingWorksFor[TSourceCollection,TExposedTargetCollection,TActualTargetCollection](IObjectMapperAdapter mapper, TSourceCollection sourceValue) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 44
    at FeatureTests.On.ObjectMappers.CollectionAsReadOnlyPropertyTests.ISetToISet(IObjectMapperAdapter mapper) in [removed]\4_CollectionAsReadOnlyPropertyTests.cs:line 30">fail</span>
               </td>
               <td class="failure">

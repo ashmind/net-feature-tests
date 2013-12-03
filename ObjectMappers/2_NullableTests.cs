@@ -47,7 +47,7 @@ namespace FeatureTests.On.ObjectMappers {
             mapper.CreateMap<Wrapper<TSource>, Wrapper<TTarget>>();
 
             var source = new Wrapper<TSource> { Value = sourceValue };
-            Wrapper<TTarget>.NextValueAfterConstructor = targetValue;
+            WrapperStatic<TTarget>.NextValueAfterConstructor = targetValue;
 
             var result = mapper.Map<Wrapper<TTarget>>(source);
             Assert.Equal(expectedValue, result.Value);

@@ -49,6 +49,18 @@ namespace FeatureTests.On.ObjectMappers {
         }
 
         [Feature]
+        [DisplayName("byte ⇒ int")]
+        public void ByteToInt32(IObjectMapperAdapter mapper) {
+            AssertPrimitiveMappingWorksFor(mapper, (byte)1, 123);
+        }
+
+        [Feature]
+        [DisplayName("short ⇒ int")]
+        public void Int16ToInt32(IObjectMapperAdapter mapper) {
+            AssertPrimitiveMappingWorksFor(mapper, (short)123, 123);
+        }
+
+        [Feature]
         [DisplayName("string ⇒ int")]
         public void StringToInt32(IObjectMapperAdapter mapper) {
             AssertPrimitiveMappingWorksFor(mapper, "123", 123);
