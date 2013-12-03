@@ -101,10 +101,11 @@
     <Compile Include="Adapters\EmitMapperAdapter.cs" />
     <Compile Include="Adapters\ObjectMapperAdapterBase.cs" />
     <Compile Include="Adapters\IObjectMapperAdapter.cs" />
-    <Compile Include="1_DirectTests.cs" />
-    <Compile Include="2_CollectionTests.cs" />
-    <Compile Include="3_CollectionAsReadOnlyPropertyTests.cs" />
-    <Compile Include="4_ConstructorTests.cs" />
+    <Compile Include="1_PrimitiveTests.cs" />
+    <Compile Include="3_CollectionTests.cs" />
+    <Compile Include="4_CollectionAsReadOnlyPropertyTests.cs" />
+    <Compile Include="5_ConstructorTests.cs" />
+    <Compile Include="2_NullableTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTypes\ImmutableWrapper.cs" />
     <Compile Include="TestTypes\WrapperWithReadOnly.cs" />

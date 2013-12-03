@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using FeatureTests.On.ObjectMappers.Adapters;
@@ -9,7 +8,7 @@ using FeatureTests.Shared;
 using Xunit;
 
 namespace FeatureTests.On.ObjectMappers {
-    [DisplayOrder(4)]
+    [DisplayOrder(5)]
     [DisplayName("Constructor parameters")]
     public class ConstructorParameterTests {
         [Feature]

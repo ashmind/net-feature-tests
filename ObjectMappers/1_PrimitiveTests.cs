@@ -19,6 +19,12 @@ namespace FeatureTests.On.ObjectMappers {
         }
 
         [Feature]
+        [DisplayName("int ⇒ int")]
+        public void Int32ToInt32(IObjectMapperAdapter mapper) {
+            AssertPrimitiveMappingWorksFor(mapper, 123, 123);
+        }
+
+        [Feature]
         [DisplayName("int ⇒ object")]
         public void Int32ToObject(IObjectMapperAdapter mapper) {
             AssertPrimitiveMappingWorksFor(mapper, 123, (object)123);
@@ -37,6 +43,12 @@ namespace FeatureTests.On.ObjectMappers {
         }
 
         [Feature]
+        [DisplayName("int ⇒ decimal")]
+        public void Int32ToDecimal(IObjectMapperAdapter mapper) {
+            AssertPrimitiveMappingWorksFor(mapper, 123, (decimal)123);
+        }
+
+        [Feature]
         [DisplayName("string ⇒ int")]
         public void StringToInt32(IObjectMapperAdapter mapper) {
             AssertPrimitiveMappingWorksFor(mapper, "123", 123);
@@ -48,6 +60,20 @@ namespace FeatureTests.On.ObjectMappers {
             AssertPrimitiveMappingWorksFor(mapper, (object)123, 123);
         }
 
+        [Feature]
+        [DisplayName("DateTime ⇒ DateTime")]
+        public void DateTimeToDateTime(IObjectMapperAdapter mapper) {
+            var now = DateTime.Now;
+            AssertPrimitiveMappingWorksFor(mapper, now, now);
+        }
+
+        [Feature]
+        [DisplayName("DateTime ⇒ DateTimeOffset")]
+        public void DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) {
+            var now = DateTime.Now;
+            AssertPrimitiveMappingWorksFor(mapper, now, (DateTimeOffset)now);
+        }
+        
         private static void AssertPrimitiveMappingWorksFor<TSource, TTarget>(IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) {
             mapper.CreateMap<Wrapper<TSource>, Wrapper<TTarget>>();
 

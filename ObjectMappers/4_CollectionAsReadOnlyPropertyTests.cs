@@ -9,7 +9,7 @@ using FeatureTests.Shared;
 using Xunit;
 
 namespace FeatureTests.On.ObjectMappers {
-    [DisplayOrder(3)]
+    [DisplayOrder(4)]
     [DisplayName("Collections (read-only property)")]
     public class CollectionAsReadOnlyPropertyTests {
         [Feature]
