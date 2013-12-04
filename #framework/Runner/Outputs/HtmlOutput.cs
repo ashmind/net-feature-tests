@@ -35,15 +35,17 @@ namespace FeatureTests.Runner.Outputs {
             this.layoutTemplatePath = Path.Combine(templatesDirectory.FullName, LayoutTemplateFileName);
         }
 
-        public void Write(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
-            this.RenderTemplate(arguments, allArgumentsForThisRun);
-            this.CopyFiles(templatesDirectory, arguments.OutputDirectory, f => FileExtensionsToCopy.Contains(f.Extension));
+        public void Write(DirectoryInfo outputDirectory, IReadOnlyCollection<ResultForAssembly> results, bool keepUpdatingIfTemplatesChange = false) {
+            foreach (var result in results) {
+                this.RenderTemplate(outputDirectory, result, results);
+            }
+            this.CopyFiles(templatesDirectory, outputDirectory, f => FileExtensionsToCopy.Contains(f.Extension));
 
-            if (arguments.KeepUpdatingIfTemplatesChange)
-                this.KeepUpdatingFrom(arguments, allArgumentsForThisRun);
+            if (keepUpdatingIfTemplatesChange)
+                this.KeepUpdatingUsing(outputDirectory, results);
         }
 
-        private void KeepUpdatingFrom(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
+        private void KeepUpdatingUsing(DirectoryInfo outputDirectory, IReadOnlyCollection<ResultForAssembly> results) {
             if (this.watcher == null)
                 this.watcher = new FileSystemWatcher(this.templatesDirectory.FullName, "*.cshtml");
 
@@ -52,7 +54,9 @@ namespace FeatureTests.Runner.Outputs {
                     return;
 
                 try {
-                    this.RenderTemplate(arguments, allArgumentsForThisRun);
+                    foreach (var result in results) {
+                        this.RenderTemplate(outputDirectory, result, results);
+                    }
                 }
                 catch (Exception ex) {
                     Console.WriteLine(ex);
@@ -61,8 +65,8 @@ namespace FeatureTests.Runner.Outputs {
             this.watcher.EnableRaisingEvents = true;
         }
 
-        private void RenderTemplate(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
-            var targetPath = Path.Combine(arguments.OutputDirectory.FullName, arguments.OutputNamePrefix + ".html");
+        private void RenderTemplate(DirectoryInfo outputDirectory, ResultForAssembly arguments, IReadOnlyCollection<ResultForAssembly> allArgumentsForThisRun) {
+            var targetPath = Path.Combine(outputDirectory.FullName, arguments.OutputNamePrefix + ".html");
             try {
                 var model = this.BuildModel(arguments, allArgumentsForThisRun);
                 var templateBodyResult = this.RenderTemplateToStringSafe(this.resultTemplatePath, model);
@@ -89,7 +93,7 @@ namespace FeatureTests.Runner.Outputs {
             return template.Render(model);
         }
 
-        private HtmlResultModel BuildModel(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
+        private HtmlResultModel BuildModel(ResultForAssembly arguments, IReadOnlyCollection<ResultForAssembly> allArgumentsForThisRun) {
             var labels = this.GetLabels(arguments);
 
             var model = new HtmlResultModel(arguments.Tables) {
@@ -104,7 +108,7 @@ namespace FeatureTests.Runner.Outputs {
             return model;
         }
 
-        private void BuildNavigationLinks(IList<NavigationLinkModel> navigation, ResultOutputArguments currentArguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
+        private void BuildNavigationLinks(IList<NavigationLinkModel> navigation, ResultForAssembly currentArguments, IReadOnlyCollection<ResultForAssembly> allArgumentsForThisRun) {
             foreach (var arguments in allArgumentsForThisRun) {
                 var url = arguments.OutputNamePrefix + ".html";
                 var name = (string)this.GetLabels(arguments).LinkTitle;
@@ -130,7 +134,7 @@ namespace FeatureTests.Runner.Outputs {
             return result;
         }
 
-        private dynamic GetLabels(ResultOutputArguments arguments) {
+        private dynamic GetLabels(ResultForAssembly arguments) {
             var labelsString = this.GetResource(arguments.Assembly, "Labels.json");
             return JsonConvert.DeserializeObject(labelsString.NullIfEmpty() ?? "{}");
         }

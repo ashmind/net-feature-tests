@@ -28,9 +28,9 @@ namespace FeatureTests.Runner {
                 new JsonOutput()
             };
                 
-            var directory = new DirectoryInfo(args.OutputPath ?? ConfigurationManager.AppSettings["OutputPath"]);
-            if (!directory.Exists)
-                directory.Create();
+            var outputDirectory = new DirectoryInfo(args.OutputPath ?? ConfigurationManager.AppSettings["OutputPath"]);
+            if (!outputDirectory.Exists)
+                outputDirectory.Create();
 
             var assemblyPaths = GetAssemblyPaths(args);
             var results = assemblyPaths.Select(path => {
@@ -41,7 +41,7 @@ namespace FeatureTests.Runner {
                 CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
 
                 var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
-                var result = new ResultOutputArguments(assembly, tables, directory, outputNamePrefix, args.WatchTemplates);
+                var result = new ResultForAssembly(assembly, tables, outputNamePrefix);
 
                 ConsoleEx.WriteLine(ConsoleColor.Green, " OK");
                 return result;
@@ -49,10 +49,8 @@ namespace FeatureTests.Runner {
 
             Console.WriteLine();
             ConsoleEx.WriteLine(ConsoleColor.White, "Creating outputs:");
-            foreach (var result in results) {
-                foreach (var output in outputs) {
-                    output.Write(result, results);
-                }
+            foreach (var output in outputs) {
+                output.Write(outputDirectory, results, args.WatchTemplates);
             }
 
             if (args.WatchTemplates) {
