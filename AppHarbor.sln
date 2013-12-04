@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 11.00
-# Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FeatureTables.Web", "FeatureTables.Web\FeatureTables.Web.csproj", "{6D69D53C-1B6A-485A-B75B-00063BF820C7}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Results.Web", "#framework\Results.Web\Results.Web.csproj", "{6D69D53C-1B6A-485A-B75B-00063BF820C7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

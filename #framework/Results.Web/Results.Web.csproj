@@ -104,10 +104,16 @@
     </VisualStudio>
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="BeforeBuild">
+    <ItemGroup>
+      <_FilesToCopy Include="$(SolutionDir)\#generated\**\*.*" />
+    </ItemGroup>
+    <Copy SourceFiles="@(_FilesToCopy)" DestinationFolder="$(MSBuildProjectDirectory)\%(RecursiveDir)" />
+  </Target>
+
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
+  
   <Target Name="AfterBuild">
   </Target>
   -->
