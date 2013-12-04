@@ -6,7 +6,7 @@ namespace FeatureTests.Runner.Outputs.Html.Models {
             this.Navigation = new List<NavigationLinkModel>();
         }
 
+        public string Title                          { get; set; }
         public IList<NavigationLinkModel> Navigation { get; private set; }
-        public dynamic Labels                        { get; set; }
     }
 }

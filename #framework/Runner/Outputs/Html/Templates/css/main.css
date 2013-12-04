@@ -49,6 +49,8 @@ body {
     position: absolute;
     left: 270px;
     right: 20px;
+
+    padding: 20px 0;
 }
 
 h1, h2 {
@@ -58,7 +60,7 @@ h1, h2 {
 h1 {
     font-size: 160%;
     padding-bottom: 5px;
-    margin-top: 30px;
+    margin-top: 0;
 }
 
 h2 {
@@ -84,7 +86,7 @@ section:first-of-type h2 {
     max-width: 60rem;
 }
 
-dt, dd {
+dl, dt, dd {
     margin: 0;
     padding: 0;
 }

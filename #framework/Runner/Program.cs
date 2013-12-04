@@ -77,7 +77,6 @@ namespace FeatureTests.Runner {
             }
             catch (Exception ex) {
                 ConsoleEx.WriteLine(ConsoleColor.Red, ex);
-                Console.ReadKey();
             }
         }
 

@@ -58,5 +58,13 @@ namespace FeatureTests.Shared.GenericApiSupport {
 
             return Expression.Lambda(Visit(node.Body), node.TailCall, VisitAndConvert(node.Parameters, "VisitLambda").ToArray());
         }
+
+        protected override Expression VisitConstant(ConstantExpression node) {
+            var rewritten = this.rewriteType(node.Type);
+            if (rewritten == node.Type)
+                return base.VisitConstant(node);
+
+            return Expression.Constant(node.Value, rewritten);
+        }
     }
 }

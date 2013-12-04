@@ -18,6 +18,11 @@
     <nav class="main-nav">
       <ul>
         <li>
+          <a href="Introduction.html" >Introduction</a>
+          <ul>
+          </ul>
+        </li>
+        <li>
           <a href="DependencyInjection.html" >Dependency Injection</a>
           <ul>
             <li><a href="DependencyInjection.html#GeneralInformation" >General information</a></li>
@@ -143,17 +148,17 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-599 144        </td>
+599 371        </td>
         <td class="neutral number">
 43        </td>
         <td class="neutral number">
-8 030        </td>
+8 033        </td>
         <td class="neutral number">
 196        </td>
         <td class="neutral number">
 1 299        </td>
         <td class="neutral number">
-8 030        </td>
+8 033        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -165,13 +170,13 @@ n/a        </td>
         <td class="concern">
 69%        </td>
         <td class="failure">
-19%        </td>
+22%        </td>
         <td class="failure">
 36%        </td>
         <td class="failure">
 8%        </td>
         <td class="concern">
-67%        </td>
+64%        </td>
         <td class="failure">
 19%        </td>
     </tr>
@@ -392,8 +397,42 @@ Actual:   (null)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 30">fail</span>
         </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="System.InvalidOperationException: Collection was modified; enumeration operation may not execute.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Collections.Generic.List`1.Enumerator.MoveNextRare()
+   at System.Collections.Generic.List`1.Enumerator.MoveNext()
+   at System.Linq.Enumerable.WhereListIterator`1.MoveNext()
+   at System.Linq.Enumerable.&lt;SelectManyIterator&gt;d__14`2.MoveNext()
+   at OoMapper.UserDefinedConfiguration.&lt;InheritedConfigurations&gt;d__9.MoveNext() in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserDefinedConfiguration.cs:line 38
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.OrderedEnumerable`1.&lt;GetEnumerator&gt;d__0.MoveNext()
+   at System.Linq.Enumerable.Any[TSource](IEnumerable`1 source, Func`2 predicate)
+   at OoMapper.TypeMapBuilder.CreatePropertyMap(ITypeMapConfiguration tmc, IUserDefinedConfiguration configuration, MemberInfo destination) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\TypeMapBuilder.cs:line 27
+   at OoMapper.TypeMapBuilder.&lt;&gt;c__DisplayClass3.&lt;CreateTypeMap&gt;b__0(MemberInfo destination) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\TypeMapBuilder.cs:line 15
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at OoMapper.TypeMapBuilder.CreateTypeMap(ITypeMapConfiguration tmc, IUserDefinedConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\TypeMapBuilder.cs:line 14
+   at OoMapper.UserConfigurationMapper.&lt;&gt;c__DisplayClass1.&lt;CreateOrGetTypeMap&gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 47
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.UserConfigurationMapper.CreateOrGetTypeMap(ITypeMapConfiguration map) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 47
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 32
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass3.&lt;BuildSource&gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
+   at OoMapper.MappingConfiguration.&lt;&gt;c__DisplayClass9.&lt;GetCompiledNew&gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 18
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.Int32ToObject(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 30">fail</span>
+        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
 Expected: 123
@@ -875,7 +914,7 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -884,7 +923,7 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -915,7 +954,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1115,7 +1154,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="System.InvalidCastException: Specified cast is not valid.
-   at ObjectsMapper30_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]198bfcbebf65f430fa767d97b7a4ef753.MapImpl(Object , Object , Object )
+   at ObjectsMapper30_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1eb608bbd2463474dab9cc4044624c483.MapImpl(Object , Object , Object )
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from, Object to, Object state)
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from)
    at EmitMapper.ObjectsMapper`2.Map(TFrom from)
@@ -1197,15 +1236,8 @@ Actual:   not set
       <td class="row-name"><span >(object)null ⇒ (int?)null</span></td>
         <td class="success">
 pass        </td>
-        <td class="failure">
-            <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   1
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 66
-   at FeatureTests.On.ObjectMappers.NullableTests.NullObjectToNullNullableInt32(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 42">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
@@ -1242,7 +1274,7 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-05.12.2013 0:13:05 ---&gt; System.ArgumentException: Object of type &#39;System.DateTime&#39; cannot be converted to type &#39;System.Nullable`1[System.DateTimeOffset]&#39;.
+05.12.2013 1:52:29 ---&gt; System.ArgumentException: Object of type &#39;System.DateTime&#39; cannot be converted to type &#39;System.Nullable`1[System.DateTimeOffset]&#39;.
    at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
    at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
    at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
@@ -1268,7 +1300,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1277,7 +1309,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1308,7 +1340,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1329,7 +1361,7 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-05.12.2013 0:13:05 ---&gt; System.ArgumentException: Object of type &#39;System.DateTime&#39; cannot be converted to type &#39;System.Nullable`1[System.DateTimeOffset]&#39;.
+05.12.2013 1:52:29 ---&gt; System.ArgumentException: Object of type &#39;System.DateTime&#39; cannot be converted to type &#39;System.Nullable`1[System.DateTimeOffset]&#39;.
    at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
    at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
    at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
@@ -1355,7 +1387,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1364,7 +1396,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1395,7 +1427,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 05.12.2013 0:13:05 +13:00
+Expected: 05.12.2013 1:52:29 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)

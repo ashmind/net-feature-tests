@@ -4,37 +4,36 @@
     // setup tooltips
     (function() {
         var $currentTrigger = $();
-        $('[title]').tooltipster({ theme: 'tooltipster-custom', trigger: 'custom' })
-                    .addClass('with-tooltip')
-                    .click(function() {
-                        var $this = $(this);
-                        $this.data('clicked', true);
+        var $tooltipsters = $('[title]').tooltipster({ theme: 'tooltipster-custom', trigger: 'custom' })
+                                        .addClass('with-tooltip');
+        $tooltipsters.click(function() {
+            var $this = $(this);
+            $this.data('clicked', true);
 
-                        if ($this === $currentTrigger)
-                            return;
+            if ($this === $currentTrigger)
+                return;
 
-                        $this.tooltipster('show');
-                        $currentTrigger = $this;
-                    })
-                    .hover(
-                        function() {
-                            var $this = $(this);
+            $this.tooltipster('show');
+            $currentTrigger = $this;
+        });
+        $tooltipsters.hover(
+            function() {
+                var $this = $(this);
                             
-                            $currentTrigger.data('clicked', false)
-                                           .tooltipster('hide');
-                            $this.tooltipster('show');
-                            $currentTrigger = $this;
-                        },
-                        function() {
-                            var $this = $(this);
-                            if ($this.data('clicked'))
-                                return;
+                $currentTrigger.data('clicked', false)
+                                .tooltipster('hide');
+                $this.tooltipster('show');
+                $currentTrigger = $this;
+            },
+            function() {
+                var $this = $(this);
+                if ($this.data('clicked'))
+                    return;
 
-                            $this.tooltipster('hide');
-                            $currentTrigger = $();
-                        }
-                    );
-
+                $this.tooltipster('hide');
+                $currentTrigger = $();
+            }
+        );
 
         $('body').click(function(e) {
             var $target = $(e.target);
@@ -49,9 +48,11 @@
     })();
 
     // setup width
-    $('.content').wrapInner('<div class="content-wrapper"></div>')
-                 .css('max-width', (model.libraryCount * 100 + 190) + 'px');
-    
+    if (window.model) {
+        $('.content').wrapInner('<div class="content-wrapper"></div>')
+                     .css('max-width', (window.model.libraryCount * 100 + 190) + 'px');
+    }
+
     // setup waypoints
     (function() {
         var $selected = $();

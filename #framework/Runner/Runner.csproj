@@ -131,6 +131,8 @@
     <Compile Include="Sources\3_FeatureTestTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Outputs\Html\Templates\Introduction.cshtml" />
+    <None Include="Outputs\Html\Templates\CustomPages.json" />
     <None Include="Outputs\Html\Templates\_Layout.cshtml" />
     <None Include="Outputs\Html\Templates\Results.cshtml" />
     <None Include="Service References\NuGetGallery\Reference.datasvcmap">
