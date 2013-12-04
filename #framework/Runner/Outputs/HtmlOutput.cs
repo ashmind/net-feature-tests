@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 using System.Text.RegularExpressions;
 using AshMind.Extensions;
+using FeatureTests.Runner.Outputs.Html.Models;
 using FeatureTests.Shared.ResultData;
 using Newtonsoft.Json;
 using RazorTemplates.Core;
@@ -16,18 +17,22 @@ namespace FeatureTests.Runner.Outputs {
         [DllImport("Kernel32.dll", CharSet = CharSet.Unicode)]
         private static extern bool CreateHardLink(string lpFileName, string lpExistingFileName, IntPtr lpSecurityAttributes);
 
-        private const string TemplateFileName = "FeatureTests.cshtml";
+        private const string ResultTemplateFileName = "Results.cshtml";
+        private const string LayoutTemplateFileName = "_Layout.cshtml";
+
         private static readonly ISet<string> FileExtensionsToCopy = new HashSet<string>(StringComparer.InvariantCultureIgnoreCase) {
             ".css", ".js", ".html", ".htm"
         };
 
         private readonly DirectoryInfo templatesDirectory;
-        private readonly string templatePath;
+        private readonly string resultTemplatePath;
+        private readonly string layoutTemplatePath;
         private FileSystemWatcher watcher;
 
         public HtmlOutput(DirectoryInfo templatesDirectory) {
             this.templatesDirectory = templatesDirectory;
-            this.templatePath = Path.Combine(templatesDirectory.FullName, TemplateFileName);
+            this.resultTemplatePath = Path.Combine(templatesDirectory.FullName, ResultTemplateFileName);
+            this.layoutTemplatePath = Path.Combine(templatesDirectory.FullName, LayoutTemplateFileName);
         }
 
         public void Write(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
@@ -40,7 +45,7 @@ namespace FeatureTests.Runner.Outputs {
 
         private void KeepUpdatingFrom(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
             if (this.watcher == null)
-                this.watcher = new FileSystemWatcher(this.templatesDirectory.FullName, TemplateFileName);
+                this.watcher = new FileSystemWatcher(this.templatesDirectory.FullName, "*.cshtml");
 
             this.watcher.Changed += (sender, e) => {
                 if (e.ChangeType != WatcherChangeTypes.Changed)
@@ -59,21 +64,29 @@ namespace FeatureTests.Runner.Outputs {
         private void RenderTemplate(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {
             var targetPath = Path.Combine(arguments.OutputDirectory.FullName, arguments.OutputNamePrefix + ".html");
             try {
-                var templateSource = File.ReadAllText(this.templatePath);
-                var template = Template.WithBaseType<HtmlTemplateBase<HtmlResultModel>>()
-                                       .Compile<HtmlResultModel>(templateSource);
-
-
                 var model = this.BuildModel(arguments, allArgumentsForThisRun);
-                var templateResult = template.Render(model);
-                
-                File.WriteAllText(targetPath, templateResult);
+                var templateBodyResult = this.RenderTemplateToStringSafe(this.resultTemplatePath, model);
+                var templateLayoutResult = this.RenderTemplateToStringSafe<HtmlBasicModel>(this.layoutTemplatePath, model, m => m.Body = templateBodyResult);
+
+                File.WriteAllText(targetPath, templateLayoutResult);
                 ConsoleEx.WriteLine(ConsoleColor.DarkGray, "    rendered " + targetPath);
             }
             catch (Exception ex) {
                 File.WriteAllText(targetPath, ex.ToString());
                 throw;
             }
+        }
+
+        private string RenderTemplateToStringSafe<TModel>(string templatePath, TModel model, Action<HtmlTemplateBase<TModel>> initializer = null) 
+            where TModel : HtmlBasicModel
+        {
+            initializer = initializer ?? (t => {});
+
+            var templateSource = File.ReadAllText(templatePath);
+            var template = Template.WithBaseType<HtmlTemplateBase<TModel>>((Action<TemplateBase>)(t => initializer((HtmlTemplateBase<TModel>)t)))
+                                   .Compile<TModel>(templateSource);
+
+            return template.Render(model);
         }
 
         private HtmlResultModel BuildModel(ResultOutputArguments arguments, IReadOnlyCollection<ResultOutputArguments> allArgumentsForThisRun) {

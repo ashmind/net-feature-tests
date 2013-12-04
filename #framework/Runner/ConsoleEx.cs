@@ -24,6 +24,16 @@ namespace FeatureTests.Runner {
             return new Disposer(() => Console.ForegroundColor = oldColor);
         }
 
+        public static void Write(ConsoleColor color, string format, params object[] args) {
+            using (ConsoleEx.ForegroundColor(color))
+                Console.Write(format, args);
+        }
+
+        public static void Write(ConsoleColor color, object value) {
+            using (ConsoleEx.ForegroundColor(color))
+                Console.Write(value);
+        }
+
         public static void WriteLine(ConsoleColor color, string format, params object[] args) {
             using (ConsoleEx.ForegroundColor(color))
                 Console.WriteLine(format, args);

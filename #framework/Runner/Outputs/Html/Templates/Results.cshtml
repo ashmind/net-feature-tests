@@ -1,0 +1,68 @@
+﻿@using System.Linq
+@using AshMind.Extensions
+@inherits FeatureTests.Runner.Outputs.Html.HtmlTemplateBase<FeatureTests.Runner.Outputs.Html.Models.HtmlResultModel>
+            
+<!-- TODO: move this to a separate (navigable) file
+<section>
+  <h2 id="GeneralInformation">General information</h2>
+  <div class="section-description">
+    <p>The goal of this project is to monitor support for important features across multiple libraries.</p>
+    <p>You can find the code behind these tables in <a href="https://github.com/ashmind/net-feature-tests">net-feature-tests GitHub project</a>.</p>
+
+    <p>Please note the following:</p>
+    <ol>
+      <li>The list of features is based on what I consider to be important. It is not an objective measure on which library is "better".</li>
+      <li>It is not possible to test for all features automatically. For example, extensibility is very important, but impossible to test/measure.</li>
+      <li>The test results might not necessary be up to date (see the version for each library).</li>
+      <li>The test code should not be seen as best practice for each library — it forces all of them to the same test interface.</li>
+      <li>I am not an expert on all libraries and not all adapters were reviewed by authors. So feature may fail because of incorrect adapter.</li>
+    </ol>
+            
+    <p>Thanks for reading!</p>
+  </div>
+</section>
+End of TODO -->
+
+@foreach (var table in Model.Tables) {
+<section>
+  <h2 id="@Model.TableIdMap[table]">@table.DisplayName</h2>
+  <div class="section-description">@Format.Description(table.Description)</div>
+        
+  <table>
+    <tr>
+      <th>Name</th>
+      @foreach (var library in table.Libraries) {
+        <th><span>@library.Name</span></th>
+      }
+    </tr>
+
+    @foreach (var row in table.GetFeatureRows()) {
+      var feature = row.Item1;
+    <tr>
+      <td class="row-name"><span @Html.Raw(!feature.Description.IsNullOrWhiteSpace() ? "title=\"" + Format.Description(feature.Description) + "\"" : null)>@feature.Name</span></td>
+      @foreach (var cell in row.Item2) {
+        <td class="@Format.GetCssClassesForCell(cell)">
+        @if (cell.HasDetails) {
+            <span title="@cell.Details">@Format.DisplayValue(cell.DisplayValue)</span>
+        }
+        else if (cell.DisplayUri != null) {
+            <a href="@cell.DisplayUri">@Format.DisplayValue(cell.DisplayValue)</a>
+        }
+        else {
+            @Format.DisplayValue(cell.DisplayValue)
+        }
+        </td>
+      }
+    </tr>
+    }
+  </table>
+</section>
+}
+      
+@Html.Raw(Model.HtmlAfterAll)
+    
+<script type="text/javascript">
+  var model = {
+      libraryCount: @Model.Tables.First().Libraries.Count
+  };
+</script>

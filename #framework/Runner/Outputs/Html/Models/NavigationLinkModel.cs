@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AshMind.Extensions;
 
-namespace FeatureTests.Runner.Outputs.Html {
+namespace FeatureTests.Runner.Outputs.Html.Models {
     public class NavigationLinkModel {
         public NavigationLinkModel(string name, string url, bool onCurrentPage, IEnumerable<NavigationLinkModel> childLinks = null) {
             this.Name = name;

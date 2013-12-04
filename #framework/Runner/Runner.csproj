@@ -83,7 +83,6 @@
       <HintPath>..\#packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
     </Reference>
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\#packages\RazorTemplates.1.2.0\lib\System.Web.Razor.dll</HintPath>
@@ -103,8 +102,11 @@
     <Compile Include="CommandLineArguments.cs" />
     <Compile Include="ConsoleEx.cs" />
     <Compile Include="Outputs\HtmlOutput.cs" />
-    <Compile Include="Outputs\Html\NavigationLinkModel.cs" />
-    <Compile Include="Outputs\Html\HtmlResultModel.cs" />
+    <Compile Include="Outputs\Html\FormatHelper.cs" />
+    <Compile Include="Outputs\Html\Models\HtmlBasicModel.cs" />
+    <Compile Include="Outputs\Html\HtmlHelper.cs" />
+    <Compile Include="Outputs\Html\Models\NavigationLinkModel.cs" />
+    <Compile Include="Outputs\Html\Models\HtmlResultModel.cs" />
     <Compile Include="Outputs\Html\HtmlTemplateBase.cs" />
     <Compile Include="Outputs\IResultOutput.cs" />
     <Compile Include="Outputs\JsonOutput.cs" />
@@ -129,7 +131,8 @@
     <Compile Include="Sources\3_FeatureTestTableSource.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Outputs\Html\Templates\FeatureTests.cshtml" />
+    <None Include="Outputs\Html\Templates\_Layout.cshtml" />
+    <None Include="Outputs\Html\Templates\Results.cshtml" />
     <None Include="Service References\NuGetGallery\Reference.datasvcmap">
       <Generator>DataServicesCoreClientGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

@@ -34,18 +34,21 @@ namespace FeatureTests.Runner {
 
             var assemblyPaths = GetAssemblyPaths(args);
             var results = assemblyPaths.Select(path => {
-                ConsoleEx.WriteLine(ConsoleColor.White, "running " + Path.GetFileName(path));
+                ConsoleEx.Write(ConsoleColor.White, "Running " + Path.GetFileName(path) + ":");
                 var assembly = Assembly.LoadFrom(path);
 
                 var tables = sources.SelectMany(s => s.GetTables(assembly)).ToArray();
                 CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
 
                 var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
-                return new ResultOutputArguments(assembly, tables, directory, outputNamePrefix, args.WatchTemplates);
+                var result = new ResultOutputArguments(assembly, tables, directory, outputNamePrefix, args.WatchTemplates);
+
+                ConsoleEx.WriteLine(ConsoleColor.Green, " OK");
+                return result;
             }).ToArray();
 
             Console.WriteLine();
-            ConsoleEx.WriteLine(ConsoleColor.White, "creating outputs");
+            ConsoleEx.WriteLine(ConsoleColor.White, "Creating outputs:");
             foreach (var result in results) {
                 foreach (var output in outputs) {
                     output.Write(result, results);
@@ -54,8 +57,8 @@ namespace FeatureTests.Runner {
 
             if (args.WatchTemplates) {
                 Console.WriteLine();
-                ConsoleEx.WriteLine(ConsoleColor.White, "auto-updating outputs if templates change.");
-                ConsoleEx.WriteLine(ConsoleColor.White, "press [Enter] to stop...");
+                ConsoleEx.WriteLine(ConsoleColor.White, "Auto-updating outputs if templates change.");
+                ConsoleEx.WriteLine(ConsoleColor.White, "Press [Enter] to stop…");
                 Console.WriteLine();
                 Console.ReadLine();
             }
@@ -63,6 +66,9 @@ namespace FeatureTests.Runner {
             foreach (var output in outputs) {
                 output.Dispose();
             }
+
+            Console.WriteLine();
+            ConsoleEx.WriteLine(ConsoleColor.Green, "Completed.");
         }
         
         public static void Main(string[] args) {
