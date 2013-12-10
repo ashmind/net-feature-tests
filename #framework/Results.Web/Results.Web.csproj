@@ -108,7 +108,9 @@
     <ItemGroup>
       <_FilesToCopy Include="$(SolutionDir)\#generated\**\*.*" />
     </ItemGroup>
-    <Copy SourceFiles="@(_FilesToCopy)" DestinationFolder="$(MSBuildProjectDirectory)\%(RecursiveDir)" />
+    <Copy SourceFiles="@(_FilesToCopy)" DestinationFolder="$(MSBuildProjectDirectory)\%(RecursiveDir)">
+      <Output TaskParameter="CopiedFiles" ItemName="Content" />
+    </Copy>
   </Target>
 
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
