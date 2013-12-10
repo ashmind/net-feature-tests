@@ -234,11 +234,11 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-323 133        </td>
+323 153        </td>
         <td class="neutral number">
-226 755        </td>
+226 764        </td>
         <td class="neutral number">
-29 332        </td>
+29 335        </td>
         <td class="neutral number">
 2 298        </td>
         <td class="neutral number">
@@ -260,15 +260,15 @@ n/a        </td>
         <td class="neutral number">
 4 957        </td>
         <td class="neutral number">
-1 097 496        </td>
+1 097 514        </td>
         <td class="neutral number">
-27 314        </td>
+27 321        </td>
         <td class="neutral number">
 29 950        </td>
         <td class="neutral number">
-216 340        </td>
+216 348        </td>
         <td class="neutral number">
-531 549        </td>
+531 590        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -294,7 +294,7 @@ n/a        </td>
         <td class="success">
 74%        </td>
         <td class="concern">
-68%        </td>
+63%        </td>
         <td class="concern">
 63%        </td>
         <td class="concern">
@@ -1211,8 +1211,22 @@ pass        </td>
 pass        </td>
         <td class="success">
 pass        </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="System.InvalidOperationException: Stack empty.
+   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
+   at System.Collections.Generic.Stack`1.Pop()
+   at LinFu.IoC.ContainerExtensions.AutoCreateInternal(IServiceContainer container, Type concreteType, Object[] additionalArguments)
+   at LinFu.IoC.ContainerExtensions.AutoCreate(IServiceContainer container, Type concreteType, Object[] additionalArguments)
+   at LinFu.IoC.ContainerExtensions.AutoCreateFrom(Type concreteType, IServiceContainer container, Object[] additionalArguments)
+   at LinFu.IoC.Configuration.FactoryBuilder.CreateFactory(Type serviceType, Type actualType, Type factoryType)
+   at LinFu.IoC.Configuration.FactoryBuilder.CreateFactory(Type serviceType, Type implementingType, LifecycleType lifecycle)
+   at LinFu.IoC.ContainerExtensions.AddService(IServiceContainer container, String serviceName, Type serviceType, Type implementingType, LifecycleType lifecycle)
+   at LinFu.IoC.ContainerExtensions.AddService(IServiceContainer container, Type serviceType, Type implementingType, LifecycleType lifecycle)
+   at FeatureTests.On.DependencyInjection.Adapters.LinFuAdapter.AddService(Type serviceType, Type implementationType, LifecycleType lifecycle) in [removed]\LinFuAdapter.cs:line 33
+   at FeatureTests.On.DependencyInjection.Adapters.LinFuAdapter.RegisterSingleton(Type serviceType, Type implementationType) in [removed]\LinFuAdapter.cs:line 25
+   at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.RegisterSingleton[TService,TImplementation](IAdapter container) in [removed]\AdapterExtensions.cs:line 28
+   at FeatureTests.On.DependencyInjection.BasicTests.SingletonLifetime(IAdapter adapter) in [removed]\1_BasicTests.cs:line 36">fail</span>
+        </td>
         <td class="success">
 pass        </td>
         <td class="success">
@@ -3406,7 +3420,7 @@ The activation path:
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
    at MugenInjection.Core.InjectorBase.&amp;lt;Activate&amp;gt;b__d(IBindingContext context) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.Components.FactoryAndLazyConverter.FactoryResolve.Invoke(Object[] objects) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\FactoryAndLazyConverter.cs:line 186
-   at _DynamicMethodMugenInjection_Func`2_dbc000f5c2df4eeb83ae4dee05fee3e2(Func`2 , IService2 )
+   at _DynamicMethodMugenInjection_Func`2_999f036583a54cb98314ca6b65500734(Func`2 , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
         <td class="skipped">
@@ -4751,5 +4765,16 @@ pass        </td>
   };
 </script>
     </main>
+    
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-1782671-9', 'apphb.com');
+      ga('send', 'pageview');
+
+    </script>
   </body>
 </html>
