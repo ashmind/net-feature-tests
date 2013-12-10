@@ -91,6 +91,9 @@
     <Reference Include="LightCore.Configuration">
       <HintPath>..\#packages\LightCore.1.5.1\lib\net40\LightCore.Configuration.dll</HintPath>
     </Reference>
+    <Reference Include="LightInject">
+      <HintPath>..\packages\LightInject.3.0.1.2\lib\net45\LightInject.dll</HintPath>
+    </Reference>
     <Reference Include="LinFu.Core, Version=2.3.0.41559, Culture=neutral, PublicKeyToken=a4c63a184389506f, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\LinFu.Core.2.3.0.41559\lib\net35\LinFu.Core.dll</HintPath>
@@ -167,6 +170,7 @@
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\CatelAdapter.cs" />
+    <Compile Include="Adapters\LightInjectAdapter.cs" />
     <Compile Include="Adapters\MefAdapter.cs" />
     <Compile Include="Adapters\GraceAdapter.cs" />
     <Compile Include="Adapters\SpeediocAdapter.Disabled.cs" />

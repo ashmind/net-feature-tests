@@ -145,17 +145,17 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-610 390        </td>
+611 714        </td>
         <td class="neutral number">
-50        </td>
+53        </td>
         <td class="neutral number">
-8 161        </td>
+8 181        </td>
         <td class="neutral number">
-197        </td>
+199        </td>
         <td class="neutral number">
-1 300        </td>
+1 302        </td>
         <td class="neutral number">
-8 161        </td>
+8 181        </td>
     </tr>
   </table>
 </section>
@@ -857,8 +857,8 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 12/10/2013 11:24:54 PM +01:00
+Actual:   1/1/0001 12:00:00 AM +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
@@ -866,8 +866,8 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 12/10/2013 11:24:54 PM +01:00
+Actual:   1/1/0001 12:00:00 AM +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
@@ -897,8 +897,8 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 12/10/2013 11:24:54 PM +01:00
+Actual:   1/1/0001 12:00:00 AM +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
@@ -1098,7 +1098,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="System.InvalidCastException: Specified cast is not valid.
-   at ObjectsMapper30_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1aface72e801040b09c498aec737ce875.MapImpl(Object , Object , Object )
+   at ObjectsMapper30_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1198e30083ed041c9a189459f2a599a74.MapImpl(Object , Object , Object )
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from, Object to, Object state)
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from)
    at EmitMapper.ObjectsMapper`2.Map(TFrom from)
@@ -1144,15 +1144,8 @@ Actual:   (null)
       <td class="row-name"><span>(int?)null ⇒ (object)null</span></td>
         <td class="success">
 pass        </td>
-        <td class="failure">
-            <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   not set
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
-   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 37">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
@@ -1225,7 +1218,7 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-11.12.2013 2:01:35 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+12/10/2013 11:24:54 PM ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
    at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
    at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
    at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
@@ -1251,7 +1244,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
+Expected: 12/10/2013 11:24:54 PM +01:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1260,8 +1253,8 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 12/10/2013 11:24:54 PM +01:00
+Actual:   1/1/0001 12:00:00 AM +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
@@ -1291,7 +1284,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
+Expected: 12/10/2013 11:24:54 PM +01:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1312,7 +1305,7 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-11.12.2013 2:01:35 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+12/10/2013 11:24:54 PM ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
    at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
    at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
    at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
@@ -1338,7 +1331,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
+Expected: 12/10/2013 11:24:54 PM +01:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1347,8 +1340,8 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 12/10/2013 11:24:54 PM +01:00
+Actual:   1/1/0001 12:00:00 AM +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
@@ -1378,7 +1371,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 11.12.2013 2:01:35 +13:00
+Expected: 12/10/2013 11:24:54 PM +01:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
