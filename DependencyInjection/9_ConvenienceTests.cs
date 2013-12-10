@@ -23,7 +23,7 @@ namespace FeatureTests.On.DependencyInjection {
         ")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
             Simple Injector does not allow resolving types with multiple constructors out of the box, but this 
-            behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.
+            behavior can be changed by replacing the `Container.Options.ConstructorResolutionBehavior`.
             For more info see: https://bit.ly/13WKdRT.
         ", Skip = true)]
         public void ReasonableConstructorSelection(IAdapter adapter) {
@@ -59,9 +59,9 @@ namespace FeatureTests.On.DependencyInjection {
         [DisplayName("Graceful recursion handling")]
         [Description(@"
             Recursive dependencies are non-resolvable, however the difference between
-            getting a StackOverflowException and any other one is significant.
+            getting a `StackOverflowException` and any other one is significant.
 
-            StackOverflowException will crash the whole process, which is really undesirable,
+            `StackOverflowException` will crash the whole process, which is really undesirable,
             even if it is only an integration test environment. Debugging such issue can
             be a huge annoyance.
         ")]

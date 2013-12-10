@@ -21,7 +21,7 @@ namespace FeatureTests.On.DependencyInjection {
     public class FuncTests {
         [Feature]
         [DisplayName("No parameters")]
-        [Description("Registration of TService automatically provides Func<TService>.")]
+        [Description("Registration of `TService` automatically provides `Func<TService>`.")]
         public void FactoryWithNoParameters(IAdapter adapter) {
             adapter.Register<IService, IndependentService>();
             adapter.Register<ServiceWithSimpleConstructorDependency>();
@@ -36,11 +36,11 @@ namespace FeatureTests.On.DependencyInjection {
         [Feature]
         [DisplayName("Parameter for dependency")]
         [Description(@"
-            Registration of TService automatically provides Func<..., TService>, where any
+            Registration of `TService` automatically provides `Func<..., TService>`, where any
             arguments to the factory define constructor parameter overrides.
 
-            For example, registration Service(IService1, IService2) can provide Func<IService2, Service>
-            or Func<IService1, Service> or Func<IService1, Service2, Service>. Remaining parameters are
+            For example, registration `Service(IService1, IService2)` can provide `Func<IService2, Service>`
+            or `Func<IService1, Service>` or `Func<IService1, Service2, Service>`. Remaining parameters are
             provided by the container.
         ")]
         [DependsOnFeature("FactoryWithNoParameters")]
@@ -58,9 +58,31 @@ namespace FeatureTests.On.DependencyInjection {
         }
 
         [Feature]
+        [DisplayName("Parameter for subdependency")]
+        [Description(@"
+            Similar to 'Parameter for dependency', but instead of a direct dependency, factory parameter
+            is mapped to all levels within current resolution request.
+
+            For example, registration `ServiceA(ServiceB1(ServiceC), IServiceB2)` can provide `Func<ServiceC, ServiceA>`.
+        ")]
+        [DependsOnFeature("FactoryWithParameter")]
+        public void FactoryWithParameterForSubdependency(IAdapter adapter) {
+            adapter.Register<ServiceWithSimpleConstructorDependency>();
+            adapter.Register<ServiceWithDependencyOnServiceWithOtherDependency>();
+
+            var service = new IndependentService();
+            var func = adapter.Resolve<Func<IService, ServiceWithDependencyOnServiceWithOtherDependency>>();
+
+            Assert.NotNull(func);
+            var result = func(service);
+            Assert.NotNull(result);
+            Assert.Same(service, result.Service.Service);
+        }
+
+        [Feature]
         [DisplayName("Singleton using transient")]
         [Description(@"
-            When TService is transient and Func<TService> was obtained by singleton, Func should return new
+            When `TService` is transient and `Func<TService>` was obtained by singleton, `Func` should return new
             instance on each call.
         ")]
         [DependsOnFeature("FactoryWithNoParameters")]

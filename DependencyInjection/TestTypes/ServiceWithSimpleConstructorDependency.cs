@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace FeatureTests.On.DependencyInjection.TestTypes {
-    public class ServiceWithSimpleConstructorDependency : IResolvableUnregisteredService {
+    public class ServiceWithSimpleConstructorDependency {
         private readonly IService service;
 
         public ServiceWithSimpleConstructorDependency(IService service) {
@@ -11,7 +11,7 @@ namespace FeatureTests.On.DependencyInjection.TestTypes {
         }
 
         public IService Service {
-            get { return this.service; } 
+            get { return this.service; }
         }
     }
 }

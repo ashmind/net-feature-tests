@@ -14,8 +14,8 @@ namespace FeatureTests.On.DependencyInjection {
         [DisplayName("Open generic registration")]
         [Description(@"
             Allows registration of open generic types.  
-            For example, Service<> can be registered as IService<>, and then any 
-            request for IService<X> should be resolved with Service<X>.
+            For example, `Service<>` can be registered as `IService<>`, and then any 
+            request for `IService<X>` should be resolved with `Service<X>`.
         ")]
         public void OpenGenericTypes(IAdapter adapter) {
             adapter.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));
@@ -29,13 +29,13 @@ namespace FeatureTests.On.DependencyInjection {
         [DependsOnFeature(typeof(ListTests), "Enumerable")]
         [DisplayName("Constraint support for open generics")]
         [Description(@"
-            For open generic registration, library does not use Service<T> to resolve request
-            for IService<X> if X does not match generic constraints on T.
+            For open generic registration, library does not use `Service<T>` to resolve request
+            for `IService<X>` if `X` does not match generic constraints on `T`.
         ")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
             Simple Injector does support filtering based on generic type constraints, but in case of 
             registering a collection of open generic types, it only allows all elements to be registered at 
-            once. Open generic collections can be registered using RegisterAllOpenGeneric.
+            once. Open generic collections can be registered using `RegisterAllOpenGeneric`.
             See: http://bit.ly/14DQx7c.
         ", Skip = true)]
         public void ConstrainsForOpenGenerics(IAdapter adapter) {

@@ -191,6 +191,7 @@
     <Compile Include="2_ListTests.cs" />
     <Compile Include="6_PropertyTests.cs" />
     <Compile Include="9_ConvenienceTests.cs" />
+    <Compile Include="TestTypes\ServiceWithDependencyOnServiceWithOtherDependency.cs" />
     <Compile Include="TestTypes\ServiceWithRecursiveLazyDependency2.cs" />
     <Compile Include="TestTypes\ServiceWithRecursiveLazyDependency1.cs" />
     <Compile Include="TestTypes\GenericServiceWithIService2Constraint.cs" />

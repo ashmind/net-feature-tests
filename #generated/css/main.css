@@ -309,3 +309,7 @@ td.concern .with-tooltip {
 .tooltipster-custom .tooltipster-content p+p {
     margin-top: 1em;
 }
+
+code {
+    font-family: Consolas, monaco, monospace;
+}

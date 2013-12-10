@@ -27,13 +27,7 @@ namespace FeatureTests.Runner.Outputs.Html {
         }
 
         protected new void Write(object value) {
-            if (value == null)
-                return;
-
-            if (!(value is IHtmlString))
-                value = WebUtility.HtmlEncode(value.ToString());
-
-            base.Write(value);
+            base.Write(HtmlEncode(value));
         }
 
         protected new void WriteAttribute(string attribute, PositionTagged<string> prefix, PositionTagged<string> suffix, params AttributeValue[] values) {
@@ -56,9 +50,30 @@ namespace FeatureTests.Runner.Outputs.Html {
             base.Write(prefix.Value);
             foreach (var attributeValue in values) {
                 base.Write(attributeValue.Prefix.Value);
-                this.Write(attributeValue.Value.Value);
+                //System.Diagnostics.Debugger.Launch();
+                this.WriteAttributeValue(attributeValue.Value.Value);
             }
             base.Write(suffix.Value);
+        }
+
+        private void WriteAttributeValue(object value) {
+            if (value == null)
+                return;
+
+            var encoded = HtmlEncode(value).Replace("&", "&amp;")
+                                           .Replace("\"", "&quot;");
+            base.Write(encoded);
+        }
+
+        private string HtmlEncode(object value) {
+            if (value == null)
+                return null;
+
+            var html = value as IHtmlString;
+            if (html != null)
+                return html.ToHtmlString();
+            
+            return WebUtility.HtmlEncode(value.ToString());
         }
     }
 }

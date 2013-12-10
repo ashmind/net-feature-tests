@@ -46,6 +46,9 @@ namespace FeatureTests.Runner.Outputs.Html {
         }
 
         public IHtmlString Description(string text) {
+            if (string.IsNullOrEmpty(text))
+                return null;
+
             var formatted = this.markdown.Transform(text);
             // also link twitter usernames
             formatted = Regex.Replace(formatted, @"(?<=[^\w\d])@([\w\d]+)", "<a href='http://www.twitter.com/$1'>@$1</a>");

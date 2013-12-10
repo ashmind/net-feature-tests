@@ -11,20 +11,13 @@ namespace FeatureTests.On.DependencyInjection {
     [DisplayOrder(2)]
     [DisplayName("List/array dependencies")]
     [Description(@"
-        When several registrations of IService exist in a container, many
-        frameworks automatically provide IService[] (or List<IService> etc).
+        When several registrations of `IService` exist in a container, many
+        frameworks automatically provide `IService[]` (or `List<IService>` etc).
 
         This is extremely important for open/closed principle. For example,
-        UserValidator can have dependency on IUserValidationRule[]. Then new
+        UserValidator can have dependency on `IUserValidationRule[]`. Then new
         rules can be transparently added to the system without any changes to
         UserValidator.
-
-        @dotnetjunkie:
-        .NET 4.5 introduced two new collection interfaces IReadOnlyCollection<T>
-        and IReadOnlyList<T> that define 'finite iterator' behavior and DI
-        frameworks should natively support these interface to prevent
-        defensive copying of arrays (as Mark Seemann explains here 
-        http://blog.ploeh.dk/2013/07/20/linq-versus-the-lsp/).
     ")]
     [FeatureScoring(FeatureScoring.SinglePoint)]
     public class ListTests {
@@ -50,7 +43,7 @@ namespace FeatureTests.On.DependencyInjection {
         [Feature]
         [DisplayName("IEnumerable<IService>")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
-            Simple Injector does support resolving IEnumerable<T>, but requires a single registration 
+            Simple Injector does support resolving `IEnumerable<T>`, but requires a single registration 
             using one of the RegisterAll methods to register all types at once, which is a different
             strategy than the other frameworks use.
         ", Skip = false)]

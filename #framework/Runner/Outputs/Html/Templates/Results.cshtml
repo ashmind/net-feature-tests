@@ -25,7 +25,7 @@
       }
       
     <tr>
-      <td class="row-name"><span @Html.Raw(!feature.Description.IsNullOrWhiteSpace() ? "title=\"" + Format.Description(feature.Description) + "\"" : null)>@feature.Name</span></td>
+      <td class="row-name"><span title="@Format.Description(feature.Description)">@feature.Name</span></td>
       @foreach (var cell in row.Item2) {
         <td class="@Format.GetCssClassesForCell(cell)">
         @if (cell.HasDetails) {
