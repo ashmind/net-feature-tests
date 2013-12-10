@@ -103,15 +103,15 @@
         <td class="neutral">
 3.2.0.0        </td>
         <td class="neutral">
-3.7.0.0        </td>
+3.8.0.0        </td>
         <td class="neutral">
 3.0.2.0        </td>
         <td class="neutral">
 1.0.0.0        </td>
         <td class="neutral">
-1.6.0.0        </td>
+1.6.1.0        </td>
         <td class="neutral">
-0.7.0.41843        </td>
+0.8.1.42024        </td>
         <td class="neutral">
 1.5.1.0        </td>
         <td class="neutral">
@@ -142,15 +142,15 @@ oct 2013        </td>
         <td class="neutral date">
 jul 2013        </td>
         <td class="neutral date">
-oct 2013        </td>
+dec 2013        </td>
         <td class="neutral date">
 may 2013        </td>
         <td class="neutral date">
 nov 2013        </td>
         <td class="neutral date">
-nov 2013        </td>
+dec 2013        </td>
         <td class="neutral date">
-oct 2013        </td>
+nov 2013        </td>
         <td class="neutral date">
 feb 2013        </td>
         <td class="neutral date">
@@ -234,11 +234,11 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-323 021        </td>
+323 083        </td>
         <td class="neutral number">
-226 641        </td>
+226 709        </td>
         <td class="neutral number">
-29 240        </td>
+29 331        </td>
         <td class="neutral number">
 2 298        </td>
         <td class="neutral number">
@@ -258,17 +258,17 @@ n/a        </td>
         <td class="neutral number">
 1 671        </td>
         <td class="neutral number">
-4 954        </td>
+4 957        </td>
         <td class="neutral number">
-1 097 345        </td>
+1 097 446        </td>
         <td class="neutral number">
-27 289        </td>
+27 304        </td>
         <td class="neutral number">
-29 942        </td>
+29 947        </td>
         <td class="neutral number">
-216 291        </td>
+216 317        </td>
         <td class="neutral number">
-531 356        </td>
+531 471        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -774,6 +774,45 @@ no        </td>
 yes        </td>
     </tr>
     <tr>
+      <td class="row-name"><span >win8.1</span></td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="concern">
+no        </td>
+        <td class="skipped">
+n/a        </td>
+        <td class="success">
+yes        </td>
+        <td class="success">
+yes        </td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+    </tr>
+    <tr>
       <td class="row-name"><span >Windows Phone 7</span></td>
         <td class="concern">
 no        </td>
@@ -818,8 +857,8 @@ no        </td>
 no        </td>
         <td class="concern">
 no        </td>
-        <td class="success">
-yes        </td>
+        <td class="concern">
+no        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -974,8 +1013,8 @@ no        </td>
 no        </td>
         <td class="success">
 yes        </td>
-        <td class="success">
-yes        </td>
+        <td class="concern">
+no        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -1422,8 +1461,7 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+            <span title="System.Exception: Unknown type: IService[]
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
    at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
    at HaveBox.DependencyStrapper.&lt;&gt;c__DisplayClass7.&lt;DependencyCreateInstanceResolver&gt;b__6(ParameterInfo x)
@@ -1446,29 +1484,31 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.ListTests.Array(IAdapter adapter) in [removed]\2_ListTests.cs:line 35">fail</span>
         </td>
         <td class="failure">
-            <span title="System.ArgumentException: GenericArguments[0], &#39;System.Int32&#39;, on &#39;IfInjector.Resolver`1[CType] CreateResolverInstanceGeneric[BType,CType](IfInjector.IfBinding.BindingKey, IfInjector.IfBinding.IfInternal.BindingConfig, Boolean)&#39; violates the constraint of type &#39;BType&#39;. ---&gt; System.Security.VerificationException: Method IfInjector.Injector.CreateResolverInstanceGeneric: type argument &#39;System.Int32&#39; violates the constraint of type parameter &#39;BType&#39;.
+            <span title="System.ArgumentException: GenericArguments[0], &#39;System.Int32&#39;, on &#39;IfInjector.Resolver.Resolver`1[CType] CreateResolverInstanceGeneric[BType,CType](IfInjector.Bindings.Config.BindingKey, IfInjector.Bindings.Config.IBindingConfig, Boolean)&#39; violates the constraint of type &#39;BType&#39;. ---&gt; System.Security.VerificationException: Method IfInjector.Injector.CreateResolverInstanceGeneric: type argument &#39;System.Int32&#39; violates the constraint of type parameter &#39;BType&#39;.
    at System.RuntimeMethodHandle.GetStubIfNeeded(RuntimeMethodHandleInternal method, RuntimeType declaringType, RuntimeType[] methodInstantiation)
    at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
    --- End of inner exception stack trace ---
    at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
    at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
-   at IfInjector.Injector.CreateResolverInstance(BindingKey bindingKey, Type implType, BindingConfig bindingConfig, Boolean isImplicitBinding)
+   at IfInjector.Injector.CreateResolverInstance(BindingKey bindingKey, Type implType, IBindingConfig bindingConfig, Boolean isImplicitBinding)
    at IfInjector.Injector.BindImplicit(BindingKey bindingKey)
    at IfInjector.Injector.ResolveResolver(BindingKey bindingKey)
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.GetResolveExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -1604,8 +1644,7 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+            <span title="System.Exception: Unknown type: IList`1
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
    at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
    at HaveBox.DependencyStrapper.&lt;&gt;c__DisplayClass7.&lt;DependencyCreateInstanceResolver&gt;b__6(ParameterInfo x)
@@ -1628,18 +1667,19 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.ListTests.List(IAdapter adapter) in [removed]\2_ListTests.cs:line 41">fail</span>
         </td>
         <td class="failure">
-            <span title="IfInjector.IfCore.InjectorException: Error on System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
-   at IfInjector.IfBinding.IfInternal.BindingConfig`1.ThrowInterfaceException()
+            <span title="IfInjector.Errors.InjectorException: Error on System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
+   at IfInjector.Bindings.Config.BindingConfigUtils.ThrowInterfaceException[CType]()
    at lambda_method(Closure )
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.GetResolveExpression()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -1840,8 +1880,7 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+            <span title="System.Exception: Unknown type: ICollection`1
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
    at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
    at HaveBox.DependencyStrapper.&lt;&gt;c__DisplayClass7.&lt;DependencyCreateInstanceResolver&gt;b__6(ParameterInfo x)
@@ -1864,18 +1903,19 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.ListTests.Collection(IAdapter adapter) in [removed]\2_ListTests.cs:line 47">fail</span>
         </td>
         <td class="failure">
-            <span title="IfInjector.IfCore.InjectorException: Error on System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
-   at IfInjector.IfBinding.IfInternal.BindingConfig`1.ThrowInterfaceException()
+            <span title="IfInjector.Errors.InjectorException: Error on System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
+   at IfInjector.Bindings.Config.BindingConfigUtils.ThrowInterfaceException[CType]()
    at lambda_method(Closure )
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.GetResolveExpression()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -2104,18 +2144,19 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="IfInjector.IfCore.InjectorException: Error on System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
-   at IfInjector.IfBinding.IfInternal.BindingConfig`1.ThrowInterfaceException()
+            <span title="IfInjector.Errors.InjectorException: Error on System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
+   at IfInjector.Bindings.Config.BindingConfigUtils.ThrowInterfaceException[CType]()
    at lambda_method(Closure )
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.GetResolveExpression()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -2286,8 +2327,7 @@ Make sure the dependency is correctly registered in the container as a service, 
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+            <span title="System.Exception: Unknown type: IReadOnlyCollection`1
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
    at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
    at HaveBox.DependencyStrapper.&lt;&gt;c__DisplayClass7.&lt;DependencyCreateInstanceResolver&gt;b__6(ParameterInfo x)
@@ -2310,18 +2350,19 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyCollection(IAdapter adapter) in [removed]\2_ListTests.cs:line 64">fail</span>
         </td>
         <td class="failure">
-            <span title="IfInjector.IfCore.InjectorException: Error on System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
-   at IfInjector.IfBinding.IfInternal.BindingConfig`1.ThrowInterfaceException()
+            <span title="IfInjector.Errors.InjectorException: Error on System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
+   at IfInjector.Bindings.Config.BindingConfigUtils.ThrowInterfaceException[CType]()
    at lambda_method(Closure )
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.GetResolveExpression()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -2613,8 +2654,7 @@ Make sure the dependency is correctly registered in the container as a service, 
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+            <span title="System.Exception: Unknown type: IReadOnlyList`1
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
    at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
    at HaveBox.DependencyStrapper.&lt;&gt;c__DisplayClass7.&lt;DependencyCreateInstanceResolver&gt;b__6(ParameterInfo x)
@@ -2637,18 +2677,19 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyList(IAdapter adapter) in [removed]\2_ListTests.cs:line 70">fail</span>
         </td>
         <td class="failure">
-            <span title="IfInjector.IfCore.InjectorException: Error on System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
-   at IfInjector.IfBinding.IfInternal.BindingConfig`1.ThrowInterfaceException()
+            <span title="IfInjector.Errors.InjectorException: Error on System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]. Unable to resolve Interface and Abstract classes without a configuration.
+   at IfInjector.Bindings.Config.BindingConfigUtils.ThrowInterfaceException[CType]()
    at lambda_method(Closure )
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.GetResolveExpression()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -2921,13 +2962,8 @@ request for IService<X> should be resolved with Service<X>.</p>
 pass        </td>
         <td class="success">
 pass        </td>
-        <td class="failure">
-            <span title="System.NotSupportedException: The type &#39;FeatureTests.On.DependencyInjection.TestTypes.IGenericService`1[[System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&#39; is not registered, not even in an external container
-   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)
-   at FeatureTests.On.DependencyInjection.Adapters.CatelAdapter.Resolve(Type serviceType) in [removed]\CatelAdapter.cs:line 29
-   at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
-   at FeatureTests.On.DependencyInjection.GenericTests.OpenGenericTypes(IAdapter adapter) in [removed]\3_GenericTests.cs:line 22">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="System.ArgumentException: Type: IGenericService`1 is not assignable from implementation type: GenericService`1
    at Dynamo.Ioc.IocContainer.Register(Type type, Type implType, Object key, ILifetime lifetime, Nullable`1 compileMode, Boolean includeInternalCtor, Func`2 selector)
@@ -2939,7 +2975,7 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.ArgumentException: GenericArguments[0], &#39;FeatureTests.On.DependencyInjection.TestTypes.GenericService`1[T]&#39;, on &#39;IfInjector.IfBinding.IBinding`2[FeatureTests.On.DependencyInjection.TestTypes.IGenericService`1[T],CType] To[CType]()&#39; violates the constraint of type &#39;CType&#39;. ---&gt; System.Security.VerificationException: Method IfInjector.IfBinding.IOngoingBinding`1[FeatureTests.On.DependencyInjection.TestTypes.IGenericService`1[T]].To: type argument &#39;FeatureTests.On.DependencyInjection.TestTypes.GenericService`1[T]&#39; violates the constraint of type parameter &#39;CType&#39;.
+            <span title="System.ArgumentException: GenericArguments[0], &#39;FeatureTests.On.DependencyInjection.TestTypes.GenericService`1[T]&#39;, on &#39;IfInjector.Bindings.Fluent.Concrete.IBinding`2[FeatureTests.On.DependencyInjection.TestTypes.IGenericService`1[T],CType] To[CType]()&#39; violates the constraint of type &#39;CType&#39;. ---&gt; System.Security.VerificationException: Method IfInjector.Bindings.Fluent.Concrete.IOngoingBinding`1[FeatureTests.On.DependencyInjection.TestTypes.IGenericService`1[T]].To: type argument &#39;FeatureTests.On.DependencyInjection.TestTypes.GenericService`1[T]&#39; violates the constraint of type parameter &#39;CType&#39;.
    at System.RuntimeMethodHandle.GetStubIfNeeded(RuntimeMethodHandleInternal method, RuntimeType declaringType, RuntimeType[] methodInstantiation)
    at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
    --- End of inner exception stack trace ---
@@ -3022,7 +3058,7 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="skipped">
-            <span title="Skipped as Open generic registration (Open generics) is not supported by this library.">n/a</span>
+            <span title="Skipped as IEnumerable&lt;IService&gt; (List/array dependencies) is not supported by this library.">n/a</span>
         </td>
         <td class="skipped">
             <span title="Skipped as Open generic registration (Open generics) is not supported by this library.">n/a</span>
@@ -3218,22 +3254,23 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithNoParameters(IAdapter adapter) in [removed]\4_FuncTests.cs:line 29">fail</span>
         </td>
         <td class="failure">
-            <span title="System.ArgumentException: GenericArguments[0], &#39;System.IntPtr&#39;, on &#39;IfInjector.Resolver`1[CType] CreateResolverInstanceGeneric[BType,CType](IfInjector.IfBinding.BindingKey, IfInjector.IfBinding.IfInternal.BindingConfig, Boolean)&#39; violates the constraint of type &#39;BType&#39;. ---&gt; System.Security.VerificationException: Method IfInjector.Injector.CreateResolverInstanceGeneric: type argument &#39;System.IntPtr&#39; violates the constraint of type parameter &#39;BType&#39;.
+            <span title="System.ArgumentException: GenericArguments[0], &#39;System.IntPtr&#39;, on &#39;IfInjector.Resolver.Resolver`1[CType] CreateResolverInstanceGeneric[BType,CType](IfInjector.Bindings.Config.BindingKey, IfInjector.Bindings.Config.IBindingConfig, Boolean)&#39; violates the constraint of type &#39;BType&#39;. ---&gt; System.Security.VerificationException: Method IfInjector.Injector.CreateResolverInstanceGeneric: type argument &#39;System.IntPtr&#39; violates the constraint of type parameter &#39;BType&#39;.
    at System.RuntimeMethodHandle.GetStubIfNeeded(RuntimeMethodHandleInternal method, RuntimeType declaringType, RuntimeType[] methodInstantiation)
    at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
    --- End of inner exception stack trace ---
    at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
    at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
-   at IfInjector.Injector.CreateResolverInstance(BindingKey bindingKey, Type implType, BindingConfig bindingConfig, Boolean isImplicitBinding)
+   at IfInjector.Injector.CreateResolverInstance(BindingKey bindingKey, Type implType, IBindingConfig bindingConfig, Boolean isImplicitBinding)
    at IfInjector.Injector.BindImplicit(BindingKey bindingKey)
    at IfInjector.Injector.ResolveResolver(BindingKey bindingKey)
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -3376,7 +3413,7 @@ The activation path:
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
    at MugenInjection.Core.InjectorBase.&lt;Activate&gt;b__d(IBindingContext context) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.Components.FactoryAndLazyConverter.FactoryResolve.Invoke(Object[] objects) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\FactoryAndLazyConverter.cs:line 186
-   at _DynamicMethodMugenInjection_Func`2_51ad441dab7b46b393f1235be690efc9(Func`2 , IService2 )
+   at _DynamicMethodMugenInjection_Func`2_2f87dd03caaa43e0a79e260863e5d60e(Func`2 , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
         <td class="skipped">
@@ -3858,23 +3895,24 @@ pass        </td>
             <span title="Skipped as Simple dependency (Property dependencies) is not supported by this library.">n/a</span>
         </td>
         <td class="failure">
-            <span title="IfInjector.IfCore.InjectorException: Error on FeatureTests.On.DependencyInjection.TestTypes.IService. Unable to resolve Interface and Abstract classes without a configuration.
-   at IfInjector.IfBinding.IfInternal.BindingConfig`1.ThrowInterfaceException()
+            <span title="IfInjector.Errors.InjectorException: Error on FeatureTests.On.DependencyInjection.TestTypes.IService. Unable to resolve Interface and Abstract classes without a configuration.
+   at IfInjector.Bindings.Config.BindingConfigUtils.ThrowInterfaceException[CType]()
    at lambda_method(Closure )
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.GetResolveExpression()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
    at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.GetSetterValueExpression[MIType](IMemberSetterConfig`1 setter)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.&lt;CompileConstructorExpr&gt;b__9(IMemberSetterConfig`1 iconf)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetSetterValueExpression[MIType](IMemberSetterConfig`1 setter)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.&lt;CompileConstructorExpr&gt;b__4(IMemberSetterConfig`1 iconf)
    at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
    at System.Linq.Enumerable.&lt;UnionIterator&gt;d__88`1.MoveNext()
    at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileConstructorExpr()
-   at IfInjector.IfCore.IfExpression.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver`1.CompileResolver()
-   at IfInjector.Resolver`1.DoResolve()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
    at IfInjector.Injector.Resolve(Type type)
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.Resolve(Type serviceType) in [removed]\IfInjectorAdapter.cs:line 40
    at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
@@ -4358,8 +4396,8 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="IfInjector.IfCore.InjectorException: Injector is in resolved state. Explicit binding registration is no longer permitted.
-   at IfInjector.Injector.BindExplicit(IInternalBinding internalBinding)
+            <span title="IfInjector.Errors.InjectorException: Injector is in resolved state. Explicit binding registration is no longer permitted.
+   at IfInjector.Injector.ValidateInternalBinding(IBindingInternal internalBinding)
    at IfInjector.Injector.Register(IBinding binding)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke(Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 12
@@ -4418,8 +4456,11 @@ be a huge annoyance.</p>
 pass        </td>
         <td class="success">
 pass        </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="Xunit.Sdk.AssertException: No exception for recursion, either this use case is not supported or there is some other issue.
+   at FeatureTests.On.DependencyInjection.ConvenienceTests.AssertGivesCorrectExceptionWhenResolvingRecursive[TService](IAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 98
+   at FeatureTests.On.DependencyInjection.ConvenienceTests.GracefulRecursionHandling(IAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 74">fail</span>
+        </td>
         <td class="failure">
             <span title="Xunit.Sdk.AssertException: Dynamo.Ioc fails recursion for now, and we have no way to retest it in each run (without process crash).
    at FeatureTests.On.DependencyInjection.ConvenienceTests.AssertIsNotCrashingOnRecursion(IAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 116
@@ -4428,8 +4469,7 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
-   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+            <span title="System.Exception: Unknown type: ServiceWithRecursiveDependency2
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
    at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
    at HaveBox.DependencyStrapper.&lt;&gt;c__DisplayClass7.&lt;DependencyCreateInstanceResolver&gt;b__6(ParameterInfo x)
