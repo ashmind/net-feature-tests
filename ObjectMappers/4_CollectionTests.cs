@@ -11,6 +11,7 @@ using Xunit;
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(4)]
     [DisplayName("Collections (writeable property)")]
+    [Description("_TODO_")]
     public class CollectionTests {
         [Feature]
         [DisplayName("Collection ⇒ IEnumerable")]

@@ -10,6 +10,7 @@ using FeatureTests.Runner.Outputs.Html.Models;
 using FeatureTests.Shared.GenericApiSupport;
 using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using FeatureTests.Shared.ResultData;
+using HtmlAgilityPack;
 using Newtonsoft.Json;
 using RazorTemplates.Core;
 using FeatureTests.Runner.Outputs.Html;
@@ -29,18 +30,23 @@ namespace FeatureTests.Runner.Outputs {
         private readonly DirectoryInfo templatesDirectory;
         private FileSystemWatcher watcher;
 
-        #region WorkingModel
+        #region Intermediate
 
-        private class WorkingModel {
-            public WorkingModel() {
-                this.Tables = new FeatureTable[0];
+        private class Section {
+            public string Id { get; set; }
+            public string DisplayName { get; set; }
+        }
+
+        private class IntermediateModel {
+            public IntermediateModel() {
+                this.Sections = new List<Section>();
             }
 
             public HtmlBasicModel FinalModel { get; set; }
             public string LinkTitle { get; set; }
             public string TemplateFileName { get; set; }
             public string OutputFileName { get; set; }
-            public IEnumerable<FeatureTable> Tables { get; set; }
+            public IList<Section> Sections { get; private set; }
         }
 
         #endregion
@@ -81,7 +87,7 @@ namespace FeatureTests.Runner.Outputs {
             );
 
             var allModels = Enumerable.Concat(
-                customPages.Select(p => new WorkingModel {
+                customPages.Select(p => new IntermediateModel {
                     FinalModel = new HtmlBasicModel { Title = p.Title },
                     LinkTitle = p.Title,
                     TemplateFileName = p.Name + ".cshtml",
@@ -115,35 +121,55 @@ namespace FeatureTests.Runner.Outputs {
             return template.Render(model);
         }
 
-        private WorkingModel BuildResultModelWithoutNavigation(ResultForAssembly result) {
-            var labels = this.GetLabels(result);
+        private IntermediateModel BuildResultModelWithoutNavigation(ResultForAssembly result) {
+            var options = this.GetOptions(result);
 
             var model = new HtmlResultModel(result.Tables) {
+                Title = options.PageTitle,
+                HtmlBeforeAll = this.GetResource(result.Assembly, "BeforeAll.html"),
                 HtmlAfterAll = this.GetResource(result.Assembly, "AfterAll.html"),
-                Title = labels.PageTitle
-            }; 
-            foreach (var table in result.Tables) {
-                model.TableIdMap.Add(table, this.GenerateTableId(table));
-            }
-
-            return new WorkingModel {
-                FinalModel = model,
-                LinkTitle = labels.LinkTitle,
-                TemplateFileName = ResultTemplateFileName,
-                OutputFileName = result.OutputNamePrefix + ".html",
-                Tables = model.Tables
+                TotalVisible = !((bool?)options.SupressTotal ?? false)
             };
+            var intermediate = new IntermediateModel {
+                FinalModel = model,
+                LinkTitle = options.LinkTitle,
+                TemplateFileName = ResultTemplateFileName,
+                OutputFileName = result.OutputNamePrefix + ".html"
+            };
+
+            AddSectionsFromHtml(intermediate, model.HtmlBeforeAll);
+            foreach (var table in result.Tables) {
+                var id = this.GenerateTableId(table);
+                model.TableIdMap.Add(table, id);
+                intermediate.Sections.Add(new Section { Id = id, DisplayName = table.DisplayName });
+            }
+            AddSectionsFromHtml(intermediate, model.HtmlAfterAll);
+
+            return intermediate;
         }
 
-        private void BuildNavigation(WorkingModel currentModel, IReadOnlyCollection<WorkingModel> allModels) {
+        private void AddSectionsFromHtml(IntermediateModel intermediate, string html) {
+            var document = new HtmlDocument();
+            document.LoadHtml("<html>" + html + "</html>");
+
+            var headerRegex = new Regex(@"h\d", RegexOptions.IgnoreCase);
+            var sections = document.DocumentNode.Descendants()
+                                                .Where(n => headerRegex.IsMatch(n.Name))
+                                                .Where(h => h.Attributes.Contains("id"))
+                                                .Select(h => new Section { Id = h.GetAttributeValue("id", ""), DisplayName = h.InnerText });
+
+            intermediate.Sections.AddRange(sections);
+        }
+
+        private void BuildNavigation(IntermediateModel currentModel, IReadOnlyCollection<IntermediateModel> allModels) {
             foreach (var model in allModels) {
                 var url = model.OutputFileName;
                 var name = model.LinkTitle;
                 var onCurrentPage = model == currentModel;
 
                 var link = new NavigationLinkModel(name, url, onCurrentPage,
-                    model.Tables.Select(t => new NavigationLinkModel(
-                        t.DisplayName, url + "#" + this.GenerateTableId(t), onCurrentPage
+                    model.Sections.Select(s => new NavigationLinkModel(
+                        s.DisplayName, url + "#" + s.Id, onCurrentPage
                     )
                 ));
 
@@ -160,9 +186,9 @@ namespace FeatureTests.Runner.Outputs {
             return result;
         }
 
-        private dynamic GetLabels(ResultForAssembly result) {
-            var labelsString = this.GetResource(result.Assembly, "Labels.json");
-            return JsonConvert.DeserializeObject(labelsString.NullIfEmpty() ?? "{}");
+        private dynamic GetOptions(ResultForAssembly result) {
+            var optionsString = this.GetResource(result.Assembly, "Options.json");
+            return JsonConvert.DeserializeObject(optionsString.NullIfEmpty() ?? "{}");
         }
 
         private string GetResource(Assembly assembly, string name) {

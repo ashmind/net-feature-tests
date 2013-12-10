@@ -11,6 +11,7 @@ using Xunit;
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(5)]
     [DisplayName("Collections (read-only property)")]
+    [Description("_TODO_")]
     public class CollectionAsReadOnlyPropertyTests {
         [Feature]
         [DisplayName("IList ⇒ IList")]

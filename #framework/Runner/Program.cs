@@ -56,8 +56,7 @@ namespace FeatureTests.Runner {
             if (args.WatchTemplates) {
                 Console.WriteLine();
                 ConsoleEx.WriteLine(ConsoleColor.White, "Auto-updating outputs if templates change.");
-                ConsoleEx.WriteLine(ConsoleColor.White, "Press [Enter] to stop…");
-                Console.WriteLine();
+                ConsoleEx.WriteLine(ConsoleColor.White, "Press [Enter] to stop.");
                 Console.ReadLine();
             }
 

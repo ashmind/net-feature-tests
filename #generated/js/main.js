@@ -70,12 +70,12 @@
         };
 
         var getCurrentLink = function() {
-            return $('.main-nav a').filter(function() {
+            return $('.sidebar-nav a').filter(function() {
                 return this.href === window.location.href;
             });
         };
 
-        $('.main-nav a[data-same-page]').each(function() {
+        $('.sidebar-nav a[data-same-page]').each(function() {
             var $this = $(this);
             var match = $this.prop('href').match(/#.+/);
             

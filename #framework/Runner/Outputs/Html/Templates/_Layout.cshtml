@@ -18,22 +18,29 @@
     <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
-    <nav class="main-nav">
-      <ul>
-      @foreach (var link in Model.Navigation) {
-        <li>
-          <a href="@link.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@link.Name</a>
-          <ul>
-          @foreach (var childLink in link.ChildLinks) {
-            <li><a href="@childLink.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@childLink.Name</a></li>
-          }
-          </ul>
-        </li>
-      }
-      </ul>
-      
-      <!--ul class="toc"></ul-->
-    </nav>
+    <div class="sidebar">
+      <h1 class="sidebar-title">Feature Tests</h1>
+
+      <nav class="sidebar-nav">
+        <ul>
+        @foreach (var link in Model.Navigation) {
+          <li>
+            <a href="@link.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@link.Name</a>
+            <ul>
+            @foreach (var childLink in link.ChildLinks) {
+              <li><a href="@childLink.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@childLink.Name</a></li>
+            }
+            </ul>
+          </li>
+        }
+        </ul>
+      </nav>
+     
+      <div class="sidebar-github">
+        <div class="icon"></div>
+        <a href="http://github.com/ashmind/net-feature-tests">Fork on GitHub</a>
+      </div>
+    </div>
 
     <main class="content">
       <h1>@Model.Title</h1>

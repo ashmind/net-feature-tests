@@ -13,6 +13,8 @@ namespace FeatureTests.Runner.Outputs.Html.Models {
         public IList<FeatureTable> Tables { get; private set; }
         public IDictionary<FeatureTable, string> TableIdMap { get; set; }
 
-        public string HtmlAfterAll                { get; set; }
+        public string HtmlBeforeAll { get; set; }
+        public string HtmlAfterAll  { get; set; }
+        public bool TotalVisible { get; set; }
     }
 }

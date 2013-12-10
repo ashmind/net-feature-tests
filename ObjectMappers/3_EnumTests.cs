@@ -10,6 +10,7 @@ using Xunit;
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(3)]
     [DisplayName("Enums")]
+    [Description("_TODO_")]
     public class EnumTests {
         [Feature]
         [DisplayName("Enum₁ ⇒ Enum₂ (same name)")]

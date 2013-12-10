@@ -11,6 +11,7 @@ using Xunit;
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(2)]
     [DisplayName("Nullable types")]
+    [Description("_TODO_")]
     public class NullableTests {
         [Feature]
         [DisplayName("int ⇒ int?")]

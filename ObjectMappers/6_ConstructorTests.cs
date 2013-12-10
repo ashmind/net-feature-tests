@@ -10,6 +10,7 @@ using Xunit;
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(6)]
     [DisplayName("Constructor parameters")]
+    [Description("_TODO_")]
     public class ConstructorParameterTests {
         [Feature]
         [DisplayName("Simple")]
