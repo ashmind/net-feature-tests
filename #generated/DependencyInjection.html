@@ -127,7 +127,7 @@
         <td class="neutral">
 3.0.0.0        </td>
         <td class="neutral">
-2.3.6.0        </td>
+2.4.0.0        </td>
         <td class="neutral">
 1.3.2.40943        </td>
         <td class="neutral">
@@ -166,7 +166,7 @@ apr 2012        </td>
         <td class="neutral date">
 may 2012        </td>
         <td class="neutral date">
-oct 2013        </td>
+dec 2013        </td>
         <td class="neutral date">
 aug 2011        </td>
         <td class="neutral date">
@@ -234,9 +234,9 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-323 001        </td>
+323 021        </td>
         <td class="neutral number">
-226 623        </td>
+226 641        </td>
         <td class="neutral number">
 29 240        </td>
         <td class="neutral number">
@@ -258,17 +258,17 @@ n/a        </td>
         <td class="neutral number">
 1 671        </td>
         <td class="neutral number">
-4 952        </td>
+4 954        </td>
         <td class="neutral number">
-1 097 335        </td>
+1 097 345        </td>
         <td class="neutral number">
-27 287        </td>
+27 289        </td>
         <td class="neutral number">
 29 942        </td>
         <td class="neutral number">
-216 279        </td>
+216 291        </td>
         <td class="neutral number">
-531 333        </td>
+531 356        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -764,8 +764,8 @@ yes        </td>
 yes        </td>
         <td class="concern">
 no        </td>
-        <td class="concern">
-no        </td>
+        <td class="success">
+yes        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -881,8 +881,8 @@ yes        </td>
 yes        </td>
         <td class="success">
 yes        </td>
-        <td class="concern">
-no        </td>
+        <td class="success">
+yes        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -1543,18 +1543,15 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;IService[]&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;IService[]&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IService[]&gt; contains the parameter of type IService[] with name &#39;services&#39; that is not registered. Please ensure IService[] is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IService[]&gt;. ---&gt; SimpleInjector.ActivationException: No registration for type ServiceWithListConstructorDependency&lt;IService[]&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IService[]&gt; contains the parameter of type IService[] with name &#39;services&#39; that is not registered. Please ensure IService[] is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IService[]&gt;.
+            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;IService[]&gt; threw an exception. The constructor of the type ServiceWithListConstructorDependency&lt;IService[]&gt; contains the parameter of type IService[] with name &#39;services&#39; that is not registered. Please ensure IService[] is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IService[]&gt;. ---&gt; SimpleInjector.ActivationException: The constructor of the type ServiceWithListConstructorDependency&lt;IService[]&gt; contains the parameter of type IService[] with name &#39;services&#39; that is not registered. Please ensure IService[] is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IService[]&gt;.
    at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
    at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
    at SimpleInjector.Registration.BuildParameterExpressionFor(ParameterInfo parameter)
-   at SimpleInjector.Registration.&lt;BuildNewExpression&gt;b__1a(&lt;&gt;f__AnonymousType11`2 &lt;&gt;h__TransparentIdentifier18)
-   at System.Linq.Enumerable.&lt;&gt;c__DisplayClass12`3.&lt;CombineSelectors&gt;b__11(TSource x)
-   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)
    at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
    at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
    at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
+   at SimpleInjector.Registration.BuildExpression(InstanceProducer producer)
    at SimpleInjector.InstanceProducer.BuildExpressionInternal()
    at System.Lazy`1.CreateValue()
    at System.Lazy`1.LazyInitValue()
@@ -1738,18 +1735,15 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; contains the parameter of type IList&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IList&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt;. ---&gt; SimpleInjector.ActivationException: No registration for type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; contains the parameter of type IList&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IList&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt;.
+            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; threw an exception. The constructor of the type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; contains the parameter of type IList&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IList&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt;. ---&gt; SimpleInjector.ActivationException: The constructor of the type ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt; contains the parameter of type IList&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IList&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IList&lt;IService&gt;&gt;.
    at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
    at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
    at SimpleInjector.Registration.BuildParameterExpressionFor(ParameterInfo parameter)
-   at SimpleInjector.Registration.&lt;BuildNewExpression&gt;b__1a(&lt;&gt;f__AnonymousType11`2 &lt;&gt;h__TransparentIdentifier18)
-   at System.Linq.Enumerable.&lt;&gt;c__DisplayClass12`3.&lt;CombineSelectors&gt;b__11(TSource x)
-   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)
    at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
    at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
    at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
+   at SimpleInjector.Registration.BuildExpression(InstanceProducer producer)
    at SimpleInjector.InstanceProducer.BuildExpressionInternal()
    at System.Lazy`1.CreateValue()
    at System.Lazy`1.LazyInitValue()
@@ -1977,18 +1971,15 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; contains the parameter of type ICollection&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure ICollection&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt;. ---&gt; SimpleInjector.ActivationException: No registration for type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; contains the parameter of type ICollection&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure ICollection&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt;.
+            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; threw an exception. The constructor of the type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; contains the parameter of type ICollection&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure ICollection&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt;. ---&gt; SimpleInjector.ActivationException: The constructor of the type ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt; contains the parameter of type ICollection&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure ICollection&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;ICollection&lt;IService&gt;&gt;.
    at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
    at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
    at SimpleInjector.Registration.BuildParameterExpressionFor(ParameterInfo parameter)
-   at SimpleInjector.Registration.&lt;BuildNewExpression&gt;b__1a(&lt;&gt;f__AnonymousType11`2 &lt;&gt;h__TransparentIdentifier18)
-   at System.Linq.Enumerable.&lt;&gt;c__DisplayClass12`3.&lt;CombineSelectors&gt;b__11(TSource x)
-   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)
    at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
    at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
    at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
+   at SimpleInjector.Registration.BuildExpression(InstanceProducer producer)
    at SimpleInjector.InstanceProducer.BuildExpressionInternal()
    at System.Lazy`1.CreateValue()
    at System.Lazy`1.LazyInitValue()
@@ -2485,33 +2476,8 @@ Suggestions:
    at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IAdapter adapter) in [removed]\2_ListTests.cs:line 79
    at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyCollection(IAdapter adapter) in [removed]\2_ListTests.cs:line 64">fail</span>
         </td>
-        <td class="failure">
-            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;IReadOnlyCollection&lt;IService&gt;&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;IReadOnlyCollection&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IReadOnlyCollection&lt;IService&gt;&gt; contains the parameter of type IReadOnlyCollection&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IReadOnlyCollection&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IReadOnlyCollection&lt;IService&gt;&gt;. ---&gt; SimpleInjector.ActivationException: No registration for type ServiceWithListConstructorDependency&lt;IReadOnlyCollection&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IReadOnlyCollection&lt;IService&gt;&gt; contains the parameter of type IReadOnlyCollection&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IReadOnlyCollection&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IReadOnlyCollection&lt;IService&gt;&gt;.
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
-   at SimpleInjector.Registration.BuildParameterExpressionFor(ParameterInfo parameter)
-   at SimpleInjector.Registration.&lt;BuildNewExpression&gt;b__1a(&lt;&gt;f__AnonymousType11`2 &lt;&gt;h__TransparentIdentifier18)
-   at System.Linq.Enumerable.&lt;&gt;c__DisplayClass12`3.&lt;CombineSelectors&gt;b__11(TSource x)
-   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
-   at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
-   at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
-   at SimpleInjector.InstanceProducer.BuildExpressionInternal()
-   at System.Lazy`1.CreateValue()
-   at System.Lazy`1.LazyInitValue()
-   at System.Lazy`1.get_Value()
-   at SimpleInjector.InstanceProducer.BuildInstanceCreator(Object&amp; createdInstance)
-   at SimpleInjector.InstanceProducer.GetInstance()
-   --- End of inner exception stack trace ---
-   at SimpleInjector.InstanceProducer.GetInstance()
-   at SimpleInjector.Container.GetInstance(Type serviceType)
-   at FeatureTests.On.DependencyInjection.Adapters.SimpleInjectorAdapter.Resolve(Type serviceType) in [removed]\SimpleInjectorAdapter.cs:line 34
-   at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
-   at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IAdapter adapter) in [removed]\2_ListTests.cs:line 79
-   at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyCollection(IAdapter adapter) in [removed]\2_ListTests.cs:line 64">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="Spring.Objects.Factory.UnsatisfiedDependencyException: Error creating object with name &#39;FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] : No unique object of type [System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]])]
    at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 198
@@ -2837,33 +2803,8 @@ Suggestions:
    at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IAdapter adapter) in [removed]\2_ListTests.cs:line 79
    at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyList(IAdapter adapter) in [removed]\2_ListTests.cs:line 70">fail</span>
         </td>
-        <td class="failure">
-            <span title="SimpleInjector.ActivationException: The registered delegate for type ServiceWithListConstructorDependency&lt;IReadOnlyList&lt;IService&gt;&gt; threw an exception. No registration for type ServiceWithListConstructorDependency&lt;IReadOnlyList&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IReadOnlyList&lt;IService&gt;&gt; contains the parameter of type IReadOnlyList&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IReadOnlyList&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IReadOnlyList&lt;IService&gt;&gt;. ---&gt; SimpleInjector.ActivationException: No registration for type ServiceWithListConstructorDependency&lt;IReadOnlyList&lt;IService&gt;&gt; could be found and an implicit registration could not be made. The constructor of the type ServiceWithListConstructorDependency&lt;IReadOnlyList&lt;IService&gt;&gt; contains the parameter of type IReadOnlyList&lt;IService&gt; with name &#39;services&#39; that is not registered. Please ensure IReadOnlyList&lt;IService&gt; is registered in the container, or change the constructor of ServiceWithListConstructorDependency&lt;IReadOnlyList&lt;IService&gt;&gt;.
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
-   at SimpleInjector.Registration.BuildParameterExpressionFor(ParameterInfo parameter)
-   at SimpleInjector.Registration.&lt;BuildNewExpression&gt;b__1a(&lt;&gt;f__AnonymousType11`2 &lt;&gt;h__TransparentIdentifier18)
-   at System.Linq.Enumerable.&lt;&gt;c__DisplayClass12`3.&lt;CombineSelectors&gt;b__11(TSource x)
-   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
-   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
-   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
-   at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
-   at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
-   at SimpleInjector.InstanceProducer.BuildExpressionInternal()
-   at System.Lazy`1.CreateValue()
-   at System.Lazy`1.LazyInitValue()
-   at System.Lazy`1.get_Value()
-   at SimpleInjector.InstanceProducer.BuildInstanceCreator(Object&amp; createdInstance)
-   at SimpleInjector.InstanceProducer.GetInstance()
-   --- End of inner exception stack trace ---
-   at SimpleInjector.InstanceProducer.GetInstance()
-   at SimpleInjector.Container.GetInstance(Type serviceType)
-   at FeatureTests.On.DependencyInjection.Adapters.SimpleInjectorAdapter.Resolve(Type serviceType) in [removed]\SimpleInjectorAdapter.cs:line 34
-   at FeatureTests.On.DependencyInjection.Adapters.Interface.AdapterExtensions.Resolve[TService](IAdapter container) in [removed]\AdapterExtensions.cs:line 50
-   at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IAdapter adapter) in [removed]\2_ListTests.cs:line 79
-   at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyList(IAdapter adapter) in [removed]\2_ListTests.cs:line 70">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="Spring.Objects.Factory.UnsatisfiedDependencyException: Error creating object with name &#39;FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]])&#39; : Unsatisfied dependency expressed through constructor argument with index 0 of type [System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] : No unique object of type [System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]] is defined : Unsatisfied dependency of type [System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]]: expected at least 1 matching object to wire the [services] parameter on the constructor of object [FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]])]
    at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 198
@@ -3435,7 +3376,7 @@ The activation path:
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
    at MugenInjection.Core.InjectorBase.&lt;Activate&gt;b__d(IBindingContext context) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.Components.FactoryAndLazyConverter.FactoryResolve.Invoke(Object[] objects) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\FactoryAndLazyConverter.cs:line 186
-   at _DynamicMethodMugenInjection_Func`2_0fb3f6924f0b4a03bff52ec659f92c9e(Func`2 , IService2 )
+   at _DynamicMethodMugenInjection_Func`2_51ad441dab7b46b393f1235be690efc9(Func`2 , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
         <td class="skipped">

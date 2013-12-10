@@ -90,7 +90,7 @@ Global
 		{6D69D53C-1B6A-485A-B75B-00063BF820C7} = {4819E554-F9AC-4041-AD26-11481839CD05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		VisualSVNWorkingCopyRoot = 
 		EnterpriseLibraryConfigurationToolBinariesPath = #packages\Unity.2.1.505.2\lib\NET35
+		VisualSVNWorkingCopyRoot = 
 	EndGlobalSection
 EndGlobal

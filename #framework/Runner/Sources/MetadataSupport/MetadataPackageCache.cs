@@ -15,11 +15,14 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
 
         public IPackage GetPackage(string packageId) {
             return this.packages.GetOrAdd(packageId, _ => {
-                var package = this.packageRepository.FindPackagesById(packageId).SingleOrDefault();
-                if (package == null)
-                    throw new InvalidOperationException("Package '" + packageId + "' was not found in '" + this.packageRepository.Source + "'.");
+                var found = this.packageRepository.FindPackagesById(packageId).ToArray();
+                if (found.Length > 1)
+                    throw new Exception(string.Format("Found more than one package '{0}' in '{1}': check if any of those are obsolete/unused.", packageId, this.packageRepository.Source));
 
-                return package;
+                if (found.Length == 0)
+                    throw new Exception(string.Format("Package '{0}' was not found in '{1}'.", packageId, this.packageRepository.Source));
+
+                return found[0];
             });
         }
     }
