@@ -105,12 +105,20 @@
   </ProjectExtensions>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="BeforeBuild">
+    <Message Importance="High" Text="Before Build" />
+  
     <ItemGroup>
       <_FilesToCopy Include="$(SolutionDir)\#generated\**\*.*" />
     </ItemGroup>
     <Copy SourceFiles="@(_FilesToCopy)" DestinationFolder="$(MSBuildProjectDirectory)\%(RecursiveDir)">
-      <Output TaskParameter="CopiedFiles" ItemName="Content" />
+      <Output TaskParameter="CopiedFiles" ItemName="_ContentAbsolute" />
     </Copy>
+    <Message Importance="High" Text="_ContentAbsolute = @(_ContentAbsolute)" />
+    
+    <ItemGroup>
+      <Content Include="$([MSBuild]::MakeRelative($(MSBuildProjectDirectory), %(_ContentAbsolute.Identity)))" Condition="'%(_ContentAbsolute.Identity)' != ''" />      
+    </ItemGroup>
+    <Message Importance="High" Text="Content = @(Content)" />
   </Target>
 
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
