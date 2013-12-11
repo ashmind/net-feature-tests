@@ -1,22 +1,15 @@
-﻿
+﻿using System;
+using System.Reflection;
+using System.Collections.Generic;
+using LightInject;
+using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
-namespace FeatureTests.On.DependencyInjection.Adapters
-{
-    using System.Reflection;
-    using System;
-    using System.Collections.Generic;
-    using FeatureTests.On.DependencyInjection.Adapters.Interface;
-    using LightInject;
-
+namespace FeatureTests.On.DependencyInjection.Adapters {
     public class LightInjectAdapter : AdapterBase {
         private readonly IServiceContainer container = new ServiceContainer();
 
-        public override Assembly Assembly 
-        {
-            get
-            {
-                return typeof(IServiceContainer).Assembly;
-            }
+        public override Assembly Assembly {
+            get { return typeof(IServiceContainer).Assembly; }
         }
         
         public override void RegisterTransient(Type serviceType, Type implementationType) {            
