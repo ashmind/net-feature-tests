@@ -11,7 +11,10 @@ using Xunit;
 namespace FeatureTests.On.ObjectMappers {
     [DisplayOrder(5)]
     [DisplayName("Collections (read-only property)")]
-    [Description("_TODO_")]
+    [Description(@"
+        Having collections as read-only property is a basic .NET design guideline (even object initializers support it).  
+        It is easy to disregard for DTOs. However, the mapper can be used for mapping to proper domain objects as well.
+    ")]
     public class CollectionAsReadOnlyPropertyTests {
         [Feature]
         [DisplayName("IList ⇒ IList")]

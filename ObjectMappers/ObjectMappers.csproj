@@ -93,6 +93,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="7_ConvenienceTests.cs" />
     <Compile Include="Adapters\AutoMapperAdapter.cs" />
     <Compile Include="Adapters\fFastMapperAdapter.cs" />
     <Compile Include="Adapters\EasyMapperAdapter.cs" />
@@ -104,10 +105,13 @@
     <Compile Include="1_PrimitiveTests.cs" />
     <Compile Include="4_CollectionTests.cs" />
     <Compile Include="5_CollectionAsReadOnlyPropertyTests.cs" />
-    <Compile Include="6_ConstructorTests.cs" />
+    <Compile Include="6_ConstructorParameterTests.cs" />
     <Compile Include="2_NullableTests.cs" />
     <Compile Include="3_EnumTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestTypes\ClassWithName.cs" />
+    <Compile Include="TestTypes\ClassWithNestedName.cs" />
+    <Compile Include="TestTypes\ClassWithNested.cs" />
     <Compile Include="TestTypes\FlagsEnum2.cs" />
     <Compile Include="TestTypes\FlagsEnum1.cs" />
     <Compile Include="TestTypes\EnumBasedOnLong.cs" />

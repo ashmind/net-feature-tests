@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using FeatureTests.Shared.GenericApiSupport;
 using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using Grax.fFastMapper;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
     public class fFastMapperAdapter : ObjectMapperAdapterBase {
-        public override Assembly Assembly {
-            get { return typeof(fFastMap).Assembly; }
+        public override Type MapperType {
+            get { return typeof(fFastMap); }
         }
 
         public override void CreateMap<TSource, TTarget>() {

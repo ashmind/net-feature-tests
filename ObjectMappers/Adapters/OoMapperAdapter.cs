@@ -1,13 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using OoMapper;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
     public class OoMapperAdapter : ObjectMapperAdapterBase {
-        public override Assembly Assembly {
-            get { return typeof(Mapper).Assembly; }
+        public override Type MapperType {
+            get { return typeof(Mapper); }
         }
 
         public override void CreateMap<TSource, TTarget>() {

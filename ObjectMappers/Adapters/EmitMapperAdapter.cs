@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using EmitMapper;
 using FeatureTests.Shared.GenericApiSupport;
 using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
@@ -14,8 +13,8 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             this.manager = new EmitMapper.ObjectMapperManager();
         }
 
-        public override Assembly Assembly {
-            get { return typeof(ObjectMapperManager).Assembly; }
+        public override Type MapperType {
+            get { return typeof(ObjectMapperManager); }
         }
 
         public override void CreateMap<TSource, TTarget>() {

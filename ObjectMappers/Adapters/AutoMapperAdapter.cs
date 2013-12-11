@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using AutoMapper;
 using AutoMapper.Mappers;
 
@@ -15,10 +14,10 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             this.engine = new MappingEngine(this.configuration);
         }
 
-        public override Assembly Assembly {
-            get { return typeof(MappingEngine).Assembly; }
+        public override Type MapperType {
+            get { return typeof(MappingEngine); }
         }
-
+        
         public override void CreateMap<TSource, TTarget>() {
             this.configuration.CreateMap<TSource, TTarget>();
         }

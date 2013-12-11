@@ -5,6 +5,7 @@ using FeatureTests.Shared;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
     public interface IObjectMapperAdapter : ILibrary {
+        Type MapperType { get; }
         void CreateMap<TSource, TTarget>();
 
         TTarget Map<TTarget>(object source);

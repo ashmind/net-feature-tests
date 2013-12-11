@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
 using EmitMapper;
-using FeatureTests.Shared.GenericApiSupport;
-using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using Omu.ValueInjecter;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
@@ -15,8 +12,8 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             this.injecter = new ValueInjecter();
         }
 
-        public override Assembly Assembly {
-            get { return typeof(ObjectMapperManager).Assembly; }
+        public override Type MapperType {
+            get { return typeof(ObjectMapperManager); }
         }
 
         public override void CreateMap<TSource, TTarget>() {

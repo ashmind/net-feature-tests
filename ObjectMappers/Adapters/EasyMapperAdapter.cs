@@ -8,8 +8,8 @@ using Pelusoft.EasyMapper;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
     public class EasyMapperAdapter : ObjectMapperAdapterBase {
-        public override Assembly Assembly {
-            get { return typeof(EasyMapper).Assembly; }
+        public override Type MapperType {
+            get { return typeof(EasyMapper); }
         }
 
         public override string PackageId {

@@ -14,7 +14,7 @@ namespace FeatureTests.Runner.Outputs.Html {
         private readonly Markdown markdown;
 
         public FormatHelper() {
-            this.markdown = new Markdown(new MarkdownOptions { AutoHyperlink = true });
+            this.markdown = new Markdown(new MarkdownOptions { AutoHyperlink = true, StrictBoldItalic = false });
         }
 
         public string GetCssClassesForCell(FeatureCell cell) {
