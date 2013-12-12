@@ -15,21 +15,51 @@ namespace FeatureTests.On.ObjectMappers {
         [Feature]
         [DisplayName("Automatic flattening")]
         public void NameBasedFlattening(IObjectMapperAdapter adapter) {
-            adapter.CreateMap<ClassWithNested<ClassWithName>, ClassWithNestedName>();
-            var source = new ClassWithNested<ClassWithName> { Nested = { Name = "ABC" } };
-            var result = adapter.Map<ClassWithNestedName>(source);
+            adapter.CreateMap<ClassWithNested<ClassWithValue>, ClassWithNestedValue>();
+            var source = new ClassWithNested<ClassWithValue> { Nested = { Value = "ABC" } };
+            var result = adapter.Map<ClassWithNestedValue>(source);
 
-            Assert.Equal(source.Nested.Name, result.NestedName);
+            Assert.Equal(source.Nested.Value, result.NestedValue);
         }
 
         [Feature]
         [DisplayName("Automatic 'unflattening'")]
         public void NameBasedUnflattening(IObjectMapperAdapter adapter) {
-            adapter.CreateMap<ClassWithNestedName, ClassWithNested<ClassWithName>>();
-            var source = new ClassWithNestedName { NestedName = "ABC" };
-            var result = adapter.Map<ClassWithNested<ClassWithName>>(source);
+            adapter.CreateMap<ClassWithNestedValue, ClassWithNested<ClassWithValue>>();
+            var source = new ClassWithNestedValue { NestedValue = "ABC" };
+            var result = adapter.Map<ClassWithNested<ClassWithValue>>(source);
 
-            Assert.Equal(source.NestedName, result.Nested.Name);
+            Assert.Equal(source.NestedValue, result.Nested.Value);
+        }
+
+        [Feature]
+        [DisplayName("Method to property (same name)")]
+        public void MethodToProperty(IObjectMapperAdapter adapter) {
+            adapter.CreateMap<ClassWithValueAsMethod, ClassWithValue>();
+            var source = new ClassWithValueAsMethod("ABC");
+            var result = adapter.Map<ClassWithValue>(source);
+
+            Assert.Equal(source.Value(), result.Value);
+        }
+
+        [Feature]
+        [DisplayName("Method to property (Get+name)")]
+        public void GetMethodToProperty(IObjectMapperAdapter adapter) {
+            adapter.CreateMap<ClassWithGetValueMethod, ClassWithValue>();
+            var source = new ClassWithGetValueMethod("ABC");
+            var result = adapter.Map<ClassWithValue>(source);
+
+            Assert.Equal(source.GetValue(), result.Value);
+        }
+
+        [Feature]
+        [DisplayName("Property to method (Set+name)")]
+        public void PropertyToSetMethod(IObjectMapperAdapter adapter) {
+            adapter.CreateMap<ClassWithValue, ClassWithSetValue>();
+            var source = new ClassWithValue { Value = "ABC" };
+            var result = adapter.Map<ClassWithSetValue>(source);
+
+            Assert.Equal(source.Value, result.GetValue());
         }
 
         [Feature]

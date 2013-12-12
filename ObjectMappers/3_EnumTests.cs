@@ -31,9 +31,9 @@ namespace FeatureTests.On.ObjectMappers {
         }
 
         [Feature]
-        [DisplayName("Enum₁? ⇒ Enum₂")]
+        [DisplayName("Enum₁ ⇒ Enum₂?")]
         public void EnumToNullableEnum(IObjectMapperAdapter mapper) {
-            AssertEnumMappingWorksFor(mapper, (Enum1?)Enum1.Default, Enum2.Default);
+            AssertEnumMappingWorksFor(mapper, Enum1.Default, (Enum2?)Enum2.Default);
         }
 
         [Feature]
