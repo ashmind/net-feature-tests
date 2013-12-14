@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using FeatureTests.Shared;
 using Spring.Context.Support;
 using Spring.Objects.Factory.Config;
 using Spring.Objects.Factory.Support;
@@ -9,7 +10,7 @@ using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 // long names, Java heritage
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class SpringAdapter : AdapterBase {
+    public class SpringAdapter : ContainerAdapterBase {
         private readonly GenericApplicationContext context = new GenericApplicationContext();
         private readonly IObjectDefinitionFactory factory = new DefaultObjectDefinitionFactory();
 
@@ -29,6 +30,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             this.Register(implementationType, serviceType, false);
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw new SkipException("It seems possible (scope='request' in XML) but I have no clue how to implement it in code.");
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {

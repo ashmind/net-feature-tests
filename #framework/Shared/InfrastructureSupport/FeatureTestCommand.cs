@@ -18,10 +18,13 @@ namespace FeatureTests.Shared.InfrastructureSupport {
                 if (parameters.Length != 1)
                     throw new InvalidOperationException("Feature test method must have a single parameter.");
 
-                this.testMethod.Invoke(testClass, new[] { this.adapter });
+                this.testMethod.Invoke(testClass, new[] {this.adapter});
             }
             catch (TargetInvocationException ex) {
                 ExceptionUtility.RethrowWithNoStackTraceLoss(ex.InnerException);
+            }
+            catch (SkipException ex) {
+                return new SkipResult(this.testMethod, this.DisplayName, ex.Message);
             }
 
             return new PassedResult(this.testMethod, this.DisplayName);

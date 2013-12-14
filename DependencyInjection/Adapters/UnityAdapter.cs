@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 using Microsoft.Practices.Unity;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using Microsoft.Practices.Unity.Mvc;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class UnityAdapter : AdapterBase {
+    public class UnityAdapter : ContainerAdapterBase {
         private readonly IUnityContainer container = new UnityContainer();
 
         public override Assembly Assembly {
@@ -25,6 +27,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
             this.Register(serviceType, implementationType, () => new TransientLifetimeManager());
         }
 
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            this.Register(serviceType, implementationType, () => new PerRequestLifetimeManager());
+        }
+
         private void Register(Type serviceType, Type implementationType, Func<LifetimeManager> lifetime) {
             this.container.RegisterType(serviceType, implementationType, lifetime());
 
@@ -35,6 +41,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         public override void RegisterInstance(Type serviceType, object instance) {
             this.container.RegisterInstance(serviceType, instance);
             this.container.RegisterInstance(serviceType, serviceType.AssemblyQualifiedName + " => " + instance, instance);
+        }
+
+        public override void BeforeAllWebRequests(WebRequestTestHelper helper) {
+            helper.RegisterModule<UnityPerRequestHttpModule>();
         }
 
         public override object Resolve(Type serviceType) {

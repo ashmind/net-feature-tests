@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 using Munq;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using Munq.LifetimeManagers;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class MunqAdapter : AdapterBase {
+    public class MunqAdapter : ContainerAdapterBase {
         private readonly IocContainer container = new IocContainer();
         
         public override Assembly Assembly {
@@ -23,6 +25,14 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 
         public override void RegisterInstance(Type serviceType, object instance) {
             this.container.RegisterInstance(serviceType, instance);
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            this.container.Register(serviceType, implementationType).AsRequestSingleton();
+        }
+
+        public override void BeforeAllWebRequests(WebRequestTestHelper helper) {
+            helper.RegisterModule<RequestLifetimeModule>();
         }
 
         public override object Resolve(Type serviceType) {

@@ -9,7 +9,7 @@ using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class LightCoreAdapter : AdapterBase {
+    public class LightCoreAdapter : ContainerAdapterBase {
         private IContainerBuilder builder = new ContainerBuilder();
         private IContainer container;
         
@@ -23,6 +23,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             this.builder.Register(serviceType, implementationType).ControlledBy<TransientLifecycle>();
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw PerWebRequestMayNotBeProvidedButPerThreadIs();
         }
         
         public override void RegisterInstance(Type serviceType, object instance) {

@@ -8,7 +8,7 @@ using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class IfInjectorAdapter : AdapterBase {
+    public class IfInjectorAdapter : ContainerAdapterBase {
         private readonly Injector injector = new Injector();
         
         public override Assembly Assembly {
@@ -27,6 +27,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
                 () => this.injector.Register(Binding.For<P<X1>>().To<C<X2, X1>>()),
                 serviceType, implementationType
             );
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw PerWebRequestMayNotBeProvided();
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {

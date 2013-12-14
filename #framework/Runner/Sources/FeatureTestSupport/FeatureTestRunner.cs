@@ -69,11 +69,17 @@ namespace FeatureTests.Runner.Sources.FeatureTestSupport {
             }
 
             var instance = Activator.CreateInstance(test.DeclaringType);
-            try {
-                await Task.Run(() => test.Invoke(instance, new object[] { LibraryProvider.CreateAdapter(adapterType) }));
-            }
-            catch (Exception ex) {
-                return new FeatureTestResult(FeatureTestResultKind.Failure, exception: ToUsefulException(ex));
+            using (instance as IDisposable) {
+                try {
+                    await Task.Run(() => test.Invoke(instance, new object[] {LibraryProvider.CreateAdapter(adapterType)}));
+                }
+                catch (Exception ex) {
+                    var useful = ToUsefulException(ex);
+                    if (useful is SkipException)
+                        return new FeatureTestResult(FeatureTestResultKind.SkippedDueToSpecialCase, useful.Message);
+
+                    return new FeatureTestResult(FeatureTestResultKind.Failure, exception: useful);
+                }
             }
 
             var comment = specialCase != null ? specialCase.Comment : null;

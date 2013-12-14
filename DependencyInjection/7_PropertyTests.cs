@@ -24,9 +24,9 @@ namespace FeatureTests.On.DependencyInjection
     public class PropertyTests {
         [Feature]
         [DisplayName("Simple dependency")]
-        public void PropertyDependency(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<ServiceWithSimplePropertyDependency>();
+        public void PropertyDependency(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<ServiceWithSimplePropertyDependency>();
 
             var component = adapter.Resolve<ServiceWithSimplePropertyDependency>();
 
@@ -37,8 +37,8 @@ namespace FeatureTests.On.DependencyInjection
         [Feature]
         [DependsOnFeature("PropertyDependency")]
         [DisplayName("Optional by default")]
-        public void PropertyDependencyIsOptional(IAdapter adapter) {
-            adapter.Register<ServiceWithSimplePropertyDependency>();
+        public void PropertyDependencyIsOptional(IContainerAdapter adapter) {
+            adapter.RegisterType<ServiceWithSimplePropertyDependency>();
             var component = adapter.Resolve<ServiceWithSimplePropertyDependency>();
 
             Assert.Null(component.Service);
@@ -51,7 +51,7 @@ namespace FeatureTests.On.DependencyInjection
             Normally, it is undesirable to reference DI framework from the most parts of the code.  
             Requirement to use explicit attributes contributes to this problem.
         ")]
-        public void PropertyDependencyDoesNotNeedCustomAttribute(IAdapter adapter) {
+        public void PropertyDependencyDoesNotNeedCustomAttribute(IContainerAdapter adapter) {
             var property = typeof(ServiceWithSimplePropertyDependency).GetProperty("Service");
             var attributes = property.GetCustomAttributes(false);
             var attributesFromThisFramework = attributes.Where(a => a.GetType().Assembly == adapter.Assembly);

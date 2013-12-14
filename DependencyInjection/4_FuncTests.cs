@@ -22,9 +22,9 @@ namespace FeatureTests.On.DependencyInjection {
         [Feature]
         [DisplayName("No parameters")]
         [Description("Registration of `TService` automatically provides `Func<TService>`.")]
-        public void FactoryWithNoParameters(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<ServiceWithSimpleConstructorDependency>();
+        public void FactoryWithNoParameters(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<ServiceWithSimpleConstructorDependency>();
 
             var func = adapter.Resolve<Func<ServiceWithSimpleConstructorDependency>>();
 
@@ -44,9 +44,9 @@ namespace FeatureTests.On.DependencyInjection {
             provided by the container.
         ")]
         [DependsOnFeature("FactoryWithNoParameters")]
-        public void FactoryWithParameter(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<ServiceWithTwoConstructorDependencies>();
+        public void FactoryWithParameter(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<ServiceWithTwoConstructorDependencies>();
             var service2 = new IndependentService2();
 
             var func = adapter.Resolve<Func<IService2, ServiceWithTwoConstructorDependencies>>();
@@ -66,9 +66,9 @@ namespace FeatureTests.On.DependencyInjection {
             For example, registration `ServiceA(ServiceB1(ServiceC), IServiceB2)` can provide `Func<ServiceC, ServiceA>`.
         ")]
         [DependsOnFeature("FactoryWithParameter")]
-        public void FactoryWithParameterForSubdependency(IAdapter adapter) {
-            adapter.Register<ServiceWithSimpleConstructorDependency>();
-            adapter.Register<ServiceWithDependencyOnServiceWithOtherDependency>();
+        public void FactoryWithParameterForSubdependency(IContainerAdapter adapter) {
+            adapter.RegisterType<ServiceWithSimpleConstructorDependency>();
+            adapter.RegisterType<ServiceWithDependencyOnServiceWithOtherDependency>();
 
             var service = new IndependentService();
             var func = adapter.Resolve<Func<IService, ServiceWithDependencyOnServiceWithOtherDependency>>();
@@ -86,7 +86,7 @@ namespace FeatureTests.On.DependencyInjection {
             instance on each call.
         ")]
         [DependsOnFeature("FactoryWithNoParameters")]
-        public void TransientFactoryUsedBySingletonStillCreatesTransient(IAdapter adapter) {
+        public void TransientFactoryUsedBySingletonStillCreatesTransient(IContainerAdapter adapter) {
             adapter.RegisterTransient<IService, IndependentService>();
             adapter.RegisterSingleton<ServiceWithFuncConstructorDependency>();
 

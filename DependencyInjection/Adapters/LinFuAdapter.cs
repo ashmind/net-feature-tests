@@ -9,7 +9,7 @@ using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
     // thanks a lot to Philip Laureano for this adapter
-    public class LinFuAdapter : AdapterBase {
+    public class LinFuAdapter : ContainerAdapterBase {
         private readonly IServiceContainer container;
 
         public LinFuAdapter() {
@@ -27,6 +27,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             this.AddService(serviceType, implementationType, LifecycleType.OncePerRequest);
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw PerWebRequestMayNotBeProvidedButPerThreadIs();
         }
 
         private void AddService(Type serviceType, Type implementationType, LifecycleType lifecycle) {

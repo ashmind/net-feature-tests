@@ -10,7 +10,7 @@ using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class MefAdapter : AdapterBase {
+    public class MefAdapter : ContainerAdapterBase {
         private readonly CompositionContainer container;
         private readonly AggregateCatalog catalog = new AggregateCatalog();
 
@@ -46,6 +46,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
                    .SetCreationPolicy(CreationPolicy.Shared);
 
             this.catalog.Catalogs.Add(new TypeCatalog(new[] { implementationType }, builder));
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw PerWebRequestMayNotBeProvided();
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {

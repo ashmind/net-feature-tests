@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -72,6 +73,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FeatureAttribute.cs" />
     <Compile Include="InfrastructureSupport\FeatureTestCommand.cs" />
+    <Compile Include="SkipException.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

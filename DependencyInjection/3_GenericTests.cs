@@ -17,7 +17,7 @@ namespace FeatureTests.On.DependencyInjection {
             For example, `Service<>` can be registered as `IService<>`, and then any 
             request for `IService<X>` should be resolved with `Service<X>`.
         ")]
-        public void OpenGenericTypes(IAdapter adapter) {
+        public void OpenGenericTypes(IContainerAdapter adapter) {
             adapter.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));
             var resolved = adapter.Resolve<IGenericService<int>>();
 
@@ -38,7 +38,7 @@ namespace FeatureTests.On.DependencyInjection {
             once. Open generic collections can be registered using `RegisterAllOpenGeneric`.
             See: http://bit.ly/14DQx7c.
         ", Skip = true)]
-        public void ConstrainsForOpenGenerics(IAdapter adapter) {
+        public void ConstrainsForOpenGenerics(IContainerAdapter adapter) {
             adapter.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));
             adapter.RegisterTransient(typeof(IGenericService<>), typeof(GenericServiceWithIService2Constraint<>));
             var resolved = adapter.ResolveAll<IGenericService<IndependentService>>().ToArray();

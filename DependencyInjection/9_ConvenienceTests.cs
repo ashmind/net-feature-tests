@@ -26,9 +26,9 @@ namespace FeatureTests.On.DependencyInjection {
             behavior can be changed by replacing the `Container.Options.ConstructorResolutionBehavior`.
             For more info see: https://bit.ly/13WKdRT.
         ", Skip = true)]
-        public void ReasonableConstructorSelection(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<ServiceWithMultipleConstructors>();
+        public void ReasonableConstructorSelection(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<ServiceWithMultipleConstructors>();
 
             var resolved = adapter.Resolve<ServiceWithMultipleConstructors>();
 
@@ -46,10 +46,10 @@ namespace FeatureTests.On.DependencyInjection {
             added before Build.  
             This can be inconvenient for dynamic situations such as adding plugins.
         ")]
-        public void RegistrationAtAnyStage(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
+        public void RegistrationAtAnyStage(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
             adapter.Resolve<IService>();
-            adapter.Register<IService2, IndependentService2>();
+            adapter.RegisterType<IService2, IndependentService2>();
 
             var resolved = adapter.Resolve<IService2>();
             Assert.NotNull(resolved);
@@ -65,11 +65,11 @@ namespace FeatureTests.On.DependencyInjection {
             even if it is only an integration test environment. Debugging such issue can
             be a huge annoyance.
         ")]
-        public void GracefulRecursionHandling(IAdapter adapter) {
+        public void GracefulRecursionHandling(IContainerAdapter adapter) {
             this.AssertIsNotCrashingOnRecursion(adapter);
 
-            adapter.Register<ServiceWithRecursiveDependency1>();
-            adapter.Register<ServiceWithRecursiveDependency2>();
+            adapter.RegisterType<ServiceWithRecursiveDependency1>();
+            adapter.RegisterType<ServiceWithRecursiveDependency2>();
 
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithRecursiveDependency1>(adapter);
         }
@@ -77,16 +77,16 @@ namespace FeatureTests.On.DependencyInjection {
         [Feature]
         [DisplayName("Graceful recursion handling (list dependency)")]
         [DependsOnFeature(typeof(ListTests), "Array")]
-        public void GracefulRecursionHandlingForListDependency(IAdapter adapter) {
+        public void GracefulRecursionHandlingForListDependency(IContainerAdapter adapter) {
             this.AssertIsNotCrashingOnListRecursion(adapter);
 
-            adapter.Register<ServiceWithListConstructorDependency<IService[]>>();
-            adapter.Register<IService, ServiceThatCreatesRecursiveArrayDependency>();
+            adapter.RegisterType<ServiceWithListConstructorDependency<IService[]>>();
+            adapter.RegisterType<IService, ServiceThatCreatesRecursiveArrayDependency>();
 
             this.AssertGivesCorrectExceptionWhenResolvingRecursive<ServiceWithListConstructorDependency<IService[]>>(adapter);
         }
 
-        private void AssertGivesCorrectExceptionWhenResolvingRecursive<TService>(IAdapter adapter) {
+        private void AssertGivesCorrectExceptionWhenResolvingRecursive<TService>(IContainerAdapter adapter) {
             try {
                 adapter.Resolve<TService>();
             }
@@ -98,7 +98,7 @@ namespace FeatureTests.On.DependencyInjection {
             throw new AssertException("No exception for recursion, either this use case is not supported or there is some other issue.");
         }
 
-        private void AssertIsNotCrashingOnListRecursion(IAdapter adapter) {
+        private void AssertIsNotCrashingOnListRecursion(IContainerAdapter adapter) {
             this.AssertIsNotCrashingOnRecursion(adapter);
             if (!adapter.CrashesOnListRecursion)
                 return;
@@ -109,7 +109,7 @@ namespace FeatureTests.On.DependencyInjection {
             ));
         }
 
-        private void AssertIsNotCrashingOnRecursion(IAdapter adapter) {
+        private void AssertIsNotCrashingOnRecursion(IContainerAdapter adapter) {
             if (!adapter.CrashesOnRecursion)
                 return;
 

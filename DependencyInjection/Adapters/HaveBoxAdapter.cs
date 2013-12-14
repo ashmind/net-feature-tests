@@ -6,7 +6,7 @@ using HaveBox;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class HaveBoxAdapter : AdapterBase {
+    public class HaveBoxAdapter : ContainerAdapterBase {
         private readonly Container container = new Container();
         
         public override Assembly Assembly {
@@ -19,6 +19,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             this.container.Configure(r => r.For(serviceType).Use(implementationType));
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw PerWebRequestMayNotBePossible();
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {

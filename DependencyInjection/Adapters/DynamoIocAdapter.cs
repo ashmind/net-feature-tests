@@ -6,7 +6,7 @@ using Dynamo.Ioc;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class DynamoIocAdapter : AdapterBase {
+    public class DynamoIocAdapter : ContainerAdapterBase {
         private readonly IocContainer container = new IocContainer();
 
         public override string Name {
@@ -23,6 +23,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             this.container.Register(serviceType, implementationType).SetLifetime(new TransientLifetime());
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw PerWebRequestMayNotBeProvidedButPerThreadIs();
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {

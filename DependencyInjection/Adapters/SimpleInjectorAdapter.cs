@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
+using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 using SimpleInjector;
 using SimpleInjector.Advanced;
 using SimpleInjector.Extensions;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using SimpleInjector.Integration.Web;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class SimpleInjectorAdapter : AdapterBase {
+    public class SimpleInjectorAdapter : ContainerAdapterBase {
         private readonly Container container = new Container();
 
         public override string Name {
@@ -26,8 +28,16 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
             this.Register(serviceType, implementationType, Lifestyle.Transient);
         }
 
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            this.Register(serviceType, implementationType, new WebRequestLifestyle(true));
+        }
+
         public override void RegisterInstance(Type serviceType, object instance) {
             this.container.RegisterSingle(serviceType, instance);
+        }
+
+        public override void BeforeAllWebRequests(WebRequestTestHelper helper) {
+            helper.RegisterModule<SimpleInjectorHttpModule>();
         }
 
         public override object Resolve(Type serviceType) {

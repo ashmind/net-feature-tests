@@ -6,7 +6,7 @@ using Catel.IoC;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class CatelAdapter : AdapterBase {
+    public class CatelAdapter : ContainerAdapterBase {
         private readonly ServiceLocator locator = new ServiceLocator();
         
         public override Assembly Assembly {
@@ -19,6 +19,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
             this.locator.RegisterType(serviceType, implementationType, registrationType: RegistrationType.Transient);
+        }
+
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            throw PerWebRequestMayNotBePossible();
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {

@@ -24,19 +24,19 @@ namespace FeatureTests.On.DependencyInjection {
         [Feature]
         [DisplayName("IService[]")]
         [SpecialCase(typeof(UnityAdapter), "Note: Unity requires named registrations for list resolution to work.")]
-        public void Array(IAdapter adapter) {
+        public void Array(IContainerAdapter adapter) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IService[]>>(adapter);
         }
 
         [Feature]
         [DisplayName("IList<IService>")]
-        public void List(IAdapter adapter) {
+        public void List(IContainerAdapter adapter) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IList<IService>>>(adapter);
         }
 
         [Feature]
         [DisplayName("ICollection<IService>")]
-        public void Collection(IAdapter adapter) {
+        public void Collection(IContainerAdapter adapter) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<ICollection<IService>>>(adapter);
         }
 
@@ -47,27 +47,27 @@ namespace FeatureTests.On.DependencyInjection {
             using one of the RegisterAll methods to register all types at once, which is a different
             strategy than the other frameworks use.
         ", Skip = false)]
-        public void Enumerable(IAdapter adapter) {
+        public void Enumerable(IContainerAdapter adapter) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(adapter);
         }
 
         [Feature]
         [DisplayName("IReadOnlyCollection<IService>")]
-        public void IReadOnlyCollection(IAdapter adapter) {
+        public void IReadOnlyCollection(IContainerAdapter adapter) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IReadOnlyCollection<IService>>>(adapter);
         }
 
         [Feature]
         [DisplayName("IReadOnlyList<IService>")]
-        public void IReadOnlyList(IAdapter adapter) {
+        public void IReadOnlyList(IContainerAdapter adapter) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IReadOnlyList<IService>>>(adapter);
         }
 
-        public void AssertResolvesListDependencyFor<TTestComponent>(IAdapter adapter)
+        public void AssertResolvesListDependencyFor<TTestComponent>(IContainerAdapter adapter)
             where TTestComponent : IServiceWithListDependency<IEnumerable<IService>>
         {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<TTestComponent>();
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<TTestComponent>();
 
             var resolved = adapter.Resolve<TTestComponent>();
 

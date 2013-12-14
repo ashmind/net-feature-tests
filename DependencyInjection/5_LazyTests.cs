@@ -20,9 +20,9 @@ namespace FeatureTests.On.DependencyInjection {
     public class LazyTests {
         [Feature]
         [DisplayName("Basic support")]
-        public void BasicLazySupport(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<ServiceWithSimpleConstructorDependency>();
+        public void BasicLazySupport(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<ServiceWithSimpleConstructorDependency>();
 
             var lazy = adapter.Resolve<Lazy<ServiceWithSimpleConstructorDependency>>();
 
@@ -37,9 +37,9 @@ namespace FeatureTests.On.DependencyInjection {
             This test verifies that value is not created prematurely.
         ")]
         [DependsOnFeature("BasicLazySupport")]
-        public void NotCreatingLazyPrematurely(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<ServiceWithSimpleConstructorDependency>();
+        public void NotCreatingLazyPrematurely(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<ServiceWithSimpleConstructorDependency>();
 
             var lazy = adapter.Resolve<Lazy<ServiceWithSimpleConstructorDependency>>();
 
@@ -50,7 +50,7 @@ namespace FeatureTests.On.DependencyInjection {
         [Feature]
         [DisplayName("Circular dependency")]
         [DependsOnFeature("BasicLazySupport")]
-        public void LazyanBeUsedToResolveCircularDepenendency(IAdapter adapter) {
+        public void LazyanBeUsedToResolveCircularDepenendency(IContainerAdapter adapter) {
             adapter.RegisterSingleton<ServiceWithRecursiveLazyDependency1>();
             adapter.RegisterSingleton<ServiceWithRecursiveLazyDependency2>();
 

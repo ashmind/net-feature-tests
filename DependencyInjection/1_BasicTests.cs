@@ -14,8 +14,8 @@ namespace FeatureTests.On.DependencyInjection {
     public class BasicTests {
         [Feature]
         [DisplayName("Register/resolve independent service")]
-        public void IndependentService(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
+        public void IndependentService(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
             var component = adapter.Resolve<IService>();
 
             Assert.NotNull(component);
@@ -23,8 +23,8 @@ namespace FeatureTests.On.DependencyInjection {
 
         [Feature]
         [DisplayName("Register/resolve independent service registered as itself")]
-        public void IndependentServiceRegisteredAsSelf(IAdapter adapter) {
-            adapter.Register<IndependentService>();
+        public void IndependentServiceRegisteredAsSelf(IContainerAdapter adapter) {
+            adapter.RegisterType<IndependentService>();
             var component = adapter.Resolve<IndependentService>();
 
             Assert.NotNull(component);
@@ -32,7 +32,7 @@ namespace FeatureTests.On.DependencyInjection {
 
         [Feature]
         [DisplayName("Singleton lifetime")]
-        public void SingletonLifetime(IAdapter adapter) {
+        public void SingletonLifetime(IContainerAdapter adapter) {
             adapter.RegisterSingleton<IService, IndependentService>();
             var instance1 = adapter.Resolve<IService>();
             var instance2 = adapter.Resolve<IService>();
@@ -42,7 +42,7 @@ namespace FeatureTests.On.DependencyInjection {
 
         [Feature]
         [DisplayName("Transient lifetime")]
-        public void TransientLifetime(IAdapter adapter) {
+        public void TransientLifetime(IContainerAdapter adapter) {
             adapter.RegisterTransient<IService, IndependentService>();
             var instance1 = adapter.Resolve<IService>();
             var instance2 = adapter.Resolve<IService>();
@@ -52,9 +52,9 @@ namespace FeatureTests.On.DependencyInjection {
 
         [Feature]
         [DisplayName("Register/resolve instance")]
-        public void PrebuiltInstance(IAdapter adapter) {
+        public void PrebuiltInstance(IContainerAdapter adapter) {
             var instance = new IndependentService();
-            adapter.Register<IService>(instance);
+            adapter.RegisterInstance<IService>(instance);
 
             var resolved = adapter.Resolve<IService>();
 
@@ -63,9 +63,9 @@ namespace FeatureTests.On.DependencyInjection {
 
         [Feature]
         [DisplayName("Resolve constructor dependency")]
-        public void ConstructorDependency(IAdapter adapter) {
-            adapter.Register<IService, IndependentService>();
-            adapter.Register<ServiceWithSimpleConstructorDependency>();
+        public void ConstructorDependency(IContainerAdapter adapter) {
+            adapter.RegisterType<IService, IndependentService>();
+            adapter.RegisterType<ServiceWithSimpleConstructorDependency>();
 
             var component = adapter.Resolve<ServiceWithSimpleConstructorDependency>();
 
@@ -75,10 +75,10 @@ namespace FeatureTests.On.DependencyInjection {
 
         [Feature]
         [DisplayName("Resolve constructor dependency using instance")]
-        public void ConstructorDependencyUsingInstance(IAdapter adapter) {
+        public void ConstructorDependencyUsingInstance(IContainerAdapter adapter) {
             var instance = new IndependentService();
-            adapter.Register<IService>(instance);
-            adapter.Register<ServiceWithSimpleConstructorDependency>();
+            adapter.RegisterInstance<IService>(instance);
+            adapter.RegisterType<ServiceWithSimpleConstructorDependency>();
 
             var dependent = adapter.Resolve<ServiceWithSimpleConstructorDependency>();
 

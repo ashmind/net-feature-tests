@@ -2,16 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Web;
 using Castle.Core;
 using Castle.Facilities.TypedFactory;
 using Castle.MicroKernel;
+using Castle.MicroKernel.Lifestyle;
 using Castle.MicroKernel.Registration;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class CastleAdapter : AdapterBase {
+    public class CastleAdapter : ContainerAdapterBase {
         private readonly IWindsorContainer container = new WindsorContainer();
 
         public CastleAdapter() {
@@ -31,6 +34,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
             this.Register(serviceType, implementationType, LifestyleType.Transient);
         }
 
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            this.Register(serviceType, implementationType, LifestyleType.PerWebRequest);
+        }
+
         public override void RegisterInstance(Type serviceType, object instance) {
             var registration = Component.For(serviceType).Instance(instance);
             this.container.Register(registration);
@@ -42,6 +49,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
                                         .LifeStyle.Is(lifestyle);
 
             this.container.Register(registration);
+        }
+
+        public override void BeforeAllWebRequests(WebRequestTestHelper helper) {
+            helper.RegisterModule<PerWebRequestLifestyleModule>();
         }
 
         public override object Resolve(Type serviceType) {

@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using MicroSliver;
 using FeatureTests.Shared.GenericApiSupport;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
-    public class MicroSliverAdapter : AdapterBase {
+    public class MicroSliverAdapter : ContainerAdapterBase {
         private readonly IoC ioc = new IoC();
 
         #region DelegateCreator
@@ -45,6 +46,13 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
             );
         }
 
+        public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
+            GenericHelper.RewriteAndInvoke(
+                () => this.ioc.Map<P<X1>, C<X2, X1>>().ToRequestScope(),
+                serviceType, implementationType
+            );
+        }
+
         public override void RegisterInstance(Type serviceType, object instance) {
             GenericHelper.RewriteAndInvoke(
                 () => this.ioc.Map<X1>(new DelegateCreator(() => instance)),
@@ -52,6 +60,10 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
             );
         }
 
+        public override void BeforeAllWebRequests(WebRequestTestHelper helper) {
+            helper.RegisterModule<MicroSliverHttpRequestModule>();
+        }
+        
         public override object Resolve(Type serviceType) {
             return this.ioc.GetByType(serviceType);
         }
