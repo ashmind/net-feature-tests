@@ -45,14 +45,16 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
 
             // MORE HACKS
             var result = normalized;
-            result = Regex.Replace(result, @"^net(?=\d)",       ".NET ");
-            result = Regex.Replace(result, @"^(sl\d)\d$",       "$1"); // Silverlight normally uses one digit
-            result = Regex.Replace(result, @"^sl(?=\d)",        "Silverlight ");
-            result = Regex.Replace(result, @"^wp(?=\d)",        "Windows Phone ");
-            result = Regex.Replace(result, @"^wp$",             "Windows Phone");
+            result = Regex.Replace(result, @"^net(?=\d)",          ".NET ");
+            result = Regex.Replace(result, @"(\d+(?:\.\d+)*)-cf$", "CF $1");
+            result = Regex.Replace(result, @"^(sl\d)\d$",          "$1"); // Silverlight normally uses one digit
+            result = Regex.Replace(result, @"^sl(?=\d)",           "Silverlight ");
+            result = Regex.Replace(result, @"^wp(?=\d)",           "Windows Phone ");
+            result = Regex.Replace(result, @"^wp$",                "Windows Phone");
             result = Regex.Replace(result, @"^win(dows)?(8(0)?)?$", "Windows 8", RegexOptions.ExplicitCapture);
-            result = Regex.Replace(result, @"(\d)(\d)",         "$1.$2");
-            result = Regex.Replace(result, @"-Client",          " (Client Profile)");
+            result = Regex.Replace(result, @"^win81$",             "Windows 8.1");
+            result = Regex.Replace(result, @"\d{2,}",              match => string.Join(".", match.Value.ToCharArray())); // 45 => 4.5, etc
+            result = Regex.Replace(result, @"-Client",             " (Client Profile)");
 
             return result;
         }

@@ -245,43 +245,43 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-326 998        </td>
+327 209        </td>
         <td class="neutral number">
-229 480        </td>
+229 589        </td>
         <td class="neutral number">
-29 888        </td>
+30 089        </td>
         <td class="neutral number">
-2 306        </td>
+2 308        </td>
         <td class="neutral number">
-220        </td>
+223        </td>
         <td class="neutral number">
-649        </td>
+650        </td>
         <td class="neutral number">
-278        </td>
+279        </td>
         <td class="neutral number">
-2 189        </td>
+2 191        </td>
         <td class="neutral number">
-1 896        </td>
+1 897        </td>
         <td class="neutral number">
-1 289        </td>
+1 291        </td>
         <td class="skipped">
 n/a        </td>
         <td class="neutral number">
-1 385        </td>
+1 386        </td>
         <td class="neutral number">
-1 679        </td>
+1 680        </td>
         <td class="neutral number">
-4 989        </td>
+4 991        </td>
         <td class="neutral number">
-1 111 817        </td>
+1 112 006        </td>
         <td class="neutral number">
-28 147        </td>
+28 170        </td>
         <td class="neutral number">
-30 183        </td>
+30 189        </td>
         <td class="neutral number">
-218 155        </td>
+218 241        </td>
         <td class="neutral number">
-539 044        </td>
+539 339        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -525,7 +525,7 @@ no        </td>
 no        </td>
     </tr>
     <tr>
-      <td class="row-name"><span>.NET 3.5-cf</span></td>
+      <td class="row-name"><span>.NET CF 3.5</span></td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -730,7 +730,7 @@ yes        </td>
 yes        </td>
     </tr>
     <tr>
-      <td class="row-name"><span>.NET 4.51</span></td>
+      <td class="row-name"><span>.NET 4.5.1</span></td>
         <td class="success">
 yes        </td>
         <td class="success">
@@ -812,7 +812,7 @@ no        </td>
 yes        </td>
     </tr>
     <tr>
-      <td class="row-name"><span>win8.1</span></td>
+      <td class="row-name"><span>Windows 8.1</span></td>
         <td class="success">
 yes        </td>
         <td class="concern">
@@ -1754,34 +1754,23 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="System.InvalidOperationException: Stack empty.
-   at System.ThrowHelper.ThrowInvalidOperationException(ExceptionResource resource)
-   at System.Collections.Generic.Stack`1.Pop()
+            <span title="System.MissingMethodException: Constructor on type &amp;#39;FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]&amp;#39; not found.
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes, StackCrawlMark&amp;amp; stackMark)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at LinFu.IoC.Configuration.ConstructorInvoke.Invoke(Object target, ConstructorInfo targetMethod, Object[] arguments)
+   at LinFu.IoC.Configuration.DefaultActivator.CreateInstance(IContainerActivationContext context)
    at LinFu.IoC.ContainerExtensions.AutoCreateInternal(IServiceContainer container, Type concreteType, Object[] additionalArguments)
    at LinFu.IoC.Configuration.FactoryBuilder.&amp;lt;CreateFactoryMethodInternal&amp;gt;b__4[TService,TImplementation](IFactoryRequest request)
    at LinFu.IoC.Factories.OncePerRequestFactory`1.CreateInstance(IFactoryRequest request)
    at LinFu.IoC.Factories.BaseFactory`1.LinFu.IoC.Interfaces.IFactory.CreateInstance(IFactoryRequest request)
-   at LinFu.IoC.Configuration.Loaders.ImplementsAttributeLoader.&amp;lt;&amp;gt;c__DisplayClass5.&amp;lt;CreateFactory&amp;gt;b__4(IFactoryRequest request)
-   at LinFu.IoC.Factories.FunctorFactory.CreateInstance(IFactoryRequest request)
    at LinFu.IoC.DefaultCreator.CreateFrom(IFactoryRequest factoryRequest, IFactory factory)
    at LinFu.IoC.DefaultGetServiceBehavior.GetService(IServiceRequest serviceRequest)
    at LinFu.IoC.ServiceContainer.GetService(String serviceName, Type serviceType, Object[] additionalArguments)
    at LinFu.IoC.ServiceContainer.GetService(Type serviceType, Object[] additionalArguments)
-   at LinFu.IoC.ContainerExtensions.GetService[T](IServiceContainer container, Object[] additionalArguments)
-   at LinFu.IoC.Configuration.AutoMemberInjector`1.AutoInject(IServiceRequestResult result)
-   at LinFu.IoC.Configuration.AutoMemberInjector`1.PostProcess(IServiceRequestResult result)
-   at LinFu.IoC.CompositePostProcessor.PostProcess(IServiceRequestResult result)
-   at LinFu.IoC.DefaultGetServiceBehavior.GetService(IServiceRequest serviceRequest)
-   at LinFu.IoC.ServiceContainer.GetService(String serviceName, Type serviceType, Object[] additionalArguments)
-   at LinFu.IoC.ServiceContainer.GetService(Type serviceType, Object[] additionalArguments)
-   at LinFu.IoC.ContainerExtensions.GetService[T](IServiceContainer container, Object[] additionalArguments)
-   at LinFu.IoC.ContainerExtensions.AddService(IServiceContainer container, String serviceName, Type serviceType, Type implementingType, LifecycleType lifecycle)
-   at LinFu.IoC.ContainerExtensions.AddService(IServiceContainer container, Type serviceType, Type implementingType, LifecycleType lifecycle)
-   at FeatureTests.On.DependencyInjection.Adapters.LinFuAdapter.AddService(Type serviceType, Type implementationType, LifecycleType lifecycle) in [removed]\LinFuAdapter.cs:line 37
-   at FeatureTests.On.DependencyInjection.Adapters.LinFuAdapter.RegisterTransient(Type serviceType, Type implementationType) in [removed]\LinFuAdapter.cs:line 29
-   at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.RegisterTransient[TService,TImplementation](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 34
-   at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.RegisterType[TService,TImplementation](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 14
-   at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 69
+   at FeatureTests.On.DependencyInjection.Adapters.LinFuAdapter.Resolve(Type serviceType) in [removed]\LinFuAdapter.cs:line 45
+   at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
+   at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 72
    at FeatureTests.On.DependencyInjection.ListTests.List(IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 34">fail</span>
         </td>
         <td class="failure">
@@ -3526,7 +3515,7 @@ The activation path:
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
    at MugenInjection.Core.InjectorBase.&amp;lt;Activate&amp;gt;b__d(IBindingContext context) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.Components.FactoryAndLazyConverter.FactoryResolve.Invoke(Object[] objects) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\FactoryAndLazyConverter.cs:line 186
-   at _DynamicMethodMugenInjection_Func`2_2767d29123cf423f84a3d08c5527d4d4(Func`2 , IService2 )
+   at _DynamicMethodMugenInjection_Func`2_b6cbecc14c0b4f58871275ad3494ede9(Func`2 , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
         <td class="skipped">
