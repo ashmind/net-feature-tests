@@ -44,6 +44,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\#packages\AshMind.Extensions.1.1.5\lib\net45\AshMind.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="CacheCow.Client">
+      <HintPath>..\..\#packages\CacheCow.Client.0.4.12\lib\net40\CacheCow.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="CacheCow.Common">
+      <HintPath>..\..\#packages\CacheCow.Common.0.4.12\lib\net40\CacheCow.Common.dll</HintPath>
+    </Reference>
     <Reference Include="CommandLine">
       <HintPath>..\..\#packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
     </Reference>
@@ -52,15 +58,6 @@
     </Reference>
     <Reference Include="MarkdownSharp">
       <HintPath>..\..\#packages\MarkdownSharp.1.13.0.0\lib\35\MarkdownSharp.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.Edm, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\#packages\Microsoft.Data.Edm.5.6.0\lib\net40\Microsoft.Data.Edm.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.OData, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\#packages\Microsoft.Data.OData.5.6.0\lib\net40\Microsoft.Data.OData.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.Data.Services.Client, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\..\#packages\Microsoft.Data.Services.Client.5.6.0\lib\net40\Microsoft.Data.Services.Client.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.XmlTransform">
       <HintPath>..\..\#packages\Microsoft.Web.Xdt.1.0.0\lib\net40\Microsoft.Web.XmlTransform.dll</HintPath>
@@ -80,11 +77,14 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\#packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Spatial, Version=5.6.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\#packages\System.Spatial.5.6.0\lib\net40\System.Spatial.dll</HintPath>
-    </Reference>
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -116,15 +116,11 @@
     <Compile Include="Outputs\ResultForAssembly.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\NuGetGallery\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.datasvcmap</DependentUpon>
-    </Compile>
     <Compile Include="Sources\FeatureTestSupport\FeatureTestResult.cs" />
     <Compile Include="Sources\MetadataKeys.cs" />
     <Compile Include="Sources\1_GeneralInfoTableSource.cs" />
-    <Compile Include="Sources\MetadataSupport\MetadataPackageCache.cs" />
+    <Compile Include="Sources\MetadataSupport\HttpDataProvider.cs" />
+    <Compile Include="Sources\MetadataSupport\LocalPackageCache.cs" />
     <Compile Include="Sources\MetadataSupport\NetFxVersionHelper.cs" />
     <Compile Include="Sources\2_NetFxSupportTableSource.cs" />
     <Compile Include="Sources\FeatureTestSupport\FeatureTestResultKind.cs" />
@@ -132,28 +128,17 @@
     <Compile Include="Sources\FeatureTestSupport\FeatureTestRunner.cs" />
     <Compile Include="Sources\IFeatureTableSource.cs" />
     <Compile Include="Sources\3_FeatureTestTableSource.cs" />
+    <Compile Include="Sources\MetadataSupport\NuGetGalleryPackage.cs" />
+    <Compile Include="Sources\MetadataSupport\FlatFileCacheStore.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Outputs\Html\Templates\Introduction.cshtml" />
     <None Include="Outputs\Html\Templates\CustomPages.json" />
     <None Include="Outputs\Html\Templates\_Layout.cshtml" />
     <None Include="Outputs\Html\Templates\Results.cshtml" />
-    <None Include="Service References\NuGetGallery\Reference.datasvcmap">
-      <Generator>DataServicesCoreClientGenerator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="app.config" />
     <None Include="packages.config" />
-    <None Include="Service References\NuGetGallery\service.edmx" />
     <None Include="web.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ServiceReferenceMetadataStorage Include="Service References\NuGetGallery\">
-      <Type>datasvcmap</Type>
-    </ServiceReferenceMetadataStorage>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\DependencyInjection\DependencyInjection.csproj">

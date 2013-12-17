@@ -17,9 +17,11 @@ namespace FeatureTests.Runner {
         public static string AssemblyNamePrefix = "FeatureTests.On.";
 
         private static void Main(CommandLineArguments args) {
-            var cache = new MetadataPackageCache(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"]));
+            var cache = new LocalPackageCache(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"]));
+            var httpDataProvider = new HttpDataProvider(new DirectoryInfo("HttpCache"));
+
             var sources = new IFeatureTableSource[] {
-                new GeneralInfoTableSource(cache),
+                new GeneralInfoTableSource(cache, httpDataProvider),
                 new NetFxSupportTableSource(cache),
                 new FeatureTestTableSource(new FeatureTestRunner())
             };

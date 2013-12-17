@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using Microsoft.Practices.ServiceLocation;
 using MugenInjection;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 using MugenInjection.Interface;
@@ -10,7 +11,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
     public class MugenAdapter : ContainerAdapterBase {
         private readonly MugenInjector injector = new MugenInjector();
         private IInjector webRequestInjector;
-
+        
         public override Assembly Assembly {
             get { return typeof(MugenInjector).Assembly; }
         }

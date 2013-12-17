@@ -5,11 +5,11 @@ using System.Linq;
 using NuGet;
 
 namespace FeatureTests.Runner.Sources.MetadataSupport {
-    public class MetadataPackageCache {
+    public class LocalPackageCache {
         private readonly IPackageRepository packageRepository;
         private readonly ConcurrentDictionary<string, IPackage> packages = new ConcurrentDictionary<string, IPackage>();
 
-        public MetadataPackageCache(string nugetPackagesPath) {
+        public LocalPackageCache(string nugetPackagesPath) {
             this.packageRepository = new SharedPackageRepository(nugetPackagesPath);
         }
 

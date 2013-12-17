@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
-using FeatureTests.Runner.NuGetGallery;
+using System.Xml;
+using System.Xml.Linq;
 using FeatureTests.Runner.Sources.MetadataSupport;
 using FeatureTests.Shared;
 using FeatureTests.Shared.InfrastructureSupport;
@@ -11,10 +13,12 @@ using FeatureTests.Shared.ResultData;
 
 namespace FeatureTests.Runner.Sources {
     public class GeneralInfoTableSource : IFeatureTableSource {
-        private readonly MetadataPackageCache packageCache;
+        private readonly LocalPackageCache packageCache;
+        private readonly HttpDataProvider dataProvider;
 
-        public GeneralInfoTableSource(MetadataPackageCache packageCache) {
+        public GeneralInfoTableSource(LocalPackageCache packageCache, HttpDataProvider dataProvider) {
             this.packageCache = packageCache;
+            this.dataProvider = dataProvider;
         }
 
         public IEnumerable<FeatureTable> GetTables(Assembly featureTestAssembly) {
@@ -79,14 +83,20 @@ namespace FeatureTests.Runner.Sources {
             }
 
             var localPackage = this.packageCache.GetPackage(library.PackageId);
-            var localVersion = localPackage.Version.ToString();
-            var versionMatchingLocal = await Task.Run(() => {
-                var context = new V2FeedContext(new Uri("http://nuget.org/api/v2"));
-                return context.Packages.Where(p => p.Id == library.PackageId && p.Version == localVersion).AsEnumerable().Single();
-            });
+            
+            var remoteQueryUrl = string.Format("http://nuget.org/api/v2/Packages(Id='{0}',Version='{1}')", localPackage.Id, localPackage.Version);
+            var remotePackageXml = XDocument.Parse(await this.dataProvider.GetStringAsync(remoteQueryUrl));
 
-            table[library, released].DisplayValue = new DateTimeOffset(versionMatchingLocal.Published);
-            table[library, downloads].DisplayValue = versionMatchingLocal.DownloadCount;
+            table[library, released].DisplayValue = GetFromNuGetGalleryResult<DateTimeOffset>(remotePackageXml, "Published");
+            table[library, downloads].DisplayValue = GetFromNuGetGalleryResult<int>(remotePackageXml, "DownloadCount");
+        }
+
+        private T GetFromNuGetGalleryResult<T>(XDocument remotePackageXml, string propertyName) {
+            var dataNamespace = "http://schemas.microsoft.com/ado/2007/08/dataservices";
+            var converter = TypeDescriptor.GetConverter(typeof(T));
+            var element = remotePackageXml.Descendants(XName.Get(propertyName, dataNamespace)).Single();
+
+            return (T)converter.ConvertFromInvariantString(element.Value);
         }
 
         private static void FillWithNA(FeatureCell cell) {

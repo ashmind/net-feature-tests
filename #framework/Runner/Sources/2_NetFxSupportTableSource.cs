@@ -11,9 +11,9 @@ using FeatureTests.Runner.Sources.MetadataSupport;
 
 namespace FeatureTests.Runner.Sources {
     public class NetFxSupportTableSource : IFeatureTableSource {
-        private readonly MetadataPackageCache packageCache;
+        private readonly LocalPackageCache packageCache;
 
-        public NetFxSupportTableSource(MetadataPackageCache packageCache) {
+        public NetFxSupportTableSource(LocalPackageCache packageCache) {
             this.packageCache = packageCache;
         }
 
