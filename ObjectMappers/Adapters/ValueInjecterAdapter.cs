@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using EmitMapper;
 using Omu.ValueInjecter;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
@@ -12,8 +11,12 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             this.injecter = new ValueInjecter();
         }
 
+        public override string PackageId {
+            get { return "ValueInjecter"; }
+        }
+
         public override Type MapperType {
-            get { return typeof(ObjectMapperManager); }
+            get { return typeof(ValueInjecter); }
         }
 
         public override void CreateMap<TSource, TTarget>() {

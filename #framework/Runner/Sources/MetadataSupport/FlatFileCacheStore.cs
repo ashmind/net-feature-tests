@@ -102,7 +102,7 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
                 var dictionary = serializer.Deserialize<IDictionary<string, string[]>>(jsonReader);
                 response.Headers.Clear();
                 foreach (var pair in dictionary) {
-                    response.Headers.Add(pair.Key, pair.Value);
+                    response.Headers.TryAddWithoutValidation(pair.Key, pair.Value);
                 }
             }
         }

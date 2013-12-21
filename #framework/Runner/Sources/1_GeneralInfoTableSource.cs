@@ -15,10 +15,12 @@ namespace FeatureTests.Runner.Sources {
     public class GeneralInfoTableSource : IFeatureTableSource {
         private readonly LocalPackageCache packageCache;
         private readonly HttpDataProvider dataProvider;
+        private readonly LicenseResolver licenseResolver;
 
-        public GeneralInfoTableSource(LocalPackageCache packageCache, HttpDataProvider dataProvider) {
+        public GeneralInfoTableSource(LocalPackageCache packageCache, HttpDataProvider dataProvider, LicenseResolver licenseResolver) {
             this.packageCache = packageCache;
             this.dataProvider = dataProvider;
+            this.licenseResolver = licenseResolver;
         }
 
         public IEnumerable<FeatureTable> GetTables(Assembly featureTestAssembly) {
@@ -31,6 +33,7 @@ namespace FeatureTests.Runner.Sources {
             };
             var released = new Feature("Released");
             var url = new Feature(MetadataKeys.UrlFeature, "Web Site");
+            var license = new Feature("License");
             var downloads = new Feature("Downloads") {
                 Description = "Total downloads of the NuGet package."
             };
@@ -42,7 +45,7 @@ namespace FeatureTests.Runner.Sources {
             };
 
             var libraries = LibraryProvider.GetAdapters(featureTestAssembly).ToArray();
-            var table = new FeatureTable(MetadataKeys.GeneralInfoTable, @"General information", libraries, new[] { version, released, url, downloads, total }) {
+            var table = new FeatureTable(MetadataKeys.GeneralInfoTable, @"General information", libraries, new[] {version, released, url, license, downloads, total }) {
                 Scoring = FeatureScoring.NotScored
             };
             
@@ -50,6 +53,7 @@ namespace FeatureTests.Runner.Sources {
             foreach (var library in libraries) {
                 table[library, version].DisplayValue = library.Assembly.GetName().Version.ToString();
                 this.FillUrl(table[library, url], library);
+                tasks.Add(this.FillLicense(table[library, license], library));
                 tasks.Add(this.FillDataFromNuGetGallery(table, library, released, downloads));
             }
 
@@ -74,6 +78,29 @@ namespace FeatureTests.Runner.Sources {
             cell.DisplayValue = "link";
             cell.DisplayUri = package.ProjectUrl;
         }
+        
+        private async Task FillLicense(FeatureCell cell, ILibrary library) {
+            if (library.PackageId == null) { // this is always intentional
+                FillWithNA(cell);
+                return;
+            }
+
+            var localPackage = this.packageCache.GetPackage(library.PackageId);
+            if (localPackage.LicenseUrl == null) {
+                FillWithNA(cell);
+                return;
+            }
+
+            cell.DisplayUri = localPackage.LicenseUrl;
+            var licenseInfo = await this.licenseResolver.GetLicenseInfo(localPackage.LicenseUrl);
+            if (licenseInfo == null) {
+                cell.State = FeatureState.Neutral;
+                cell.DisplayValue = "unrecognized";
+                return;
+            }
+
+            cell.DisplayValue = licenseInfo.ShortName;
+        }
 
         private async Task FillDataFromNuGetGallery(FeatureTable table, ILibrary library, Feature released, Feature downloads) {
             if (library.PackageId == null) { // this is always intentional
@@ -84,7 +111,7 @@ namespace FeatureTests.Runner.Sources {
 
             var localPackage = this.packageCache.GetPackage(library.PackageId);
             
-            var remoteQueryUrl = string.Format("http://nuget.org/api/v2/Packages(Id='{0}',Version='{1}')", localPackage.Id, localPackage.Version);
+            var remoteQueryUrl = new Uri(string.Format("http://nuget.org/api/v2/Packages(Id='{0}',Version='{1}')", localPackage.Id, localPackage.Version));
             var remotePackageXml = XDocument.Parse(await this.dataProvider.GetStringAsync(remoteQueryUrl));
 
             table[library, released].DisplayValue = GetFromNuGetGalleryResult<DateTimeOffset>(remotePackageXml, "Published");

@@ -4,7 +4,6 @@ using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Threading.Tasks;
 using AshMind.Extensions;
 using FeatureTests.Runner.Outputs;
 using FeatureTests.Runner.Sources;
@@ -14,14 +13,18 @@ using FeatureTests.Shared.ResultData;
 
 namespace FeatureTests.Runner {
     public static class Program {
-        public static string AssemblyNamePrefix = "FeatureTests.On.";
+        public const string AssemblyNamePrefix = "FeatureTests.On.";
 
         private static void Main(CommandLineArguments args) {
             var cache = new LocalPackageCache(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"]));
             var httpDataProvider = new HttpDataProvider(new DirectoryInfo("HttpCache"));
-
+            
             var sources = new IFeatureTableSource[] {
-                new GeneralInfoTableSource(cache, httpDataProvider),
+                new GeneralInfoTableSource(
+                    cache,
+                    httpDataProvider,
+                    new LicenseResolver(httpDataProvider, new Uri(ConfigurationManager.AppSettings["LicensesJsonUrl"]))
+                ),
                 new NetFxSupportTableSource(cache),
                 new FeatureTestTableSource(new FeatureTestRunner())
             };
@@ -34,7 +37,7 @@ namespace FeatureTests.Runner {
             if (!outputDirectory.Exists)
                 outputDirectory.Create();
 
-            var assemblyPaths = GetAssemblyPaths(args);
+            var assemblyPaths = GetAssemblyPaths();
             var results = assemblyPaths.Select(path => {
                 ConsoleEx.Write(ConsoleColor.White, "Running " + Path.GetFileName(path) + ":");
                 var assembly = Assembly.LoadFrom(path);
@@ -81,7 +84,7 @@ namespace FeatureTests.Runner {
             }
         }
 
-        private static IReadOnlyCollection<string> GetAssemblyPaths(CommandLineArguments args) {
+        private static IReadOnlyCollection<string> GetAssemblyPaths() {
             return Directory.GetFiles(".", AssemblyNamePrefix + "*.dll");
         }
 

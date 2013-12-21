@@ -14,7 +14,7 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             this.cacheRoot = cacheRoot;
         }
 
-        public async Task<TResult> GetAsync<TResult>(string url) {
+        public async Task<TResult> GetDataAsync<TResult>(Uri url) {
             using (var client = CreateHttpClient()) {
                 var response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
@@ -23,7 +23,7 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             }
         }
 
-        public async Task<string> GetStringAsync(string url) {
+        public async Task<string> GetStringAsync(Uri url) {
             using (var client = CreateHttpClient()) {
                 var response = await client.GetAsync(url);
                 response.EnsureSuccessStatusCode();
@@ -39,10 +39,10 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             var baseValidator = handler.ResponseValidator;
             handler.ResponseValidator = m => {
                 var result = baseValidator(m);
-                if (result != ResponseValidationResult.NotCacheable)
+                if (result == ResponseValidationResult.NotExist || result == ResponseValidationResult.OK)
                     return result;
 
-                var sinceName = "X-Cache-Forced-Since";
+                var sinceName = "X-Forced-Cache-Since";
                 var sinceString = m.Headers.Contains(sinceName)
                                 ? m.Headers.GetValues(sinceName).SingleOrDefault()
                                 : null;
