@@ -10,11 +10,7 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
         public override Type MapperType {
             get { return typeof(fFastMap); }
         }
-
-        public override void CreateMap<TSource, TTarget>() {
-            // ???
-        }
-
+        
         public override TTarget Map<TTarget>(object source) {
             var target = Activator.CreateInstance<TTarget>();
             Map(source, target);

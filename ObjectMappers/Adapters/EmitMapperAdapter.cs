@@ -16,11 +16,7 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
         public override Type MapperType {
             get { return typeof(ObjectMapperManager); }
         }
-
-        public override void CreateMap<TSource, TTarget>() {
-            // ???
-        }
-
+        
         public override TTarget Map<TTarget>(object source) {
             return (TTarget)GenericHelper.RewriteAndInvoke(
                 () => this.manager.GetMapper<X1, TTarget>().Map((X1)source),

@@ -17,9 +17,9 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
         public override Type MapperType {
             get { return typeof(MappingEngine); }
         }
-        
-        public override void CreateMap<TSource, TTarget>() {
-            this.configuration.CreateMap<TSource, TTarget>();
+
+        public override void CreateMap(Type sourceType, Type targetType) {
+            this.configuration.CreateMap(sourceType, targetType);
         }
 
         public override TTarget Map<TTarget>(object source) {

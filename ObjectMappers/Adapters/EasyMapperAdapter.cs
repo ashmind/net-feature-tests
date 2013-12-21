@@ -16,10 +16,6 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             get { return "EasyMapper"; }
         }
 
-        public override void CreateMap<TSource, TTarget>() {
-            // ???
-        }
-
         public override TTarget Map<TTarget>(object source) {
             return (TTarget)GenericHelper.RewriteAndInvoke(
                 () => EasyMapper.Map<X1>(source), typeof(TTarget)

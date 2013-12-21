@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using FeatureTests.Shared.GenericApiSupport;
+using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using OoMapper;
 
 namespace FeatureTests.On.ObjectMappers.Adapters {
@@ -9,8 +11,10 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             get { return typeof(Mapper); }
         }
 
-        public override void CreateMap<TSource, TTarget>() {
-            Mapper.CreateMap<TSource, TTarget>();
+        public override void CreateMap(Type sourceType, Type targetType) {
+            GenericHelper.RewriteAndInvoke(
+                () => Mapper.CreateMap<X1, X2>(), sourceType, targetType
+            );
         }
 
         public override TTarget Map<TTarget>(object source) {

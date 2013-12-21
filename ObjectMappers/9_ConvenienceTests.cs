@@ -9,7 +9,7 @@ using FeatureTests.Shared;
 using Xunit;
 
 namespace FeatureTests.On.ObjectMappers {
-    [DisplayOrder(7)]
+    [DisplayOrder(9)]
     [DisplayName("Convenience")]
     public class ConvenienceTests {
         [Feature]

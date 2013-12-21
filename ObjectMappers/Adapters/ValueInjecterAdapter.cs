@@ -19,10 +19,6 @@ namespace FeatureTests.On.ObjectMappers.Adapters {
             get { return typeof(ValueInjecter); }
         }
 
-        public override void CreateMap<TSource, TTarget>() {
-            // ???
-        }
-
         public override TTarget Map<TTarget>(object source) {
             var target = Activator.CreateInstance<TTarget>();
             this.injecter.Inject(target, source);
