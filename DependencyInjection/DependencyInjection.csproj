@@ -73,9 +73,12 @@
     <Reference Include="Dynamo.Ioc.Extensions">
       <HintPath>..\#packages\Dynamo.Ioc.Extensions.3.0.1.1\lib\net45\Dynamo.Ioc.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="Grace, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Grace, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\#packages\Grace.1.0.0\lib\portable-windows8+net45\Grace.dll</HintPath>
+      <HintPath>..\#packages\Grace.2.0.1\lib\portable-windows8+net45\Grace.dll</HintPath>
+    </Reference>
+    <Reference Include="Grace.MVC4">
+      <HintPath>..\#packages\Grace.MVC4.2.0.1\lib\net45\Grace.MVC4.dll</HintPath>
     </Reference>
     <Reference Include="HaveBox, Version=1.6.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

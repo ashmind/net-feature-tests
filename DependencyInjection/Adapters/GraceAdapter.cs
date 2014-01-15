@@ -2,13 +2,22 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 using Grace.DependencyInjection;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
+using Grace.DependencyInjection.Lifestyle;
+using Grace.MVC.DependencyInjection;
+using Grace.MVC.Extensions;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
 	public class GraceAdapter : ContainerAdapterBase {
-		private readonly DependencyInjectionContainer container = new DependencyInjectionContainer { ThrowExceptions = true };
+		private readonly DependencyInjectionContainer container;
 	    private IInjectionScope webRequestScope;
+
+		public GraceAdapter() {
+			this.container = new DependencyInjectionContainer { ThrowExceptions = true };
+			this.container.Configure(c => c.Export<WebSharedPerRequestLifestyleProvider>().ByInterfaces());
+		}
 
 	    public override Assembly Assembly {
 			get { return typeof(DependencyInjectionContainer).Assembly; }
@@ -23,32 +32,22 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 		}
 
         public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
-            this.container.Configure(c => c.Export(implementationType).As(serviceType).AndSingletonPerScope());
+         this.container.Configure(c => c.Export(implementationType).As(serviceType).UsingLifestyle(new SingletonPerRequestLifestyle()));
         }
 
 		public override void RegisterInstance(Type serviceType, object instance) {
 			this.container.Configure(c => c.ExportInstance(instance).As(serviceType));
 		}
 
-        public override void AfterBeginWebRequest() {
-            this.webRequestScope = this.container.CreateChildScope();
-        }
-
-        public override void BeforeEndWebRequest() {
-            this.webRequestScope.Dispose();
-            this.webRequestScope = null;
+		public override void BeforeAllWebRequests(WebRequestTestHelper helper) {
+			helper.RegisterModule(new DisposableHttpModule());
         }
 
 		public override object Resolve(Type serviceType) {
-		    if (this.webRequestScope != null)
-		        return this.webRequestScope.Locate(serviceType);
-
 			return this.container.Locate(serviceType);
 		}
 
 		public override IEnumerable<object> ResolveAll(Type serviceType) {
-            if (this.webRequestScope != null)
-                return this.webRequestScope.LocateAll(serviceType);
 
 			return this.container.LocateAll(serviceType);
 		}
