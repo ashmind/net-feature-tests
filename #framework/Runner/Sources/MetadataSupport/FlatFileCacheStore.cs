@@ -115,5 +115,12 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             var fileName = Regex.Replace(url, @"[^\w\-\d%#]+", "_");
             return Path.Combine(this.directory.FullName, fileName);
         }
+
+        #region IDisposable Members
+
+        public void Dispose() {
+        }
+
+        #endregion
     }
 }

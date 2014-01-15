@@ -47,8 +47,9 @@
     <Reference Include="CacheCow.Client">
       <HintPath>..\..\#packages\CacheCow.Client.0.4.12\lib\net40\CacheCow.Client.dll</HintPath>
     </Reference>
-    <Reference Include="CacheCow.Common">
-      <HintPath>..\..\#packages\CacheCow.Common.0.4.12\lib\net40\CacheCow.Common.dll</HintPath>
+    <Reference Include="CacheCow.Common, Version=0.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\#packages\CacheCow.Common.0.5.0\lib\net40\CacheCow.Common.dll</HintPath>
     </Reference>
     <Reference Include="CommandLine">
       <HintPath>..\..\#packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
