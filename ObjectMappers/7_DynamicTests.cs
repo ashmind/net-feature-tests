@@ -15,7 +15,7 @@ namespace FeatureTests.On.ObjectMappers {
     public class DynamicTests {
         [Feature]
         [DisplayName("ExpandoObject to normal class")]
-        public void DictionaryEntryToProperty(IObjectMapperAdapter mapper) {
+        public void ExpandoObjectToClass(IObjectMapperAdapter mapper) {
             mapper.CreateMap<dynamic, Wrapper<string>>();
 
             dynamic source = new ExpandoObject();

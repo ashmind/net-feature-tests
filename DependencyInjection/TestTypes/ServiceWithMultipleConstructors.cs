@@ -11,22 +11,26 @@ namespace FeatureTests.On.DependencyInjection.TestTypes {
             public const string Unresolvable = "Unresolvable";
         }
 
+        private readonly string usedConstructorName;
+
         public ServiceWithMultipleConstructors() {
-            this.UsedConstructorName = ConstructorNames.Default;
+            this.usedConstructorName = ConstructorNames.Default;
         }
 
         public ServiceWithMultipleConstructors(IService service) {
-            this.UsedConstructorName = ConstructorNames.MostResolvable;
+            this.usedConstructorName = ConstructorNames.MostResolvable;
         }
 
         public ServiceWithMultipleConstructors(IUnregisteredService service) {
-            this.UsedConstructorName = ConstructorNames.Unresolvable;
+            this.usedConstructorName = ConstructorNames.Unresolvable;
         }
 
         public ServiceWithMultipleConstructors(IService service1, IUnregisteredService service2) {
-            this.UsedConstructorName = ConstructorNames.MostDefined;
+            this.usedConstructorName = ConstructorNames.MostDefined;
         }
 
-        public string UsedConstructorName { get; set; }
+        public string UsedConstructorName {
+            get { return this.usedConstructorName; }
+        }
     }
 }

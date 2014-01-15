@@ -54,6 +54,7 @@
               <li><a href="ObjectMappers.html#CollectionsWriteableProperty" >Collections (writeable property)</a></li>
               <li><a href="ObjectMappers.html#CollectionsReadOnlyProperty" >Collections (read-only property)</a></li>
               <li><a href="ObjectMappers.html#ConstructorParameters" >Constructor parameters</a></li>
+              <li><a href="ObjectMappers.html#Dynamic" >Dynamic</a></li>
               <li><a href="ObjectMappers.html#Dictionaries" >Dictionaries</a></li>
               <li><a href="ObjectMappers.html#Convenience" >Convenience</a></li>
             </ul>
@@ -3193,7 +3194,7 @@ pass        </td>
             <span title="Skipped as IEnumerable&amp;lt;IService&amp;gt; (List/array dependencies) is not supported by this library.">n/a</span>
         </td>
         <td class="skipped">
-            <span title="Skipped as IEnumerable&amp;lt;IService&amp;gt; (List/array dependencies) is not supported by this library.">n/a</span>
+            <span title="Skipped as Open generic registration (Open generics) is not supported by this library.">n/a</span>
         </td>
         <td class="success">
 pass        </td>
@@ -3217,7 +3218,7 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.GenericTests.ConstrainsForOpenGenerics(IContainerAdapter adapter) in [removed]\3_GenericTests.cs:line 44">fail</span>
         </td>
         <td class="skipped">
-            <span title="Skipped as IEnumerable&amp;lt;IService&amp;gt; (List/array dependencies) is not supported by this library.">n/a</span>
+            <span title="Skipped as Open generic registration (Open generics) is not supported by this library.">n/a</span>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
@@ -3253,7 +3254,7 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.GenericTests.ConstrainsForOpenGenerics(IContainerAdapter adapter) in [removed]\3_GenericTests.cs:line 44">fail</span>
         </td>
         <td class="skipped">
-            <span title="Skipped as IEnumerable&amp;lt;IService&amp;gt; (List/array dependencies) is not supported by this library.">n/a</span>
+            <span title="Skipped as Open generic registration (Open generics) is not supported by this library.">n/a</span>
         </td>
         <td class="failure">
             <span title="System.ArgumentException: GenericArguments[0], &amp;#39;FeatureTests.On.DependencyInjection.TestTypes.IndependentService&amp;#39;, on &amp;#39;FeatureTests.On.DependencyInjection.TestTypes.GenericServiceWithIService2Constraint`1[T]&amp;#39; violates the constraint of type &amp;#39;T&amp;#39;. ---&amp;gt; System.TypeLoadException: GenericArguments[0], &amp;#39;FeatureTests.On.DependencyInjection.TestTypes.IndependentService&amp;#39;, on &amp;#39;FeatureTests.On.DependencyInjection.TestTypes.GenericServiceWithIService2Constraint`1[T]&amp;#39; violates the constraint of type parameter &amp;#39;T&amp;#39;.
@@ -3313,7 +3314,7 @@ pass        </td>
         ">note</span>
         </td>
         <td class="skipped">
-            <span title="Skipped as IEnumerable&amp;lt;IService&amp;gt; (List/array dependencies) is not supported by this library.">n/a</span>
+            <span title="Skipped as Open generic registration (Open generics) is not supported by this library.">n/a</span>
         </td>
         <td class="success">
 pass        </td>
@@ -3574,7 +3575,7 @@ The activation path:
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
    at MugenInjection.Core.InjectorBase.&amp;lt;Activate&amp;gt;b__d(IBindingContext context) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.Components.FactoryAndLazyConverter.FactoryResolve.Invoke(Object[] objects) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\FactoryAndLazyConverter.cs:line 186
-   at _DynamicMethodMugenInjection_Func`2_370e5e32511d4d84911aadfa6730142b(Func`2 , IService2 )
+   at _DynamicMethodMugenInjection_Func`2_bbdf5ba1d88e451ab8535a0d6377a67b(Func`2 , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
         <td class="skipped">
@@ -4749,7 +4750,32 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
+            <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
+        </td>
+        <td class="failure">
+            <span title="Xunit.Sdk.NotSameException: Assert.NotSame() Failure
+   at Xunit.Assert.NotSame(Object expected, Object actual)
+   at FeatureTests.On.DependencyInjection.WebRequestTests.FactoryNoReuseBetweenRequests(IContainerAdapter adapter) in [removed]\6_WebRequestTests.cs:line 98">fail</span>
+        </td>
+        <td class="skipped">
+            <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="skipped">
+            <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
         </td>
         <td class="skipped">
             <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
@@ -4758,6 +4784,9 @@ pass        </td>
             <span title="Xunit.Sdk.NotSameException: Assert.NotSame() Failure
    at Xunit.Assert.NotSame(Object expected, Object actual)
    at FeatureTests.On.DependencyInjection.WebRequestTests.FactoryNoReuseBetweenRequests(IContainerAdapter adapter) in [removed]\6_WebRequestTests.cs:line 98">fail</span>
+        </td>
+        <td class="skipped">
+            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
         </td>
         <td class="skipped">
             <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
@@ -4767,34 +4796,6 @@ pass        </td>
         </td>
         <td class="skipped">
             <span title="Skipped as Basic support (Request lifetime) is not supported by this library.">n/a</span>
-        </td>
-        <td class="success">
-pass        </td>
-        <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
-        </td>
-        <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
-        </td>
-        <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
-        </td>
-        <td class="failure">
-            <span title="Xunit.Sdk.NotSameException: Assert.NotSame() Failure
-   at Xunit.Assert.NotSame(Object expected, Object actual)
-   at FeatureTests.On.DependencyInjection.WebRequestTests.FactoryNoReuseBetweenRequests(IContainerAdapter adapter) in [removed]\6_WebRequestTests.cs:line 98">fail</span>
-        </td>
-        <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
-        </td>
-        <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
-        </td>
-        <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
-        </td>
-        <td class="skipped">
-            <span title="Skipped as No parameters (Func&amp;lt;TService&amp;gt;) is not supported by this library.">n/a</span>
         </td>
         <td class="success">
 pass        </td>
@@ -4860,19 +4861,7 @@ pass        </td>
    at FeatureTests.On.DependencyInjection.ConvenienceTests.ReasonableConstructorSelection(IContainerAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 33">fail</span>
         </td>
         <td class="failure">
-            <span title="System.ArgumentException: The type &amp;#39;System.SByte*&amp;#39; may not be used as a type argument.
-   at System.RuntimeType.ThrowIfTypeNeverValidGenericArgument(RuntimeType type)
-   at System.RuntimeType.SanityCheckGenericArguments(RuntimeType[] genericArguments, RuntimeType[] genericParamters)
-   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
-   at Grace.DependencyInjection.Impl.CompiledExport.BaseCompiledExportDelegate.ImportForRootScope(Type importType, IInjectionTargetInfo targetInfo, String exportName, ParameterExpression importVariable)
-   at Grace.DependencyInjection.Impl.CompiledExport.BaseCompiledExportDelegate.CreateImportExpression(Type importType, IInjectionTargetInfo targetInfo, String exportName, String variableName, Boolean isRequired, IExportValueProvider valueProvider, ExportStrategyFilter exportStrategyFilter)
-   at Grace.DependencyInjection.Impl.CompiledExport.InstanceCompiledExportDelegate.CreateInstantiationExpression()
-   at Grace.DependencyInjection.Impl.CompiledExport.BaseCompiledExportDelegate.GenerateDelegate()
-   at Grace.DependencyInjection.Impl.CompiledInstanceExportStrategy.Initialize()
-   at Grace.DependencyInjection.Impl.AttributeExportStrategy.Initialize()
-   at Grace.DependencyInjection.Impl.InjectionKernel.AddStrategy(IExportStrategy addStrategy)
-   at Grace.DependencyInjection.Impl.InjectionKernel.ResolveUnknownExport(Type resolveType, String resolveName, IInjectionContext injectionContext, ExportStrategyFilter consider)
-   at Grace.DependencyInjection.Impl.InjectionKernel.Locate[T](IInjectionContext injectionContext, ExportStrategyFilter consider)
+            <span title="Grace.DependencyInjection.Exceptions.DependencyResolveException: Could not locate FeatureTests.On.DependencyInjection.TestTypes.IUnregisteredService for service2 on FeatureTests.On.DependencyInjection.TestTypes.ServiceWithMultipleConstructors
    at lambda_method(Closure , IInjectionScope , IInjectionContext )
    at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider)
    at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, Type exportType, IInjectionContext injectionContext, ExportStrategyFilter filter)

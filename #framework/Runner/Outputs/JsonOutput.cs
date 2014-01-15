@@ -45,9 +45,16 @@ namespace FeatureTests.Runner.Outputs {
         }
 
         private IDictionary<string, object> GetAllFeatureData(ILibrary library, IEnumerable<FeatureTable> tables) {
-            return tables.Where(t => t.Key != MetadataKeys.GeneralInfoTable && t.Key != MetadataKeys.NetFxSupportTable)
-                         .SelectMany(t => t.Features.Select(f => this.GetSingleFeatureData(f, t[library, f])))
-                         .ToDictionary(p => p.Key, p => p.Value);
+            var featuresByName = tables.Where(t => t.Key != MetadataKeys.GeneralInfoTable && t.Key != MetadataKeys.NetFxSupportTable)
+                                       .SelectMany(t => t.Features.Select(f => this.GetSingleFeatureData(f, t[library, f])))
+                                       .GroupBy(p => p.Key)
+                                       .ToArray();
+
+            var duplicate = featuresByName.FirstOrDefault(g => g.Count() > 1);
+            if (duplicate != null)
+                throw new Exception("Feature name " + duplicate.Key + " was used more than once.");
+
+            return featuresByName.ToDictionary(p => p.Key, p => p.Single().Value);
         }
 
         private KeyValuePair<string, object> GetSingleFeatureData(Feature feature, FeatureCell cell) {
