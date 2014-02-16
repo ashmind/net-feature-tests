@@ -8,6 +8,10 @@ using FeatureTests.On.DependencyInjection.Adapters.Interface;
 namespace FeatureTests.On.DependencyInjection.Adapters {
     public class CatelAdapter : ContainerAdapterBase {
         private readonly ServiceLocator locator = new ServiceLocator();
+
+        public CatelAdapter() {
+            this.locator.RegisterInstance<ITypeFactory>(new TypeFactory(new CatelDependencyResolver(this.locator)));
+        }
         
         public override Assembly Assembly {
             get { return typeof(ServiceLocator).Assembly; }
