@@ -4,8 +4,9 @@ using System.Linq;
 using System.Reflection;
 using StructureMap;
 using StructureMap.Configuration.DSL;
-using FeatureTests.On.DependencyInjection.Adapters.Interface;
 using StructureMap.Configuration.DSL.Expressions;
+using StructureMap.Pipeline;
+using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
     public class StructureMapAdapter : ContainerAdapterBase {
@@ -17,28 +18,24 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         }
 
         public override void RegisterSingleton(Type serviceType, Type implementationType) {
-            RegisterInitialOrConfigure(serviceType, InstanceScope.Singleton, r => r.Use(implementationType));
+            RegisterInitialOrConfigure(serviceType, new SingletonLifecycle(), r => r.Use(implementationType));
         }
 
         public override void RegisterTransient(Type serviceType, Type implementationType) {
-            RegisterInitialOrConfigure(serviceType, InstanceScope.Transient, r => r.Use(implementationType));
+            RegisterInitialOrConfigure(serviceType, new TransientLifecycle(), r => r.Use(implementationType));
         }
 
         public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
-            RegisterInitialOrConfigure(serviceType, InstanceScope.HttpContext, r => r.Use(implementationType));
-        }
-
-        public override void BeforeEndWebRequest() {
-            ObjectFactory.ReleaseAndDisposeAllHttpScopedObjects();
+            throw PerWebRequestMayNotBeProvided();
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
-            RegisterInitialOrConfigure(serviceType, InstanceScope.Singleton, r => r.Use(instance));
+            RegisterInitialOrConfigure(serviceType, new SingletonLifecycle(), r => r.Use(instance));
         }
 
-        private void RegisterInitialOrConfigure(Type serviceType, InstanceScope scope, Action<GenericFamilyExpression> use) {
+        private void RegisterInitialOrConfigure(Type serviceType, ILifecycle lifecycle, Action<GenericFamilyExpression> use) {
             var registry = this.initialRegistry ?? new Registry();
-            use(registry.For(serviceType).LifecycleIs(scope));
+            use(registry.For(serviceType).LifecycleIs(lifecycle));
 
             if (this.container != null)
                 this.container.Configure(c => c.AddRegistry(registry));

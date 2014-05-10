@@ -100,7 +100,7 @@
       <td class="row-name"><span title="<p>Not necessarily the latest version, but the one we are testing.</p>
 ">Version</span></td>
         <td class="neutral">
-3.1.1.0        </td>
+3.2.1.0        </td>
         <td class="neutral">
 1.0.0.0        </td>
         <td class="neutral">
@@ -115,7 +115,7 @@
     <tr>
       <td class="row-name"><span>Released</span></td>
         <td class="neutral date">
-dec 2013        </td>
+apr 2014        </td>
         <td class="neutral date">
 oct 2013        </td>
         <td class="neutral date">
@@ -168,17 +168,17 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-717 392        </td>
+912 367        </td>
         <td class="neutral number">
-74        </td>
+128        </td>
         <td class="neutral number">
-9 223        </td>
+11 270        </td>
         <td class="neutral number">
-225        </td>
+286        </td>
         <td class="neutral number">
-1 348        </td>
+1 467        </td>
         <td class="neutral number">
-66 355        </td>
+78 511        </td>
     </tr>
   </table>
 </section>
@@ -298,6 +298,21 @@ no        </td>
 yes        </td>
         <td class="success">
 yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="concern">
+no        </td>
+    </tr>
+    <tr>
+      <td class="row-name"><span>wpa8.1</span></td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+        <td class="concern">
+no        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -910,7 +925,7 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:12 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -919,7 +934,7 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:12 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -950,7 +965,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:12 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1036,8 +1051,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1109,8 +1131,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1137,7 +1166,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="System.InvalidCastException: Specified cast is not valid.
-   at ObjectsMapper36_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1d49dc2732b59444c862ed80375bdcf74.MapImpl(Object , Object , Object )
+   at ObjectsMapper36_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]169fb2f298c054833965962e88aeb5f7d.MapImpl(Object , Object , Object )
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from, Object to, Object state)
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from)
    at EmitMapper.ObjectsMapper`2.Map(TFrom from)
@@ -1264,8 +1293,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-16.02.2014 22:57:38 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+11.05.2014 0:19:13 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1283,7 +1319,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:13 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1292,7 +1328,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:13 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1323,7 +1359,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:13 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1344,8 +1380,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-16.02.2014 22:57:38 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+11.05.2014 0:19:13 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1363,7 +1406,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:13 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1372,7 +1415,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:13 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1403,7 +1446,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 16.02.2014 22:57:38 +13:00
+Expected: 11.05.2014 0:19:13 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
