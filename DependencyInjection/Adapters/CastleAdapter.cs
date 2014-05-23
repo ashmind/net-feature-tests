@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using System.Web;
 using Castle.Core;
 using Castle.Facilities.TypedFactory;
-using Castle.MicroKernel;
 using Castle.MicroKernel.Lifestyle;
 using Castle.MicroKernel.Registration;
+using Castle.MicroKernel.Resolvers;
 using Castle.MicroKernel.Resolvers.SpecializedResolvers;
 using Castle.Windsor;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
@@ -20,6 +19,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         public CastleAdapter() {
             this.container.Kernel.Resolver.AddSubResolver(new CollectionResolver(this.container.Kernel));
             this.container.AddFacility<TypedFactoryFacility>();
+            this.container.Register(Component.For<ILazyComponentLoader>().ImplementedBy<LazyOfTComponentLoader>());
         }
 
         public override Assembly Assembly {
