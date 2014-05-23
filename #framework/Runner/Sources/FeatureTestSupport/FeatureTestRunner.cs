@@ -57,7 +57,7 @@ namespace FeatureTests.Runner.Sources.FeatureTestSupport {
             if (specialCase != null && specialCase.Skip)
                 return new FeatureTestResult(FeatureTestResultKind.SkippedDueToSpecialCase, specialCase.Comment);
             
-            foreach (var dependency in dependencies) {
+            foreach (var dependency in dependencies.OrderBy(d => d.Method.Name)) {
                 var result = await dependency.Task;
                 if (result.Kind != FeatureTestResultKind.Success) {
                     var className = FeatureTestAttributeHelper.GetDisplayName(dependency.Method.DeclaringType);
