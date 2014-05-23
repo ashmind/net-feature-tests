@@ -1,0 +1,4 @@
+[bugtraq]
+	url = https://github.com/ashmind/net-feature-tests/issues/%BUGID%
+	warnifnoissue = false
+	logregex = (gh-\\d+)\n(\\d+)
