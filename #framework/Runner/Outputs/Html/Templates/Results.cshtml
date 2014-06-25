@@ -20,11 +20,12 @@
 
     @foreach (var row in table.GetFeatureRows()) {
       var feature = row.Item1;
+      var rowClass = (string)null;
       if (feature.Key == MetadataKeys.TotalFeature && !Model.TotalVisible) {
-          continue;
+          rowClass = "total-hidden";
       }
       
-    <tr>
+    <tr class="@rowClass">
       <td class="row-name"><span title="@Format.Description(feature.Description)">@feature.Name</span></td>
       @foreach (var cell in row.Item2) {
         <td class="@Format.GetCssClassesForCell(cell)">

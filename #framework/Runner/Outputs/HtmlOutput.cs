@@ -128,7 +128,7 @@ namespace FeatureTests.Runner.Outputs {
                 Title = options.PageTitle,
                 HtmlBeforeAll = this.GetResource(result.Assembly, "BeforeAll.html"),
                 HtmlAfterAll = this.GetResource(result.Assembly, "AfterAll.html"),
-                TotalVisible = !((bool?)options.SupressTotal ?? false)
+                TotalVisible = !((bool?)options.HideTotal ?? false)
             };
             var intermediate = new IntermediateModel {
                 FinalModel = model,

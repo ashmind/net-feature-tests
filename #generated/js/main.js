@@ -1,8 +1,20 @@
 ﻿$(function() {
     var $body = $('body');
 
-    // setup tooltips
-    (function() {
+    (function setupHiddenTotal() {
+        function showIfRequested() {
+            var showTotal = /showtotal/i.test(window.location.hash);
+            if (!showTotal)
+                return;
+
+            $('.total-hidden').removeClass('total-hidden');
+        }
+
+        showIfRequested();
+        $(window).on('hashchange', showIfRequested);
+    })();
+
+    (function setupTooltips() {
         var $currentTrigger = $();
         var $tooltipsters = $('[title]').tooltipster({ theme: 'tooltipster-custom', trigger: 'custom' })
                                         .addClass('with-tooltip');
@@ -53,8 +65,7 @@
                      .css('max-width', (window.model.libraryCount * 100 + 190) + 'px');
     }
 
-    // setup waypoints
-    (function() {
+    (function setupWaypoints() {
         var $selected = $();
         var waypointsBlocked = false;
 
@@ -95,8 +106,8 @@
         });
     })();
 
-    // setup narrow detection (not currently used)
-    (function() {
+    // not currently used
+    (function setupNarrowDetection() {
         var $widthTestTd = $('td:not(.row-name)').eq(0);
         var reactToWidth = function() {
             $body.toggleClass('narrow-table-headers', $widthTestTd.width() < 74);

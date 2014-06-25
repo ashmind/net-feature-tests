@@ -9,11 +9,6 @@
 
     <link rel='stylesheet' href='css/tooltipster.css' />
     <link rel='stylesheet' href='css/main.css' />
-    
-    <script type="text/javascript" src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="js/jquery.tooltipster.min.js"></script>
-    <script type="text/javascript" src="js/waypoints.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
   </head>
   <body>
     <div class="sidebar">
@@ -168,17 +163,37 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-943 446        </td>
+1 015 852        </td>
         <td class="neutral number">
-133        </td>
+145        </td>
         <td class="neutral number">
-11 561        </td>
+13 917        </td>
         <td class="neutral number">
-290        </td>
+297        </td>
         <td class="neutral number">
-1 489        </td>
+1 520        </td>
         <td class="neutral number">
-80 503        </td>
+84 928        </td>
+    </tr>
+    <tr class="total-hidden">
+      <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
+
+<p>Most tables give one point per success, but some (such as List support) give one point per table.  </p>
+
+<p>The score is only for quick comparison, please read individual tables for the details.</p>
+">Total Score</span></td>
+        <td class="concern">
+62%        </td>
+        <td class="failure">
+13%        </td>
+        <td class="failure">
+33%        </td>
+        <td class="failure">
+11%        </td>
+        <td class="concern">
+60%        </td>
+        <td class="failure">
+16%        </td>
     </tr>
   </table>
 </section>
@@ -911,7 +926,7 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:09 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -920,7 +935,7 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:09 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -951,7 +966,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:09 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1037,8 +1052,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1110,8 +1132,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1138,7 +1167,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="System.InvalidCastException: Specified cast is not valid.
-   at ObjectsMapper36_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]154e09f81e6a54cfa93cecc139b6ec8fb.MapImpl(Object , Object , Object )
+   at ObjectsMapper36_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1eda208a504c9416293f03bff0aff632c.MapImpl(Object , Object , Object )
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from, Object to, Object state)
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from)
    at EmitMapper.ObjectsMapper`2.Map(TFrom from)
@@ -1265,8 +1294,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-24.05.2014 0:07:56 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+25.06.2014 21:07:10 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1284,7 +1320,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:10 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1293,7 +1329,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:10 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1324,7 +1360,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:10 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1345,8 +1381,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-24.05.2014 0:07:56 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+25.06.2014 21:07:10 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1364,7 +1407,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:10 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1373,7 +1416,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:10 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1404,7 +1447,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 24.05.2014 0:07:56 +12:00
+Expected: 25.06.2014 21:07:11 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1903,6 +1946,7 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
+   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
@@ -1978,6 +2022,7 @@ System.Collections.Generic.HashSet`1[System.Int32] ---&amp;gt; System.InvalidCas
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
+   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
@@ -2035,6 +2080,7 @@ Actual:   Int32[] {  }
             <span title="System.ArgumentException: Property set method not found.
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
    at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
@@ -2101,6 +2147,7 @@ Actual:   Int32[] {  }
             <span title="System.ArgumentException: Property set method not found.
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
    at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
@@ -2165,6 +2212,7 @@ Actual:   Int32[] {  }
             <span title="System.ArgumentException: Property set method not found.
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
    at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
@@ -2778,6 +2826,7 @@ Actual:   (null)
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
+   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
@@ -2785,11 +2834,13 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
+   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
+   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
@@ -2807,6 +2858,11 @@ pass        </td>
   };
 </script>
     </main>
+    
+    <script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>
+    <script src="js/jquery.tooltipster.min.js"></script>
+    <script src="js/waypoints.min.js"></script>
+    <script src="js/main.js"></script>
     
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

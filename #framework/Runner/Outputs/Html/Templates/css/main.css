@@ -12,6 +12,10 @@ body {
     padding: 0;
 }
 
+.total-hidden {
+    display: none;
+}
+
 .sidebar {
     position: fixed;
     top: 0;
