@@ -69,10 +69,8 @@
       <section>
   <h2 id="Disclaimer">Disclaimer</h2>
   <div class="section-description">
-    <p>Tests on Object Mappers is very new compared to DI framework tests,
-      and so it can be pretty inaccurate.</p>
-      
-    <p>Please do not rely on it and do point any mistakes or inconsistencies.</p>
+    <p>Tests on Object Mappers are newer than DI framework tests and so can be inaccurate.</p>
+    <p>Please do not rely on these and do point any mistakes or inconsistencies.</p>
   </div>
 </section>
 
@@ -103,7 +101,7 @@
         <td class="neutral">
 0.5.1.0        </td>
         <td class="neutral">
-0.2.0.27        </td>
+0.2.0.32        </td>
         <td class="neutral">
 2.3.3.0        </td>
     </tr>
@@ -118,7 +116,7 @@ jul 2011        </td>
         <td class="neutral date">
 apr 2013        </td>
         <td class="neutral date">
-jun 2012        </td>
+may 2014        </td>
         <td class="neutral date">
 sep 2012        </td>
     </tr>
@@ -491,9 +489,14 @@ pass        </td>
    at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
    at Grax.fFastMapper.fFastMapperInternal`2..cctor()
    --- End of inner exception stack trace ---
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2.AddDefaultMappings(Boolean callReverse, Boolean quitSilentlyIfMappingStarted)
-   at Grax.fFastMapper.fFastMapperInternal`2..cctor()
+   at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
+   at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
+   at lambda_method(Closure )
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map(Object source, Object target) in [removed]\fFastMapperAdapter.cs:line 21
+   at FeatureTests.On.ObjectMappers.Adapters.fFastMapperAdapter.Map[TTarget](Object source) in [removed]\fFastMapperAdapter.cs:line 16
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
+   at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 66
    --- End of inner exception stack trace ---
    at Grax.fFastMapper.fFastMapperInternal`2.get_fFastMapFluent()
    at Grax.fFastMapper.fFastMap.Map[TFrom,TTo](TFrom from, TTo to)
@@ -825,29 +828,29 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: (System.String, System.Int32)
-   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 43
-   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
-   at OoMapper.CompositeSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CompositeSourceMemberResolver.cs:line 23
-   at OoMapper.PropertyMap.BuildBind(Expression source, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\PropertyMap.cs:line 28
-   at OoMapper.NewObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(PropertyMap m) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 13
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 44
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.CompositeSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CompositeSourceMemberResolver.cs:line 23
+   at OoMapper.PropertyMap.BuildBind(Expression source, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\PropertyMap.cs:line 28
+   at OoMapper.NewObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(PropertyMap m) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\NewObjectMapperBuilder.cs:line 13
    at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
    at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 12
-   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 35
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\NewObjectMapperBuilder.cs:line 12
+   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\UserConfigurationMapper.cs:line 35
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 38
    at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
    at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
-   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
-   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
-   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
-   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 41
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 50
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 72
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Mapper.cs:line 35
    at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 21
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 93
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.StringToInt32(IObjectMapperAdapter mapper) in [removed]\1_PrimitiveTests.cs:line 66">fail</span>
@@ -926,7 +929,7 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:09 +12:00
+Expected: 25.06.2014 21:33:11 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -935,7 +938,7 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:09 +12:00
+Expected: 25.06.2014 21:33:11 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -966,7 +969,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:09 +12:00
+Expected: 25.06.2014 21:33:11 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1052,15 +1055,8 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
-   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
-   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
-   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
-   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
-   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
+5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
+   at lambda_method(Closure , Object , Object )
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1132,15 +1128,8 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
-   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
-   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
-   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
-   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
-   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
+5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
+   at lambda_method(Closure , Object , Object )
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1167,7 +1156,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="System.InvalidCastException: Specified cast is not valid.
-   at ObjectsMapper36_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1eda208a504c9416293f03bff0aff632c.MapImpl(Object , Object , Object )
+   at ObjectsMapper36_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1565f5c47d0c141e59c3b47f7fd9b2dd3.MapImpl(Object , Object , Object )
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from, Object to, Object state)
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from)
    at EmitMapper.ObjectsMapper`2.Map(TFrom from)
@@ -1294,15 +1283,8 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-25.06.2014 21:07:10 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
-   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
-   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
-   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
-   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
-   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
+25.06.2014 21:33:12 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
+   at lambda_method(Closure , Object , Object )
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1320,7 +1302,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:10 +12:00
+Expected: 25.06.2014 21:33:12 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1329,7 +1311,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:10 +12:00
+Expected: 25.06.2014 21:33:12 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1360,7 +1342,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:10 +12:00
+Expected: 25.06.2014 21:33:12 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1381,15 +1363,8 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-25.06.2014 21:07:10 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
-   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
-   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
-   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
-   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
-   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
-   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
+25.06.2014 21:33:12 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
+   at lambda_method(Closure , Object , Object )
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1407,7 +1382,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:10 +12:00
+Expected: 25.06.2014 21:33:12 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1416,7 +1391,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:10 +12:00
+Expected: 25.06.2014 21:33:12 +12:00
 Actual:   01.01.0001 0:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1447,7 +1422,7 @@ Actual:   01.01.0001 0:00:00 +00:00
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 25.06.2014 21:07:11 +12:00
+Expected: 25.06.2014 21:33:12 +12:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1719,29 +1694,29 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: (System.String, FeatureTests.On.ObjectMappers.TestTypes.Enum2)
-   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 43
-   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
-   at OoMapper.CompositeSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CompositeSourceMemberResolver.cs:line 23
-   at OoMapper.PropertyMap.BuildBind(Expression source, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\PropertyMap.cs:line 28
-   at OoMapper.NewObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(PropertyMap m) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 13
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 44
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.CompositeSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CompositeSourceMemberResolver.cs:line 23
+   at OoMapper.PropertyMap.BuildBind(Expression source, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\PropertyMap.cs:line 28
+   at OoMapper.NewObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(PropertyMap m) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\NewObjectMapperBuilder.cs:line 13
    at System.Linq.Enumerable.WhereSelectListIterator`2.MoveNext()
    at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
-   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 12
-   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 35
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\NewObjectMapperBuilder.cs:line 12
+   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\UserConfigurationMapper.cs:line 35
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 38
    at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
    at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
-   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
-   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
-   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
-   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 41
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 50
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 72
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Mapper.cs:line 35
    at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 21
    at FeatureTests.On.ObjectMappers.EnumTests.AssertEnumMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\3_EnumTests.cs:line 49
    at FeatureTests.On.ObjectMappers.EnumTests.StringToEnum(IObjectMapperAdapter mapper) in [removed]\3_EnumTests.cs:line 42">fail</span>
@@ -2318,21 +2293,21 @@ pass        </td>
         <td class="failure">
             <span title="System.ArgumentException: Type &amp;#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]&amp;#39; does not have a default constructor
    at System.Linq.Expressions.Expression.New(Type type)
-   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 15
-   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 35
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\NewObjectMapperBuilder.cs:line 15
+   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\UserConfigurationMapper.cs:line 35
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 38
    at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
    at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
-   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
-   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
-   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
-   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 41
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 50
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 72
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Mapper.cs:line 35
    at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 21
    at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Simple(IObjectMapperAdapter mapper) in [removed]\6_ConstructorParameterTests.cs:line 21">fail</span>
         </td>
@@ -2385,21 +2360,21 @@ pass        </td>
         <td class="failure">
             <span title="System.ArgumentException: Type &amp;#39;FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[FeatureTests.On.ObjectMappers.TestTypes.ImmutableWrapper`1[System.String]]&amp;#39; does not have a default constructor
    at System.Linq.Expressions.Expression.New(Type type)
-   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\NewObjectMapperBuilder.cs:line 15
-   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
-   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\UserConfigurationMapper.cs:line 35
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 37
+   at OoMapper.NewObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\NewObjectMapperBuilder.cs:line 15
+   at OoMapper.CachedObjectMapperBuilder.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;Build&amp;gt;b__0(Tuple`2 k) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.CachedObjectMapperBuilder.Build(TypeMap typeMap, IMappingConfiguration configuration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\CachedObjectMapperBuilder.cs:line 21
+   at OoMapper.UserConfigurationMapper.BuildSource(Expression expression, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\UserConfigurationMapper.cs:line 35
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;BuildSource&amp;gt;b__0(ISourceMemberResolver r) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 38
    at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
    at System.Linq.Enumerable.WhereEnumerableIterator`1.MoveNext()
-   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 40
-   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
-   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 49
-   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 71
-   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Cache.cs:line 22
-   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\MappingConfiguration.cs:line 70
-   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in d:\BuildAgent-03\work\aa8cf99bf5ccb096\src\OoMapper\Mapper.cs:line 35
+   at OoMapper.MappingConfiguration.BuildSource(Expression expression, Type destinationType, IMappingConfiguration cfg) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 41
+   at OoMapper.ConvertSourceMemberResolver.BuildSource(Expression x, Type destinationType, IMappingConfiguration mappingConfiguration) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\ConvertSourceMemberResolver.cs:line 10
+   at OoMapper.MappingConfiguration.BuildNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 50
+   at OoMapper.MappingConfiguration.&amp;lt;&amp;gt;c__DisplayClass9.&amp;lt;GetCompiledNew&amp;gt;b__8(Tuple`2 key) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 72
+   at OoMapper.Cache`2.GetOrAdd(TKey key, Func`2 func) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Cache.cs:line 22
+   at OoMapper.MappingConfiguration.GetCompiledNew(Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\MappingConfiguration.cs:line 71
+   at OoMapper.Mapper.Map(Object source, Type sourceType, Type destinationType) in z:\Builds\work\bbd9d1bb797b443e\src\OoMapper\Mapper.cs:line 35
    at FeatureTests.On.ObjectMappers.Adapters.OoMapperAdapter.Map[TTarget](Object source) in [removed]\OoMapperAdapter.cs:line 21
    at FeatureTests.On.ObjectMappers.ConstructorParameterTests.Nested(IObjectMapperAdapter mapper) in [removed]\6_ConstructorParameterTests.cs:line 33">fail</span>
         </td>

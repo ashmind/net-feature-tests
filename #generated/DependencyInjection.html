@@ -100,15 +100,15 @@
       <td class="row-name"><span title="<p>Not necessarily the latest version, but the one we are testing.</p>
 ">Version</span></td>
         <td class="neutral">
-3.4.0.0        </td>
+3.5.0.0        </td>
         <td class="neutral">
-3.2.0.0        </td>
+3.3.0.0        </td>
         <td class="neutral">
 3.9.0.0        </td>
         <td class="neutral">
 3.0.2.0        </td>
         <td class="neutral">
-2.2.4.0        </td>
+2.3.6.0        </td>
         <td class="neutral">
 2.0.0.0        </td>
         <td class="neutral">
@@ -116,7 +116,7 @@
         <td class="neutral">
 1.5.1.0        </td>
         <td class="neutral">
-3.0.1.6        </td>
+3.0.1.7        </td>
         <td class="neutral">
 2.3.0.41559        </td>
         <td class="neutral">
@@ -141,15 +141,15 @@
     <tr>
       <td class="row-name"><span>Released</span></td>
         <td class="neutral date">
-may 2014        </td>
+jun 2014        </td>
         <td class="neutral date">
-jul 2013        </td>
+may 2014        </td>
         <td class="neutral date">
 feb 2014        </td>
         <td class="neutral date">
 may 2013        </td>
         <td class="neutral date">
-apr 2014        </td>
+jun 2014        </td>
         <td class="neutral date">
 mar 2014        </td>
         <td class="neutral date">
@@ -157,7 +157,7 @@ nov 2013        </td>
         <td class="neutral date">
 feb 2013        </td>
         <td class="neutral date">
-mar 2014        </td>
+jun 2014        </td>
         <td class="neutral date">
 mar 2012        </td>
         <td class="skipped">
@@ -264,7 +264,7 @@ n/a        </td>
             <a href="http://www.microsoft.com/en-us/openness/licenses.aspx">MS-PL</a>
         </td>
         <td class="neutral">
-            <a href="http://www.apache.org/licenses/LICENSE-2.0">Apache</a>
+            <a href="http://opensource.org/licenses/MIT">MIT</a>
         </td>
         <td class="neutral">
             <a href="http://www.opensource.org/licenses/lgpl-3.0.html">LGPL-3.0</a>
@@ -300,9 +300,9 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-535 541        </td>
+535 610        </td>
         <td class="neutral number">
-341 453        </td>
+341 502        </td>
         <td class="neutral number">
 44 335        </td>
         <td class="neutral number">
@@ -316,7 +316,7 @@ n/a        </td>
         <td class="neutral number">
 2 569        </td>
         <td class="neutral number">
-4 723        </td>
+4 724        </td>
         <td class="neutral number">
 1 663        </td>
         <td class="skipped">
@@ -2416,35 +2416,8 @@ At the time of the exception, the container was:
       <td class="row-name"><span>IReadOnlyCollection&lt;IService&gt;</span></td>
         <td class="success">
 pass        </td>
-        <td class="failure">
-            <span title="Castle.MicroKernel.Resolvers.DependencyResolverException: Missing dependency.
-Component FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] has a dependency on System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService], which could not be resolved.
-Make sure the dependency is correctly registered in the container as a service, or provided as inline argument. ---&amp;gt; Castle.MicroKernel.Handlers.HandlerException: Handler for System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService] was not found.
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.TryGetHandlerFromKernel(DependencyModel dependency, CreationContext context)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveFromKernelByType(CreationContext context, ComponentModel model, DependencyModel dependency)
-   --- End of inner exception stack trace ---
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveFromKernelByType(CreationContext context, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveFromKernel(CreationContext context, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveCore(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.Resolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.ComponentActivator.DefaultComponentActivator.CreateConstructorArguments(ConstructorCandidate constructor, CreationContext context)
-   at Castle.MicroKernel.ComponentActivator.DefaultComponentActivator.Instantiate(CreationContext context)
-   at Castle.MicroKernel.ComponentActivator.DefaultComponentActivator.InternalCreate(CreationContext context)
-   at Castle.MicroKernel.ComponentActivator.AbstractComponentActivator.Create(CreationContext context, Burden burden)
-   at Castle.MicroKernel.Lifestyle.AbstractLifestyleManager.CreateInstance(CreationContext context, Boolean trackedExternally)
-   at Castle.MicroKernel.Lifestyle.AbstractLifestyleManager.Resolve(CreationContext context, IReleasePolicy releasePolicy)
-   at Castle.MicroKernel.Handlers.DefaultHandler.ResolveCore(CreationContext context, Boolean requiresDecommission, Boolean instanceRequired, Burden&amp;amp; burden)
-   at Castle.MicroKernel.Handlers.DefaultHandler.Resolve(CreationContext context, Boolean instanceRequired)
-   at Castle.MicroKernel.Handlers.AbstractHandler.Resolve(CreationContext context)
-   at Castle.MicroKernel.DefaultKernel.ResolveComponent(IHandler handler, Type service, IDictionary additionalArguments, IReleasePolicy policy)
-   at Castle.MicroKernel.DefaultKernel.Castle.MicroKernel.IKernelInternal.Resolve(Type service, IDictionary arguments, IReleasePolicy policy)
-   at Castle.MicroKernel.DefaultKernel.Resolve(Type service, IDictionary arguments)
-   at Castle.Windsor.WindsorContainer.Resolve(Type service)
-   at FeatureTests.On.DependencyInjection.Adapters.CastleAdapter.Resolve(Type serviceType) in [removed]\CastleAdapter.cs:line 59
-   at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
-   at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 72
-   at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyCollection(IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 57">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
@@ -2749,35 +2722,8 @@ At the time of the exception, the container was:
       <td class="row-name"><span>IReadOnlyList&lt;IService&gt;</span></td>
         <td class="success">
 pass        </td>
-        <td class="failure">
-            <span title="Castle.MicroKernel.Resolvers.DependencyResolverException: Missing dependency.
-Component FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] has a dependency on System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService], which could not be resolved.
-Make sure the dependency is correctly registered in the container as a service, or provided as inline argument. ---&amp;gt; Castle.MicroKernel.Handlers.HandlerException: Handler for System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService] was not found.
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.TryGetHandlerFromKernel(DependencyModel dependency, CreationContext context)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveFromKernelByType(CreationContext context, ComponentModel model, DependencyModel dependency)
-   --- End of inner exception stack trace ---
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveFromKernelByType(CreationContext context, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveFromKernel(CreationContext context, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.ResolveCore(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.Resolvers.DefaultDependencyResolver.Resolve(CreationContext context, ISubDependencyResolver contextHandlerResolver, ComponentModel model, DependencyModel dependency)
-   at Castle.MicroKernel.ComponentActivator.DefaultComponentActivator.CreateConstructorArguments(ConstructorCandidate constructor, CreationContext context)
-   at Castle.MicroKernel.ComponentActivator.DefaultComponentActivator.Instantiate(CreationContext context)
-   at Castle.MicroKernel.ComponentActivator.DefaultComponentActivator.InternalCreate(CreationContext context)
-   at Castle.MicroKernel.ComponentActivator.AbstractComponentActivator.Create(CreationContext context, Burden burden)
-   at Castle.MicroKernel.Lifestyle.AbstractLifestyleManager.CreateInstance(CreationContext context, Boolean trackedExternally)
-   at Castle.MicroKernel.Lifestyle.AbstractLifestyleManager.Resolve(CreationContext context, IReleasePolicy releasePolicy)
-   at Castle.MicroKernel.Handlers.DefaultHandler.ResolveCore(CreationContext context, Boolean requiresDecommission, Boolean instanceRequired, Burden&amp;amp; burden)
-   at Castle.MicroKernel.Handlers.DefaultHandler.Resolve(CreationContext context, Boolean instanceRequired)
-   at Castle.MicroKernel.Handlers.AbstractHandler.Resolve(CreationContext context)
-   at Castle.MicroKernel.DefaultKernel.ResolveComponent(IHandler handler, Type service, IDictionary additionalArguments, IReleasePolicy policy)
-   at Castle.MicroKernel.DefaultKernel.Castle.MicroKernel.IKernelInternal.Resolve(Type service, IDictionary arguments, IReleasePolicy policy)
-   at Castle.MicroKernel.DefaultKernel.Resolve(Type service, IDictionary arguments)
-   at Castle.Windsor.WindsorContainer.Resolve(Type service)
-   at FeatureTests.On.DependencyInjection.Adapters.CastleAdapter.Resolve(Type serviceType) in [removed]\CastleAdapter.cs:line 59
-   at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
-   at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 72
-   at FeatureTests.On.DependencyInjection.ListTests.IReadOnlyList(IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 63">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.NotNullException: Assert.NotNull() Failure
    at Xunit.Assert.NotNull(Object object)
@@ -3554,22 +3500,22 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies, service name:  ---&amp;gt; System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies], [Parameter: service2(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]
-   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3075
-   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3034
-   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3001
-   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2973
-   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2949
-   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2845
-   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass80.&amp;lt;ResolveEmitMethod&amp;gt;b__7c(IEmitter methodSkeleton) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3405
-   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass30.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__2f(IEmitter ms) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2793
-   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass30.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__2f(IEmitter ms) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2793
-   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2733
-   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3490
+   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3137
+   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3096
+   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3063
+   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3035
+   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3011
+   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2906
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass82.&amp;lt;ResolveEmitMethod&amp;gt;b__7e(IEmitter methodSkeleton) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3468
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass31.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__30(IEmitter ms) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2844
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass31.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__30(IEmitter ms) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2844
+   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2782
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3553
    --- End of inner exception stack trace ---
-   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3495
-   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3453
-   at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2315
-   at LightInject.ServiceContainer.GetInstance[T,TService](T value) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2374
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3558
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3516
+   at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2364
+   at LightInject.ServiceContainer.GetInstance[T,TService](T value) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2423
    at DynamicMethod(IServiceFactory , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
@@ -3607,7 +3553,7 @@ The activation path:
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 219
    at MugenInjection.Core.InjectorBase.&amp;lt;Activate&amp;gt;b__d(IBindingContext context) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.Components.FactoryAndLazyConverter.FactoryResolve.Invoke(Object[] objects) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\FactoryAndLazyConverter.cs:line 186
-   at _DynamicMethodMugenInjection_Func`2_4e5f853ba728449aacecb9832ea7afc6(Func`2 , IService2 )
+   at _DynamicMethodMugenInjection_Func`2_3e76e0d7cc134d74b517a5c839bb7eba(Func`2 , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
         <td class="skipped">
@@ -4891,10 +4837,10 @@ pass        </td>
 3 Importing  constructor parameter service2 using type IUnregisteredService
 
    at lambda_method(Closure , IInjectionScope , IInjectionContext )
-   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider)
-   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, Type exportType, IInjectionContext injectionContext, ExportStrategyFilter filter)
-   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider)
-   at Grace.DependencyInjection.DependencyInjectionContainer.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider)
+   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)
+   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)
+   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)
+   at Grace.DependencyInjection.DependencyInjectionContainer.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object withKey)
    at FeatureTests.On.DependencyInjection.Adapters.GraceAdapter.Resolve(Type serviceType) in [removed]\GraceAdapter.cs:line 47
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.ConvenienceTests.ReasonableConstructorSelection(IContainerAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 33">fail</span>
