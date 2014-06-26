@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
-
+using System.Text.RegularExpressions;
+using AshMind.Extensions;
 using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 
 namespace FeatureTests.Shared.GenericApiSupport {
@@ -23,7 +24,7 @@ namespace FeatureTests.Shared.GenericApiSupport {
         }
 
         private static Type RewriteTypeIfPossible(Type type, Type[] rewriteTo) {
-            if (type.Namespace == typeof(X1).Namespace)
+            if (type.IsDefined<GenericPlaceholderAttribute>())
                 return RewritePlaceholderType(type, rewriteTo);
 
             if (!type.IsGenericType)
@@ -41,7 +42,7 @@ namespace FeatureTests.Shared.GenericApiSupport {
             if (type.IsGenericType)
                 type = type.GetGenericArguments()[0];
 
-            var index = int.Parse(type.Name.Substring(1)) - 1;
+            var index = int.Parse(Regex.Match(type.Name, @"\d+").Value) - 1;
             return rewriteTo[index];
         }
     }

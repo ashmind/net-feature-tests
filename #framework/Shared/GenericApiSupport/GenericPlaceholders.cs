@@ -6,14 +6,17 @@ using System.Linq;
 namespace FeatureTests.Shared.GenericApiSupport.GenericPlaceholders {
 // ReSharper restore CheckNamespace
 
-    public class X1 {}
-    public class X2 {}
+    [AttributeUsage(AttributeTargets.Class | AttributeTargets.Interface | AttributeTargets.Struct, AllowMultiple = false)]
+    public class GenericPlaceholderAttribute : Attribute {}
+
+    [GenericPlaceholder] public class X1 {}
+    [GenericPlaceholder] public class X2 {}
 
     // ReSharper disable UnusedTypeParameter
 
     // Those classes provide hierarchy used to match generic inheritance constraints.
-    public class P<T> {}
-    public class C<TC, TP> : P<TP> {}
+    [GenericPlaceholder] public class P<T> {}
+    [GenericPlaceholder] public class C<TC, TP> : P<TP> {}
 
     // ReSharper restore UnusedTypeParameter
 }

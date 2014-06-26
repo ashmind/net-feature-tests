@@ -58,6 +58,12 @@
     <Reference Include="fFastMapper">
       <HintPath>..\#packages\fFastMapper.0.5.3\lib\net40\fFastMapper.dll</HintPath>
     </Reference>
+    <Reference Include="Fpr">
+      <HintPath>..\#packages\Fpr.1.1.8.37589\lib\net45\Fpr.dll</HintPath>
+    </Reference>
+    <Reference Include="Meow.Cartograph">
+      <HintPath>..\#packages\Meow.Cartograph.1.1.0.32239\lib\net40\Meow.Cartograph.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.XmlTransform, Version=2.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -87,6 +93,9 @@
     </Reference>
     <Reference Include="System.Reflection.Context" />
     <Reference Include="System.Xml" />
+    <Reference Include="ThisMember">
+      <HintPath>..\#packages\ThisMember.1.4.6\lib\ThisMember.dll</HintPath>
+    </Reference>
     <Reference Include="xunit, Version=1.9.2.1705, Culture=neutral, PublicKeyToken=8d05b1bb7a6fdb6c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\xunit.1.9.2\lib\net20\xunit.dll</HintPath>
@@ -99,6 +108,9 @@
   <ItemGroup>
     <Compile Include="9_ConvenienceTests.cs" />
     <Compile Include="Adapters\AutoMapperAdapter.cs" />
+    <Compile Include="Adapters\FprAdapter.cs" />
+    <Compile Include="Adapters\ThisMemberAdapter.cs" />
+    <Compile Include="Adapters\MeowCartographAdapter.cs" />
     <Compile Include="Adapters\ObjectMapperAdapterExtensions.cs" />
     <Compile Include="Adapters\fFastMapperAdapter.cs" />
     <Compile Include="Adapters\EasyMapperAdapter.cs" />

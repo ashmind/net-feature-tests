@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using AshMind.Extensions;
 using FeatureTests.On.ObjectMappers.Adapters;
 using FeatureTests.On.ObjectMappers.TestTypes;
 using FeatureTests.Shared;
+using FeatureTests.Shared.GenericApiSupport;
+using FeatureTests.Shared.GenericApiSupport.GenericPlaceholders;
 using Xunit;
 
 namespace FeatureTests.On.ObjectMappers {
@@ -14,57 +17,164 @@ namespace FeatureTests.On.ObjectMappers {
     [Description("_TODO_")]
     public class CollectionTests {
         [Feature]
-        [DisplayName("Collection ⇒ IEnumerable")]
+        [DisplayName("ICollection ⇒ IEnumerable")]
         public void CollectionToEnumerable(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new Collection<int> { 5 }, Enumerable.Repeat(5, 1));
+            AssertListMappingWorksBasedOnTestName(mapper);
         }
 
         [Feature]
-        [DisplayName("Collection ⇒ ICollection")]
-        public void CollectionToICollection(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new Collection<int> { 5 }, ((ICollection<int>)new[] { 5 }));
+        [DisplayName("IEnumerable ⇒ ICollection")]
+        public void EnumerableToCollection(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
         }
         
         [Feature]
-        [DisplayName("List ⇒ IEnumerable")]
+        [DisplayName("ICollection ⇒ IReadOnlyCollection")]
+        public void CollectionToReadOnlyCollection(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("IReadOnlyCollection ⇒ ICollection")]
+        public void ReadOnlyCollectionToCollection(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("IReadOnlyCollection ⇒ IEnumerable")]
+        public void ReadOnlyCollectionToEnumerable(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+        
+        [Feature]
+        [DisplayName("IList ⇒ IEnumerable")]
         public void ListToEnumerable(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new List<int> { 5 }, Enumerable.Repeat(5, 1));
+            AssertListMappingWorksBasedOnTestName(mapper);
         }
 
         [Feature]
-        [DisplayName("List ⇒ ICollection")]
+        [DisplayName("IEnumerable ⇒ IList")]
+        public void EnumerableToList(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("IList ⇒ ICollection")]
         public void ListToCollection(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new List<int> { 5 }, ((ICollection<int>)new[] { 5 }));
+            AssertListMappingWorksBasedOnTestName(mapper);
         }
 
         [Feature]
-        [DisplayName("List ⇒ IList")]
-        public void ListToIList(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new List<int> { 5 }, ((IList<int>)new[] { 5 }));
+        [DisplayName("ICollection ⇒ IList")]
+        public void CollectionToList(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
         }
 
         [Feature]
-        [DisplayName("HashSet ⇒ IEnumerable")]
-        public void HashSetToEnumerable(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new HashSet<int> { 5 }, Enumerable.Repeat(5, 1));
+        [DisplayName("IList ⇒ IReadOnlyCollection")]
+        public void ListToReadOnlyCollection(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
         }
 
         [Feature]
-        [DisplayName("HashSet ⇒ ISet")]
-        public void HashSetToISet(IObjectMapperAdapter mapper) {
-            AssertListMappingWorksFor(mapper, new HashSet<int> { 5 }, ((ISet<int>)new HashSet<int> { 5 }));
+        [DisplayName("IReadOnlyCollection ⇒ IList")]
+        public void ReadOnlyCollectionToList(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+        
+        [Feature]
+        [DisplayName("IList ⇒ IReadOnlyList")]
+        public void ListToReadOnlyList(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
         }
 
-        private static void AssertListMappingWorksFor<TSourceCollection, TTargetCollection>(IObjectMapperAdapter mapper, TSourceCollection sourceValue, TTargetCollection expectedValue)
+        [Feature]
+        [DisplayName("IReadOnlyList ⇒ IList")]
+        public void ReadOnlyListToList(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("IEnumerable ⇒ IReadOnlyList")]
+        public void EnumerableToReadOnlyList(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("ISet ⇒ IEnumerable")]
+        public void SetToEnumerable(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("IEnumerable ⇒ ISet")]
+        public void EnumerableToSet(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("ISet ⇒ ICollection")]
+        public void SetToCollection(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+        
+        [Feature]
+        [DisplayName("ICollection ⇒ ISet")]
+        public void CollectionToSet(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("ISet ⇒ IList")]
+        public void SetToList(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        [Feature]
+        [DisplayName("IList ⇒ ISet")]
+        public void ListToSet(IObjectMapperAdapter mapper) {
+            AssertListMappingWorksBasedOnTestName(mapper);
+        }
+
+        private static void AssertListMappingWorksBasedOnTestName(IObjectMapperAdapter mapper, [CallerMemberName] string name = null) {
+            var parts = name.Split("To");
+            var sourceType = GetCollectionType(parts[0]);
+            var targetType = GetCollectionType(parts[1]);
+
+            GenericHelper.RewriteAndInvoke(() => AssertListMappingWorksFor<IX1, IX2>(mapper), sourceType, targetType);
+        }
+
+        private static Type GetCollectionType(string namePart) {
+            var fullName = "System.Collections.Generic.I" + namePart + "`1";
+            var openType = new[] { typeof(IList<>), typeof(ISet<>) }
+                .Select(t => t.Assembly)
+                .Distinct()
+                .Select(a => a.GetType(fullName))
+                .SingleOrDefault(t => t != null);
+
+            if (openType == null)
+                throw new InvalidOperationException("Could not find type '" + fullName + "'.");
+
+            return openType.MakeGenericType(typeof(int));
+        }
+
+        private static void AssertListMappingWorksFor<TSourceCollection, TTargetCollection>(IObjectMapperAdapter mapper)
             where TSourceCollection : IEnumerable<int>
-            where TTargetCollection : IEnumerable<int> 
+            where TTargetCollection : IEnumerable<int>
         {
+            var sourceValue = new[] { 5 }.AsEnumerable();
+            if (typeof(TSourceCollection) == typeof(ISet<int>))
+                sourceValue = new HashSet<int> { 5 };
+
             mapper.CreateMap<Wrapper<TSourceCollection>, Wrapper<TTargetCollection>>();
 
-            var source = new Wrapper<TSourceCollection> { Value = sourceValue };
+            var source = new Wrapper<TSourceCollection> { Value = (TSourceCollection)sourceValue };
             var result = mapper.Map<Wrapper<TTargetCollection>>(source);
             Assert.NotNull(result.Value);
-            Assert.Equal(expectedValue.ToArray(), result.Value.ToArray());
+            Assert.Equal(sourceValue.ToArray(), result.Value.ToArray());
         }
+
+        [GenericPlaceholder] private interface IX1 : IEnumerable<int> {}
+        [GenericPlaceholder] private interface IX2 : IEnumerable<int> {}
     }
 }
