@@ -22,7 +22,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         }
 
         public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
-            container.Register(serviceType, implementationType, new PerRequestLifeTime());
+            container.Register(serviceType, implementationType, new PerScopeLifetime());
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
