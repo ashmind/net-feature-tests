@@ -300,43 +300,43 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-535 610        </td>
+744 193        </td>
         <td class="neutral number">
-341 502        </td>
+436 521        </td>
         <td class="neutral number">
-44 335        </td>
+56 244        </td>
         <td class="neutral number">
-2 742        </td>
+3 023        </td>
         <td class="neutral number">
-1 123        </td>
+3 003        </td>
         <td class="neutral number">
-1 165        </td>
+1 660        </td>
         <td class="neutral number">
-569        </td>
+799        </td>
         <td class="neutral number">
-2 569        </td>
+2 879        </td>
         <td class="neutral number">
-4 724        </td>
+8 231        </td>
         <td class="neutral number">
-1 663        </td>
+2 031        </td>
         <td class="skipped">
 n/a        </td>
         <td class="neutral number">
-1 695        </td>
+1 939        </td>
         <td class="neutral number">
-2 215        </td>
+2 619        </td>
         <td class="neutral number">
-6 365        </td>
+7 898        </td>
         <td class="neutral number">
-1 434 046        </td>
+1 694 004        </td>
         <td class="neutral number">
-59 046        </td>
+94 715        </td>
         <td class="neutral number">
-39 438        </td>
+46 921        </td>
         <td class="neutral number">
-303 213        </td>
+400 580        </td>
         <td class="neutral number">
-849 429        </td>
+1 191 081        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -1615,7 +1615,6 @@ pass        </td>
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.GetResolveExpression()
@@ -1624,7 +1623,6 @@ pass        </td>
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -1640,7 +1638,6 @@ pass        </td>
    at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
    at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
    at System.Reflection.RuntimeConstructorInfo.Invoke(BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.ConstructorInfo.Invoke(Object[] parameters)
    at LightCore.Activation.Activators.ReflectionActivator.ActivateInstance(ResolutionContext resolutionContext)
    at LightCore.Registration.RegistrationItem.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;ActivateInstance&amp;gt;b__0()
    at LightCore.Lifecycle.TransientLifecycle.ReceiveInstanceInLifecycle(Func`1 newInstanceResolver)
@@ -1685,7 +1682,6 @@ pass        </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[FeatureTests.On.DependencyInjection.TestTypes.IService[]] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.IService[] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -1799,7 +1795,6 @@ pass        </td>
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -1850,10 +1845,8 @@ Element: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructo
    at System.ComponentModel.Composition.Primitives.Export.get_Value()
    at System.ComponentModel.Composition.ExportServices.GetCastedExportedValue[T](Export export)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 72
@@ -1882,7 +1875,6 @@ pass        </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve System.Collections.Generic.IList`1[FeatureTests.On.DependencyInjection.TestTypes.IService] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -1931,12 +1923,10 @@ pass        </td>
    at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 198
    at Spring.Objects.Factory.Support.ConstructorResolver.AutowireConstructor(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 95
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.AutowireConstructor(String name, RootObjectDefinition definition, ConstructorInfo[] ctors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 1133
-   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 996
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 992
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.InstantiateObject(String name, RootObjectDefinition definition, Object[] arguments, Boolean allowEagerCaching, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 930
    at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObjectInternal(String name, Type requiredType, Object[] arguments, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 2065
-   at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObject(String name) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 1826
    at Spring.Objects.Factory.Support.DefaultListableObjectFactory.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\DefaultListableObjectFactory.cs:line 770
-   at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1383
    at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1350
    at FeatureTests.On.DependencyInjection.Adapters.SpringAdapter.Resolve(Type serviceType) in [removed]\SpringAdapter.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -1972,7 +1962,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -2043,7 +2032,6 @@ pass        </td>
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -2094,10 +2082,8 @@ Element: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructo
    at System.ComponentModel.Composition.Primitives.Export.get_Value()
    at System.ComponentModel.Composition.ExportServices.GetCastedExportedValue[T](Export export)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 72
@@ -2126,7 +2112,6 @@ pass        </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.ICollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve System.Collections.Generic.ICollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -2175,12 +2160,10 @@ pass        </td>
    at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 198
    at Spring.Objects.Factory.Support.ConstructorResolver.AutowireConstructor(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 95
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.AutowireConstructor(String name, RootObjectDefinition definition, ConstructorInfo[] ctors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 1133
-   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 996
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 992
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.InstantiateObject(String name, RootObjectDefinition definition, Object[] arguments, Boolean allowEagerCaching, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 930
    at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObjectInternal(String name, Type requiredType, Object[] arguments, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 2065
-   at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObject(String name) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 1826
    at Spring.Objects.Factory.Support.DefaultListableObjectFactory.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\DefaultListableObjectFactory.cs:line 770
-   at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1383
    at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1350
    at FeatureTests.On.DependencyInjection.Adapters.SpringAdapter.Resolve(Type serviceType) in [removed]\SpringAdapter.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2203,8 +2186,7 @@ There is no configuration specified for ICollection&amp;lt;IService&amp;gt;
    at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Pipeline\NulloTransientCache.cs:line 28
    at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 102
    at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 88
-   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 68
-   at StructureMap.BuildSession.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 59
+   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 66
    at StructureMap.Container.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Container.cs:line 323
    at FeatureTests.On.DependencyInjection.Adapters.StructureMapAdapter.Resolve(Type serviceType) in [removed]\StructureMapAdapter.cs:line 46
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2238,7 +2220,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -2289,7 +2270,6 @@ pass        </td>
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -2330,7 +2310,6 @@ pass        </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IEnumerable`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve System.Collections.Generic.IEnumerable`1[FeatureTests.On.DependencyInjection.TestTypes.IService] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -2362,12 +2341,10 @@ pass        </td>
    at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 198
    at Spring.Objects.Factory.Support.ConstructorResolver.AutowireConstructor(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 95
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.AutowireConstructor(String name, RootObjectDefinition definition, ConstructorInfo[] ctors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 1133
-   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 996
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 992
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.InstantiateObject(String name, RootObjectDefinition definition, Object[] arguments, Boolean allowEagerCaching, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 930
    at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObjectInternal(String name, Type requiredType, Object[] arguments, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 2065
-   at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObject(String name) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 1826
    at Spring.Objects.Factory.Support.DefaultListableObjectFactory.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\DefaultListableObjectFactory.cs:line 770
-   at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1383
    at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1350
    at FeatureTests.On.DependencyInjection.Adapters.SpringAdapter.Resolve(Type serviceType) in [removed]\SpringAdapter.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2403,7 +2380,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -2474,7 +2450,6 @@ pass        </td>
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -2525,10 +2500,8 @@ Element: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructo
    at System.ComponentModel.Composition.Primitives.Export.get_Value()
    at System.ComponentModel.Composition.ExportServices.GetCastedExportedValue[T](Export export)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 72
@@ -2562,10 +2535,10 @@ The activation path:
 
    at MugenInjection.Core.InjectorBase.TryResolve(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 130
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 227
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 281
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 280
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
    at MugenInjection.Core.Components.BindingActivatorComponent.GetParameters(MethodBase methodBase, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 399
-   at MugenInjection.Activators.ExpressionActivator.Activate(ConstructorInfo constructorInfo) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 61
+   at MugenInjection.Activators.ExpressionActivator.Activate(ConstructorInfo constructorInfo) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 59
    at MugenInjection.Activators.ActivatorBase.Activate(ConstructorInfo constructorInfo, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Activators\ActivatorBase.cs:line 71
    at MugenInjection.Bindings.TypeBinding.ResolveService(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\TypeBinding.cs:line 88
    at MugenInjection.Bindings.BindingBase.ResolveServiceInternal(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 351
@@ -2574,10 +2547,9 @@ The activation path:
    at MugenInjection.Bindings.BindingBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 236
    at MugenInjection.Core.Components.BindingActivatorComponent.Activate(IBinding binding, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 297
    at MugenInjection.Core.InjectorBase.Activate(IBinding binding, IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 136
-   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 219
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 281
+   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 280
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
-   at MugenInjection.InjectorExtensionUtils.Get(IInjectorResolver injector, Type service, MemberInfo member, ParameterInfo parameterInfo, IDictionary`2 specialParameters, IEnumerable`1 parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore\InjectorExtensionUtils.cs:line 43
    at MugenInjection.InjectorExtension.Get(IInjectorResolver injector, Type service, IInjectionParameter[] parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\InjectorExtension.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.MugenAdapter.Resolve(Type serviceType) in [removed]\MugenAdapter.cs:line 49
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2587,7 +2559,6 @@ The activation path:
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve System.Collections.Generic.IReadOnlyCollection`1[FeatureTests.On.DependencyInjection.TestTypes.IService] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -2646,12 +2617,10 @@ pass        </td>
    at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 198
    at Spring.Objects.Factory.Support.ConstructorResolver.AutowireConstructor(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 95
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.AutowireConstructor(String name, RootObjectDefinition definition, ConstructorInfo[] ctors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 1133
-   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 996
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 992
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.InstantiateObject(String name, RootObjectDefinition definition, Object[] arguments, Boolean allowEagerCaching, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 930
    at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObjectInternal(String name, Type requiredType, Object[] arguments, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 2065
-   at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObject(String name) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 1826
    at Spring.Objects.Factory.Support.DefaultListableObjectFactory.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\DefaultListableObjectFactory.cs:line 770
-   at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1383
    at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1350
    at FeatureTests.On.DependencyInjection.Adapters.SpringAdapter.Resolve(Type serviceType) in [removed]\SpringAdapter.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2674,8 +2643,7 @@ There is no configuration specified for IReadOnlyCollection&amp;lt;IService&amp;
    at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Pipeline\NulloTransientCache.cs:line 28
    at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 102
    at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 88
-   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 68
-   at StructureMap.BuildSession.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 59
+   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 66
    at StructureMap.Container.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Container.cs:line 323
    at FeatureTests.On.DependencyInjection.Adapters.StructureMapAdapter.Resolve(Type serviceType) in [removed]\StructureMapAdapter.cs:line 46
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2709,7 +2677,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -2780,7 +2747,6 @@ pass        </td>
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -2831,10 +2797,8 @@ Element: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructo
    at System.ComponentModel.Composition.Primitives.Export.get_Value()
    at System.ComponentModel.Composition.ExportServices.GetCastedExportedValue[T](Export export)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.ListTests.AssertResolvesListDependencyFor[TTestComponent](IContainerAdapter adapter) in [removed]\2_ListTests.cs:line 72
@@ -2868,10 +2832,10 @@ The activation path:
 
    at MugenInjection.Core.InjectorBase.TryResolve(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 130
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 227
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 281
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 280
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
    at MugenInjection.Core.Components.BindingActivatorComponent.GetParameters(MethodBase methodBase, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 399
-   at MugenInjection.Activators.ExpressionActivator.Activate(ConstructorInfo constructorInfo) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 61
+   at MugenInjection.Activators.ExpressionActivator.Activate(ConstructorInfo constructorInfo) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 59
    at MugenInjection.Activators.ActivatorBase.Activate(ConstructorInfo constructorInfo, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Activators\ActivatorBase.cs:line 71
    at MugenInjection.Bindings.TypeBinding.ResolveService(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\TypeBinding.cs:line 88
    at MugenInjection.Bindings.BindingBase.ResolveServiceInternal(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 351
@@ -2880,10 +2844,9 @@ The activation path:
    at MugenInjection.Bindings.BindingBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 236
    at MugenInjection.Core.Components.BindingActivatorComponent.Activate(IBinding binding, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 297
    at MugenInjection.Core.InjectorBase.Activate(IBinding binding, IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 136
-   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 219
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 281
+   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 280
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
-   at MugenInjection.InjectorExtensionUtils.Get(IInjectorResolver injector, Type service, MemberInfo member, ParameterInfo parameterInfo, IDictionary`2 specialParameters, IEnumerable`1 parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore\InjectorExtensionUtils.cs:line 43
    at MugenInjection.InjectorExtension.Get(IInjectorResolver injector, Type service, IInjectionParameter[] parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\InjectorExtension.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.MugenAdapter.Resolve(Type serviceType) in [removed]\MugenAdapter.cs:line 49
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2893,7 +2856,6 @@ The activation path:
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService]] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve System.Collections.Generic.IReadOnlyList`1[FeatureTests.On.DependencyInjection.TestTypes.IService] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -2952,12 +2914,10 @@ pass        </td>
    at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 198
    at Spring.Objects.Factory.Support.ConstructorResolver.AutowireConstructor(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\ConstructorResolver.cs:line 95
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.AutowireConstructor(String name, RootObjectDefinition definition, ConstructorInfo[] ctors, Object[] explicitArgs) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 1133
-   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 996
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 992
    at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.InstantiateObject(String name, RootObjectDefinition definition, Object[] arguments, Boolean allowEagerCaching, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractAutowireCapableObjectFactory.cs:line 930
    at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObjectInternal(String name, Type requiredType, Object[] arguments, Boolean suppressConfigure) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 2065
-   at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObject(String name) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\AbstractObjectFactory.cs:line 1826
    at Spring.Objects.Factory.Support.DefaultListableObjectFactory.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Objects\Factory\Support\DefaultListableObjectFactory.cs:line 770
-   at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1383
    at Spring.Context.Support.AbstractApplicationContext.GetObjectsOfType(Type type) in c:\_prj\spring-net\trunk\src\Spring\Spring.Core\Context\Support\AbstractApplicationContext.cs:line 1350
    at FeatureTests.On.DependencyInjection.Adapters.SpringAdapter.Resolve(Type serviceType) in [removed]\SpringAdapter.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -2980,8 +2940,7 @@ There is no configuration specified for IReadOnlyList&amp;lt;IService&amp;gt;
    at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Pipeline\NulloTransientCache.cs:line 28
    at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 102
    at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 88
-   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 68
-   at StructureMap.BuildSession.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 59
+   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 66
    at StructureMap.Container.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Container.cs:line 323
    at FeatureTests.On.DependencyInjection.Adapters.StructureMapAdapter.Resolve(Type serviceType) in [removed]\StructureMapAdapter.cs:line 46
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -3015,7 +2974,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -3095,8 +3053,8 @@ pass        </td>
    at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.VisitLambda[T](Expression`1 node) in [removed]\GenericRewritingVisitor.cs:line 57
    at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
    at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 22
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke(Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 11
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 23
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke(Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 12
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.RegisterTransient(Type serviceType, Type implementationType) in [removed]\IfInjectorAdapter.cs:line 26
    at FeatureTests.On.DependencyInjection.GenericTests.OpenGenericTypes(IContainerAdapter adapter) in [removed]\3_GenericTests.cs:line 21">fail</span>
         </td>
@@ -3127,8 +3085,8 @@ pass        </td>
    at FeatureTests.Shared.GenericApiSupport.GenericRewritingVisitor.VisitLambda[T](Expression`1 node) in [removed]\GenericRewritingVisitor.cs:line 57
    at System.Linq.Expressions.Expression`1.Accept(ExpressionVisitor visitor)
    at System.Linq.Expressions.ExpressionVisitor.Visit(Expression node)
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 22
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke(Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 11
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.Rewrite[TDelegate](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 23
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke(Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 12
    at FeatureTests.On.DependencyInjection.Adapters.MicroSliverAdapter.RegisterTransient(Type serviceType, Type implementationType) in [removed]\MicroSliverAdapter.cs:line 43
    at FeatureTests.On.DependencyInjection.GenericTests.OpenGenericTypes(IContainerAdapter adapter) in [removed]\3_GenericTests.cs:line 21">fail</span>
         </td>
@@ -3216,10 +3174,8 @@ pass        </td>
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(ImportDefinition definition, AtomicComposition atomicComposition)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(Type type, Type metadataViewType, String contractName, ImportCardinality cardinality)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterBase.ResolveAll(Type serviceType) in [removed]\ContainerAdapterBase.cs:line 23
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.ResolveAll[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 60
@@ -3236,21 +3192,20 @@ pass        </td>
    --- End of inner exception stack trace ---
    at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
    at System.RuntimeType.MakeGenericType(Type[] instantiation)
-   at MugenInjection.Bindings.TypeBinding.ResolveService(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\TypeBinding.cs:line 87
+   at MugenInjection.Bindings.TypeBinding.ResolveService(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\TypeBinding.cs:line 86
    at MugenInjection.Bindings.BindingBase.ResolveServiceInternal(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 351
    at MugenInjection.Scope.DefaultScopeLifecycleContext.ResolveCurrentService() in g:\MugenProjects\MugenInjection\MugenInjectionCore\Scope\DefaultScopeLifecycleContext.cs:line 50
    at MugenInjection.Scope.TransientScopeLifecycle.GetObjectFromScope() in g:\MugenProjects\MugenInjection\MugenInjectionCore\Scope\TransientScopeLifecycle.cs:line 50
    at MugenInjection.Bindings.BindingBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 236
    at MugenInjection.Core.Components.BindingActivatorComponent.Activate(IBinding binding, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 297
    at MugenInjection.Core.InjectorBase.Activate(IBinding binding, IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 136
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 286
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 284
    at MugenInjection.Core.InjectorBase.ResolveAll(IBindingContext bindingContext, Boolean useParentToResolve) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 480
    at MugenInjection.Core.Components.CollectionConverter.ConvertToCollection(Type collectionType, Type elementType, ActivatorDelegate createCollection, InvokeMethodDelegate`1 addMethod, Object value) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\CollectionConverter.cs:line 96
    at MugenInjection.Core.Components.CollectionConverter.&amp;lt;&amp;gt;c__DisplayClass2.&amp;lt;TryConvertInternal&amp;gt;b__1(Object o) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\CollectionConverter.cs:line 172
    at MugenInjection.Core.InjectorBase.Activate(Object value, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 148
    at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
-   at MugenInjection.InjectorExtensionUtils.Get(IInjectorResolver injector, Type service, MemberInfo member, ParameterInfo parameterInfo, IDictionary`2 specialParameters, IEnumerable`1 parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore\InjectorExtensionUtils.cs:line 43
    at MugenInjection.InjectorExtension.Get(IInjectorResolver injector, Type service, IInjectionParameter[] parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\InjectorExtension.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.MugenAdapter.Resolve(Type serviceType) in [removed]\MugenAdapter.cs:line 49
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterBase.ResolveAll(Type serviceType) in [removed]\ContainerAdapterBase.cs:line 23
@@ -3379,7 +3334,6 @@ Parameter name: Unkown key: System.Func`1[TResult]
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -3407,10 +3361,8 @@ pass        </td>
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(ImportDefinition definition, AtomicComposition atomicComposition)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(Type type, Type metadataViewType, String contractName, ImportCardinality cardinality)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithNoParameters(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 29">fail</span>
@@ -3434,7 +3386,6 @@ pass        </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve System.Func`1[FeatureTests.On.DependencyInjection.TestTypes.ServiceWithSimpleConstructorDependency] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -3451,8 +3402,6 @@ pass        </td>
             <span title="SimpleInjector.ActivationException: No registration for type Func&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt; could be found and an implicit registration could not be made. The constructor of type Func&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt; contains parameter &amp;#39;method&amp;#39; of type IntPtr which can not be used for constructor injection because it is a value type.
    at SimpleInjector.Container.ThrowNotConstructableException(Type concreteType)
    at SimpleInjector.Container.ThrowMissingInstanceProducerException(Type serviceType)
-   at SimpleInjector.Container.GetInstanceFromProducer(InstanceProducer instanceProducer, Type serviceType)
-   at SimpleInjector.Container.GetInstanceForType(Type serviceType)
    at SimpleInjector.Container.GetInstance(Type serviceType)
    at FeatureTests.On.DependencyInjection.Adapters.SimpleInjectorAdapter.Resolve(Type serviceType) in [removed]\SimpleInjectorAdapter.cs:line 44
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -3514,7 +3463,7 @@ pass        </td>
    --- End of inner exception stack trace ---
    at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3558
    at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 3516
-   at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2364
+   at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2362
    at LightInject.ServiceContainer.GetInstance[T,TService](T value) in c:\Users\bri\Documents\GitHub\LightInject\NuGet\Build\Net45\LightInject\LightInject.cs:line 2423
    at DynamicMethod(IServiceFactory , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
@@ -3538,10 +3487,10 @@ The activation path:
 
    at MugenInjection.Core.InjectorBase.TryResolve(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 130
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 227
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 281
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 280
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
    at MugenInjection.Core.Components.BindingActivatorComponent.GetParameters(MethodBase methodBase, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 399
-   at MugenInjection.Activators.ExpressionActivator.Activate(ConstructorInfo constructorInfo) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 61
+   at MugenInjection.Activators.ExpressionActivator.Activate(ConstructorInfo constructorInfo) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 59
    at MugenInjection.Activators.ActivatorBase.Activate(ConstructorInfo constructorInfo, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Activators\ActivatorBase.cs:line 71
    at MugenInjection.Bindings.TypeBinding.ResolveService(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\TypeBinding.cs:line 88
    at MugenInjection.Bindings.BindingBase.ResolveServiceInternal(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 351
@@ -3550,10 +3499,10 @@ The activation path:
    at MugenInjection.Bindings.BindingBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 236
    at MugenInjection.Core.Components.BindingActivatorComponent.Activate(IBinding binding, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 297
    at MugenInjection.Core.InjectorBase.Activate(IBinding binding, IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 136
-   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 219
+   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
    at MugenInjection.Core.InjectorBase.&amp;lt;Activate&amp;gt;b__d(IBindingContext context) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 338
    at MugenInjection.Core.Components.FactoryAndLazyConverter.FactoryResolve.Invoke(Object[] objects) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\Converters\FactoryAndLazyConverter.cs:line 186
-   at _DynamicMethodMugenInjection_Func`2_3e76e0d7cc134d74b517a5c839bb7eba(Func`2 , IService2 )
+   at _DynamicMethodMugenInjection_Func`2_2aeff4ffe7b14ec2b50747d35de617cc(Func`2 , IService2 )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameter(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 55">fail</span>
         </td>
         <td class="skipped">
@@ -3588,7 +3537,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -3616,7 +3564,6 @@ Cannot resolve parameter &amp;#39;FeatureTests.On.DependencyInjection.TestTypes.
    at Autofac.Core.Resolving.InstanceLookup.Activate(IEnumerable`1 parameters)
    at Autofac.Core.Resolving.InstanceLookup.Execute()
    at Autofac.Core.Resolving.ResolveOperation.GetOrCreateInstance(ISharingLifetimeScope currentOperationScope, IComponentRegistration registration, IEnumerable`1 parameters)
-   at Autofac.Core.Resolving.ResolveOperation.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)
    at Autofac.Core.Resolving.ResolveOperation.Execute(IComponentRegistration registration, IEnumerable`1 parameters)
    at Autofac.Core.Lifetime.LifetimeScope.ResolveComponent(IComponentRegistration registration, IEnumerable`1 parameters)
    at lambda_method(Closure , IService )
@@ -3694,7 +3641,6 @@ pass        </td>
    at LightCore.Registration.RegistrationItem.ActivateInstance(ResolutionContext resolutionContext)
    at LightCore.Container.Resolve(RegistrationItem registrationItem)
    at LightCore.Container.ResolveInternal(Type contractType, IEnumerable`1 arguments, IDictionary`2 namedArguments)
-   at LightCore.Container.Resolve(Type contractType, IEnumerable`1 arguments)
    at LightCore.Container.Resolve[TContract](IEnumerable`1 arguments)
    at lambda_method(Closure , IService )
    at FeatureTests.On.DependencyInjection.FuncTests.FactoryWithParameterForSubdependency(IContainerAdapter adapter) in [removed]\4_FuncTests.cs:line 77">fail</span>
@@ -3881,10 +3827,8 @@ pass        </td>
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(ImportDefinition definition, AtomicComposition atomicComposition)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(Type type, Type metadataViewType, String contractName, ImportCardinality cardinality)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.LazyTests.BasicLazySupport(IContainerAdapter adapter) in [removed]\5_LazyTests.cs:line 27">fail</span>
@@ -3901,7 +3845,6 @@ pass        </td>
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve System.Lazy`1[FeatureTests.On.DependencyInjection.TestTypes.ServiceWithSimpleConstructorDependency] ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -3922,8 +3865,6 @@ pass        </td>
             <span title="SimpleInjector.ActivationException: No registration for type Lazy&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt; could be found and an implicit registration could not be made. For the container to be able to create Lazy&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt;, it should contain exactly one public constructor, but it has 6.
    at SimpleInjector.Container.ThrowNotConstructableException(Type concreteType)
    at SimpleInjector.Container.ThrowMissingInstanceProducerException(Type serviceType)
-   at SimpleInjector.Container.GetInstanceFromProducer(InstanceProducer instanceProducer, Type serviceType)
-   at SimpleInjector.Container.GetInstanceForType(Type serviceType)
    at SimpleInjector.Container.GetInstance(Type serviceType)
    at FeatureTests.On.DependencyInjection.Adapters.SimpleInjectorAdapter.Resolve(Type serviceType) in [removed]\SimpleInjectorAdapter.cs:line 44
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -4177,7 +4118,6 @@ pass        </td>
    at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
-   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolverExpression()
    at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
    at IfInjector.Resolver.Resolver`1.CompileResolver()
    at IfInjector.Resolver.Resolver`1.DoResolve()
@@ -4200,10 +4140,8 @@ pass        </td>
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(ImportDefinition definition, AtomicComposition atomicComposition)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(Type type, Type metadataViewType, String contractName, ImportCardinality cardinality)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.PropertyTests.PropertyDependencyIsOptional(IContainerAdapter adapter) in [removed]\7_PropertyTests.cs:line 42">fail</span>
@@ -4221,10 +4159,10 @@ The activation path:
 
    at MugenInjection.Core.InjectorBase.TryResolve(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 130
    at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 227
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 281
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 280
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
    at MugenInjection.Core.Components.BindingActivatorComponent.GetParameter(MemberInfo memberInfo, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 449
-   at MugenInjection.Activators.ExpressionActivator.Inject[T](Type targetType, T&amp;amp; target) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 96
+   at MugenInjection.Activators.ExpressionActivator.Inject[T](Type targetType, T&amp;amp; target) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\Activators\ExpressionActivator.cs:line 94
    at MugenInjection.Activators.ActivatorBase.Activate(ConstructorInfo constructorInfo, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Activators\ActivatorBase.cs:line 71
    at MugenInjection.Bindings.TypeBinding.ResolveService(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\TypeBinding.cs:line 88
    at MugenInjection.Bindings.BindingBase.ResolveServiceInternal(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 351
@@ -4233,10 +4171,9 @@ The activation path:
    at MugenInjection.Bindings.BindingBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Bindings\BindingBase.cs:line 236
    at MugenInjection.Core.Components.BindingActivatorComponent.Activate(IBinding binding, IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Components\BindingActivatorComponent.cs:line 297
    at MugenInjection.Core.InjectorBase.Activate(IBinding binding, IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 136
-   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 219
-   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 281
+   at MugenInjection.Core.InjectorBase.ActivateOneInstance(IBindingContext bindingContext, Func`2 converter) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 218
+   at MugenInjection.Core.InjectorBase.Activate(IBindingContext bindingContext, ActivateType activateType, Boolean useParentForAll) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 280
    at MugenInjection.Core.InjectorBase.Resolve(IBindingContext bindingContext) in g:\MugenProjects\MugenInjection\MugenInjectionCore\Core\InjectorBase.cs:line 449
-   at MugenInjection.InjectorExtensionUtils.Get(IInjectorResolver injector, Type service, MemberInfo member, ParameterInfo parameterInfo, IDictionary`2 specialParameters, IEnumerable`1 parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore\InjectorExtensionUtils.cs:line 43
    at MugenInjection.InjectorExtension.Get(IInjectorResolver injector, Type service, IInjectionParameter[] parameters) in g:\MugenProjects\MugenInjection\MugenInjectionCore(Net 3.5)\InjectorExtension.cs:line 63
    at FeatureTests.On.DependencyInjection.Adapters.MugenAdapter.Resolve(Type serviceType) in [removed]\MugenAdapter.cs:line 49
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -4304,8 +4241,7 @@ There is no configuration specified for FeatureTests.On.DependencyInjection.Test
    at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Pipeline\NulloTransientCache.cs:line 28
    at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 102
    at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 88
-   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 68
-   at StructureMap.BuildSession.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 59
+   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 66
    at StructureMap.Container.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Container.cs:line 323
    at FeatureTests.On.DependencyInjection.Adapters.StructureMapAdapter.Resolve(Type serviceType) in [removed]\StructureMapAdapter.cs:line 46
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -4338,7 +4274,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -4685,13 +4620,11 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.DependencyInjection.WebRequestTests.ComponentIsDisposedAtTheEndOfRequest(IContainerAdapter adapter) in [removed]\6_WebRequestTests.cs:line 77">fail</span>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.DependencyInjection.WebRequestTests.ComponentIsDisposedAtTheEndOfRequest(IContainerAdapter adapter) in [removed]\6_WebRequestTests.cs:line 77">fail</span>
         </td>
@@ -4878,10 +4811,8 @@ pass        </td>
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(ImportDefinition definition, AtomicComposition atomicComposition)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(Type type, Type metadataViewType, String contractName, ImportCardinality cardinality)
    at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T](String contractName)
-   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValue[T]()
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 17
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.DependencyInjection.Adapters.MefAdapter.Resolve(Type serviceType) in [removed]\MefAdapter.cs:line 60
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
    at FeatureTests.On.DependencyInjection.ConvenienceTests.ReasonableConstructorSelection(IContainerAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 33">fail</span>
@@ -4907,7 +4838,6 @@ Actual:   Default
         <td class="failure">
             <span title="System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithMultipleConstructors ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.IUnregisteredService ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
    at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
-   at Munq.TypeRegistry.Get(String name, Type type)
    at Munq.IocContainer.Resolve(String name, Type type)
    --- End of inner exception stack trace ---
    at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
@@ -4958,8 +4888,7 @@ There is no configuration specified for FeatureTests.On.DependencyInjection.Test
    at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Pipeline\NulloTransientCache.cs:line 28
    at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 102
    at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 88
-   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 68
-   at StructureMap.BuildSession.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\BuildSession.cs:line 59
+   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\SessionCache.cs:line 66
    at StructureMap.Container.GetInstance(Type pluginType) in c:\BuildAgent\work\996e173a8ceccdca\src\StructureMap\Container.cs:line 323
    at FeatureTests.On.DependencyInjection.Adapters.StructureMapAdapter.Resolve(Type serviceType) in [removed]\StructureMapAdapter.cs:line 46
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.Resolve[TService](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 56
@@ -4992,7 +4921,6 @@ At the time of the exception, the container was:
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
    --- End of inner exception stack trace ---
    at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
-   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, String name, IEnumerable`1 resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
    at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
    at FeatureTests.On.DependencyInjection.Adapters.UnityAdapter.Resolve(Type serviceType) in [removed]\UnityAdapter.cs:line 51
@@ -5022,7 +4950,7 @@ pass        </td>
    at IfInjector.Injector.ValidateInternalBinding(IBindingInternal internalBinding)
    at IfInjector.Injector.Register(IBinding binding)
    at lambda_method(Closure )
-   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke(Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 12
+   at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke(Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 13
    at FeatureTests.On.DependencyInjection.Adapters.IfInjectorAdapter.RegisterTransient(Type serviceType, Type implementationType) in [removed]\IfInjectorAdapter.cs:line 26
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.RegisterTransient[TService,TImplementation](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 34
    at FeatureTests.On.DependencyInjection.Adapters.Interface.ContainerAdapterExtensions.RegisterType[TService,TImplementation](IContainerAdapter container) in [removed]\ContainerAdapterExtensions.cs:line 14
