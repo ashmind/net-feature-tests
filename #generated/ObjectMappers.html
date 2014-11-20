@@ -193,23 +193,23 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-1 018 197        </td>
+1 357 118        </td>
         <td class="neutral number">
-145        </td>
+213        </td>
         <td class="neutral number">
-13 982        </td>
+19 753        </td>
         <td class="neutral number">
-297        </td>
+366        </td>
         <td class="neutral number">
-101        </td>
+1 133        </td>
         <td class="neutral number">
-391        </td>
+477        </td>
         <td class="neutral number">
-1 521        </td>
+1 751        </td>
         <td class="neutral number">
-1 836        </td>
+2 116        </td>
         <td class="neutral number">
-85 040        </td>
+100 021        </td>
     </tr>
     <tr class="total-hidden">
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -221,13 +221,13 @@ n/a        </td>
         <td class="concern">
 67%        </td>
         <td class="failure">
-12%        </td>
+10%        </td>
         <td class="failure">
 26%        </td>
         <td class="failure">
 9%        </td>
         <td class="concern">
-55%        </td>
+57%        </td>
         <td class="failure">
 29%        </td>
         <td class="concern">
@@ -1128,8 +1128,8 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:30 +12:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 20-Nov-14 22:17:22 +13:00
+Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
@@ -1137,8 +1137,8 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:30 +12:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 20-Nov-14 22:17:22 +13:00
+Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
@@ -1176,7 +1176,6 @@ Actual:   01.01.0001 0:00:00 +00:00
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -1185,8 +1184,8 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:30 +12:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 20-Nov-14 22:17:22 +13:00
+Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
@@ -1209,8 +1208,8 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:30 +12:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 20-Nov-14 22:17:22 +13:00
+Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.PrimitiveConversionTests.AssertPrimitiveMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) in [removed]\1_PrimitiveTests.cs:line 94
@@ -1304,8 +1303,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1383,8 +1389,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-5 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+5 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.Int32&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.Int64]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1411,7 +1424,7 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="System.InvalidCastException: Specified cast is not valid.
-   at ObjectsMapper49_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1111b17fe76144ed3883be8d65aa26b45.MapImpl(Object , Object , Object )
+   at ObjectsMapper49_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int32\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]_FeatureTests.On.ObjectMappers.TestTypes.Wrapper`1\[\[System.Nullable`1\[\[System.Int64\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]\, mscorlib\, Version=4.0.0.0\, Culture=neutral\, PublicKeyToken=b77a5c561934e089\]\]1be445cebb80c4a6aac7eb18f1657469d.MapImpl(Object , Object , Object )
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from, Object to, Object state)
    at EmitMapper.Mappers.ObjectsMapperBaseImpl.Map(Object from)
    at EmitMapper.ObjectsMapper`2.Map(TFrom from)
@@ -1463,8 +1476,15 @@ Actual:   (null)
       <td class="row-name"><span>(int?)null ⇒ (object)null</span></td>
         <td class="success">
 pass        </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   not set
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
+   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 37">fail</span>
+        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
@@ -1476,15 +1496,8 @@ Actual:   not set
    at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
    at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 37">fail</span>
         </td>
-        <td class="failure">
-            <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   not set
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-   at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
-   at FeatureTests.On.ObjectMappers.NullableTests.NullNullableInt32ToNullObject(IObjectMapperAdapter mapper) in [removed]\2_NullableTests.cs:line 37">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
 Expected: (null)
@@ -1595,8 +1608,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-27.06.2014 1:44:34 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+20-Nov-14 22:17:22 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1614,7 +1634,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
+Expected: 20-Nov-14 22:17:22 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1623,8 +1643,8 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 20-Nov-14 22:17:22 +13:00
+Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
@@ -1662,7 +1682,6 @@ Actual:   01.01.0001 0:00:00 +00:00
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -1671,7 +1690,7 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
+Expected: 20-Nov-14 22:17:22 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1695,7 +1714,7 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
+Expected: 20-Nov-14 22:17:22 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1716,8 +1735,15 @@ Destination path:
 Wrapper`1.Value.Value
 
 Source value:
-27.06.2014 1:44:35 ---&amp;gt; System.InvalidCastException: Specified cast is not valid.
-   at lambda_method(Closure , Object , Object )
+20-Nov-14 22:17:22 ---&amp;gt; System.ArgumentException: Object of type &amp;#39;System.DateTime&amp;#39; cannot be converted to type &amp;#39;System.Nullable`1[System.DateTimeOffset]&amp;#39;.
+   at System.RuntimeType.TryChangeType(Object value, Binder binder, CultureInfo culture, Boolean needsSpecialCast)
+   at System.RuntimeType.CheckValue(Object value, Binder binder, CultureInfo culture, BindingFlags invokeAttr)
+   at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
+   at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
+   at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
+   at AutoMapper.DelegateFactory.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;CreateSet&amp;gt;b__3(Object target, Object value)
    at AutoMapper.Impl.PropertyAccessor.SetValue(Object destination, Object value)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.AssignValue(PropertyMap propertyMap, Object mappedObject, Object propertyValueToAssign)
    at AutoMapper.Mappers.TypeMapObjectMapperRegistry.PropertyMapMappingStrategy.MapPropertyValue(ResolutionContext context, IMappingEngineRunner mapper, Object mappedObject, PropertyMap propertyMap)
@@ -1735,7 +1761,7 @@ Source value:
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
+Expected: 20-Nov-14 22:17:22 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1744,8 +1770,8 @@ Actual:   (null)
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
-Actual:   01.01.0001 0:00:00 +00:00
+Expected: 20-Nov-14 22:17:22 +13:00
+Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
    at FeatureTests.On.ObjectMappers.NullableTests.AssertNullableMappingWorksFor[TSource,TTarget](IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue) in [removed]\2_NullableTests.cs:line 67
@@ -1783,7 +1809,6 @@ Actual:   01.01.0001 0:00:00 +00:00
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -1792,7 +1817,7 @@ Actual:   01.01.0001 0:00:00 +00:00
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
+Expected: 20-Nov-14 22:17:22 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -1816,7 +1841,7 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 27.06.2014 1:44:35 +12:00
+Expected: 20-Nov-14 22:17:22 +13:00
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
@@ -2051,7 +2076,6 @@ Exception: System.InvalidCastException: Specified cast is not valid.
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, TDestination destination, Boolean isNew, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 85
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, TDestination destination, Boolean isNew, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 147
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -2135,7 +2159,6 @@ Exception: System.InvalidCastException: Specified cast is not valid.
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, TDestination destination, Boolean isNew, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 85
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, TDestination destination, Boolean isNew, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 147
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -2308,7 +2331,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2380,7 +2402,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2452,7 +2473,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2484,7 +2504,6 @@ pass        </td>
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -2544,7 +2563,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2616,7 +2634,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2688,7 +2705,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2760,7 +2776,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2832,7 +2847,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2904,7 +2918,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -2976,7 +2989,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3008,7 +3020,6 @@ pass        </td>
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -3068,7 +3079,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3140,7 +3150,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3212,7 +3221,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3284,7 +3292,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3356,7 +3363,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3460,7 +3466,6 @@ System.Int32[] ---&amp;gt; System.InvalidCastException: Unable to cast object of
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3492,7 +3497,6 @@ System.Int32[] ---&amp;gt; System.InvalidCastException: Unable to cast object of
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -3556,7 +3560,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3660,7 +3663,6 @@ System.Int32[] ---&amp;gt; System.InvalidCastException: Unable to cast object of
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3692,7 +3694,6 @@ System.Int32[] ---&amp;gt; System.InvalidCastException: Unable to cast object of
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -3756,7 +3757,6 @@ pass        </td>
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3860,7 +3860,6 @@ System.Int32[] ---&amp;gt; System.InvalidCastException: Unable to cast object of
    at EmitMapper.EmitBuilders.MappingBuilder.BuildCopyImplMethod()
    at EmitMapper.ObjectMapperManager.BuildObjectsMapper(String MapperTypeName, Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapperInt(Type from, Type to, IMappingConfigurator mappingConfigurator)
-   at EmitMapper.ObjectMapperManager.GetMapperImpl(Type from, Type to, IMappingConfigurator mappingConfigurator)
    at EmitMapper.ObjectMapperManager.GetMapper[TFrom,TTo]()
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -3892,7 +3891,6 @@ System.Int32[] ---&amp;gt; System.InvalidCastException: Unable to cast object of
    at Fpr.Adapters.ClassAdapter`2..cctor() in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 15
    --- End of inner exception stack trace ---
    at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source, Dictionary`2 parameterIndexs) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 41
-   at Fpr.Adapters.ClassAdapter`2.Adapt(TSource source) in c:\Projects\Fapper\src\Fpr\Adapters\ClassAdapter.cs:line 28
    at (Object , Object[] )
    at Fpr.TypeAdapter.Adapt[TDestination](Object source) in c:\Projects\Fapper\src\Fpr\TypeAdapter.cs:line 16
    at FeatureTests.On.ObjectMappers.Adapters.FprAdapter.Map[TTarget](Object source) in [removed]\FprAdapter.cs:line 16
@@ -3967,7 +3965,6 @@ Actual:   Int32[] {  }
             <span title="System.ArgumentException: Property set method not found.
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
-   at System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
    at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -4064,7 +4061,6 @@ Actual:   Int32[] {  }
             <span title="System.ArgumentException: Property set method not found.
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
-   at System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
    at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -4159,7 +4155,6 @@ Actual:   Int32[] {  }
             <span title="System.ArgumentException: Property set method not found.
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, BindingFlags invokeAttr, Binder binder, Object[] index, CultureInfo culture)
    at System.Reflection.RuntimePropertyInfo.SetValue(Object obj, Object value, Object[] index)
-   at System.Reflection.PropertyInfo.SetValue(Object obj, Object value)
    at Pelusoft.EasyMapper.EasyMapper.Map[TDestination](Object sourceObj)
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
@@ -4553,11 +4548,11 @@ Actual:   (null)
             <span title="System.ArgumentException: Property &amp;#39;System.Object Value&amp;#39; is not defined for type &amp;#39;System.Dynamic.ExpandoObject&amp;#39;
    at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
    at System.Linq.Expressions.Expression.MakeMemberAccess(Expression expression, MemberInfo member)
-   at ThisMember.Core.CompiledMapGenerator.BuildComplexTypeMappingExpressions(ParameterExpression source, ParameterExpression destination, ProposedTypeMapping complexTypeMapping, List`1 expressions) in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 1144
+   at ThisMember.Core.CompiledMapGenerator.BuildComplexTypeMappingExpressions(ParameterExpression source, ParameterExpression destination, ProposedTypeMapping complexTypeMapping, List`1 expressions) in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 1142
    at ThisMember.Core.CompiledMapGenerator.BuildTypeMappingExpressions(ParameterExpression source, ParameterExpression destination, ProposedTypeMapping typeMapping, List`1 expressions, CustomMapping customMapping) in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 171
    at ThisMember.Core.CompiledMapGenerator.GenerateMappingFunction() in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 1382
    at ThisMember.Core.ProposedMap.FinalizeMap() in c:\code\ThisMember\ThisMember.Core\ProposedMap.cs:line 78
-   at ThisMember.Core.MemberMapper.Map[TDestination](Object source) in c:\code\ThisMember\ThisMember.Core\MemberMapper.cs:line 95
+   at ThisMember.Core.MemberMapper.Map[TDestination](Object source) in c:\code\ThisMember\ThisMember.Core\MemberMapper.cs:line 93
    at lambda_method(Closure )
    at FeatureTests.Shared.GenericApiSupport.GenericHelper.RewriteAndInvoke[TResult](Expression`1 call, Type[] genericArguments) in [removed]\GenericHelper.cs:line 18
    at FeatureTests.On.ObjectMappers.Adapters.ThisMemberAdapter.Map[TTarget](Object source) in [removed]\ThisMemberAdapter.cs:line 25
@@ -4712,7 +4707,7 @@ Actual:   (null)
             <span title="System.ArgumentException: Property &amp;#39;System.Object Value&amp;#39; is not defined for type &amp;#39;System.Collections.Generic.Dictionary`2[System.String,System.Object]&amp;#39;
    at System.Linq.Expressions.Expression.Property(Expression expression, PropertyInfo property)
    at System.Linq.Expressions.Expression.MakeMemberAccess(Expression expression, MemberInfo member)
-   at ThisMember.Core.CompiledMapGenerator.BuildComplexTypeMappingExpressions(ParameterExpression source, ParameterExpression destination, ProposedTypeMapping complexTypeMapping, List`1 expressions) in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 1144
+   at ThisMember.Core.CompiledMapGenerator.BuildComplexTypeMappingExpressions(ParameterExpression source, ParameterExpression destination, ProposedTypeMapping complexTypeMapping, List`1 expressions) in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 1142
    at ThisMember.Core.CompiledMapGenerator.BuildTypeMappingExpressions(ParameterExpression source, ParameterExpression destination, ProposedTypeMapping typeMapping, List`1 expressions, CustomMapping customMapping) in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 171
    at ThisMember.Core.CompiledMapGenerator.GenerateMappingFunction() in c:\code\ThisMember\ThisMember.Core\CompiledMapGenerator.cs:line 1382
    at ThisMember.Core.ProposedMap.FinalizeMap() in c:\code\ThisMember\ThisMember.Core\ProposedMap.cs:line 78
@@ -5071,7 +5066,6 @@ Actual:   (null)
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
@@ -5079,25 +5073,21 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
         <td class="failure">
             <span title="Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
    at Xunit.Assert.True(Boolean condition)
    at FeatureTests.On.ObjectMappers.ConvenienceTests.NonStaticApi(IObjectMapperAdapter adapter) in [removed]\9_ConvenienceTests.cs:line 68">fail</span>
         </td>
