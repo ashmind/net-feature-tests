@@ -108,7 +108,7 @@ namespace FeatureTests.Runner.Outputs {
 
             var outputPath = Path.Combine(outputDirectory.FullName, outputFileName);
             File.WriteAllText(outputPath, templateLayoutResult);
-            ConsoleEx.WriteLine(ConsoleColor.DarkGray, "    rendered " + outputPath);
+            FluentConsole.DarkGray.Line("    rendered " + outputPath);
         }
 
         private string RenderTemplateToString<TModel>(string templateFileName, TModel model, Action<HtmlTemplateBase<TModel>> initializer = null) {
@@ -196,7 +196,7 @@ namespace FeatureTests.Runner.Outputs {
             if (resourceName == null)
                 return "";
 
-            ConsoleEx.WriteLine(ConsoleColor.DarkGray, "    found " + resourceName);
+            FluentConsole.DarkGray.Line("    found " + resourceName);
 
             using (var stream = assembly.GetManifestResourceStream(resourceName)) {
                 return new StreamReader(stream).ReadToEnd();
@@ -218,7 +218,7 @@ namespace FeatureTests.Runner.Outputs {
                 if (!CreateHardLink(targetPath, file.FullName, IntPtr.Zero))
                     throw new Exception("Failed to hardlink " + targetPath + ": " + Marshal.GetLastWin32Error() + ".");
 
-                ConsoleEx.WriteLine(ConsoleColor.DarkGray, "    hardlinked " + targetPath);
+                FluentConsole.DarkGray.Line("    hardlinked " + targetPath);
             }
 
             foreach (var sourceSubdirectory in source.EnumerateDirectories()) {
