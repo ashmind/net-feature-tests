@@ -10,7 +10,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         private readonly ServiceLocator locator = new ServiceLocator();
 
         public CatelAdapter() {
-            this.locator.RegisterInstance<ITypeFactory>(new TypeFactory(new CatelDependencyResolver(this.locator)));
+            this.locator.RegisterInstance<ITypeFactory>(new TypeFactory(this.locator));
         }
         
         public override Assembly Assembly {
