@@ -28,7 +28,7 @@ namespace FeatureTests.Runner {
                     new LicenseResolver(httpDataProvider, new Uri(ConfigurationManager.AppSettings["LicensesJsonUrl"]))
                 ),
                 new NetFxSupportTableSource(cache),
-                new FeatureTestTableSource(new FeatureTestRunner())
+                new FeatureTestTableSource(new FeatureTestRunner(), new ExceptionNormalizer())
             };
             var outputs = new IResultOutput[] {
                 new HtmlOutput(new DirectoryInfo(ConfigurationManager.AppSettings["HtmlTemplatesPath"])),

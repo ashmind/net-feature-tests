@@ -109,17 +109,26 @@
   <ItemGroup>
     <Compile Include="9_ConvenienceTests.cs" />
     <Compile Include="Adapters\AutoMapperAdapter.cs" />
-    <Compile Include="Adapters\FprAdapter.cs" />
-    <Compile Include="Adapters\ThisMemberAdapter.cs" />
-    <Compile Include="Adapters\MeowCartographAdapter.cs" />
+    <Compile Include="Adapters\EasyMapperAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Adapters\EmitMapperAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Adapters\fFastMapperAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Adapters\FprAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Adapters\IObjectMapperAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Adapters\MeowCartographAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Adapters\ObjectMapperAdapterExtensions.cs" />
-    <Compile Include="Adapters\fFastMapperAdapter.cs" />
-    <Compile Include="Adapters\EasyMapperAdapter.cs" />
-    <Compile Include="Adapters\OoMapperAdapter.cs" />
-    <Compile Include="Adapters\ValueInjecterAdapter.cs" />
-    <Compile Include="Adapters\EmitMapperAdapter.cs" />
     <Compile Include="Adapters\ObjectMapperAdapterBase.cs" />
-    <Compile Include="Adapters\IObjectMapperAdapter.cs" />
     <Compile Include="1_PrimitiveTests.cs" />
     <Compile Include="4_CollectionTests.cs" />
     <Compile Include="5_CollectionAsReadOnlyPropertyTests.cs" />
@@ -128,6 +137,15 @@
     <Compile Include="3_EnumTests.cs" />
     <Compile Include="8_DictionaryTests.cs" />
     <Compile Include="7_DynamicTests.cs" />
+    <Compile Include="Adapters\OoMapperAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Adapters\ThisMemberAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Adapters\ValueInjecterAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestTypes\ClassWithValue.cs" />
     <Compile Include="TestTypes\ClassWithNestedValue.cs" />

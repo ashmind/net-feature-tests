@@ -123,6 +123,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sources\FeatureTestSupport\FeatureTestResult.cs" />
+    <Compile Include="Sources\FeatureTestSupport\ExceptionNormalizer.cs" />
     <Compile Include="Sources\MetadataKeys.cs" />
     <Compile Include="Sources\1_GeneralInfoTableSource.cs" />
     <Compile Include="Sources\MetadataSupport\HttpDataProvider.cs" />
