@@ -311,9 +311,7 @@
         "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: (null)\r\nActual:   not set\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
       },
       "NullObjectToNullNullableInt32": {
-        "result": "failure",
-        "comment": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: (null)\r\nActual:   1\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: (null)\r\nActual:   1\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+        "result": "success"
       },
       "DateTimeToNullableDateTimeOffset": {
         "result": "failure",
@@ -1146,9 +1144,7 @@
         "result": "success"
       },
       "NullNullableInt32ToNullObject": {
-        "result": "failure",
-        "comment": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: (null)\r\nActual:   not set\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: (null)\r\nActual:   not set\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+        "result": "success"
       },
       "NullObjectToNullNullableInt32": {
         "result": "failure",

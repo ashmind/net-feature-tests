@@ -56,6 +56,10 @@ body {
     background-color: #eee;
 }
 
+.sidebar-nav .child-link:not([data-same-page]) {
+    display: none;
+}
+
 .sidebar-github {
     padding-top: 25px;
     padding-left: 10px;
