@@ -54,6 +54,21 @@
               <li><a class="child-link" href="ObjectMappers.html#Convenience" data-same-page>Convenience</a></li>
             </ul>
           </li>
+          <li class="page-links-root">
+            <a href="Serializers.html" >Serializers</a>
+            <ul>
+              <li><a class="child-link" href="Serializers.html#Disclaimer" >Disclaimer</a></li>
+              <li><a class="child-link" href="Serializers.html#GeneralInformation" >General information</a></li>
+              <li><a class="child-link" href="Serializers.html#SupportedNETVersions" >Supported .NET versions</a></li>
+              <li><a class="child-link" href="Serializers.html#SimpleTypes" >Simple types</a></li>
+              <li><a class="child-link" href="Serializers.html#Collections" >Collections</a></li>
+              <li><a class="child-link" href="Serializers.html#Dictionaries" >Dictionaries</a></li>
+              <li><a class="child-link" href="Serializers.html#ReadOnlyProperties" >Read-only properties</a></li>
+              <li><a class="child-link" href="Serializers.html#Constructors" >Constructors</a></li>
+              <li><a class="child-link" href="Serializers.html#Dynamic" >Dynamic</a></li>
+              <li><a class="child-link" href="Serializers.html#NotTested" >Not tested</a></li>
+            </ul>
+          </li>
         </ul>
       </nav>
      
@@ -193,23 +208,23 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-1 362 369        </td>
+1 372 754        </td>
         <td class="neutral number">
-213        </td>
+217        </td>
         <td class="neutral number">
-19 822        </td>
+19 940        </td>
         <td class="neutral number">
-367        </td>
+371        </td>
         <td class="neutral number">
-1 147        </td>
+1 200        </td>
         <td class="neutral number">
-482        </td>
+484        </td>
         <td class="neutral number">
-1 753        </td>
+1 757        </td>
         <td class="neutral number">
-2 119        </td>
+2 124        </td>
         <td class="neutral number">
-100 235        </td>
+100 618        </td>
     </tr>
     <tr class="total-hidden">
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -221,7 +236,7 @@ n/a        </td>
         <td class="concern">
 67%        </td>
         <td class="failure">
-12%        </td>
+10%        </td>
         <td class="failure">
 26%        </td>
         <td class="failure">
@@ -1405,8 +1420,14 @@ Actual:   not set
    at Xunit.Assert.Equal[T](T expected, T actual)
 ">fail</span>
         </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   not set
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+">fail</span>
+        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
 Expected: (null)
@@ -1438,8 +1459,14 @@ Actual:   not set
       <td class="row-name"><span>(object)null ⇒ (int?)null</span></td>
         <td class="success">
 pass        </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+   at Xunit.Assert.Equal[T](T expected, T actual)
+">fail</span>
+        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
@@ -1450,14 +1477,8 @@ Actual:   1
    at Xunit.Assert.Equal[T](T expected, T actual)
 ">fail</span>
         </td>
-        <td class="failure">
-            <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   1
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="Xunit.Sdk.EqualException: Assert.Equal() Failure
 Expected: (null)

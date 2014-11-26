@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.30723.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ObjectMappers", "ObjectMappers\ObjectMappers.csproj", "{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{68BCF496-93FD-427A-BA49-EAF90AFD54F2}"
@@ -19,6 +21,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Results.Web", "#framework\Results.Web\Results.Web.csproj", "{6D69D53C-1B6A-485A-B75B-00063BF820C7}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{257C6C29-5704-4DD8-813A-C6A3C04C1204}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializers", "Serializers\Serializers.csproj", "{B959E296-E27E-4D5C-AA9D-B267E38D58C3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -80,6 +84,16 @@ Global
 		{257C6C29-5704-4DD8-813A-C6A3C04C1204}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{257C6C29-5704-4DD8-813A-C6A3C04C1204}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{257C6C29-5704-4DD8-813A-C6A3C04C1204}.Release|x86.ActiveCfg = Release|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{B959E296-E27E-4D5C-AA9D-B267E38D58C3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -90,7 +104,7 @@ Global
 		{6D69D53C-1B6A-485A-B75B-00063BF820C7} = {4819E554-F9AC-4041-AD26-11481839CD05}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		EnterpriseLibraryConfigurationToolBinariesPath = #packages\Unity.2.1.505.2\lib\NET35
 		VisualSVNWorkingCopyRoot = 
+		EnterpriseLibraryConfigurationToolBinariesPath = #packages\Unity.2.1.505.2\lib\NET35
 	EndGlobalSection
 EndGlobal

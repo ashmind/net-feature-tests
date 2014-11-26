@@ -42,16 +42,22 @@ namespace FeatureTests.Runner {
             var assemblyPaths = GetAssemblyPaths();
             var results = assemblyPaths.Select(path => {
                 console.White.Text("Running " + Path.GetFileName(path) + ":");
-                var assembly = Assembly.LoadFrom(path);
+                try {
+                    var assembly = Assembly.LoadFrom(path);
 
-                var tables = sources.SelectMany(s => s.GetTables(assembly)).ToArray();
-                CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
+                    var tables = sources.SelectMany(s => s.GetTables(assembly)).ToArray();
+                    CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
 
-                var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
-                var result = new ResultForAssembly(assembly, tables, outputNamePrefix);
+                    var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
+                    var result = new ResultForAssembly(assembly, tables, outputNamePrefix);
 
-                console.Green.Line(" OK");
-                return result;
+                    console.Green.Line(" OK");
+                    return result;
+                }
+                catch (Exception) {
+                    console.Red.Line(" FAIL");
+                    throw;
+                }
             }).ToArray();
 
             console.NewLine();

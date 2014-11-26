@@ -26,8 +26,12 @@ namespace FeatureTests.Runner.Sources.FeatureTestSupport {
             }
 
             foreach (var outer in exceptions) {
+                var frames = new StackTrace(outer).GetFrames();
+                if (frames == null)
+                    continue;
+
                 builder.AppendLine();
-                foreach (var frame in new StackTrace(outer).GetFrames()) {
+                foreach (var frame in frames) {
                     var method = frame.GetMethod();
                     if (assembliesToStop.Contains(method.Module.Assembly))
                         break;

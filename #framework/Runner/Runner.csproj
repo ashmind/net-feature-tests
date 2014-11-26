@@ -127,6 +127,7 @@
     <Compile Include="Sources\MetadataKeys.cs" />
     <Compile Include="Sources\1_GeneralInfoTableSource.cs" />
     <Compile Include="Sources\MetadataSupport\HttpDataProvider.cs" />
+    <Compile Include="Sources\MetadataSupport\HttpDataRequestException.cs" />
     <Compile Include="Sources\MetadataSupport\LicenseInfo.cs" />
     <Compile Include="Sources\MetadataSupport\LicenseResolver.cs" />
     <Compile Include="Sources\MetadataSupport\LocalPackageCache.cs" />
@@ -154,9 +155,13 @@
       <Project>{257c6c29-5704-4dd8-813a-c6a3c04c1204}</Project>
       <Name>DependencyInjection</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Serializers\Serializers.csproj">
+      <Project>{b959e296-e27e-4d5c-aa9d-b267e38d58c3}</Project>
+      <Name>Serializers</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Shared\Shared.csproj">
       <Project>{7db72f25-0a59-4bc9-b5ab-1f504f647580}</Project>
-      <Name>FeatureTests.Shared</Name>
+      <Name>Shared</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\ObjectMappers\ObjectMappers.csproj">
       <Project>{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}</Project>
