@@ -91,6 +91,7 @@ namespace FeatureTests.Runner {
             catch (Exception ex) {
                 console.Red.Line(ex);
             }
+            Console.ReadKey();
         }
 
         private static IReadOnlyCollection<string> GetAssemblyPaths() {
