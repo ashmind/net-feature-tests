@@ -70,6 +70,10 @@
     <Reference Include="Common.Logging.Core">
       <HintPath>..\#packages\Common.Logging.Core.2.2.0\lib\net40\Common.Logging.Core.dll</HintPath>
     </Reference>
+    <Reference Include="DryIoc, Version=2.0.0.123, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\#packages\DryIoc.dll.2.0.0-preview123\lib\net45\DryIoc.dll</HintPath>
+    </Reference>
     <Reference Include="Dynamo.Ioc">
       <HintPath>..\#packages\Dynamo.Ioc.3.0.2.0\lib\net45\Dynamo.Ioc.dll</HintPath>
     </Reference>
