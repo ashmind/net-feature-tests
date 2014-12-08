@@ -46,15 +46,15 @@ namespace FeatureTests.On.ObjectMappers {
         [Feature]
         [DisplayName("DateTime ⇒ DateTimeOffset?")]
         public void DateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) {
-            var now = DateTime.Now;
-            AssertNullableMappingWorksFor(mapper, now, (DateTimeOffset?)now);
+            var date = new DateTime(635522607077343456);
+            AssertNullableMappingWorksFor(mapper, date, (DateTimeOffset?)date);
         }
 
         [Feature]
         [DisplayName("DateTime? ⇒ DateTimeOffset?")]
         public void NullableDateTimeToNullableDateTimeOffset(IObjectMapperAdapter mapper) {
-            var now = DateTime.Now;
-            AssertNullableMappingWorksFor(mapper, (DateTime?)now, (DateTimeOffset?)now);
+            var date = new DateTime(635522607077343456);
+            AssertNullableMappingWorksFor(mapper, (DateTime?)date, (DateTimeOffset?)date);
         }
 
         private static void AssertNullableMappingWorksFor<TSource, TTarget>(IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue, TTarget targetValue = default(TTarget)) {

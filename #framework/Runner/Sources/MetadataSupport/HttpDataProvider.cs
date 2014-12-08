@@ -24,9 +24,10 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
         }
 
         public async Task<string> GetStringAsync(Uri url) {
-            using (var client = CreateHttpClient()) {
-                var response = await client.GetAsync(url);
-                response.EnsureSuccessStatusCode();
+            using (var client = CreateHttpClient())
+            using (var response = await client.GetAsync(url)) {
+                if (!response.IsSuccessStatusCode)
+                    throw new HttpDataRequestException(response.StatusCode);
 
                 return await response.Content.ReadAsStringAsync();
             }

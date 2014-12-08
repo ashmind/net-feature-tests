@@ -75,17 +75,17 @@ namespace FeatureTests.On.ObjectMappers {
         [Feature]
         [DisplayName("DateTime ⇒ DateTime")]
         public void DateTimeToDateTime(IObjectMapperAdapter mapper) {
-            var now = DateTime.Now;
-            AssertPrimitiveMappingWorksFor(mapper, now, now);
+            var date = new DateTime(635522607077343456);
+            AssertPrimitiveMappingWorksFor(mapper, date, date);
         }
 
         [Feature]
         [DisplayName("DateTime ⇒ DateTimeOffset")]
         public void DateTimeToDateTimeOffset(IObjectMapperAdapter mapper) {
-            var now = DateTime.Now;
-            AssertPrimitiveMappingWorksFor(mapper, now, (DateTimeOffset)now);
+            var date = new DateTime(635522607077343456);
+            AssertPrimitiveMappingWorksFor(mapper, date, (DateTimeOffset)date);
         }
-        
+
         private static void AssertPrimitiveMappingWorksFor<TSource, TTarget>(IObjectMapperAdapter mapper, TSource sourceValue, TTarget expectedValue) {
             mapper.CreateMap<Wrapper<TSource>, Wrapper<TTarget>>();
 

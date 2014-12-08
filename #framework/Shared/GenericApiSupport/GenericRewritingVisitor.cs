@@ -20,25 +20,43 @@ namespace FeatureTests.Shared.GenericApiSupport {
             return Expression.Call(Visit(node.Object), rewrittenMethod, Visit(node.Arguments));
         }
 
-        private MethodInfo RewriteMethodIfRequired(MethodInfo method) {
+        protected override Expression VisitNew(NewExpression node) {
+            var rewrittenConstructor = RewriteMethodIfRequired(node.Constructor);
+            if (rewrittenConstructor == node.Constructor)
+                return base.VisitNew(node);
+
+            return Expression.New(rewrittenConstructor, node.Arguments);
+        }
+
+        private TMethodBase RewriteMethodIfRequired<TMethodBase>(TMethodBase method)
+            where TMethodBase : MethodBase
+        {
             var rewrittenType = this.rewriteType(method.DeclaringType);
             if (rewrittenType != method.DeclaringType) {
-                var newMethod = rewrittenType.GetMethods(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                var newMethod = rewrittenType.GetMembers(BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic)
+                                             .OfType<TMethodBase>()
                                              .Single(m => m.MetadataToken == method.MetadataToken);
-                if (newMethod.IsGenericMethodDefinition)
-                    newMethod = newMethod.MakeGenericMethod(method.GetGenericArguments().Select(this.rewriteType).ToArray());
+
+                if (newMethod.IsGenericMethodDefinition) {
+                    var newMethodInfo = (MethodInfo)(object)newMethod;
+                    var newGenericArguments = method.GetGenericArguments().Select(this.rewriteType).ToArray();
+                    newMethod = (TMethodBase)(object)newMethodInfo.MakeGenericMethod(newGenericArguments);
+                }
 
                 return this.RewriteMethodIfRequired(newMethod);
             }
+
+            if (!method.IsGenericMethod)
+                return method;
 
             var arguments = method.GetGenericArguments();
             var rewritten = arguments.Select(this.rewriteType).ToArray();
             if (rewritten.SequenceEqual(arguments))
                 return method;
 
-            return method.GetGenericMethodDefinition().MakeGenericMethod(rewritten);
+            return (TMethodBase)(object)((MethodInfo)(object)method).GetGenericMethodDefinition().MakeGenericMethod(rewritten);
         }
-
+        
         protected override Expression VisitUnary(UnaryExpression node) {
             if (node.NodeType != ExpressionType.Convert)
                 return base.VisitUnary(node);

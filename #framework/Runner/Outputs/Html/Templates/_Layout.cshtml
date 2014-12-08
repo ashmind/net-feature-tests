@@ -20,11 +20,11 @@
       <nav class="sidebar-nav">
         <ul>
         @foreach (var link in Model.Navigation) {
-          <li>
+          <li class="page-links-root">
             <a href="@link.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@link.Name</a>
             <ul>
             @foreach (var childLink in link.ChildLinks) {
-              <li><a href="@childLink.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@childLink.Name</a></li>
+              <li><a class="child-link" href="@childLink.Url" @(@link.OnCurrentPage ? "data-same-page" : null)>@childLink.Name</a></li>
             }
             </ul>
           </li>

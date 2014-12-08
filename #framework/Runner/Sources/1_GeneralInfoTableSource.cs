@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Xml;
@@ -92,7 +93,16 @@ namespace FeatureTests.Runner.Sources {
             }
 
             cell.DisplayUri = localPackage.LicenseUrl;
-            var licenseInfo = await this.licenseResolver.GetLicenseInfo(localPackage.LicenseUrl);
+            LicenseInfo licenseInfo = null;
+            try {
+                licenseInfo = await this.licenseResolver.GetLicenseInfo(localPackage.LicenseUrl);
+            }
+            catch (HttpDataRequestException ex) {
+                cell.State = FeatureState.Neutral;
+                cell.DisplayValue = ((int)ex.StatusCode).ToString();
+                return;
+            }
+
             if (licenseInfo == null) {
                 cell.State = FeatureState.Neutral;
                 cell.DisplayValue = "unrecognized";

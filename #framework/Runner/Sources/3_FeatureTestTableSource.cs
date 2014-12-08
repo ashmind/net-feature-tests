@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
@@ -15,9 +16,11 @@ using FeatureTests.Shared.ResultData;
 namespace FeatureTests.Runner.Sources {
     public class FeatureTestTableSource : IFeatureTableSource {
         private readonly FeatureTestRunner runner;
+        private readonly ExceptionNormalizer exceptionNormalizer;
 
-        public FeatureTestTableSource(FeatureTestRunner runner) {
+        public FeatureTestTableSource(FeatureTestRunner runner, ExceptionNormalizer exceptionNormalizer) {
             this.runner = runner;
+            this.exceptionNormalizer = exceptionNormalizer;
         }
 
         public IEnumerable<FeatureTable> GetTables(Assembly featureTestAssembly) {
@@ -43,7 +46,7 @@ namespace FeatureTests.Runner.Sources {
                         var cell = table[library, test];
                         var run = testRuns[new { Test = test, LibraryType = library.GetType() }];
 
-                        resultApplyTasks.Add(this.ApplyRunResultToCell(cell, run.Task));
+                        resultApplyTasks.Add(this.ApplyRunResultToCell(cell, run.Task, featureTestAssembly));
                     }
                 }
 
@@ -52,7 +55,7 @@ namespace FeatureTests.Runner.Sources {
             }
         }
 
-        private async Task ApplyRunResultToCell(FeatureCell cell, Task<FeatureTestResult> resultTask) {
+        private async Task ApplyRunResultToCell(FeatureCell cell, Task<FeatureTestResult> resultTask, Assembly testAssembly) {
             var result = await resultTask;
             if (result.Kind == FeatureTestResultKind.Success) {
                 cell.DisplayValue = "pass";
@@ -60,7 +63,7 @@ namespace FeatureTests.Runner.Sources {
                 cell.Details = result.Message;
             }
             else if (result.Kind == FeatureTestResultKind.Failure) {
-                var exceptionString = this.RemoveLocalPaths(result.Exception.ToString());
+                var exceptionString = this.exceptionNormalizer.Normalize(result.Exception, testAssembly);
 
                 cell.DisplayValue = "fail";
                 cell.State = FeatureState.Failure;
@@ -99,10 +102,10 @@ namespace FeatureTests.Runner.Sources {
             return Regex.Replace(exceptionString, @"(?<=\W|^)((?:\w\:|\\\\)[^:\r\n]+)", match => {
                 var path = match.Groups[1].Value;
                 if (File.Exists(path))
-                    return Path.Combine("[removed]", Path.GetFileName(path));
+                    return Path.Combine("[..]", Path.GetFileName(path));
 
                 if (Directory.Exists(path))
-                    return "[removed]";
+                    return "[..]";
 
                 return match.Value;
             });

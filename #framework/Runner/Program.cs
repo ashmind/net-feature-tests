@@ -14,6 +14,8 @@ using FeatureTests.Shared.ResultData;
 namespace FeatureTests.Runner {
     public static class Program {
         public const string AssemblyNamePrefix = "FeatureTests.On.";
+        // ReSharper disable once InconsistentNaming
+        private static readonly FluentConsole.IMainSyntax console = FluentConsole.Instance;
 
         private static void Main(CommandLineArguments args) {
             var cache = new LocalPackageCache(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"]));
@@ -26,7 +28,7 @@ namespace FeatureTests.Runner {
                     new LicenseResolver(httpDataProvider, new Uri(ConfigurationManager.AppSettings["LicensesJsonUrl"]))
                 ),
                 new NetFxSupportTableSource(cache),
-                new FeatureTestTableSource(new FeatureTestRunner())
+                new FeatureTestTableSource(new FeatureTestRunner(), new ExceptionNormalizer())
             };
             var outputs = new IResultOutput[] {
                 new HtmlOutput(new DirectoryInfo(ConfigurationManager.AppSettings["HtmlTemplatesPath"])),
@@ -39,29 +41,36 @@ namespace FeatureTests.Runner {
 
             var assemblyPaths = GetAssemblyPaths();
             var results = assemblyPaths.Select(path => {
-                ConsoleEx.Write(ConsoleColor.White, "Running " + Path.GetFileName(path) + ":");
-                var assembly = Assembly.LoadFrom(path);
+                console.White.Text("Running " + Path.GetFileName(path) + ":");
+                try {
+                    var assembly = Assembly.LoadFrom(path);
 
-                var tables = sources.SelectMany(s => s.GetTables(assembly)).ToArray();
-                CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
+                    var tables = sources.SelectMany(s => s.GetTables(assembly)).ToArray();
+                    CalculateTotal(tables.Single(t => t.Key == MetadataKeys.GeneralInfoTable), tables);
 
-                var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
-                var result = new ResultForAssembly(assembly, tables, outputNamePrefix);
+                    var outputNamePrefix = assembly.GetName().Name.SubstringAfter(AssemblyNamePrefix);
+                    var result = new ResultForAssembly(assembly, tables, outputNamePrefix);
 
-                ConsoleEx.WriteLine(ConsoleColor.Green, " OK");
-                return result;
+                    console.Green.Line(" OK");
+                    return result;
+                }
+                catch (Exception) {
+                    console.Red.Line(" FAIL");
+                    throw;
+                }
             }).ToArray();
 
-            Console.WriteLine();
-            ConsoleEx.WriteLine(ConsoleColor.White, "Creating outputs:");
+            console.NewLine();
+            console.White.Line("Creating outputs:");
             foreach (var output in outputs) {
                 output.Write(outputDirectory, results, args.WatchTemplates);
             }
 
             if (args.WatchTemplates) {
-                Console.WriteLine();
-                ConsoleEx.WriteLine(ConsoleColor.White, "Auto-updating outputs if templates change.");
-                ConsoleEx.WriteLine(ConsoleColor.White, "Press [Enter] to stop.");
+                console.NewLine()
+                       .White
+                       .Line("Auto-updating outputs if templates change.")
+                       .Line("Press [Enter] to stop.");
                 Console.ReadLine();
             }
 
@@ -70,7 +79,7 @@ namespace FeatureTests.Runner {
             }
 
             Console.WriteLine();
-            ConsoleEx.WriteLine(ConsoleColor.Green, "Completed.");
+            console.Green.Line("Completed.");
         }
         
         public static void Main(string[] args) {
@@ -80,7 +89,7 @@ namespace FeatureTests.Runner {
                 Main(parsedArgs);
             }
             catch (Exception ex) {
-                ConsoleEx.WriteLine(ConsoleColor.Red, ex);
+                console.Red.Line(ex);
             }
         }
 

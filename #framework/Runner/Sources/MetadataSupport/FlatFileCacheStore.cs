@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text.RegularExpressions;
 using System.Threading;
@@ -13,8 +14,8 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
         private readonly DirectoryInfo directory;
         private readonly ReaderWriterLockSlim cacheLock = new ReaderWriterLockSlim();
 
-        private const string HeadersSuffix = ".headers";
-        private const string ContentSuffix = ".content";
+        private const string MetaSuffix = ".meta";
+        private const string BodySuffix = ".body";
 
         public FlatFileCacheStore(DirectoryInfo directory) {
             this.directory = directory;
@@ -26,8 +27,8 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             try {
                 cacheLock.EnterWriteLock();
                 var path = GetBaseFilePath(key.ResourceUri);
-                WriteHeaders(path + HeadersSuffix, response);
-                WriteContent(path + ContentSuffix, response);
+                WriteMeta(path + MetaSuffix, response);
+                WriteBody(path + BodySuffix, response);
             }
             finally {
                 if (cacheLock.IsWriteLockHeld)
@@ -51,13 +52,13 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             try {
                 cacheLock.EnterReadLock();
                 var path = GetBaseFilePath(key.ResourceUri);
-                if (!File.Exists(path + ContentSuffix)) {
+                if (!File.Exists(path + BodySuffix)) {
                     response = null;
                     return false;
                 }
 
-                response = new HttpResponseMessage { Content = ReadContent(path + ContentSuffix) };
-                ReadHeaders(response, path + HeadersSuffix);
+                response = new HttpResponseMessage { Content = ReadBody(path + BodySuffix) };
+                ReadMeta(response, path + MetaSuffix);
                 return true;
             }
             finally {
@@ -70,9 +71,9 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             try {
                 cacheLock.EnterWriteLock();
                 var path = GetBaseFilePath(key.ResourceUri);
-                var existed = File.Exists(path + ContentSuffix);
-                File.Delete(path + ContentSuffix);
-                File.Delete(path + HeadersSuffix);
+                var existed = File.Exists(path + BodySuffix);
+                File.Delete(path + BodySuffix);
+                File.Delete(path + MetaSuffix);
 
                 return existed;
             }
@@ -82,33 +83,45 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             }
         }
 
-        private void WriteHeaders(string path, HttpResponseMessage response) {
+        private void WriteMeta(string path, HttpResponseMessage response) {
             var serializer = new JsonSerializer();
             using (var writer = new StreamWriter(path)) {
-                serializer.Serialize(writer, response.Headers.ToDictionary(h => h.Key, h => h.Value));
+                serializer.Serialize(writer, new {
+                    response.StatusCode,
+                    Headers = response.Headers.ToDictionary(h => h.Key, h => h.Value)
+                });
             }
         }
 
-        private void WriteContent(string path, HttpResponseMessage response) {
+        private void WriteBody(string path, HttpResponseMessage response) {
             var bytes = response.Content.ReadAsByteArrayAsync().Result;
             File.WriteAllBytes(path, bytes);
             response.Content = new ByteArrayContent(bytes);
         }
 
-        private void ReadHeaders(HttpResponseMessage response, string path) {
+        private void ReadMeta(HttpResponseMessage response, string path) {
             var serializer = new JsonSerializer();
             using (var reader = new StreamReader(path))
             using (var jsonReader = new JsonTextReader(reader)) {
-                var dictionary = serializer.Deserialize<IDictionary<string, string[]>>(jsonReader);
+                var meta = DeserializeAnonymous(serializer, jsonReader, new {
+                    StatusCode = (HttpStatusCode)0,
+                    Headers = (Dictionary<string, IEnumerable<string>>)null
+                });
+                response.StatusCode = meta.StatusCode;
                 response.Headers.Clear();
-                foreach (var pair in dictionary) {
+                foreach (var pair in meta.Headers) {
                     response.Headers.TryAddWithoutValidation(pair.Key, pair.Value);
                 }
             }
         }
 
-        private HttpContent ReadContent(string path) {
+        private HttpContent ReadBody(string path) {
             return new ByteArrayContent(File.ReadAllBytes(path));
+        }
+
+        // ReSharper disable once UnusedParameter.Local
+        private T DeserializeAnonymous<T>(JsonSerializer serializer, JsonTextReader reader, T template) {
+            return serializer.Deserialize<T>(reader);
         }
 
         private string GetBaseFilePath(string url) {
