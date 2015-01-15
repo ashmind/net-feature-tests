@@ -19,7 +19,7 @@ namespace FeatureTests.On.DependencyInjection
     [SpecialCase(typeof(SimpleInjectorAdapter), @"
         Simple Injector does not inject properties out of the box, but this behavior 
         can be changed by replacing the `Container.Options.PropertySelectionBehavior`.
-        For more info see: https://bit.ly/1cmMxuS.
+        For more info see: https://bit.ly/14soDfe.
     ", Skip = true)]
     public class PropertyTests {
         [Feature]
