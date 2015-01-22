@@ -32,12 +32,6 @@ namespace FeatureTests.On.DependencyInjection {
             For open generic registration, library does not use `Service<T>` to resolve request
             for `IService<X>` if `X` does not match generic constraints on `T`.
         ")]
-        [SpecialCase(typeof(SimpleInjectorAdapter), @"
-            Simple Injector does support filtering based on generic type constraints, but in case of 
-            registering a collection of open generic types, it only allows all elements to be registered at 
-            once. Open generic collections can be registered using `RegisterAllOpenGeneric`.
-            See: http://bit.ly/14DQx7c.
-        ", Skip = true)]
         public void ConstrainsForOpenGenerics(IContainerAdapter adapter) {
             adapter.RegisterTransient(typeof(IGenericService<>), typeof(GenericService<>));
             adapter.RegisterTransient(typeof(IGenericService<>), typeof(GenericServiceWithIService2Constraint<>));

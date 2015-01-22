@@ -42,11 +42,6 @@ namespace FeatureTests.On.DependencyInjection {
 
         [Feature]
         [DisplayName("IEnumerable<IService>")]
-        [SpecialCase(typeof(SimpleInjectorAdapter), @"
-            Simple Injector does support resolving `IEnumerable<T>`, but requires a single registration 
-            using one of the RegisterAll methods to register all types at once, which is a different
-            strategy than the other frameworks use.
-        ", Skip = false)]
         public void Enumerable(IContainerAdapter adapter) {
             this.AssertResolvesListDependencyFor<ServiceWithListConstructorDependency<IEnumerable<IService>>>(adapter);
         }

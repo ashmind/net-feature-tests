@@ -24,7 +24,7 @@ namespace FeatureTests.On.DependencyInjection {
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
             Simple Injector does not allow resolving types with multiple constructors out of the box, but this 
             behavior can be changed by replacing the `Container.Options.ConstructorResolutionBehavior`.
-            For more info see: https://bit.ly/13WKdRT.
+            For more info see: https://bit.ly/1uqDIYF.
         ", Skip = true)]
         public void ReasonableConstructorSelection(IContainerAdapter adapter) {
             adapter.RegisterType<IService, IndependentService>();
@@ -46,6 +46,11 @@ namespace FeatureTests.On.DependencyInjection {
             added before Build.  
             This can be inconvenient for dynamic situations such as adding plugins.
         ")]
+        [SpecialCase(typeof(SimpleInjectorAdapter), @"
+            Simple Injector does allow doing any explicit registrations after the first service has been
+            resolved. The rational behind this is described here: https://bit.ly/1yfdRqd. That article also
+            describes how to allow registrations to be made at a later point in time.
+        ", Skip = true)]
         public void RegistrationAtAnyStage(IContainerAdapter adapter) {
             adapter.RegisterType<IService, IndependentService>();
             adapter.Resolve<IService>();

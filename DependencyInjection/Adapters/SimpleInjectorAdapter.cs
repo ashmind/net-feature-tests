@@ -49,21 +49,18 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         }
 
         private void Register(Type serviceType, Type implementationType, Lifestyle lifestyle) {
-            var isOpenGeneric = serviceType.IsGenericTypeDefinition;
-
-            if (isOpenGeneric) {
+            if (serviceType.IsGenericTypeDefinition) {
                 this.container.RegisterOpenGeneric(serviceType, implementationType, lifestyle);
             }
             else {
                 this.container.Register(serviceType, implementationType, lifestyle);
-
-                // Registering collections in Simple Injector is done using the RegisterAll overloads, but
-                // this forces all elements to be registered at once. For integration scenarios, the
-                // AppendToCollection extension method can be used. This allows adding elements to a collection
-                // one by one.
-                this.container.AppendToCollection(serviceType,
-                    lifestyle.CreateRegistration(serviceType, implementationType, this.container));
             }
+
+            // Registering collections in Simple Injector is done using the RegisterAll overloads, but
+            // this forces all elements to be registered at once. For integration scenarios, the
+            // AppendToCollection extension method can be used. This allows adding elements to a collection
+            // one by one.
+            this.container.AppendToCollection(serviceType, implementationType);
         }
     }
 }
