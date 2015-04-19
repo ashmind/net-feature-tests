@@ -16,11 +16,11 @@ namespace FeatureTests.On.DependencyInjection
         I have not yet decided whether this table is worth keeping, so do not assign much weight to these tests.     
     ")]
     [FeatureScoring(FeatureScoring.NotScored)]
-    [SpecialCase(typeof(SimpleInjectorAdapter), @"
-        Simple Injector does not inject properties out of the box, but this behavior 
-        can be changed by replacing the `Container.Options.PropertySelectionBehavior`.
-        For more info see: https://bit.ly/14soDfe.
-    ", Skip = true)]
+    [SpecialCase(typeof(SimpleInjectorAdapter),
+        "Simple Injector does not inject properties out of the box, but this behavior can be changed by " +
+        "replacing the Container.Options.PropertySelectionBehavior. For more info see: " +
+        "https://simpleinjector.org/noprop.",
+        Skip = true)]
     public class PropertyTests {
         [Feature]
         [DisplayName("Simple dependency")]
