@@ -22,7 +22,7 @@ namespace FeatureTests.On.DependencyInjection {
             most resolvable dependencies.
         ")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
-            Simple Injector does not allow resolving types with multiple constructors out of the box, but this
+            Simple Injector does not allow resolving types with multiple constructors out of the box, but this 
             behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.
             For more info see: https://simpleinjector.org/xtpcr.
         ", Skip = true)]
@@ -48,8 +48,8 @@ namespace FeatureTests.On.DependencyInjection {
         ")]
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
             Simple Injector does not allow doing any explicit registrations after the first service has been
-            resolved. The rational behind this is described here: https://simpleinjector.org/locked.
-            That resource also describes how to allow registrations to be made at a later point in time.
+            resolved. The rational behind this is described here: https://simpleinjector.org/locked. That resource also
+            describes how to allow registrations to be made at a later point in time.
         ", Skip = true)]
         public void RegistrationAtAnyStage(IContainerAdapter adapter) {
             adapter.RegisterType<IService, IndependentService>();
