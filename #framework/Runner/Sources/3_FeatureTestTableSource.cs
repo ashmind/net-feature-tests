@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using AshMind.Extensions;
@@ -16,10 +13,12 @@ using FeatureTests.Shared.ResultData;
 namespace FeatureTests.Runner.Sources {
     public class FeatureTestTableSource : IFeatureTableSource {
         private readonly FeatureTestRunner runner;
+        private readonly AttributeTextCleaner attributeCleaner;
         private readonly ExceptionNormalizer exceptionNormalizer;
 
-        public FeatureTestTableSource(FeatureTestRunner runner, ExceptionNormalizer exceptionNormalizer) {
+        public FeatureTestTableSource(FeatureTestRunner runner, AttributeTextCleaner attributeCleaner, ExceptionNormalizer exceptionNormalizer) {
             this.runner = runner;
+            this.attributeCleaner = attributeCleaner;
             this.exceptionNormalizer = exceptionNormalizer;
         }
 
@@ -67,7 +66,7 @@ namespace FeatureTests.Runner.Sources {
 
                 cell.DisplayValue = "fail";
                 cell.State = FeatureState.Failure;
-                cell.Details = exceptionString;
+                cell.Details = ConvertExceptionToMarkdown(exceptionString);
                 cell.RawError = exceptionString;
             }
             else if (result.Kind == FeatureTestResultKind.SkippedDueToDependency) {
@@ -82,33 +81,17 @@ namespace FeatureTests.Runner.Sources {
             }
         }
 
+        private string ConvertExceptionToMarkdown(string exceptionString) {
+            return Regex.Replace(exceptionString, "^", "    ", RegexOptions.Multiline);
+        }
+
         private Feature ConvertToFeature(MethodInfo test) {
             return new Feature(test, FeatureTestAttributeHelper.GetDisplayName(test)) { Description = this.GetDescription(test) };
         }
 
         private string GetDescription(MemberInfo member) {
             var description = member.GetCustomAttributes<DescriptionAttribute>().Select(a => a.Description).SingleOrDefault();
-            if (description.IsNullOrEmpty())
-                return description;
-
-            // remove all spaces at the start of the line
-            return Regex.Replace(description, @"^ +", "", RegexOptions.Multiline);
-        }
-        
-        /// <summary>
-        /// Removes all paths that are potentially local.
-        /// </summary>
-        private string RemoveLocalPaths(string exceptionString) {
-            return Regex.Replace(exceptionString, @"(?<=\W|^)((?:\w\:|\\\\)[^:\r\n]+)", match => {
-                var path = match.Groups[1].Value;
-                if (File.Exists(path))
-                    return Path.Combine("[..]", Path.GetFileName(path));
-
-                if (Directory.Exists(path))
-                    return "[..]";
-
-                return match.Value;
-            });
+            return this.attributeCleaner.CleanWhitespace(description);
         }
     }
 }
