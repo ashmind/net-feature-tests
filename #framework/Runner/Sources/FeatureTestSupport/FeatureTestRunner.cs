@@ -9,6 +9,12 @@ using FeatureTests.Shared.InfrastructureSupport;
 
 namespace FeatureTests.Runner.Sources.FeatureTestSupport {
     public class FeatureTestRunner {
+        private readonly AttributeTextCleaner attributeCleaner;
+
+        public FeatureTestRunner(AttributeTextCleaner attributeCleaner) {
+            this.attributeCleaner = attributeCleaner;
+        }
+
         // potentially I could have used Xunit runners, but they are a bit annoying to get through NuGet
         public IReadOnlyCollection<FeatureTestRun> RunAllTests(Assembly assembly) {
             var all = assembly.GetTypes()
@@ -55,7 +61,7 @@ namespace FeatureTests.Runner.Sources.FeatureTestSupport {
                            ?? this.GetSpecialCase(test.DeclaringType, adapterType);
 
             if (specialCase != null && specialCase.Skip)
-                return new FeatureTestResult(FeatureTestResultKind.SkippedDueToSpecialCase, specialCase.Comment);
+                return new FeatureTestResult(FeatureTestResultKind.SkippedDueToSpecialCase, this.attributeCleaner.CleanWhitespace(specialCase.Comment));
             
             foreach (var dependency in dependencies.OrderBy(d => d.Method.Name)) {
                 var result = await dependency.Task;
@@ -82,7 +88,7 @@ namespace FeatureTests.Runner.Sources.FeatureTestSupport {
                 }
             }
 
-            var comment = specialCase != null ? specialCase.Comment : null;
+            var comment = specialCase != null ? this.attributeCleaner.CleanWhitespace(specialCase.Comment) : null;
             return new FeatureTestResult(FeatureTestResultKind.Success, comment);
         }
 

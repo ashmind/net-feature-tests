@@ -20,7 +20,8 @@ namespace FeatureTests.Runner {
         private static void Main(CommandLineArguments args) {
             var cache = new LocalPackageCache(Path.GetFullPath(ConfigurationManager.AppSettings["NuGetPackagesPath"]));
             var httpDataProvider = new HttpDataProvider(new DirectoryInfo("HttpCache"));
-            
+
+            var attributeCleaner = new AttributeTextCleaner();
             var sources = new IFeatureTableSource[] {
                 new GeneralInfoTableSource(
                     cache,
@@ -28,7 +29,7 @@ namespace FeatureTests.Runner {
                     new LicenseResolver(httpDataProvider, new Uri(ConfigurationManager.AppSettings["LicensesJsonUrl"]))
                 ),
                 new NetFxSupportTableSource(cache),
-                new FeatureTestTableSource(new FeatureTestRunner(), new ExceptionNormalizer())
+                new FeatureTestTableSource(new FeatureTestRunner(attributeCleaner), attributeCleaner, new ExceptionNormalizer())
             };
             var outputs = new IResultOutput[] {
                 new HtmlOutput(new DirectoryInfo(ConfigurationManager.AppSettings["HtmlTemplatesPath"])),

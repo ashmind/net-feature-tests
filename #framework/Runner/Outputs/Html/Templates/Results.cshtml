@@ -30,7 +30,7 @@
       @foreach (var cell in row.Item2) {
         <td class="@Format.GetCssClassesForCell(cell)">
         @if (cell.HasDetails) {
-            <span title="@cell.Details">@Format.DisplayValue(cell.DisplayValue)</span>
+            <span title="@Format.Description(cell.Details)">@Format.DisplayValue(cell.DisplayValue)</span>
         }
         else if (cell.DisplayUri != null) {
             <a href="@cell.DisplayUri">@Format.DisplayValue(cell.DisplayValue)</a>

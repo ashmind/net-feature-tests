@@ -24,6 +24,7 @@ namespace FeatureTests.On.DependencyInjection {
         [SpecialCase(typeof(SimpleInjectorAdapter), @"
             Simple Injector does not allow resolving types with multiple constructors out of the box, but this 
             behavior can be changed by replacing the Container.Options.ConstructorResolutionBehavior.
+
             For more info see: https://simpleinjector.org/xtpcr.
         ", Skip = true)]
         public void ReasonableConstructorSelection(IContainerAdapter adapter) {

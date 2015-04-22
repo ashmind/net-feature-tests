@@ -318,6 +318,16 @@ td.concern .with-tooltip {
     margin-top: 1em;
 }
 
+.tooltipster-custom .tooltipster-content a {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.tooltipster-custom .tooltipster-content pre {
+    white-space: pre-wrap;
+    margin: 0;
+}
+
 code {
     font-family: Consolas, monaco, monospace;
 }
