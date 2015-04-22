@@ -5,14 +5,12 @@ using System.Reflection;
 using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 using Grace.DependencyInjection;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
-using Grace.DependencyInjection.Lifestyle;
 using Grace.MVC.DependencyInjection;
 using Grace.MVC.Extensions;
 
 namespace FeatureTests.On.DependencyInjection.Adapters {
 	public class GraceAdapter : ContainerAdapterBase {
 		private readonly DependencyInjectionContainer container;
-	    private IInjectionScope webRequestScope;
 
 		public GraceAdapter() {
 			this.container = new DependencyInjectionContainer { ThrowExceptions = true };
@@ -28,11 +26,11 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 		}
 
 		public override void RegisterSingleton(Type serviceType, Type implementationType) {
-			this.container.Configure(c => c.Export(implementationType).As(serviceType).AndSingleton());
+			this.container.Configure(c => c.Export(implementationType).As(serviceType).Lifestyle.Singleton());
 		}
 
         public override void RegisterPerWebRequest(Type serviceType, Type implementationType) {
-         this.container.Configure(c => c.Export(implementationType).As(serviceType).UsingLifestyle(new SingletonPerRequestLifestyle()));
+            this.container.Configure(c => c.Export(implementationType).As(serviceType).Lifestyle.SingletonPerRequest());
         }
 
 		public override void RegisterInstance(Type serviceType, object instance) {
@@ -48,7 +46,6 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 		}
 
 		public override IEnumerable<object> ResolveAll(Type serviceType) {
-
 			return this.container.LocateAll(serviceType);
 		}
 	}
