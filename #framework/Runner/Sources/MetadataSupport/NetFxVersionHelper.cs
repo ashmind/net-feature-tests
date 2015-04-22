@@ -8,6 +8,24 @@ using NuGet;
 namespace FeatureTests.Runner.Sources.MetadataSupport {
     // in real application it should not be static or helper
     public static class NetFxVersionHelper {
+
+        public static IEnumerable<FrameworkName> Split(FrameworkName version) {
+            if (!version.IsPortableFramework()) {
+                yield return version;
+                yield break;
+            }
+
+            var portable = NetPortableProfile.Parse(version.Profile);
+            if (portable == null) {
+                yield return version;
+                yield break;
+            }
+
+            foreach (var supportedVersion in portable.SupportedFrameworks) {
+                yield return supportedVersion;
+            }
+        }
+
         public static bool ShouldDisplay(FrameworkName version) {
             var normalized = VersionUtility.GetShortFrameworkName(version);
             return !normalized.StartsWith("portable");
@@ -22,11 +40,14 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             else if (normalized.StartsWith("win")) {
                 order = "2-";
             }
+            else if (normalized.StartsWith("wpa")) {
+                order = "4-";
+            }
             else if (normalized.StartsWith("wp")) {
                 order = "3-";
             }
             else if (normalized.StartsWith("sl")) {
-                order = "4-";
+                order = "5-";
             }
 
             order += version.Version.Major + "." + version.Version.Minor;
@@ -45,15 +66,16 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
 
             // MORE HACKS
             var result = normalized;
-            result = Regex.Replace(result, @"^net(?=\d)",          ".NET ");
-            result = Regex.Replace(result, @"(\d+(?:\.\d+)*)-cf$", "CF $1");
+            result = Regex.Replace(result, @"^net(?=\d)",          ".NET");
+            result = Regex.Replace(result, @"(\d+(?:\.\d+)*)-cf$", " CF $1");
             result = Regex.Replace(result, @"^(sl\d)\d$",          "$1"); // Silverlight normally uses one digit
             result = Regex.Replace(result, @"^sl(?=\d)",           "Silverlight ");
-            result = Regex.Replace(result, @"^wp(?=\d)",           "Windows Phone ");
+            result = Regex.Replace(result, @"^wp(?=\d)",           "Windows Phone");
             result = Regex.Replace(result, @"^wp$",                "Windows Phone");
             result = Regex.Replace(result, @"^win(dows)?(8(0)?)?$", "Windows 8", RegexOptions.ExplicitCapture);
             result = Regex.Replace(result, @"^win81$",             "Windows 8.1");
-            result = Regex.Replace(result, @"\d{2,}",              match => string.Join(".", match.Value.ToCharArray())); // 45 => 4.5, etc
+            result = Regex.Replace(result, @"^wpa81$",             "Windows Universal (8.1)");
+            result = Regex.Replace(result, @"\d{2,}",              match => " " + string.Join(".", match.Value.ToCharArray())); // 45 => 4.5, etc
             result = Regex.Replace(result, @"-Client",             " (Client Profile)");
 
             return result;

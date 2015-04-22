@@ -4,6 +4,8 @@
     "url": "http://autofac.org",
     "version": "3.5.0.0",
     "supports": [
+      "MonoAndroid10",
+      "MonoTouch10",
       "net40",
       "net40-Client",
       "net45",
@@ -254,6 +256,8 @@
     "supports": [
       "MonoAndroid",
       "MonoTouch",
+      "MonoAndroid10",
+      "MonoTouch10",
       "net40",
       "net40-Client",
       "net45",
@@ -408,6 +412,8 @@
     "url": "https://bitbucket.org/dadhi/dryioc",
     "version": "2.0.0.123",
     "supports": [
+      "MonoAndroid10",
+      "MonoTouch10",
       "net35",
       "net35-Client",
       "net40",
@@ -685,6 +691,8 @@
     "url": "https://github.com/ipjohnson/Grace",
     "version": "2.4.2.0",
     "supports": [
+      "MonoAndroid10",
+      "MonoTouch10",
       "net45",
       "net451",
       "win",
@@ -1972,6 +1980,8 @@
     "supports": [
       "MonoAndroid",
       "MonoTouch",
+      "MonoAndroid10",
+      "MonoTouch10",
       "net11",
       "net20",
       "net30",
@@ -2704,6 +2714,8 @@
     "url": "http://unity.codeplex.com",
     "version": "3.5.0.0",
     "supports": [
+      "MonoAndroid10",
+      "MonoTouch10",
       "net45",
       "net451",
       "win",

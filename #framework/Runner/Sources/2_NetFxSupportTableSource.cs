@@ -26,6 +26,7 @@ namespace FeatureTests.Runner.Sources {
             var allVersionsGrouped = libraries.Where(l => l.PackageId != null)
                                               .Select(l => this.packageCache.GetPackage(l.PackageId))
                                               .SelectMany(p => p.GetSupportedFrameworks())
+                                              .SelectMany(NetFxVersionHelper.Split)
                                               .Where(NetFxVersionHelper.ShouldDisplay)
                                               .GroupBy(NetFxVersionHelper.GetDisplayName)
                                               .OrderBy(g => NetFxVersionHelper.GetDisplayOrder(g.First()))
