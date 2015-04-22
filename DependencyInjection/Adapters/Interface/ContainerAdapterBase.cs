@@ -43,7 +43,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters.Interface {
         }
 
         protected Exception PerWebRequestMayNotBePossible() {
-            return new NotSupportedException("I am not sure if " + Name + " can allow PerRequest lifetime.");
+            return new NotSupportedException("I am not sure if " + Name + " can support PerRequest lifetime.");
         }
     }
 }

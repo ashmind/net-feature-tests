@@ -93,9 +93,5 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
             this.container = this.initialBuilder.Build();
             this.initialBuilder = null;
         }
-
-        public override bool CrashesOnListRecursion {
-            get { return true; }
-        }
     }
 }
