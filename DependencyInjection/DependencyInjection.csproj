@@ -77,6 +77,18 @@
     <Reference Include="Dynamo.Ioc.Extensions">
       <HintPath>..\#packages\Dynamo.Ioc.Extensions.3.0.1.1\lib\net45\Dynamo.Ioc.Extensions.dll</HintPath>
     </Reference>
+    <Reference Include="EndjinCoreComposition">
+      <HintPath>..\#packages\Endjin.Core.Composition.2.2.0.42\lib\Net45\EndjinCoreComposition.dll</HintPath>
+    </Reference>
+    <Reference Include="EndjinCoreCompositionNet45">
+      <HintPath>..\#packages\Endjin.Core.Composition.2.2.0.42\lib\Net45\EndjinCoreCompositionNet45.dll</HintPath>
+    </Reference>
+    <Reference Include="EndjinCoreContainer">
+      <HintPath>..\#packages\Endjin.Core.Composition.2.2.0.42\lib\Net45\EndjinCoreContainer.dll</HintPath>
+    </Reference>
+    <Reference Include="EndjinCoreContainerNet45">
+      <HintPath>..\#packages\Endjin.Core.Composition.2.2.0.42\lib\Net45\EndjinCoreContainerNet45.dll</HintPath>
+    </Reference>
     <Reference Include="Grace, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Grace.2.4.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Grace.dll</HintPath>
@@ -242,6 +254,9 @@
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\CatelAdapter.cs" />
     <Compile Include="Adapters\DryIocAdapter.cs" />
+    <Compile Include="Adapters\EndjinCompositionAdapter.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Adapters\LightInjectAdapter.cs" />
     <Compile Include="Adapters\MefAdapter.cs" />
     <Compile Include="Adapters\GraceAdapter.cs" />
