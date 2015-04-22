@@ -49,6 +49,9 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             else if (normalized.StartsWith("sl")) {
                 order = "5-";
             }
+            else if (normalized.StartsWith("mono", StringComparison.InvariantCultureIgnoreCase)) {
+                order = "6-";
+            }
 
             order += version.Version.Major + "." + version.Version.Minor;
             return order;

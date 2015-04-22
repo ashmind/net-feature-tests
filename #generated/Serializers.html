@@ -289,52 +289,6 @@ n/a        </td>
     </tr>
 
     <tr>
-      <td class="row-name"><span>MonoTouch</span></td>
-        <td class="skipped">
-n/a        </td>
-        <td class="concern">
-no        </td>
-        <td class="skipped">
-n/a        </td>
-        <td class="concern">
-no        </td>
-        <td class="concern">
-no        </td>
-        <td class="concern">
-no        </td>
-        <td class="success">
-yes        </td>
-        <td class="skipped">
-n/a        </td>
-        <td class="concern">
-no        </td>
-        <td class="success">
-yes        </td>
-    </tr>
-    <tr>
-      <td class="row-name"><span>MonoAndroid</span></td>
-        <td class="skipped">
-n/a        </td>
-        <td class="concern">
-no        </td>
-        <td class="skipped">
-n/a        </td>
-        <td class="concern">
-no        </td>
-        <td class="concern">
-no        </td>
-        <td class="concern">
-no        </td>
-        <td class="success">
-yes        </td>
-        <td class="skipped">
-n/a        </td>
-        <td class="concern">
-no        </td>
-        <td class="success">
-yes        </td>
-    </tr>
-    <tr>
       <td class="row-name"><span>.NET 2.0</span></td>
         <td class="skipped">
 n/a        </td>
@@ -564,6 +518,52 @@ no        </td>
         <td class="success">
 yes        </td>
     </tr>
+    <tr>
+      <td class="row-name"><span>MonoTouch</span></td>
+        <td class="skipped">
+n/a        </td>
+        <td class="concern">
+no        </td>
+        <td class="skipped">
+n/a        </td>
+        <td class="concern">
+no        </td>
+        <td class="concern">
+no        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+        <td class="skipped">
+n/a        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+    </tr>
+    <tr>
+      <td class="row-name"><span>MonoAndroid</span></td>
+        <td class="skipped">
+n/a        </td>
+        <td class="concern">
+no        </td>
+        <td class="skipped">
+n/a        </td>
+        <td class="concern">
+no        </td>
+        <td class="concern">
+no        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+        <td class="skipped">
+n/a        </td>
+        <td class="concern">
+no        </td>
+        <td class="success">
+yes        </td>
+    </tr>
   </table>
 </section>
 <section>
@@ -626,7 +626,6 @@ pass        </td>
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Int64' to type 'System.String'.
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -665,7 +664,6 @@ pass        </td>
 Expected: 02-Aug-14 12:34:56
 Actual:   03-Aug-14 00:34:56
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -716,7 +714,6 @@ pass        </td>
    at fastJSON.deserializer.ChangeType(Object value, Type conversionType)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -756,7 +753,6 @@ pass        </td>
 Expected: 02-Aug-14 12:34:56 +03:00
 Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -769,8 +765,6 @@ Parameter name: offset
    at XSerializer.CustomSerializer`1.ConstructorWrapper.Invoke(IDictionary`2 availableValues, IEnumerable`1 serializableProperties, IEnumerable`1&amp;amp; remainingProperties)
    at XSerializer.CustomSerializer`1.NonDefaultConstructorHelper.GetInstance()
    at XSerializer.CustomSerializer`1.DeserializeObject(XmlReader reader)
-   at XSerializer.SerializableProperty.ReadValue(XmlReader reader)
-   at XSerializer.SerializableProperty.ReadValue(XmlReader reader, Object instance)
    at XSerializer.CustomSerializer`1.DefaultConstructorHelper.SetElementPropertyValue(Boolean&amp;amp; shouldIssueRead)
    at XSerializer.CustomSerializer`1.DeserializeObject(XmlReader reader)
    at XSerializer.SerializationExtensions.DeserializeObject(IXmlSerializerInternal serializer, String xml)
@@ -784,7 +778,6 @@ Parameter name: offset
 Expected: 02-Aug-14 12:34:56 +03:00
 Actual:   01-Jan-01 00:00:00 +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -798,7 +791,6 @@ pass        </td>
    at _(Object , Object )
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -843,7 +835,6 @@ pass        </td>
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -900,7 +891,6 @@ pass        </td>
    at RootClassWithSingleProperty`1String\[\]Class.Serialize(RootClassWithSingleProperty`1 )
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.String[], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -928,7 +918,6 @@ Position: First difference is at position 1
 Expected: Object[] { &quot;A&quot;, 5 }
 Actual:   Object[] { &quot;A&quot;, 5 }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -942,7 +931,6 @@ Position: First difference is at position 1
 Expected: Object[] { &quot;A&quot;, 5 }
 Actual:   Object[] { &quot;A&quot;, 5 }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -954,7 +942,6 @@ Position: First difference is at position 1
 Expected: Object[] { &quot;A&quot;, 5 }
 Actual:   Object[] { &quot;A&quot;, &quot;5&quot; }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -980,7 +967,6 @@ pass        </td>
    at RootClassWithSingleProperty`1List`1StringClass.Serialize(RootClassWithSingleProperty`1 )
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.Collections.Generic.List`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -1006,7 +992,6 @@ pass        </td>
    at fastJSON.deserializer.CreateGenericList(List`1 data, Type pt, Type bt, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1029,7 +1014,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.Collections.Generic.IList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -1052,7 +1036,6 @@ pass        </td>
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1070,7 +1053,6 @@ pass        </td>
    at fastJSON.deserializer.CreateGenericList(List`1 data, Type pt, Type bt, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1081,14 +1063,11 @@ pass        </td>
    at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
    at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
    at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
    at System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
    at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
-   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer)
    at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
-   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(String input, Type targetType)
 </code></pre>
 ">fail</span>
         </td>
@@ -1099,7 +1078,6 @@ pass        </td>
    at RootClassWithSingleProperty`1HashSet`1StringClass.Serialize(RootClassWithSingleProperty`1 )
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -1111,7 +1089,6 @@ Position: First difference is at position 0
 Expected: Object[] { &quot;A&quot;, &quot;B&quot; }
 Actual:   Object[] {  }
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -1125,8 +1102,6 @@ pass        </td>
    at XSerializer.ListSerializer`2.&amp;lt;&amp;gt;c__DisplayClassb.&amp;lt;.ctor&amp;gt;b__5(Object collection, Object item)
    at XSerializer.ListSerializer`2.AddItemToCollection(Object collection, Object item)
    at XSerializer.ListSerializer.DeserializeObject(XmlReader reader)
-   at XSerializer.SerializableProperty.ReadValue(XmlReader reader)
-   at XSerializer.SerializableProperty.ReadValue(XmlReader reader, Object instance)
    at XSerializer.CustomSerializer`1.DefaultConstructorHelper.SetElementPropertyValue(Boolean&amp;amp; shouldIssueRead)
    at XSerializer.CustomSerializer`1.DeserializeObject(XmlReader reader)
    at XSerializer.SerializationExtensions.DeserializeObject(IXmlSerializerInternal serializer, String xml)
@@ -1161,7 +1136,6 @@ pass        </td>
    at fastJSON.deserializer.CreateGenericList(List`1 data, Type pt, Type bt, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1172,14 +1146,11 @@ pass        </td>
    at System.Reflection.MethodBase.CheckArguments(Object[] parameters, Binder binder, BindingFlags invokeAttr, CultureInfo culture, Signature sig)
    at System.Reflection.RuntimeMethodInfo.InvokeArgumentsCheck(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
    at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
-   at System.Reflection.MethodBase.Invoke(Object obj, Object[] parameters)
    at System.Web.Script.Serialization.ObjectConverter.AssignToPropertyOrField(Object propertyValue, Object o, String memberName, JavaScriptSerializer serializer, Boolean throwOnError)
    at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
-   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer)
    at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
-   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(String input, Type targetType)
 </code></pre>
 ">fail</span>
         </td>
@@ -1189,7 +1160,6 @@ pass        </td>
    at RootClassWithSingleProperty`1ISet`1StringClass.Serialize(RootClassWithSingleProperty`1 )
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.Collections.Generic.ISet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -1201,12 +1171,10 @@ pass        </td>
    at NFormats.Xml.TypeResolvers.XmlTypeResolver.ResolveTypeName(Type rootType, String typeName)
    at NFormats.Xml.XmlSerializationContext.ReadSystemAttributes(XmlReader reader, Type&amp;amp; valueType)
    at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType, XmlMemberInfo memberInfo)
-   at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, XmlMemberInfo memberInfo)
    at lambda_method(Closure , XmlReader , XmlSerializationContext )
    at NFormats.Xml.Converters.Objects.XmlObjectConverterGenerator.XmlGeneratedObjectConverter.ReadXml(XmlReader reader, XmlSerializationContext context)
    at NFormats.Xml.XmlSerializationContext.ReadXml(XmlReader reader, XmlMemberInfo memberInfo, XmlTypeInfo typeInfo)
    at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType, XmlMemberInfo memberInfo)
-   at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType)
    at NFormats.Xml.XmlSerializer.Deserialize(XmlReader reader, Type valueType)
    at NFormats.Xml.XmlSerializer.Deserialize(TextReader input, Type valueType)
 </code></pre>
@@ -1232,7 +1200,6 @@ Parameter name: source
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1270,7 +1237,6 @@ pass        </td>
    at fastJSON.deserializer.CreateGenericList(List`1 data, Type pt, Type bt, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1293,7 +1259,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.Collections.Generic.IReadOnlyList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -1316,7 +1281,6 @@ pass        </td>
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1348,7 +1312,6 @@ pass        </td>
    at fastJSON.deserializer.CreateGenericList(List`1 data, Type pt, Type bt, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1371,7 +1334,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.Collections.Generic.IReadOnlyCollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -1394,7 +1356,6 @@ pass        </td>
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1412,7 +1373,6 @@ pass        </td>
    at fastJSON.deserializer.CreateGenericList(List`1 data, Type pt, Type bt, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1435,7 +1395,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleProperty`1[[System.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -1458,7 +1417,6 @@ pass        </td>
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1502,7 +1460,6 @@ pass        </td>
    at fastJSON.deserializer.CreateStringKeyDictionary(Dictionary`2 reader, Type pt, Type[] types, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1529,7 +1486,6 @@ pass        </td>
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1538,7 +1494,6 @@ pass        </td>
 Expected: value
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -1577,7 +1532,6 @@ pass        </td>
    at fastJSON.deserializer.CreateStringKeyDictionary(Dictionary`2 reader, Type pt, Type[] types, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1618,7 +1572,6 @@ Actual:   System.String
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1633,7 +1586,6 @@ Actual:   System.String
    at XSerializer.SerializableProperty.WriteValue(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
    at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
    at XSerializer.SerializationExtensions.SerializeObject(IXmlSerializerInternal serializer, Object instance, Encoding encoding, Formatting formatting, ISerializeOptions options)
-   at XSerializer.XmlSerializer`1.Serialize(T instance)
    at lambda_method(Closure )
 </code></pre>
 ">fail</span>
@@ -1648,7 +1600,6 @@ pass        </td>
 Expected: value
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -1657,7 +1608,6 @@ Actual:   (null)
    at fastJSON.deserializer.CreateStringKeyDictionary(Dictionary`2 reader, Type pt, Type[] types, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1672,12 +1622,10 @@ pass        </td>
    at NFormats.Xml.XmlSerializationSettings.GetConverter(XmlContract contract)
    at NFormats.Xml.XmlSerializationSettings.GetTypeInfo(Type valueType)
    at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType, XmlMemberInfo memberInfo)
-   at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, XmlMemberInfo memberInfo)
    at lambda_method(Closure , XmlReader , XmlSerializationContext )
    at NFormats.Xml.Converters.Objects.XmlObjectConverterGenerator.XmlGeneratedObjectConverter.ReadXml(XmlReader reader, XmlSerializationContext context)
    at NFormats.Xml.XmlSerializationContext.ReadXml(XmlReader reader, XmlMemberInfo memberInfo, XmlTypeInfo typeInfo)
    at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType, XmlMemberInfo memberInfo)
-   at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType)
    at NFormats.Xml.XmlSerializer.Deserialize(XmlReader reader, Type valueType)
    at NFormats.Xml.XmlSerializer.Deserialize(TextReader input, Type valueType)
 </code></pre>
@@ -1698,7 +1646,6 @@ pass        </td>
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1707,7 +1654,6 @@ pass        </td>
 Expected: value
 Actual:   (null)
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
 ">fail</span>
         </td>
@@ -1739,7 +1685,6 @@ Actual:   (null)
    at fastJSON.deserializer.CreateStringKeyDictionary(Dictionary`2 reader, Type pt, Type[] types, Dictionary`2 globalTypes)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1761,12 +1706,10 @@ Actual:   Newtonsoft.Json.Linq.JObject
    at NFormats.Xml.XmlSerializationSettings.GetConverter(XmlContract contract)
    at NFormats.Xml.XmlSerializationSettings.GetTypeInfo(Type valueType)
    at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType, XmlMemberInfo memberInfo)
-   at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, XmlMemberInfo memberInfo)
    at lambda_method(Closure , XmlReader , XmlSerializationContext )
    at NFormats.Xml.Converters.Objects.XmlObjectConverterGenerator.XmlGeneratedObjectConverter.ReadXml(XmlReader reader, XmlSerializationContext context)
    at NFormats.Xml.XmlSerializationContext.ReadXml(XmlReader reader, XmlMemberInfo memberInfo, XmlTypeInfo typeInfo)
    at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType, XmlMemberInfo memberInfo)
-   at NFormats.Xml.XmlSerializationContext.Deserialize(XmlReader reader, Type valueType)
    at NFormats.Xml.XmlSerializer.Deserialize(XmlReader reader, Type valueType)
    at NFormats.Xml.XmlSerializer.Deserialize(TextReader input, Type valueType)
 </code></pre>
@@ -1794,7 +1737,6 @@ Actual:   System.String
    at System.Xml.Serialization.XmlReflectionImporter.ImportElement(TypeModel model, XmlRootAttribute root, String defaultNamespace, RecursionLimiter limiter)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -1904,7 +1846,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[System.Collections.Generic.ICollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.ObjectModel.Collection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -2006,7 +1947,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[System.Collections.Generic.ISet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -2110,7 +2050,6 @@ Parameter name: meth
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], FeatureTests.On.Serializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], FeatureTests.On.Serializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]](Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -2196,7 +2135,6 @@ Parameter name: con
    at fastJSON.Reflection.FastCreateInstance(Type objtype)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -2205,9 +2143,7 @@ Parameter name: con
    at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
-   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer)
    at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
-   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(String input, Type targetType)
 </code></pre>
 ">fail</span>
         </td>
@@ -2223,7 +2159,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithCustomConstructor(Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -2250,7 +2185,6 @@ pass        </td>
    at System.Xml.Serialization.ModelScope.GetTypeModel(Type type, Boolean directReference)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -2275,8 +2209,6 @@ While it is a clever workaround, it wouldn't work with truly immutable class, an
 ">Custom constructor: actually called</span></td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
-   at Xunit.Assert.True(Boolean condition)
 </code></pre>
 ">fail</span>
         </td>
@@ -2289,7 +2221,6 @@ Parameter name: con
    at fastJSON.Reflection.FastCreateInstance(Type objtype)
    at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)
    at fastJSON.deserializer.ToObject(String json, Type type)
-   at fastJSON.JSON.ToObject(String json, Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -2298,9 +2229,7 @@ Parameter name: con
    at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
    at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object&amp;amp; convertedObject)
-   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToType(Object o, Type type, JavaScriptSerializer serializer)
    at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)
-   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(String input, Type targetType)
 </code></pre>
 ">fail</span>
         </td>
@@ -2316,7 +2245,6 @@ Parameter name: con
    at NetJSON.NetJSON.GetSerializer[T]()
    at SerializeFeatureTests.On.Serializers.TestTypes.RootClassWithCustomConstructor(Object )
    at NetJSON.NetJSON.Serialize(Type type, Object value)
-   at NetJSON.NetJSON.Serialize(Object value)
 </code></pre>
 ">fail</span>
         </td>
@@ -2336,8 +2264,6 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.TrueException: Assert.True() Failure
-   at Xunit.Assert.True(Boolean condition, String userMessage)
-   at Xunit.Assert.True(Boolean condition)
 </code></pre>
 ">fail</span>
         </td>
@@ -2348,7 +2274,6 @@ pass        </td>
    at System.Xml.Serialization.ModelScope.GetTypeModel(Type type, Boolean directReference)
    at System.Xml.Serialization.XmlReflectionImporter.ImportTypeMapping(Type type, XmlRootAttribute root, String defaultNamespace)
    at System.Xml.Serialization.XmlSerializer..ctor(Type type, String defaultNamespace)
-   at System.Xml.Serialization.XmlSerializer..ctor(Type type)
 </code></pre>
 ">fail</span>
         </td>
@@ -2433,6 +2358,7 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'int'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2540,7 +2466,6 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2553,8 +2478,6 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
@@ -2589,6 +2512,8 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
@@ -2642,6 +2567,7 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'Newtonsoft.Json.Linq.JObject' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2649,6 +2575,7 @@ pass        </td>
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2656,6 +2583,7 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2671,13 +2599,12 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
