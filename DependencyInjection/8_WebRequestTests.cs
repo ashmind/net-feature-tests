@@ -9,7 +9,7 @@ using FeatureTests.Shared;
 
 namespace FeatureTests.On.DependencyInjection
 {
-    [DisplayOrder(6)]
+    [DisplayOrder(8)]
     [DisplayName("Request lifetime")]
     [Description(@"
         Web applications are a very common use for DI containers.  

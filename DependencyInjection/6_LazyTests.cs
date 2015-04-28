@@ -8,7 +8,7 @@ using FeatureTests.On.DependencyInjection.Adapters.Interface;
 using FeatureTests.On.DependencyInjection.TestTypes;
 
 namespace FeatureTests.On.DependencyInjection {
-    [DisplayOrder(5)]
+    [DisplayOrder(6)]
     [DisplayName("Lazy<TService>")]
     [FeatureScoring(FeatureScoring.SinglePoint)]
     [Description(@"

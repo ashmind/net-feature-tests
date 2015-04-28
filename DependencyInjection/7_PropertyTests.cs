@@ -8,7 +8,7 @@ using FeatureTests.Shared;
 
 namespace FeatureTests.On.DependencyInjection
 {
-    [DisplayOrder(6)]
+    [DisplayOrder(7)]
     [DisplayName("Property dependencies")]
     [Description(@"
         While property dependencies are a nice feature, it is rarely a good practice to actually use them.

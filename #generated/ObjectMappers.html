@@ -29,6 +29,7 @@
               <li><a class="child-link" href="DependencyInjection.html#EssentialFunctionality" >Essential functionality</a></li>
               <li><a class="child-link" href="DependencyInjection.html#ListArrayDependencies" >List/array dependencies</a></li>
               <li><a class="child-link" href="DependencyInjection.html#OpenGenerics" >Open generics</a></li>
+              <li><a class="child-link" href="DependencyInjection.html#OptionalParameters" >Optional parameters</a></li>
               <li><a class="child-link" href="DependencyInjection.html#Func" >Func&lt;TService&gt;</a></li>
               <li><a class="child-link" href="DependencyInjection.html#Lazy" >Lazy&lt;TService&gt;</a></li>
               <li><a class="child-link" href="DependencyInjection.html#PropertyDependencies" >Property dependencies</a></li>
@@ -208,23 +209,23 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-1 827 665        </td>
+1 846 292        </td>
         <td class="neutral number">
-325        </td>
+338        </td>
         <td class="neutral number">
-27 336        </td>
+27 563        </td>
         <td class="neutral number">
-549        </td>
+556        </td>
         <td class="neutral number">
-3 243        </td>
+3 345        </td>
         <td class="neutral number">
-623        </td>
+632        </td>
         <td class="neutral number">
-2 058        </td>
+2 078        </td>
         <td class="neutral number">
-2 529        </td>
+2 555        </td>
         <td class="neutral number">
-116 523        </td>
+117 176        </td>
     </tr>
     <tr class="total-hidden">
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -242,7 +243,7 @@ n/a        </td>
         <td class="failure">
 9%        </td>
         <td class="concern">
-60%        </td>
+59%        </td>
         <td class="failure">
 29%        </td>
         <td class="concern">
@@ -1514,8 +1515,14 @@ Actual:   1
 </code></pre>
 ">fail</span>
         </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+</code></pre>
+">fail</span>
+        </td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
 Expected: (null)

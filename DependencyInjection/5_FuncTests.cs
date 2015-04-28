@@ -9,7 +9,7 @@ using FeatureTests.On.DependencyInjection.Adapters.Interface;
 using FeatureTests.On.DependencyInjection.TestTypes;
 
 namespace FeatureTests.On.DependencyInjection {
-    [DisplayOrder(4)]
+    [DisplayOrder(5)]
     [DisplayName("Func<TService>")]
     [Description(@"
         When TService is registered in a container, many frameworks automatically provide Func<..., TService>.

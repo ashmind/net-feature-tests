@@ -258,6 +258,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="4_OptionalTests.cs" />
     <Compile Include="Adapters\AutofacAdapter.cs" />
     <Compile Include="Adapters\CastleAdapter.cs" />
     <Compile Include="Adapters\CatelAdapter.cs" />
@@ -285,16 +286,18 @@
     <Compile Include="Adapters\SpringAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
-    <Compile Include="5_LazyTests.cs" />
-    <Compile Include="4_FuncTests.cs" />
+    <Compile Include="6_LazyTests.cs" />
+    <Compile Include="5_FuncTests.cs" />
     <Compile Include="2_ListTests.cs" />
     <Compile Include="7_PropertyTests.cs" />
     <Compile Include="9_ConvenienceTests.cs" />
     <Compile Include="Adapters\WebRequestSupport\TestHttpApplication.cs" />
     <Compile Include="Adapters\WebRequestSupport\WebRequestTestHelper.cs" />
-    <Compile Include="6_WebRequestTests.cs" />
+    <Compile Include="8_WebRequestTests.cs" />
     <Compile Include="TestTypes\DisposableService.cs" />
+    <Compile Include="TestTypes\ServiceWithDependencyAndOptionalOtherServiceParameter.cs" />
     <Compile Include="TestTypes\ServiceWithDependencyOnServiceWithOtherDependency.cs" />
+    <Compile Include="TestTypes\ServiceWithDependencyAndOptionalInt32Parameter.cs" />
     <Compile Include="TestTypes\ServiceWithRecursiveLazyDependency2.cs" />
     <Compile Include="TestTypes\ServiceWithRecursiveLazyDependency1.cs" />
     <Compile Include="TestTypes\GenericServiceWithIService2Constraint.cs" />

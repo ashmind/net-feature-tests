@@ -29,6 +29,7 @@
               <li><a class="child-link" href="DependencyInjection.html#EssentialFunctionality" data-same-page>Essential functionality</a></li>
               <li><a class="child-link" href="DependencyInjection.html#ListArrayDependencies" data-same-page>List/array dependencies</a></li>
               <li><a class="child-link" href="DependencyInjection.html#OpenGenerics" data-same-page>Open generics</a></li>
+              <li><a class="child-link" href="DependencyInjection.html#OptionalParameters" data-same-page>Optional parameters</a></li>
               <li><a class="child-link" href="DependencyInjection.html#Func" data-same-page>Func&lt;TService&gt;</a></li>
               <li><a class="child-link" href="DependencyInjection.html#Lazy" data-same-page>Lazy&lt;TService&gt;</a></li>
               <li><a class="child-link" href="DependencyInjection.html#PropertyDependencies" data-same-page>Property dependencies</a></li>
@@ -336,47 +337,47 @@ n/a        </td>
       <td class="row-name"><span title="<p>Total downloads of the NuGet package.</p>
 ">Downloads</span></td>
         <td class="neutral number">
-993 531        </td>
+1 004 573        </td>
         <td class="neutral number">
-549 978        </td>
+554 428        </td>
         <td class="neutral number">
-71 294        </td>
+71 514        </td>
         <td class="neutral number">
-9 305        </td>
+9 324        </td>
         <td class="neutral number">
-3 387        </td>
+3 408        </td>
         <td class="neutral number">
-5 974        </td>
+5 979        </td>
         <td class="neutral number">
-4 952        </td>
+5 027        </td>
         <td class="neutral number">
-2 148        </td>
+2 171        </td>
         <td class="neutral number">
-1 116        </td>
+1 133        </td>
         <td class="neutral number">
-3 270        </td>
+3 288        </td>
         <td class="neutral number">
-16 578        </td>
+16 952        </td>
         <td class="neutral number">
-2 975        </td>
+3 047        </td>
         <td class="skipped">
 n/a        </td>
         <td class="neutral number">
-2 246        </td>
+2 266        </td>
         <td class="neutral number">
-3 140        </td>
+3 169        </td>
         <td class="neutral number">
-9 406        </td>
+9 452        </td>
         <td class="neutral number">
-1 941 201        </td>
+1 951 132        </td>
         <td class="neutral number">
-158 143        </td>
+160 604        </td>
         <td class="neutral number">
-56 053        </td>
+56 478        </td>
         <td class="neutral number">
-516 821        </td>
+521 932        </td>
         <td class="neutral number">
-1 527 096        </td>
+1 540 027        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -390,43 +391,43 @@ n/a        </td>
         <td class="success">
 96%        </td>
         <td class="concern">
-46%        </td>
+44%        </td>
         <td class="success">
 100%        </td>
         <td class="failure">
-33%        </td>
+32%        </td>
         <td class="failure">
-38%        </td>
-        <td class="success">
-96%        </td>
-        <td class="concern">
-42%        </td>
-        <td class="failure">
-33%        </td>
-        <td class="concern">
-58%        </td>
+36%        </td>
         <td class="success">
 92%        </td>
+        <td class="failure">
+40%        </td>
+        <td class="failure">
+32%        </td>
         <td class="concern">
-54%        </td>
-        <td class="concern">
-50%        </td>
-        <td class="concern">
-42%        </td>
+56%        </td>
         <td class="success">
-75%        </td>
+88%        </td>
         <td class="concern">
-54%        </td>
+52%        </td>
         <td class="concern">
-58%        </td>
-        <td class="concern">
-67%        </td>
-        <td class="concern">
-46%        </td>
+48%        </td>
+        <td class="failure">
+40%        </td>
         <td class="success">
-75%        </td>
+76%        </td>
+        <td class="concern">
+52%        </td>
+        <td class="concern">
+60%        </td>
+        <td class="concern">
+64%        </td>
+        <td class="concern">
+44%        </td>
         <td class="success">
-75%        </td>
+72%        </td>
+        <td class="success">
+72%        </td>
     </tr>
   </table>
 </section>
@@ -3559,6 +3560,704 @@ pass        </td>
         <td class="skipped">
             <span title="<p>Skipped as IEnumerable<IService> (List/array dependencies) is not supported by this library.</p>
 ">n/a</span>
+        </td>
+    </tr>
+  </table>
+</section>
+<section>
+  <h2 id="OptionalParameters">Optional parameters</h2>
+  <div class="section-description"><p>Optional parameters can be used to specify an optional dependency, e.g.</p>
+
+<p><code>Service(IService required, IOptionalService optional = null)</code></p>
+</div>
+        
+  <table>
+    <tr>
+      <th>Name</th>
+        <th><span>Autofac</span></th>
+        <th><span>Castle</span></th>
+        <th><span>Catel</span></th>
+        <th><span>DryIoc</span></th>
+        <th><span>Dynamo.Ioc</span></th>
+        <th><span>Endjin Composition</span></th>
+        <th><span>Grace</span></th>
+        <th><span>HaveBox</span></th>
+        <th><span>IfInjector</span></th>
+        <th><span>LightCore</span></th>
+        <th><span>LightInject</span></th>
+        <th><span>LinFu</span></th>
+        <th><span>MEF</span></th>
+        <th><span>MicroSliver</span></th>
+        <th><span>Mugen</span></th>
+        <th><span>Munq</span></th>
+        <th><span>Ninject</span></th>
+        <th><span>Simple Injector</span></th>
+        <th><span>Spring.NET</span></th>
+        <th><span>StructureMap</span></th>
+        <th><span>Unity</span></th>
+    </tr>
+
+    <tr>
+      <td class="row-name"><span title="<p>An <code>int</code> optional parameter, with no <code>int</code> values in container.</p>
+">Missing primitive</span></td>
+        <td class="success">
+pass        </td>
+        <td class="success">
+pass        </td>
+        <td class="failure">
+            <span title="<pre><code>Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.
+   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)
+   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)
+   at Catel.IoC.ServiceLocator.&amp;lt;&amp;gt;c__DisplayClass12.&amp;lt;RegisterType&amp;gt;b__10(ServiceLocatorRegistration x)
+   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)
+   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="failure">
+            <span title="<pre><code>System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)
+   at Dynamo.Ioc.IocContainer.Resolve(Type type)
+   at lambda_method(Closure , IResolver )
+   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()
+   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)
+   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Endjin.Core.Container.ContainerException: Unable to resolve component for 'ServiceWithDependencyAndOptionalInt32Parameter' because its dependencies have the following errors:
+    Unable to resolve component for 'Int32' because no instance is registered for that component.
+
+   at Endjin.Core.Container.Container.Resolve(Type type)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate Int32 for parameter optional on ServiceWithDependencyAndOptionalInt32Parameter
+
+1 Locate by type ServiceWithDependencyAndOptionalInt32Parameter in scope 'RootScope' 
+2 Activating type ServiceWithDependencyAndOptionalInt32Parameter  as transient
+3 Importing  constructor parameter optional using name optional
+
+   at lambda_method(Closure , IInjectionScope , IInjectionContext )
+   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)
+   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)
+   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.Exception: Unknown type: Int32
+   at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
+   at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
+   at HaveBox.DependencyStrapper.&amp;lt;&amp;gt;c__DisplayClass7.&amp;lt;DependencyCreateInstanceResolver&amp;gt;b__6(ParameterInfo x)
+   at HaveBox.IEnumerableExtensions.Each[T](IEnumerable`1 enumeration, Action`1 action)
+   at HaveBox.DependencyStrapper.DependencyCreateInstanceResolver(TypeDetails typeDetails, IDictionary`2 dependencyMap)
+   at HaveBox.DependencyStrapper.GetCreateInstanceDelegate(TypeDetails typeDetails, IDictionary`2 dependencyMap)
+   at HaveBox.DependencyStrapper.GetCreateInstance(TypeDetails typeDetails, IDictionary`2 dependencyMap)
+   at HaveBox.DependencyStrapper.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;Strap&amp;gt;b__2(TypeDetails z)
+   at HaveBox.IEnumerableExtensions.Each[T](IEnumerable`1 enumeration, Action`1 action)
+   at HaveBox.DependencyStrapper.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;Strap&amp;gt;b__0(KeyValuePair`2 x)
+   at HaveBox.IEnumerableExtensions.Each[T](IEnumerable`1 enumeration, Action`1 action)
+   at HaveBox.DependencyStrapper.Strap(IDictionary`2 dependencyMap)
+   at HaveBox.Container.StrapAndMarkSingletons(Guid containerId, IDictionary`2 dependencyMap)
+   at HaveBox.Container.Configure(Action`1 registry)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.ArgumentException: GenericArguments[0], 'System.Int32', on 'IfInjector.Resolver.Resolver`1[CType] CreateResolverInstanceGeneric[BType,CType](IfInjector.Bindings.Config.BindingKey, IfInjector.Bindings.Config.IBindingConfig, Boolean)' violates the constraint of type 'BType'. ---&amp;gt; System.Security.VerificationException: Method IfInjector.Injector.CreateResolverInstanceGeneric: type argument 'System.Int32' violates the constraint of type parameter 'BType'.
+   at System.RuntimeMethodHandle.GetStubIfNeeded(RuntimeMethodHandleInternal method, RuntimeType declaringType, RuntimeType[] methodInstantiation)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   --- End of inner exception stack trace ---
+   at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   at IfInjector.Injector.CreateResolverInstance(BindingKey bindingKey, Type implType, IBindingConfig bindingConfig, Boolean isImplicitBinding)
+   at IfInjector.Injector.BindImplicit(BindingKey bindingKey)
+   at IfInjector.Injector.ResolveResolver(BindingKey bindingKey)
+   at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
+   at IfInjector.Injector.Resolve(Type type)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>LightCore.ResolutionFailedException: Exception of type 'LightCore.ResolutionFailedException' was thrown.
+   at LightCore.Activation.Activators.ReflectionActivator.ActivateInstance(ResolutionContext resolutionContext)
+   at LightCore.Registration.RegistrationItem.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;ActivateInstance&amp;gt;b__0()
+   at LightCore.Lifecycle.TransientLifecycle.ReceiveInstanceInLifecycle(Func`1 newInstanceResolver)
+   at LightCore.Registration.RegistrationItem.ActivateInstance(ResolutionContext resolutionContext)
+   at LightCore.Container.Resolve(RegistrationItem registrationItem)
+   at LightCore.Container.ResolveInternal(Type contractType, IEnumerable`1 arguments, IDictionary`2 namedArguments)
+   at LightCore.Container.Resolve(Type contractType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter, service name:  ---&amp;gt; System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter], [Parameter: optional(System.Int32)], [Requested dependency: ServiceType:System.Int32, ServiceName:]
+   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)
+   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)
+   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)
+   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)
+   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)
+   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass9e.&amp;lt;ResolveEmitMethod&amp;gt;b__9a(IEmitter methodSkeleton)
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass39.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__38(IEmitter ms)
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass39.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__38(IEmitter ms)
+   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   --- End of inner exception stack trace ---
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.MissingMethodException: Constructor on type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' not found.
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes, StackCrawlMark&amp;amp; stackMark)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at LinFu.IoC.Configuration.ConstructorInvoke.Invoke(Object target, ConstructorInfo targetMethod, Object[] arguments)
+   at LinFu.IoC.Configuration.DefaultActivator.CreateInstance(IContainerActivationContext context)
+   at LinFu.IoC.ContainerExtensions.AutoCreateInternal(IServiceContainer container, Type concreteType, Object[] additionalArguments)
+   at LinFu.IoC.Configuration.FactoryBuilder.&amp;lt;CreateFactoryMethodInternal&amp;gt;b__4[TService,TImplementation](IFactoryRequest request)
+   at LinFu.IoC.Factories.OncePerRequestFactory`1.CreateInstance(IFactoryRequest request)
+   at LinFu.IoC.Factories.BaseFactory`1.LinFu.IoC.Interfaces.IFactory.CreateInstance(IFactoryRequest request)
+   at LinFu.IoC.DefaultCreator.CreateFrom(IFactoryRequest factoryRequest, IFactory factory)
+   at LinFu.IoC.DefaultGetServiceBehavior.GetService(IServiceRequest serviceRequest)
+   at LinFu.IoC.ServiceContainer.GetService(String serviceName, Type serviceType, Object[] additionalArguments)
+   at LinFu.IoC.ServiceContainer.GetService(Type serviceType, Object[] additionalArguments)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.ComponentModel.Composition.ImportCardinalityMismatchException: No exports were found that match the constraint: 
+    ContractName    FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter
+    RequiredTypeIdentity    FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter
+   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(ImportDefinition definition, AtomicComposition atomicComposition)
+   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(Type type, Type metadataViewType, String contractName, ImportCardinality cardinality)
+   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
+   at lambda_method(Closure )
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.Exception: MicroSliver is unable to set values to primitive/value types in the constructor.
+   at MicroSliver.IoC.Get(Type T)
+   at MicroSliver.IoC.&amp;lt;ProcessCtor&amp;gt;b__7(ParameterInfo p)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at MicroSliver.IoC.ProcessCtor(ICtorInfo ctorInfo)
+   at MicroSliver.IoC.Get(Type T)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="failure">
+            <span title="<pre><code>System.ArgumentException: GenericArguments[0], 'System.Int32', on 'TType Resolve[TType]()' violates the constraint of type 'TType'. ---&amp;gt; System.Security.VerificationException: Method Munq.IDependencyResolver.Resolve: type argument 'System.Int32' violates the constraint of type parameter 'TType'.
+   at System.RuntimeMethodHandle.GetStubIfNeeded(RuntimeMethodHandleInternal method, RuntimeType declaringType, RuntimeType[] methodInstantiation)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   --- End of inner exception stack trace ---
+   at System.RuntimeType.ValidateGenericArguments(MemberInfo definition, RuntimeType[] genericArguments, Exception e)
+   at System.Reflection.RuntimeMethodInfo.MakeGenericMethod(Type[] methodInstantiation)
+   at System.Linq.Expressions.Expression.ApplyTypeArgs(MethodInfo m, Type[] typeArgs)
+   at System.Linq.Expressions.Expression.FindBestMethod(IEnumerable`1 methods, Type[] typeArgs, Expression[] args, MethodInfo&amp;amp; method)
+   at System.Linq.Expressions.Expression.FindMethod(Type type, String methodName, Type[] typeArgs, Expression[] args, BindingFlags flags)
+   at System.Linq.Expressions.Expression.Call(Expression instance, String methodName, Type[] typeArguments, Expression[] arguments)
+   at Munq.CreateInstanceDelegateFactory.BuildExpression(Type type, ParameterExpression container)
+   at Munq.CreateInstanceDelegateFactory.Create(Type tImpl)
+   at Munq.IocContainer.Register(String name, Type tType, Type tImpl)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="failure">
+            <span title="<pre><code>SimpleInjector.ActivationException: The registered delegate for type ServiceWithDependencyAndOptionalInt32Parameter threw an exception. The constructor of type ServiceWithDependencyAndOptionalInt32Parameter contains parameter 'optional' of type Int32 which can not be used for constructor injection because it is a value type. ---&amp;gt; SimpleInjector.ActivationException: The constructor of type ServiceWithDependencyAndOptionalInt32Parameter contains parameter 'optional' of type Int32 which can not be used for constructor injection because it is a value type.
+   at SimpleInjector.Advanced.DefaultConstructorVerificationBehavior.Verify(ParameterInfo parameter)
+   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
+   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
+   at SimpleInjector.ContainerOptions.BuildParameterExpression(ParameterInfo parameter)
+   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)
+   at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
+   at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
+   at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
+   at SimpleInjector.Registration.BuildExpression(InstanceProducer producer)
+   at SimpleInjector.InstanceProducer.BuildExpressionInternal()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at SimpleInjector.InstanceProducer.BuildInstanceCreator()
+   at SimpleInjector.InstanceProducer.GetInstance()
+   --- End of inner exception stack trace ---
+   at SimpleInjector.InstanceProducer.GetInstance()
+   at SimpleInjector.Container.GetInstance(Type serviceType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Spring.Objects.Factory.UnsatisfiedDependencyException: Error creating object with name 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter)' : Unsatisfied dependency expressed through constructor argument with index 1 of type [System.Int32] : No unique object of type [System.Int32] is defined : Unsatisfied dependency of type [System.Int32]: expected at least 1 matching object to wire the [optional] parameter on the constructor of object [FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter)]
+   at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs)
+   at Spring.Objects.Factory.Support.ConstructorResolver.AutowireConstructor(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs)
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.AutowireConstructor(String name, RootObjectDefinition definition, ConstructorInfo[] ctors, Object[] explicitArgs)
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments)
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.InstantiateObject(String name, RootObjectDefinition definition, Object[] arguments, Boolean allowEagerCaching, Boolean suppressConfigure)
+   at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObjectInternal(String name, Type requiredType, Object[] arguments, Boolean suppressConfigure)
+   at Spring.Objects.Factory.Support.DefaultListableObjectFactory.DoGetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects, IDictionary resultCollector)
+   at Spring.Objects.Factory.Support.DefaultListableObjectFactory.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>StructureMap.StructureMapBuildPlanException: Unable to create a build plan for concrete type FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter
+
+new ServiceWithDependencyAndOptionalInt32Parameter(IService, Int32 optional)
+  ┗ IService = **Default**
+           Int32 optional = Required primitive dependency is not explicitly defined
+
+
+1.) Attempting to create a BuildPlan for Instance of FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter -- FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter
+2.) Container.GetInstance(FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter)
+
+   at StructureMap.Pipeline.ConstructorInstance`1.ToBuilder(Type pluginType, Policies policies)
+   at StructureMap.Pipeline.Instance.buildPlan(Type pluginType, Policies policies)
+   at StructureMap.Pipeline.Instance.ResolveBuildPlan(Type pluginType, Policies policies)
+   at StructureMap.BuildSession.BuildNewInSession(Type pluginType, Instance instance)
+   at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session)
+   at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance)
+   at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle)
+   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph)
+   at StructureMap.Container.GetInstance(Type pluginType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Microsoft.Practices.Unity.ResolutionFailedException: Resolution of the dependency failed, type = &quot;FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The type Int32 does not have an accessible constructor.
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter,(none)
+  Resolving parameter &quot;optional&quot; of constructor FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter(FeatureTests.On.DependencyInjection.TestTypes.IService service, System.Int32 optional)
+    Resolving System.Int32,(none)
+ ---&amp;gt; System.InvalidOperationException: The type Int32 does not have an accessible constructor.
+   at Microsoft.Practices.ObjectBuilder2.DynamicMethodConstructorStrategy.ThrowForNullExistingObject(IBuilderContext context)
+   at lambda_method(Closure , IBuilderContext )
+   at Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;GetBuildMethod&amp;gt;b__0(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.DynamicMethodBuildPlan.BuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.BuilderContext.NewBuildUp(NamedTypeBuildKey newBuildKey)
+   at Microsoft.Practices.Unity.ObjectBuilder.NamedTypeDependencyResolverPolicy.Resolve(IBuilderContext context)
+   at lambda_method(Closure , IBuilderContext )
+   at Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;GetBuildMethod&amp;gt;b__0(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.DynamicMethodBuildPlan.BuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context)
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
+   --- End of inner exception stack trace ---
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
+   at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
+   at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
+</code></pre>
+">fail</span>
+        </td>
+    </tr>
+    <tr>
+      <td class="row-name"><span title="<p>An <code>int</code> optional parameter with a default value that should be used.</p>
+">Missing primitive with default value</span></td>
+        <td class="success">
+pass        </td>
+        <td class="success">
+pass        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+        <td class="skipped">
+            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
+">n/a</span>
+        </td>
+    </tr>
+    <tr>
+      <td class="row-name"><span title="<p>An interface optional parameter, with no matching registrations in container.</p>
+">Missing dependency</span></td>
+        <td class="success">
+pass        </td>
+        <td class="success">
+pass        </td>
+        <td class="failure">
+            <span title="<pre><code>Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.
+   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)
+   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)
+   at Catel.IoC.ServiceLocator.&amp;lt;&amp;gt;c__DisplayClass12.&amp;lt;RegisterType&amp;gt;b__10(ServiceLocatorRegistration x)
+   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)
+   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="failure">
+            <span title="<pre><code>System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at Dynamo.Ioc.Index.DirectIndex.Get(Type type)
+   at Dynamo.Ioc.IocContainer.Resolve(Type type)
+   at lambda_method(Closure , IResolver )
+   at Dynamo.Ioc.ExpressionRegistration`1.CreateInstance()
+   at Dynamo.Ioc.TransientLifetime.GetInstance(IInstanceFactoryRegistration registration)
+   at Dynamo.Ioc.ExpressionRegistration`1.GetInstance()
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Endjin.Core.Container.ContainerException: Unable to resolve component for 'ServiceWithDependencyAndOptionalOtherServiceParameter' because its dependencies have the following errors:
+    Unable to resolve component for 'IService2' because no instance is registered for that component.
+
+   at Endjin.Core.Container.Container.Resolve(Type type)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate IService2 for parameter optional on ServiceWithDependencyAndOptionalOtherServiceParameter
+
+1 Locate by type ServiceWithDependencyAndOptionalOtherServiceParameter in scope 'RootScope' 
+2 Activating type ServiceWithDependencyAndOptionalOtherServiceParameter  as transient
+3 Importing  constructor parameter optional using type IService2
+
+   at lambda_method(Closure , IInjectionScope , IInjectionContext )
+   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)
+   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)
+   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.Exception: Unknown type: IService2
+   at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
+   at HaveBox.DependencyStrapper.GetParameterTypeDetails(IDictionary`2 dependencyMap, ParameterInfo parameterInfo)
+   at HaveBox.DependencyStrapper.&amp;lt;&amp;gt;c__DisplayClass7.&amp;lt;DependencyCreateInstanceResolver&amp;gt;b__6(ParameterInfo x)
+   at HaveBox.IEnumerableExtensions.Each[T](IEnumerable`1 enumeration, Action`1 action)
+   at HaveBox.DependencyStrapper.DependencyCreateInstanceResolver(TypeDetails typeDetails, IDictionary`2 dependencyMap)
+   at HaveBox.DependencyStrapper.GetCreateInstanceDelegate(TypeDetails typeDetails, IDictionary`2 dependencyMap)
+   at HaveBox.DependencyStrapper.GetCreateInstance(TypeDetails typeDetails, IDictionary`2 dependencyMap)
+   at HaveBox.DependencyStrapper.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;Strap&amp;gt;b__2(TypeDetails z)
+   at HaveBox.IEnumerableExtensions.Each[T](IEnumerable`1 enumeration, Action`1 action)
+   at HaveBox.DependencyStrapper.&amp;lt;&amp;gt;c__DisplayClass3.&amp;lt;Strap&amp;gt;b__0(KeyValuePair`2 x)
+   at HaveBox.IEnumerableExtensions.Each[T](IEnumerable`1 enumeration, Action`1 action)
+   at HaveBox.DependencyStrapper.Strap(IDictionary`2 dependencyMap)
+   at HaveBox.Container.StrapAndMarkSingletons(Guid containerId, IDictionary`2 dependencyMap)
+   at HaveBox.Container.Configure(Action`1 registry)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>IfInjector.Errors.InjectorException: Error on FeatureTests.On.DependencyInjection.TestTypes.IService2. Unable to resolve Interface and Abstract classes without a configuration.
+   at IfInjector.Bindings.Config.BindingConfigUtils.ThrowInterfaceException[CType]()
+   at lambda_method(Closure )
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.GetResolveExpression()
+   at IfInjector.Injector.ResolveResolverExpression(BindingKey bindingKey)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.GetResolverInvocationExpressionForType(Type parameterType)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileArgumentListExprs(IEnumerable`1 args)
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileConstructorExpr()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.CompileResolverExpression()
+   at IfInjector.Resolver.Expressions.ExpressionCompiler`1.get_InstanceResolver()
+   at IfInjector.Resolver.Resolver`1.CompileResolver()
+   at IfInjector.Resolver.Resolver`1.DoResolve()
+   at IfInjector.Injector.Resolve(Type type)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>LightCore.ResolutionFailedException: Exception of type 'LightCore.ResolutionFailedException' was thrown.
+   at LightCore.Activation.Activators.ReflectionActivator.ActivateInstance(ResolutionContext resolutionContext)
+   at LightCore.Registration.RegistrationItem.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;ActivateInstance&amp;gt;b__0()
+   at LightCore.Lifecycle.TransientLifecycle.ReceiveInstanceInLifecycle(Func`1 newInstanceResolver)
+   at LightCore.Registration.RegistrationItem.ActivateInstance(ResolutionContext resolutionContext)
+   at LightCore.Container.Resolve(RegistrationItem registrationItem)
+   at LightCore.Container.ResolveInternal(Type contractType, IEnumerable`1 arguments, IDictionary`2 namedArguments)
+   at LightCore.Container.Resolve(Type contractType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter, service name:  ---&amp;gt; System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter], [Parameter: optional(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]
+   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)
+   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)
+   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)
+   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)
+   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)
+   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass9e.&amp;lt;ResolveEmitMethod&amp;gt;b__9a(IEmitter methodSkeleton)
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass39.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__38(IEmitter ms)
+   at LightInject.ServiceContainer.&amp;lt;&amp;gt;c__DisplayClass39.&amp;lt;CreateEmitMethodWrapper&amp;gt;b__38(IEmitter ms)
+   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   --- End of inner exception stack trace ---
+   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)
+   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)
+   at LightInject.ServiceContainer.GetInstance(Type serviceType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.MissingMethodException: Constructor on type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' not found.
+   at System.RuntimeType.CreateInstanceImpl(BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes, StackCrawlMark&amp;amp; stackMark)
+   at System.Activator.CreateInstance(Type type, BindingFlags bindingAttr, Binder binder, Object[] args, CultureInfo culture, Object[] activationAttributes)
+   at System.Activator.CreateInstance(Type type, Object[] args)
+   at LinFu.IoC.Configuration.ConstructorInvoke.Invoke(Object target, ConstructorInfo targetMethod, Object[] arguments)
+   at LinFu.IoC.Configuration.DefaultActivator.CreateInstance(IContainerActivationContext context)
+   at LinFu.IoC.ContainerExtensions.AutoCreateInternal(IServiceContainer container, Type concreteType, Object[] additionalArguments)
+   at LinFu.IoC.Configuration.FactoryBuilder.&amp;lt;CreateFactoryMethodInternal&amp;gt;b__4[TService,TImplementation](IFactoryRequest request)
+   at LinFu.IoC.Factories.OncePerRequestFactory`1.CreateInstance(IFactoryRequest request)
+   at LinFu.IoC.Factories.BaseFactory`1.LinFu.IoC.Interfaces.IFactory.CreateInstance(IFactoryRequest request)
+   at LinFu.IoC.DefaultCreator.CreateFrom(IFactoryRequest factoryRequest, IFactory factory)
+   at LinFu.IoC.DefaultGetServiceBehavior.GetService(IServiceRequest serviceRequest)
+   at LinFu.IoC.ServiceContainer.GetService(String serviceName, Type serviceType, Object[] additionalArguments)
+   at LinFu.IoC.ServiceContainer.GetService(Type serviceType, Object[] additionalArguments)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.ComponentModel.Composition.ImportCardinalityMismatchException: No exports were found that match the constraint: 
+    ContractName    FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter
+    RequiredTypeIdentity    FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter
+   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExports(ImportDefinition definition, AtomicComposition atomicComposition)
+   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportsCore(Type type, Type metadataViewType, String contractName, ImportCardinality cardinality)
+   at System.ComponentModel.Composition.Hosting.ExportProvider.GetExportedValueCore[T](String contractName, ImportCardinality cardinality)
+   at lambda_method(Closure )
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>System.Exception: MicroSliver does not have a mapping for interface of type IService2. ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at MicroSliver.IoC.Get(Type T)
+   --- End of inner exception stack trace ---
+   at MicroSliver.IoC.Get(Type T)
+   at MicroSliver.IoC.&amp;lt;ProcessCtor&amp;gt;b__7(ParameterInfo p)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at MicroSliver.IoC.ProcessCtor(ICtorInfo ctorInfo)
+   at MicroSliver.IoC.Get(Type T)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="success">
+pass        </td>
+        <td class="failure">
+            <span title="<pre><code>System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter ---&amp;gt; System.Collections.Generic.KeyNotFoundException: Munq IocContainer failed to resolve FeatureTests.On.DependencyInjection.TestTypes.IService2 ---&amp;gt; System.Collections.Generic.KeyNotFoundException: The given key was not present in the dictionary.
+   at System.Collections.Concurrent.ConcurrentDictionary`2.get_Item(TKey key)
+   at Munq.IocContainer.Resolve(String name, Type type)
+   --- End of inner exception stack trace ---
+   at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
+   at Munq.IocContainer.Resolve(String name, Type type)
+   at Munq.IocContainer.Resolve[TType]()
+   at lambda_method(Closure , IDependencyResolver )
+   at Munq.Registration.GetInstance()
+   at Munq.IocContainer.Resolve(String name, Type type)
+   --- End of inner exception stack trace ---
+   at Munq.IocContainer.HandleUnResolved(Exception knfe, String name, Type type)
+   at Munq.IocContainer.Resolve(String name, Type type)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Ninject.ActivationException: Error activating IService2 using conditional implicit self-binding of IService2
+Provider returned null.
+Activation path:
+  2) Injection of dependency IService2 into parameter optional of constructor of type ServiceWithDependencyAndOptionalOtherServiceParameter
+  1) Request for ServiceWithDependencyAndOptionalOtherServiceParameter
+
+Suggestions:
+  1) Ensure that the provider handles creation requests properly.
+
+   at Ninject.Activation.Context.ResolveInternal(Object scope)
+   at Ninject.Activation.Context.Resolve()
+   at Ninject.KernelBase.&amp;lt;&amp;gt;c__DisplayClass15.&amp;lt;Resolve&amp;gt;b__f(IBinding binding)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.SingleOrDefault[TSource](IEnumerable`1 source)
+   at Ninject.Planning.Targets.Target`1.GetValue(Type service, IContext parent)
+   at Ninject.Planning.Targets.Target`1.ResolveWithin(IContext parent)
+   at Ninject.Activation.Providers.StandardProvider.GetValue(IContext context, ITarget target)
+   at Ninject.Activation.Providers.StandardProvider.&amp;lt;&amp;gt;c__DisplayClass4.&amp;lt;Create&amp;gt;b__2(ITarget target)
+   at System.Linq.Enumerable.WhereSelectArrayIterator`2.MoveNext()
+   at System.Linq.Buffer`1..ctor(IEnumerable`1 source)
+   at System.Linq.Enumerable.ToArray[TSource](IEnumerable`1 source)
+   at Ninject.Activation.Providers.StandardProvider.Create(IContext context)
+   at Ninject.Activation.Context.ResolveInternal(Object scope)
+   at Ninject.Activation.Context.Resolve()
+   at Ninject.KernelBase.&amp;lt;&amp;gt;c__DisplayClass15.&amp;lt;Resolve&amp;gt;b__f(IBinding binding)
+   at System.Linq.Enumerable.WhereSelectEnumerableIterator`2.MoveNext()
+   at System.Linq.Enumerable.Single[TSource](IEnumerable`1 source)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>SimpleInjector.ActivationException: The registered delegate for type ServiceWithDependencyAndOptionalOtherServiceParameter threw an exception. The constructor of type ServiceWithDependencyAndOptionalOtherServiceParameter contains the parameter of type IService2 with name 'optional' that is not registered. Please ensure IService2 is registered in the container, or change the constructor of ServiceWithDependencyAndOptionalOtherServiceParameter. ---&amp;gt; SimpleInjector.ActivationException: The constructor of type ServiceWithDependencyAndOptionalOtherServiceParameter contains the parameter of type IService2 with name 'optional' that is not registered. Please ensure IService2 is registered in the container, or change the constructor of ServiceWithDependencyAndOptionalOtherServiceParameter.
+   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
+   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
+   at SimpleInjector.ContainerOptions.BuildParameterExpression(ParameterInfo parameter)
+   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)
+   at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
+   at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
+   at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
+   at SimpleInjector.Registration.BuildExpression(InstanceProducer producer)
+   at SimpleInjector.InstanceProducer.BuildExpressionInternal()
+   at System.Lazy`1.CreateValue()
+   at System.Lazy`1.LazyInitValue()
+   at System.Lazy`1.get_Value()
+   at SimpleInjector.InstanceProducer.BuildInstanceCreator()
+   at SimpleInjector.InstanceProducer.GetInstance()
+   --- End of inner exception stack trace ---
+   at SimpleInjector.InstanceProducer.GetInstance()
+   at SimpleInjector.Container.GetInstance(Type serviceType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Spring.Objects.Factory.UnsatisfiedDependencyException: Error creating object with name 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter)' : Unsatisfied dependency expressed through constructor argument with index 1 of type [FeatureTests.On.DependencyInjection.TestTypes.IService2] : No unique object of type [FeatureTests.On.DependencyInjection.TestTypes.IService2] is defined : Unsatisfied dependency of type [FeatureTests.On.DependencyInjection.TestTypes.IService2]: expected at least 1 matching object to wire the [optional] parameter on the constructor of object [FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter (FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter)]
+   at Spring.Objects.Factory.Support.ConstructorResolver.GetConstructorInstantiationInfo(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs)
+   at Spring.Objects.Factory.Support.ConstructorResolver.AutowireConstructor(String objectName, RootObjectDefinition rod, ConstructorInfo[] chosenCtors, Object[] explicitArgs)
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.AutowireConstructor(String name, RootObjectDefinition definition, ConstructorInfo[] ctors, Object[] explicitArgs)
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.CreateObjectInstance(String objectName, RootObjectDefinition objectDefinition, Object[] arguments)
+   at Spring.Objects.Factory.Support.AbstractAutowireCapableObjectFactory.InstantiateObject(String name, RootObjectDefinition definition, Object[] arguments, Boolean allowEagerCaching, Boolean suppressConfigure)
+   at Spring.Objects.Factory.Support.AbstractObjectFactory.GetObjectInternal(String name, Type requiredType, Object[] arguments, Boolean suppressConfigure)
+   at Spring.Objects.Factory.Support.DefaultListableObjectFactory.DoGetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects, IDictionary resultCollector)
+   at Spring.Objects.Factory.Support.DefaultListableObjectFactory.GetObjectsOfType(Type type, Boolean includePrototypes, Boolean includeFactoryObjects)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>StructureMap.StructureMapConfigurationException: No default Instance is registered and cannot be automatically determined for type 'FeatureTests.On.DependencyInjection.TestTypes.IService2'
+
+There is no configuration specified for FeatureTests.On.DependencyInjection.TestTypes.IService2
+
+1.) new ServiceWithDependencyAndOptionalOtherServiceParameter(*Default of IService*, *Default of IService2*)
+2.) FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter
+3.) Instance of FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter
+4.) Container.GetInstance(FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter)
+
+   at lambda_method(Closure , IBuildSession , IContext )
+   at StructureMap.Building.BuildPlan.Build(IBuildSession session, IContext context)
+   at StructureMap.BuildSession.BuildNewInSession(Type pluginType, Instance instance)
+   at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session)
+   at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance)
+   at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle)
+   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph)
+   at StructureMap.Container.GetInstance(Type pluginType)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Microsoft.Practices.Unity.ResolutionFailedException: Resolution of the dependency failed, type = &quot;FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter&quot;, name = &quot;(none)&quot;.
+Exception occurred while: while resolving.
+Exception is: InvalidOperationException - The current type, FeatureTests.On.DependencyInjection.TestTypes.IService2, is an interface and cannot be constructed. Are you missing a type mapping?
+-----------------------------------------------
+At the time of the exception, the container was:
+
+  Resolving FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter,(none)
+  Resolving parameter &quot;optional&quot; of constructor FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter(FeatureTests.On.DependencyInjection.TestTypes.IService service, FeatureTests.On.DependencyInjection.TestTypes.IService2 optional)
+    Resolving FeatureTests.On.DependencyInjection.TestTypes.IService2,(none)
+ ---&amp;gt; System.InvalidOperationException: The current type, FeatureTests.On.DependencyInjection.TestTypes.IService2, is an interface and cannot be constructed. Are you missing a type mapping?
+   at Microsoft.Practices.ObjectBuilder2.DynamicMethodConstructorStrategy.ThrowForAttemptingToConstructInterface(IBuilderContext context)
+   at lambda_method(Closure , IBuilderContext )
+   at Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;GetBuildMethod&amp;gt;b__0(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.DynamicMethodBuildPlan.BuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.BuilderContext.NewBuildUp(NamedTypeBuildKey newBuildKey)
+   at Microsoft.Practices.Unity.ObjectBuilder.NamedTypeDependencyResolverPolicy.Resolve(IBuilderContext context)
+   at lambda_method(Closure , IBuilderContext )
+   at Microsoft.Practices.ObjectBuilder2.DynamicBuildPlanGenerationContext.&amp;lt;&amp;gt;c__DisplayClass1.&amp;lt;GetBuildMethod&amp;gt;b__0(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.DynamicMethodBuildPlan.BuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.BuildPlanStrategy.PreBuildUp(IBuilderContext context)
+   at Microsoft.Practices.ObjectBuilder2.StrategyChain.ExecuteBuildUp(IBuilderContext context)
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
+   --- End of inner exception stack trace ---
+   at Microsoft.Practices.Unity.UnityContainer.DoBuildUp(Type t, Object existing, String name, IEnumerable`1 resolverOverrides)
+   at Microsoft.Practices.Unity.UnityContainer.Resolve(Type t, String name, ResolverOverride[] resolverOverrides)
+   at Microsoft.Practices.Unity.UnityContainerExtensions.Resolve(IUnityContainer container, Type t, ResolverOverride[] overrides)
+</code></pre>
+">fail</span>
         </td>
     </tr>
   </table>
