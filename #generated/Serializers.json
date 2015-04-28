@@ -120,7 +120,7 @@
   {
     "name": "fastJSON",
     "url": "http://fastjson.codeplex.com/",
-    "version": "2.1.0.0",
+    "version": "2.1.11.0",
     "supports": [
       "net20",
       "net35",
@@ -365,7 +365,7 @@
   {
     "name": "NETJson",
     "url": "https://github.com/rpgmaker/NetJSON",
-    "version": "1.0.7.0",
+    "version": "1.0.7",
     "supports": [
       "net35",
       "net40",
@@ -482,20 +482,20 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
       }
     }
   },
   {
     "name": "Newtonsoft.Json",
     "url": "http://james.newtonking.com/json",
-    "version": "6.0.0.0",
+    "version": "6.0.8",
     "supports": [
       "net20",
       "net35",
@@ -603,7 +603,7 @@
   {
     "name": "NFormats.Xml",
     "url": "https://github.com/a7b0/nformats.xml",
-    "version": "0.1.0.0",
+    "version": "0.1.0",
     "supports": [
       "net40",
       "net40-Client",
@@ -722,7 +722,7 @@
   {
     "name": "ServiceStack JSON",
     "url": "https://github.com/ServiceStack/ServiceStack.Text",
-    "version": "4.0.40.0",
+    "version": "4.0.40",
     "supports": [
       "xamarinios10",
       "net40",
@@ -970,7 +970,7 @@
   {
     "name": "XSerializer",
     "url": "https://github.com/QuickenLoans/XSerializer",
-    "version": "0.1.0.0",
+    "version": "0.1.28",
     "supports": [
       "net40",
       "net40-Client",
@@ -1081,7 +1081,7 @@
   {
     "name": "YAXLib",
     "url": "https://github.com/sinairv/YAXLib",
-    "version": "2.13.0.0",
+    "version": "2.13",
     "supports": [
       "xamarinios10",
       "net20",

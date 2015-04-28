@@ -2,7 +2,7 @@
   {
     "name": "AutoMapper",
     "url": "http://automapper.org",
-    "version": "3.3.1.0",
+    "version": "3.3.1",
     "supports": [
       "net40",
       "net45",
@@ -231,7 +231,7 @@
   {
     "name": "EasyMapper",
     "url": "http://pelusoftcodereference.wordpress.com/easy-mapper/",
-    "version": "1.0.0.0",
+    "version": "1.0.2",
     "supports": [
       "net45"
     ],
@@ -306,9 +306,7 @@
         "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 5\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
       },
       "NullNullableInt32ToNullObject": {
-        "result": "failure",
-        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: (null)\r\n    Actual:   not set\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: (null)\r\nActual:   not set\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+        "result": "success"
       },
       "NullObjectToNullNullableInt32": {
         "result": "failure",
@@ -519,7 +517,7 @@
   {
     "name": "EmitMapper",
     "url": "http://emitmapper.codeplex.com",
-    "version": "1.0.0.0",
+    "version": "1.0.0",
     "supports": [
       "net35",
       "net40",
@@ -798,7 +796,7 @@
   },
   {
     "name": "fFastMapper",
-    "version": "0.5.1.0",
+    "version": "0.5.3",
     "supports": [
       "net40",
       "net45",
@@ -1819,7 +1817,7 @@
   {
     "name": "ThisMember",
     "url": "https://github.com/JulianR/ThisMember/wiki",
-    "version": "1.0.0.0",
+    "version": "1.4.6",
     "supports": [
       "net35",
       "net40",
@@ -2067,7 +2065,7 @@
   {
     "name": "ValueInjecter",
     "url": "http://valueinjecter.codeplex.com",
-    "version": "2.3.3.0",
+    "version": "2.3.3",
     "supports": [
       "net35",
       "net40",

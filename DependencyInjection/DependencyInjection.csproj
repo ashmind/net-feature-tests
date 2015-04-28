@@ -285,6 +285,7 @@
     <Compile Include="Adapters\SimpleInjectorAdapter.cs" />
     <Compile Include="Adapters\SpringAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />
+    <Compile Include="Adapters\TinyIoCAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
     <Compile Include="6_LazyTests.cs" />
     <Compile Include="5_FuncTests.cs" />
@@ -334,6 +335,10 @@
     <ProjectReference Include="..\#framework\Shared\Shared.csproj">
       <Project>{7DB72F25-0A59-4BC9-B5AB-1F504F647580}</Project>
       <Name>Shared</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DependencyInjection.CodeOnlyPackages\DependencyInjection.CodeOnlyPackages.csproj">
+      <Project>{78CAC086-F4A3-4DB0-A9F2-1851FEFE698B}</Project>
+      <Name>DependencyInjection.CodeOnlyPackages</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

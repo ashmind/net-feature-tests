@@ -2,7 +2,7 @@
   {
     "name": "Autofac",
     "url": "http://autofac.org",
-    "version": "3.5.0.0",
+    "version": "3.5.2",
     "supports": [
       "net40",
       "net40-Client",
@@ -140,7 +140,7 @@
   {
     "name": "Castle",
     "url": "http://docs.castleproject.org/Windsor.MainPage.ashx",
-    "version": "3.3.0.0",
+    "version": "3.3.0",
     "supports": [
       "net35",
       "net35-Client",
@@ -270,7 +270,7 @@
   {
     "name": "Catel",
     "url": "http://www.catelproject.com",
-    "version": "4.1.0.0",
+    "version": "4.1.0",
     "supports": [
       "net40",
       "net40-Client",
@@ -444,7 +444,7 @@
   {
     "name": "DryIoc",
     "url": "https://bitbucket.org/dadhi/dryioc",
-    "version": "2.0.0.123",
+    "version": "2.0.0-preview123",
     "supports": [
       "net35",
       "net35-Client",
@@ -920,7 +920,7 @@
   {
     "name": "Grace",
     "url": "https://github.com/ipjohnson/Grace",
-    "version": "2.4.2.0",
+    "version": "2.4.2",
     "supports": [
       "net45",
       "net451",
@@ -1058,7 +1058,7 @@
   {
     "name": "HaveBox",
     "url": "http://www.havebox.net/",
-    "version": "2.0.0.0",
+    "version": "2.0.0",
     "supports": [
       "net35",
       "net35-Client",
@@ -1230,7 +1230,7 @@
   {
     "name": "IfInjector",
     "url": "https://github.com/iamahern/IfInjector",
-    "version": "0.8.1.42024",
+    "version": "0.8.1",
     "supports": [
       "net45",
       "net451",
@@ -1403,7 +1403,7 @@
   {
     "name": "LightCore",
     "url": "http://lightcore.ch/en/default.aspx",
-    "version": "1.5.1.0",
+    "version": "1.5.1",
     "supports": [
       "net35",
       "net35-cf",
@@ -2178,7 +2178,7 @@
   {
     "name": "Mugen",
     "url": "http://mugeninjection.codeplex.com/",
-    "version": "3.5.0.0",
+    "version": "3.5.1",
     "supports": [
       "net20",
       "net35",
@@ -2331,7 +2331,7 @@
   {
     "name": "Munq",
     "url": "http://Munq.codeplex.com",
-    "version": "3.0.4501.20364",
+    "version": "3.1.6",
     "supports": [
       "net20",
       "net35",
@@ -2514,7 +2514,7 @@
   {
     "name": "Ninject",
     "url": "http://www.ninject.org",
-    "version": "3.2.0.0",
+    "version": "3.2.2.0",
     "supports": [
       "net35",
       "net35-Client",
@@ -2672,7 +2672,7 @@
   {
     "name": "Simple Injector",
     "url": "https://simpleinjector.org/",
-    "version": "2.7.3.0",
+    "version": "2.7.3",
     "supports": [
       "net40",
       "net40-Client",
@@ -2823,7 +2823,7 @@
   {
     "name": "Spring.NET",
     "url": "http://www.springframework.net/",
-    "version": "2.0.1.45000",
+    "version": "2.0.1",
     "supports": [
       "net35",
       "net35-Client",
@@ -2981,7 +2981,7 @@
   {
     "name": "StructureMap",
     "url": "http://structuremap.github.io",
-    "version": "3.1.5.0",
+    "version": "3.1.5.154",
     "supports": [
       "net40",
       "net40-Client",
@@ -3128,9 +3128,189 @@
     }
   },
   {
+    "name": "TinyIoC",
+    "url": "https://github.com/grumpydev/TinyIoC",
+    "version": "1.3",
+    "supports": [
+      "net20",
+      "net35",
+      "net35-cf",
+      "net35-Client",
+      "net40",
+      "net40-Client",
+      "net45",
+      "net451",
+      "win",
+      "win81",
+      "wp",
+      "wp71",
+      "wp80",
+      "wp81",
+      "wpa",
+      "wpa81",
+      "sl20",
+      "sl30",
+      "sl40",
+      "sl50",
+      "MonoAndroid",
+      "MonoTouch",
+      "MonoAndroid10",
+      "MonoTouch10",
+      "MonoAndroid16",
+      "MonoTouch40"
+    ],
+    "features": {
+      "IndependentService": {
+        "result": "success"
+      },
+      "IndependentServiceRegisteredAsSelf": {
+        "result": "success"
+      },
+      "SingletonLifetime": {
+        "result": "success"
+      },
+      "TransientLifetime": {
+        "result": "success"
+      },
+      "PrebuiltInstance": {
+        "result": "success"
+      },
+      "ConstructorDependency": {
+        "result": "success"
+      },
+      "ConstructorDependencyUsingInstance": {
+        "result": "success"
+      },
+      "Array": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.IService[] ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.IService[] ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: key\r\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "List": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "Collection": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "Enumerable": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 1\r\n    Actual:   0\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 1\r\nActual:   0\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "IReadOnlyCollection": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "IReadOnlyList": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "OpenGenericTypes": {
+        "result": "success"
+      },
+      "ConstrainsForOpenGenerics": {
+        "result": "skipped",
+        "comment": "Skipped as IEnumerable<IService> (List/array dependencies) is not supported by this library."
+      },
+      "MissingPrimitive": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Int32\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Int32\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "MissingPrimitiveDefaultValue": {
+        "result": "skipped",
+        "comment": "Skipped as Missing primitive (Optional parameters) is not supported by this library."
+      },
+      "MissingDependency": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.IService2\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.IService2\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.MultiInstanceFactory.GetObject(Type requestedType, TinyIoCContainer container, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "FactoryWithNoParameters": {
+        "result": "success"
+      },
+      "FactoryWithParameter": {
+        "result": "failure",
+        "comment": "    TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Func`2[[FeatureTests.On.DependencyInjection.TestTypes.IService2, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.IntPtr ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Void*\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       --- End of inner exception stack trace ---\r\n       at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n       at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n    ",
+        "error": "TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Func`2[[FeatureTests.On.DependencyInjection.TestTypes.IService2, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]] ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.IntPtr ---> TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Void*\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   --- End of inner exception stack trace ---\r\n   at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.ResolveInternal(TypeRegistration registration, NamedParameterOverloads parameters, ResolveOptions options)\r\n   at TinyIoC.TinyIoCContainer.Resolve(Type resolveType)\r\n"
+      },
+      "FactoryWithParameterForSubdependency": {
+        "result": "skipped",
+        "comment": "Skipped as Parameter for dependency (Func<TService>) is not supported by this library."
+      },
+      "TransientFactoryUsedBySingletonStillCreatesTransient": {
+        "result": "success"
+      },
+      "BasicLazySupport": {
+        "result": "success"
+      },
+      "NotCreatingLazyPrematurely": {
+        "result": "success"
+      },
+      "LazyanBeUsedToResolveCircularDepenendency": {
+        "result": "success"
+      },
+      "PropertyDependency": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n    ",
+        "error": "Xunit.Sdk.NotNullException: Assert.NotNull() Failure\r\n"
+      },
+      "PropertyDependencyIsOptional": {
+        "result": "skipped",
+        "comment": "Skipped as Simple dependency (Property dependencies) is not supported by this library."
+      },
+      "PropertyDependencyDoesNotNeedCustomAttribute": {
+        "result": "skipped",
+        "comment": "Skipped as Simple dependency (Property dependencies) is not supported by this library."
+      },
+      "PerRequestSupport": {
+        "result": "failure",
+        "comment": "    System.NotSupportedException: I am not sure if TinyIoC provides PerRequest lifetime out of the box.\r\n    ",
+        "error": "System.NotSupportedException: I am not sure if TinyIoC provides PerRequest lifetime out of the box.\r\n"
+      },
+      "ReuseWithinRequest": {
+        "result": "skipped",
+        "comment": "Skipped as Basic support (Request lifetime) is not supported by this library."
+      },
+      "NoReuseBetweenRequests": {
+        "result": "skipped",
+        "comment": "Skipped as Basic support (Request lifetime) is not supported by this library."
+      },
+      "ComponentIsDisposedAtTheEndOfRequest": {
+        "result": "skipped",
+        "comment": "Skipped as Basic support (Request lifetime) is not supported by this library."
+      },
+      "FactoryNoReuseBetweenRequests": {
+        "result": "skipped",
+        "comment": "Skipped as Basic support (Request lifetime) is not supported by this library."
+      },
+      "ReasonableConstructorSelection": {
+        "result": "success"
+      },
+      "RegistrationAtAnyStage": {
+        "result": "success"
+      },
+      "GracefulRecursionHandling": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.AssertException: TinyIoC fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n    ",
+        "error": "Xunit.Sdk.AssertException: TinyIoC fails recursion for now, and we have no way to retest it in each run (without process crash).\r\n"
+      },
+      "GracefulRecursionHandlingForListDependency": {
+        "result": "skipped",
+        "comment": "Skipped as IService[] (List/array dependencies) is not supported by this library."
+      }
+    }
+  },
+  {
     "name": "Unity",
     "url": "http://unity.codeplex.com",
-    "version": "3.5.0.0",
+    "version": "3.5.1404.0",
     "supports": [
       "net45",
       "net451",

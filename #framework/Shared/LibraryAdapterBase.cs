@@ -9,9 +9,10 @@ namespace FeatureTests.Shared {
     [UsedImplicitly(ImplicitUseKindFlags.InstantiatedWithFixedConstructorSignature)]
     public abstract class LibraryAdapterBase : ILibrary {
         public virtual string Name {
-            get { return Regex.Match(this.GetType().Name, "^(.+?)(?:Adapter)?$").Groups[1].Value; }
+            get { return Regex.Match(GetType().Name, "^(.+?)(?:Adapter)?$").Groups[1].Value; }
         }
 
+        [CanBeNull]
         public abstract Assembly Assembly { get; }
 
         public virtual string PackageId {
