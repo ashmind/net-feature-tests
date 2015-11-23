@@ -7,11 +7,12 @@ using FeatureTests.On.DependencyInjection.Adapters.Interface;
 namespace FeatureTests.On.DependencyInjection.Adapters
 {
     public class DryIocAdapter : ContainerAdapterBase {
-        private readonly Container container = new Container(
-            rules => rules.With(Constructor.WithAllResolvableArguments, propertiesAndFields: PropertiesAndFields.PublicNonPrimitive)
+        private readonly Container container = new Container(rules => rules.With(
+            FactoryMethod.ConstructorWithResolvableArguments, 
+            propertiesAndFields: PropertiesAndFields.Auto)
         );
 
-        private Container webRequestScoped;
+        private IContainer webRequestScoped;
 
         public override Assembly Assembly {
             get { return typeof(Container).Assembly; }
@@ -38,7 +39,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters
         }
 
         public override void AfterBeginWebRequest() {
-            this.webRequestScoped = container.BeginScope();
+            this.webRequestScoped = container.OpenScope();
         }
 
         public override void BeforeEndWebRequest() {
