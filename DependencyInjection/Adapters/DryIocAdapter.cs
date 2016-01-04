@@ -7,10 +7,11 @@ using FeatureTests.On.DependencyInjection.Adapters.Interface;
 namespace FeatureTests.On.DependencyInjection.Adapters
 {
     public class DryIocAdapter : ContainerAdapterBase {
-        private readonly Container container = new Container(rules => rules.With(
-            FactoryMethod.ConstructorWithResolvableArguments, 
-            propertiesAndFields: PropertiesAndFields.Auto)
-        );
+        private readonly Container container = new Container(
+            rules => rules.With(
+                FactoryMethod.ConstructorWithResolvableArguments, 
+                propertiesAndFields: PropertiesAndFields.Auto),
+            new AsyncExecutionFlowScopeContext());
 
         private IContainer webRequestScoped;
 
@@ -51,7 +52,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters
         }
 
         public override IEnumerable<object> ResolveAll(Type serviceType) {
-            return container.ResolveMany<object>(serviceType);
+            return container.ResolveMany(serviceType);
         }
     }
 }
