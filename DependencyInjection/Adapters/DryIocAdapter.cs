@@ -4,8 +4,7 @@ using System.Collections.Generic;
 using DryIoc;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
-namespace FeatureTests.On.DependencyInjection.Adapters
-{
+namespace FeatureTests.On.DependencyInjection.Adapters {
     public class DryIocAdapter : ContainerAdapterBase {
         private readonly Container container = new Container(
             rules => rules.With(
