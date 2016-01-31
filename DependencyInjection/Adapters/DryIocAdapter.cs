@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using DryIoc;
 using FeatureTests.On.DependencyInjection.Adapters.Interface;
 
-namespace FeatureTests.On.DependencyInjection.Adapters
-{
+namespace FeatureTests.On.DependencyInjection.Adapters {
     public class DryIocAdapter : ContainerAdapterBase {
         private readonly Container container = new Container(
-            rules => rules.With(Constructor.WithAllResolvableArguments, propertiesAndFields: PropertiesAndFields.PublicNonPrimitive)
-        );
+            rules => rules.With(
+                FactoryMethod.ConstructorWithResolvableArguments, 
+                propertiesAndFields: PropertiesAndFields.Auto),
+            new AsyncExecutionFlowScopeContext());
 
-        private Container webRequestScoped;
+        private IContainer webRequestScoped;
 
         public override Assembly Assembly {
             get { return typeof(Container).Assembly; }
@@ -38,7 +39,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters
         }
 
         public override void AfterBeginWebRequest() {
-            this.webRequestScoped = container.BeginScope();
+            this.webRequestScoped = container.OpenScope();
         }
 
         public override void BeforeEndWebRequest() {
@@ -50,7 +51,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters
         }
 
         public override IEnumerable<object> ResolveAll(Type serviceType) {
-            return container.ResolveMany<object>(serviceType);
+            return container.ResolveMany(serviceType);
         }
     }
 }
