@@ -139,8 +139,8 @@
       },
       "DateTime": {
         "result": "failure",
-        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 8/2/2014 12:34:56 PM\r\n    Actual:   8/2/2014 3:34:56 PM\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 8/2/2014 12:34:56 PM\r\nActual:   8/2/2014 3:34:56 PM\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 02-Aug-14 12:34:56\r\n    Actual:   03-Aug-14 00:34:56\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 02-Aug-14 12:34:56\r\nActual:   03-Aug-14 00:34:56\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
       },
       "DateTimeOffset": {
         "result": "failure",
@@ -246,8 +246,8 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
@@ -482,19 +482,19 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   },
   {
     "name": "Newtonsoft.Json",
-    "url": "http://www.newtonsoft.com/json",
+    "url": "http://james.newtonking.com/json",
     "version": "6.0.8",
     "supports": [
       "net20",
@@ -709,8 +709,8 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
@@ -834,8 +834,8 @@
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   },
@@ -855,8 +855,8 @@
       },
       "DateTimeOffset": {
         "result": "failure",
-        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 8/2/2014 12:34:56 PM +03:00\r\n    Actual:   1/1/0001 12:00:00 AM +00:00\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 8/2/2014 12:34:56 PM +03:00\r\nActual:   1/1/0001 12:00:00 AM +00:00\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 02-Aug-14 12:34:56 +03:00\r\n    Actual:   01-Jan-01 00:00:00 +00:00\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 02-Aug-14 12:34:56 +03:00\r\nActual:   01-Jan-01 00:00:00 +00:00\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
       },
       "Uri": {
         "result": "failure",
@@ -952,8 +952,8 @@
       },
       "CastToString": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
       },
       "PropertyAccess": {
         "result": "failure",
@@ -1109,8 +1109,8 @@
       },
       "DateTimeOffset": {
         "result": "failure",
-        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 8/2/2014 12:34:56 PM +03:00\r\n    Actual:   1/1/0001 12:00:00 AM +00:00\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 8/2/2014 12:34:56 PM +03:00\r\nActual:   1/1/0001 12:00:00 AM +00:00\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 02-Aug-14 12:34:56 +03:00\r\n    Actual:   01-Jan-01 00:00:00 +00:00\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 02-Aug-14 12:34:56 +03:00\r\nActual:   01-Jan-01 00:00:00 +00:00\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
       },
       "Uri": {
         "result": "failure",
@@ -1187,23 +1187,23 @@
       },
       "CastToInt32": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Specified cast is not valid.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Specified cast is not valid.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Specified cast is not valid.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Specified cast is not valid.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToString": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   }
