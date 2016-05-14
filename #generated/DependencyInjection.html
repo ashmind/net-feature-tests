@@ -140,7 +140,7 @@
         <td class="neutral">
 2.0.1        </td>
         <td class="neutral">
-3.1.5.154        </td>
+4.2.0.402        </td>
         <td class="neutral">
 1.3        </td>
         <td class="neutral">
@@ -187,7 +187,7 @@ may 2016        </td>
         <td class="neutral date">
 apr 2015        </td>
         <td class="neutral date">
-apr 2015        </td>
+may 2016        </td>
         <td class="neutral date">
 dec 2014        </td>
         <td class="neutral date">
@@ -416,7 +416,7 @@ n/a        </td>
         <td class="neutral number">
 74 646        </td>
         <td class="neutral number">
-733 392        </td>
+979 798        </td>
         <td class="neutral number">
 42 877        </td>
         <td class="neutral number">
@@ -468,7 +468,7 @@ n/a        </td>
         <td class="concern">
 44%        </td>
         <td class="success">
-72%        </td>
+76%        </td>
         <td class="concern">
 52%        </td>
         <td class="success">
@@ -1253,8 +1253,8 @@ yes        </td>
 yes        </td>
         <td class="concern">
 no        </td>
-        <td class="concern">
-no        </td>
+        <td class="success">
+yes        </td>
         <td class="success">
 yes        </td>
         <td class="success">
@@ -1300,8 +1300,8 @@ yes        </td>
 yes        </td>
         <td class="concern">
 no        </td>
-        <td class="concern">
-no        </td>
+        <td class="success">
+yes        </td>
         <td class="success">
 yes        </td>
         <td class="success">
@@ -1629,8 +1629,8 @@ no        </td>
 yes        </td>
         <td class="concern">
 no        </td>
-        <td class="concern">
-no        </td>
+        <td class="success">
+yes        </td>
         <td class="success">
 yes        </td>
         <td class="concern">
@@ -4196,29 +4196,8 @@ Parameter name: implementationType
 </code></pre>
 ">fail</span>
         </td>
-        <td class="failure">
-            <span title="<pre><code>StructureMap.StructureMapBuildPlanException: Unable to create a build plan for concrete type FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter
-
-new ServiceWithDependencyAndOptionalInt32Parameter(IService, Int32 optional)
-  ┗ IService = **Default**
-           Int32 optional = Required primitive dependency is not explicitly defined
-
-
-1.) Attempting to create a BuildPlan for Instance of FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter -- FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter
-2.) Container.GetInstance(FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter)
-
-   at StructureMap.Pipeline.ConstructorInstance`1.ToBuilder(Type pluginType, Policies policies)
-   at StructureMap.Pipeline.Instance.buildPlan(Type pluginType, Policies policies)
-   at StructureMap.Pipeline.Instance.ResolveBuildPlan(Type pluginType, Policies policies)
-   at StructureMap.BuildSession.BuildNewInSession(Type pluginType, Instance instance)
-   at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session)
-   at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance)
-   at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle)
-   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph)
-   at StructureMap.Container.GetInstance(Type pluginType)
-</code></pre>
-">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="<pre><code>TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter ---&amp;gt; TinyIoC.TinyIoCResolutionException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter ---&amp;gt; TinyIoC.TinyIoCResolutionException: Unable to resolve type: System.Int32
    at TinyIoC.TinyIoCContainer.ConstructType(Type requestedType, Type implementationType, ConstructorInfo constructor, NamedParameterOverloads parameters, ResolveOptions options)
@@ -4334,10 +4313,8 @@ pass        </td>
             <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
 ">n/a</span>
         </td>
-        <td class="skipped">
-            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
-">n/a</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="skipped">
             <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
 ">n/a</span>

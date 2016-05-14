@@ -3010,7 +3010,7 @@
   {
     "name": "StructureMap",
     "url": "http://structuremap.github.io",
-    "version": "3.1.5.154",
+    "version": "4.2.0.402",
     "supports": [
       "net40",
       "net40-Client",
@@ -3019,7 +3019,10 @@
       "net46",
       "win",
       "win81",
-      "dnx451"
+      "wp80",
+      "wp81",
+      "dnx451",
+      "dotnet"
     ],
     "features": {
       "IndependentService": {
@@ -3074,13 +3077,10 @@
         "result": "success"
       },
       "MissingPrimitive": {
-        "result": "failure",
-        "comment": "    StructureMap.StructureMapBuildPlanException: Unable to create a build plan for concrete type FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter\r\n    \r\n    new ServiceWithDependencyAndOptionalInt32Parameter(IService, Int32 optional)\r\n      ┗ IService = **Default**\r\n               Int32 optional = Required primitive dependency is not explicitly defined\r\n    \r\n    \r\n    1.) Attempting to create a BuildPlan for Instance of FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter -- FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter\r\n    2.) Container.GetInstance(FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter)\r\n    \r\n       at StructureMap.Pipeline.ConstructorInstance`1.ToBuilder(Type pluginType, Policies policies)\r\n       at StructureMap.Pipeline.Instance.buildPlan(Type pluginType, Policies policies)\r\n       at StructureMap.Pipeline.Instance.ResolveBuildPlan(Type pluginType, Policies policies)\r\n       at StructureMap.BuildSession.BuildNewInSession(Type pluginType, Instance instance)\r\n       at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session)\r\n       at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance)\r\n       at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle)\r\n       at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph)\r\n       at StructureMap.Container.GetInstance(Type pluginType)\r\n    ",
-        "error": "StructureMap.StructureMapBuildPlanException: Unable to create a build plan for concrete type FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter\r\n\r\nnew ServiceWithDependencyAndOptionalInt32Parameter(IService, Int32 optional)\r\n  ┗ IService = **Default**\r\n           Int32 optional = Required primitive dependency is not explicitly defined\r\n\r\n\r\n1.) Attempting to create a BuildPlan for Instance of FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter -- FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter\r\n2.) Container.GetInstance(FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter)\r\n\r\n   at StructureMap.Pipeline.ConstructorInstance`1.ToBuilder(Type pluginType, Policies policies)\r\n   at StructureMap.Pipeline.Instance.buildPlan(Type pluginType, Policies policies)\r\n   at StructureMap.Pipeline.Instance.ResolveBuildPlan(Type pluginType, Policies policies)\r\n   at StructureMap.BuildSession.BuildNewInSession(Type pluginType, Instance instance)\r\n   at StructureMap.Pipeline.NulloTransientCache.Get(Type pluginType, Instance instance, IBuildSession session)\r\n   at StructureMap.BuildSession.ResolveFromLifecycle(Type pluginType, Instance instance)\r\n   at StructureMap.SessionCache.GetObject(Type pluginType, Instance instance, ILifecycle lifecycle)\r\n   at StructureMap.SessionCache.GetDefault(Type pluginType, IPipelineGraph pipelineGraph)\r\n   at StructureMap.Container.GetInstance(Type pluginType)\r\n"
+        "result": "success"
       },
       "MissingPrimitiveDefaultValue": {
-        "result": "skipped",
-        "comment": "Skipped as Missing primitive (Optional parameters) is not supported by this library."
+        "result": "success"
       },
       "MissingDependency": {
         "result": "failure",
