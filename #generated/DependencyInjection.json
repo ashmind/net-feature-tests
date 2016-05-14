@@ -8,11 +8,12 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
+      "wpa81",
       "wp80",
       "wp81",
-      "wpa81",
       "sl50",
       "MonoAndroid10",
       "MonoAndroid16",
@@ -148,6 +149,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "sl40",
       "sl50"
     ],
@@ -270,24 +272,25 @@
   {
     "name": "Catel",
     "url": "http://www.catelproject.com",
-    "version": "4.1.0",
+    "version": "4.4.0",
     "supports": [
       "net40",
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
+      "wpa81",
+      "UAP10.0",
       "wp80",
       "wp81",
-      "wpa81",
       "sl50",
       "MonoAndroid",
       "MonoAndroid10",
       "MonoAndroid16",
-      "MonoTouch",
-      "MonoTouch10",
-      "MonoTouch40"
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -313,33 +316,33 @@
       },
       "Array": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[FeatureTests.On.DependencyInjection.TestTypes.IService[], FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "List": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "Collection": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.ICollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "Enumerable": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IEnumerable`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "IReadOnlyCollection": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyCollection`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "IReadOnlyList": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithListConstructorDependency`1[[System.Collections.Generic.IReadOnlyList`1[[FeatureTests.On.DependencyInjection.TestTypes.IService, FeatureTests.On.DependencyInjection, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "OpenGenericTypes": {
         "result": "success"
@@ -350,8 +353,8 @@
       },
       "MissingPrimitive": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "MissingPrimitiveDefaultValue": {
         "result": "skipped",
@@ -359,8 +362,8 @@
       },
       "MissingDependency": {
         "result": "failure",
-        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
-        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' is not registered or could not be constructed. Please register type before using it. Failed to instantiate the type using the TypeFactory. Check if the required dependencies are registered as well or that the type has a valid constructor that can be used.\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass12.<RegisterType>b__10(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
+        "comment": "    Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' is not registered\r\n       at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n       at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n       at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n       at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n       at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n    ",
+        "error": "Catel.IoC.TypeNotRegisteredException: The specified type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' is not registered or could not be constructed. Please register type before using it. The type 'FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter' is not registered\r\n   at Catel.IoC.ServiceLocator.ThrowTypeNotRegisteredException(Type type, String message)\r\n   at Catel.IoC.ServiceLocator.CreateServiceInstance(ServiceLocatorRegistration registration)\r\n   at Catel.IoC.ServiceLocator.<>c__DisplayClass43_0.<RegisterType>b__0(ServiceLocatorRegistration x)\r\n   at Catel.IoC.ServiceLocator.ResolveTypeFromKnownContainer(Type serviceType, Object tag)\r\n   at Catel.IoC.ServiceLocator.ResolveType(Type serviceType, Object tag)\r\n"
       },
       "FactoryWithNoParameters": {
         "result": "failure",
@@ -452,11 +455,12 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
+      "wpa81",
       "wp80",
       "wp81",
-      "wpa81",
       "sl50",
       "dotnet",
       "MonoAndroid10",
@@ -586,7 +590,8 @@
       "net40",
       "net40-Client",
       "net45",
-      "net451"
+      "net451",
+      "net46"
     ],
     "features": {
       "IndependentService": {
@@ -755,6 +760,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
       "wp80",
@@ -925,11 +931,12 @@
     "supports": [
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
+      "wpa81",
       "wp80",
       "wp81",
-      "wpa81",
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
@@ -1067,6 +1074,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "wp71",
       "wp80",
       "wp81",
@@ -1235,6 +1243,7 @@
     "supports": [
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
       "wp71",
@@ -1413,6 +1422,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "sl30",
       "sl40",
       "sl50"
@@ -1566,12 +1576,13 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
-      "wp80",
-      "wp81",
       "wpa",
-      "wpa81"
+      "wpa81",
+      "wp80",
+      "wp81"
     ],
     "features": {
       "IndependentService": {
@@ -1705,7 +1716,8 @@
       "net40",
       "net40-Client",
       "net45",
-      "net451"
+      "net451",
+      "net46"
     ],
     "features": {
       "IndependentService": {
@@ -2014,6 +2026,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
       "sl40",
@@ -2188,6 +2201,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
       "wp71",
@@ -2342,14 +2356,16 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
+      "wpa",
+      "wpa81",
+      "UAP10.0",
       "wp",
       "wp71",
       "wp80",
       "wp81",
-      "wpa",
-      "wpa81",
       "sl20",
       "sl30",
       "sl40",
@@ -2358,9 +2374,9 @@
       "MonoAndroid",
       "MonoAndroid10",
       "MonoAndroid16",
-      "MonoTouch",
       "MonoTouch10",
-      "MonoTouch40"
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -2524,6 +2540,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "wp",
       "wp71",
       "wp80",
@@ -2680,11 +2697,12 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
+      "wpa81",
       "wp80",
       "wp81",
-      "wpa81",
       "sl40",
       "sl50"
     ],
@@ -2832,7 +2850,8 @@
       "net40",
       "net40-Client",
       "net45",
-      "net451"
+      "net451",
+      "net46"
     ],
     "features": {
       "IndependentService": {
@@ -2989,6 +3008,7 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81"
     ],
@@ -3142,14 +3162,16 @@
       "net40-Client",
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
+      "wpa",
+      "wpa81",
+      "UAP10.0",
       "wp",
       "wp71",
       "wp80",
       "wp81",
-      "wpa",
-      "wpa81",
       "sl20",
       "sl30",
       "sl40",
@@ -3158,9 +3180,9 @@
       "MonoAndroid",
       "MonoAndroid10",
       "MonoAndroid16",
-      "MonoTouch",
       "MonoTouch10",
-      "MonoTouch40"
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -3317,6 +3339,7 @@
     "supports": [
       "net45",
       "net451",
+      "net46",
       "win",
       "win81",
       "wp80",

@@ -43,14 +43,17 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             else if (normalized.StartsWith("wpa")) {
                 order = "4-";
             }
-            else if (normalized.StartsWith("wp")) {
-                order = "3-";
-            }
-            else if (normalized.StartsWith("sl")) {
+            else if (normalized.StartsWith("uap", StringComparison.OrdinalIgnoreCase)) {
                 order = "5-";
             }
+            else if (normalized.StartsWith("wp")) {
+                order = "6-";
+            }
+            else if (normalized.StartsWith("sl")) {
+                order = "7-";
+            }
             else {
-                order = "6-" + normalized;
+                order = "8-" + normalized;
             }
 
             order += version.Version.Major + "." + version.Version.Minor;
@@ -79,8 +82,9 @@ namespace FeatureTests.Runner.Sources.MetadataSupport {
             result = Regex.Replace(result, @"^win(dows)?(8(0)?)?$", "Windows 8", RegexOptions.ExplicitCapture);
             result = Regex.Replace(result, @"^win81$",             "Windows 8.1");
             result = Regex.Replace(result, @"^wpa81$",             "Windows Universal (8.1)");
+            result = Regex.Replace(result, @"^uap",                "Universal Windows Platform ", RegexOptions.IgnoreCase);
             result = Regex.Replace(result, @"^xamarinios",         "Xamarin iOS");
-            result = Regex.Replace(result, @"\d{2,}",              match => " " + string.Join(".", match.Value.ToCharArray())); // 45 => 4.5, etc
+            result = Regex.Replace(result, @"\d{2,}(?!\.)",        match => " " + string.Join(".", match.Value.ToCharArray())); // 45 => 4.5, etc
             result = Regex.Replace(result, @"-Client",             " (Client Profile)");
 
             return result;
