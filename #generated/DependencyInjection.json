@@ -447,7 +447,7 @@
   {
     "name": "DryIoc",
     "url": "https://bitbucket.org/dadhi/dryioc",
-    "version": "2.1.1",
+    "version": "2.4.3",
     "supports": [
       "net35",
       "net35-Client",
