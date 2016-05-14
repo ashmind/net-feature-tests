@@ -39,7 +39,8 @@
     </Reference>
     <Reference Include="fastjson, Version=2.1.0.0, Culture=neutral, PublicKeyToken=6b75a806b86095cd, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\#packages\fastJSON.2.1.11.0\lib\net40\fastjson.dll</HintPath>
+      <HintPath>..\#packages\fastJSON.2.1.15.0\lib\net40\fastjson.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="NetJSON, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

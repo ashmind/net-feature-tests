@@ -120,7 +120,7 @@
   {
     "name": "fastJSON",
     "url": "http://fastjson.codeplex.com/",
-    "version": "2.1.11.0",
+    "version": "2.1.15.0",
     "supports": [
       "net20",
       "net35",
@@ -246,8 +246,8 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
       },
       "CastToType": {
         "result": "failure",
@@ -357,8 +357,8 @@
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
       }
     }
   },
@@ -482,13 +482,13 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   },
@@ -709,8 +709,8 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
@@ -947,8 +947,8 @@
       },
       "CastToInt32": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'int'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'int'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'int'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'int'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToString": {
         "result": "failure",
@@ -1202,8 +1202,8 @@
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   }
