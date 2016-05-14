@@ -136,7 +136,7 @@
         <td class="neutral">
 3.2.2.0        </td>
         <td class="neutral">
-2.7.3        </td>
+3.1.4        </td>
         <td class="neutral">
 2.0.1        </td>
         <td class="neutral">
@@ -183,7 +183,7 @@ apr 2012        </td>
         <td class="neutral date">
 apr 2014        </td>
         <td class="neutral date">
-mar 2015        </td>
+may 2016        </td>
         <td class="neutral date">
 apr 2015        </td>
         <td class="neutral date">
@@ -359,7 +359,7 @@ n/a        </td>
             <a href="https://github.com/ninject/ninject/raw/master/LICENSE.txt">Apache</a>
         </td>
         <td class="neutral">
-            <a href="https://simpleinjector.codeplex.com/license">MIT</a>
+            <a href="https://simpleinjector.org/license">MIT</a>
         </td>
         <td class="neutral">
             <a href="http://www.springframework.net/license.html">Apache</a>
@@ -412,7 +412,7 @@ n/a        </td>
         <td class="neutral number">
 2 699 316        </td>
         <td class="neutral number">
-285 131        </td>
+452 031        </td>
         <td class="neutral number">
 74 646        </td>
         <td class="neutral number">
@@ -464,7 +464,7 @@ n/a        </td>
         <td class="concern">
 60%        </td>
         <td class="concern">
-64%        </td>
+60%        </td>
         <td class="concern">
 44%        </td>
         <td class="success">
@@ -1625,8 +1625,8 @@ no        </td>
 yes        </td>
         <td class="concern">
 no        </td>
-        <td class="concern">
-no        </td>
+        <td class="success">
+yes        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -3937,8 +3937,16 @@ pass        </td>
 </code></pre>
 ">fail</span>
         </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="<pre><code>System.InvalidOperationException: There is already a registration for IGenericService&amp;lt;T&amp;gt; (with implementation GenericService&amp;lt;T&amp;gt;) that overlaps with the registration for GenericServiceWithIService2Constraint&amp;lt;T&amp;gt; that you are trying to make. This new registration would cause ambiguity, because both registrations would be used for the same closed service types. Either remove one of the registrations or make them both conditional.
+   at SimpleInjector.Internals.GenericRegistrationEntry.ThrowWhenProviderToRegisterOverlapsWithExistingProvider(OpenGenericToInstanceProducerProvider providerToRegister)
+   at SimpleInjector.Internals.GenericRegistrationEntry.AddGeneric(Type serviceType, Type implementationType, Lifestyle lifestyle, Predicate`1 predicate)
+   at SimpleInjector.Container.RegisterOpenGeneric(Type serviceType, Type implementationType, Lifestyle lifestyle, Predicate`1 predicate)
+   at SimpleInjector.Container.Register(Type serviceType, Type implementationType, Lifestyle lifestyle, String serviceTypeParamName, String implementationTypeParamName)
+   at SimpleInjector.Container.Register(Type serviceType, Type implementationType, Lifestyle lifestyle)
+</code></pre>
+">fail</span>
+        </td>
         <td class="skipped">
             <span title="<p>Skipped as IEnumerable<IService> (List/array dependencies) is not supported by this library.</p>
 ">n/a</span>
@@ -4167,25 +4175,11 @@ pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
-            <span title="<pre><code>SimpleInjector.ActivationException: The registered delegate for type ServiceWithDependencyAndOptionalInt32Parameter threw an exception. The constructor of type ServiceWithDependencyAndOptionalInt32Parameter contains parameter 'optional' of type Int32 which can not be used for constructor injection because it is a value type. ---&amp;gt; SimpleInjector.ActivationException: The constructor of type ServiceWithDependencyAndOptionalInt32Parameter contains parameter 'optional' of type Int32 which can not be used for constructor injection because it is a value type.
-   at SimpleInjector.Advanced.DefaultConstructorVerificationBehavior.Verify(ParameterInfo parameter)
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
-   at SimpleInjector.ContainerOptions.BuildParameterExpression(ParameterInfo parameter)
-   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)
-   at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
-   at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
-   at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
-   at SimpleInjector.Registration.BuildExpression(InstanceProducer producer)
-   at SimpleInjector.InstanceProducer.BuildExpressionInternal()
-   at System.Lazy`1.CreateValue()
-   at System.Lazy`1.LazyInitValue()
-   at System.Lazy`1.get_Value()
-   at SimpleInjector.InstanceProducer.BuildInstanceCreator()
-   at SimpleInjector.InstanceProducer.GetInstance()
-   --- End of inner exception stack trace ---
-   at SimpleInjector.InstanceProducer.GetInstance()
-   at SimpleInjector.Container.GetInstance(Type serviceType)
+            <span title="<pre><code>System.ArgumentException: The constructor of type ServiceWithDependencyAndOptionalInt32Parameter contains parameter 'optional' of type Int32 which can not be used for constructor injection because it is a value type.
+Parameter name: implementationType
+   at SimpleInjector.Container.ThrowArgumentExceptionWhenTypeIsNotConstructable(Type serviceType, Type implementationType, String parameterName)
+   at SimpleInjector.Container.Register(Type serviceType, Type implementationType, Lifestyle lifestyle, String serviceTypeParamName, String implementationTypeParamName)
+   at SimpleInjector.Container.Register(Type serviceType, Type implementationType, Lifestyle lifestyle)
 </code></pre>
 ">fail</span>
         </td>
@@ -4558,11 +4552,12 @@ Suggestions:
 ">fail</span>
         </td>
         <td class="failure">
-            <span title="<pre><code>SimpleInjector.ActivationException: The registered delegate for type ServiceWithDependencyAndOptionalOtherServiceParameter threw an exception. The constructor of type ServiceWithDependencyAndOptionalOtherServiceParameter contains the parameter of type IService2 with name 'optional' that is not registered. Please ensure IService2 is registered in the container, or change the constructor of ServiceWithDependencyAndOptionalOtherServiceParameter. ---&amp;gt; SimpleInjector.ActivationException: The constructor of type ServiceWithDependencyAndOptionalOtherServiceParameter contains the parameter of type IService2 with name 'optional' that is not registered. Please ensure IService2 is registered in the container, or change the constructor of ServiceWithDependencyAndOptionalOtherServiceParameter.
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.GetInstanceProducerFor(ParameterInfo parameter)
-   at SimpleInjector.Advanced.DefaultConstructorInjectionBehavior.BuildParameterExpression(ParameterInfo parameter)
-   at SimpleInjector.ContainerOptions.BuildParameterExpression(ParameterInfo parameter)
-   at SimpleInjector.Registration.BuildConstructorParameters(ConstructorInfo constructor)
+            <span title="<pre><code>SimpleInjector.ActivationException: The constructor of type ServiceWithDependencyAndOptionalOtherServiceParameter contains the parameter with name 'optional' and type IService2 that is not registered. Please ensure IService2 is registered, or change the constructor of ServiceWithDependencyAndOptionalOtherServiceParameter.
+   at SimpleInjector.Container.ThrowParameterTypeMustBeRegistered(InjectionTargetInfo target)
+   at SimpleInjector.Advanced.DefaultDependencyInjectionBehavior.GetInstanceProducerFor(InjectionConsumerInfo consumer)
+   at SimpleInjector.Advanced.DefaultDependencyInjectionBehavior.BuildExpression(InjectionConsumerInfo consumer)
+   at SimpleInjector.ContainerOptions.BuildParameterExpression(Type serviceType, Type implementationType, ParameterInfo parameter)
+   at SimpleInjector.Registration.BuildConstructorParameters(Type serviceType, Type implementationType, ConstructorInfo constructor)
    at SimpleInjector.Registration.BuildNewExpression(Type serviceType, Type implementationType)
    at SimpleInjector.Registration.BuildTransientExpression[TService,TImplementation]()
    at SimpleInjector.Lifestyles.TransientLifestyle.TransientLifestyleRegistration`2.BuildExpression()
@@ -4572,9 +4567,9 @@ Suggestions:
    at System.Lazy`1.LazyInitValue()
    at System.Lazy`1.get_Value()
    at SimpleInjector.InstanceProducer.BuildInstanceCreator()
+   at SimpleInjector.InstanceProducer.BuildAndReplaceInstanceCreatorAndCreateFirstInstance()
    at SimpleInjector.InstanceProducer.GetInstance()
-   --- End of inner exception stack trace ---
-   at SimpleInjector.InstanceProducer.GetInstance()
+   at SimpleInjector.Container.GetInstanceForRootType(Type serviceType)
    at SimpleInjector.Container.GetInstance(Type serviceType)
 </code></pre>
 ">fail</span>
@@ -4812,6 +4807,7 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>SimpleInjector.ActivationException: No registration for type Func&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt; could be found.
    at SimpleInjector.Container.ThrowMissingInstanceProducerException(Type serviceType)
+   at SimpleInjector.Container.GetInstanceForRootType(Type serviceType)
    at SimpleInjector.Container.GetInstance(Type serviceType)
 </code></pre>
 ">fail</span>
@@ -5359,9 +5355,10 @@ pass        </td>
 ">fail</span>
         </td>
         <td class="failure">
-            <span title="<pre><code>SimpleInjector.ActivationException: No registration for type Lazy&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt; could be found and an implicit registration could not be made. For the container to be able to create Lazy&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt;, it should contain exactly one public constructor, but it has 6.
+            <span title="<pre><code>SimpleInjector.ActivationException: No registration for type Lazy&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt; could be found and an implicit registration could not be made. For the container to be able to create Lazy&amp;lt;ServiceWithSimpleConstructorDependency&amp;gt; it should have only one public constructor: it has 6. See https://simpleinjector.org/one-constructor for more information.
    at SimpleInjector.Container.ThrowNotConstructableException(Type concreteType)
    at SimpleInjector.Container.ThrowMissingInstanceProducerException(Type serviceType)
+   at SimpleInjector.Container.GetInstanceForRootType(Type serviceType)
    at SimpleInjector.Container.GetInstance(Type serviceType)
 </code></pre>
 ">fail</span>

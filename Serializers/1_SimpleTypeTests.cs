@@ -21,7 +21,7 @@ namespace FeatureTests.On.Serializers {
         [Feature]
         [DisplayName("int")]
         public void Int32(ISerializerAdapter adapter) {
-            AssertCanBeDeserialized(adapter, "5", "5", "5");
+            AssertCanBeDeserialized(adapter, "5", "5", 5);
         }
 
         [Feature]
