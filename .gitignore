@@ -1,12 +1,11 @@
 
+.vs/
 bin/
 obj/
+\#packages/
 *.suo
 *.psess
 *.vsp
-_ReSharper.*
 *.user
 *.snk
-*.ncrunchsolution
-\#packages/
 FeatureTests.Results.Web/App_Data/*

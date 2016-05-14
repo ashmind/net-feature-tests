@@ -1441,15 +1441,8 @@ Actual:   (null)
       <td class="row-name"><span>(int?)null ⇒ (object)null</span></td>
         <td class="success">
 pass        </td>
-        <td class="failure">
-            <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: (null)
-Actual:   not set
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-   at Xunit.Assert.Equal[T](T expected, T actual)
-</code></pre>
-">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
@@ -1504,8 +1497,14 @@ Actual:   not set
       <td class="row-name"><span>(object)null ⇒ (int?)null</span></td>
         <td class="success">
 pass        </td>
-        <td class="success">
-pass        </td>
+        <td class="failure">
+            <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
+Expected: (null)
+Actual:   1
+   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
+</code></pre>
+">fail</span>
+        </td>
         <td class="success">
 pass        </td>
         <td class="failure">
