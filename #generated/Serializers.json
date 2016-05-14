@@ -350,8 +350,8 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
@@ -483,8 +483,8 @@
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   },
@@ -695,13 +695,13 @@
       },
       "CastToInt32": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Specified cast is not valid.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Specified cast is not valid.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Specified cast is not valid.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Specified cast is not valid.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToString": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "PropertyAccess": {
         "result": "failure",
@@ -948,8 +948,8 @@
       },
       "CastToString": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "PropertyAccess": {
         "result": "failure",
@@ -966,7 +966,7 @@
   {
     "name": "XSerializer",
     "url": "https://github.com/QuickenLoans/XSerializer",
-    "version": "0.1.28",
+    "version": "0.3.5",
     "supports": [
       "net40",
       "net40-Client",
@@ -1001,14 +1001,12 @@
         "result": "success"
       },
       "HashSetOfString": {
-        "result": "failure",
-        "comment": "    System.InvalidProgramException: JIT Compiler encountered an internal limitation.\r\n       at Add_Invoker(Object , Object )\r\n       at XSerializer.ListSerializer`2.<>c__DisplayClassb.<.ctor>b__5(Object collection, Object item)\r\n       at XSerializer.ListSerializer`2.AddItemToCollection(Object collection, Object item)\r\n       at XSerializer.ListSerializer.DeserializeObject(XmlReader reader)\r\n       at XSerializer.CustomSerializer`1.DefaultConstructorHelper.SetElementPropertyValue(Boolean& shouldIssueRead)\r\n       at XSerializer.CustomSerializer`1.DeserializeObject(XmlReader reader)\r\n       at XSerializer.SerializationExtensions.DeserializeObject(IXmlSerializerInternal serializer, String xml)\r\n       at XSerializer.XmlSerializer`1.Deserialize(String xml)\r\n       at lambda_method(Closure )\r\n    ",
-        "error": "System.InvalidProgramException: JIT Compiler encountered an internal limitation.\r\n   at Add_Invoker(Object , Object )\r\n   at XSerializer.ListSerializer`2.<>c__DisplayClassb.<.ctor>b__5(Object collection, Object item)\r\n   at XSerializer.ListSerializer`2.AddItemToCollection(Object collection, Object item)\r\n   at XSerializer.ListSerializer.DeserializeObject(XmlReader reader)\r\n   at XSerializer.CustomSerializer`1.DefaultConstructorHelper.SetElementPropertyValue(Boolean& shouldIssueRead)\r\n   at XSerializer.CustomSerializer`1.DeserializeObject(XmlReader reader)\r\n   at XSerializer.SerializationExtensions.DeserializeObject(IXmlSerializerInternal serializer, String xml)\r\n   at XSerializer.XmlSerializer`1.Deserialize(String xml)\r\n   at lambda_method(Closure )\r\n"
+        "result": "success"
       },
       "ISetOfString": {
         "result": "failure",
-        "comment": "    System.NullReferenceException: Object reference not set to an instance of an object.\r\n       at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n       at XSerializer.ListSerializer..ctor(IXmlSerializerOptions options, String itemElementName)\r\n       at XSerializer.ListSerializer`2..ctor(IXmlSerializerOptions options, String itemElementName)\r\n    ",
-        "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n   at XSerializer.ListSerializer..ctor(IXmlSerializerOptions options, String itemElementName)\r\n   at XSerializer.ListSerializer`2..ctor(IXmlSerializerOptions options, String itemElementName)\r\n"
+        "comment": "    System.NullReferenceException: Object reference not set to an instance of an object.\r\n       at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n       at XSerializer.ListSerializer..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n       at XSerializer.ListSerializer`2..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n    ",
+        "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n   at XSerializer.ListSerializer..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n   at XSerializer.ListSerializer`2..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n"
       },
       "IReadOnlyListOfString": {
         "result": "success"
@@ -1020,14 +1018,12 @@
         "result": "success"
       },
       "Roundtrip": {
-        "result": "failure",
-        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: value\r\n    Actual:   (null)\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: value\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+        "result": "success"
       },
       "NestedRoundtrip": {
         "result": "failure",
-        "comment": "    System.InvalidOperationException: Unable to find serializable properties for type System.Collections.Generic.GenericEqualityComparer`1[System.String]\r\n       at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.SerializableProperty.WriteValue(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.DynamicSerializer.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.DictionarySerializer.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.SerializableProperty.WriteValue(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.SerializationExtensions.SerializeObject(IXmlSerializerInternal serializer, Object instance, Encoding encoding, Formatting formatting, ISerializeOptions options)\r\n       at lambda_method(Closure )\r\n    ",
-        "error": "System.InvalidOperationException: Unable to find serializable properties for type System.Collections.Generic.GenericEqualityComparer`1[System.String]\r\n   at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.SerializableProperty.WriteValue(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.DynamicSerializer.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.DictionarySerializer.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.SerializableProperty.WriteValue(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.SerializationExtensions.SerializeObject(IXmlSerializerInternal serializer, Object instance, Encoding encoding, Formatting formatting, ISerializeOptions options)\r\n   at lambda_method(Closure )\r\n"
+        "comment": "    System.InvalidOperationException: Unable to find serializable properties for type System.Collections.Generic.GenericEqualityComparer`1[System.String]\r\n       at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.SerializableProperty.WriteValue(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.DynamicSerializer.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.DictionarySerializer.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.SerializableProperty.WriteValue(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n       at XSerializer.SerializationExtensions.SerializeObject(IXmlSerializerInternal serializer, Object instance, Encoding encoding, Formatting formatting, ISerializeOptions options)\r\n       at lambda_method(Closure )\r\n    ",
+        "error": "System.InvalidOperationException: Unable to find serializable properties for type System.Collections.Generic.GenericEqualityComparer`1[System.String]\r\n   at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.SerializableProperty.WriteValue(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.DynamicSerializer.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.DictionarySerializer.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.SerializableProperty.WriteValue(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)\r\n   at XSerializer.SerializationExtensions.SerializeObject(IXmlSerializerInternal serializer, Object instance, Encoding encoding, Formatting formatting, ISerializeOptions options)\r\n   at lambda_method(Closure )\r\n"
       },
       "Basic": {
         "result": "failure",
@@ -1044,8 +1040,8 @@
       },
       "ISet": {
         "result": "failure",
-        "comment": "    System.NullReferenceException: Object reference not set to an instance of an object.\r\n       at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n       at XSerializer.ListSerializer..ctor(IXmlSerializerOptions options, String itemElementName)\r\n       at XSerializer.ListSerializer`2..ctor(IXmlSerializerOptions options, String itemElementName)\r\n    ",
-        "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n   at XSerializer.ListSerializer..ctor(IXmlSerializerOptions options, String itemElementName)\r\n   at XSerializer.ListSerializer`2..ctor(IXmlSerializerOptions options, String itemElementName)\r\n"
+        "comment": "    System.NullReferenceException: Object reference not set to an instance of an object.\r\n       at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n       at XSerializer.ListSerializer..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n       at XSerializer.ListSerializer`2..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n    ",
+        "error": "System.NullReferenceException: Object reference not set to an instance of an object.\r\n   at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)\r\n   at XSerializer.ListSerializer..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n   at XSerializer.ListSerializer`2..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)\r\n"
       },
       "MutableClass": {
         "result": "failure",
@@ -1069,8 +1065,8 @@
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Dynamic.ExpandoObject' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Dynamic.ExpandoObject' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   },
@@ -1183,13 +1179,13 @@
       },
       "CastToInt32": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Specified cast is not valid.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Specified cast is not valid.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Specified cast is not valid.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "System.InvalidCastException: Specified cast is not valid.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
       },
       "CastToString": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "PropertyAccess": {
         "result": "failure",
@@ -1198,8 +1194,8 @@
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   }

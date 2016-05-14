@@ -112,7 +112,7 @@
         <td class="neutral">
 4.0.0.0        </td>
         <td class="neutral">
-0.1.28        </td>
+0.3.5        </td>
         <td class="neutral">
 2.13        </td>
     </tr>
@@ -135,7 +135,7 @@ apr 2016        </td>
         <td class="skipped">
 n/a        </td>
         <td class="neutral date">
-apr 2015        </td>
+apr 2016        </td>
         <td class="neutral date">
 may 2014        </td>
     </tr>
@@ -241,7 +241,7 @@ n/a        </td>
         <td class="skipped">
 n/a        </td>
         <td class="neutral number">
-5 775        </td>
+8 701        </td>
         <td class="neutral number">
 10 062        </td>
     </tr>
@@ -268,8 +268,8 @@ n/a        </td>
 59%        </td>
         <td class="failure">
 26%        </td>
-        <td class="concern">
-67%        </td>
+        <td class="success">
+74%        </td>
         <td class="concern">
 52%        </td>
     </tr>
@@ -1079,20 +1079,8 @@ Actual:   Object[] {  }
 pass        </td>
         <td class="success">
 pass        </td>
-        <td class="failure">
-            <span title="<pre><code>System.InvalidProgramException: JIT Compiler encountered an internal limitation.
-   at Add_Invoker(Object , Object )
-   at XSerializer.ListSerializer`2.&amp;lt;&amp;gt;c__DisplayClassb.&amp;lt;.ctor&amp;gt;b__5(Object collection, Object item)
-   at XSerializer.ListSerializer`2.AddItemToCollection(Object collection, Object item)
-   at XSerializer.ListSerializer.DeserializeObject(XmlReader reader)
-   at XSerializer.CustomSerializer`1.DefaultConstructorHelper.SetElementPropertyValue(Boolean&amp;amp; shouldIssueRead)
-   at XSerializer.CustomSerializer`1.DeserializeObject(XmlReader reader)
-   at XSerializer.SerializationExtensions.DeserializeObject(IXmlSerializerInternal serializer, String xml)
-   at XSerializer.XmlSerializer`1.Deserialize(String xml)
-   at lambda_method(Closure )
-</code></pre>
-">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="success">
 pass        </td>
     </tr>
@@ -1203,8 +1191,8 @@ Parameter name: source
         <td class="failure">
             <span title="<pre><code>System.NullReferenceException: Object reference not set to an instance of an object.
    at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)
-   at XSerializer.ListSerializer..ctor(IXmlSerializerOptions options, String itemElementName)
-   at XSerializer.ListSerializer`2..ctor(IXmlSerializerOptions options, String itemElementName)
+   at XSerializer.ListSerializer..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)
+   at XSerializer.ListSerializer`2..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)
 </code></pre>
 ">fail</span>
         </td>
@@ -1495,14 +1483,8 @@ pass        </td>
 </code></pre>
 ">fail</span>
         </td>
-        <td class="failure">
-            <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: value
-Actual:   (null)
-   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
-</code></pre>
-">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="success">
 pass        </td>
     </tr>
@@ -1583,13 +1565,13 @@ Actual:   System.String
         </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidOperationException: Unable to find serializable properties for type System.Collections.Generic.GenericEqualityComparer`1[System.String]
-   at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
-   at XSerializer.SerializableProperty.WriteValue(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
-   at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
-   at XSerializer.DynamicSerializer.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
-   at XSerializer.DictionarySerializer.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
-   at XSerializer.SerializableProperty.WriteValue(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
-   at XSerializer.CustomSerializer`1.SerializeObject(SerializationXmlTextWriter writer, Object instance, ISerializeOptions options)
+   at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)
+   at XSerializer.SerializableProperty.WriteValue(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)
+   at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)
+   at XSerializer.DynamicSerializer.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)
+   at XSerializer.DictionarySerializer.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)
+   at XSerializer.SerializableProperty.WriteValue(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)
+   at XSerializer.CustomSerializer`1.SerializeObject(XSerializerXmlTextWriter writer, Object instance, ISerializeOptions options)
    at XSerializer.SerializationExtensions.SerializeObject(IXmlSerializerInternal serializer, Object instance, Encoding encoding, Formatting formatting, ISerializeOptions options)
    at lambda_method(Closure )
 </code></pre>
@@ -1970,8 +1952,8 @@ Actual:   HashSet&amp;lt;String&amp;gt; {  }
         <td class="failure">
             <span title="<pre><code>System.NullReferenceException: Object reference not set to an instance of an object.
    at XSerializer.DynamicMethodFactory.CreateDefaultConstructorFunc[T](Type type)
-   at XSerializer.ListSerializer..ctor(IXmlSerializerOptions options, String itemElementName)
-   at XSerializer.ListSerializer`2..ctor(IXmlSerializerOptions options, String itemElementName)
+   at XSerializer.ListSerializer..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)
+   at XSerializer.ListSerializer`2..ctor(EncryptAttribute encryptAttribute, IXmlSerializerOptions options, String itemElementName)
 </code></pre>
 ">fail</span>
         </td>
@@ -2328,6 +2310,8 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Specified cast is not valid.
    at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2353,7 +2337,6 @@ pass        </td>
             <span title="<pre><code>System.InvalidCastException: Specified cast is not valid.
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2392,8 +2375,6 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.
    at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2403,6 +2384,7 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Xml.XmlNode[]' to 'string'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2410,6 +2392,8 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
@@ -2447,8 +2431,6 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
@@ -2538,8 +2520,6 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2576,7 +2556,7 @@ pass        </td>
 ">fail</span>
         </td>
         <td class="failure">
-            <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
+            <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Dynamic.ExpandoObject' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
@@ -2585,8 +2565,6 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty`1[System.String]'.
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
