@@ -3345,13 +3345,14 @@
   {
     "name": "Unity",
     "url": "http://unity.codeplex.com",
-    "version": "3.5.1404.0",
+    "version": "4.0.1",
     "supports": [
       "net45",
       "net451",
       "net46",
       "win",
       "win81",
+      "wpa81",
       "wp80",
       "wp81",
       "dnx451",
