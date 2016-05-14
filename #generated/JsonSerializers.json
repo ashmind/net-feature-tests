@@ -1,0 +1,709 @@
+[
+  {
+    "name": "DataContractJsonSerializer",
+    "version": "4.0.0.0",
+    "supports": [],
+    "features": {
+      "String": {
+        "result": "success"
+      },
+      "Int32": {
+        "result": "success"
+      },
+      "DateTime": {
+        "result": "failure",
+        "comment": "    System.Runtime.Serialization.SerializationException: There was an error deserializing the object of type System.DateTime. DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON. ---> System.FormatException: DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON.\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDateInDefaultFormat(String originalDateTimeValue)\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDate(String originalDateTimeValue, DateTimeFormat dateTimeFormat)\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ReadElementContentAsDateTime()\r\n       at System.Runtime.Serialization.DateTimeDataContract.ReadXmlValue(XmlReaderDelegator reader, XmlObjectSerializerReadContext context)\r\n       at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       --- End of inner exception stack trace ---\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n    ",
+        "error": "System.Runtime.Serialization.SerializationException: There was an error deserializing the object of type System.DateTime. DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON. ---> System.FormatException: DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON.\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDateInDefaultFormat(String originalDateTimeValue)\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDate(String originalDateTimeValue, DateTimeFormat dateTimeFormat)\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ReadElementContentAsDateTime()\r\n   at System.Runtime.Serialization.DateTimeDataContract.ReadXmlValue(XmlReaderDelegator reader, XmlObjectSerializerReadContext context)\r\n   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   --- End of inner exception stack trace ---\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n"
+      },
+      "DateTimeOffset": {
+        "result": "failure",
+        "comment": "    System.Runtime.Serialization.SerializationException: Expecting state 'Element'.. Encountered 'Text'  with name '', namespace ''. \r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContext.HandleMemberNotFound(XmlReaderDelegator xmlReader, ExtensionDataObject extensionData, Int32 memberIndex)\r\n       at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.GetJsonMemberIndex(XmlReaderDelegator xmlReader, XmlDictionaryString[] memberNames, Int32 memberIndex, ExtensionDataObject extensionData)\r\n       at ReadDateTimeOffsetFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )\r\n       at System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)\r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)\r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n    ",
+        "error": "System.Runtime.Serialization.SerializationException: Expecting state 'Element'.. Encountered 'Text'  with name '', namespace ''. \r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContext.HandleMemberNotFound(XmlReaderDelegator xmlReader, ExtensionDataObject extensionData, Int32 memberIndex)\r\n   at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.GetJsonMemberIndex(XmlReaderDelegator xmlReader, XmlDictionaryString[] memberNames, Int32 memberIndex, ExtensionDataObject extensionData)\r\n   at ReadDateTimeOffsetFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )\r\n   at System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)\r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)\r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n"
+      },
+      "Uri": {
+        "result": "success"
+      },
+      "ArrayOfString": {
+        "result": "success"
+      },
+      "ArrayOfObject": {
+        "result": "success"
+      },
+      "ListOfString": {
+        "result": "success"
+      },
+      "IListOfString": {
+        "result": "success"
+      },
+      "HashSetOfString": {
+        "result": "success"
+      },
+      "ISetOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n"
+      },
+      "IReadOnlyListOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyList`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyList`1[System.String]'.\r\n"
+      },
+      "IReadOnlyCollectionOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyCollection`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyCollection`1[System.String]'.\r\n"
+      },
+      "IEnumerableOfString": {
+        "result": "success"
+      },
+      "Roundtrip": {
+        "result": "success"
+      },
+      "NestedRoundtrip": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   System.Object[]\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
+        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   System.Object[]\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
+      },
+      "Basic": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: value\r\n    Actual:   (null)\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: value\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "Nested": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   (null)\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
+        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   (null)\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
+      },
+      "ICollection": {
+        "result": "failure",
+        "comment": "    System.Runtime.Serialization.SerializationException: The get-only collection of type 'System.Collections.Generic.ICollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' returned a null value.  The input stream contains collection items which cannot be added if the instance is null.  Consider initializing the collection in the getter.\r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContext.ThrowNullValueReturnedForGetOnlyCollectionException(Type type)\r\n       at ReadArrayOfstringFromJsonIsGetOnly(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString , CollectionDataContract )\r\n       at System.Runtime.Serialization.Json.JsonCollectionDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)\r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)\r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Int32 declaredTypeID, RuntimeTypeHandle declaredTypeHandle, String name, String ns)\r\n       at ReadRootFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )\r\n       at System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)\r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)\r\n       at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n    ",
+        "error": "System.Runtime.Serialization.SerializationException: The get-only collection of type 'System.Collections.Generic.ICollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]' returned a null value.  The input stream contains collection items which cannot be added if the instance is null.  Consider initializing the collection in the getter.\r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContext.ThrowNullValueReturnedForGetOnlyCollectionException(Type type)\r\n   at ReadArrayOfstringFromJsonIsGetOnly(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString , CollectionDataContract )\r\n   at System.Runtime.Serialization.Json.JsonCollectionDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)\r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)\r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Int32 declaredTypeID, RuntimeTypeHandle declaredTypeHandle, String name, String ns)\r\n   at ReadRootFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )\r\n   at System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)\r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract& dataContract)\r\n   at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n"
+      },
+      "ISet": {
+        "result": "failure",
+        "comment": "    System.Runtime.Serialization.InvalidDataContractException: No set method for property 'Value' in type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[System.Collections.Generic.ISet`1[System.String],System.Collections.Generic.HashSet`1[System.String]]'.\r\n       at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String message, Type type)\r\n       at WriteRootToJson(XmlWriterDelegator , Object , XmlObjectSerializerWriteContextComplexJson , ClassDataContract , XmlDictionaryString[] )\r\n       at System.Runtime.Serialization.Json.JsonClassDataContract.WriteJsonValueCore(XmlWriterDelegator jsonWriter, Object obj, XmlObjectSerializerWriteContextComplexJson context, RuntimeTypeHandle declaredTypeHandle)\r\n       at System.Runtime.Serialization.Json.XmlObjectSerializerWriteContextComplexJson.WriteDataContractValue(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n       at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithoutXsiType(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObjectContent(XmlWriterDelegator writer, Object graph)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(XmlDictionaryWriter writer, Object graph)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream stream, Object graph)\r\n    ",
+        "error": "System.Runtime.Serialization.InvalidDataContractException: No set method for property 'Value' in type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[System.Collections.Generic.ISet`1[System.String],System.Collections.Generic.HashSet`1[System.String]]'.\r\n   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String message, Type type)\r\n   at WriteRootToJson(XmlWriterDelegator , Object , XmlObjectSerializerWriteContextComplexJson , ClassDataContract , XmlDictionaryString[] )\r\n   at System.Runtime.Serialization.Json.JsonClassDataContract.WriteJsonValueCore(XmlWriterDelegator jsonWriter, Object obj, XmlObjectSerializerWriteContextComplexJson context, RuntimeTypeHandle declaredTypeHandle)\r\n   at System.Runtime.Serialization.Json.XmlObjectSerializerWriteContextComplexJson.WriteDataContractValue(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n   at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithoutXsiType(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObjectContent(XmlWriterDelegator writer, Object graph)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(XmlDictionaryWriter writer, Object graph)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream stream, Object graph)\r\n"
+      },
+      "MutableClass": {
+        "result": "failure",
+        "comment": "    System.Runtime.Serialization.InvalidDataContractException: No set method for property 'Value' in type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[System.String],FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[System.String]]'.\r\n       at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String message, Type type)\r\n       at WriteRootToJson(XmlWriterDelegator , Object , XmlObjectSerializerWriteContextComplexJson , ClassDataContract , XmlDictionaryString[] )\r\n       at System.Runtime.Serialization.Json.JsonClassDataContract.WriteJsonValueCore(XmlWriterDelegator jsonWriter, Object obj, XmlObjectSerializerWriteContextComplexJson context, RuntimeTypeHandle declaredTypeHandle)\r\n       at System.Runtime.Serialization.Json.XmlObjectSerializerWriteContextComplexJson.WriteDataContractValue(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n       at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithoutXsiType(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObjectContent(XmlWriterDelegator writer, Object graph)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(XmlDictionaryWriter writer, Object graph)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream stream, Object graph)\r\n    ",
+        "error": "System.Runtime.Serialization.InvalidDataContractException: No set method for property 'Value' in type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[System.String],FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[System.String]]'.\r\n   at System.Runtime.Serialization.DataContract.DataContractCriticalHelper.ThrowInvalidDataContractException(String message, Type type)\r\n   at WriteRootToJson(XmlWriterDelegator , Object , XmlObjectSerializerWriteContextComplexJson , ClassDataContract , XmlDictionaryString[] )\r\n   at System.Runtime.Serialization.Json.JsonClassDataContract.WriteJsonValueCore(XmlWriterDelegator jsonWriter, Object obj, XmlObjectSerializerWriteContextComplexJson context, RuntimeTypeHandle declaredTypeHandle)\r\n   at System.Runtime.Serialization.Json.XmlObjectSerializerWriteContextComplexJson.WriteDataContractValue(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n   at System.Runtime.Serialization.XmlObjectSerializerWriteContext.SerializeWithoutXsiType(DataContract dataContract, XmlWriterDelegator xmlWriter, Object obj, RuntimeTypeHandle declaredTypeHandle)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObjectContent(XmlWriterDelegator writer, Object graph)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.InternalWriteObject(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.WriteObjectHandleExceptions(XmlWriterDelegator writer, Object graph, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(XmlDictionaryWriter writer, Object graph)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.WriteObject(Stream stream, Object graph)\r\n"
+      },
+      "CustomConstructorDeserialized": {
+        "result": "success"
+      },
+      "CustomConstructorCalled": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.TrueException: Assert.True() Failure\r\n    ",
+        "error": "Xunit.Sdk.TrueException: Assert.True() Failure\r\n"
+      },
+      "CastToInt32": {
+        "result": "success"
+      },
+      "CastToString": {
+        "result": "success"
+      },
+      "PropertyAccess": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
+      },
+      "CastToType": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[System.String]'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
+      }
+    }
+  },
+  {
+    "name": "fastJSON",
+    "url": "http://fastjson.codeplex.com/",
+    "version": "2.1.15.0",
+    "supports": [
+      "net20",
+      "net35",
+      "net40",
+      "net45"
+    ],
+    "features": {
+      "String": {
+        "result": "success"
+      },
+      "Int32": {
+        "result": "success"
+      },
+      "DateTime": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 02-Aug-14 12:34:56\r\n    Actual:   03-Aug-14 00:34:56\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 02-Aug-14 12:34:56\r\nActual:   03-Aug-14 00:34:56\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "DateTimeOffset": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Invalid cast from 'System.String' to 'System.DateTimeOffset'.\r\n       at System.Convert.DefaultToType(IConvertible value, Type targetType, IFormatProvider provider)\r\n       at System.String.System.IConvertible.ToType(Type type, IFormatProvider provider)\r\n       at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)\r\n       at fastJSON.deserializer.ChangeType(Object value, Type conversionType)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.InvalidCastException: Invalid cast from 'System.String' to 'System.DateTimeOffset'.\r\n   at System.Convert.DefaultToType(IConvertible value, Type targetType, IFormatProvider provider)\r\n   at System.String.System.IConvertible.ToType(Type type, IFormatProvider provider)\r\n   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)\r\n   at fastJSON.deserializer.ChangeType(Object value, Type conversionType)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "Uri": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Invalid cast from 'System.String' to 'System.Uri'.\r\n       at System.Convert.DefaultToType(IConvertible value, Type targetType, IFormatProvider provider)\r\n       at System.String.System.IConvertible.ToType(Type type, IFormatProvider provider)\r\n       at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)\r\n       at fastJSON.deserializer.ChangeType(Object value, Type conversionType)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.InvalidCastException: Invalid cast from 'System.String' to 'System.Uri'.\r\n   at System.Convert.DefaultToType(IConvertible value, Type targetType, IFormatProvider provider)\r\n   at System.String.System.IConvertible.ToType(Type type, IFormatProvider provider)\r\n   at System.Convert.ChangeType(Object value, Type conversionType, IFormatProvider provider)\r\n   at fastJSON.deserializer.ChangeType(Object value, Type conversionType)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "ArrayOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.String[]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.String[]'.\r\n"
+      },
+      "ArrayOfObject": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 1\r\n    Expected: Object[] { \"A\", 5 }\r\n    Actual:   Object[] { \"A\", 5 }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 1\r\nExpected: Object[] { \"A\", 5 }\r\nActual:   Object[] { \"A\", 5 }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "ListOfString": {
+        "result": "success"
+      },
+      "IListOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IList`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IList`1[System.String]'.\r\n"
+      },
+      "HashSetOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.HashSet`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.HashSet`1[System.String]'.\r\n"
+      },
+      "ISetOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n"
+      },
+      "IReadOnlyListOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyList`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyList`1[System.String]'.\r\n"
+      },
+      "IReadOnlyCollectionOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyCollection`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IReadOnlyCollection`1[System.String]'.\r\n"
+      },
+      "IEnumerableOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IEnumerable`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IEnumerable`1[System.String]'.\r\n"
+      },
+      "Roundtrip": {
+        "result": "failure",
+        "comment": "    System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.ArgumentNullException: Value cannot be null.\r\nParameter name: key\r\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "NestedRoundtrip": {
+        "result": "failure",
+        "comment": "    System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.ArgumentNullException: Value cannot be null.\r\nParameter name: key\r\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "Basic": {
+        "result": "failure",
+        "comment": "    System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.ArgumentNullException: Value cannot be null.\r\nParameter name: key\r\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "Nested": {
+        "result": "failure",
+        "comment": "    System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.ArgumentNullException: Value cannot be null.\r\nParameter name: key\r\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "ICollection": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: Collection<String> { \"A\", \"B\" }\r\n    Actual:   Collection<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Collection<String> { \"A\", \"B\" }\r\nActual:   Collection<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "ISet": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: HashSet<String> { \"A\", \"B\" }\r\n    Actual:   HashSet<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: HashSet<String> { \"A\", \"B\" }\r\nActual:   HashSet<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "MutableClass": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: { Value = A }\r\n    Actual:   { Value =  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: { Value = A }\r\nActual:   { Value =  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "CustomConstructorDeserialized": {
+        "result": "failure",
+        "comment": "    System.Exception: Failed to fast create instance for type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor' from assembly 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor, FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n       --- End of inner exception stack trace ---\r\n       at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.Exception: Failed to fast create instance for type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor' from assembly 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor, FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n   --- End of inner exception stack trace ---\r\n   at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "CustomConstructorCalled": {
+        "result": "failure",
+        "comment": "    System.Exception: Failed to fast create instance for type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor' from assembly 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor, FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n       --- End of inner exception stack trace ---\r\n       at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
+        "error": "System.Exception: Failed to fast create instance for type 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor' from assembly 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor, FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null' ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.DynamicILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n   --- End of inner exception stack trace ---\r\n   at fastJSON.Reflection.FastCreateInstance(Type objtype)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
+      },
+      "CastToInt32": {
+        "result": "success"
+      },
+      "CastToString": {
+        "result": "success"
+      },
+      "PropertyAccess": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      },
+      "CastToType": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      }
+    }
+  },
+  {
+    "name": "JavaScriptSerializer",
+    "version": "4.0.0.0",
+    "supports": [],
+    "features": {
+      "String": {
+        "result": "success"
+      },
+      "Int32": {
+        "result": "success"
+      },
+      "DateTime": {
+        "result": "success"
+      },
+      "DateTimeOffset": {
+        "result": "success"
+      },
+      "Uri": {
+        "result": "success"
+      },
+      "ArrayOfString": {
+        "result": "success"
+      },
+      "ArrayOfObject": {
+        "result": "success"
+      },
+      "ListOfString": {
+        "result": "success"
+      },
+      "IListOfString": {
+        "result": "success"
+      },
+      "HashSetOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[System.String]' to type 'System.Collections.Generic.HashSet`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[System.String]' to type 'System.Collections.Generic.HashSet`1[System.String]'.\r\n"
+      },
+      "ISetOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[System.String]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[System.String]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n"
+      },
+      "IReadOnlyListOfString": {
+        "result": "success"
+      },
+      "IReadOnlyCollectionOfString": {
+        "result": "success"
+      },
+      "IEnumerableOfString": {
+        "result": "success"
+      },
+      "Roundtrip": {
+        "result": "success"
+      },
+      "NestedRoundtrip": {
+        "result": "success"
+      },
+      "Basic": {
+        "result": "success"
+      },
+      "Nested": {
+        "result": "success"
+      },
+      "ICollection": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: Collection<String> { \"A\", \"B\" }\r\n    Actual:   Collection<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Collection<String> { \"A\", \"B\" }\r\nActual:   Collection<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "ISet": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: HashSet<String> { \"A\", \"B\" }\r\n    Actual:   HashSet<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: HashSet<String> { \"A\", \"B\" }\r\nActual:   HashSet<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "MutableClass": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: { Value = A }\r\n    Actual:   { Value =  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: { Value = A }\r\nActual:   { Value =  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "CustomConstructorDeserialized": {
+        "result": "failure",
+        "comment": "    System.MissingMethodException: No parameterless constructor defined for type of 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor'.\r\n       at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n       at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n       at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n       at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)\r\n    ",
+        "error": "System.MissingMethodException: No parameterless constructor defined for type of 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor'.\r\n   at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)\r\n"
+      },
+      "CustomConstructorCalled": {
+        "result": "failure",
+        "comment": "    System.MissingMethodException: No parameterless constructor defined for type of 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor'.\r\n       at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n       at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n       at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n       at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)\r\n    ",
+        "error": "System.MissingMethodException: No parameterless constructor defined for type of 'FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor'.\r\n   at System.Web.Script.Serialization.ObjectConverter.ConvertDictionaryToObject(IDictionary`2 dictionary, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeInternal(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n   at System.Web.Script.Serialization.ObjectConverter.ConvertObjectToTypeMain(Object o, Type type, JavaScriptSerializer serializer, Boolean throwOnError, Object& convertedObject)\r\n   at System.Web.Script.Serialization.JavaScriptSerializer.Deserialize(JavaScriptSerializer serializer, String input, Type type, Int32 depthLimit)\r\n"
+      },
+      "CastToInt32": {
+        "result": "success"
+      },
+      "CastToString": {
+        "result": "success"
+      },
+      "PropertyAccess": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      },
+      "CastToType": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      }
+    }
+  },
+  {
+    "name": "NETJson",
+    "url": "https://github.com/rpgmaker/NetJSON",
+    "version": "1.1.0.1",
+    "supports": [
+      "net35",
+      "net40",
+      "net45"
+    ],
+    "features": {
+      "String": {
+        "result": "success"
+      },
+      "Int32": {
+        "result": "success"
+      },
+      "DateTime": {
+        "result": "success"
+      },
+      "DateTimeOffset": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 02-Aug-14 12:34:56 +03:00\r\n    Actual:   02-Aug-14 12:34:55 +00:00\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 02-Aug-14 12:34:56 +03:00\r\nActual:   02-Aug-14 12:34:55 +00:00\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "Uri": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateGetClassOrDictFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at DeserializeSystem.Uri(String )\r\n       at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateGetClassOrDictFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at DeserializeSystem.Uri(String )\r\n   at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n"
+      },
+      "ArrayOfString": {
+        "result": "success"
+      },
+      "ArrayOfObject": {
+        "result": "success"
+      },
+      "ListOfString": {
+        "result": "success"
+      },
+      "IListOfString": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at DeserializeSystem.Collections.Generic.IList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n       at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at DeserializeSystem.Collections.Generic.IList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n   at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n"
+      },
+      "HashSetOfString": {
+        "result": "success"
+      },
+      "ISetOfString": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at DeserializeSystem.Collections.Generic.ISet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n       at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at DeserializeSystem.Collections.Generic.ISet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n   at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n"
+      },
+      "IReadOnlyListOfString": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at DeserializeSystem.Collections.Generic.IReadOnlyList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n       at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at DeserializeSystem.Collections.Generic.IReadOnlyList`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n   at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n"
+      },
+      "IReadOnlyCollectionOfString": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at DeserializeSystem.Collections.Generic.IReadOnlyCollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n       at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at DeserializeSystem.Collections.Generic.IReadOnlyCollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n   at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n"
+      },
+      "IEnumerableOfString": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at DeserializeSystem.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n       at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at DeserializeSystem.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n   at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n"
+      },
+      "Roundtrip": {
+        "result": "success"
+      },
+      "NestedRoundtrip": {
+        "result": "success"
+      },
+      "Basic": {
+        "result": "success"
+      },
+      "Nested": {
+        "result": "success"
+      },
+      "ICollection": {
+        "result": "failure",
+        "comment": "    System.TypeLoadException: Could not load type 'RootClassWithCustomConstructorClass' from assembly 'NetJSONGeneratedAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.\r\n       at RootClassWithSingleReadOnlyProperty`2ICollection`1StringCollection`1StringClass.WriteICollectionString(ICollection`1 , StringBuilder , NetJSONSettings )\r\n       at RootClassWithSingleReadOnlyProperty`2ICollection`1StringCollection`1StringClass.WriteRootClassWithSingleReadOnlyPropertyICollectionStringCollectionString(RootClassWithSingleReadOnlyProperty`2 , StringBuilder , NetJSONSettings )\r\n       at RootClassWithSingleReadOnlyProperty`2ICollection`1StringCollection`1StringClass.Serialize(RootClassWithSingleReadOnlyProperty`2 )\r\n       at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[System.Collections.Generic.ICollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.ObjectModel.Collection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )\r\n       at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n    ",
+        "error": "System.TypeLoadException: Could not load type 'RootClassWithCustomConstructorClass' from assembly 'NetJSONGeneratedAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.\r\n   at RootClassWithSingleReadOnlyProperty`2ICollection`1StringCollection`1StringClass.WriteICollectionString(ICollection`1 , StringBuilder , NetJSONSettings )\r\n   at RootClassWithSingleReadOnlyProperty`2ICollection`1StringCollection`1StringClass.WriteRootClassWithSingleReadOnlyPropertyICollectionStringCollectionString(RootClassWithSingleReadOnlyProperty`2 , StringBuilder , NetJSONSettings )\r\n   at RootClassWithSingleReadOnlyProperty`2ICollection`1StringCollection`1StringClass.Serialize(RootClassWithSingleReadOnlyProperty`2 )\r\n   at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[System.Collections.Generic.ICollection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.ObjectModel.Collection`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )\r\n   at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n"
+      },
+      "ISet": {
+        "result": "failure",
+        "comment": "    System.TypeLoadException: Could not load type 'RootClassWithCustomConstructorClass' from assembly 'NetJSONGeneratedAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.\r\n       at RootClassWithSingleReadOnlyProperty`2ISet`1StringHashSet`1StringClass.WriteISetString(ISet`1 , StringBuilder , NetJSONSettings )\r\n       at RootClassWithSingleReadOnlyProperty`2ISet`1StringHashSet`1StringClass.WriteRootClassWithSingleReadOnlyPropertyISetStringHashSetString(RootClassWithSingleReadOnlyProperty`2 , StringBuilder , NetJSONSettings )\r\n       at RootClassWithSingleReadOnlyProperty`2ISet`1StringHashSet`1StringClass.Serialize(RootClassWithSingleReadOnlyProperty`2 )\r\n       at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[System.Collections.Generic.ISet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )\r\n       at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n    ",
+        "error": "System.TypeLoadException: Could not load type 'RootClassWithCustomConstructorClass' from assembly 'NetJSONGeneratedAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.\r\n   at RootClassWithSingleReadOnlyProperty`2ISet`1StringHashSet`1StringClass.WriteISetString(ISet`1 , StringBuilder , NetJSONSettings )\r\n   at RootClassWithSingleReadOnlyProperty`2ISet`1StringHashSet`1StringClass.WriteRootClassWithSingleReadOnlyPropertyISetStringHashSetString(RootClassWithSingleReadOnlyProperty`2 , StringBuilder , NetJSONSettings )\r\n   at RootClassWithSingleReadOnlyProperty`2ISet`1StringHashSet`1StringClass.Serialize(RootClassWithSingleReadOnlyProperty`2 )\r\n   at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[System.Collections.Generic.ISet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089],[System.Collections.Generic.HashSet`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](Object )\r\n   at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n"
+      },
+      "MutableClass": {
+        "result": "failure",
+        "comment": "    System.TypeLoadException: Could not load type 'RootClassWithCustomConstructorClass' from assembly 'NetJSONGeneratedAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.\r\n       at RootClassWithSingleReadOnlyProperty`2ClassWithSingleProperty`1StringClassWithSingleProperty`1StringClass.WriteClassWithSinglePropertyString(ClassWithSingleProperty`1 , StringBuilder , NetJSONSettings )\r\n       at RootClassWithSingleReadOnlyProperty`2ClassWithSingleProperty`1StringClassWithSingleProperty`1StringClass.WriteRootClassWithSingleReadOnlyPropertyClassWithSinglePropertyStringClassWithSinglePropertyString(RootClassWithSingleReadOnlyProperty`2 , StringBuilder , NetJSONSettings )\r\n       at RootClassWithSingleReadOnlyProperty`2ClassWithSingleProperty`1StringClassWithSingleProperty`1StringClass.Serialize(RootClassWithSingleReadOnlyProperty`2 )\r\n       at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]](Object )\r\n       at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n    ",
+        "error": "System.TypeLoadException: Could not load type 'RootClassWithCustomConstructorClass' from assembly 'NetJSONGeneratedAssembly, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null'.\r\n   at RootClassWithSingleReadOnlyProperty`2ClassWithSingleProperty`1StringClassWithSingleProperty`1StringClass.WriteClassWithSinglePropertyString(ClassWithSingleProperty`1 , StringBuilder , NetJSONSettings )\r\n   at RootClassWithSingleReadOnlyProperty`2ClassWithSingleProperty`1StringClassWithSingleProperty`1StringClass.WriteRootClassWithSingleReadOnlyPropertyClassWithSinglePropertyStringClassWithSinglePropertyString(RootClassWithSingleReadOnlyProperty`2 , StringBuilder , NetJSONSettings )\r\n   at RootClassWithSingleReadOnlyProperty`2ClassWithSingleProperty`1StringClassWithSingleProperty`1StringClass.Serialize(RootClassWithSingleReadOnlyProperty`2 )\r\n   at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithSingleReadOnlyProperty`2[[FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null],[FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]], FeatureTests.On.JsonSerializers, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]](Object )\r\n   at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n"
+      },
+      "CustomConstructorDeserialized": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateGetClassOrDictFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor(Object )\r\n       at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateGetClassOrDictFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor(Object )\r\n   at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n"
+      },
+      "CustomConstructorCalled": {
+        "result": "failure",
+        "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateGetClassOrDictFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor(Object )\r\n       at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n    ",
+        "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateGetClassOrDictFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at SerializeFeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor(Object )\r\n   at NetJSON.NetJSON.Serialize(Type type, Object value)\r\n"
+      },
+      "CastToInt32": {
+        "result": "success"
+      },
+      "CastToString": {
+        "result": "success"
+      },
+      "PropertyAccess": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      },
+      "CastToType": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      }
+    }
+  },
+  {
+    "name": "Newtonsoft.Json",
+    "url": "http://www.newtonsoft.com/json",
+    "version": "8.0.3",
+    "supports": [
+      "net20",
+      "net35",
+      "net40",
+      "net45",
+      "win80",
+      "wpa81",
+      "wp80",
+      "sl50",
+      "dnxcore50"
+    ],
+    "features": {
+      "String": {
+        "result": "success"
+      },
+      "Int32": {
+        "result": "success"
+      },
+      "DateTime": {
+        "result": "success"
+      },
+      "DateTimeOffset": {
+        "result": "success"
+      },
+      "Uri": {
+        "result": "success"
+      },
+      "ArrayOfString": {
+        "result": "success"
+      },
+      "ArrayOfObject": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 1\r\n    Expected: Object[] { \"A\", 5 }\r\n    Actual:   Object[] { \"A\", 5 }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 1\r\nExpected: Object[] { \"A\", 5 }\r\nActual:   Object[] { \"A\", 5 }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "ListOfString": {
+        "result": "success"
+      },
+      "IListOfString": {
+        "result": "success"
+      },
+      "HashSetOfString": {
+        "result": "success"
+      },
+      "ISetOfString": {
+        "result": "success"
+      },
+      "IReadOnlyListOfString": {
+        "result": "success"
+      },
+      "IReadOnlyCollectionOfString": {
+        "result": "success"
+      },
+      "IEnumerableOfString": {
+        "result": "success"
+      },
+      "Roundtrip": {
+        "result": "success"
+      },
+      "NestedRoundtrip": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   Newtonsoft.Json.Linq.JObject\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
+        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   Newtonsoft.Json.Linq.JObject\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
+      },
+      "Basic": {
+        "result": "success"
+      },
+      "Nested": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   Newtonsoft.Json.Linq.JObject\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
+        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   Newtonsoft.Json.Linq.JObject\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
+      },
+      "ICollection": {
+        "result": "success"
+      },
+      "ISet": {
+        "result": "success"
+      },
+      "MutableClass": {
+        "result": "success"
+      },
+      "CustomConstructorDeserialized": {
+        "result": "success"
+      },
+      "CustomConstructorCalled": {
+        "result": "success"
+      },
+      "CastToInt32": {
+        "result": "success"
+      },
+      "CastToString": {
+        "result": "success"
+      },
+      "PropertyAccess": {
+        "result": "success"
+      },
+      "CastToType": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'Newtonsoft.Json.Linq.JObject' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'Newtonsoft.Json.Linq.JObject' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      }
+    }
+  },
+  {
+    "name": "ServiceStack JSON",
+    "url": "https://github.com/ServiceStack/ServiceStack.Text",
+    "version": "4.0.56",
+    "supports": [
+      "net40",
+      "net45",
+      "win80",
+      "sl50",
+      "MonoAndroid",
+      "MonoTouch",
+      "xamarinios10"
+    ],
+    "features": {
+      "String": {
+        "result": "success"
+      },
+      "Int32": {
+        "result": "success"
+      },
+      "DateTime": {
+        "result": "success"
+      },
+      "DateTimeOffset": {
+        "result": "success"
+      },
+      "Uri": {
+        "result": "success"
+      },
+      "ArrayOfString": {
+        "result": "success"
+      },
+      "ArrayOfObject": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 1\r\n    Expected: Object[] { \"A\", 5 }\r\n    Actual:   Object[] { \"A\", \"5\" }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 1\r\nExpected: Object[] { \"A\", 5 }\r\nActual:   Object[] { \"A\", \"5\" }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "ListOfString": {
+        "result": "success"
+      },
+      "IListOfString": {
+        "result": "success"
+      },
+      "HashSetOfString": {
+        "result": "success"
+      },
+      "ISetOfString": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[System.String]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Collections.Generic.List`1[System.String]' to type 'System.Collections.Generic.ISet`1[System.String]'.\r\n"
+      },
+      "IReadOnlyListOfString": {
+        "result": "success"
+      },
+      "IReadOnlyCollectionOfString": {
+        "result": "success"
+      },
+      "IEnumerableOfString": {
+        "result": "success"
+      },
+      "Roundtrip": {
+        "result": "success"
+      },
+      "NestedRoundtrip": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   System.String\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
+        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   System.String\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
+      },
+      "Basic": {
+        "result": "success"
+      },
+      "Nested": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   System.String\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
+        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   System.String\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
+      },
+      "ICollection": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: Collection<String> { \"A\", \"B\" }\r\n    Actual:   Collection<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Collection<String> { \"A\", \"B\" }\r\nActual:   Collection<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "ISet": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: HashSet<String> { \"A\", \"B\" }\r\n    Actual:   HashSet<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: HashSet<String> { \"A\", \"B\" }\r\nActual:   HashSet<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "MutableClass": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: { Value = A }\r\n    Actual:   { Value =  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: { Value = A }\r\nActual:   { Value =  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "CustomConstructorDeserialized": {
+        "result": "success"
+      },
+      "CustomConstructorCalled": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.TrueException: Assert.True() Failure\r\n    ",
+        "error": "Xunit.Sdk.TrueException: Assert.True() Failure\r\n"
+      },
+      "CastToInt32": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'int'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'int'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      },
+      "CastToString": {
+        "result": "success"
+      },
+      "PropertyAccess": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'string' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'string' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      },
+      "CastToType": {
+        "result": "failure",
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      }
+    }
+  }
+]

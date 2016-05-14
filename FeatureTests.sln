@@ -20,7 +20,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Results.Web", "#framework\R
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "DependencyInjection\DependencyInjection.csproj", "{257C6C29-5704-4DD8-813A-C6A3C04C1204}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Serializers", "Serializers\Serializers.csproj", "{B959E296-E27E-4D5C-AA9D-B267E38D58C3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSerializers", "JsonSerializers\JsonSerializers.csproj", "{B959E296-E27E-4D5C-AA9D-B267E38D58C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection.CodeOnlyPackages", "DependencyInjection.CodeOnlyPackages\DependencyInjection.CodeOnlyPackages.csproj", "{78CAC086-F4A3-4DB0-A9F2-1851FEFE698B}"
 EndProject
