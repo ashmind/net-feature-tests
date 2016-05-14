@@ -42,6 +42,10 @@
       <HintPath>..\#packages\fastJSON.2.1.15.0\lib\net40\fastjson.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Jil">
+      <HintPath>..\#packages\Jil.2.14.3\lib\net45\Jil.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="NetJSON, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\NetJSON.1.1.0.1\lib\net40\NetJSON.dll</HintPath>
@@ -55,6 +59,10 @@
     <Reference Include="ServiceStack.Text, Version=4.0.56.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\ServiceStack.Text.4.0.56\lib\net40\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Sigil">
+      <HintPath>..\#packages\Sigil.4.6.1\lib\net45\Sigil.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -78,6 +86,7 @@
     <Compile Include="2_CollectionTests.cs" />
     <Compile Include="3_DictionaryTests.cs" />
     <Compile Include="1_SimpleTypeTests.cs" />
+    <Compile Include="Adapters\JilAdapter.cs" />
     <Compile Include="Adapters\SystemWeb.cs" />
     <Compile Include="Adapters\DataContractJsonSerializerAdapter.cs" />
     <Compile Include="Adapters\IJsonSerializerAdapter.cs" />

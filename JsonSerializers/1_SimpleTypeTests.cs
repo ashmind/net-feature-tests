@@ -12,6 +12,8 @@ namespace FeatureTests.On.JsonSerializers {
     [DisplayName("Simple types")]
     [Description("Tests on simple types -- top level primitive.")]
     public class SimpleTypeTests {
+        private const string Iso8601WithTimeZoneFormat = @"yyyy-MM-ddTHH\:mm\:ss.fffffffK";
+
         [Feature]
         [DisplayName("string")]
         public void String(IJsonSerializerAdapter adapter) {
@@ -27,15 +29,15 @@ namespace FeatureTests.On.JsonSerializers {
         [Feature]
         [DisplayName("DateTime")]
         public void DateTime(IJsonSerializerAdapter adapter) {
-            var date = new DateTime(2014, 08, 02, 12, 34, 56);
-            AssertDeserializesTo(date, "\"" + date.ToString("O") + "\"", adapter);
+            var date = new DateTime(2014, 08, 02, 12, 34, 56, DateTimeKind.Utc);
+            AssertDeserializesTo(date, "\"" + date.ToString(Iso8601WithTimeZoneFormat) + "\"", adapter);
         }
 
         [Feature]
         [DisplayName("DateTimeOffset")]
         public void DateTimeOffset(IJsonSerializerAdapter adapter) {
             var date = new DateTimeOffset(2014, 08, 02, 12, 34, 56, TimeSpan.FromHours(3));
-            AssertDeserializesTo(date, "\"" + date.ToString("O") + "\"", adapter);
+            AssertDeserializesTo(date, "\"" + date.ToString(Iso8601WithTimeZoneFormat) + "\"", adapter);
         }
 
         [Feature]

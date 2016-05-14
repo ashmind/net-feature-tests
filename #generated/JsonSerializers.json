@@ -12,8 +12,8 @@
       },
       "DateTime": {
         "result": "failure",
-        "comment": "    System.Runtime.Serialization.SerializationException: There was an error deserializing the object of type System.DateTime. DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON. ---> System.FormatException: DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON.\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDateInDefaultFormat(String originalDateTimeValue)\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDate(String originalDateTimeValue, DateTimeFormat dateTimeFormat)\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ReadElementContentAsDateTime()\r\n       at System.Runtime.Serialization.DateTimeDataContract.ReadXmlValue(XmlReaderDelegator reader, XmlObjectSerializerReadContext context)\r\n       at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       --- End of inner exception stack trace ---\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n    ",
-        "error": "System.Runtime.Serialization.SerializationException: There was an error deserializing the object of type System.DateTime. DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON. ---> System.FormatException: DateTime content '2014-08-02T12:34:56.0000000' does not start with '\\/Date(' and end with ')\\/' as required for JSON.\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDateInDefaultFormat(String originalDateTimeValue)\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDate(String originalDateTimeValue, DateTimeFormat dateTimeFormat)\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ReadElementContentAsDateTime()\r\n   at System.Runtime.Serialization.DateTimeDataContract.ReadXmlValue(XmlReaderDelegator reader, XmlObjectSerializerReadContext context)\r\n   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   --- End of inner exception stack trace ---\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n"
+        "comment": "    System.Runtime.Serialization.SerializationException: There was an error deserializing the object of type System.DateTime. DateTime content '2014-08-02T12:34:56.0000000Z' does not start with '\\/Date(' and end with ')\\/' as required for JSON. ---> System.FormatException: DateTime content '2014-08-02T12:34:56.0000000Z' does not start with '\\/Date(' and end with ')\\/' as required for JSON.\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDateInDefaultFormat(String originalDateTimeValue)\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDate(String originalDateTimeValue, DateTimeFormat dateTimeFormat)\r\n       at System.Runtime.Serialization.Json.JsonReaderDelegator.ReadElementContentAsDateTime()\r\n       at System.Runtime.Serialization.DateTimeDataContract.ReadXmlValue(XmlReaderDelegator reader, XmlObjectSerializerReadContext context)\r\n       at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       --- End of inner exception stack trace ---\r\n       at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n       at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n    ",
+        "error": "System.Runtime.Serialization.SerializationException: There was an error deserializing the object of type System.DateTime. DateTime content '2014-08-02T12:34:56.0000000Z' does not start with '\\/Date(' and end with ')\\/' as required for JSON. ---> System.FormatException: DateTime content '2014-08-02T12:34:56.0000000Z' does not start with '\\/Date(' and end with ')\\/' as required for JSON.\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDateInDefaultFormat(String originalDateTimeValue)\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ParseJsonDate(String originalDateTimeValue, DateTimeFormat dateTimeFormat)\r\n   at System.Runtime.Serialization.Json.JsonReaderDelegator.ReadElementContentAsDateTime()\r\n   at System.Runtime.Serialization.DateTimeDataContract.ReadXmlValue(XmlReaderDelegator reader, XmlObjectSerializerReadContext context)\r\n   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.InternalReadObject(XmlReaderDelegator xmlReader, Boolean verifyObjectName)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.InternalReadObject(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   --- End of inner exception stack trace ---\r\n   at System.Runtime.Serialization.XmlObjectSerializer.ReadObjectHandleExceptions(XmlReaderDelegator reader, Boolean verifyObjectName, DataContractResolver dataContractResolver)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(XmlDictionaryReader reader)\r\n   at System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(Stream stream)\r\n"
       },
       "DateTimeOffset": {
         "result": "failure",
@@ -55,14 +55,6 @@
       },
       "IEnumerableOfString": {
         "result": "success"
-      },
-      "Roundtrip": {
-        "result": "success"
-      },
-      "NestedRoundtrip": {
-        "result": "failure",
-        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   System.Object[]\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
-        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   System.Object[]\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
       },
       "Basic": {
         "result": "failure",
@@ -190,16 +182,6 @@
         "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IEnumerable`1[System.String]'.\r\n    ",
         "error": "System.InvalidCastException: Unable to cast object of type 'System.Object[]' to type 'System.Collections.Generic.IEnumerable`1[System.String]'.\r\n"
       },
-      "Roundtrip": {
-        "result": "failure",
-        "comment": "    System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
-        "error": "System.ArgumentNullException: Value cannot be null.\r\nParameter name: key\r\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
-      },
-      "NestedRoundtrip": {
-        "result": "failure",
-        "comment": "    System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
-        "error": "System.ArgumentNullException: Value cannot be null.\r\nParameter name: key\r\n   at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n   at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n   at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n   at fastJSON.deserializer.ToObject(String json, Type type)\r\n"
-      },
       "Basic": {
         "result": "failure",
         "comment": "    System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: key\r\n       at System.Collections.Generic.Dictionary`2.FindEntry(TKey key)\r\n       at System.Collections.Generic.Dictionary`2.TryGetValue(TKey key, TValue& value)\r\n       at fastJSON.deserializer.ParseDictionary(Dictionary`2 d, Dictionary`2 globaltypes, Type type, Object input)\r\n       at fastJSON.deserializer.ToObject(String json, Type type)\r\n    ",
@@ -265,7 +247,9 @@
         "result": "success"
       },
       "DateTime": {
-        "result": "success"
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 02-Aug-14 12:34:56\r\n    Actual:   03-Aug-14 00:34:56\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 02-Aug-14 12:34:56\r\nActual:   03-Aug-14 00:34:56\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
       },
       "DateTimeOffset": {
         "result": "success"
@@ -302,12 +286,6 @@
         "result": "success"
       },
       "IEnumerableOfString": {
-        "result": "success"
-      },
-      "Roundtrip": {
-        "result": "success"
-      },
-      "NestedRoundtrip": {
         "result": "success"
       },
       "Basic": {
@@ -356,6 +334,113 @@
         "result": "failure",
         "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
         "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+      }
+    }
+  },
+  {
+    "name": "Jil",
+    "url": "https://github.com/kevin-montrose/Jil",
+    "version": "2.14.3",
+    "supports": [
+      "net45"
+    ],
+    "features": {
+      "String": {
+        "result": "success"
+      },
+      "Int32": {
+        "result": "success"
+      },
+      "DateTime": {
+        "result": "success"
+      },
+      "DateTimeOffset": {
+        "result": "success"
+      },
+      "Uri": {
+        "result": "failure",
+        "comment": "    Jil.DeserializationException: Error occurred building a deserializer for System.Uri: Expected a parameterless constructor for System.Uri ---> Jil.Common.ConstructionException: Expected a parameterless constructor for System.Uri\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n       at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n       --- End of inner exception stack trace ---\r\n       at _DynamicMethod65(ThunkReader& , Int32 )\r\n       at Jil.JSON.Deserialize[T](String text, Options options)\r\n       at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n       at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n    ",
+        "error": "Jil.DeserializationException: Error occurred building a deserializer for System.Uri: Expected a parameterless constructor for System.Uri ---> Jil.Common.ConstructionException: Expected a parameterless constructor for System.Uri\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n   at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n   --- End of inner exception stack trace ---\r\n   at _DynamicMethod65(ThunkReader& , Int32 )\r\n   at Jil.JSON.Deserialize[T](String text, Options options)\r\n   at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n   at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n"
+      },
+      "ArrayOfString": {
+        "result": "success"
+      },
+      "ArrayOfObject": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: Object[] { \"A\", 5 }\r\n    Actual:   Object[] { \"A\", 5 }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Object[] { \"A\", 5 }\r\nActual:   Object[] { \"A\", 5 }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "ListOfString": {
+        "result": "success"
+      },
+      "IListOfString": {
+        "result": "success"
+      },
+      "HashSetOfString": {
+        "result": "success"
+      },
+      "ISetOfString": {
+        "result": "success"
+      },
+      "IReadOnlyListOfString": {
+        "result": "success"
+      },
+      "IReadOnlyCollectionOfString": {
+        "result": "failure",
+        "comment": "    Jil.DeserializationException: Error occurred building a deserializer for System.Collections.Generic.IReadOnlyCollection`1[System.String]: Expected a parameterless constructor for System.Collections.Generic.IReadOnlyCollection`1[System.String] ---> Jil.Common.ConstructionException: Expected a parameterless constructor for System.Collections.Generic.IReadOnlyCollection`1[System.String]\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n       at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n       --- End of inner exception stack trace ---\r\n       at _DynamicMethod47(ThunkReader& , Int32 )\r\n       at Jil.JSON.Deserialize[T](String text, Options options)\r\n       at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n       at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n    ",
+        "error": "Jil.DeserializationException: Error occurred building a deserializer for System.Collections.Generic.IReadOnlyCollection`1[System.String]: Expected a parameterless constructor for System.Collections.Generic.IReadOnlyCollection`1[System.String] ---> Jil.Common.ConstructionException: Expected a parameterless constructor for System.Collections.Generic.IReadOnlyCollection`1[System.String]\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n   at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n   --- End of inner exception stack trace ---\r\n   at _DynamicMethod47(ThunkReader& , Int32 )\r\n   at Jil.JSON.Deserialize[T](String text, Options options)\r\n   at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n   at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n"
+      },
+      "IEnumerableOfString": {
+        "result": "success"
+      },
+      "Basic": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: value\r\n    Actual:   \"value\"\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: value\r\nActual:   \"value\"\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
+      },
+      "Nested": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   Jil.DeserializeDynamic.JsonObject\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
+        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   Jil.DeserializeDynamic.JsonObject\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
+      },
+      "ICollection": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: Collection<String> { \"A\", \"B\" }\r\n    Actual:   Collection<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: Collection<String> { \"A\", \"B\" }\r\nActual:   Collection<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "ISet": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: HashSet<String> { \"A\", \"B\" }\r\n    Actual:   HashSet<String> {  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: HashSet<String> { \"A\", \"B\" }\r\nActual:   HashSet<String> {  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "MutableClass": {
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: { Value = A }\r\n    Actual:   { Value =  }\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: { Value = A }\r\nActual:   { Value =  }\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+      },
+      "CustomConstructorDeserialized": {
+        "result": "failure",
+        "comment": "    Jil.DeserializationException: Error occurred building a deserializer for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor ---> Jil.Common.ConstructionException: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n       at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n       --- End of inner exception stack trace ---\r\n       at _DynamicMethod37(ThunkReader& , Int32 )\r\n       at Jil.JSON.Deserialize[T](String text, Options options)\r\n       at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n       at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n    ",
+        "error": "Jil.DeserializationException: Error occurred building a deserializer for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor ---> Jil.Common.ConstructionException: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n   at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n   --- End of inner exception stack trace ---\r\n   at _DynamicMethod37(ThunkReader& , Int32 )\r\n   at Jil.JSON.Deserialize[T](String text, Options options)\r\n   at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n   at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n"
+      },
+      "CustomConstructorCalled": {
+        "result": "failure",
+        "comment": "    Jil.DeserializationException: Error occurred building a deserializer for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor ---> Jil.Common.ConstructionException: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n       at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n       at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n       at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n       --- End of inner exception stack trace ---\r\n       at _DynamicMethod37(ThunkReader& , Int32 )\r\n       at Jil.JSON.Deserialize[T](String text, Options options)\r\n       at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n       at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n    ",
+        "error": "Jil.DeserializationException: Error occurred building a deserializer for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor ---> Jil.Common.ConstructionException: Expected a parameterless constructor for FeatureTests.On.JsonSerializers.TestTypes.RootClassWithCustomConstructor\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObjectAutomata(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.ReadObject(Type objType)\r\n   at Jil.Deserialize.InlineDeserializer`1.Build(MemberInfo forMember, Type forType, Boolean allowRecursion, Boolean fromNullable)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildWithNew(Type forType)\r\n   at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()\r\n   at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception& exceptionDuringBuild)\r\n   --- End of inner exception stack trace ---\r\n   at _DynamicMethod37(ThunkReader& , Int32 )\r\n   at Jil.JSON.Deserialize[T](String text, Options options)\r\n   at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)\r\n   at Jil.JSON.Deserialize(String text, Type type, Options options)\r\n"
+      },
+      "CastToInt32": {
+        "result": "success"
+      },
+      "CastToString": {
+        "result": "success"
+      },
+      "PropertyAccess": {
+        "result": "success"
+      },
+      "CastToType": {
+        "result": "failure",
+        "comment": "    System.InvalidCastException: Unable to convert dynamic [Object] to [FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]]\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to convert dynamic [Object] to [FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]]]\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   },
@@ -425,12 +510,6 @@
         "comment": "    System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\n    Parameter name: con\r\n       at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n       at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n       at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n       at NetJSON.NetJSON.Generate(Type objType)\r\n       at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n       --- End of inner exception stack trace ---\r\n       at NetJSON.NetJSON.GetSerializer[T]()\r\n       at DeserializeSystem.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n       at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n    ",
         "error": "System.TypeInitializationException: The type initializer for 'NetJSONCachedSerializer`1' threw an exception. ---> System.ArgumentNullException: Value cannot be null.\r\nParameter name: con\r\n   at System.Reflection.Emit.ILGenerator.Emit(OpCode opcode, ConstructorInfo con)\r\n   at NetJSON.NetJSON.GenerateCreateListFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.WriteDeserializeMethodFor(TypeBuilder typeBuilder, Type type)\r\n   at NetJSON.NetJSON.GenerateTypeBuilder(Type objType, ModuleBuilder module)\r\n   at NetJSON.NetJSON.Generate(Type objType)\r\n   at NetJSON.NetJSON.NetJSONCachedSerializer`1..cctor()\r\n   --- End of inner exception stack trace ---\r\n   at NetJSON.NetJSON.GetSerializer[T]()\r\n   at DeserializeSystem.Collections.Generic.IEnumerable`1[[System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089]](String )\r\n   at NetJSON.NetJSON.Deserialize(Type type, String value)\r\n"
       },
-      "Roundtrip": {
-        "result": "success"
-      },
-      "NestedRoundtrip": {
-        "result": "success"
-      },
       "Basic": {
         "result": "success"
       },
@@ -470,13 +549,13 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "CastToType": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary<string,object>' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty<string>'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       }
     }
   },
@@ -540,14 +619,6 @@
       "IEnumerableOfString": {
         "result": "success"
       },
-      "Roundtrip": {
-        "result": "success"
-      },
-      "NestedRoundtrip": {
-        "result": "failure",
-        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   Newtonsoft.Json.Linq.JObject\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
-        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   Newtonsoft.Json.Linq.JObject\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
-      },
       "Basic": {
         "result": "success"
       },
@@ -608,7 +679,9 @@
         "result": "success"
       },
       "DateTime": {
-        "result": "success"
+        "result": "failure",
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 02-Aug-14 12:34:56\r\n    Actual:   03-Aug-14 00:34:56\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 02-Aug-14 12:34:56\r\nActual:   03-Aug-14 00:34:56\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n"
       },
       "DateTimeOffset": {
         "result": "success"
@@ -646,14 +719,6 @@
       },
       "IEnumerableOfString": {
         "result": "success"
-      },
-      "Roundtrip": {
-        "result": "success"
-      },
-      "NestedRoundtrip": {
-        "result": "failure",
-        "comment": "    Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\n    Expected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\n    Actual:   System.String\r\n       at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n       at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n    ",
-        "error": "Xunit.Sdk.IsAssignableFromException: Assert.IsAssignableFrom() Failure\r\nExpected: System.Collections.Generic.IDictionary`2[System.String,System.Object]\r\nActual:   System.String\r\n   at Xunit.Assert.IsAssignableFrom(Type expectedType, Object object)\r\n   at Xunit.Assert.IsAssignableFrom[T](Object object)\r\n"
       },
       "Basic": {
         "result": "success"
