@@ -45,13 +45,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\#packages\AshMind.Extensions.1.7.2\lib\net45\AshMind.Extensions.dll</HintPath>
     </Reference>
-    <Reference Include="CacheCow.Client, Version=0.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CacheCow.Client, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\#packages\CacheCow.Client.0.6.3\lib\net40\CacheCow.Client.dll</HintPath>
+      <HintPath>..\..\#packages\CacheCow.Client.1.2.1\lib\net40\CacheCow.Client.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="CacheCow.Common, Version=0.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="CacheCow.Common, Version=1.2.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\#packages\CacheCow.Common.0.6.3\lib\net40\CacheCow.Common.dll</HintPath>
+      <HintPath>..\..\#packages\CacheCow.Common.1.2.1\lib\net40\CacheCow.Common.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="CommandLine">
       <HintPath>..\..\#packages\CommandLineParser.1.9.71\lib\net45\CommandLine.dll</HintPath>
