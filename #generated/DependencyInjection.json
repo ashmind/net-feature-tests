@@ -927,7 +927,7 @@
   {
     "name": "Grace",
     "url": "https://github.com/ipjohnson/Grace",
-    "version": "2.4.2",
+    "version": "3.1.0.0",
     "supports": [
       "net45",
       "net451",
@@ -936,11 +936,7 @@
       "win81",
       "wpa81",
       "wp80",
-      "wp81",
-      "MonoAndroid10",
-      "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40"
+      "wp81"
     ],
     "features": {
       "IndependentService": {
@@ -989,18 +985,13 @@
         "result": "success"
       },
       "MissingPrimitive": {
-        "result": "failure",
-        "comment": "    Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate Int32 for parameter optional on ServiceWithDependencyAndOptionalInt32Parameter\r\n    \r\n    1 Locate by type ServiceWithDependencyAndOptionalInt32Parameter in scope 'RootScope' \r\n    2 Activating type ServiceWithDependencyAndOptionalInt32Parameter  as transient\r\n    3 Importing  constructor parameter optional using name optional\r\n    \r\n       at lambda_method(Closure , IInjectionScope , IInjectionContext )\r\n       at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)\r\n       at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)\r\n       at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)\r\n    ",
-        "error": "Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate Int32 for parameter optional on ServiceWithDependencyAndOptionalInt32Parameter\r\n\r\n1 Locate by type ServiceWithDependencyAndOptionalInt32Parameter in scope 'RootScope' \r\n2 Activating type ServiceWithDependencyAndOptionalInt32Parameter  as transient\r\n3 Importing  constructor parameter optional using name optional\r\n\r\n   at lambda_method(Closure , IInjectionScope , IInjectionContext )\r\n   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)\r\n   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)\r\n   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)\r\n"
+        "result": "success"
       },
       "MissingPrimitiveDefaultValue": {
-        "result": "skipped",
-        "comment": "Skipped as Missing primitive (Optional parameters) is not supported by this library."
+        "result": "success"
       },
       "MissingDependency": {
-        "result": "failure",
-        "comment": "    Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate IService2 for parameter optional on ServiceWithDependencyAndOptionalOtherServiceParameter\r\n    \r\n    1 Locate by type ServiceWithDependencyAndOptionalOtherServiceParameter in scope 'RootScope' \r\n    2 Activating type ServiceWithDependencyAndOptionalOtherServiceParameter  as transient\r\n    3 Importing  constructor parameter optional using type IService2\r\n    \r\n       at lambda_method(Closure , IInjectionScope , IInjectionContext )\r\n       at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)\r\n       at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)\r\n       at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)\r\n    ",
-        "error": "Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate IService2 for parameter optional on ServiceWithDependencyAndOptionalOtherServiceParameter\r\n\r\n1 Locate by type ServiceWithDependencyAndOptionalOtherServiceParameter in scope 'RootScope' \r\n2 Activating type ServiceWithDependencyAndOptionalOtherServiceParameter  as transient\r\n3 Importing  constructor parameter optional using type IService2\r\n\r\n   at lambda_method(Closure , IInjectionScope , IInjectionContext )\r\n   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)\r\n   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)\r\n   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)\r\n"
+        "result": "success"
       },
       "FactoryWithNoParameters": {
         "result": "success"

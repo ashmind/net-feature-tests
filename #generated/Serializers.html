@@ -654,8 +654,9 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
+Position: First difference is at position 0
 Expected: 5
-Actual:   (null)
+Actual:   :Root
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
    at Xunit.Assert.Equal[T](T expected, T actual)
 </code></pre>
@@ -2409,8 +2410,6 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.
    at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2455,6 +2454,7 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
    at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
 </code></pre>
 ">fail</span>
         </td>

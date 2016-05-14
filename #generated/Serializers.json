@@ -378,8 +378,8 @@
       },
       "Int32": {
         "result": "failure",
-        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Expected: 5\r\n    Actual:   (null)\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
-        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nExpected: 5\r\nActual:   (null)\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
+        "comment": "    Xunit.Sdk.EqualException: Assert.Equal() Failure\r\n    Position: First difference is at position 0\r\n    Expected: 5\r\n    Actual:   :Root\r\n       at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n       at Xunit.Assert.Equal[T](T expected, T actual)\r\n    ",
+        "error": "Xunit.Sdk.EqualException: Assert.Equal() Failure\r\nPosition: First difference is at position 0\r\nExpected: 5\r\nActual:   :Root\r\n   at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)\r\n   at Xunit.Assert.Equal[T](T expected, T actual)\r\n"
       },
       "DateTime": {
         "result": "success"
@@ -482,8 +482,8 @@
       },
       "PropertyAccess": {
         "result": "failure",
-        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n    ",
+        "error": "Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary<string,object>' does not contain a definition for 'property'\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n"
       },
       "CastToType": {
         "result": "failure",
@@ -1192,8 +1192,8 @@
       },
       "CastToString": {
         "result": "failure",
-        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n       at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
-        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
+        "comment": "    System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n       at CallSite.Target(Closure , CallSite , Object )\r\n    ",
+        "error": "System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.\r\n   at CallSite.Target(Closure , CallSite , Object )\r\n"
       },
       "PropertyAccess": {
         "result": "failure",

@@ -102,13 +102,15 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreContainerNet45.dll</HintPath>
     </Reference>
-    <Reference Include="Grace, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Grace, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\#packages\Grace.2.4.2\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1\Grace.dll</HintPath>
+      <HintPath>..\#packages\Grace.3.1.0.0\lib\portable-net45+win+wpa81+wp80\Grace.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="Grace.MVC4, Version=2.4.2.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Grace.MVC4, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\#packages\Grace.MVC4.2.4.2\lib\net45\Grace.MVC4.dll</HintPath>
+      <HintPath>..\#packages\Grace.MVC4.3.1.0.0\lib\net45\Grace.MVC4.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="HaveBox, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>

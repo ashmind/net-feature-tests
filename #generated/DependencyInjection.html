@@ -114,7 +114,7 @@
         <td class="neutral">
 2.2.0.45        </td>
         <td class="neutral">
-2.4.2        </td>
+3.1.0.0        </td>
         <td class="neutral">
 2.0.0        </td>
         <td class="neutral">
@@ -161,7 +161,7 @@ may 2013        </td>
         <td class="neutral date">
 apr 2015        </td>
         <td class="neutral date">
-oct 2014        </td>
+may 2016        </td>
         <td class="neutral date">
 mar 2014        </td>
         <td class="neutral date">
@@ -390,7 +390,7 @@ n/a        </td>
         <td class="neutral number">
 7 664        </td>
         <td class="neutral number">
-7 011        </td>
+9 084        </td>
         <td class="neutral number">
 2 622        </td>
         <td class="neutral number">
@@ -442,7 +442,7 @@ n/a        </td>
         <td class="failure">
 36%        </td>
         <td class="success">
-92%        </td>
+96%        </td>
         <td class="failure">
 40%        </td>
         <td class="failure">
@@ -1650,8 +1650,8 @@ yes        </td>
 no        </td>
         <td class="concern">
 no        </td>
-        <td class="success">
-yes        </td>
+        <td class="concern">
+no        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -1697,8 +1697,8 @@ yes        </td>
 no        </td>
         <td class="success">
 yes        </td>
-        <td class="success">
-yes        </td>
+        <td class="concern">
+no        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -1744,8 +1744,8 @@ yes        </td>
 no        </td>
         <td class="concern">
 no        </td>
-        <td class="success">
-yes        </td>
+        <td class="concern">
+no        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -1791,8 +1791,8 @@ yes        </td>
 no        </td>
         <td class="success">
 yes        </td>
-        <td class="success">
-yes        </td>
+        <td class="concern">
+no        </td>
         <td class="concern">
 no        </td>
         <td class="concern">
@@ -3982,20 +3982,8 @@ pass        </td>
 </code></pre>
 ">fail</span>
         </td>
-        <td class="failure">
-            <span title="<pre><code>Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate Int32 for parameter optional on ServiceWithDependencyAndOptionalInt32Parameter
-
-1 Locate by type ServiceWithDependencyAndOptionalInt32Parameter in scope 'RootScope' 
-2 Activating type ServiceWithDependencyAndOptionalInt32Parameter  as transient
-3 Importing  constructor parameter optional using name optional
-
-   at lambda_method(Closure , IInjectionScope , IInjectionContext )
-   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)
-   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)
-   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)
-</code></pre>
-">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="<pre><code>System.Exception: Unknown type: Int32
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
@@ -4259,10 +4247,8 @@ pass        </td>
             <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
 ">n/a</span>
         </td>
-        <td class="skipped">
-            <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
-">n/a</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="skipped">
             <span title="<p>Skipped as Missing primitive (Optional parameters) is not supported by this library.</p>
 ">n/a</span>
@@ -4359,20 +4345,8 @@ pass        </td>
 </code></pre>
 ">fail</span>
         </td>
-        <td class="failure">
-            <span title="<pre><code>Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate IService2 for parameter optional on ServiceWithDependencyAndOptionalOtherServiceParameter
-
-1 Locate by type ServiceWithDependencyAndOptionalOtherServiceParameter in scope 'RootScope' 
-2 Activating type ServiceWithDependencyAndOptionalOtherServiceParameter  as transient
-3 Importing  constructor parameter optional using type IService2
-
-   at lambda_method(Closure , IInjectionScope , IInjectionContext )
-   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)
-   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)
-   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)
-</code></pre>
-">fail</span>
-        </td>
+        <td class="success">
+pass        </td>
         <td class="failure">
             <span title="<pre><code>System.Exception: Unknown type: IService2
    at HaveBox.DependencyStrapper.ResolveTypeDetailsList(IDictionary`2 dependencyMap, Type type)
