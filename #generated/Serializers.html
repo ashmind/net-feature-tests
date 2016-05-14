@@ -39,23 +39,6 @@
             </ul>
           </li>
           <li class="page-links-root">
-            <a href="ObjectMappers.html" >Object Mappers</a>
-            <ul>
-              <li><a class="child-link" href="ObjectMappers.html#Disclaimer" >Disclaimer</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#GeneralInformation" >General information</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#SupportedNETVersions" >Supported .NET versions</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#PrimitiveConversion" >Primitive conversion</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#NullableTypes" >Nullable types</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#Enums" >Enums</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#CollectionsWriteableProperty" >Collections (writeable property)</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#CollectionsReadOnlyProperty" >Collections (read-only property)</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#ConstructorParameters" >Constructor parameters</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#Dynamic" >Dynamic</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#Dictionaries" >Dictionaries</a></li>
-              <li><a class="child-link" href="ObjectMappers.html#Convenience" >Convenience</a></li>
-            </ul>
-          </li>
-          <li class="page-links-root">
             <a href="Serializers.html" data-same-page>Serializers</a>
             <ul>
               <li><a class="child-link" href="Serializers.html#Disclaimer" data-same-page>Disclaimer</a></li>
@@ -2366,6 +2349,8 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Specified cast is not valid.
    at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2424,6 +2409,8 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>System.InvalidCastException: Unable to cast object of type 'System.Object' to type 'System.String'.
    at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2454,12 +2441,6 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
    at CallSite.Target(Closure , CallSite , Object )
-</code></pre>
-">fail</span>
-        </td>
-        <td class="failure">
-            <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
-   at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
 </code></pre>
 ">fail</span>
@@ -2468,6 +2449,11 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+</code></pre>
+">fail</span>
+        </td>
+        <td class="failure">
+            <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
@@ -2476,6 +2462,8 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
@@ -2500,8 +2488,6 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'object' does not contain a definition for 'property'
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
@@ -2541,6 +2527,7 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2548,7 +2535,6 @@ pass        </td>
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
    at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2571,6 +2557,8 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
    at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -2584,8 +2572,6 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'string' to 'FeatureTests.On.Serializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>

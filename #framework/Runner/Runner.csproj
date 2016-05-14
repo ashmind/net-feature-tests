@@ -165,10 +165,6 @@
       <Project>{7db72f25-0a59-4bc9-b5ab-1f504f647580}</Project>
       <Name>Shared</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\ObjectMappers\ObjectMappers.csproj">
-      <Project>{FFF2E9E6-7BF5-4291-996F-9FDD6EC14387}</Project>
-      <Name>ObjectMappers</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Outputs\Html\Templates\css\main.css" />
