@@ -42,9 +42,10 @@
       <HintPath>..\#packages\fastJSON.2.1.15.0\lib\net40\fastjson.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="NetJSON, Version=1.0.7.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="NetJSON, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\#packages\NetJSON.1.0.7\lib\net40\NetJSON.dll</HintPath>
+      <HintPath>..\#packages\NetJSON.1.1.0.1\lib\net40\NetJSON.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
