@@ -15,6 +15,7 @@
       "wp80",
       "wp81",
       "sl50",
+      "dnx451",
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
@@ -151,7 +152,8 @@
       "net451",
       "net46",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -286,6 +288,7 @@
       "wp80",
       "wp81",
       "sl50",
+      "dnx451",
       "MonoAndroid",
       "MonoAndroid10",
       "MonoAndroid16",
@@ -462,6 +465,7 @@
       "wp80",
       "wp81",
       "sl50",
+      "dnx451",
       "dotnet",
       "MonoAndroid10",
       "MonoAndroid16",
@@ -591,7 +595,8 @@
       "net40-Client",
       "net45",
       "net451",
-      "net46"
+      "net46",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -765,6 +770,7 @@
       "win81",
       "wp80",
       "wp81",
+      "dnx451",
       "MonoAndroid16",
       "MonoTouch40"
     ],
@@ -936,7 +942,8 @@
       "win81",
       "wpa81",
       "wp80",
-      "wp81"
+      "wp81",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -1070,7 +1077,8 @@
       "wp80",
       "wp81",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -1241,7 +1249,8 @@
       "wp80",
       "wp81",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -1416,7 +1425,8 @@
       "net46",
       "sl30",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -1561,19 +1571,16 @@
   {
     "name": "LightInject",
     "url": "http://www.lightinject.net/",
-    "version": "3.0.2.6",
+    "version": "4.0.9",
     "supports": [
-      "net40",
-      "net40-Client",
       "net45",
       "net451",
       "net46",
       "win",
       "win81",
-      "wpa",
       "wpa81",
-      "wp80",
-      "wp81"
+      "dnx451",
+      "dnxcore50"
     ],
     "features": {
       "IndependentService": {
@@ -1623,8 +1630,8 @@
       },
       "MissingPrimitive": {
         "result": "failure",
-        "comment": "    System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter], [Parameter: optional(System.Int32)], [Requested dependency: ServiceType:System.Int32, ServiceName:]\r\n       at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n       at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass9e.<ResolveEmitMethod>b__9a(IEmitter methodSkeleton)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n       at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       --- End of inner exception stack trace ---\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n       at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n    ",
-        "error": "System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter], [Parameter: optional(System.Int32)], [Requested dependency: ServiceType:System.Int32, ServiceName:]\r\n   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass9e.<ResolveEmitMethod>b__9a(IEmitter methodSkeleton)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   --- End of inner exception stack trace ---\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n   at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n"
+        "comment": "    System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter], [Parameter: optional(System.Int32)], [Requested dependency: ServiceType:System.Int32, ServiceName:]\r\n       at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n       at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass196_0.<ResolveEmitMethod>b__0(IEmitter methodSkeleton)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n       at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       --- End of inner exception stack trace ---\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n       at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n    ",
+        "error": "System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalInt32Parameter], [Parameter: optional(System.Int32)], [Requested dependency: ServiceType:System.Int32, ServiceName:]\r\n   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass196_0.<ResolveEmitMethod>b__0(IEmitter methodSkeleton)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   --- End of inner exception stack trace ---\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n   at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n"
       },
       "MissingPrimitiveDefaultValue": {
         "result": "skipped",
@@ -1632,16 +1639,16 @@
       },
       "MissingDependency": {
         "result": "failure",
-        "comment": "    System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter], [Parameter: optional(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n       at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n       at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass9e.<ResolveEmitMethod>b__9a(IEmitter methodSkeleton)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n       at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       --- End of inner exception stack trace ---\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n       at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n    ",
-        "error": "System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter], [Parameter: optional(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass9e.<ResolveEmitMethod>b__9a(IEmitter methodSkeleton)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   --- End of inner exception stack trace ---\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n   at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n"
+        "comment": "    System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter], [Parameter: optional(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n       at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n       at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass196_0.<ResolveEmitMethod>b__0(IEmitter methodSkeleton)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n       at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       --- End of inner exception stack trace ---\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n       at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n    ",
+        "error": "System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithDependencyAndOptionalOtherServiceParameter], [Parameter: optional(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass196_0.<ResolveEmitMethod>b__0(IEmitter methodSkeleton)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   --- End of inner exception stack trace ---\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n   at LightInject.ServiceContainer.GetInstance(Type serviceType)\r\n"
       },
       "FactoryWithNoParameters": {
         "result": "success"
       },
       "FactoryWithParameter": {
         "result": "failure",
-        "comment": "    System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies], [Parameter: service2(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n       at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n       at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass9e.<ResolveEmitMethod>b__9a(IEmitter methodSkeleton)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n       at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       --- End of inner exception stack trace ---\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n       at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments)\r\n       at LightInject.ServiceContainer.GetInstance[T,TService](T value)\r\n    ",
-        "error": "System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies], [Parameter: service2(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass9e.<ResolveEmitMethod>b__9a(IEmitter methodSkeleton)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass39.<CreateEmitMethodWrapper>b__38(IEmitter ms)\r\n   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   --- End of inner exception stack trace ---\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n   at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments)\r\n   at LightInject.ServiceContainer.GetInstance[T,TService](T value)\r\n"
+        "comment": "    System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies], [Parameter: service2(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n       at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n       at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n       at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass196_0.<ResolveEmitMethod>b__0(IEmitter methodSkeleton)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n       at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n       at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       --- End of inner exception stack trace ---\r\n       at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n       at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n       at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments)\r\n       at LightInject.ServiceContainer.GetInstance[T,TService](T value)\r\n    ",
+        "error": "System.InvalidOperationException: Unable to resolve type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies, service name:  ---> System.InvalidOperationException: Unresolved dependency [Target Type: FeatureTests.On.DependencyInjection.TestTypes.ServiceWithTwoConstructorDependencies], [Parameter: service2(FeatureTests.On.DependencyInjection.TestTypes.IService2)], [Requested dependency: ServiceType:FeatureTests.On.DependencyInjection.TestTypes.IService2, ServiceName:]\r\n   at LightInject.ServiceContainer.GetEmitMethodForDependency(Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependency(IEmitter emitter, Dependency dependency)\r\n   at LightInject.ServiceContainer.EmitConstructorDependencies(ConstructionInfo constructionInfo, IEmitter emitter, Action`1 decoratorTargetEmitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceUsingImplementingType(IEmitter emitter, ConstructionInfo constructionInfo, Action`1 decoratorTargetEmitMethod)\r\n   at LightInject.ServiceContainer.EmitNewInstance(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.EmitNewInstanceWithDecorators(ServiceRegistration serviceRegistration, IEmitter emitter)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass196_0.<ResolveEmitMethod>b__0(IEmitter methodSkeleton)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n   at LightInject.ServiceContainer.<>c__DisplayClass152_0.<CreateEmitMethodWrapper>b__0(IEmitter ms)\r\n   at LightInject.ServiceContainer.CreateDynamicMethodDelegate(Action`1 serviceEmitter)\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   --- End of inner exception stack trace ---\r\n   at LightInject.ServiceContainer.CreateDelegate(Type serviceType, String serviceName, Boolean throwError)\r\n   at LightInject.ServiceContainer.CreateDefaultDelegate(Type serviceType, Boolean throwError)\r\n   at LightInject.ServiceContainer.GetInstance(Type serviceType, Object[] arguments)\r\n   at LightInject.ServiceContainer.GetInstance[T,TService](T value)\r\n"
       },
       "FactoryWithParameterForSubdependency": {
         "result": "skipped",
@@ -1708,7 +1715,8 @@
       "net40-Client",
       "net45",
       "net451",
-      "net46"
+      "net46",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -2021,7 +2029,8 @@
       "win",
       "win81",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -2199,7 +2208,8 @@
       "wp80",
       "wp81",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -2350,7 +2360,6 @@
       "net46",
       "win",
       "win81",
-      "wpa",
       "wpa81",
       "UAP10.0",
       "wp",
@@ -2361,6 +2370,8 @@
       "sl30",
       "sl40",
       "sl50",
+      "dnx451",
+      "dnxcore50",
       "dotnet",
       "MonoAndroid",
       "MonoAndroid10",
@@ -2539,7 +2550,8 @@
       "sl20",
       "sl30",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -2695,7 +2707,8 @@
       "wp80",
       "wp81",
       "sl40",
-      "sl50"
+      "sl50",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -2842,7 +2855,8 @@
       "net40-Client",
       "net45",
       "net451",
-      "net46"
+      "net46",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -3001,7 +3015,8 @@
       "net451",
       "net46",
       "win",
-      "win81"
+      "win81",
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -3156,7 +3171,6 @@
       "net46",
       "win",
       "win81",
-      "wpa",
       "wpa81",
       "UAP10.0",
       "wp",
@@ -3167,6 +3181,8 @@
       "sl30",
       "sl40",
       "sl50",
+      "dnx451",
+      "dnxcore50",
       "dotnet",
       "MonoAndroid",
       "MonoAndroid10",
@@ -3335,6 +3351,7 @@
       "win81",
       "wp80",
       "wp81",
+      "dnx451",
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
