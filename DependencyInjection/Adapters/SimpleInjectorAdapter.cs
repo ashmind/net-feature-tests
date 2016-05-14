@@ -33,7 +33,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         }
 
         public override void RegisterInstance(Type serviceType, object instance) {
-            this.container.RegisterSingle(serviceType, instance);
+            this.container.RegisterSingleton(serviceType, instance);
         }
 
         public override void BeforeAllWebRequests(WebRequestTestHelper helper) {
@@ -49,12 +49,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
         }
 
         private void Register(Type serviceType, Type implementationType, Lifestyle lifestyle) {
-            if (serviceType.IsGenericTypeDefinition) {
-                this.container.RegisterOpenGeneric(serviceType, implementationType, lifestyle);
-            }
-            else {
-                this.container.Register(serviceType, implementationType, lifestyle);
-            }
+            this.container.Register(serviceType, implementationType, lifestyle);
 
             // Registering collections in Simple Injector is done using the RegisterAll overloads, but
             // this forces all elements to be registered at once. For integration scenarios, the
