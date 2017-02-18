@@ -19,7 +19,8 @@
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
-      "MonoTouch40"
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -292,6 +293,7 @@
       "MonoAndroid",
       "MonoAndroid10",
       "MonoAndroid16",
+      "MonoTouch10",
       "MonoTouch40",
       "xamarinios10"
     ],
@@ -470,7 +472,8 @@
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
-      "MonoTouch40"
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -771,8 +774,11 @@
       "wp80",
       "wp81",
       "dnx451",
+      "MonoAndroid10",
       "MonoAndroid16",
-      "MonoTouch40"
+      "MonoTouch10",
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -943,7 +949,12 @@
       "wpa81",
       "wp80",
       "wp81",
-      "dnx451"
+      "dnx451",
+      "MonoAndroid10",
+      "MonoAndroid16",
+      "MonoTouch10",
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -1250,7 +1261,12 @@
       "wp81",
       "sl40",
       "sl50",
-      "dnx451"
+      "dnx451",
+      "MonoAndroid10",
+      "MonoAndroid16",
+      "MonoTouch10",
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -1580,7 +1596,12 @@
       "win81",
       "wpa81",
       "dnx451",
-      "dnxcore50"
+      "dnxcore50",
+      "MonoAndroid10",
+      "MonoAndroid16",
+      "MonoTouch10",
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -2349,6 +2370,7 @@
     "url": "http://Munq.codeplex.com",
     "version": "3.1.6",
     "supports": [
+      "netstandard1.0",
       "net20",
       "net35",
       "net35-cf",
@@ -2709,7 +2731,12 @@
       "sl40",
       "sl50",
       "dnx451",
-      "dotnet"
+      "dotnet",
+      "MonoAndroid10",
+      "MonoAndroid16",
+      "MonoTouch10",
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -3008,6 +3035,141 @@
     }
   },
   {
+    "name": "Stashbox",
+    "url": "https://github.com/z4kn4fein/stashbox",
+    "version": "2.1.1",
+    "supports": [
+      "netstandard1.0",
+      "net45",
+      "net451",
+      "net46",
+      "win",
+      "win81",
+      "wpa81",
+      "wp80",
+      "wp81",
+      "dnx451",
+      "MonoAndroid10",
+      "MonoAndroid16",
+      "MonoTouch10",
+      "MonoTouch40",
+      "xamarinios10"
+    ],
+    "features": {
+      "IndependentService": {
+        "result": "success"
+      },
+      "IndependentServiceRegisteredAsSelf": {
+        "result": "success"
+      },
+      "SingletonLifetime": {
+        "result": "success"
+      },
+      "TransientLifetime": {
+        "result": "success"
+      },
+      "PrebuiltInstance": {
+        "result": "success"
+      },
+      "ConstructorDependency": {
+        "result": "success"
+      },
+      "ConstructorDependencyUsingInstance": {
+        "result": "success"
+      },
+      "Array": {
+        "result": "success"
+      },
+      "List": {
+        "result": "success"
+      },
+      "Collection": {
+        "result": "success"
+      },
+      "Enumerable": {
+        "result": "success"
+      },
+      "IReadOnlyCollection": {
+        "result": "success"
+      },
+      "IReadOnlyList": {
+        "result": "success"
+      },
+      "OpenGenericTypes": {
+        "result": "success"
+      },
+      "ConstrainsForOpenGenerics": {
+        "result": "success"
+      },
+      "MissingPrimitive": {
+        "result": "success"
+      },
+      "MissingPrimitiveDefaultValue": {
+        "result": "success"
+      },
+      "MissingDependency": {
+        "result": "success"
+      },
+      "FactoryWithNoParameters": {
+        "result": "success"
+      },
+      "FactoryWithParameter": {
+        "result": "success"
+      },
+      "FactoryWithParameterForSubdependency": {
+        "result": "success"
+      },
+      "TransientFactoryUsedBySingletonStillCreatesTransient": {
+        "result": "success"
+      },
+      "BasicLazySupport": {
+        "result": "success"
+      },
+      "NotCreatingLazyPrematurely": {
+        "result": "success"
+      },
+      "LazyanBeUsedToResolveCircularDepenendency": {
+        "result": "success"
+      },
+      "PropertyDependency": {
+        "result": "success"
+      },
+      "PropertyDependencyIsOptional": {
+        "result": "success"
+      },
+      "PropertyDependencyDoesNotNeedCustomAttribute": {
+        "result": "success"
+      },
+      "PerRequestSupport": {
+        "result": "success"
+      },
+      "ReuseWithinRequest": {
+        "result": "success"
+      },
+      "NoReuseBetweenRequests": {
+        "result": "success"
+      },
+      "ComponentIsDisposedAtTheEndOfRequest": {
+        "result": "success"
+      },
+      "FactoryNoReuseBetweenRequests": {
+        "result": "success"
+      },
+      "ReasonableConstructorSelection": {
+        "result": "success"
+      },
+      "RegistrationAtAnyStage": {
+        "result": "success"
+      },
+      "GracefulRecursionHandling": {
+        "result": "success"
+      },
+      "GracefulRecursionHandlingForListDependency": {
+        "result": "success"
+      }
+    }
+  },
+  {
     "name": "StructureMap",
     "url": "http://structuremap.github.io",
     "version": "4.2.0.402",
@@ -3022,7 +3184,12 @@
       "wp80",
       "wp81",
       "dnx451",
-      "dotnet"
+      "dotnet",
+      "MonoAndroid10",
+      "MonoAndroid16",
+      "MonoTouch10",
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
@@ -3163,6 +3330,7 @@
     "url": "https://github.com/grumpydev/TinyIoC",
     "version": "1.3",
     "supports": [
+      "netstandard1.0",
       "net20",
       "net35",
       "net35-cf",
@@ -3359,7 +3527,8 @@
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
-      "MonoTouch40"
+      "MonoTouch40",
+      "xamarinios10"
     ],
     "features": {
       "IndependentService": {
