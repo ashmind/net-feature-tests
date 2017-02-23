@@ -190,17 +190,17 @@ n/a        </td>
         <td class="skipped">
 n/a        </td>
         <td class="neutral number">
-46 823        </td>
+72 176        </td>
         <td class="skipped">
 n/a        </td>
         <td class="neutral number">
-61 271        </td>
+144 510        </td>
         <td class="neutral number">
-7 629        </td>
+13 909        </td>
         <td class="neutral number">
-29 186 414        </td>
+48 064 592        </td>
         <td class="neutral number">
-1 365 113        </td>
+2 015 992        </td>
     </tr>
     <tr>
       <td class="row-name"><span title="<p>Total Score is based on total amount of feature tests passed.</p>
@@ -442,8 +442,8 @@ n/a        </td>
 no        </td>
         <td class="concern">
 no        </td>
-        <td class="concern">
-no        </td>
+        <td class="success">
+yes        </td>
         <td class="success">
 yes        </td>
     </tr>
@@ -522,16 +522,16 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 02-Aug-14 12:34:56
-Actual:   03-Aug-14 00:34:56
+Expected: 8/2/2014 12:34:56 PM
+Actual:   8/2/2014 2:34:56 PM
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
 </code></pre>
 ">fail</span>
         </td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 02-Aug-14 12:34:56
-Actual:   03-Aug-14 00:34:56
+Expected: 8/2/2014 12:34:56 PM
+Actual:   8/2/2014 2:34:56 PM
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
 </code></pre>
 ">fail</span>
@@ -544,8 +544,8 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 02-Aug-14 12:34:56
-Actual:   03-Aug-14 00:34:56
+Expected: 8/2/2014 12:34:56 PM
+Actual:   8/2/2014 2:34:56 PM
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
 </code></pre>
 ">fail</span>
@@ -559,6 +559,7 @@ Actual:   03-Aug-14 00:34:56
    at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.GetJsonMemberIndex(XmlReaderDelegator xmlReader, XmlDictionaryString[] memberNames, Int32 memberIndex, ExtensionDataObject extensionData)
    at ReadDateTimeOffsetFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
    at System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
    at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
    at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract&amp;amp; dataContract)
    at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
@@ -586,8 +587,8 @@ pass        </td>
 pass        </td>
         <td class="failure">
             <span title="<pre><code>Xunit.Sdk.EqualException: Assert.Equal() Failure
-Expected: 02-Aug-14 12:34:56 +03:00
-Actual:   02-Aug-14 12:34:55 +00:00
+Expected: 8/2/2014 12:34:56 PM +03:00
+Actual:   8/2/2014 12:34:55 PM +00:00
    at Xunit.Assert.Equal[T](T expected, T actual, IEqualityComparer`1 comparer)
 </code></pre>
 ">fail</span>
@@ -622,7 +623,7 @@ pass        </td>
    at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()
    at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception&amp;amp; exceptionDuringBuild)
    --- End of inner exception stack trace ---
-   at _DynamicMethod65(ThunkReader&amp;amp; , Int32 )
+   at _DynamicMethod38(ThunkReader&amp;amp; , Int32 )
    at Jil.JSON.Deserialize[T](String text, Options options)
    at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)
    at Jil.JSON.Deserialize(String text, Type type, Options options)
@@ -911,7 +912,7 @@ pass        </td>
    at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()
    at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception&amp;amp; exceptionDuringBuild)
    --- End of inner exception stack trace ---
-   at _DynamicMethod47(ThunkReader&amp;amp; , Int32 )
+   at _DynamicMethod24(ThunkReader&amp;amp; , Int32 )
    at Jil.JSON.Deserialize[T](String text, Options options)
    at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)
    at Jil.JSON.Deserialize(String text, Type type, Options options)
@@ -1114,11 +1115,13 @@ there should be no need for bad design just to satisfy the serializer.</p>
    at System.Runtime.Serialization.XmlObjectSerializerReadContext.ThrowNullValueReturnedForGetOnlyCollectionException(Type type)
    at ReadArrayOfstringFromJsonIsGetOnly(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString , CollectionDataContract )
    at System.Runtime.Serialization.Json.JsonCollectionDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
    at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
    at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract&amp;amp; dataContract)
    at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Int32 declaredTypeID, RuntimeTypeHandle declaredTypeHandle, String name, String ns)
    at ReadRootFromJson(XmlReaderDelegator , XmlObjectSerializerReadContextComplexJson , XmlDictionaryString , XmlDictionaryString[] )
    at System.Runtime.Serialization.Json.JsonClassDataContract.ReadJsonValueCore(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
+   at System.Runtime.Serialization.Json.JsonDataContract.ReadJsonValue(XmlReaderDelegator jsonReader, XmlObjectSerializerReadContextComplexJson context)
    at System.Runtime.Serialization.Json.XmlObjectSerializerReadContextComplexJson.ReadDataContractValue(DataContract dataContract, XmlReaderDelegator reader)
    at System.Runtime.Serialization.XmlObjectSerializerReadContext.InternalDeserialize(XmlReaderDelegator reader, String name, String ns, Type declaredType, DataContract&amp;amp; dataContract)
    at System.Runtime.Serialization.XmlObjectSerializerReadContextComplex.InternalDeserialize(XmlReaderDelegator xmlReader, Type declaredType, DataContract dataContract, String name, String ns)
@@ -1373,7 +1376,7 @@ Parameter name: con
    at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()
    at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception&amp;amp; exceptionDuringBuild)
    --- End of inner exception stack trace ---
-   at _DynamicMethod37(ThunkReader&amp;amp; , Int32 )
+   at _DynamicMethod44(ThunkReader&amp;amp; , Int32 )
    at Jil.JSON.Deserialize[T](String text, Options options)
    at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)
    at Jil.JSON.Deserialize(String text, Type type, Options options)
@@ -1440,7 +1443,7 @@ Parameter name: con
    at Jil.Deserialize.InlineDeserializer`1.BuildFromStringWithNewDelegate()
    at Jil.Deserialize.InlineDeserializerHelper.BuildFromString[ReturnType](Type optionsType, DateTimeFormat dateFormat, SerializationNameFormat serializationNameFormat, Exception&amp;amp; exceptionDuringBuild)
    --- End of inner exception stack trace ---
-   at _DynamicMethod37(ThunkReader&amp;amp; , Int32 )
+   at _DynamicMethod44(ThunkReader&amp;amp; , Int32 )
    at Jil.JSON.Deserialize[T](String text, Options options)
    at Jil.Deserialize.DeserializeIndirect.DeserializeFromString(String reader, Type type, Options options)
    at Jil.JSON.Deserialize(String text, Type type, Options options)
@@ -1543,8 +1546,6 @@ pass        </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' does not contain a definition for 'property'
    at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
-   at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>
         </td>
@@ -1588,8 +1589,6 @@ pass        </td>
         </td>
         <td class="failure">
             <span title="<pre><code>Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot convert type 'System.Collections.Generic.Dictionary&amp;lt;string,object&amp;gt;' to 'FeatureTests.On.JsonSerializers.TestTypes.ClassWithSingleProperty&amp;lt;string&amp;gt;'
-   at CallSite.Target(Closure , CallSite , Object )
-   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
    at CallSite.Target(Closure , CallSite , Object )
 </code></pre>
 ">fail</span>

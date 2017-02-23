@@ -214,6 +214,14 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Spring.Core.2.0.1\lib\net45\Spring.Core.dll</HintPath>
     </Reference>
+    <Reference Include="Stashbox, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
+      <HintPath>..\#packages\Stashbox.2.1.1\lib\net45\Stashbox.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Stashbox.Web.Mvc, Version=2.0.11.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
+      <HintPath>..\#packages\Stashbox.Web.Mvc.2.0.11\lib\net45\Stashbox.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="StructureMap, Version=4.2.0.402, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\structuremap.4.2.0.402\lib\net40\StructureMap.dll</HintPath>
@@ -304,6 +312,7 @@
     <Compile Include="Adapters\Interface\ContainerAdapterExtensions.cs" />
     <Compile Include="Adapters\SimpleInjectorAdapter.cs" />
     <Compile Include="Adapters\SpringAdapter.cs" />
+    <Compile Include="Adapters\StashboxAdapter.cs" />
     <Compile Include="Adapters\StructureMapAdapter.cs" />
     <Compile Include="Adapters\TinyIoCAdapter.cs" />
     <Compile Include="Adapters\UnityAdapter.cs" />
@@ -346,7 +355,9 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Html\Options.json" />
-    <None Include="packages.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <Content Include="app.config">
       <SubType>Designer</SubType>
     </Content>
