@@ -1,22 +1,19 @@
-﻿using FeatureTests.On.DependencyInjection.Adapters.Interface;
+﻿using System;
+using System.Collections.Generic;
+using System.Reflection;
+using FeatureTests.On.DependencyInjection.Adapters.Interface;
 using FeatureTests.On.DependencyInjection.Adapters.WebRequestSupport;
 using Stashbox;
 using Stashbox.Configuration;
 using Stashbox.Infrastructure;
 using Stashbox.Web.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Reflection;
 
-namespace FeatureTests.On.DependencyInjection.Adapters
-{
-    public class StashboxAdapter : ContainerAdapterBase
-    {
+namespace FeatureTests.On.DependencyInjection.Adapters {
+    public class StashboxAdapter : ContainerAdapterBase {
         private readonly IStashboxContainer container;
-        private StashboxPerRequestScopeProvider perRequestScope;
+        private readonly StashboxPerRequestScopeProvider perRequestScope;
 
-        public StashboxAdapter()
-        {
+        public StashboxAdapter() {
             this.container = new StashboxContainer(config => config
                 .WithCircularDependencyTracking()
                 .WithConstructorSelectionRule(Rules.ConstructorSelection.PreferMostParameters)
