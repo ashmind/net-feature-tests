@@ -13,7 +13,7 @@ namespace FeatureTests.On.DependencyInjection.Adapters {
 		private readonly DependencyInjectionContainer container;
 
 		public GraceAdapter() {
-			this.container = new DependencyInjectionContainer { ThrowExceptions = true };
+			this.container = new DependencyInjectionContainer ();
 			this.container.Configure(c => c.Export<WebSharedPerRequestLifestyleProvider>().ByInterfaces());
 		}
 
