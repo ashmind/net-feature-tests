@@ -102,14 +102,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Endjin.Core.Composition.2.2.0.45\lib\Net45\EndjinCoreContainerNet45.dll</HintPath>
     </Reference>
-    <Reference Include="Grace, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\#packages\Grace.3.1.0.0\lib\portable-net45+win+wpa81+wp80\Grace.dll</HintPath>
+    <Reference Include="Grace, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\#packages\Grace.5.1.0\lib\net45\Grace.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Grace.MVC4, Version=3.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\#packages\Grace.MVC4.3.1.0.0\lib\net45\Grace.MVC4.dll</HintPath>
+    <Reference Include="Grace.MVC4, Version=5.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\#packages\Grace.MVC4.5.1.0\lib\net45\Grace.MVC4.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="HaveBox, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -240,7 +238,10 @@
       <Private>False</Private>
       <Aliases>global</Aliases>
     </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Reflection.Context" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -254,6 +255,7 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Routing" />
     <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
@@ -267,6 +269,7 @@
       <HintPath>..\#packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
     <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="Unity.ServiceLocator">
       <HintPath>..\#packages\Unity.ServiceLocator.2.0.0\lib\net45\Unity.ServiceLocator.dll</HintPath>
       <Private>True</Private>

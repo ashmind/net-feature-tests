@@ -19,8 +19,7 @@
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "MonoTouch40"
     ],
     "features": {
       "IndependentService": {
@@ -293,7 +292,6 @@
       "MonoAndroid",
       "MonoAndroid10",
       "MonoAndroid16",
-      "MonoTouch10",
       "MonoTouch40",
       "xamarinios10"
     ],
@@ -472,8 +470,7 @@
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "MonoTouch40"
     ],
     "features": {
       "IndependentService": {
@@ -774,11 +771,8 @@
       "wp80",
       "wp81",
       "dnx451",
-      "MonoAndroid10",
       "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "MonoTouch40"
     ],
     "features": {
       "IndependentService": {
@@ -939,8 +933,9 @@
   {
     "name": "Grace",
     "url": "https://github.com/ipjohnson/Grace",
-    "version": "3.1.0.0",
+    "version": "5.1.0",
     "supports": [
+      "netstandard1.0",
       "net45",
       "net451",
       "net46",
@@ -949,12 +944,7 @@
       "wpa81",
       "wp80",
       "wp81",
-      "dnx451",
-      "MonoAndroid10",
-      "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -1057,9 +1047,7 @@
         "result": "success"
       },
       "ReasonableConstructorSelection": {
-        "result": "failure",
-        "comment": "    Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate IUnregisteredService for parameter service2 on ServiceWithMultipleConstructors\r\n    \r\n    1 Locate by type ServiceWithMultipleConstructors in scope 'RootScope' \r\n    2 Activating type ServiceWithMultipleConstructors  as transient\r\n    3 Importing  constructor parameter service2 using type IUnregisteredService\r\n    \r\n       at lambda_method(Closure , IInjectionScope , IInjectionContext )\r\n       at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)\r\n       at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)\r\n       at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)\r\n    ",
-        "error": "Grace.DependencyInjection.Exceptions.MissingDependencyException: Could not locate IUnregisteredService for parameter service2 on ServiceWithMultipleConstructors\r\n\r\n1 Locate by type ServiceWithMultipleConstructors in scope 'RootScope' \r\n2 Activating type ServiceWithMultipleConstructors  as transient\r\n3 Importing  constructor parameter service2 using type IUnregisteredService\r\n\r\n   at lambda_method(Closure , IInjectionScope , IInjectionContext )\r\n   at Grace.DependencyInjection.Impl.CompiledExportStrategy.Activate(IInjectionScope exportInjectionScope, IInjectionContext context, ExportStrategyFilter consider, Object locateKey)\r\n   at Grace.DependencyInjection.Impl.ExportStrategyCollection.Activate(String exportName, TypeWrapper exportType, IInjectionContext injectionContext, ExportStrategyFilter filter, Object locateKey)\r\n   at Grace.DependencyInjection.Impl.InjectionKernel.Locate(Type objectType, IInjectionContext injectionContext, ExportStrategyFilter consider, Object locateKey)\r\n"
+        "result": "success"
       },
       "RegistrationAtAnyStage": {
         "result": "success"
@@ -1261,12 +1249,7 @@
       "wp81",
       "sl40",
       "sl50",
-      "dnx451",
-      "MonoAndroid10",
-      "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -1596,12 +1579,7 @@
       "win81",
       "wpa81",
       "dnx451",
-      "dnxcore50",
-      "MonoAndroid10",
-      "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "dnxcore50"
     ],
     "features": {
       "IndependentService": {
@@ -2731,12 +2709,7 @@
       "sl40",
       "sl50",
       "dnx451",
-      "dotnet",
-      "MonoAndroid10",
-      "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "dotnet"
     ],
     "features": {
       "IndependentService": {
@@ -3048,12 +3021,7 @@
       "wpa81",
       "wp80",
       "wp81",
-      "dnx451",
-      "MonoAndroid10",
-      "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "dnx451"
     ],
     "features": {
       "IndependentService": {
@@ -3184,12 +3152,7 @@
       "wp80",
       "wp81",
       "dnx451",
-      "dotnet",
-      "MonoAndroid10",
-      "MonoAndroid16",
-      "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "dotnet"
     ],
     "features": {
       "IndependentService": {
@@ -3527,8 +3490,7 @@
       "MonoAndroid10",
       "MonoAndroid16",
       "MonoTouch10",
-      "MonoTouch40",
-      "xamarinios10"
+      "MonoTouch40"
     ],
     "features": {
       "IndependentService": {
