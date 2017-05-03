@@ -3010,9 +3010,11 @@
   {
     "name": "Stashbox",
     "url": "https://github.com/z4kn4fein/stashbox",
-    "version": "2.1.1",
+    "version": "2.4.3",
     "supports": [
       "netstandard1.0",
+      "net40",
+      "net40-Client",
       "net45",
       "net451",
       "net46",
