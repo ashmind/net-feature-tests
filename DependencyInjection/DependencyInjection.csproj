@@ -212,12 +212,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\#packages\Spring.Core.2.0.1\lib\net45\Spring.Core.dll</HintPath>
     </Reference>
-    <Reference Include="Stashbox, Version=0.0.0.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
-      <HintPath>..\#packages\Stashbox.2.1.1\lib\net45\Stashbox.dll</HintPath>
+    <Reference Include="Stashbox, Version=2.4.3.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
+      <HintPath>..\#packages\Stashbox.2.4.3\lib\net45\Stashbox.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Stashbox.Web.Mvc, Version=2.0.11.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
-      <HintPath>..\#packages\Stashbox.Web.Mvc.2.0.11\lib\net45\Stashbox.Web.Mvc.dll</HintPath>
+    <Reference Include="Stashbox.Web.Mvc, Version=2.3.2.0, Culture=neutral, PublicKeyToken=9778e33426732b68, processorArchitecture=MSIL">
+      <HintPath>..\#packages\Stashbox.Web.Mvc.2.3.2\lib\net45\Stashbox.Web.Mvc.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="StructureMap, Version=4.2.0.402, Culture=neutral, processorArchitecture=MSIL">
