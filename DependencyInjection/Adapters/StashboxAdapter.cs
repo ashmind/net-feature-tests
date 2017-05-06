@@ -7,15 +7,12 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 
-namespace FeatureTests.On.DependencyInjection.Adapters
-{
-    public class StashboxAdapter : ContainerAdapterBase
-    {
+namespace FeatureTests.On.DependencyInjection.Adapters {
+    public class StashboxAdapter : ContainerAdapterBase {
         private readonly IStashboxContainer container;
         private StashboxPerRequestScopeProvider perRequestScope;
 
-        public StashboxAdapter()
-        {
+        public StashboxAdapter() {
             this.container = new StashboxContainer(config => config
                 .WithCircularDependencyTracking()
                 .WithDisposableTransientTracking()
